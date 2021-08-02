@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
-DisAllow: /resources/data/dist/assets/img/kim.jpg
-Sitemap: https://devkimson.herokuapp.com/sitemap.xml
+DisAllow: /assets/images/kim.jpg
+Sitemap: https://kkn1125.github.io/sitemap.xml
