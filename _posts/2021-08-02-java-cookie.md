@@ -15,15 +15,15 @@ rating: 4.5
 toc: true
 ---
 
-# 1 Cookie 사용
+# Cookie 사용
 
 쿠키의 특징을 간단하게 알아보면서 내용을 정리하였습니다.
 
-## 1.1 Cookie란
+## Cookie란
 > 주로 웹 서버에 의해 만들어지고, 서버가 HTTP 응답헤더의 Set-Cookie에 내용을 넣어 전달하면, 이 내용을 브라우저에 저장합니다.
 >식별이나 인증 등에 사용되고 브라우저에서도 document.cookie로 접근 가능합니다.
 
-## 1.1 Cookie 생성
+## Cookie 생성
 ```java
 Cookie cookie = newCookie("name", "value"); // 이것만으로 쿠키 생성이 완료된 것이 아닙니다.
 ​
@@ -47,7 +47,7 @@ response.addCookie(cookie);
 // 이후 응답된 페이지를 브라우저가 받을때 쿠키가 생성되게 됩니다.
 ```
 
-## 1.2 Cookie 읽기
+## Cookie 읽기
 ```java
 Cookie[] cookies = request.getCookies();
 // 요청된 쿠키들을 불러오기위해 request에서 꺼내옵니다.
@@ -60,7 +60,7 @@ for(Cookie cookie : cookies) {
 // 이외에도 getPath(), getSecure(), getMaxAge()등이 있습니다.
 ```
 
-## 1.3 Cookie 수정/삭제
+## Cookie 수정/삭제
 ```java
 Cookie[] cookies = request.getCookies();
 // 수정하기 위해 쿠키들을 불러옵니다.
@@ -76,7 +76,7 @@ for(Cookie cookie : cookies) {
 }
 ```
 
-## 1.4 Javascript와 Java에서의 쿠키 읽기 특징
+# Javascript와 Java에서의 쿠키 읽기 특징
 >HttpOnly는 특히 브라우저와 서버측에서 가져올수 있는지의 여부가 쟁정이 되지 않나 싶습니다. 즉, 가져오는 주체의 허용 범위라고 이해하였습니다.
 
 아무리 찾아도 쉽게 설명 된 사이트가 없어 정리하려합니다. 먼저, 자바 코드 입니다.

@@ -1,10 +1,5 @@
----
-layout: default
-title: 404
-permalink: /404.html
----
-
-<div class="text-center">
+I"�<div class="text-center">
 <h1 class="display-1 mt-5 mb-4"><span class="badge badge-danger">404</span> 찾을 수 없는 페이지입니다!</h1>
 <p>상단 검색 또는 <a href="{{site.baseurl}}/">homepage</a>로 이동해주세요!</p>
 </div>
+:ET
