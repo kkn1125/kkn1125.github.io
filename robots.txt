@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+DisAllow: /resources/data/dist/assets/img/kim.jpg
+Sitemap: https://devkimson.herokuapp.com/sitemap.xml

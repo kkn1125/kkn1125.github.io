@@ -4,7 +4,8 @@ title: "Devkimson"
 description: "나를 표현하는 블로그. 끊임없이 도전하고 공부하는 예비 개발자입니다."
 logo: 'assets/images/logo-k-color.png'
 favicon: 'assets/images/logo-k-color.png'
-baseurl: /devkimson
+url: "http://kkn1125.github.io"
+baseurl: ""
 # baseurl은 github 저장소 명으로 바꿔줘야함
 google_analytics: 'UA-46278016-1'
 disqus: 'demowebsite'
