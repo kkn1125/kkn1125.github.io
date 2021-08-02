@@ -8,7 +8,7 @@ tags: [mysql, timestamp, simpledateformat]
 image: assets/images/post/mysql_cover.png
 description: "MySQL Timestamp타입 웹에서 시간 표기  
 남의 코드를 하나씩 뜯어보며 공부하는 방식을 취하는데 반해 생각없이 관습적으로 따라 쓰는 경우가 종종 있습니다."
-featured: true
+featured: false
 hidden: false
 rating: 4
 toc: true

@@ -89,7 +89,7 @@ const kal = com.devkimson.calendar.create(document.getElementById("kal"||"kal", 
 ```
 
 >알게된 내용
-
+<div class="spoiler">
 아주 단순한 코드이기 때문에 바로 아실 것 같습니다.
 
 먼저 처음 달력을 만들때 태그의 id값과 설정값을 받아 한 번에 달력이 생성되어야 했기에 id값과 설정값을 받는 객체를 먼저 생성하고,
@@ -103,6 +103,7 @@ const kal = com.devkimson.calendar.create(document.getElementById("kal"||"kal", 
 두번째로 위와 비슷한 상황이었고, 동일 객체 내 함수에서 프로퍼티를 가져와 함수 내 지역 스코프에 사용이 안되어 함수에 변수를 만들어 해당 프로퍼티를 저장시키고 사용한 경우입니다.
 
 저와 같은 처지의 분들에게 도움이 되고자 남깁니다...
+</div>
 
 예제 코드
 ```javascript
@@ -174,8 +175,12 @@ const kal = com.devkimson.calendar.create(document.getElementById('kal')||'kal',
 수정된 기능은 setting부분의 tr조정과 table의 width조정,
 추가된 기능은 TODO List 기능과 오늘로 이동, 할일 여부에 따른 뱃지, 개수 표기 입니다.
 
->Kalendar.js 1.1.0ver  
+
+
+>Kalendar.js 1.1.0ver 
+
 <a href="{{site.baseurl}}/assets/download/devkalendarTODO.zip" download>devKalendarTODO 1.0.0 ver 다운로드</a>
+
 
 이전 달력만들기에 초기 세팅값에 대해 자세히 적혀있습니다.
 

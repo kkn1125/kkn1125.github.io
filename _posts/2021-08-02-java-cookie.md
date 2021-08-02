@@ -8,10 +8,9 @@ tags: [cookie]
 image: assets/images/post/cookie/cookie.PNG
 description: "Cookie 사용
 쿠키의 특징을 간단하게 알아보면서 내용을 정리하였습니다. 주로 웹 서버에 의해 만들어지고, 서버가 HTTP 응답헤더의 Set-Cookie에 내용을 넣어 전달하면, 이 내용을 브라우저에 저장합니다."
-featured: true
+featured: false
 hidden: false
 rating: 4.5
-# beforetoc: "커버이미지"
 toc: true
 ---
 
