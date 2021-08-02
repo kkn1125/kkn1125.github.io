@@ -1,13 +1,3 @@
-let locations = window.location.href;
-
-let arr = locations.split("/");
-let getPath = arr[arr.length-1];
-if(getPath.indexOf("naver")>-1){
-    location.href="/devkimson/naverab361a1a39575334bea9d573640c9e21.html";
-} else if(getPath.indexOf("google")>-1){
-    location.href="/devkimson/google050e6145d059bcf0.html";
-}
-
 $('.scrolldown').on('click', (self) => {
     var heights = $(self.currentTarget).parents().find('.section[id]').has($(self.currentTarget));
     var indexing = $(self.currentTarget).parents().find('.section[id]').index(heights);
