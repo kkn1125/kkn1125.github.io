@@ -58,7 +58,7 @@ ga('send', 'pageview');
 
     <!-- Begin Logo -->
     <a class="navbar-brand" href="{{ site.baseurl }}/">
-    <img src="{{ site.baseurl }}/{{ site.logo }}" alt="{{ site.name }}">
+    <img src="{{ site.baseurl }}/{{ site.logo }}" alt="{{ site.name }}">Devkimson
     </a>
     <!-- End Logo -->
 
@@ -128,10 +128,17 @@ ga('send', 'pageview');
 <!-- Site Title
 ================================================== -->
 <div class="mainheading">
-    <h1 class="sitetitle">{{ site.name }}</h1>
-    <p class="lead">
-        {{ site.description }}
-    </p>
+    <div class="d-flex align-items-center pb-5">
+        <div class="profilecard">
+            <img class="" src="{{site.baseurl}}/assets/images/profilecard.jpg" alt="">
+        </div>
+        <div class="ms-3">
+            <h1 class="sitetitle">{{ site.name }}</h1>
+            <p class="lead">
+                {{ site.description }}
+            </p>
+        </div>
+    </div>
 </div>
 
 <!-- Content

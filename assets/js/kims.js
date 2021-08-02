@@ -71,7 +71,7 @@ function maximization(self) { // 최대화 기능
         tar.toggleClass("minimize");
         tar.toggleClass("bg-dark");
         minimize = 1;
-        loction.href = "#window";
+        location.href = "#window";
     }
 }
 var exitnum = 1;
@@ -83,19 +83,19 @@ function exit(self) { // exit function
         exitnum = 0;
         if (minimize == 1) {
             setTimeout(() => {
-                storyLine.html("포트폴리오는 보고 오셨나요? <a href='/board/list/portfolio' class='btn btn-sm btn-outline-info'>바로가기</a> (" + 5 + ")");
+                storyLine.html("포트폴리오는 보고 오셨나요? <a href='/portfolio-coffeecong/' class='btn btn-sm btn-outline-info'>바로가기</a> (" + 5 + ")");
             }, 0000);
             setTimeout(() => {
-                storyLine.html("포트폴리오는 보고 오셨나요? <a href='/board/list/portfolio' class='btn btn-sm btn-outline-info'>바로가기</a> (" + 4 + ")");
+                storyLine.html("포트폴리오는 보고 오셨나요? <a href='/portfolio-coffeecong/' class='btn btn-sm btn-outline-info'>바로가기</a> (" + 4 + ")");
             }, 1000);
             setTimeout(() => {
-                storyLine.html("포트폴리오는 보고 오셨나요? <a href='/board/list/portfolio' class='btn btn-sm btn-outline-info'>바로가기</a> (" + 3 + ")");
+                storyLine.html("포트폴리오는 보고 오셨나요? <a href='/portfolio-coffeecong/' class='btn btn-sm btn-outline-info'>바로가기</a> (" + 3 + ")");
             }, 2000);
             setTimeout(() => {
-                storyLine.html("포트폴리오는 보고 오셨나요? <a href='/board/list/portfolio' class='btn btn-sm btn-outline-info'>바로가기</a> (" + 2 + ")");
+                storyLine.html("포트폴리오는 보고 오셨나요? <a href='/portfolio-coffeecong/' class='btn btn-sm btn-outline-info'>바로가기</a> (" + 2 + ")");
             }, 3000);
             setTimeout(() => {
-                storyLine.html("포트폴리오는 보고 오셨나요? <a href='/board/list/portfolio' class='btn btn-sm btn-outline-info'>바로가기</a> (" + 1 + ")");
+                storyLine.html("포트폴리오는 보고 오셨나요? <a href='/portfolio-coffeecong/' class='btn btn-sm btn-outline-info'>바로가기</a> (" + 1 + ")");
             }, 4000);
             setTimeout(() => {
                 storyLine.html($('[data-type="story"]').html());
@@ -109,23 +109,23 @@ function exit(self) { // exit function
             span.setAttribute("class", "position-fixed zi-50");
             span.setAttribute("id", "newSpan");
             setTimeout(() => {
-                var spans = $(span).html("포트폴리오는 보고 오셨나요? <a href='/board/list/portfolio' class='btn btn-sm btn-outline-info'>바로가기</a> (5)");
+                var spans = $(span).html("포트폴리오는 보고 오셨나요? <a href='/portfolio-coffeecong/' class='btn btn-sm btn-outline-info'>바로가기</a> (5)");
                 tops.prepend(spans);
             }, 0);
             setTimeout(() => {
-                var spans = $(span).html("포트폴리오는 보고 오셨나요? <a href='/board/list/portfolio' class='btn btn-sm btn-outline-info'>바로가기</a> (4)");
+                var spans = $(span).html("포트폴리오는 보고 오셨나요? <a href='/portfolio-coffeecong/' class='btn btn-sm btn-outline-info'>바로가기</a> (4)");
                 tops.prepend(spans);
             }, 1000);
             setTimeout(() => {
-                var spans = $(span).html("포트폴리오는 보고 오셨나요? <a href='/board/list/portfolio' class='btn btn-sm btn-outline-info'>바로가기</a> (3)");
+                var spans = $(span).html("포트폴리오는 보고 오셨나요? <a href='/portfolio-coffeecong/' class='btn btn-sm btn-outline-info'>바로가기</a> (3)");
                 tops.prepend(spans);
             }, 2000);
             setTimeout(() => {
-                var spans = $(span).html("포트폴리오는 보고 오셨나요? <a href='/board/list/portfolio' class='btn btn-sm btn-outline-info'>바로가기</a> (2)");
+                var spans = $(span).html("포트폴리오는 보고 오셨나요? <a href='/portfolio-coffeecong/' class='btn btn-sm btn-outline-info'>바로가기</a> (2)");
                 tops.prepend(spans);
             }, 3000);
             setTimeout(() => {
-                var spans = $(span).html("포트폴리오는 보고 오셨나요? <a href='/board/list/portfolio' class='btn btn-sm btn-outline-info'>바로가기</a> (1)");
+                var spans = $(span).html("포트폴리오는 보고 오셨나요? <a href='/portfolio-coffeecong/' class='btn btn-sm btn-outline-info'>바로가기</a> (1)");
                 tops.prepend(spans);
             }, 4000);
 

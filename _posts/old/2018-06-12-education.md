@@ -5,6 +5,7 @@ author: Kimson
 # categories: [ Jekyll, tutorial ]
 image: assets/images/3.jpg
 hidden: true
+published: false
 # beforetoc: "Markdown editor is a very powerful thing. In this article I'm going to show you what you can actually do with it, some tricks and tips while editing your post."
 # toc: true
 # beforetoc은 서머리 전에 나오는 글
