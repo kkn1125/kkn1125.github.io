@@ -12,17 +12,20 @@ disqus: 'demowebsite'
 mailchimp-list: 'https://wowthemes.us11.list-manage.com/subscribe/post?u=8aeb20a530e124561927d3bd8&amp;id=8c3d2d214b'
 include: ["_pages"]
 permalink: /:title/
+top: <a href="#" id="gotop"><i class="fas fa-arrow-alt-circle-up fa-2x"></i></a>
 
 # Authors
 authors:
   Kimson:
+    nick: devkimson
     name: Kyeongnam
     display_name: Kimson
     profile: assets/images/kim.jpg
-    avatar: assets/images/logo-k-mono.png
+    avatar: assets/images/profilecard.jpg
     gravatar: assets/images/logo-k-mono.png
     email: chaplet01@gmail.com
     web: https://kkn1125.github.io
+    github: https://github.com/kkn1125
     twitter: https://twitter.com/wowthemesnet
     description: "하루하루 게을리하지 않고 나만의 방식으로 발전해나가는 예비 개발자입니다"
   

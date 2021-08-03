@@ -5,6 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="naver-site-verification" content="6cebf2441529d02294b07c32ba2cd5ce09ba2c71" />
 
+<script src="{{ site.baseurl }}/assets/js/jquery.min.js"></script>
+
+<!-- google font -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+<!-- google font -->
+
 <link rel="icon" href="{{ site.baseurl }}/assets/images/logo.png">
 
 <link rel="stylesheet" href="{{site.baseurl}}/assets/css/main.css">
@@ -14,14 +22,11 @@
 
 {% seo %}
 
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 
 <link href="{{ site.baseurl }}/assets/css/screen.css" rel="stylesheet">
 
 <link href="{{ site.baseurl }}/assets/css/kims.css" rel="stylesheet">
-
-
-<script src="{{ site.baseurl }}/assets/js/jquery.min.js"></script>
 
 <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
@@ -49,6 +54,11 @@ ga('send', 'pageview');
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 	</noscript>
 
+<!-- top btn -->
+{% if page.url == "/" or page.istop == true %}
+{{ site.top }}
+{% endif %}
+<!-- top btn -->
 
 <!-- Begin Menu Navigation
 ================================================== -->
@@ -128,6 +138,7 @@ ga('send', 'pageview');
 <!-- Site Title
 ================================================== -->
 <div class="mainheading">
+    {% if page.url == "/" %}
     <div class="d-flex align-items-center pb-5">
         <div class="profilecard">
             <img class="" src="{{site.baseurl}}/assets/images/profilecard.jpg" alt="">
@@ -139,6 +150,7 @@ ga('send', 'pageview');
             </p>
         </div>
     </div>
+    {% endif %}
 </div>
 
 <!-- Content
@@ -210,24 +222,22 @@ ga('send', 'pageview');
 </div> <!-- /.site-content -->
 
 <!-- Scripts
-================================================== -->
-
+    ================================================== -->
 <script src="{{site.baseurl}}/assets/js/kims.js"></script>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
+<script>
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+    })
+</script>
 
 <script>
     AOS.init();
 </script>
-
-<script>
-    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
-    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-      return new bootstrap.Tooltip(tooltipTriggerEl)
-    })
-</script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
-
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
 
 <script src="{{ site.baseurl }}/assets/js/mediumish.js"></script>
 

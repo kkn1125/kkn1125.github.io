@@ -10,7 +10,7 @@ description: "사용 dependency
 junit : 4.12
 spring-test : 5.3.6
 jackson-databind : 2.12.3"
-featured: true
+featured: false
 hidden: false
 rating: 5
 beforetoc: "이전 시간에 만들었던 달력에 오늘 TODO List 기능을 추가하면서 알게 된 것들과 수정된 부분을 정리하고자 포스팅합니다.

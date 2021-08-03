@@ -212,3 +212,17 @@ function toggleBtn(self) {
 // window.addEventListener('load', function () {
 //     commentSlide();
 // });
+
+// tooltip builder x
+
+// window.addEventListener('load', function(){
+//     let arr = document.querySelectorAll('.article-post a');
+//     arr.forEach((el)=>{
+//         if(el.getAttribute("title")){
+//             el.setAttribute("data-toggle","tooltip");
+//             el.setAttribute("data-placement","top");
+//             el.setAttribute("data-original-title",el.getAttribute("title"));
+//             el.setAttribute("title","");
+//         }
+//     });
+// })

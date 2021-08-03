@@ -1,4 +1,39 @@
 /* base call */
+
+#gotop i::before{
+	position: fixed;
+	bottom: 5%;
+	right: 2%;
+	z-index: 1000;
+	background-color: rgba(255,255,255,.7);
+	border-radius: 50%;
+}
+
+tbody#career td:nth-child(2){
+    text-align: left;
+    /* padding-left: 2rem; */
+}
+
+@media screen and (max-width: 768px) {
+	.fs-md-2{
+        font-size: calc(2.5rem + .6vw) !important;
+    }
+    
+    tbody#career td span{
+        text-align: left;
+        white-space: pre-wrap;
+        line-height: 1.2rem;
+    }
+    
+    tr{
+    	vertical-align: middle;
+    }
+}
+
+[data-unselect="true"]{
+	user-select: none;
+}
+
 .top-0{
     top: 0%;
 }

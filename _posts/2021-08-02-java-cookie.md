@@ -91,14 +91,20 @@ for(Cookie cookie : cookies) {
 ```
 
 그 다음 자바스크립트 코드 입니다.
+
 ```javascript
 document.cookie;
 // "" 빈 값
 ```
+
 ---
-크롬기준으로 설명드리겠습니다
+
+크롬기준으로 설명드리겠습니다.
+
 f12 개발자도구를 열었을때 application 탭에서 쿠키를 보면 다른도메인의 쿠키나 secure, httponly 등의 속성이 있는것과 없는 것이 많습니다.
+
 이때 httponly속성이 없거나 domain이 해당 사이트와 동일 해야지만 자바스크립트에서 document.cookie로 쿠키를 가져올수 있고,
+
 httponly속성이 true이거나 domain이 다르다면 document.cookie로 값을 가져오지 못하는 것을 알게 되었습니다.
 
 [Python2 - HttpOnly 속성 참고](https://www.python2.net/questions-200084.htm)

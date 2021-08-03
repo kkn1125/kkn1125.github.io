@@ -1,7 +1,7 @@
 ---
 layout: post
 date:   2021-08-02 15:32:27 +0900
-title:  "포트폴리오 커피콩"
+title:  "[PORTFOLIO] 커피 온라인 몰"
 author: Kimson
 categories: [ 포트폴리오, portfolio, jsp ]
 tags: [testTag A, testTag B]
@@ -22,6 +22,8 @@ hidden: false
 rating: 4.5
 # beforetoc: "커버이미지"
 toc: true
+profile: false
+istop: true
 ---
 
 

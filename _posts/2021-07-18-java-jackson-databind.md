@@ -10,7 +10,7 @@ description: "사용 dependency
 junit : 4.12
 spring-test : 5.3.6
 jackson-databind : 2.12.3"
-featured: true
+featured: false
 hidden: false
 rating: 5
 toc: true
