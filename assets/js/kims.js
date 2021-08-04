@@ -226,3 +226,50 @@ function toggleBtn(self) {
 //         }
 //     });
 // })
+
+window.addEventListener('load', function(){
+    let langArr = document.querySelectorAll('.article-post [class|="language"]');
+    langArr.forEach(el=>{
+        if(el.getAttribute("class").indexOf("plaintext")==-1){
+            let lang = el.classList[0].split("-")[1].toLowerCase();
+            let color = "";
+            // let br = document.createElement("br");
+            let made = document.createElement("span");
+            let wrap = document.createElement("span");
+            let badge = document.createElement("span");
+            
+            switch(lang){
+                case 'java':
+                    color = "primary"
+                    break;
+                case 'mysql':
+                    color = "dark"
+                    break;
+                case 'html':
+                    color = "danger"
+                    break;
+                case 'css':
+                    color = "info"
+                    break;
+                case 'javascript':
+                    color = "warning"
+                    break;
+            }
+
+            made.innerHTML = `Devkimson`;
+            made.setAttribute("class","d-block badge text-end text-light made")
+            
+            badge.setAttribute("class","lang-badge p-2 text-dark badge badge-"+color);
+            badge.innerHTML = `${lang.charAt(0).toUpperCase()+lang.slice(1)}`;
+            wrap.setAttribute("class","wrap-badge position-absolute d-flex flex-column");
+
+            wrap.setAttribute("data-unselect","true");
+            
+            el.classList.add("position-relative");
+            wrap.appendChild(made);
+            wrap.appendChild(badge);
+            // wrap.appendChild(br);
+            el.prepend(wrap);
+        }
+    });
+});

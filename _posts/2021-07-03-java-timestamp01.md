@@ -11,7 +11,7 @@ description: "MySQL Timestamp타입 웹에서 시간 표기
 featured: false
 hidden: false
 rating: 4
-toc: true
+toc: false
 ---
 
 # MySQL Timestamp타입 웹에서 시간 표기

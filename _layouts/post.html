@@ -49,6 +49,27 @@ post_class: post-template
             {% endif %}
             <!-- End Adsense -->
 
+            <!-- keysum direct if any -->
+            {% if page.keysum %}
+            {% if page.keywords %}
+                <span class="font-weight-bold float-right">
+                    <span class="badge badge-primary">
+                        Keyword List
+                    </span>
+                    <a href="#mainKeywords">
+                        <i class="fas fa-tasks"></i>
+                        <u>
+                            Keywords
+                        </u>
+                    </a>
+                </span>
+            {% endif %}
+            {% else %}
+            <span class="badge badge-secondary float-right">
+                No Keyword List
+            </span>
+            {% endif %}
+
             <!-- Post Featured Image -->
             {% if page.image %}
 
@@ -63,27 +84,6 @@ post_class: post-template
 
             <!-- Post Content -->
             <div class="article-post">
-
-                <!-- keysum direct if any -->
-                {% if page.keysum %}
-                {% if page.keywords %}
-                    <span class="font-weight-bold float-right">
-                        <span class="badge badge-primary">
-                            Keyword List
-                        </span>
-                        <a href="#mainKeywords">
-                            <i class="fas fa-tasks"></i>
-                            <u>
-                                Keywords
-                            </u>
-                        </a>
-                    </span>
-                {% endif %}
-                {% else %}
-                <span class="badge badge-secondary float-right">
-                    No Keyword List
-                </span>
-                {% endif %}
 
                 <!-- Toc if any -->
                 {% if page.toc %}
