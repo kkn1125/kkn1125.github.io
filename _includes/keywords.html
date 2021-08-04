@@ -1,0 +1,16 @@
+{% assign keywords = page.keywords | split:"_" %}
+{% if keywords %}
+<blockquote class="my-5">
+    
+    <div class="text-capitalize" id="mainKeywords">
+        <h3>main keywords</h3>
+    </div>
+    {% for keyword in keywords %}
+    <p>{{keyword}}</p>
+    {% endfor %}
+
+    <footer class="blockquote-footer">
+        kimson
+    </footer>
+</blockquote>
+{% endif %}
