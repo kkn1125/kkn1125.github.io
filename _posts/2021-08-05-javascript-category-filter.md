@@ -3,9 +3,9 @@ layout: post
 date:   2021-08-05 14:46:07 +0900
 title:  "[JAVASCRIPT] 카테고리 필터"
 author: Kimson
-categories: [ TIL, JAVASCRIPT ]
+categories: [ TIM, JAVASCRIPT ]
 tags: [filter, category, absolute]
-image: assets/images/post/covers/TIL-javascript.png
+image: assets/images/post/covers/TIM-none.png
 description: "Category Filter
 
 만들어 보고싶은게 한둘이 아니어서 가끔 몸이 모자라다는 생각도 듭니다.  
