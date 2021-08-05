@@ -3,8 +3,8 @@ layout: post
 date:   2021-08-03 20:32:27 +0900
 title:  "[JAVASCRIPT] 객체와 프로토타입"
 author: Kimson
-categories: [ TIL, object ]
-tags: [javascript, object, property, prototype]
+categories: [ TIL, JAVASCRIPT ]
+tags: [object, property, prototype]
 image: assets/images/post/covers/TIL-javascript.png
 description: " "
 featured: false

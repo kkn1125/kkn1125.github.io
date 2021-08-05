@@ -1,0 +1,50 @@
+I"�<h1 id="category-filter">Category Filter</h1>
+
+<p>만들어 보고싶은게 한둘이 아니어서 가끔 몸이 모자라다는 생각도 듭니다.</p>
+
+<p>오늘 만들어 본 건 카테고리 필터인데요. 우연히 구직 중에 발견한 회사 홈페이지에 있는 카테고리 필터를 보고 만들어 봐야겠다는 생각이 들었습니다.</p>
+<blockquote>
+  <p><a href="https://www.twolinecode.com/">투라인코드</a></p>
+  <footer class="blockquote-footer mb-3">참고한 페이지라 링크를 남깁니다.</footer>
+</blockquote>
+
+<h2 id="방식">방식</h2>
+
+<p>예전에 만들 당시는 data-* 속성을 이용해서 vertical 구조로 만들었습니다.</p>
+
+<hr />
+<p>&lt;div class=”&gt;</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+</pre></td><td class="rouge-code"><pre>&lt;div class="btn-group my-3"&gt;
+    &lt;button class="btn btn-outline-dark"&gt;A type&lt;/button&gt;
+    &lt;button class="btn btn-outline-dark"&gt;B type&lt;/button&gt;
+    &lt;button class="btn btn-outline-dark"&gt;C type&lt;/button&gt;
+&lt;/div&gt;
+&lt;div class="d-flex flex-column"&gt;
+    &lt;span class="alert alert-dark"&gt;Card 1&lt;/span&gt;
+    &lt;span class="alert alert-dark"&gt;Card 2&lt;/span&gt;
+    &lt;span class="alert alert-dark"&gt;Card 3&lt;/span&gt;
+    &lt;span class="alert alert-dark"&gt;Card 4&lt;/span&gt;
+    &lt;span class="alert alert-dark"&gt;Card 5&lt;/span&gt;
+&lt;/div&gt;
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>&lt;/div&gt;</p>
+
+<footer class="blockquote-footer mb-3">작동 안됩니다.</footer>
+
+<hr />
+
+:ET
