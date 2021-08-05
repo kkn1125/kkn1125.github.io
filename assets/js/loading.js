@@ -1,7 +1,6 @@
 'use strict';
 
-
-window.addEventListener('DOMContentLoaded',function(){
+window.addEventListener('DOMContentLoaded',function(event){
     let title = document.querySelectorAll(".load-item");
     let i=0;
     // if(getCookie('user')!=undefined){

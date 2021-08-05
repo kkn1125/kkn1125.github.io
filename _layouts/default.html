@@ -86,7 +86,7 @@ ga('send', 'pageview');
     <div class="container pr-0">
 
     <!-- Begin Logo -->
-    <a class="navbar-brand" href="{{ site.baseurl }}/">
+    <a class="navbar-brand" href="{{ site.baseurl }}/index.html">
     <img src="{{ site.baseurl }}/{{ site.logo }}" alt="{{ site.name }}">Devkimson
     </a>
     <!-- End Logo -->
@@ -167,6 +167,17 @@ ga('send', 'pageview');
             <p class="lead">
                 {{ site.description }}
             </p>
+            {% assign author = site.authors.Kimson %}
+            {% if author.github or author.email %}
+            <div>
+                <a href="mailto:chaplet01@gmail.com" class="badge bg-info" data-toggle="tooltip" data-placement="bottom" title="Mail">
+                    <i class="text-white fas fa-paper-plane fa-2x"></i>
+                </a>
+                <a href="{{author.github}}" class="badge bg-info" data-toggle="tooltip" data-placement="bottom" title="GitHub">
+                    <i class="text-white fab fa-github-alt fa-2x"></i>
+                </a>
+            </div>
+            {% endif %}
         </div>
     </div>
     {% endif %}
