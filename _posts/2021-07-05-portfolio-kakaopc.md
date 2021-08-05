@@ -7,7 +7,7 @@ categories: [ 포트폴리오, portfolio, SPRING ]
 tags: [kakao]
 image: assets/images/post/kakao/kakao-1.png
 description: ""
-featured: true
+featured: false
 hidden: false
 rating: 4.5
 toc: true

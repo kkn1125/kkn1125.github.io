@@ -6,8 +6,14 @@ author: Kimson
 categories: [ TIL, JAVASCRIPT ]
 tags: [filter, category, absolute]
 image: assets/images/post/covers/TIL-javascript.png
-description: ""
-featured: false
+description: "Category Filter
+
+만들어 보고싶은게 한둘이 아니어서 가끔 몸이 모자라다는 생각도 듭니다.  
+
+오늘 만들어 본 건 카테고리 필터인데요. 우연히 구직 중에 발견한 회사 홈페이지에 있는 카테고리 필터를 보고 만들어 봐야겠다는 생각이 들었습니다.
+
+요즘 data-*속성에 익숙해져서 왠만하면 모든 기능 구현을 data-*를 사용하고 있습니다. 그래서 오늘 다룰 내용은 주로 data-*와 위 언급한 회사의 카테고리 필터에 적용된 absolute 방식 조정입니다."
+featured: true
 hidden: false
 rating: 5
 toc: true
@@ -81,6 +87,7 @@ hide클래스 css 설정과 setTimeout만 있으면 간단하게 만들 수 있�
         </div>
         <div id="wrap">
             <!-- 카드가 되는 요소들 -->
+            <!-- 그룹에는 값을 띄어쓰기로 구분하고 all은 공통으로 넣습니다 -->
             <a data-group="all a" href="#1">anchor1</a>
             <a data-group="all b a" href="#2">anchor2</a>
             <a data-group="all a" href="#3">anchor3</a>
@@ -260,5 +267,120 @@ el.addEventListener('click',function(event){
 ```
 
 원리는 정말 간단하다 생각이 됩니다. 클릭값에 해당하는 카드를 보이게 하고 나머지는 가리는 방식이라 코드가 길어보이지만 동일한 부분을 함수처리하면 더 깔끔해질 것 같습니다.
+
+아래의 필터를 테스트 해보세요.
+
+-----
+
+<style>
+#wrap1{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: start;
+    position: relative;
+    height: 500px;
+}
+
+[data-group]{
+    transition: .3s ease;
+    position: absolute;
+    width: 100px;
+    height: 150px;
+    display: block;
+    background-color: lightgray;
+    border: 1px solid gray;
+    border-radius: 15px;
+    margin: 1rem;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.show{
+    transition: .3s ease;
+    opacity: 1;
+}
+
+.hide{
+    transition: .2s ease;
+    opacity: 0;
+}
+</style>
+
+<div class="btn-group d-flex">
+    <button class="btn btn-dark" data-value="all">all</button>
+    <button class="btn btn-dark" data-value="a">a</button>
+    <button class="btn btn-dark" data-value="b">b</button>
+    <button class="btn btn-dark" data-value="c">c</button>
+</div>
+
+<div id="wrap1">
+    <span data-group="all a">Card<br><br>a</span>
+    <span data-group="all b a">Card<br><br>a b</span>
+    <span data-group="all a">Card<br><br>a</span>
+    <span data-group="all a">Card<br><br>a</span>
+    <span data-group="all a b c">Card<br><br>a b c</span>
+    <span data-group="all b">Card<br><br>b</span>
+    <span data-group="all c">Card<br><br>c</span>
+    <span data-group="all c">Card<br><br>c</span>
+    <span data-group="all b">Card<br><br>b</span>
+    <span data-group="all c">Card<br><br> c</span>
+    <span data-group="all a">Card<br><br>a</span>
+    <span data-group="all b">Card<br><br>b</span>
+</div>
+
+<script>
+    'use strict';
+
+let col = 0;
+let row = -1;
+
+let all = document.querySelectorAll('[data-group]');
+
+all.forEach((item, index, list)=>{ // 초기화
+    if(index%4==0) {
+        row++;
+        col=0;
+    }
+    item.style.transform = 
+    `scale3d(1,1,1) translate3d(${col*(110)+15}px, ${row*(160)}px, 0px)`;
+    col++;
+});
+
+let values = document.querySelectorAll("[data-value]");
+
+let rowid = 0;
+let colid = 0;
+values.forEach((el)=>{
+    el.addEventListener('click',function(event){
+        rowid=-1;
+        colid=0;
+        let idx = 0;
+        let val = event.target.dataset.value;
+        
+        all.forEach(el=>{
+            let arr = el.dataset.group.split(' ');
+            for(let a of arr){
+                if(a==val){
+                    el.setAttribute("class","show");
+                    if(idx%4==0){
+                        colid=0;
+                        rowid++;
+                    }
+                    el.style.transform = `scale3d(1,1,1) translate3d(${110*colid + 15}px, ${160*rowid}px,0px)`;
+                    console.log(idx)
+                    colid++;
+                    idx++;
+                    break;
+                } else {
+                    el.setAttribute("class","hide");
+                    el.style.transform = `scale3d(0,0,1) translate3d(0px,0px,-1px)`;
+                }
+            }
+        });
+    });
+});
+</script>
+
+-----
 
 사용된 속성, 함수들은 아래의 키워드 리스트를 참고해주세요.
