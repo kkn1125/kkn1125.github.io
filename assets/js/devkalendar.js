@@ -52,7 +52,7 @@ com.devkimson.calendar = { // 기능들
 		this.SetList();
 		setTimeout(()=>{
 			this.Marker(new Date().getDate());
-		},500);
+		},1000);
 	},
 
 	Timeset: function (__year, __month) { // 기본 시간 설정
