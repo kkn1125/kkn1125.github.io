@@ -13,6 +13,7 @@ mailchimp-list: 'https://wowthemes.us11.list-manage.com/subscribe/post?u=8aeb20a
 include: ["_pages"]
 permalink: /:title/
 top: <a href="#" id="gotop"><i class="fas fa-arrow-alt-circle-up fa-2x"></i></a>
+todo: true
 
 # Authors
 authors:

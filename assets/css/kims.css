@@ -1,5 +1,87 @@
 /* base call */
 
+.table td{
+	padding: 0 !important;
+}
+
+#kal tr td:nth-child(1){
+	color: #dc3545;
+}
+
+#kal tr td:nth-child(7){
+	color: #007bff;
+}
+
+.table tr td{
+	vertical-align: middle;
+}
+
+@media screen and (max-width: 768px){
+}
+
+#current{
+	transition: 1s;
+}
+
+#current:hover::after{
+	display:block;
+	content: "";
+	width: 45px;
+	height: 45px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: scale(1) translate(-50%,-50%);
+	transform-origin: 0% 0%;
+	background-color: rgba(255, 228, 188, 0.7);
+	border-radius: 50%;
+	border: .5px dashed gray;
+	z-index: -1;
+	animation: bounce 3s both ease-in-out infinite;
+}
+
+@keyframes bounce{
+	0%{
+		transform: scale(1) translate(-50%,-50%);
+	}
+	30%{
+		transform: scale(1) translate(-55%,-50%);
+	}
+	40%{
+		transform: scale(1) translate(-50%,-50%);
+	}
+	43%{
+		transform: scale(1) translate(-45%,-50%);
+	}
+	45%{
+		transform: scale(1) translate(-55%,-50%);
+	}
+	47%{
+		transform: scale(1) translate(-45%,-50%);
+	}
+	49%{
+		transform: scale(1) translate(-55%,-50%);
+	}
+	50%{
+		transform: scale(1) translate(-45%,-50%);
+	}
+	53%{
+		transform: scale(1) translate(-55%,-50%);
+	}
+	55%{
+		transform: scale(1) translate(-45%,-50%);
+	}
+	60%{
+		transform: scale(1.05) translate(-55%,-50%);
+	}
+	70%{
+		transform: scale(1) translate(-50%,-50%);
+	}
+	100%{
+		transform: scale(1) translate(-50%,-50%);
+	}
+}
+
 #loadWrap{
 	transition: 1s cubic-bezier(1,0,0,1);
 }

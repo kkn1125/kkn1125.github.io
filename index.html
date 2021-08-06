@@ -5,6 +5,11 @@ title: Home
 
 {% if page.url == "/" %}
 
+<!-- todolist -->
+{% if site.todo %}
+{% include todolist.html %}
+{% endif %}
+
 <!-- Featured
 ================================================== -->
 <section class="featured-posts">

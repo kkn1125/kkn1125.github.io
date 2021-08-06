@@ -1,4 +1,9 @@
-I"<p>{% if page.url == “/” %}</p>
+I"p<p>{% if page.url == “/” %}</p>
+
+<!-- todolist -->
+<p>{% if site.todo %}
+{% include todolist.html %}
+{% endif %}</p>
 
 <!-- Featured
 ================================================== -->
