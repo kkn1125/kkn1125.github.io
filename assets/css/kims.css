@@ -110,8 +110,8 @@
 	background-image: url(/assets/images/logo-k-color.png);
 	background-size: contain;
 	background-repeat: no-repeat;
-	width: 30vw;
-	height: calc(30vw);
+	width: 300px;
+	height: calc(300px);
 	position: absolute;
 	top: 0%;
 }
@@ -120,8 +120,8 @@
 	background-image: url(/assets/images/logo-k-mono.png);
 	background-size: contain;
 	background-repeat: no-repeat;
-	width: 30vw;
-	height: calc(30vw);
+	width: 300px;
+	height: calc(300px);
 	position: fixed;
 	top: 50%;
 	left: 50%;
@@ -169,7 +169,7 @@
 	}
 	100%{
 		opacity: 1;
-		transform: translate(-50%, -250%);
+		transform: translate(-50%, -300%);
 		z-index:1099;
 	}
 }
