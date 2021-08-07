@@ -1,5 +1,9 @@
 /* base call */
 
+body{
+	overflow: hidden;
+}
+
 .table td{
 	padding: 0 !important;
 }
@@ -211,7 +215,7 @@
 .wrap-badge{
 	top: 0;
 	right: 0;
-	transform: translate(50%,-70%);
+	transform: translate(20%,-70%);
 }
 
 .lang-badge{
@@ -221,8 +225,8 @@
 
 #gotop i::before{
 	position: fixed;
-	bottom: 5%;
-	right: 2%;
+	bottom: 6%;
+	right: 8%;
 	z-index: 1000;
 	background-color: rgba(255,255,255,.7);
 	border-radius: 50%;
