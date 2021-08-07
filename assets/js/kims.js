@@ -254,6 +254,9 @@ window.addEventListener('load', function(){
                 case 'javascript':
                     color = "warning"
                     break;
+                case 'json':
+                    color = "light"
+                    break;
             }
 
             made.innerHTML = `Devkimson`;

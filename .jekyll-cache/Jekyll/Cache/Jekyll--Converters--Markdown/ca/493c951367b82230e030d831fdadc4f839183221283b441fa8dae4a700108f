@@ -1,0 +1,30 @@
+I"/<h1 id="xml-없는-프로젝트">xml 없는 프로젝트</h1>
+
+<p>꽤 오랫동안 묵혀뒀던 주제였습니다. Spring 책을 보면서 최근 web.xml(context-*.xml 등) 파일 없이 자바화 한다는 추세라는 문구를 보고 무작정 따라했던 기억이 납니다.<br />
+그 영향에 현재도 xml파일 없이 구현 중에 있습니다.</p>
+
+<p>이러한 레퍼런스가 오랜시간 쌓인게 아니기때문에 오류와 직면할때마다 외국 모사이트에 비슷한 의논을 찾아 영어 번역에만 두시간 쏟기도 합니다.</p>
+
+<p>그래서 저와 같은 초보의 입장에서 비슷한 문제로 고민하고 있는 분들께 알리고, 제 나름의 기록을 해놓고자 합니다.</p>
+
+<h2 id="error-page-처리">Error Page 처리</h2>
+
+<blockquote>
+  <p><strong>작업 환경</strong></p>
+  <ul>
+    <li>spring legacy project</li>
+    <li>springframework 5.3.6</li>
+    <li>jackson data bind</li>
+    <li>junit</li>
+    <li>spring test</li>
+    <li>tiles</li>
+    <li>tomcat 9.0.43</li>
+  </ul>
+</blockquote>
+
+<p>외국 사이트에서 찾은 내용을 토대로 처리하는 방법을 알려드리겠습니다.</p>
+
+<p>아래는 현재 테스트용 프로젝트의 파일구조입니다.</p>
+
+<p><img src="/assets/images/post/exception/exception01.png" alt="작업환경" /></p>
+:ET

@@ -1,0 +1,132 @@
+I"�<h1 id="xml-없는-프로젝트">xml 없는 프로젝트</h1>
+
+<p>꽤 오랫동안 묵혀뒀던 주제였습니다. Spring 책을 보면서 최근 web.xml(context-*.xml 등) 파일 없이 자바화 한다는 추세라는 문구를 보고 무작정 따라했던 기억이 납니다.<br />
+그 영향에 현재도 xml파일 없이 구현 중에 있습니다.</p>
+
+<p>이러한 레퍼런스가 오랜시간 쌓인게 아니기때문에 오류와 직면할때마다 외국 모사이트에 비슷한 의논을 찾아 영어 번역에만 두시간 쏟기도 합니다.</p>
+
+<p>그래서 저와 같은 초보의 입장에서 비슷한 문제로 고민하고 있는 분들께 알리고, 제 나름의 기록을 해놓고자 합니다.</p>
+
+<h2 id="error-page-처리">Error Page 처리</h2>
+
+<blockquote>
+  <p><strong>작업 환경</strong></p>
+  <ul>
+    <li>spring legacy project</li>
+    <li>springframework 5.3.6</li>
+    <li>jackson data bind</li>
+    <li>junit</li>
+    <li>spring test</li>
+    <li>tiles</li>
+    <li>tomcat 9.0.43</li>
+  </ul>
+</blockquote>
+
+<p>외국 사이트에서 찾은 내용을 토대로 처리하는 방법을 알려드리겠습니다.</p>
+
+<p>아래는 현재 테스트용 프로젝트의 파일구조입니다.</p>
+
+<p><img src="/assets/images/post/exception/exception01.png" alt="작업환경" /></p>
+
+<p>exception 처리 하기위해 test폴더에 파일을 두개 만듭니다.</p>
+
+<ol>
+  <li>errorPage(에러페이지 이동 링크가 있는 페이지)</li>
+  <li>404 … 처리로 뜨는 페이지</li>
+</ol>
+
+<p>물론 web.xml과 context-*.xml은 txt형식으로 바꿔 백업을 해 두고 위 그림의 webconfig.java가 web.xml을 대신하고 있습니다.<br />
+이 방식을 꾸준히 쓰다보니 이게 더 익숙해졌습니다.</p>
+
+<h3 id="exception-페이지-처리">Exception 페이지 처리</h3>
+
+<p>아무런 처리를 하지 않으면 흔히 보는 친절?하게 에러를 표시하는 페이지가 나옵니다.</p>
+
+<p><img src="/assets/images/post/exception/exception02.png" alt="친절한 에러페이지" /></p>
+
+<p>웹페이지 보안상 너무 친절하게 정보를 알려주면 위험하니 얼른 바꾸어 봅시다.</p>
+
+<p>우선 에러 코드가 담기는 Json파일을 만들겠습니다.
+에러코드와 문구를 미리 만들어 놓고 ExceptionError라는 vo를 만들어 관리하겠습니다.</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+</pre></td><td class="rouge-code"><pre><span class="p">{</span><span class="w">	
+	</span><span class="nl">"403"</span><span class="p">:{</span><span class="w">
+		</span><span class="nl">"code"</span><span class="p">:</span><span class="s2">"Forbidden"</span><span class="p">,</span><span class="w">
+		</span><span class="nl">"reason"</span><span class="p">:</span><span class="s2">"잘못된 접근입니다.&lt;a href='/' class='btn btn-info'&gt;메인으로&lt;/a&gt;"</span><span class="p">,</span><span class="w">
+		</span><span class="nl">"message"</span><span class="p">:</span><span class="s2">"페이지를 찾을 수 없습니다."</span><span class="w">
+	</span><span class="p">},</span><span class="w">
+	</span><span class="nl">"404"</span><span class="p">:{</span><span class="w">
+		</span><span class="nl">"code"</span><span class="p">:</span><span class="s2">"Not Found"</span><span class="p">,</span><span class="w">
+		</span><span class="nl">"reason"</span><span class="p">:</span><span class="s2">"페이지를 찾을 수 없습니다.&lt;a href='/' class='btn btn-info'&gt;메인으로&lt;/a&gt;"</span><span class="p">,</span><span class="w">
+		</span><span class="nl">"message"</span><span class="p">:</span><span class="s2">"페이지를 찾을 수 없습니다."</span><span class="w">
+	</span><span class="p">},</span><span class="w">
+	</span><span class="nl">"500"</span><span class="p">:{</span><span class="w">
+		</span><span class="nl">"code"</span><span class="p">:</span><span class="s2">"Internal Server"</span><span class="p">,</span><span class="w">
+		</span><span class="nl">"reason"</span><span class="p">:</span><span class="s2">"페이지를 처리하는데 오류가 발생했습니다. 오류가 지속된다면 관리자에게 문의해주세요."</span><span class="p">,</span><span class="w">
+		</span><span class="nl">"message"</span><span class="p">:</span><span class="s2">""</span><span class="w">
+	</span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>간단하게 주로 발생하는 3가지 코드를 적어두었습니다.<br />
+이제 json을 나중에 불러와 파싱하고 객체에 담아 전송할 준비가 끝났습니다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+</pre></td><td class="rouge-code"><pre><span class="nd">@EnableWebMvc</span>
+<span class="nd">@Configuration</span>
+<span class="nd">@ComponentScan</span><span class="o">(</span><span class="n">basePackages</span> <span class="o">=</span> <span class="o">{</span><span class="s">"com.practicePrj.web"</span><span class="o">})</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">WebConfig</span> <span class="kd">extends</span> <span class="nc">AbstractAnnotationConfigDispatcherServletInitializer</span>
+<span class="o">{</span>
+
+    <span class="c1">// RootConfig.class ... </span>
+    <span class="c1">// ServletConfig.class ...</span>
+
+    <span class="nd">@Override</span> <span class="c1">// 에러 처리를 위해 필요한 디스패처 생성</span>
+    <span class="kd">protected</span> <span class="nc">DispatcherServlet</span> <span class="nf">createDispatcherServlet</span><span class="o">(</span><span class="nc">WebApplicationContext</span> <span class="n">servletAppContext</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kd">final</span> <span class="nc">DispatcherServlet</span> <span class="n">dispatcherServlet</span> <span class="o">=</span> <span class="o">(</span><span class="nc">DispatcherServlet</span><span class="o">)</span> <span class="kd">super</span><span class="o">.</span><span class="na">createDispatcherServlet</span><span class="o">(</span><span class="n">servletAppContext</span><span class="o">);</span>
+        <span class="n">dispatcherServlet</span><span class="o">.</span><span class="na">setThrowExceptionIfNoHandlerFound</span><span class="o">(</span><span class="kc">true</span><span class="o">);</span>
+        <span class="k">return</span> <span class="n">dispatcherServlet</span><span class="o">;</span>
+    <span class="o">}</span>
+
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>에러 페이지 처리할 준비가 되었습니다. 이제 ControllerAdvisor 어노테이션으로 공통 익셉션 처리를 구현하고 ExceptionHandler를 사용해서 각 에러코드별로 다른 내용을 출력하도록 합시다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>
+</pre></td></tr></tbody></table></code></pre></div></div>
+:ET
