@@ -4,7 +4,7 @@ date:   2021-07-05 13:17:27 +0900
 title:  "[PORTFOLIO] KAKAO PC버전"
 author: Kimson
 categories: [ 포트폴리오, portfolio, SPRING ]
-tags: [kakao]
+tags: [kakao, spring]
 image: assets/images/post/kakao/kakao-1.png
 description: ""
 featured: false

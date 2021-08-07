@@ -79,7 +79,7 @@ com.devkimson.calendar = { // 기능들
 			tbody[0].remove();
 			tfoot[0].remove();
 		}
-		var marker = document.getElementById("current");
+		var marker = document.getElementById("current1");
 		if (marker != undefined) {
 			marker.remove();
 			click = 0;
@@ -112,7 +112,7 @@ com.devkimson.calendar = { // 기능들
 			now.$$year = parseInt(event.target.value);
 			this.Calendar(now.$$year, now.$$month);
 		});
-		select.style.width = "200px";
+		select.style.width = "50%";
 		for (var i = 1999; i < 2199; i++) {
 			var option = document.createElement("option");
 			node = document.createTextNode(i);
@@ -130,7 +130,7 @@ com.devkimson.calendar = { // 기능들
 			now.$$month = parseInt(event.target.value);
 			this.Calendar(now.$$year, now.$$month);
 		});
-		select.style.width = "100px";
+		select.style.width = "50%";
 		for (var i = 0; i < 12; i++) {
 			var option = document.createElement("option");
 			node = document.createTextNode(i + 1);
@@ -140,6 +140,7 @@ com.devkimson.calendar = { // 기능들
 			select.appendChild(option);
 		}
 		span2.appendChild(select)
+		span2.style.width = "100%";
 		// span2 attr
 		span2.setAttribute("class", "d-flex justify-content-center");
 		span.appendChild(span2);
@@ -358,12 +359,12 @@ com.devkimson.calendar = { // 기능들
 			var mark = document.createElement("span");
 			var node = document.createTextNode("");
 			mark.appendChild(node);
-			mark.setAttribute("id", "current");
+			mark.setAttribute("id", "current1");
 			mark.setAttribute("class", "position-absolute");
 			document.body.appendChild(mark);
 			click += 1;
 		}
-		var cur = document.getElementById("current");
+		var cur = document.getElementById("current1");
 
 		this.GetList(now.$$year, now.$$month, $marker);
 		
@@ -398,9 +399,13 @@ com.devkimson.calendar = { // 기능들
 
 			height: $height + "px",
 
-			top: "calc(" + $top + "px + 1rem)",
+			top: "calc(" + ($top) + "px)",
 
-			left: "calc(" + ($left) + "px + .5rem)"
+			left: "calc(" + ($left
+				+($etting.marker.width!=null
+					?$width/2-parseInt($etting.marker.width.slice(0,-2))/2
+					:0)) 
+				+ "px)"
 		};
 
 		cur.style.transition = _mset.transition; // settable

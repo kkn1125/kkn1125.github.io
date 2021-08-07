@@ -1,7 +1,7 @@
 ---
 layout: post
 date:   2021-08-06 16:22:36 +0900
-title:  "[JAVASCRIPT] 공공데이터로 페이지 처리하기"
+title:  "[JAVASCRIPT] 공공데이터로 페이징 처리하기"
 author: Kimson
 categories: [ TIL, JAVASCRIPT ]
 tags: [공공데이터, pagination, json]

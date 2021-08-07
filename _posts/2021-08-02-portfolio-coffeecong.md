@@ -3,8 +3,8 @@ layout: post
 date:   2021-08-02 15:32:27 +0900
 title:  "[PORTFOLIO] 커피 온라인 몰"
 author: Kimson
-categories: [ 포트폴리오, portfolio, JSP ]
-tags: [coffeecong, 학원]
+categories: [ 포트폴리오, portfolio ]
+tags: [coffeecong, 학원, jsp]
 image: assets/images/post/coffeecong/prj-1.png
 description: "주제 - 커피용품 온라인몰
 ### 1. 사이트 구성

@@ -138,7 +138,7 @@ Obj.test = {
 <script src="{{site.baseurl}}/assets/lib/devkalendar.js"></script>
 
 <div>
-    <table id="kal" class="table"></table>
+    <table id="kal" class="table text-center table-hover"></table>
 </div>
 
 <script>
@@ -147,9 +147,9 @@ const kal = com.devkimson.calendar.create(document.getElementById('kal')||'kal',
 			color: "green", // color name or color code
 			// thick: "6px", // num
 			// style: "dashed", // value
-			speed: ".3s", // value
-			// bezier: "ease", // value
-			// width: "15px" // num
+			speed: ".5s", // value
+			// bezier: "none", // value
+			width: "35px" // num
 		},
 		table:{ // 테이블 속성
 			// bgColor: "table-info",
@@ -179,7 +179,7 @@ const kal = com.devkimson.calendar.create(document.getElementById('kal')||'kal',
 
 >Kalendar.js 1.1.0ver 
 
-<a href="{{site.baseurl}}/assets/download/devkalendarTODO.zip" download>devKalendarTODO 1.0.0 ver 다운로드</a>
+<a href="{{site.baseurl}}/assets/download/devkalendarTODO.zip" download>devKalendarTODO 1.1.0 ver 다운로드</a>
 
 
 이전 달력만들기에 초기 세팅값에 대해 자세히 적혀있습니다.

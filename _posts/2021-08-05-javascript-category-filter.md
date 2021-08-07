@@ -333,18 +333,38 @@ el.addEventListener('click',function(event){
 
 let col = 0;
 let row = -1;
-
+let ww = document.querySelector('#wrap1').clientWidth-16;
+let count11 = Math.floor((ww)/116);
+let middle = (ww-(116*count11))/2;
 let all = document.querySelectorAll('[data-group]');
+document.querySelector('#wrap1').style.transition = ".2s ease";
 
-all.forEach((item, index, list)=>{ // 초기화
-    if(index%4==0) {
-        row++;
-        col=0;
-    }
-    item.style.transform = 
-    `scale3d(1,1,1) translate3d(${col*(110)+15}px, ${row*(160)}px, 0px)`;
-    col++;
-});
+window.addEventListener('resize',function(){
+    ww = document.querySelector('#wrap1').clientWidth-16;
+	count11 = Math.floor(ww/116);
+	middle = (ww-(116*count11))/2;
+	row = -1;
+	col = 0;
+    
+    initCard();
+},true);
+
+function initCard(){
+    all.forEach((item, index, list)=>{ // 초기화
+        if(index%count11==0) {
+            row++;
+            col=0;
+        }
+        let xw = item.clientWidth+2;
+        let xh = item.clientHeight+2;
+        item.style.transform = 
+        `scale3d(1,1,1) translate3d(${middle+(col*(100+16))}px, ${row*(160)}px, 0px)`;
+        col++;
+    });
+    document.querySelector('#wrap1').style.height = `${(row+1)*160}px`;
+}
+
+initCard();
 
 let values = document.querySelectorAll("[data-value]");
 
@@ -362,14 +382,14 @@ values.forEach((el)=>{
             for(let a of arr){
                 if(a==val){
                     el.setAttribute("class","show");
-                    if(idx%4==0){
+                    if(idx%count11==0){
                         colid=0;
                         rowid++;
                     }
-                    el.style.transform = `scale3d(1,1,1) translate3d(${110*colid + 15}px, ${160*rowid}px,0px)`;
-                    console.log(idx)
+                    el.style.transform = `scale3d(1,1,1) translate3d(${middle+(colid*(100+16))}px, ${rowid*(160)}px,0px)`;
                     colid++;
                     idx++;
+                    document.querySelector('#wrap1').style.height = `${(rowid+1)*160}px`;
                     break;
                 } else {
                     el.setAttribute("class","hide");
