@@ -4,15 +4,19 @@
             "month": {
                 "7": {
                     "date": {
+                        "10":
+                        [
+                            {
+                                "todo":"JSDoc으로 문서화 알아보기",
+                                "time":"2021-8-7 18:05"
+                            }
+                        ],
                         "9":
                         [
                             {
                                 "todo": "TODO List 태그 추가",
                                 "time": "2021-8-6 20:31"
-                            }
-                        ],
-                        "8": 
-                        [
+                            },
                             {
                                 "todo": "Spring Boot 시작!",
                                 "time": "2021-8-6 20:31"
@@ -20,27 +24,38 @@
                             {
                                 "todo": "Spring Security 시작!",
                                 "time": "2021-8-6 20:31"
-                            },
+                            }
+                        ],
+                        "8": 
+                        [
                             {
                                 "todo": "<img width='30px' src='/assets/images/icon/batis02.png' alt='batis'>MyBatis 기초 익히기",
+                                "time": "2021-8-6 20:31"
+                            },
+                            {
+                                "todo": "계층형 게시판",
+                                "time": "2021-8-6 20:31"
+                            },
+                            {
+                                "todo": "JS Map 공부",
                                 "time": "2021-8-6 20:31"
                             }
                         ],
                         "7": 
                         [
                             {
-                                "todo": "Array 공부",
+                                "todo": "<del>Exception 처리</del>",
                                 "time": "2021-8-6 20:31"
                             },
                             {
-                                "todo": "계층형 게시판",
+                                "todo": "JS Array 공부",
                                 "time": "2021-8-6 20:31"
                             }
                         ],
                         "6": 
                         [
                             {
-                                "todo": "공공데이터 포스팅",
+                                "todo": "<del>공공데이터 포스팅</del>",
                                 "time": "2021-8-6 19:56"
                             }
                         ]
