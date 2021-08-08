@@ -1,0 +1,108 @@
+I"x<h1 id="깔끔한-코드는-무엇일까">깔끔한 코드는 무엇일까</h1>
+
+<p>설계사무소에 다닐 때 자주 하던 말이 있었다.</p>
+
+<blockquote>
+  <p>도면에서 빛이 나네</p>
+</blockquote>
+
+<p>파일관리, 선 정리, 정치수로 자리 잡은 텍스트들, 누가봐도 알아보는 레이어정리 등이 ‘빛나는 도면’의 조건인 셈이다.</p>
+
+<p>깔끔한 코드는 무엇일까. 아직 실무를 경험하지도 못했지만 감히 얕은 지식으로 방법론은 정리해보고자 한다.</p>
+
+<h2 id="왜-주석을-달고-있을까">왜 주석을 달고 있을까</h2>
+
+<p>처음 프로그래밍을 배울 때 아주 고마운 분인 생활코딩의 이고잉님 강의를 접하고 자바스크립트를 먼저 배웠다.
+강의 형태가 이론과 실습이 주 였지만 강조하는 말은 검색을 해보고, 도큐먼트를 읽는 것에 익숙해야 한다는 것이었다.</p>
+
+<p>무작정 따라하던 나는 처음에 계산기부터 시작해서 달력을 만들었다. 지금 보면 코드들은 엉망이었다. (물론 현재도)</p>
+
+<p>하지만 지난 날을 돌이켜보면 현재에서야 그나마 많이 다듬어졌다고 생각이 들어 현재의 관점에서 간단한 규칙을 알아보고 정리하고자 한다.</p>
+
+<h2 id="과거의-코드">과거의 코드</h2>
+
+<p>기능을 구현하는데에만 초점을 두다보니 어떤 변수가 필요하고 어떻게 실행되야하는지 감이 없었다.<br />
+처음 만들었던 계산기는 이랬다.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+</pre></td><td class="rouge-code"><pre>...
+
+<span class="nt">&lt;table&gt;</span>
+	<span class="nt">&lt;tr&gt;</span>
+		<span class="nt">&lt;td</span> <span class="na">onclick=</span><span class="s">"input(7)"</span><span class="nt">&gt;</span>7<span class="nt">&lt;/td&gt;</span>
+		...
+	<span class="nt">&lt;/tr&gt;</span>
+	<span class="nt">&lt;tr&gt;</span>
+		<span class="nt">&lt;td</span> <span class="na">onclick=</span><span class="s">"result()"</span><span class="nt">&gt;</span>=<span class="nt">&lt;/td&gt;</span>
+		...
+	<span class="nt">&lt;/tr&gt;</span>
+<span class="nt">&lt;/table&gt;</span>
+
+...
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="rouge-code"><pre><span class="kd">let</span> <span class="nx">target</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">#target</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="kd">function</span> <span class="nx">input</span><span class="p">(</span><span class="nx">a</span><span class="p">){</span>
+	<span class="nx">target</span><span class="p">.</span><span class="nx">value</span> <span class="o">+=</span> <span class="nx">a</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">result</span><span class="p">(){</span>
+	<span class="nx">target</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="nb">eval</span><span class="p">(</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>자료가 남아있지는 않지만 이렇게 태그 하나하나에 onclick을 만들었던 생각이 난다. 최악의 경우는 버튼마다 함수가 달랐던 것 같기도 하다.</p>
+
+<p>현재도 기능을 구현하다보면 즉흥적으로 만들어내는 변수들이 생긴다. 혹은 빠진 기능이나 추가되면 좋겠다는 기능이 있으면 이미 구현한 코드를 수정하거나 변수하나를 바꾸면 모두를 바꾸는 일이 종종 발생했다.</p>
+
+<h1 id="나에게-깔끔한-코드는-무엇일까">나에게 깔끔한 코드는 무엇일까</h1>
+
+<p>밥을 먹거나 운동을 하거나 공부를 하다가 문득 생각나는 기능을 구현하고 싶을때가 많다. 사이트를 이리저리 돌아다니며 ‘도대체 이건 어떻게 구현한거지?’라는 의문을 품을 때도 있다.</p>
+
+<p>그래서 많은 시도를 하다보면 자연스럽게 느끼는 것이 바로 내가 짠 코드가 더러워 보인다는 것이다.</p>
+
+<p>최근 달력만들기라는 주제로 글을 두 번 쓴 적이있는데, 가끔 코드를 보면 어느 변수가 어디로 가고 이 함수가 무슨기능이고, 옵션을 어디에 설정하고 받는지 나 자신이 모를 때가 있다.</p>
+
+<p>내가 생각하는 깔끔한 코드의 형태를 정리하고자 한다.</p>
+
+<h2 id="가독성">가독성</h2>
+
+<p>먼저 코드를 구현할 때 잘 읽히는 것이 좋다고 생각한다. 많은 글들이 공통적으로 주석이나 설명없이 이해가능한 코드가 좋다고 한다.</p>
+
+<p>하지만 영알못인 나에게는 코드가 영어기때문에 힘들다. 그래서 나는 변수명이나 함수명을 굉장히 간략하게 짓는다.</p>
+
+<p>글의 주제를 설명하기 위해 간단한 기능을 가진 객체를 구현하며 내가 정한 코딩규칙을 말하고자 한다.</p>
+
+<p>먼저 이 객체의 주 기능은 데이터를 받아서 타겟이 되는 곳에 데이터를 줄바꿈하여 뿌려주는 것이다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nx">Template</span><span class="p">(</span><span class="nx">target</span><span class="p">,</span> <span class="nx">type</span><span class="p">){</span>
+
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+:ET

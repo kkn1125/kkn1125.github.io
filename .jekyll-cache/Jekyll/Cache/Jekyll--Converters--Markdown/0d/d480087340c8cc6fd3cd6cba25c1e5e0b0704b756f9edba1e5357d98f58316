@@ -1,0 +1,114 @@
+I"�<h1 id="깔끔한-코드는-무엇일까">깔끔한 코드는 무엇일까</h1>
+
+<p>설계사무소에 다닐 때 자주 하던 말이 있었습니다. 도면을 정말 군더더기 없이 잘 그렸을 때 도면에서 빛이 난다고 자주 표현합니다.</p>
+
+<p>파일관리, 선 정리, 정치수로 자리 잡은 텍스트들, 누가봐도 알아보는 레이어정리 등이 ‘빛나는 도면’의 조건인 셈입니다.</p>
+
+<p>그러면 프로그래밍에서 깔끔한 코드는 무엇일까요? 아직 실무를 경험하지도 못했지만 감히 얕은 지식으로 방법론을 알아보고자 합니다.</p>
+
+<h2 id="왜-주석을-달고-있을까">왜 주석을 달고 있을까</h2>
+
+<p>유명한 생활코딩의 이고잉님 강좌로 프로그래밍을 시작했습니다. 적절한 이론과 실습, 무엇보다도 스스로 찾아서 해결해야한다는 강조를 아직까지 잊지 않고 있습니다.</p>
+
+<p>그때는 아무것도 모르는 시기였기에 기능 구현에만 오로지 몰두하던 시기였습니다. 그러면서 주석을 많이 달게 되었습니다. 제가 쓴 코드에 이해한 내용을 정리하던 식이었습니다.</p>
+
+<p>주석은 명확히 기능이나 내용을 알리고자 요약하는 것인데 아이러니하게도 주석이 있는 코드는 그만큼 설명하지 않으면 이해하기 어렵다는 뜻으로 반증됩니다.</p>
+
+<p>그렇다고해서 극단적으로 주석에 연연하여 안 넣겠다 하면 오히려 주석을 달지 않는 방법을 생각하는 시간이 길어질 것 같아 주석을 최소한으로 해야겠다는 규칙을 따르고 있습니다.</p>
+
+<p>그래서이지 현재와 과거의 실수로부터 코딩하는 규칙을 하나씩 정하고 있습니다.</p>
+
+<h2 id="과거의-코드">과거의 코드</h2>
+
+<p>기능을 구현하는데에만 초점을 두다보니 어떤 변수가 몇 개 있어야하고, 어떤 함수가 있어야하면 무엇을 리턴하는지 안중에 없었습니다.</p>
+
+<p>단지 기능이 작동되는지, 코딩 중에 변수가 바뀌면 해당 값을 모두 바꾸는 중노동을 하기도 했습니다. 마치 for문을 만번 돌려야하는데 수동으로 만번을 치는 느낌이었습니다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+</pre></td><td class="rouge-code"><pre><span class="kd">let</span> <span class="nx">target</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">#target</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="kd">function</span> <span class="nx">input</span><span class="p">(</span><span class="nx">a</span><span class="p">){</span>
+	<span class="nx">target</span><span class="p">.</span><span class="nx">value</span> <span class="o">+=</span> <span class="nx">a</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">result</span><span class="p">(){</span>
+	<span class="nx">target</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="nb">eval</span><span class="p">(</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">let</span> <span class="nx">btn</span> <span class="p">...</span>
+<span class="c1">// ...</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>위의 코드는 예전에 계산기를 만들때 썼던 코드 일부입니다.</p>
+
+<p>현재도 그렇지만 이전 코드를 보면 굉장히 많은 중복된 코드와 알수없는 네이밍들이 많았습니다. 즉흥적으로 변수를 만들어 쓰고, 위치 또한 정리가 되어있지 않아 나중에는 제가봐도 모를 지경인 코드가 많았습니다.</p>
+
+<h1 id="나에게-깔끔한-코드는-무엇일까">나에게 깔끔한 코드는 무엇일까</h1>
+
+<p>누군가 옆에서 잔소리하며 알려주는 사람이 없다보니 여러 사이트에 있는 재미있는 기능을 따라하는 경우가 많습니다. 주소 api를 사용한다거나, 공공데이터로 페이지처리를 해보고, 사이트 js파일을 받아 코드를 분석하는 등의 방식으로 공부합니다.</p>
+
+<p>그렇게 공부하다보니 몇가지 저만의 규칙이 생겼습니다.</p>
+
+<ul>
+  <li>보기쉽게</li>
+  <li>조립가능하게</li>
+  <li>반환하는</li>
+</ul>
+
+<p>제가 취하고 있는 규칙에 대해 알아 보겠습니다.</p>
+
+<h2 id="보기쉽게">보기쉽게</h2>
+
+<p>‘코딩 팁’으로만 검색해도 수십에서 수백가지의 글이 나옵니다. 그 중에 자주 나오는 말이 가독성입니다. 그에 따라 나오는 것이 주석에 대한 이야기이고, 설명하기 위한 것이 주석인데 주석이 있으면 그만큼 설명이 필요한 복잡한 코드라는 반증이 되어버립니다.</p>
+
+<p>하지만 코드가 복잡하지 않다고해서 주석을 배제하는 것도 아이러니한 상황이 될 것 같습니다.</p>
+
+<p>주석을 없앤다는 말이 아닌 최소한으로 한다는 이야기가 아닌가 생각해봅니다.</p>
+
+<p>예를 들면서 규칙을 정리하겠습니다.</p>
+
+<h4 id="templateid-options"><strong>Template</strong>(id, {options})</h4>
+
+<ul>
+  <li><strong>id</strong> : 아이디</li>
+  <li><strong>options</strong> : 옵션(Map)</li>
+  <li><strong><em>addContents</em></strong>(…content) : 내용 추가 : <code class="language-plaintext highlighter-rouge">void</code></li>
+  <li><strong><em>getContents</em></strong>() : 내용 읽기 : <code class="language-plaintext highlighter-rouge">Array</code></li>
+  <li><strong><em>getCount</em></strong>() : 템플릿 개수 : <code class="language-plaintext highlighter-rouge">int</code></li>
+  <li><strong><em>remove</em></strong>(content) : 템플릿 삭제 : <code class="language-plaintext highlighter-rouge">int</code></li>
+  <li><strong><em>whereIs</em></strong>(content) : 템플릿 순번 확인 : <code class="language-plaintext highlighter-rouge">int</code></li>
+  <li><strong><em>valid</em></strong>(tagId) : 검증 : <code class="language-plaintext highlighter-rouge">boolean</code></li>
+  <li><strong><em>isContain</em></strong>(content) : 내용 포함 여부 : <code class="language-plaintext highlighter-rouge">boolean</code></li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nx">Template</span><span class="p">(</span><span class="nx">target</span><span class="p">,</span> <span class="nx">type</span><span class="p">){</span>
+	<span class="k">this</span><span class="p">.</span><span class="nx">valid</span><span class="p">(</span><span class="nx">tagId</span><span class="p">){</span>
+		<span class="k">return</span> <span class="p">;</span>
+	<span class="p">}</span>
+	<span class="k">this</span><span class="p">.</span><span class="nx">addContents</span><span class="p">(...</span><span class="nx">content</span><span class="p">){</span>
+
+	<span class="p">}</span>
+	<span class="k">this</span><span class="p">.</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+:ET

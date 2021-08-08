@@ -1,0 +1,133 @@
+I"�<h1 id="깔끔한-코드는-무엇일까">깔끔한 코드는 무엇일까</h1>
+
+<p>설계사무소에 다닐 때 자주 하던 말이 있었다.</p>
+
+<blockquote>
+  <p>도면에서 빛이 나네</p>
+</blockquote>
+
+<p>파일관리, 선 정리, 정치수로 자리 잡은 텍스트들, 누가봐도 알아보는 레이어정리 등이 ‘빛나는 도면’의 조건인 셈이다.</p>
+
+<p>깔끔한 코드는 무엇일까. 아직 실무를 경험하지도 못했지만 감히 얕은 지식으로 방법론은 정리해보고자 한다.</p>
+
+<h2 id="왜-주석을-달고-있을까">왜 주석을 달고 있을까</h2>
+
+<p>처음 프로그래밍을 배울 때 아주 고마운 분인 생활코딩의 이고잉님 강의를 접하고 자바스크립트를 먼저 배웠다.
+강의 형태가 이론과 실습이 주 였지만 강조하는 말은 검색을 해보고, 도큐먼트를 읽는 것에 익숙해야 한다는 것이었다.</p>
+
+<p>무작정 따라하던 나는 처음에 계산기부터 시작해서 달력을 만들었다. 지금 보면 코드들은 엉망이었다. (물론 현재도)</p>
+
+<p>하지만 지난 날을 돌이켜보면 현재에서야 그나마 많이 다듬어졌다고 생각이 들어 현재의 관점에서 간단한 규칙을 알아보고 정리하고자 한다.</p>
+
+<h2 id="과거의-코드">과거의 코드</h2>
+
+<p>초기에 막 프로그래밍이란 것을 접했을 때 나는 이랬다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre></td><td class="rouge-code"><pre><span class="c1">// 아 이것은 박스구나</span>
+<span class="kd">var</span> <span class="nx">test</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">hello</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="c1">// 아 이것은 함수구나</span>
+<span class="kd">function</span> <span class="nx">foo</span><span class="p">(){</span>
+	<span class="k">if</span><span class="p">(</span><span class="nx">test</span> <span class="o">==</span> <span class="dl">'</span><span class="s1">hello</span><span class="dl">'</span><span class="p">)</span>
+	<span class="k">return</span> <span class="dl">'</span><span class="s1">ok</span><span class="dl">'</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">foo</span><span class="p">());</span> <span class="c1">// ok</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>단순히 무엇을 쓰면 어떻게 실행되는지 보게 되었고, 단순한 기능의 집합을 만들때는 코드들이 뒤엉키기 시작했다.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+</pre></td><td class="rouge-code"><pre><span class="c">&lt;!--
+	head ...
+--&gt;</span>
+
+	<span class="nt">&lt;table&gt;</span>
+		<span class="nt">&lt;tr&gt;&lt;input</span> <span class="nt">&gt;&lt;/tr&gt;</span>
+		<span class="nt">&lt;tr&gt;</span>
+			<span class="nt">&lt;td&gt;</span>7<span class="nt">&lt;/td&gt;</span>
+			<span class="nt">&lt;td&gt;</span>8<span class="nt">&lt;/td&gt;</span>
+			<span class="nt">&lt;td&gt;</span>9<span class="nt">&lt;/td&gt;</span>
+			<span class="nt">&lt;td&gt;</span>*<span class="nt">&lt;/td&gt;</span>
+		<span class="nt">&lt;/tr&gt;</span>
+		<span class="nt">&lt;tr&gt;</span>
+			<span class="nt">&lt;td&gt;</span>4<span class="nt">&lt;/td&gt;</span>
+			<span class="nt">&lt;td&gt;</span>5<span class="nt">&lt;/td&gt;</span>
+			<span class="nt">&lt;td&gt;</span>6<span class="nt">&lt;/td&gt;</span>
+			<span class="nt">&lt;td&gt;</span>-<span class="nt">&lt;/td&gt;</span>
+		<span class="nt">&lt;/tr&gt;</span>
+		<span class="nt">&lt;tr&gt;</span>
+			<span class="nt">&lt;td&gt;</span>1<span class="nt">&lt;/td&gt;</span>
+			<span class="nt">&lt;td&gt;</span>2<span class="nt">&lt;/td&gt;</span>
+			<span class="nt">&lt;td&gt;</span>3<span class="nt">&lt;/td&gt;</span>
+			<span class="nt">&lt;td&gt;</span>+<span class="nt">&lt;/td&gt;</span>
+		<span class="nt">&lt;/tr&gt;</span>
+		<span class="nt">&lt;tr&gt;</span>
+			<span class="nt">&lt;td&gt;</span>+/-<span class="nt">&lt;/td&gt;</span>
+			<span class="nt">&lt;td&gt;</span>0<span class="nt">&lt;/td&gt;</span>
+			<span class="nt">&lt;td&gt;</span>.<span class="nt">&lt;/td&gt;</span>
+			<span class="nt">&lt;td&gt;</span>=<span class="nt">&lt;/td&gt;</span>
+		<span class="nt">&lt;/tr&gt;</span>
+	<span class="nt">&lt;/table&gt;</span>
+
+<span class="c">&lt;!--
+	script ...
+--&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="c1">// 계산기를 만들 때</span>
+
+<span class="kd">let</span> <span class="nx">target</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">#target</span><span class="dl">'</span><span class="p">);</span>
+
+
+</pre></td></tr></tbody></table></code></pre></div></div>
+:ET
