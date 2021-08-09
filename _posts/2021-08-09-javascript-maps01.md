@@ -6,14 +6,17 @@ author: Kimson
 categories: [ TIL, JAVASCRIPT ]
 tags: [maps, key, value]
 image: assets/images/post/covers/TIL-javascript.png
-description: ""
+description: "키 기반의 컬렉션
+
+Set과 비슷하지만 Set은 중복값을 허용하지 않는다는 차이점이 있습니다.  
+Set은 이번 주제가 아니니 다음에 다루도록 하고, Map 객체의 특징과 메서드에 대해 알아보겠습니다."
 featured: true
 hidden: false
 rating: 4
 toc: true
 profile: false
 istop: true
-keysum: true
+keysum: false
 keywords: ''
 ---
 

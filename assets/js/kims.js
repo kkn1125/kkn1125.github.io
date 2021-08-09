@@ -240,30 +240,34 @@ window.addEventListener('load', function(){
             
             switch(lang){
                 case 'java':
-                    color = "primary"
+                    color = "primary text-dark"
                     break;
                 case 'mysql':
-                    color = "dark"
+                    color = "dark text-dark"
                     break;
                 case 'html':
-                    color = "danger"
+                    color = "danger text-dark"
                     break;
                 case 'css':
-                    color = "info"
+                    color = "info text-dark"
                     break;
                 case 'javascript':
-                    color = "warning"
+                    color = "warning text-dark"
                     break;
                 case 'json':
-                    color = "light"
+                    color = "light text-dark"
+                    break;
+                case 'sql':
+                    color = "secondary text-white"
                     break;
             }
 
             made.innerHTML = `Devkimson`;
             made.setAttribute("class","d-block badge text-end text-light made")
             
-            badge.setAttribute("class","lang-badge p-2 text-dark badge badge-"+color);
-            badge.innerHTML = `${lang.charAt(0).toUpperCase()+lang.slice(1)}`;
+            badge.setAttribute("class","lang-badge p-2 badge badge-"+color);
+            // 210809 mysql 설정
+            badge.innerHTML = `${(lang=='sql'?"My":"")+lang.charAt(0).toUpperCase()+lang.slice(1)}`;
             wrap.setAttribute("class","wrap-badge position-absolute d-flex flex-column");
 
             wrap.setAttribute("data-unselect","true");

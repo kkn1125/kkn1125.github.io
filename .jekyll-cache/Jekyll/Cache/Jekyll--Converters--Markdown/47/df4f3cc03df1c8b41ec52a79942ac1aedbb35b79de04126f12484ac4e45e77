@@ -1,0 +1,231 @@
+I"�;<h1 id="계층형-게시판">계층형 게시판</h1>
+
+<h2 id="layer의-개념">Layer의 개념</h2>
+
+<blockquote>
+  <p>게시판의 하위에 달리는 게시판은 식별가능한 정보를 가져야합니다.</p>
+</blockquote>
+
+<ol>
+  <li>원글의 번호 <strong>bid</strong>(board id)</li>
+  <li>순서 <strong>ordered</strong></li>
+  <li>위계 <strong>layer</strong></li>
+</ol>
+
+<h2 id="순서와-위계의-변화">순서와 위계의 변화</h2>
+
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">bid</code>는 <code class="language-plaintext highlighter-rouge">primary key</code>인 <code class="language-plaintext highlighter-rouge">id</code>와 동일해야합니다.</p>
+
+  <p><code class="language-plaintext highlighter-rouge">ordered</code>와 <code class="language-plaintext highlighter-rouge">layer</code>는 새 글일 경우 0으로 기본값을 가집니다.</p>
+</blockquote>
+
+<h3 id="테이블-설정">테이블 설정</h3>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="rouge-code"><pre><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">IF</span> <span class="k">NOT</span> <span class="k">EXISTS</span> <span class="n">board</span><span class="p">(</span>
+    <span class="n">id</span> <span class="nb">int</span> <span class="k">not</span> <span class="k">null</span> <span class="n">auto_increment</span><span class="p">,</span>
+    <span class="n">bid</span> <span class="nb">int</span> <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
+    <span class="n">ordered</span> <span class="nb">int</span> <span class="k">not</span> <span class="k">null</span> <span class="k">default</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="n">layer</span> <span class="nb">int</span> <span class="k">not</span> <span class="k">null</span> <span class="k">default</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="n">title</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span> <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
+    <span class="n">contents</span> <span class="nb">longtext</span> <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
+    <span class="n">author</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span> <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
+    <span class="n">regDate</span> <span class="nb">timestamp</span> <span class="k">not</span> <span class="k">null</span> <span class="k">default</span> <span class="k">current_timestamp</span><span class="p">,</span>
+    <span class="k">primary</span> <span class="k">key</span><span class="p">(</span><span class="n">id</span><span class="p">)</span>
+<span class="p">)</span><span class="n">auto_increment</span><span class="o">=</span><span class="mi">1</span> <span class="k">default</span> <span class="n">charset</span><span class="o">=</span><span class="s1">'utf8mb4'</span><span class="p">;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>원리는 단순합니다. 새 글이 추가되면 <code class="language-plaintext highlighter-rouge">id, bid = auto_increment</code>, <code class="language-plaintext highlighter-rouge">ordered = 0</code>, <code class="language-plaintext highlighter-rouge">layer = 0</code>입니다.</p>
+
+<h3 id="원글-추가">원글 추가</h3>
+
+<table class="table text-center">
+  <thead>
+    <tr>
+      <th>Col</th>
+      <th>Value</th>
+      <th>Info</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>id</td>
+      <td>1</td>
+      <td>원글{:rowspan="4"}</td>
+    </tr>
+    <tr>
+      <td>bid</td>
+      <td>1</td>
+      <td>^</td>
+    </tr>
+    <tr>
+      <td>ordered</td>
+      <td>0</td>
+      <td>^</td>
+    </tr>
+    <tr>
+      <td>layer</td>
+      <td>0</td>
+      <td>^</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">board</span> <span class="p">(</span><span class="n">bid</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">contents</span><span class="p">,</span> <span class="n">author</span><span class="p">)</span>
+<span class="k">VALUES</span> <span class="p">((</span><span class="k">SELECT</span> <span class="n">IFNULL</span><span class="p">(</span><span class="k">max</span><span class="p">(</span><span class="n">id</span><span class="p">),</span><span class="mi">0</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span> <span class="k">FROM</span> <span class="n">board</span> <span class="k">AS</span> <span class="k">temp</span><span class="p">),</span><span class="s1">'타이틀'</span><span class="p">,</span><span class="s1">'내용'</span><span class="p">,</span><span class="s1">'킴슨'</span><span class="p">);</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><img src="/assets/images/post/hierarchical/hierarchical01.png" alt="계층형게시판" /></p>
+
+<p><img src="/assets/images/post/hierarchical/hierarchical02.png" alt="계층형게시판" /></p>
+
+<p><img src="/assets/images/post/hierarchical/hierarchical03.png" alt="계층형게시판" /></p>
+
+<p>bid와 나머지 정보를 적게되는데, board테이블에서 <code class="language-plaintext highlighter-rouge">ordered</code>와 <code class="language-plaintext highlighter-rouge">layer</code>가 default값이 0이기 때문에 insert구문에서 빠집니다.</p>
+
+<p>auto_increment가 1개만 지정되기 때문에 bid는 select 문으로 자신 테이블의 <code class="language-plaintext highlighter-rouge">id</code>칼럼을 참조하여 자동 증가하도록 하였습니다.</p>
+
+<p><img src="/assets/images/post/hierarchical/hierarchical04.png" alt="계층형게시판" /></p>
+
+<p><img src="/assets/images/post/hierarchical/hierarchical05.png" alt="계층형게시판" /></p>
+
+<p>계속 추가하면 <code class="language-plaintext highlighter-rouge">id</code>와 <code class="language-plaintext highlighter-rouge">bid</code>만 증가하는 원글이 등록됩니다.</p>
+
+<h3 id="하위-글-추가">하위 글 추가</h3>
+
+<table class="table text-center">
+  <thead>
+    <tr>
+      <th>Col</th>
+      <th>Value</th>
+      <th>Info</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>id</td>
+      <td>2</td>
+      <td>auto_increment</td>
+    </tr>
+    <tr>
+      <td>bid</td>
+      <td>1</td>
+      <td>(**origin**) bid</td>
+    </tr>
+    <tr>
+      <td>ordered</td>
+      <td>1</td>
+      <td>(**origin**) ordered+1</td>
+    </tr>
+    <tr>
+      <td>layer</td>
+      <td>1</td>
+      <td>(**origin**) layer+1</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>매우 단순합니다. 원글의 ordered와 layer의 1 증가한 값을 가집니다.</p>
+
+<h4 id="자리-변경">자리 변경</h4>
+
+<blockquote>
+  <p>원글에 하위 게시글이 달릴 때는 조금 다릅니다. 단지 자리를 밀어주는 기능이 추가됩니다. 여기서 하위 글이 생성되는 간단한 원리를 알 수 있습니다.</p>
+</blockquote>
+
+<p>하위 게시글 추가 시 변하는 것은 다음과 같습니다.</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="k">UPDATE</span> <span class="n">board</span> <span class="k">SET</span> <span class="n">ordered</span> <span class="o">=</span> <span class="n">ordered</span> <span class="o">+</span> <span class="mi">1</span> <span class="k">WHERE</span> <span class="n">bid</span> <span class="o">=</span> <span class="mi">1</span> <span class="k">AND</span> <span class="n">ordered</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><img src="/assets/images/post/hierarchical/hierarchical06.png" alt="계층형게시판" /></p>
+
+<p>아무 변화가 없습니다. 등록된 하위 게시글이 없기 때문에 그냥 넘어갑니다.</p>
+
+<h5 id="구문-해석">구문 해석</h5>
+
+<ul>
+  <li>조건은 원글의 <code class="language-plaintext highlighter-rouge">bid</code> 1값이고, 원글의 <code class="language-plaintext highlighter-rouge">ordered</code>보다 큰 값을 가진 <code class="language-plaintext highlighter-rouge">row</code>들을 대상으로한다.</li>
+  <li>대상 <code class="language-plaintext highlighter-rouge">row</code>들의 <code class="language-plaintext highlighter-rouge">ordered</code>를 1증가 한다.</li>
+</ul>
+
+<p>이렇게 해당되는 <code class="language-plaintext highlighter-rouge">row</code>들은 <code class="language-plaintext highlighter-rouge">ordered</code>가 1증가하면서 원글의 하위 글들의 순서가 1씩 밀려납니다.</p>
+
+<h4 id="앞-자리-삽입">앞 자리 삽입</h4>
+
+<blockquote>
+  <p>삽입되는 글은 원글의 <code class="language-plaintext highlighter-rouge">ordered</code>와 <code class="language-plaintext highlighter-rouge">layer</code>에 1 증가 값을 가집니다.</p>
+</blockquote>
+
+<p>즉, 자리를 먼저 밀고나서 추가되는 하위글을 공석에 집어넣는 형태입니다.</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">board</span> <span class="p">(</span><span class="n">bid</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">contents</span><span class="p">,</span> <span class="n">author</span><span class="p">,</span> <span class="n">ordered</span><span class="p">,</span> <span class="n">layer</span><span class="p">)</span> <span class="k">VALUES</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="s1">'하위 게시글1'</span><span class="p">,</span><span class="s1">'하위 내용'</span><span class="p">,</span><span class="s1">'Kimson'</span><span class="p">,(</span><span class="k">SELECT</span> <span class="n">ordered</span> <span class="k">FROM</span> <span class="n">board</span> <span class="k">AS</span> <span class="k">temp</span> <span class="k">WHERE</span> <span class="n">id</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">,(</span><span class="k">SELECT</span> <span class="n">layer</span> <span class="k">FROM</span> <span class="n">board</span> <span class="k">AS</span> <span class="k">temp</span> <span class="k">WHERE</span> <span class="n">id</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><img src="/assets/images/post/hierarchical/hierarchical08.png" alt="계층형게시판" /></p>
+
+<p><img src="/assets/images/post/hierarchical/hierarchical07.png" alt="계층형게시판" /></p>
+
+<p>새로운 하위 글은 <code class="language-plaintext highlighter-rouge">id</code>값은 증가하지만 대상 원글의 <code class="language-plaintext highlighter-rouge">bid</code>를 따라가며, 원글의 <code class="language-plaintext highlighter-rouge">ordered</code>와 <code class="language-plaintext highlighter-rouge">layer</code>가 1증가한 값을 가졌습니다.</p>
+
+<h5 id="구문-해석-1">구문 해석</h5>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">bid</code> = 1 (원글의 <code class="language-plaintext highlighter-rouge">bid</code>)</li>
+  <li><code class="language-plaintext highlighter-rouge">ordered</code> = 1 (원글의 <code class="language-plaintext highlighter-rouge">ordered</code>+1)</li>
+  <li><code class="language-plaintext highlighter-rouge">layer</code> = 1 (원글의 <code class="language-plaintext highlighter-rouge">layer</code>+1)</li>
+</ul>
+
+<p>원글의 정보에서 <code class="language-plaintext highlighter-rouge">bid</code>가 따라오고, <code class="language-plaintext highlighter-rouge">ordered</code>와 <code class="language-plaintext highlighter-rouge">layer</code>는 1증가 값은 가집니다.
+이 원리가 그대로 적용되어서 게시글에 하위 글이 붙고, 또 하위 글이 붙어도 원리는 변하지 않습니다.</p>
+
+<h3 id="table의-정렬">Table의 정렬</h3>
+
+<blockquote>
+  <p>계층형 게시글의 구현 후, 정렬을 맞추어 게시판의 형태를 갖추어 봅시다.</p>
+</blockquote>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">board</span> <span class="k">ORDER</span> <span class="k">BY</span> <span class="n">bid</span> <span class="k">DESC</span><span class="p">,</span> <span class="n">ordered</span><span class="p">;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">bid</code>가 낮을수록 시간이 지난 글이기 때문에 <code class="language-plaintext highlighter-rouge">DESC</code>로 내림차순합니다. ordered은 자리를 밀어 낮은 수로 추가되기 때문에 그대로 불러옵니다.</p>
+
+<h4 id="일반-select">일반 SELECT</h4>
+
+<p><img src="/assets/images/post/hierarchical/hierarchical09.png" alt="계층형게시판" />
+<img src="/assets/images/post/hierarchical/hierarchical11.png" alt="계층형게시판" /></p>
+
+<h4 id="정렬-적용-select">정렬 적용 SELECT</h4>
+
+<p><img src="/assets/images/post/hierarchical/hierarchical10.png" alt="계층형게시판" />
+<img src="/assets/images/post/hierarchical/hierarchical12.png" alt="계층형게시판" /></p>
+
+<h2 id="작동-테스트-이미지">작동 테스트 이미지</h2>
+
+<p><img src="/assets/images/post/hierarchical/hierarchical13.png" alt="계층형게시판" />
+<img src="/assets/images/post/hierarchical/hierarchical14.png" alt="계층형게시판" /></p>
+
+<hr />
+
+<p>처음 계층형에 대한 내용을 접했을 때 굉장히 혼란스러웠습니다. 막상 따라해보고 익히면 아무것도 아닌데 경험이 없을 때는 계속 피하고 주저하게 됩니다.</p>
+
+<p>계속 피하면 쉬운 것도 경험할 기회를 버리는 것 같아 요즘은 이것저것 해보자는 생각을 합니다.</p>
+
+<p>작은 모방이 큰 아이디어가 되도록 노력합니다.</p>
+:ET

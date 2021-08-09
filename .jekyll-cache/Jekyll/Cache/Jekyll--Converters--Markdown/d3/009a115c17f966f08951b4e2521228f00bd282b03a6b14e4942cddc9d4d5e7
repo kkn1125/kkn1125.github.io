@@ -1,0 +1,7 @@
+I"<p>계층형 게시판
+Layer의 개념
+게시판의 하위에 달리는 게시판은 식별가능한 정보를 가져야합니다.</p>
+<ol>
+  <li>원글의 번호 <strong>bid</strong>(board id) 2. 순서 <strong>ordered</strong> 3. 위계 <strong>layer</strong> 4. 5.</li>
+</ol>
+:ET
