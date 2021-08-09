@@ -4,10 +4,19 @@
             "month": {
                 "7": {
                     "date": {
+                        "13":
+                        [
+                            {
+                                "todo":"Iteration 포스팅 예정",
+                                "tag": "alert",
+                                "time":"2021-8-9 15:01"
+                            }
+                        ],
                         "10":
                         [
                             {
                                 "todo":"JSDoc으로 문서화 알아보기",
+                                "tag": "idea",
                                 "time":"2021-8-7 18:05"
                             }
                         ],
@@ -15,14 +24,17 @@
                         [
                             {
                                 "todo": "TODO List 태그 추가",
+                                "tag": "check",
                                 "time": "2021-8-6 20:31"
                             },
                             {
                                 "todo": "Spring Boot 시작!",
+                                "tag": "study",
                                 "time": "2021-8-6 20:31"
                             },
                             {
                                 "todo": "Spring Security 시작!",
+                                "tag": "study",
                                 "time": "2021-8-6 20:31"
                             }
                         ],
@@ -30,32 +42,38 @@
                         [
                             {
                                 "todo": "<img width='30px' src='/assets/images/icon/batis02.png' alt='batis'>MyBatis 기초 익히기",
+                                "tag": "study",
                                 "time": "2021-8-6 20:31"
                             },
                             {
-                                "todo": "<del>계층형 게시판</del>",
+                                "todo": "계층형 게시판 공부",
+                                "tag": "check",
                                 "time": "2021-8-6 20:31"
                             },
                             {
-                                "todo": "<del>JS Map 공부</del>",
+                                "todo": "JS Map 공부",
+                                "tag": "check",
                                 "time": "2021-8-6 20:31"
                             }
                         ],
                         "7": 
                         [
                             {
-                                "todo": "<del>Exception 처리</del>",
+                                "todo": "Exception 처리",
+                                "tag": "check",
                                 "time": "2021-8-6 20:31"
                             },
                             {
-                                "todo": "<del>JS Array 공부</del>",
+                                "todo": "JS Array 공부",
+                                "tag": "check",
                                 "time": "2021-8-6 20:31"
                             }
                         ],
                         "6": 
                         [
                             {
-                                "todo": "<del>공공데이터 포스팅</del>",
+                                "todo": "공공데이터 포스팅",
+                                "tag": "check",
                                 "time": "2021-8-6 19:56"
                             }
                         ]

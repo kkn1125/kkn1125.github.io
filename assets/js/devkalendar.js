@@ -498,6 +498,39 @@ com.devkimson.calendar = { // 기능들
 		// div.append(btnlist); // 텍스트 입력 및 버튼 막음
 		par.append(div);
 	},
+	tagging: function(tags){
+		if(tags != undefined){
+			tags = tags.replace(/(\s)/gi,"");
+		}
+		switch(tags){
+			case undefined:
+				return '';
+			case "":
+				return '';
+			case 'study':
+				return '📖';
+			case 'alert':
+				return '📢';
+			case '1':
+				return '🥇';
+			case '2':
+				return '🥈';
+			case '3':
+				return '🥉';
+			case 'edit':
+				return '🔧';
+			case 'idea':
+				return '💡';
+			case 'know':
+				return '❗';
+			case 'how':
+				return '❓';
+			case 'check':
+				return '✅';
+			case 'cancel':
+				return '❎';
+		}
+	},
 	GetList: function(year, month, date){
 		console.log(this.data)
 		var btn = document.createElement('button');
@@ -532,9 +565,10 @@ com.devkimson.calendar = { // 기능들
 									let len = this.data.year[key].month[key2].date[date].length;
 									console.log(len)
 									for(key4 of this.data.year[key].month[key2].date[date]){ 	// todolist
+										// 210809 add tag function
 										todos += 
 										`
-											<div class="my-3 clearfix">▷ ${key4.todo}
+											<div class="my-3 clearfix">▷<span>${this.tagging(key4.tag)}</span> ${key4.tag=='check'?"<del>"+key4.todo+"</del>":key4.todo}
 												<span class="badge text-muted float-end">${key4.time}</span>
 											</div>
 											${idx!=len?"<hr>":""}

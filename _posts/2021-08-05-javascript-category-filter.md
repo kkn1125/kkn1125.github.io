@@ -13,7 +13,7 @@ description: "Category Filter
 오늘 만들어 본 건 카테고리 필터인데요. 우연히 구직 중에 발견한 회사 홈페이지에 있는 카테고리 필터를 보고 만들어 봐야겠다는 생각이 들었습니다.
 
 요즘 data-*속성에 익숙해져서 왠만하면 모든 기능 구현을 data-*를 사용하고 있습니다. 그래서 오늘 다룰 내용은 주로 data-*와 위 언급한 회사의 카테고리 필터에 적용된 absolute 방식 조정입니다."
-featured: true
+featured: false
 hidden: false
 rating: 5
 toc: true

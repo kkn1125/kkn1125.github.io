@@ -11,7 +11,7 @@ description: "공공데이터포털은 국가에서 보유하고있는 다양한
 공부 중에 꼭 필요하면서도 만들기 귀찮은게 샘플데이터인데요. 이 데이터를 샘플데이터로 이용하면 참 편리해질 것 같습니다.
 
 종류도 많으니 필요하신 분은 들어가셔서 참고하시면 되겠습니다."
-featured: true
+featured: false
 hidden: false
 rating: 4.5
 toc: true
