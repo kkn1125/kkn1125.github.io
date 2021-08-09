@@ -30,7 +30,7 @@ istop: true
 ## CoffeeCong Site
 
 
-[coffeecong](https://devkims-on.herokuapp.com/main.me) 사이트 보러가기
+[coffeecong](https://devkims-on.herokuapp.com/main.me){:target="_blank"} 사이트 보러가기
 
 > 주제 - 커피용품 온라인몰
 ### 1. 사이트 구성

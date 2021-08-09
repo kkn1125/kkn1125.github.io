@@ -32,4 +32,4 @@ public String comment(@PathVariable("param") int param1, HttpServletResponse res
 
 2시간을 쩔쩔매다가 한 줄로 끝나다니 허무하네요...
 
-[자료출처](https://stratosphere.tistory.com/207)
+[자료출처](https://stratosphere.tistory.com/207){:target="_blank"}

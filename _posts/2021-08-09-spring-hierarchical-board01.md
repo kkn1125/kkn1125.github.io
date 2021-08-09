@@ -192,4 +192,4 @@ SELECT * FROM board ORDER BY bid DESC, ordered;
 
 참고한 사이트를 아래 링크 남기겠습니다.
 
-[Dev.GA님의 블로그](https://www.notion.so/kkn1125/acad0a911f9444238cd62dd4a53f5cf9#e5b2adb18de14f8e917ef90b9e538da9)
+[Dev.GA님의 블로그](https://gangnam-americano.tistory.com/25){:target="_blank"}

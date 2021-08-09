@@ -106,6 +106,6 @@ ObjectMapper mapper = new ObjectMapper();
 
 ### 참고 사이트
 
-[Json파일 List타입으로 받아오기](https://becko.tistory.com/47)
+[Json파일 List타입으로 받아오기](https://becko.tistory.com/47){:target="_blank"}
 
-[jackson databind의 기본 활용](https://tychejin.tistory.com/134)
+[jackson databind의 기본 활용](https://tychejin.tistory.com/134){:target="_blank"}

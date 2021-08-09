@@ -97,7 +97,7 @@ document.cookie;
 // "" 빈 값
 ```
 
----
+-----
 
 크롬기준으로 설명드리겠습니다.
 
@@ -107,4 +107,4 @@ f12 개발자도구를 열었을때 application 탭에서 쿠키를 보면 다�
 
 httponly속성이 true이거나 domain이 다르다면 document.cookie로 값을 가져오지 못하는 것을 알게 되었습니다.
 
-[Python2 - HttpOnly 속성 참고](https://www.python2.net/questions-200084.htm)
+[Python2 - HttpOnly 속성 참고](https://www.python2.net/questions-200084.htm){:target="_blank"}

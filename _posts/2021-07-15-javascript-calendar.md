@@ -65,11 +65,11 @@ namespace ( com.devkimson.calendar )를 작성하고 인자 값으로 html에서
 중괄호의 settings는 필요한 부분만 커스터마이징하여 사용하면 됩니다.
 
 
-##### 기본 설정
+## 기본 설정
 
 ![cal1]({{ site.baseurl }}/assets/images/post/jsdevKal/devkal.png)
 
-##### 커스터마이징
+## 커스터마이징
 
 ![cal2]({{ site.baseurl }}/assets/images/post/jsdevKal/devkal-2.png)
 

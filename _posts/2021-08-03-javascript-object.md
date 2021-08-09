@@ -443,5 +443,5 @@ spring이나 동적 웹에 활용한다면 회원설정메뉴 페이지를 만�
 
 아래에 Object(객체)의 중요 함수를 나열해두었습니다. 참고바랍니다.
 
-[defineProperty - MDN mozilla 설명 참조](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty 'defineProperty 상세')
+[defineProperty - MDN mozilla 설명 참조](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty 'defineProperty 상세'){:target="_blank"}
 

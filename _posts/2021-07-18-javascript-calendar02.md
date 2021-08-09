@@ -131,7 +131,7 @@ Obj.test = {
 }
 ```
 
----
+-----
 
 * 시험버전이므로 데이터가 저장되지 않습니다. 적용전 미리 체험해보시기 바랍니다.
 
@@ -169,7 +169,7 @@ const kal = com.devkimson.calendar.create(document.getElementById('kal')||'kal',
 	});
 </script>
 
----
+-----
 
 요약하면
 수정된 기능은 setting부분의 tr조정과 table의 width조정,
@@ -184,4 +184,4 @@ const kal = com.devkimson.calendar.create(document.getElementById('kal')||'kal',
 
 이전 달력만들기에 초기 세팅값에 대해 자세히 적혀있습니다.
 
-[이전 달력 포스팅]({{ site.baseurl }}/javascript-calendar/)
+[이전 달력 포스팅]({{ site.baseurl }}/javascript-calendar/){:target="_blank"}

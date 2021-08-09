@@ -69,7 +69,7 @@ exception 처리 하기위해 test폴더에 파일을 두개 만듭니다.
 웹페이지 보안상 너무 친절하게 정보를 알려주면 위험하니 얼른 바꾸어 봅시다.
 
 우선 에러 코드가 담기는 Json파일을 만들겠습니다.
-자바에서 Jackson databind로 Json처리가 어려우신 분은 [[JAVA] Json 기본 익히기](http://localhost:4000/java-jackson-databind/)를 보고오시면 도움이 됩니다.
+자바에서 Jackson databind로 Json처리가 어려우신 분은 [[JAVA] Json 기본 익히기](https://kkn1125.github.io/java-jackson-databind/){:target="_blank"}를 보고오시면 도움이 됩니다.
 
 ```json
 // 원래 json파일은 주석이 없습니다.
@@ -233,6 +233,6 @@ ModelAndView를 사용하여 응답페이지 경로와 json에서 얻은 에러 
 아직 알아야 할 부분이 많고, 자세히 모르는 부분을 설명없이 방법만 설명해서 글을 써놓고도 부끄럽습니다.
 
 httpstatus 코드는 많은 도큐먼트에서 알려주고 있어서 검색하기 쉽습니다.
-혹시 찾기 어려우신 분은 [마이크로소프트 Docs HttpStatusCode](https://docs.microsoft.com/ko-kr/dotnet/api/system.net.httpstatuscode?view=net-5.0 'microsoft HttpStatusCode')를 참고하시면 되겠습니다.
+혹시 찾기 어려우신 분은 [마이크로소프트 Docs HttpStatusCode](https://docs.microsoft.com/ko-kr/dotnet/api/system.net.httpstatuscode?view=net-5.0 'microsoft HttpStatusCode'){:target="_blank"}를 참고하시면 되겠습니다.
 
 자주 사용되는 403, 404, 500에 대한 status와 exception class는 키워드에 같이 남겨두겠습니다.

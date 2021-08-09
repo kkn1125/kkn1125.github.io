@@ -37,7 +37,7 @@ _node.addEventListener(eventType,func(event)) : 이벤트 추가
 
 요즘 data-*속성에 익숙해져서 왠만하면 모든 기능 구현을 data-*를 사용하고 있습니다. 그래서 오늘 다룰 내용은 주로 data-*와 위 언급한 회사의 카테고리 필터에 적용된 absolute 방식 조정입니다.
 
->[투라인코드](https://www.twolinecode.com/)
+>[투라인코드](https://www.twolinecode.com/){:target="_blank"}
 ><footer class="blockquote-footer mb-3">참고한 페이지라 링크를 남깁니다.</footer>
 
 ## 리스트 방식
