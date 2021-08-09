@@ -1,5 +1,87 @@
 /* base call */
 
+[data-mode="dark"]{
+	background-color: #222222;
+}
+
+[data-mode="dark"] .section-title span {
+    border-bottom: 2px solid rgba(195, 195, 195, 0.856)
+}
+[data-mode="dark"] .section-title h2 {
+    border-bottom: 1px solid rgba(93, 93, 93, 0.808);
+}
+
+[data-mode="dark"] div.border.rounded{
+	background-color: inherit !important;
+}
+
+[data-mode="dark"] #gotop{
+	color:rgb(74, 167, 51) !important;
+}
+
+[data-mode="dark"] .footer{
+	background-color: #222222;
+	color: rgb(133, 133, 133) !important;
+}
+
+[data-mode="dark"] #conversation{
+	color: white;
+}
+
+[data-mode="dark"] div#posts{
+	color: white !important;
+}
+
+[data-mode="dark"] .rating-holder{
+	background-color: inherit;
+}
+
+[data-mode="dark"] [class="smoothscroll"]{
+	color: white !important;
+	background-color: rgb(104, 104, 104) !important;
+}
+
+[data-mode="dark"] .lang-badge{
+	color: white !important;
+}
+
+[data-mode="dark"] h1,
+[data-mode="dark"] h2,
+[data-mode="dark"] h3,
+[data-mode="dark"] h4,
+[data-mode="dark"] h5,
+[data-mode="dark"] h6{
+	color: white;
+}
+
+[data-mode="dark"] ul,
+[data-mode="dark"] div,
+[data-mode="dark"] span,
+[data-mode="dark"] p{
+	color: rgb(185, 185, 185) !important;
+}
+
+[data-mode="dark"] a{
+	color:rgb(223, 159, 76);
+}
+
+[data-mode="dark"] .navbar-brand{
+	color: white;
+}
+
+[data-mode="dark"] button.navbar-toggler{
+	filter: invert();
+}
+
+[data-mode="dark"] .navbar{
+	background-color: #333333 !important;
+	color: white;
+}
+
+[data-mode="dark"] .nav-link {
+	color: #d4d4d4 !important;
+}
+
 .table td{
 	padding: 0 !important;
 }

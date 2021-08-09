@@ -532,7 +532,7 @@ com.devkimson.calendar = { // 기능들
 		}
 	},
 	GetList: function(year, month, date){
-		console.log(this.data)
+		// console.log(this.data)
 		var btn = document.createElement('button');
 		node = document.createTextNode('할일 추가');
 		$(btn).attr({
@@ -563,7 +563,7 @@ com.devkimson.calendar = { // 기능들
 								if(key3==date){
 									let idx = 1;
 									let len = this.data.year[key].month[key2].date[date].length;
-									console.log(len)
+									// console.log(len)
 									for(key4 of this.data.year[key].month[key2].date[date]){ 	// todolist
 										// 210809 add tag function
 										todos += 
