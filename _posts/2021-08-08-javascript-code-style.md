@@ -1,7 +1,7 @@
 ---
 layout: post
 date:   2021-08-08 14:19:05 +0900
-title:  "[JAVASCRIPT] 깔끔한 코드, 코딩에 규칙이 있을까?"
+title:  "[JAVASCRIPT] 복잡한 코드, 규칙을 만들자"
 author: Kimson
 categories: [ TIL, JAVASCRIPT ]
 tags: [array, coding, pattern]
@@ -40,7 +40,7 @@ _반환하는 : 메서드의 리턴값을 활용한 변수 선언 최소화
 
 그러면 프로그래밍에서 깔끔한 코드는 무엇일까요? 아직 실무를 경험하지도 못했지만 감히 얕은 지식으로 방법론을 알아보고자 합니다.
 
-## 왜 주석을 달고 있을까
+## 주석을 달면 좋을까
 
 유명한 생활코딩의 이고잉님 강좌로 프로그래밍을 시작했습니다. 적절한 이론과 실습, 무엇보다도 스스로 찾아서 해결해야한다는 강조를 아직까지 잊지 않고 있습니다.
 
@@ -48,25 +48,23 @@ _반환하는 : 메서드의 리턴값을 활용한 변수 선언 최소화
 
 주석은 명확히 기능이나 내용을 알리고자 요약하는 것인데 아이러니하게도 주석이 있는 코드는 그만큼 설명하지 않으면 이해하기 어렵다는 뜻으로 반증됩니다.
 
-그렇다고해서 극단적으로 주석에 연연하여 안 넣겠다 하면 오히려 주석을 달지 않는 방법을 생각하는 시간이 길어질 것 같아 주석을 최소한으로 해야겠다는 규칙을 따르고 있습니다.
+그렇다고해서 주석이 아예 없다고해서 보기 쉬운 코드인지도 의문입니다. 적재적소에 필요한 만큼의 최소화 하라는 것인지도 모르겠습니다. 
 
-그래서이지 현재와 과거의 실수로부터 코딩하는 규칙을 하나씩 정하고 있습니다.
-
-## 과거의 코드
+## 어제, 오늘의 코드
 
 기능을 구현하는데에만 초점을 두다보니 어떤 변수가 몇 개 있어야하고, 어떤 함수가 있어야하면 무엇을 리턴하는지 안중에 없었습니다.
 
 단지 기능이 작동되는지, 코딩 중에 변수가 바뀌면 해당 값을 모두 바꾸는 중노동을 하기도 했습니다. 마치 for문을 만번 돌려야하는데 수동으로 만번을 치는 느낌이었습니다.
 
 ```javascript
-let target = document.querySelector('#target');
+let t = document.querySelector('#output');
 
 function inValue(a){
-	target.value += a;
+	t.value += a;
 }
 
 function outTargetVal(){
-	target.value = eval(target.value);
+	t.value = eval(t.value);
 }
 
 let testbtn ...
@@ -77,7 +75,7 @@ let testbtn ...
 
 현재도 그렇지만 이전 코드를 보면 굉장히 많은 중복된 코드와 알수없는 네이밍들이 많았습니다. 즉흥적으로 변수를 만들어 쓰고, 위치 또한 정리가 되어있지 않아 나중에는 제가봐도 모를 지경인 코드가 많았습니다.
 
-# 코드에 규칙이 있을까
+# 코드에 규칙 만들기
 
 설계도면을 깔끔하게 그린다는 것은 중복선 정리와 딱 떨어지는 정치수, 통일성 있는 주석과 레이어 등이 갖추어졌을때를 말합니다. 가끔 우스게 소리로 도면에서 빛이난다고 합니다.
 
@@ -121,7 +119,7 @@ let testbtn ...
 
 예를 들면서 규칙을 정리하겠습니다.
 
-# 코드 규칙을 생각해보자
+# 간단한 규칙 적용하기
 
 ## 개요
 
@@ -144,6 +142,7 @@ let testbtn ...
 - ***theme***() : type에 따른 출력 포멧 변환 : `>> string`
 - ***writeContents***() : id에 내용 출력 : `>> void`
 - ***addContents***(...content) : 내용 추가 : `>> void`
+- ***editContents***(origin, newContent) : 내용 수정 : `>> void`
 - ***getContents***() : 내용 읽기 : `>> array`
 - ***getCount***() : 내용 개수 : `>> int`
 - ***remove***(content) : 내용 삭제 : `>> string`
@@ -183,6 +182,7 @@ function Template(id, options, ...content){
 	this.node = this.validNode();
 	this.storage = contents instanceof Array && contents instanceof Object?contents:[];
     this.options = !(options instanceof Array) && options instanceof Object?options:{};
+
 	this.theme = function(content){
         switch(this.options.type){
             case 'card':
@@ -196,6 +196,7 @@ function Template(id, options, ...content){
 
 	// 화면에 내용출력
 	this.writeContents = function(){
+        this.node.innerHTML = '';
         for(let i of this.getContents()){
             this.node.innerHTML += this.theme(i);
         }
@@ -221,8 +222,18 @@ writeContents 메서드는 getContents(Array)를 하나씩 출력하는 기능�
 // 내용 추가
 this.addContents = function(...contents){
 	for(let content of contents){
-		this.storage += content;
+		this.getContents().push(content);
 	}
+	this.writeContents();
+}
+
+this.editContent = function(origin, content){
+	for(let i in this.getContents()){
+		if(i==this.find(origin)){
+			this.storage[i] = content;
+		}
+	}
+	this.writeContents();
 }
     
 // 내용 읽기
@@ -230,22 +241,25 @@ this.getContents = function(){
 	return this.storage;
 }
 
+
+
 // 내용 갯수
 this.getCount = function(){
-	return this.storage.length;
+	return this.getContents().length;
 }
 
 // 내용 삭제
 this.remove = function(content){
 	let bool = false;
-	this.storage = this.storage.filter(i=>{
+	this.storage = this.getContents().filter(i=>{
 		if(i!=content){
 			return i;
 		} else {
 			bool = true;
 		}
 	});
-	if(this.storage.indexOf(content) == -1&& bool){
+	if(this.getContents().indexOf(content) == -1 && bool){
+		this.writeContents();
 		return content;
 	}
 }
@@ -260,11 +274,11 @@ this.remove = function(content){
 
 ```javascript
 this.find = function(content){
-	return this.storage.indexOf(content);
+	return this.getContents().indexOf(content);
 }
 
 this.isContain = function(content){
-	for(let i of this.storage){
+	for(let i of this.getContents()){
 		if(i==content){
 			return true;
 		}
@@ -285,49 +299,44 @@ let a = new Template('test',{ // id test가 존재하면 test로 지정됩니다
 let b = new Template('test2',{ // id test2가 없어 기본 id wrap으로 지정됩니다.
     type: 'card'
 }, 'memo','toto','mimi');
-
-let c = new Template(null,{ // null값은 valid에 검열되어 타겟이 생성되지 않습니다.
+ 
+/*
+null값은 valid에 검열되어 타겟이 생성되지 않습니다.
+let c = new Template(null,{ 
     type: 'card'
 }, 'giri','tomy','wow');
+*/
 
 console.log(a.node); // <div id="test"></div>
 console.log(b.node); // <div id="wrap"></div>
-console.log(c.node); // ''
 
 console.log(a.getCount()); // 0
 console.log(b.getCount()); // 3
-console.log(c.getCount()); // 3
 
 a.addContents("pepe","moto");
 b.addContents("moru","kedi");
-c.addContents("koko","roro");
 
 console.log(a.getContents()); // (2) ["pepe", "moto"]
 console.log(b.getContents()); // (5) ["memo", "toto", "mimi", "moru", "kedi"]
-console.log(c.getContents()); // (5) ["giri", "tomy", "wow", "koko", "roro"]
 
 a.writeContents();
 b.writeContents();
 // c.writeContents(); // 타겟이 없어 에러가 납니다.
-// Uncaught TypeError: Cannot create property 'innerHTML' on string ''
-// at Template.writeContents (main.js:50)
-// at main.js:121
 
 console.log(a.remove('moto')); // moto
 console.log(b.remove('momo')); // undefined
-console.log(c.remove('titi')); // undefined
 
 console.log(a.getContents()); // ["pepe"]
 console.log(b.getContents()); // (5) ["memo", "toto", "mimi", "moru", "kedi"]
-console.log(c.getContents()); // (5) ["giri", "tomy", "wow", "koko", "roro"]
 
 console.log(a.find('pepe')); // 0
 console.log(b.find('moru')); // 3
-console.log(c.find('tomy')); // 1
 
 console.log(a.isContain('pepe')); // true
 console.log(b.isContain('pepe')); // false
-console.log(c.isContain('tomy')); // true
+
+b.editContent("mimi","kimson");
+console.log(b.getContents()); // (5) ["memo", "toto", "kimson", "moru", "kedi"]
 ```
 
 -----
@@ -356,7 +365,7 @@ console.log(c.isContain('tomy')); // true
 // 내용 추가 부분이 만약 원본데이터인 contents가 가공되어 저장된다면
 this.addContents = function(...contents){
 	for(let content of contents){
-		this.storage += this.theme(content); // 템플릿적용된 데이터가 저장
+		this.storage.push(content);
 	}
 }
 ```
@@ -374,7 +383,7 @@ this.writeContents = function(){ // 오히려 i만 넣으면 되는 장점이 �
 this.find = function(content){
 	for(let i of this.storage){
 		if(i.slice(i.indexOf(content), i.indexOf(content)+content.length+1)==content){
-			return this.storage.indexOf(content);
+			return this.getContents().indexOf(content);
 		}
 	}
 }
