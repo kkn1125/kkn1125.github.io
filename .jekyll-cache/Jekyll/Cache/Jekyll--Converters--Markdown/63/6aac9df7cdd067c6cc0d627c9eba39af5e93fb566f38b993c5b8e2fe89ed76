@@ -1,0 +1,225 @@
+I":+<h1 id="키-기반의-컬렉션">키 기반의 컬렉션</h1>
+
+<p>Set과 비슷하지만 Set은 중복값을 허용하지 않는다는 차이점이 있습니다.<br />
+Set은 이번 주제가 아니니 다음에 다루도록 하고, Map 객체의 특징과 메서드에 대해 알아보겠습니다.</p>
+
+<h2 id="map-객체">Map 객체</h2>
+
+<blockquote>
+  <p><a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Keyed_collections" title="MDN 참조">Map</a>은 ECMAScript 6에서 소개하는 새로운 데이터 구조 중 하나입니다. key-value쌍으로 저장하며, 저장 순서대로 접근가능합니다.</p>
+</blockquote>
+
+<h3 id="map의-메서드">Map의 메서드</h3>
+
+<h4 id="setkey-value"><code class="language-plaintext highlighter-rouge">set(key, value)</code></h4>
+
+<table class="table text-center mb-5">
+  <thead>
+    <tr>
+      <th>Method</th>
+      <th>Params</th>
+      <th>Return</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>set</td>
+      <td>key, value</td>
+      <td>Map</td>
+    </tr>
+    <tr>
+      <td>**action**</td>
+      <td>:**key**와 **value**를 추가|</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre><span class="kd">let</span> <span class="nx">map</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Map</span><span class="p">();</span>
+
+<span class="nx">map</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="dl">'</span><span class="s1">name</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">kimson</span><span class="dl">'</span><span class="p">);</span> <span class="c1">// value = kimson &gt;&gt; return Map</span>
+<span class="nx">map</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="dl">'</span><span class="s1">age</span><span class="dl">'</span><span class="p">);</span> <span class="c1">// value = undefined &gt;&gt; return Map</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">set(key, value)</code>는 <code class="language-plaintext highlighter-rouge">key</code>만 들어왔을때 <code class="language-plaintext highlighter-rouge">value</code>가 <code class="language-plaintext highlighter-rouge">undefined</code>로 지정됩니다.</p>
+
+<h4 id="getkey"><code class="language-plaintext highlighter-rouge">get(key)</code></h4>
+
+<table class="table text-center mb-5">
+  <thead>
+    <tr>
+      <th>Method</th>
+      <th>Params</th>
+      <th>Return</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>get</td>
+      <td>key</td>
+      <td>string</td>
+    </tr>
+    <tr>
+      <td>**action**</td>
+      <td>:**key**의 **value**를 얻음|</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="nx">map</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">name</span><span class="dl">'</span><span class="p">);</span> <span class="c1">// return kimson</span>
+<span class="nx">map</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">age</span><span class="dl">'</span><span class="p">);</span> <span class="c1">// return undefined</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h4 id="deletekey"><code class="language-plaintext highlighter-rouge">delete(key)</code></h4>
+
+<table class="table text-center mb-5">
+  <thead>
+    <tr>
+      <th>method</th>
+      <th>Params</th>
+      <th>Return</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>delete</td>
+      <td>key</td>
+      <td>boolean</td>
+    </tr>
+    <tr>
+      <td>**action**</td>
+      <td>:**key**를 삭제|</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="nx">map</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="dl">'</span><span class="s1">age</span><span class="dl">'</span><span class="p">);</span> <span class="c1">// return true</span>
+<span class="nx">map</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="dl">'</span><span class="s1">nation</span><span class="dl">'</span><span class="p">);</span> <span class="c1">// return false</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h4 id="haskey"><code class="language-plaintext highlighter-rouge">has(key)</code></h4>
+
+<table class="table text-center mb-5">
+  <thead>
+    <tr>
+      <th>method</th>
+      <th>Params</th>
+      <th>Return</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>has</td>
+      <td>key</td>
+      <td>boolean</td>
+    </tr>
+    <tr>
+      <td>**action**</td>
+      <td>:**key**가 있는지 여부|</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="nx">map</span><span class="p">.</span><span class="nx">has</span><span class="p">(</span><span class="dl">'</span><span class="s1">name</span><span class="dl">'</span><span class="p">);</span> <span class="c1">// return true</span>
+<span class="nx">map</span><span class="p">.</span><span class="nx">has</span><span class="p">(</span><span class="dl">'</span><span class="s1">age</span><span class="dl">'</span><span class="p">);</span> <span class="c1">// return false</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h4 id="clear"><code class="language-plaintext highlighter-rouge">clear()</code></h4>
+
+<table class="table text-center mb-5">
+  <thead>
+    <tr>
+      <th>method</th>
+      <th>Params</th>
+      <th>Return</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>clear</td>
+      <td>-</td>
+      <td>void</td>
+    </tr>
+    <tr>
+      <td>**action**</td>
+      <td>:**Map**객체의 내용 모두 삭제|</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="nx">map</span><span class="p">.</span><span class="nx">clear</span><span class="p">(</span><span class="dl">'</span><span class="s1">name</span><span class="dl">'</span><span class="p">);</span> <span class="c1">// return true</span>
+<span class="nx">map</span><span class="p">.</span><span class="nx">clear</span><span class="p">(</span><span class="dl">'</span><span class="s1">age</span><span class="dl">'</span><span class="p">);</span> <span class="c1">// return false</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h4 id="foreachcallback"><code class="language-plaintext highlighter-rouge">forEach(callback)</code></h4>
+
+<table class="table text-center mb-5">
+  <thead>
+    <tr>
+      <th>method</th>
+      <th>Params</th>
+      <th>Return</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>forEach</td>
+      <td>callback(val,key,map)</td>
+      <td>void</td>
+    </tr>
+    <tr>
+      <td>**action**</td>
+      <td>:**Map** 객체 순회|</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="rouge-code"><pre><span class="nx">map</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="dl">'</span><span class="s1">name</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">kimson</span><span class="dl">'</span><span class="p">);</span>
+<span class="nx">map</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="dl">'</span><span class="s1">age</span><span class="dl">'</span><span class="p">,</span> <span class="mi">15</span><span class="p">);</span>
+
+<span class="nx">map</span><span class="p">.</span><span class="nx">forEach</span><span class="p">((</span><span class="nx">value</span><span class="p">,</span><span class="nx">key</span><span class="p">,</span><span class="nx">map</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span> <span class="c1">// value, key, map 순서로 인자를 받음</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">value</span><span class="p">);</span> <span class="c1">// kimson 15</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">key</span><span class="p">);</span> <span class="c1">// name age</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">map</span><span class="p">);</span> <span class="c1">// Map(2) {"name" =&gt; "kimson", "age" =&gt; 15}</span>
+<span class="p">});</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="그-외-메서드">그 외 메서드</h3>
+
+<p>keys, values, entries가 있으며 for of로 순회가능 합니다. 여기서 for of에 대한 Iterable의 주제는 다음에 Iteration이라는 주제로 포스팅하도록 하겠습니다.</p>
+
+<h2 id="정리">정리</h2>
+
+<p>마치 사람들이 줄을 서있을 때 몇번째에 누가 있는가를 찾는 것 보다 이름(key)으로 식별하여 대상(value)를 찾는 것이 효율적인 것처럼 <code class="language-plaintext highlighter-rouge">key-value</code>기반 컬렉션을 다루는 것은 중요하다고 생각합니다.</p>
+
+<p><a href="http://localhost:4000/javascript-code-style/">복잡한 코드, 규칙을 만들자</a>편에서 다룬 내용에서는 Array를 주로 사용했습니다.</p>
+
+<p>기능을 구현하는데 있어서 내가 자신있는 방식보다는 데이터를 효율적으로 다룰 수 있는 방식을 채택해서 깊게 공부해볼 필요가 있다고 생각됩니다.</p>
+
+<p>프로그래밍은 데이터를 다루는 것이지 자신의 만족감을 다루는 것이 아니기 때문입니다.</p>
+:ET

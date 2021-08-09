@@ -1,0 +1,22 @@
+I"�
+<ul>
+  <li><a href="#키-기반의-컬렉션">키 기반의 컬렉션</a>
+    <ul>
+      <li><a href="#map-객체">Map 객체</a>
+        <ul>
+          <li><a href="#map의-메서드">Map의 메서드</a>
+            <ul>
+              <li><a href="#setkey-value"><code class="language-plaintext highlighter-rouge">set(key, value)</code></a></li>
+              <li><a href="#getkey"><code class="language-plaintext highlighter-rouge">get(key)</code></a></li>
+              <li><a href="#deletekey"><code class="language-plaintext highlighter-rouge">delete(key)</code></a></li>
+              <li><a href="#haskey"><code class="language-plaintext highlighter-rouge">has(key)</code></a></li>
+              <li><a href="#clear"><code class="language-plaintext highlighter-rouge">clear()</code></a></li>
+            </ul>
+          </li>
+          <li><a href="#그-외-메서드">그 외 메서드</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+:ET
