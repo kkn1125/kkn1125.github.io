@@ -28,7 +28,8 @@ profile: false
 istop: true
 keysum: true
 keywords: '
-
+SQL max(name) : name칼럼의 최대 값을 반환하는 함수.
+_SQL ifnull(value, falseValue) : value의 값이 null이면 0을, 아니면 value를 반환하는 함수.
 '
 ---
 
