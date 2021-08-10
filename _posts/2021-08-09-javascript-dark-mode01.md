@@ -1,7 +1,7 @@
 ---
 layout: post
 date:   2021-08-09 20:01:15 +0900
-title:  "[JAVASCRIPT] 정적웹에 다크모드 적용하기"
+title:  "[JAVASCRIPT] 정적웹에 다크모드 적용하기 01"
 author: Kimson
 categories: [ TIL, SPRING ]
 tags: [maps, key, value]
@@ -73,6 +73,10 @@ keywords: ''
 하지만 저는 화면이 새로고침 되지 않고 ajax통신하듯 변하는 방식을 채택하고 싶어서 조금 더 찾아봤습니다.
 
 ### localStorage 방식
+
+현재 깃허브페이지의 Theme 모드를 바꾸어보면 잘 바뀌고 유지가 되는 것을 볼 수 있습니다. 잘 보면 localStorage에 dark모드 설정 값이 굉장히 긴데요. 바뀌는 값들이 제 각각입니다.
+
+여기서 깃허브는 System.register라는 것을 사용해서 다크모드를 조정하는 듯 합니다. 이것이 무엇인지는 아직 잘 모르는 상황이라 간단하게 구현만 해보겠습니다.
 
 localStorage에 대한 지식이 아직 많이 없어 [MDN](https://developer.mozilla.org/ko/docs/Web/API/Window/localStorage){:target="_blank"}의 자료 설명을 빌리겠습니다.
 

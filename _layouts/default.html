@@ -90,11 +90,10 @@
 </style>
 
 <script>
-    window.addEventListener('DOMContentLoaded',()=>{
-        alert(123)
-        document.body.classList.add("dark");
-        console.log(document.body.classList)
-    })
+    // window.addEventListener('DOMContentLoaded',()=>{
+    //     document.body.classList.add("dark");
+    //     console.log(document.body.classList)
+    // })
 </script>
 
 <script src="{{site.baseurl}}/assets/js/loading.js" defer></script>
@@ -145,6 +144,9 @@ ga('send', 'pageview');
 
 {% capture layout %}{% if page.layout %}layout-{{ page.layout }}{% endif %}{% endcapture %}
 <body class="{{layout}}" data-aos-easing="ease-out-back" data-aos-duration="1000" data-aos-delay="0">
+    <!-- 210810 렌더시점에 dark입힘 -->
+    <script src="{{site.baseurl}}/assets/js/darkMode.js"></script>
+
 
     {% if page.url == "/" %}
         <div id="loadWrap" class="loading" data-unselect="true">
@@ -195,8 +197,7 @@ ga('send', 'pageview');
 
                 <li class="nav-item">
                     <div class="custom-control custom-switch">
-                        <input type="checkbox" class="custom-control-input" id="modeToggle">
-                        <label class="custom-control-label" for="modeToggle">Dark Mode</label>
+                        <button id="modeToggle" class="btn btn-sm btn-light">Dark Mode</button>
                       </div>
                 </li>
                 {% if page.url == "/profile" %}
@@ -354,9 +355,6 @@ ga('send', 'pageview');
 
 <script src="{{site.baseurl}}/assets/js/cookier.js"></script>
 
-<script src="{{site.baseurl}}/assets/js/darkMode.js"></script>
-
-    
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
 
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>

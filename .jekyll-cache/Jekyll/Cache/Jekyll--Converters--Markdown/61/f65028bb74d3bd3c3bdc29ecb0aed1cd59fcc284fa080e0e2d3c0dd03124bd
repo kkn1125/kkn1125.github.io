@@ -1,0 +1,14 @@
+I"A
+<ul>
+  <li><a href="#다크모드의-적용-시기">다크모드의 적용 시기</a>
+    <ul>
+      <li><a href="#렌더링-시점">렌더링 시점</a>
+        <ul>
+          <li><a href="#src-href">src, href</a></li>
+          <li><a href="#in-body">in body</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+:ET

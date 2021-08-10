@@ -1,52 +1,56 @@
-// window.addEventListener('load', function(){
-//     change(localStorage.getItem('dark'));
-// });
-
-// function change(value){
-//     value=='Y'?localStorage.setItem("dark","Y"):localStorage.setItem("dark","N")
-//     document.querySelector('[for="modeToggle"]').innerHTML = value!='N'?"Dark Mode":"Light Mode";
-//     document.body.setAttribute("data-mode",value!='N'?"dark":"light")
-//     document.querySelector('#modeToggle').checked = value!='N'?true:false;
-// }
-
-// document.querySelector('#modeToggle').addEventListener('change', function(event){
-//     if(event.target.checked){
-//         localStorage.setItem("dark","Y")
-//         change(localStorage.getItem('dark'));
-//     } else {
-//         localStorage.setItem("dark","N")
-//         change(localStorage.getItem('dark'));
-//     }
-// });
-
 let darkMode = localStorage.getItem("darkMode");
-const darkModeToggle = document.querySelector("#modeToggle");
-
-window.addEventListener('DOMContentLoaded',()=>{
-    if(darkMode === "Y"){
-        document.body.classList.add("dark");
-        enableDarkMode();
-    } else {
-        document.body.classList.remove("dark");
-        disableDarkMode();
-    }
-});
 
 const enableDarkMode = () => {
     document.body.classList.add('dark');
+    document.querySelector('#modeToggle').innerHTML = "Light Mode";
     localStorage.setItem('darkMode', 'Y');
+
+    document.querySelector('#modeToggle').classList.remove("btn-secondary");
+    document.querySelector('#modeToggle').classList.add("btn-light");
 };
 
 const disableDarkMode = () => {
     document.body.classList.remove('dark');
+    document.querySelector('#modeToggle').innerHTML = "Dark Mode";
     localStorage.setItem('darkMode', 'N');
+
+    document.querySelector('#modeToggle').classList.remove("btn-light");
+    document.querySelector('#modeToggle').classList.add("btn-secondary");
 };
 
-darkModeToggle.addEventListener('click', () => {
+window.onload = function(){
+    const darkModeToggle = document.querySelector("#modeToggle");
     darkMode = localStorage.getItem("darkMode");
-    if(darkMode !== "Y"){
-        enableDarkMode();
+    
+    darkModeToggle.addEventListener('click', () => {
+        darkMode = localStorage.getItem("darkMode");
+        if(darkMode !== "Y"){
+            enableDarkMode();
+        } else {
+            disableDarkMode();
+        }
+    });
+}
+
+window.addEventListener('DOMContentLoaded',()=>{
+    document.querySelector('#modeToggle').innerHTML = darkMode==="Y"?"Light Mode":"Dark Mode";
+    if(darkMode==="Y"){
+        document.querySelector('#modeToggle').classList.remove("btn-secondary");
+        document.querySelector('#modeToggle').classList.add("btn-light");
     } else {
-        disableDarkMode();
+        document.querySelector('#modeToggle').classList.remove("btn-light");
+        document.querySelector('#modeToggle').classList.add("btn-secondary");
     }
-});
+})
+
+if(darkMode === "Y"){
+    document.body.classList.add('dark');
+    localStorage.setItem('darkMode', 'Y');
+} else {
+    document.body.classList.remove('dark');
+    localStorage.setItem('darkMode', 'N');
+}
+
+//System.register
+// github 방식
+// localStorage를 사용하지만 body가 아닌 html태그에 클래스를 적용
