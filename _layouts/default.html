@@ -5,6 +5,98 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="naver-site-verification" content="6cebf2441529d02294b07c32ba2cd5ce09ba2c71" />
 
+<style>
+    body.dark{
+    background-color: #222222;
+    }
+
+    body.dark .section-title span {
+    border-bottom: 2px solid rgba(195, 195, 195, 0.856)
+    }
+    body.dark .section-title h2 {
+    border-bottom: 1px solid rgba(93, 93, 93, 0.808);
+    }
+
+    body.dark div.border.rounded{
+    background-color: inherit !important;
+    }
+
+    body.dark #gotop{
+    color:rgb(74, 167, 51) !important;
+    }
+
+    body.dark .footer{
+    background-color: #222222;
+    color: rgb(133, 133, 133) !important;
+    }
+
+    body.dark #conversation{
+    color: white;
+    }
+
+    body.dark div#posts{
+    color: white !important;
+    }
+
+    body.dark .rating-holder{
+    background-color: inherit;
+    }
+
+    body.dark [class="smoothscroll"]{
+    color: white !important;
+    background-color: rgb(104, 104, 104) !important;
+    }
+
+    body.dark .lang-badge{
+    color: white !important;
+    }
+
+    body.dark h1,
+    body.dark h2,
+    body.dark h3,
+    body.dark h4,
+    body.dark h5,
+    body.dark h6{
+    color: white;
+    }
+
+    body.dark ul,
+    body.dark div,
+    body.dark span,
+    body.dark p{
+    color: rgb(185, 185, 185) !important;
+    }
+
+    body.dark a{
+    color:rgb(223, 159, 76);
+    }
+
+    body.dark .navbar-brand{
+    color: white;
+    }
+
+    body.dark button.navbar-toggler{
+    filter: invert();
+    }
+
+    body.dark .navbar{
+    background-color: #333333 !important;
+    color: white;
+    }
+
+    body.dark .nav-link {
+    color: #d4d4d4 !important;
+    }
+</style>
+
+<script>
+    window.addEventListener('DOMContentLoaded',()=>{
+        alert(123)
+        document.body.classList.add("dark");
+        console.log(document.body.classList)
+    })
+</script>
+
 <script src="{{site.baseurl}}/assets/js/loading.js" defer></script>
 
 <script src="{{ site.baseurl }}/assets/js/jquery.min.js"></script>
@@ -258,10 +350,9 @@ ga('send', 'pageview');
 
 <!-- Scripts
     ================================================== -->
+<script src="{{site.baseurl}}/assets/js/kims.js" defer async></script>
 
 <script src="{{site.baseurl}}/assets/js/cookier.js"></script>
-
-<script src="{{site.baseurl}}/assets/js/kims.js"></script>
 
 <script src="{{site.baseurl}}/assets/js/darkMode.js"></script>
 
