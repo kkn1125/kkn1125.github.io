@@ -1,6 +1,27 @@
 /* base call */
 body.dark {
-	background-color: #222222;
+	background-color: #2a2b31;
+}
+
+body.dark .modal-content{
+	background-color: #555555;
+}
+
+body.dark .modal-content li.lunrsearchresult{
+	margin-bottom: 1rem;
+}
+
+body.dark .modal-content span.title{
+	color: #ffffff !important;
+	font-weight: bold;
+}
+
+body.dark .modal-content span.body{
+	color: #ffba8c !important;
+}
+
+body.dark .modal-content span.url{
+	color: #949494 !important;
 }
 
 body.dark .section-title span {
@@ -16,12 +37,16 @@ body.dark div.border.rounded {
 }
 
 body.dark #gotop {
-	color: rgb(74, 167, 51) !important;
+	color: rgb(216, 136, 71) !important;
 }
 
 body.dark .footer {
 	background-color: #222222;
 	color: rgb(133, 133, 133) !important;
+}
+
+body.dark .author-description {
+	color: rgb(197, 197, 197) !important;
 }
 
 body.dark #conversation {
@@ -51,7 +76,7 @@ body.dark h3,
 body.dark h4,
 body.dark h5,
 body.dark h6 {
-	color: white;
+	color: rgb(230, 230, 230);
 }
 
 body.dark hr{
@@ -60,9 +85,8 @@ body.dark hr{
 
 body.dark ul,
 body.dark div,
-body.dark span,
-body.dark p {
-	color: rgb(185, 185, 185) !important;
+body.dark .article-post p {
+	color: rgb(212, 212, 212) !important;
 }
 
 body.dark a {
@@ -78,7 +102,7 @@ body.dark button.navbar-toggler {
 }
 
 body.dark .navbar {
-	background-color: #333333 !important;
+	background-color: #252935 !important;
 	color: white;
 }
 
@@ -170,6 +194,7 @@ body.dark .nav-link {
 
 #loadWrap{
 	transition: 1s cubic-bezier(1,0,0,1);
+	z-index: 1100;
 }
 
 #hiddenCover{
