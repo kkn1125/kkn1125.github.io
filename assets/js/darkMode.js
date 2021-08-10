@@ -2,7 +2,7 @@ let darkMode = localStorage.getItem("darkMode");
 
 const enableDarkMode = () => {
     document.body.classList.add('dark');
-    document.querySelector('#modeToggle').innerHTML = "Light Mode";
+    document.querySelector('#modeToggle').innerHTML = `<i class="far fa-sun fa-2x"></i>`;
     localStorage.setItem('darkMode', 'Y');
 
     document.querySelector('#modeToggle').classList.remove("btn-secondary");
@@ -11,7 +11,7 @@ const enableDarkMode = () => {
 
 const disableDarkMode = () => {
     document.body.classList.remove('dark');
-    document.querySelector('#modeToggle').innerHTML = "Dark Mode";
+    document.querySelector('#modeToggle').innerHTML = `<i class="fas fa-moon fa-2x"></i>`;
     localStorage.setItem('darkMode', 'N');
 
     document.querySelector('#modeToggle').classList.remove("btn-light");
@@ -33,7 +33,7 @@ window.onload = function(){
 }
 
 window.addEventListener('DOMContentLoaded',()=>{
-    document.querySelector('#modeToggle').innerHTML = darkMode==="Y"?"Light Mode":"Dark Mode";
+    document.querySelector('#modeToggle').innerHTML = darkMode==="Y"?`<i class="far fa-sun fa-2x"></i>`:`<i class="fas fa-moon fa-2x"></i>`;
     if(darkMode==="Y"){
         document.querySelector('#modeToggle').classList.remove("btn-secondary");
         document.querySelector('#modeToggle').classList.add("btn-light");
