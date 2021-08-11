@@ -1,0 +1,58 @@
+I"�	<h1 id="vue-시작하기">Vue 시작하기</h1>
+
+<p>Frontend의 3대 끝판왕이라 하더군요. 제가 아직 React나 Angular, Vue를 써본적이 없어 얼마나 좋은지 아직 상상도 안됩니다. 그래서 오늘부터 Vue를 병행 공부하며, 이후에는 Spring과 연동하여 프로젝트를 테스트 해보고자 합니다.</p>
+
+<p>요즘에 Python이 자주 보여서 Python도 조금씩 시작하면서 포스팅하면 어떨까 합니다. 결국 하나를 파더라도 주변의 것들도 알아둬야 할 것 같다는 생각이 듭니다.</p>
+
+<h2 id="cdn-사용">CDN 사용</h2>
+
+<p>대부분 코드 예제는 [Vue 입문서]:[vue]</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+</pre></td><td class="rouge-code"><pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+  <span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;title&gt;</span>Vue.js Sample<span class="nt">&lt;/title&gt;</span>
+  <span class="nt">&lt;/head&gt;</span>
+  <span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"app"</span><span class="nt">&gt;</span>
+      
+    <span class="nt">&lt;/div&gt;</span>
+
+    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://cdn.jsdelivr.net/npm/vue/dist/vue.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+    <span class="nt">&lt;script&gt;</span>
+      <span class="k">new</span> <span class="nx">Vue</span><span class="p">({</span>
+        <span class="na">el</span><span class="p">:</span> <span class="dl">"</span><span class="s2">#app</span><span class="dl">"</span><span class="p">,</span>
+        <span class="na">data</span><span class="p">:</span> <span class="p">{</span>
+          <span class="na">message</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Hello Vue.js!</span><span class="dl">"</span>
+        <span class="p">}</span>
+      <span class="p">});</span>
+    <span class="nt">&lt;/script&gt;</span>
+  <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<hr />
+
+<p>[vue] https://joshua1988.github.io/web-development/vuejs/vuejs-tutorial-for-beginner/ {:target=”_blank”}</p>
+:ET

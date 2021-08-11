@@ -93,6 +93,21 @@ body.dark a {
 	color: rgb(223, 159, 76);
 }
 
+body.dark time.post-date {
+	color: rgb(190, 190, 190);
+}
+
+body.dark time.post-date::before{
+	content: "written at ";
+	font-style: italic;
+	font-weight: bold;
+	text-transform: capitalize;
+	text-decoration-line: underline;
+	text-decoration-style: wavy;
+	text-decoration-thickness: 3px;
+	text-decoration-color: lightcoral;
+}
+
 body.dark .navbar-brand {
 	color: white;
 }

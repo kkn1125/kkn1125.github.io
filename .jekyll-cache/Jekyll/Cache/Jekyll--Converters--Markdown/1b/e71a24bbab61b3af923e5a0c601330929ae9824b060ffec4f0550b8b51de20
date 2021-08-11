@@ -1,0 +1,250 @@
+I"�0<h1 id="vue-시작하기">Vue 시작하기</h1>
+
+<p>Frontend의 3대 끝판왕이라 하더군요. 제가 아직 React나 Angular, Vue를 써본적이 없어 얼마나 좋은지 아직 상상도 안됩니다. 그래서 오늘부터 Vue를 병행 공부하며, 이후에는 Spring과 연동하여 프로젝트를 테스트 해보고자 합니다.</p>
+
+<p>요즘에 Python이 자주 보여서 Python도 조금씩 시작하면서 포스팅하면 어떨까 합니다. 결국 하나를 파더라도 주변의 것들도 알아둬야 할 것 같다는 생각이 듭니다.</p>
+
+<h2 id="cdn-사용">CDN 사용</h2>
+
+<p>대부분 코드 예제는 <a href="https://joshua1988.github.io/web-development/vuejs/vuejs-tutorial-for-beginner/" title="뷰 기초" target="_blank">Vue 입문서</a>의 내용을 빌렸습니다.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+</pre></td><td class="rouge-code"><pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+  <span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;title&gt;</span>Vue.js Sample<span class="nt">&lt;/title&gt;</span>
+  <span class="nt">&lt;/head&gt;</span>
+  <span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"app"</span><span class="nt">&gt;</span>
+      
+    <span class="nt">&lt;/div&gt;</span>
+
+    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://cdn.jsdelivr.net/npm/vue/dist/vue.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+    <span class="nt">&lt;script&gt;</span>
+      <span class="k">new</span> <span class="nx">Vue</span><span class="p">({</span>
+        <span class="na">el</span><span class="p">:</span> <span class="dl">"</span><span class="s2">#app</span><span class="dl">"</span><span class="p">,</span>
+        <span class="na">data</span><span class="p">:</span> <span class="p">{</span>
+          <span class="na">message</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Hello Vue.js!</span><span class="dl">"</span>
+        <span class="p">}</span>
+      <span class="p">});</span>
+    <span class="nt">&lt;/script&gt;</span>
+  <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>뭔가 Liquid와 닮아있으면서 js로 내용을 조정하는 모양새입니다. 여기서 제가 평소 쓰던 javascript와 달리 Vue라는 생성자 함수를 이용해서 ajax의 data를 보내듯 el이라는 프로퍼티에 태그 아이디를 부여하고 <code class="language-plaintext highlighter-rouge">{ { foo } }</code>부분을 정의하여 출력하게 됩니다.</p>
+
+<h2 id="vue-instance-생성자">Vue Instance 생성자</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre></td><td class="rouge-code"><pre><span class="k">new</span> <span class="nx">Vue</span><span class="p">({</span>
+    <span class="c1">// instance option properties</span>
+<span class="p">});</span>
+
+<span class="k">new</span> <span class="nx">Vue</span><span class="p">({</span>
+    <span class="na">template</span><span class="p">:</span> <span class="dl">""</span><span class="p">,</span>
+    <span class="na">el</span><span class="p">:</span> <span class="dl">""</span><span class="p">,</span>
+    <span class="na">methods</span><span class="p">:</span> <span class="p">{}</span>
+    <span class="c1">// 이외 life cycle hook 등이 있다고 합니다.</span>
+<span class="p">})</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>Vue Instance 라이프싸이클 초기화는 아래와 같습니다.</p>
+
+<ul>
+  <li>데이터 관찰</li>
+  <li>템플릿 컴파일</li>
+  <li>DOM에 객체 연결</li>
+  <li>데이터 변경시 DOM Update</li>
+</ul>
+
+<p>초기화 외에도 의도대로 커스텀 로직을 추가 할 수 있습니다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="rouge-code"><pre><span class="k">new</span> <span class="nx">Vue</span><span class="p">({</span>
+  <span class="na">data</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">a</span><span class="p">:</span> <span class="mi">1</span>
+  <span class="p">},</span>
+  <span class="na">created</span><span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// this 는 vm 을 가리킴</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">a is: </span><span class="dl">"</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">a</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">created</code> 이외에 lifecycle단계에 따라 <code class="language-plaintext highlighter-rouge">mounted</code>, <code class="language-plaintext highlighter-rouge">updated</code>, <code class="language-plaintext highlighter-rouge">destroyed</code>등을 사용 할 수 있고, lifecycle 초기화 메서드로 커스텀 로직을 수행하기 때문에 뷰에서는 따로 Controller를 갖고 있지 않다고 합니다.</p>
+
+<h2 id="vue-components">Vue Components</h2>
+
+<p>이 부분은 마치 jsp tiles와 비슷한 개념으로 이해했습니다. 화면을 단위별로 쪼개어서 해당 부분에 컴포넌트를 추가하는 등의 관리를 합니다.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"test"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;kimson&gt;&lt;/kimson&gt;</span>
+    <span class="nt">&lt;kimson&gt;&lt;/kimson&gt;</span>
+    <span class="c">&lt;!--
+        하나의 대상에 같은 컴포넌트 사용 가능합니다.
+    --&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="c">&lt;!--
+    아래에서는 안됩니다.
+    class로도 적용이 됩니다.
+    하지만 대상이 둘이면 하나에만 적용 됩니다
+--&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"toast"</span><span class="nt">&gt;</span> 
+    <span class="nt">&lt;kimson&gt;&lt;/kimson&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+</pre></td><td class="rouge-code"><pre><span class="k">new</span> <span class="nx">Vue</span><span class="p">({</span>
+    <span class="c1">// 대상을 벗어나 사용하면 컴포넌트 등록한게 맞냐고</span>
+    <span class="c1">// 에러 메세지가 친절하게 지적해줍니다.</span>
+    <span class="na">el</span><span class="p">:</span> <span class="dl">"</span><span class="s2">#test</span><span class="dl">"</span><span class="p">,</span> <span class="c1">// 컴포넌트 유효 대상</span>
+    <span class="c1">// 컴포넌트 등록코드</span>
+    <span class="na">components</span><span class="p">:</span> <span class="p">{</span>
+        <span class="dl">"</span><span class="s2">kimson</span><span class="dl">"</span><span class="p">:{</span>
+            <span class="na">template</span><span class="p">:</span> <span class="dl">"</span><span class="s2">&lt;div&gt;Good job!!&lt;/div&gt;</span><span class="dl">"</span>
+            <span class="c1">// 태그가 없이 문자만 있으면 오류가 납니다.</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">})</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="globallocal-component">Global/Local Component</h3>
+
+<p>전역 컴포넌트 설정입니다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+</pre></td><td class="rouge-code"><pre><span class="nx">Vue</span><span class="p">.</span><span class="nx">component</span><span class="p">(</span><span class="dl">'</span><span class="s1">kimson-global</span><span class="dl">'</span><span class="p">,{</span> <span class="c1">// 전역 컴포넌트</span>
+    <span class="na">template</span><span class="p">:</span> <span class="dl">"</span><span class="s2">&lt;div&gt;hello kimson&lt;/div&gt;</span><span class="dl">"</span>
+    <span class="c1">// , ... 등등</span>
+<span class="p">});</span>
+
+<span class="k">new</span> <span class="nx">Vue</span><span class="p">({</span> <span class="c1">// 인스턴스 #1</span>
+    <span class="na">el</span><span class="p">:</span> <span class="dl">"</span><span class="s2">#app1</span><span class="dl">"</span>
+<span class="p">})</span>
+
+<span class="k">new</span> <span class="nx">Vue</span><span class="p">({</span> <span class="c1">// 인스턴스 #2</span>
+    <span class="na">el</span><span class="p">:</span> <span class="dl">"</span><span class="s2">#app2</span><span class="dl">"</span>
+<span class="p">})</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>여기서 전역 컴포넌트가 헷갈렸는데요. <code class="language-plaintext highlighter-rouge">Vue.component</code>메서드로 컴포넌트(태그)명을 주고, <code class="language-plaintext highlighter-rouge">template</code>에 내용을 적는(태그포함)것으로 컴포넌트를 정의합니다.</p>
+
+<p>이때 <code class="language-plaintext highlighter-rouge">new Vue</code>로 인스턴스를 만들어 다른 <code class="language-plaintext highlighter-rouge">el</code>(타겟)에도 사용 가능하게 한다는 의미에서 전역입니다.</p>
+
+<blockquote>
+  <p>공통으로 여러 인스턴스에 사용 가능</p>
+</blockquote>
+
+<p>지역 컴포넌트 설정입니다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre></td><td class="rouge-code"><pre><span class="kd">let</span> <span class="nx">comp</span> <span class="o">=</span> <span class="p">{</span> <span class="c1">// 변수로 template을 따로 설정 한 경우</span>
+    <span class="na">template</span><span class="p">:</span> <span class="dl">"</span><span class="s2">&lt;b&gt;kimson bold&lt;/b&gt;</span><span class="dl">"</span>
+<span class="p">}</span>
+
+<span class="k">new</span> <span class="nx">Vue</span><span class="p">({</span>
+    <span class="c1">// 사용할때는 el: "타겟 id || class", 추가</span>
+    <span class="na">components</span><span class="p">:</span> <span class="p">{</span>
+        <span class="dl">'</span><span class="s1">컴포넌트 명</span><span class="dl">'</span><span class="p">:</span> <span class="nx">comp</span>
+    <span class="p">}</span>
+<span class="p">})</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h2 id="부모-자식-컴포넌트-관계">부모 자식 컴포넌트 관계</h2>
+
+<blockquote>
+  <p>자식은 부모에 이벤트를 올리고(event emit), 부모는 자식에게 데이터(props)를 내린다.</p>
+</blockquote>
+
+<h3 id="props">Props</h3>
+
+<p>프롭스라 하며, 부모 컴포넌트에서 자식 컴포넌트로 내리는 데이터 속성을 의미합니다. 이런 이유는 모든 컴포넌트가 각 컴포넌트 자체 스코프를 갖고 있기 때문에</p>
+
+<hr />
+
+:ET
