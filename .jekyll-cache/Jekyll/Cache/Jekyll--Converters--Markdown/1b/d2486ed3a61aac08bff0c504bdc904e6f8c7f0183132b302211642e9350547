@@ -1,0 +1,101 @@
+I"�<h1 id="lombok-설정">lombok 설정</h1>
+
+<p>spring boot 시작하기 01에서 설치, 구동이 주제였다면 setter와 getter등의 <del>자질구레한</del> 것들을 간소화해주는 lombok을 설정하는 방법을 소개합니다.</p>
+
+<p>그 다음 tiles를 사용하는 방법을 이번 시간에 알아보겠습니다.</p>
+
+<h2 id="lombok-설치">lombok 설치</h2>
+
+<p>lombok은 의존성 추가로 끝나는게 아니고 lombok.jar를 설치해야 사용가능합니다. 처음에 의존성만 추가하고 자꾸 안된다고 헤메이다가 고마운 분들의 정보로 2시간 만에 해결할 수 있었습니다.</p>
+
+<p class="text-center"><img src="/assets/images/post/springboot/lombok/lombok01.png" alt="롬복 설치" /></p>
+
+<ol>
+  <li><a href="https://projectlombok.org/download" target="_blank">lombok 다운로드</a>를 해줍니다.</li>
+  <li>jar파일이 받아지면 해당 디렉토리에 가서 bash 또는 cmd를 켭니다.</li>
+  <li><code class="language-plaintext highlighter-rouge">java -jar fileName.jar</code>라고 입력하면 jar파일이 실행됩니다.</li>
+  <li>자동으로 IDE를 찾아 냅니다.</li>
+  <li>install/Update를 클릭하고, 설치완료되면 닫아줍니다.</li>
+</ol>
+
+<p>Eclipse는 재시작해주시고, 만들던 VO로 돌아와 getter/setter 어노테이션을 등록해줍니다.
+@Data로 한번에 등록가능합니다.</p>
+
+<p>이때 outline 탭을 확인해보면 lombok이 알아서 setter와 getter를 만들어 줍니다… 심지어 toString까지… 와우..</p>
+
+<blockquote>
+  <p>배포할때 lombok이 유효한지는 계속 찾고 있습니다. 만일 방법이 따로 있다면 다음에 포스팅하겠습니다.</p>
+</blockquote>
+
+<h1 id="tiles-설정하기">Tiles 설정하기</h1>
+
+<p>tiles는 의존성 추가 먼저 해줍니다. 이때 tiles는 mdnrepository에서 찾으실 때 아래의 artifactId에 유의해주세요.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;dependency&gt;</span>
+	<span class="nt">&lt;groupId&gt;</span>org.apache.tiles<span class="nt">&lt;/groupId&gt;</span>
+	<span class="nt">&lt;artifactId&gt;</span>tiles-jsp<span class="nt">&lt;/artifactId&gt;</span>
+	<span class="nt">&lt;version&gt;</span>3.0.8<span class="nt">&lt;/version&gt;</span>
+<span class="nt">&lt;/dependency&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p class="text-center"><img src="/assets/images/post/springboot/tiles/tiles01.png" alt="tiles 폴더구조" /></p>
+
+<p>tiles.xml을 위 이미지와 같이 경로에 생성합니다.
+xml의 내부코드는 아래와 같습니다. tiles.xml의 기본 설정은 <a href="https://tiles.apache.org/" target="_blank">tiles 홈페이지</a>에도 나와있습니다.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+</pre></td><td class="rouge-code"><pre><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="cp">&lt;!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd"&gt;</span>
+<span class="nt">&lt;tiles-definitions&gt;</span>
+
+  <span class="nt">&lt;definition</span> <span class="na">name=</span><span class="s">"root.*"</span> <span class="na">template=</span><span class="s">"/WEB-INF/views/inc/layout.jsp"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;put-attribute</span> <span class="na">name=</span><span class="s">"title"</span> <span class="na">value=</span><span class="s">"Tiles Test"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;put-attribute</span> <span class="na">name=</span><span class="s">"header"</span> <span class="na">value=</span><span class="s">"/WEB-INF/views/inc/header.jsp"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;put-attribute</span> <span class="na">name=</span><span class="s">"body"</span> <span class="na">value=</span><span class="s">"/WEB-INF/views/{1}.jsp"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;put-attribute</span> <span class="na">name=</span><span class="s">"footer"</span> <span class="na">value=</span><span class="s">"/WEB-INF/views/inc/footer.jsp"</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;/definition&gt;</span>
+  
+<span class="nt">&lt;/tiles-definitions&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>마지막 설정인 Configuration입니다. WebConfig라는 java파일을 만들어 tiles.xml의 위치를 알려주면서 tiles에서 지정하는 templ</p>
+
+<hr />
+
+<blockquote>
+  <p>참고 사이트</p>
+</blockquote>
+
+<p><a href="https://lee1535.tistory.com/27" target="_blank">효기미나님의 블로그</a></p>
+
+<p><a href="https://binit.tistory.com/21" target="_blank">코드힐러님의 블로그</a></p>
+
+<p><a href="https://ojava.tistory.com/131" target="_blank">ojava님의 블로그</a></p>
+
+<p><a href="https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&amp;blogId=sharplee7&amp;logNo=221674229726" target="_blank">중년개발자님의 블로그</a></p>
+
+<!-- <span class="text-muted">*- 구동준비된 상태의 폴더구조입니다.*</span>
+
+![스프링부트 구동](/assets/images/post/springboot/springboot11.png)
+{:.text-center} -->
+:ET

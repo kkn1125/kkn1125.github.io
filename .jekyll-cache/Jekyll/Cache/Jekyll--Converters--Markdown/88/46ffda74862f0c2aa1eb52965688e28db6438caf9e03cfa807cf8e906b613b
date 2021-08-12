@@ -1,0 +1,36 @@
+I"�<h1 id="spring-boot-시드-프로젝트">Spring boot 시드 프로젝트</h1>
+
+<p>spring을 처음 시작했을 때 굉장히 당황스러웠던 기억이 납니다. 기본적인 컨트롤러 만드는 것과 연결하는 것조차 작동이 안되서 많이 좌절했습니다.</p>
+
+<p>처음부터 기본 세팅까지 시간도 많이 걸릴뿐더러 전부 기억하지 못하기 때문에 시드프로젝트를 계속해서 만들었습니다.</p>
+
+<p>이번에는 Spring boot를 시작하면서 동시에 시드 프로젝트를 만들려고 합니다.</p>
+
+<blockquote>
+  <p>사용된 dependency는 다음과 같습니다.</p>
+  <ol>
+    <li>lombok</li>
+    <li>thymeleaf</li>
+    <li>각종 starter들</li>
+  </ol>
+</blockquote>
+
+<h2 id="spring-boot-설치">Spring boot 설치</h2>
+
+<blockquote>
+  <p>현재 사용중인 IDE가 Eclipse라서 Eclipse기준으로 설명드립니다.<br />
+Maven을 사용중이며 이후에 Gradle에 관한 포스팅도 올릴 예정입니다.</p>
+</blockquote>
+
+<p><img src="/assets/images/post/springboot/springboot01.png" alt="스프링부트 설치" />
+<span class="text-muted"><em>- 노란박스는 legacy프로젝트를 생성하므로 boot는 아닙니다.</em></span></p>
+
+<ol>
+  <li>help &gt; eclipsemarketplace로 들어갑니다.</li>
+  <li>springboot을 검색하고, 빨간박스로 표기된 것이 spring boot프로젝트를 생성해주기때문에 설치 이것을 설치합니다.</li>
+</ol>
+
+<p>설치가 완료되면 IDE를 restart하라는 문구가 뜨게 됩니다. restart해주시고, new 탭에서 spring starter를 찾습니다.</p>
+
+<p><img src="/assets/images/post/springboot/springboot01.png" alt="스프링부트 설치" /></p>
+:ET
