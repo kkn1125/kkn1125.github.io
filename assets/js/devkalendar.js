@@ -507,6 +507,8 @@ com.devkimson.calendar = { // 기능들
 				return '';
 			case "":
 				return '';
+			case 'rest':
+				return '☕';
 			case 'study':
 				return '📖';
 			case 'alert':
