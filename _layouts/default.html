@@ -6,16 +6,18 @@
 <meta name="naver-site-verification" content="6cebf2441529d02294b07c32ba2cd5ce09ba2c71" />
 
 <script>
-    // window.addEventListener('DOMContentLoaded',()=>{
-    //     document.body.classList.add("dark");
-    //     console.log(document.body.classList)
-    // })
+    let origin = window.location.origin;
+    let path = window.location.pathname;
+    if(path === "/index.html"){
+        location.href = origin+"/";
+    } else if (path === "/index"){
+        location.href = origin+"/";
+    }
 </script>
-
-<script src="{{site.baseurl}}/assets/js/loading.js" defer></script>
 
 <script src="{{ site.baseurl }}/assets/js/jquery.min.js"></script>
 
+<script src="{{site.baseurl}}/assets/js/loading.js" defer></script>
 
 <!-- google font -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
