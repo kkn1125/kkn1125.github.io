@@ -1,0 +1,15 @@
+I"�<h1 id="linkedlist-구현">LinkedList 구현</h1>
+
+<blockquote>
+  <p>이해한대로 만든 것이기 때문에 정확하지 않을 수 있습니다.</p>
+</blockquote>
+
+<p>LinkedList는 <code class="language-plaintext highlighter-rouge">node</code>의 연결로 이루어져있습니다. <code class="language-plaintext highlighter-rouge">node</code>는 데이터 값과 <code class="language-plaintext highlighter-rouge">next</code>, 혹은 <code class="language-plaintext highlighter-rouge">prev</code>값을 가지며, 이번 주제에서는 <code class="language-plaintext highlighter-rouge">next</code>만 있는 <code class="language-plaintext highlighter-rouge">node</code>를 가진 <code class="language-plaintext highlighter-rouge">LinkedList</code>를 만들어보려합니다.</p>
+
+<h2 id="linkedlist의-모양">LinkedList의 모양</h2>
+
+<p><img src="/assets/images/post/datastudy/linkedlist/linkedlist01.png" alt="LinkedList" title="도식" />
+<a href="https://habr.com/en/post/506660/" target="_blank">이미지 출처</a></p>
+
+<p>모양은 이렇습니다. 각 <code class="language-plaintext highlighter-rouge">node</code>는 <code class="language-plaintext highlighter-rouge">data</code>, <code class="language-plaintext highlighter-rouge">next</code> 프로퍼티를 가지고, 첫 요소는 <code class="language-plaintext highlighter-rouge">head</code>에 그 다음 추가되는 요소는 이전 요소의 <code class="language-plaintext highlighter-rouge">next</code></p>
+:ET

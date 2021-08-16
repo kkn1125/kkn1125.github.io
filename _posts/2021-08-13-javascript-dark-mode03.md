@@ -1,6 +1,6 @@
 ---
 layout: post
-date:   2021-08-12 13:50:20 +0900
+date:   2021-08-13 13:50:20 +0900
 title:  "[JAVASCRIPT] 정적웹에 다크모드 적용하기 03"
 author: Kimson
 categories: [ TIL, JAVASCRIPT ]

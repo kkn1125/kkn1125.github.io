@@ -16,23 +16,28 @@
                         [
                             {
                                 "todo":"React 기초 공부",
-                                "tag": "study",
+                                "tag": "check",
                                 "time":"2021-8-13 13:35"
                             },
                             {
                                 "todo":"Spring Boot 프로젝트 주제 선정",
-                                "tag": "study",
+                                "tag": "check",
                                 "time":"2021-8-13 13:35"
                             },
                             {
                                 "todo":"코드 규칙",
-                                "tag": "idea",
+                                "tag": "check",
                                 "time":"2021-8-13 13:35"
                             },
                             {
                                 "todo":"Python 구경",
-                                "tag": "study",
+                                "tag": "check",
                                 "time":"2021-8-13 13:35"
+                            },
+                            {
+                                "todo":"LinkedList 구현",
+                                "tag": "check",
+                                "time":"2021-8-16 21:39"
                             }
                         ],
                         "15":
