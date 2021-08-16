@@ -1,5 +1,24 @@
 let darkMode = localStorage.getItem("darkMode");
 
+setTimeout(()=>{
+    let style = document.createElement("style");
+    let css = document.createTextNode(`
+        body{
+            transition: .2s ease;
+        }
+    `);
+    style.appendChild(css);
+    document.head.appendChild(style);
+})
+if(darkMode === "Y"){
+    document.body.classList.add('dark');
+    localStorage.setItem('darkMode', 'Y');
+} else {
+    document.body.classList.remove('dark');
+    localStorage.setItem('darkMode', 'N');
+}
+
+
 const enableDarkMode = () => {
     document.body.classList.add('dark');
     document.querySelector('#modeToggle').innerHTML = `<i class="far fa-sun fa-2x"></i>`;
@@ -18,6 +37,8 @@ const disableDarkMode = () => {
     document.querySelector('#modeToggle').classList.add("btn-secondary");
 };
 
+let deg = 180;
+
 window.onload = function(){
     const darkModeToggle = document.querySelector("#modeToggle");
     darkMode = localStorage.getItem("darkMode");
@@ -26,9 +47,12 @@ window.onload = function(){
         darkMode = localStorage.getItem("darkMode");
         if(darkMode !== "Y"){
             enableDarkMode();
+            darkModeToggle.style.transform = "rotate3d(0, 1, 0, "+deg+"deg)"
         } else {
             disableDarkMode();
+            darkModeToggle.style.transform = "rotate3d(0, 1, 0, "+deg+"deg)"
         }
+        deg+=180;
     });
 }
 
@@ -41,15 +65,7 @@ window.addEventListener('DOMContentLoaded',()=>{
         document.querySelector('#modeToggle').classList.remove("btn-light");
         document.querySelector('#modeToggle').classList.add("btn-secondary");
     }
-})
-
-if(darkMode === "Y"){
-    document.body.classList.add('dark');
-    localStorage.setItem('darkMode', 'Y');
-} else {
-    document.body.classList.remove('dark');
-    localStorage.setItem('darkMode', 'N');
-}
+});
 
 //System.register
 // github 방식

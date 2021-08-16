@@ -1,4 +1,8 @@
 /* base call */
+/* body[class]{
+	transition: 0.5s cubic-bezier(1,0,0,1);
+} */
+
 body.dark {
 	background-color: #2a2b31;
 }
@@ -123,6 +127,32 @@ body.dark .navbar {
 
 body.dark .nav-link {
 	color: #d4d4d4 !important;
+}
+
+body button#modeToggle.btn{
+	transition: 1s ease;
+}
+
+body div#mtWrap{
+	perspective: 200px;
+	position: fixed;
+	top: 80px;
+	right: 8%;
+}
+
+/* body button#modeToggle.btn-secondary{
+	transform: rotate3d(0, 1, 0, 0deg);
+}
+
+body button#modeToggle.btn-light{
+	transform: rotate3d(0, 1, 0, 180deg);
+} */
+
+button#modeToggle{
+	/* position: fixed;
+	top: 80px;
+	right: 8%;
+	z-index: 1099; */
 }
 
 .table td{
@@ -339,13 +369,6 @@ body.dark .nav-link {
 .lang-badge{
 	color: white;
 	box-shadow: 3px 3px 3px 2px rgba(0,0,0,0.5);
-}
-
-button#modeToggle{
-	position: fixed;
-	top: 80px;
-	right: 8%;
-	z-index: 1099;
 }
 
 a#gotop i::before{
