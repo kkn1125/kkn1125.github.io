@@ -1,0 +1,52 @@
+I"�<h1 id="스크롤-애니메이션-구현">스크롤 애니메이션 구현</h1>
+
+<p>이번 시간에는 스크롤바를 없애고 슬라이드방식의 페이지를 구현해보려합니다. 남의 코드를 계속 염탐하다보니 정작 나중에 다시 보면 이해가 안되는 경우가 더러 있었습니다.</p>
+
+<p>좋은 버릇도 아닐뿐더러 생각하는 힘을 기르는데는 좋은 것 같습니다.</p>
+
+<p>원래는 화면 뷰포트를 감지하는 코드를 참고해서 만들고자 하였지만 이 또한 만들고나서 참고해보자는 마음에 구현된 기능을 정리하여 올립니다.</p>
+
+<h2 id="스크롤바-없애기">스크롤바 없애기</h2>
+
+<p>간단합니다. 그저 <code class="language-plaintext highlighter-rouge">css</code>에서 <code class="language-plaintext highlighter-rouge">body</code>(혹은 대상 요소)의 <code class="language-plaintext highlighter-rouge">overflowY</code>를 <code class="language-plaintext highlighter-rouge">hidden</code>값만 주면 사라집니다. 설정한 후가 문제입니다.</p>
+
+<h2 id="스크롤-구현">스크롤 구현</h2>
+
+<p>먼저 필요한 기능부터 살펴보겠습니다.</p>
+
+<ol>
+  <li>휠을 굴릴 때 상하 감지
+    <ul>
+      <li>해당 방향으로 섹션 이동</li>
+    </ul>
+  </li>
+  <li>상하 이동</li>
+  <li>새로고침 or 페이지 이동 시 초기화</li>
+</ol>
+
+<p>간단하게 약 3가지의 기능을 구현해보겠습니다. 이정도 기능이면 충분히 슬라이드 페이지를 조잡하게라도 흉내낼수 있었습니다.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"btns"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;button&gt;</span>Up<span class="nt">&lt;/button&gt;</span>
+    <span class="nt">&lt;button&gt;</span>Down<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;section&gt;</span>
+    <span class="nt">&lt;h1&gt;</span>Test1<span class="nt">&lt;/h1&gt;</span>
+    <span class="nt">&lt;p&gt;</span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quo, tenetur blanditiis distinctio consequatur quos vitae iure impedit a quibusdam facere aspernatur nam veritatis quae iusto similique dolores quam earum perferendis.<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/section&gt;</span>
+<span class="c">&lt;!--  --&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>
+</pre></td></tr></tbody></table></code></pre></div></div>
+:ET
