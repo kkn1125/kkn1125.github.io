@@ -6,7 +6,13 @@ author: Kimson
 categories: [ TIM, JAVASCRIPT ]
 tags: [no-scroll, slide]
 image: assets/images/post/covers/TIM-none.png
-description: ""
+description: "스크롤 애니메이션 구현
+
+이번 시간에는 스크롤바를 없애고 슬라이드방식의 페이지를 구현해보려합니다. 남의 코드를 계속 염탐하다보니 정작 나중에 다시 보면 이해가 안되는 경우가 더러 있었습니다.
+
+좋은 버릇도 아닐뿐더러 생각하는 힘을 기르는데는 좋은 것 같습니다.
+
+원래는 화면 뷰포트를 감지하는 코드를 참고해서 만들고자 하였지만 이 또한 만들고나서 참고해보자는 마음에 구현된 기능을 정리하여 올립니다."
 featured: true
 hidden: false
 rating: 4.5
@@ -14,13 +20,7 @@ toc: true
 profile: false
 istop: true
 keysum: false
-keywords: '스크롤 애니메이션 구현
-
-이번 시간에는 스크롤바를 없애고 슬라이드방식의 페이지를 구현해보려합니다. 남의 코드를 계속 염탐하다보니 정작 나중에 다시 보면 이해가 안되는 경우가 더러 있었습니다.
-
-좋은 버릇도 아닐뿐더러 생각하는 힘을 기르는데는 좋은 것 같습니다.
-
-원래는 화면 뷰포트를 감지하는 코드를 참고해서 만들고자 하였지만 이 또한 만들고나서 참고해보자는 마음에 구현된 기능을 정리하여 올립니다.'
+keywords: ''
 ---
 
 # 스크롤 애니메이션 구현

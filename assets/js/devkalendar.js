@@ -309,14 +309,37 @@ com.devkimson.calendar = { // 기능들
 		tr.appendChild(td);
 		tfoot.appendChild(tr);
 		this._id.appendChild(tfoot);
-
+		let limitDate = new Date(_$.fixed.year, _$.fixed.month, _$.fixed.date-1);
+		let latestAlert = "";
+		
 		// todo marker place
 		if(this.data.year[cal.$year]!=undefined && this.data.year[cal.$year].month[cal.$month]!=undefined) // json구조 바뀌면서 변경
 		{
 			for(key of Object.keys(this.data.year[cal.$year].month[cal.$month].date)){
 				// todo marker
 				var span = document.createElement('span');
-				var len = Object.keys(this.data.year[cal.$year].month[cal.$month].date[key]).length;
+				let item = this.data.year[cal.$year].month[cal.$month].date[key];
+				var len = Object.keys(item).length;
+				// 20210818 new/old alert 기능 추가
+				if(limitDate.getTime() < new Date(cal.$year,cal.$month, key).getTime()){
+					latestAlert = "#3F3FCB";
+				} else {
+					latestAlert = "gray";
+					let count = 0;
+					for(let i in Object.keys(item)){
+						if(item[i].tag==="check" || item[i].tag==="rest"){
+							count++;
+						}
+					}
+					// 20210818 체크개수별 색상
+					if(count<len/2 ){
+						latestAlert = "red"; // 체크 절반이하
+					} else if (count>=len/2 && count < len) {
+						latestAlert = "#DDD10F"; // 체크 중간쯤
+					} else {
+						latestAlert = "#0CA428"; // 모두 체크
+					}
+				}
 				$(span).css({
 					"display":"block",
 					"position":"absolute",
@@ -324,7 +347,7 @@ com.devkimson.calendar = { // 기능들
 					"left":"calc(70%)",
 					"border":"1px solid black",
 					"borderRadius":"50%",
-					"backgroundColor":"red",
+					"backgroundColor": latestAlert,
 					"width":".5rem",
 					"height":".5rem",
 					"pointerEvents":"none",
@@ -504,9 +527,9 @@ com.devkimson.calendar = { // 기능들
 		}
 		switch(tags){
 			case undefined:
-				return '';
+				return '▷';
 			case "":
-				return '';
+				return '▷';
 			case 'rest':
 				return '☕';
 			case 'study':
@@ -531,6 +554,8 @@ com.devkimson.calendar = { // 기능들
 				return '✅';
 			case 'cancel':
 				return '❎';
+			case 'prj':
+				return '<i class="fas fa-sitemap text-warning"></i>';
 		}
 	},
 	GetList: function(year, month, date){
@@ -570,7 +595,7 @@ com.devkimson.calendar = { // 기능들
 										// 210809 add tag function
 										todos += 
 										`
-											<div class="my-3 clearfix">▷<span>${this.tagging(key4.tag)}</span> ${key4.tag=='check'?"<del>"+key4.todo+"</del>":key4.todo}
+											<div class="my-3 clearfix"><span>${this.tagging(key4.tag)}</span> ${key4.tag=='check'?"<del>"+key4.todo+"</del>":key4.todo}
 												<span class="badge text-muted float-end">${key4.time}</span>
 											</div>
 											${idx!=len?"<hr>":""}

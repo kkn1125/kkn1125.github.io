@@ -4,6 +4,30 @@
             "month": {
                 "7": {
                     "date": {
+                        "27":
+                        [
+                            {
+                                "todo": "Spring Boot 연습 프로젝트 마무리",
+                                "tag": "prj",
+                                "time": "2021-8-18 22:17"
+                            }
+                        ],
+                        "19":
+                        [
+                            {
+                                "todo": "Spring Security 시작!",
+                                "tag": "study",
+                                "time": "2021-8-6 20:31"
+                            }
+                        ],
+                        "18":
+                        [
+                            {
+                                "todo": "Spring Boot 연습 프로젝트 시작",
+                                "tag": "prj",
+                                "time": "2021-8-18 21:36"
+                            }
+                        ],
                         "17":
                         [
                             {
@@ -91,18 +115,13 @@
                                 "todo": "Spring Boot 시작!",
                                 "tag": "check",
                                 "time": "2021-8-6 20:31"
-                            },
-                            {
-                                "todo": "Spring Security 시작!",
-                                "tag": "study",
-                                "time": "2021-8-6 20:31"
                             }
                         ],
                         "8": 
                         [
                             {
                                 "todo": "<img width='30px' src='/assets/images/icon/batis02.png' alt='batis'>MyBatis 기초 익히기",
-                                "tag": "study",
+                                "tag": "check",
                                 "time": "2021-8-6 20:31"
                             },
                             {

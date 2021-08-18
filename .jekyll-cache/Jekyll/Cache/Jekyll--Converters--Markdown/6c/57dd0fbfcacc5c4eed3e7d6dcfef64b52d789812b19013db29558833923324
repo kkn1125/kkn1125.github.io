@@ -1,0 +1,210 @@
+I"�3<h1 id="mybatis">MyBatis</h1>
+
+<p>ToDoList에도 올려두었던 녀석을 이제야 합니다. 여지껏 수동으로 작성하는 방법에 길들여져서 새로운 방법을 저도 모르게 멀리하려고 핑계댔는지도 모르겠습니다.</p>
+
+<p>최근에 롬복을 설치하고 사용해보니 굉장히 편리함을 느꼈습니다. 이제는 편리한 기능들을 계속 찾게 되는 것 같습니다.<br />
+아직 lombok을 안 써보신 분은 <a href="https://kkn1125.github.io/spring-boot-start02/" target="_blank">Spring Boot 시작하기 02</a>를 참고해주세요.</p>
+
+<h2 id="설정">설정</h2>
+
+<blockquote>
+  <p>작업환경은 spring boot입니다.</p>
+</blockquote>
+
+<p><code class="language-plaintext highlighter-rouge">dependency</code>를 먼저 추가해줍시다. 저는 아래의 버전으로 사용했습니다.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="rouge-code"><pre><span class="c">&lt;!-- pom.xml --&gt;</span>
+<span class="nt">&lt;dependency&gt;</span>
+    <span class="nt">&lt;groupId&gt;</span>org.mybatis.spring.boot<span class="nt">&lt;/groupId&gt;</span>
+    <span class="nt">&lt;artifactId&gt;</span>mybatis-spring-boot-starter<span class="nt">&lt;/artifactId&gt;</span>
+    <span class="nt">&lt;version&gt;</span>2.2.0<span class="nt">&lt;/version&gt;</span>
+<span class="nt">&lt;/dependency&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>참고로 Spring에서 쓰던 RootConfig.java가 필요가 없어졌습니다. 이유는 아래의 프로퍼티파일 설정때문입니다.</p>
+
+<div class="language-properties highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="rouge-code"><pre><span class="c"># mysql settings
+</span><span class="py">spring.datasource.driver-class-name</span><span class="p">=</span><span class="s">com.mysql.cj.jdbc.Driver</span>
+<span class="py">spring.datasource.url</span><span class="p">=</span><span class="s">jdbc:mysql://localhost:3306/sample?useUnicode=yes&amp;characterEncoding=UTF-8&amp;allowMultiQueries=true&amp;serverTimezone=Asia/Seoul</span>
+<span class="py">spring.datasource.username</span><span class="p">=</span><span class="s">mysqlID</span>
+<span class="py">spring.datasource.password</span><span class="p">=</span><span class="s">mysqlPW</span>
+<span class="c"># DB의 조회 결과 데이터를 담을 클래스들의 패키지 경로 지정
+</span><span class="py">mybatis.type-aliases-package</span><span class="p">=</span><span class="s">com.bootstart.startweb.entity</span>
+<span class="c"># 단 mapper.xml를 작성할때만 이 줄을 사용한다. 그 외 방법에는 안써도 됨
+</span></pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>기존에 RootConfig.java에서 설정해두었던 데이터베이스 연결 구문이 대체되어 필요가 없게 되었습니다.</p>
+
+<p class="text-center"><img src="/assets/images/post/springboot/mybatis/batis01.png" alt="mybatis backup" /></p>
+<p><span class="text-muted">- 불쌍한 config</span></p>
+
+<p>이제는 힘겹게 <code class="language-plaintext highlighter-rouge">Connection</code>하고 select, insert, update, delete 하나하나 <code class="language-plaintext highlighter-rouge">try catch</code> 써가면서 노가다를 안해도 되는 상황이 됐습니다. 이런 수고스런 녀석들을 <code class="language-plaintext highlighter-rouge">back</code>확장자로 감금시켜두겠습니다.</p>
+
+<p>필요한 설정은 두가지 남았습니다. <code class="language-plaintext highlighter-rouge">interface</code>구현과 <code class="language-plaintext highlighter-rouge">service</code>구현입니다.</p>
+
+<h2 id="mapper-interface구현">Mapper Interface구현</h2>
+
+<p>Interface 구현은 간단한 예제를 가져왔습니다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+</pre></td><td class="rouge-code"><pre><span class="nd">@Mapper</span> <span class="c1">// mapper.xml을 대체</span>
+<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">UserMapper</span> <span class="o">{</span>
+    <span class="nd">@Select</span><span class="o">(</span><span class="s">"SELECT * FROM user"</span><span class="o">)</span>
+    <span class="nc">List</span><span class="o">&lt;</span><span class="nc">User</span><span class="o">&gt;</span> <span class="nf">findAll</span><span class="o">();</span>
+
+    <span class="nd">@Select</span><span class="o">(</span><span class="s">"SELECT * FROM user WHERE num = #{num}"</span><span class="o">)</span>
+    <span class="c1">// #{foo}</span>
+    <span class="nc">User</span> <span class="nf">findByUserIdx</span><span class="o">(</span><span class="nd">@Param</span><span class="o">(</span><span class="s">"num"</span><span class="o">)</span> <span class="kt">int</span> <span class="n">num</span><span class="o">);</span>
+    <span class="c1">// @Param("...")의 이름과 #{...}의 이름이 같아야함</span>
+    <span class="c1">// #{foo} ... @Param("foo") int bar 여도 가능</span>
+
+    <span class="nd">@Insert</span><span class="o">(</span><span class="s">"INSERT INTO user(id,pw,email,comment,profileImg,name,birth,gender,phone,address,zip,question,answer) VALUES(
+        #{id}, #{pw}, #{email}, #{comment}, #{profileImg}, 
+        #{name}, #{birth}, #{gender}, #{phone}, #{address}, 
+        #{zip}, #{question}, #{answer}
+    )"</span><span class="o">)</span>
+    <span class="c1">// @Options(useGeneratedKeys = true, keyProperty = "num")</span>
+    <span class="kt">int</span> <span class="nf">save</span><span class="o">(</span><span class="nd">@Param</span><span class="o">(</span><span class="s">"user"</span><span class="o">)</span> <span class="kd">final</span> <span class="nc">User</span> <span class="n">user</span><span class="o">);</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>작성한 후 UserService를 작성합시다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+</pre></td><td class="rouge-code"><pre><span class="nd">@Service</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">UserService</span> <span class="o">{</span>
+    
+    <span class="nd">@Autowired</span>
+    <span class="kd">private</span> <span class="nc">UserMapper</span> <span class="n">userMapper</span><span class="o">;</span>
+
+    <span class="c1">// public UserService(UserMapper userMapper) {</span>
+    <span class="c1">//     this.userMapper = userMapper;</span>
+    <span class="c1">// }</span>
+
+    <span class="kd">public</span> <span class="nc">List</span><span class="o">&lt;</span><span class="nc">User</span><span class="o">&gt;</span> <span class="nf">getAllUsers</span><span class="o">()</span> <span class="o">{</span>
+        <span class="kd">final</span> <span class="nc">List</span><span class="o">&lt;</span><span class="nc">User</span><span class="o">&gt;</span> <span class="n">list</span> <span class="o">=</span> <span class="n">userMapper</span><span class="o">.</span><span class="na">findAll</span><span class="o">();</span>
+        <span class="k">if</span><span class="o">(</span><span class="n">list</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">()){</span>
+            <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="n">list</span><span class="o">;</span>
+    <span class="o">}</span>
+
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>DI로 UserMapper를 땡겨옵니다. <code class="language-plaintext highlighter-rouge">@Autowired</code>로 간편하게 하는 방법이 있지만 저는 공부를 위해 주석처리로 남겨만 두었습니다.</p>
+
+<p>마지막으로 테스트 해보겠습니다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre><span class="c1">// @ResponseBody</span>
+<span class="nd">@GetMapping</span><span class="o">(</span><span class="n">value</span><span class="o">=</span><span class="s">"test"</span><span class="o">,</span> <span class="n">produces</span> <span class="o">=</span> <span class="s">"application/json; charset-utf8"</span><span class="o">)</span>
+<span class="kd">public</span> <span class="nc">String</span> <span class="nf">AllUsers</span><span class="o">(</span><span class="nc">Model</span> <span class="n">model</span><span class="o">)</span> <span class="o">{</span>
+    <span class="nc">List</span><span class="o">&lt;</span><span class="nc">User</span><span class="o">&gt;</span> <span class="n">list</span> <span class="o">=</span> <span class="n">userService</span><span class="o">.</span><span class="na">getAllUsers</span><span class="o">();</span>
+    <span class="n">model</span><span class="o">.</span><span class="na">addAttribute</span><span class="o">(</span><span class="s">"list"</span><span class="o">,</span> <span class="n">list</span><span class="o">);</span>
+    <span class="k">return</span> <span class="s">"root.test"</span><span class="o">;</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>만일 json으로 전송해서 확인하시는거면 produces 값을 위와 같이 하고 보시기바랍니다. db에 테스트용 정보를 3개정도 담고 출력해보겠습니다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+</pre></td><td class="rouge-code"><pre><span class="nd">@ResponseBody</span>
+<span class="nd">@GetMapping</span><span class="o">(</span><span class="n">value</span><span class="o">=</span><span class="s">"test"</span><span class="o">,</span> <span class="n">produces</span> <span class="o">=</span> <span class="s">"application/json; charset-utf8"</span><span class="o">)</span>
+<span class="kd">public</span> <span class="nc">String</span> <span class="nf">AllUsers</span><span class="o">(</span><span class="nc">Model</span> <span class="n">model</span><span class="o">)</span> <span class="o">{</span>
+    <span class="nc">List</span><span class="o">&lt;</span><span class="nc">User</span><span class="o">&gt;</span> <span class="n">list</span> <span class="o">=</span> <span class="n">userService</span><span class="o">.</span><span class="na">getAllUsers</span><span class="o">();</span>
+    <span class="nc">ObjectMapper</span> <span class="n">mapper</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ObjectMapper</span><span class="o">();</span>
+    <span class="nc">String</span> <span class="n">result</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+    <span class="k">try</span> <span class="o">{</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">mapper</span><span class="o">.</span><span class="na">writerWithDefaultPrettyPrinter</span><span class="o">().</span><span class="na">writeValueAsString</span><span class="o">(</span><span class="n">list</span><span class="o">);</span>
+    <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="nc">JsonProcessingException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">// TODO Auto-generated catch block</span>
+        <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+    <span class="o">}</span>
+    <span class="k">return</span> <span class="n">result</span><span class="o">;</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">list</code>에 받아서 보기 좋게 <code class="language-plaintext highlighter-rouge">pretty</code>먹이고, 뿌려보겠습니다. 결과는 <code class="language-plaintext highlighter-rouge">postman</code>을 참고하겠습니다.</p>
+
+<p class="text-center"><img src="/assets/images/post/springboot/mybatis/batis02.png" alt="mybatis backup" /></p>
+
+<p>Postman은 Json이 깔끔하게</p>
+
+<blockquote>
+  <p>DI에 관한 이해는 포스팅 맨 아래의 링크를 참고해주세요.</p>
+</blockquote>
+
+<hr />
+
+<p><a href="https://gmlwjd9405.github.io/2018/11/09/dependency-injection.html">DI에 관한 이해 - HeeJeong Kwon님의 블로그</a></p>
+:ET

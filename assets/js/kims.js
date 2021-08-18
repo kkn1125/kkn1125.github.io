@@ -242,7 +242,7 @@ window.addEventListener('load', function(){
                 case 'java':
                     color = "primary text-dark"
                     break;
-                case 'mysql':
+                case 'bash':
                     color = "dark text-dark"
                     break;
                 case 'html':
@@ -259,6 +259,12 @@ window.addEventListener('load', function(){
                     break;
                 case 'sql':
                     color = "secondary text-white"
+                    break;
+                case 'xml':
+                    color = "success text-white"
+                    break;
+                case 'properties':
+                    color = "dark text-white"
                     break;
             }
 
