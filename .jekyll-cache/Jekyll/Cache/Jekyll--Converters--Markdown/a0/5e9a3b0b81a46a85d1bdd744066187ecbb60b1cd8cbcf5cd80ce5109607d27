@@ -1,0 +1,16 @@
+I"`<h1 id="spring-boot-security-시작하기">Spring Boot Security 시작하기</h1>
+
+<p>시큐리티 시작해야지 했던 게 벌써 일주일이 지난 것  같습니다. 그 날 못한 일을 계속 꼼수로 수정해서 달력 저어~ 뒤로 미루던 것을 이제 그만 해야할 것 같습니다. TodoList를 만든 보람과 신뢰가 자신에게 사라지는 느낌이라 자제를…</p>
+
+<p><code class="language-plaintext highlighter-rouge">Security</code> 설정은 <code class="language-plaintext highlighter-rouge">Spring boot security</code>를 검색하면 <a href="https://spring.io/guides/gs/securing-web/" target="_blank">스프링부트 가이드</a>에 잘 나와있습니다. 하나하나 따라하면서 필요한 기능들을 검색해서 알아보았습니다.</p>
+
+<p>잊을 것 같아 포스팅으로 기록을 남깁니다.</p>
+
+<h2 id="security-config-설정">Security Config 설정</h2>
+
+<hr />
+
+<p><a href="https://mangkyu.tistory.com/77" target="_blank">망나니개발자님의 블로그</a></p>
+
+<p><a href="https://mangkyu.tistory.com/77" target="_blank">qkaenffp 블로그</a></p>
+:ET

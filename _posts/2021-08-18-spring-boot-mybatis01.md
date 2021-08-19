@@ -1,10 +1,6 @@
 ---
 layout: post
 date:   2021-08-18 19:54:48 +0900
-sitemap :
-    lastmod : 2021-08-18 19:54:48 +0900
-    changefreq :
-    priority : 1.0
 title:  "[SPRING] SPRING BOOT MyBatis 시작하기"
 author: Kimson
 categories: [ TIL, SPRINGBOOT ]
@@ -171,4 +167,4 @@ public String AllUsers(Model model) {
 
 -----
 
-[DI에 관한 이해 - HeeJeong Kwon님의 블로그](https://gmlwjd9405.github.io/2018/11/09/dependency-injection.html)
+[DI에 관한 이해 - HeeJeong Kwon님의 블로그](https://gmlwjd9405.github.io/2018/11/09/dependency-injection.html){:target="_blank"}

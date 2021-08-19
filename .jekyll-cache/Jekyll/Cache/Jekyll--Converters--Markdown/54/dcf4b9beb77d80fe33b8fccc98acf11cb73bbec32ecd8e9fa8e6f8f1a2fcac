@@ -1,0 +1,22 @@
+I"K	<h1 id="object-assign-메서드">Object assign 메서드</h1>
+
+<p><code class="language-plaintext highlighter-rouge">assign</code>이라는 메서드는 이렇습니다. 대상 객체로부터 열거 가능한 하나 이상의 속성들을 목표 객체로 복사합니다. 수정된 객체를 반환하는 특징이있습니다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="rouge-code"><pre><span class="kd">const</span> <span class="nx">foo</span> <span class="o">=</span> <span class="p">{</span> <span class="na">a</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="na">b</span><span class="p">:</span> <span class="mi">2</span> <span class="p">};</span>
+<span class="kd">const</span> <span class="nx">bar</span> <span class="o">=</span> <span class="p">{</span> <span class="na">b</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="na">c</span><span class="p">:</span> <span class="mi">7</span> <span class="p">};</span>
+
+<span class="kd">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">assign</span><span class="p">(</span><span class="nx">foo</span><span class="p">,</span> <span class="nx">bar</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span> <span class="c1">// { a: 1, b: 4, c: 7 }</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>기본적으로 사용방법은 위와 같이 간단합니다. 만일 특정 요소에 <code class="language-plaintext highlighter-rouge">style</code>이나 <code class="language-plaintext highlighter-rouge">attribute</code>를 여러개 설정하려면 <code class="language-plaintext highlighter-rouge">setAttribute('property','value')</code>로 단일 요소를 작성하거나, <code class="language-plaintext highlighter-rouge">el.style.property = value</code>로 스타일을 단일로 지정하였습니다.</p>
+
+<p>이제 <code class="language-plaintext highlighter-rouge">jquery</code>처럼 mulit</p>
+:ET

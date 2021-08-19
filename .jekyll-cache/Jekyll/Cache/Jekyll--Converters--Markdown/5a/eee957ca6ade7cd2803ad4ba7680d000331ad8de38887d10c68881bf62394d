@@ -1,0 +1,119 @@
+I"�<h1 id="spring-boot-security-시작하기">Spring Boot Security 시작하기</h1>
+
+<p>시큐리티 시작해야지 했던 게 벌써 일주일이 지난 것  같습니다. 그 날 못한 일을 계속 꼼수로 수정해서 달력 저어~ 뒤로 미루던 것을 이제 그만 해야할 것 같습니다. TodoList를 만든 보람과 신뢰가 자신에게 사라지는 느낌이라 자제를…</p>
+
+<p><code class="language-plaintext highlighter-rouge">Security</code> 설정은 <code class="language-plaintext highlighter-rouge">Spring boot security</code>를 검색하면 <a href="https://spring.io/guides/gs/securing-web/" target="_blank">스프링부트 가이드</a>에 잘 나와있습니다. 하나하나 따라하면서 필요한 기능들을 검색해서 알아보았습니다.</p>
+
+<p>잊을 것 같아 포스팅으로 기록을 남깁니다.</p>
+
+<h2 id="security-config-설정">Security Config 설정</h2>
+
+<p><code class="language-plaintext highlighter-rouge">member</code>에 관한 mapper와 연결을 하겠습니다.
+Mybatis 설정은 <a href="ㅗ">SPRING BOOT MyBatis 시작하기</a></p>
+
+<p>그리고 SecurityConfig.java입니다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+</pre></td><td class="rouge-code"><pre><span class="nd">@Configuration</span>
+<span class="nd">@EnableWebSecurity</span>
+<span class="nd">@EnableGlobalMethodSecurity</span><span class="o">(</span><span class="n">prePostEnabled</span> <span class="o">=</span> <span class="kc">true</span><span class="o">)</span>
+<span class="c1">// annotation 없으면 안 됨</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">SecurityConfig</span> <span class="kd">extends</span> <span class="nc">WebSecurityConfigurerAdapter</span><span class="o">{</span>
+    <span class="nd">@Autowired</span>
+    <span class="kd">private</span> <span class="nc">MemberServiceImpl</span> <span class="n">service</span><span class="o">;</span>
+    
+    <span class="nd">@Bean</span>
+    <span class="kd">public</span> <span class="nc">PasswordEncoder</span> <span class="nf">passwordEncoder</span><span class="o">(){</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="nf">BCryptPasswordEncoder</span><span class="o">();</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">configure</span><span class="o">(</span><span class="nc">WebSecurity</span> <span class="n">web</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">Exception</span> <span class="o">{</span>
+        <span class="n">web</span><span class="o">.</span><span class="na">ignoring</span><span class="o">().</span><span class="na">antMatchers</span><span class="o">(</span><span class="s">"/resources/**"</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">configure</span><span class="o">(</span><span class="nc">HttpSecurity</span> <span class="n">http</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">Exception</span> <span class="o">{</span>
+        <span class="n">http</span><span class="o">.</span><span class="na">authorizeRequests</span><span class="o">()</span>
+        <span class="o">.</span><span class="na">antMatchers</span><span class="o">(</span><span class="s">"/user/**"</span><span class="o">).</span><span class="na">authenticated</span><span class="o">()</span>
+        <span class="o">.</span><span class="na">antMatchers</span><span class="o">(</span><span class="s">"/admin/**"</span><span class="o">).</span><span class="na">authenticated</span><span class="o">()</span>
+        <span class="o">.</span><span class="na">anyRequest</span><span class="o">().</span><span class="na">permitAll</span><span class="o">();</span>
+
+        <span class="n">http</span><span class="o">.</span><span class="na">formLogin</span><span class="o">()</span>
+        <span class="o">.</span><span class="na">loginPage</span><span class="o">(</span><span class="s">"/login"</span><span class="o">)</span>
+        <span class="o">.</span><span class="na">defaultSuccessUrl</span><span class="o">(</span><span class="s">"/"</span><span class="o">)</span>
+        <span class="o">.</span><span class="na">permitAll</span><span class="o">();</span>
+
+        <span class="n">http</span><span class="o">.</span><span class="na">logout</span><span class="o">()</span>
+        <span class="o">.</span><span class="na">logoutRequestMatcher</span><span class="o">(</span><span class="k">new</span> <span class="nc">AntPathRequestMatcher</span><span class="o">(</span><span class="s">"/logout"</span><span class="o">))</span>
+        <span class="o">.</span><span class="na">logoutSuccessUrl</span><span class="o">(</span><span class="s">"/login"</span><span class="o">)</span>
+        <span class="o">.</span><span class="na">invalidateHttpSession</span><span class="o">(</span><span class="kc">true</span><span class="o">);</span>
+
+        <span class="n">http</span><span class="o">.</span><span class="na">exceptionHandling</span><span class="o">()</span>
+        <span class="o">.</span><span class="na">accessDeniedPage</span><span class="o">(</span><span class="s">"/denied"</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">configure</span><span class="o">(</span><span class="nc">AuthenticationManagerBuilder</span> <span class="n">auth</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">Exception</span> <span class="o">{</span>
+        <span class="n">auth</span><span class="o">.</span><span class="na">userDetailsService</span><span class="o">(</span><span class="n">service</span><span class="o">).</span><span class="na">passwordEncoder</span><span class="o">(</span><span class="n">passwordEncoder</span><span class="o">());</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">SecurityConfig</code>는 <code class="language-plaintext highlighter-rouge">WebSecurityConfigurerAdapter</code>를 상속받습니다. 3가지 <code class="language-plaintext highlighter-rouge">Configure</code>를 오버라이드하고 위와 같이 작성합니다.</p>
+
+<p>##</p>
+
+<hr />
+
+<blockquote>
+  <p>참고 사이트</p>
+</blockquote>
+
+<p><a href="https://mangkyu.tistory.com/77" target="_blank">망나니개발자님의 블로그</a></p>
+
+<p><a href="https://bamdule.tistory.com/53" target="_blank">밤둘레님의 블로그</a></p>
+:ET

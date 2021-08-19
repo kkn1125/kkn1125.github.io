@@ -1,0 +1,4 @@
+I"<h1 id="object-assign-메서드">Object assign 메서드</h1>
+
+<p><code class="language-plaintext highlighter-rouge">assign</code>이라는 메서드는 이렇습니다. 대상 객체로부터 열거 가능한 하나 이상의 속성들을 목표 객체로 복사합니다.</p>
+:ET
