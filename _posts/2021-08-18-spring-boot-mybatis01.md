@@ -1,10 +1,10 @@
 ---
 layout: post
 date:   2021-08-18 19:54:48 +0900
-lastmod : 2017-10-20 12:00:00
 sitemap :
-changefreq :
-priority : 1.0
+    lastmod : 2021-08-18 19:54:48 +0900
+    changefreq :
+    priority : 1.0
 title:  "[SPRING] SPRING BOOT MyBatis 시작하기"
 author: Kimson
 categories: [ TIL, SPRINGBOOT ]
