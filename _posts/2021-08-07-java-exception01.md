@@ -14,7 +14,7 @@ description: "xml 없는 프로젝트
 이러한 레퍼런스가 오랜시간 쌓인게 아니기때문에 오류와 직면할때마다 외국 모사이트에 비슷한 의논을 찾아 영어 번역에만 두시간 쏟기도 합니다.
 
 그래서 저와 같은 초보의 입장에서 비슷한 문제로 고민하고 있는 분들께 알리고, 제 나름의 기록을 해놓고자 합니다."
-featured: true
+featured: false
 hidden: false
 rating: 5
 toc: true

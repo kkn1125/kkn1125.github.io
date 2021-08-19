@@ -7,7 +7,7 @@ categories: [ TIL, SPRINGBOOT ]
 tags: [spring, lombok, thymeleaf]
 image: assets/images/post/covers/TIL-spring.png
 description: ""
-featured: true
+featured: false
 hidden: false
 rating: 5
 toc: true

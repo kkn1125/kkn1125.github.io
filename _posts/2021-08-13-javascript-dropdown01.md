@@ -15,7 +15,7 @@ html과 css는 중요하지 않기 때문에 소스코드는 포스팅 맨 아�
 자바스크립트의 기능 구현이 목적이라 그 외에 것은 설명 배제하겠습니다.
 
 html과 css를 보시면 bootstrap의 이름과 비슷합니다. bootstrap을 애용해서 그런지 이제 css 설정을 bootstrap처럼 안하면 작업이 안 될정도입니다... 이렇게 의존하면 안 될텐데..."
-featured: true
+featured: false
 hidden: false
 rating: 4
 toc: true
