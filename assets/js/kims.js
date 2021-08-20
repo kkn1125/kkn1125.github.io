@@ -245,6 +245,9 @@ window.addEventListener('load', function(){
                 case 'bash':
                     color = "dark text-dark"
                     break;
+                case 'jsp':
+                    color = "warning text-dark"
+                    break;
                 case 'html':
                     color = "danger text-dark"
                     break;
