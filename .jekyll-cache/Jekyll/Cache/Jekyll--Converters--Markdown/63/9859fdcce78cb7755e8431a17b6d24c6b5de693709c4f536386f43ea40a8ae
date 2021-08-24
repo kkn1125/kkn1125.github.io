@@ -1,0 +1,85 @@
+I",<h1 id="iterable-알아보기">Iterable 알아보기</h1>
+
+<h2 id="iteration-protocols">Iteration Protocols</h2>
+
+<blockquote>
+  <p>ECMAScript 2015(ES6)에 추가되었으며 2개의 protocol이 있습니다.</p>
+
+  <p>먼저 심볼에 대해 알아보려합니다. 이전에 투두리스트에 올려두었던 <code class="language-plaintext highlighter-rouge">Iterable</code>은 <code class="language-plaintext highlighter-rouge">Object.defineProperty</code>를 사용하다가 Enumerable과 함께 설명하려고 체크해두었는데 이제야 작성하게 됩니다.</p>
+</blockquote>
+
+<ol>
+  <li>iterable protocol</li>
+  <li>iterator protocol</li>
+</ol>
+
+<p>큰 주제는 Iteration이고 그 안에 주요한 개념인 2개의 protocol이 있습니다. <code class="language-plaintext highlighter-rouge">Iterator(반복자</code></p>
+
+<h3 id="iterable-protocol">iterable protocol</h3>
+
+<p>iterable protocol은 javascript객체들이 for..of 구조에서 iteration동작을 정의하거나 사용자 정의하는 것을 허용합니다.</p>
+
+<p>@@iterator 메서드를 구현해야 iterable을 사용가능하며 Symbol.iterator키의 속성을 가져야합니다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+</pre></td><td class="rouge-code"><pre><span class="kd">let</span> <span class="nx">arr1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">];</span>
+<span class="kd">let</span> <span class="nx">txt</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">hi</span><span class="dl">"</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">ent</span> <span class="o">=</span> <span class="nx">arr1</span><span class="p">.</span><span class="nx">entries</span><span class="p">();</span>
+
+<span class="kd">let</span> <span class="nx">iterator</span> <span class="o">=</span> <span class="nx">txt</span><span class="p">[</span><span class="nb">Symbol</span><span class="p">.</span><span class="nx">iterator</span><span class="p">]();</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">iterator</span><span class="o">+</span><span class="dl">""</span><span class="p">);</span> <span class="c1">// [object String Iterator]</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">iterator</span><span class="p">.</span><span class="nx">next</span><span class="p">())</span> <span class="c1">// {value: "h", done: false}</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">iterator</span><span class="p">.</span><span class="nx">next</span><span class="p">())</span> <span class="c1">// {value: "i", done: false}</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">iterator</span><span class="p">.</span><span class="nx">next</span><span class="p">())</span> <span class="c1">// {value: undefined, done: true}</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">([...</span><span class="nx">txt</span><span class="p">])</span> <span class="c1">// ["h", "i"]</span>
+
+<span class="kd">var</span> <span class="nx">someString</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">String</span><span class="p">(</span><span class="dl">"</span><span class="s2">hi</span><span class="dl">"</span><span class="p">);</span>          <span class="c1">// need to construct a String object explicitly to avoid auto-boxing</span>
+
+<span class="nx">someString</span><span class="p">[</span><span class="nb">Symbol</span><span class="p">.</span><span class="nx">iterator</span><span class="p">]</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">{</span> <span class="c1">// this is the iterator object, returning a single element, the string "bye"</span>
+    <span class="na">next</span><span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">_first</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">_first</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+        <span class="k">return</span> <span class="p">{</span> <span class="na">value</span><span class="p">:</span> <span class="dl">"</span><span class="s2">bye</span><span class="dl">"</span><span class="p">,</span> <span class="na">done</span><span class="p">:</span> <span class="kc">false</span> <span class="p">};</span>
+      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="p">{</span> <span class="na">done</span><span class="p">:</span> <span class="kc">true</span> <span class="p">};</span>
+      <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="na">_first</span><span class="p">:</span> <span class="kc">true</span>
+  <span class="p">};</span>
+<span class="p">};</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">([...</span><span class="nx">someString</span><span class="p">]);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">someString</span><span class="o">+</span><span class="dl">""</span><span class="p">);</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+:ET

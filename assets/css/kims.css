@@ -151,8 +151,8 @@ body button#modeToggle.btn-light{
 button#modeToggle{
 	/* position: fixed;
 	top: 80px;
-	right: 8%;
-	z-index: 1099; */
+	right: 8%; */
+	z-index: 1099;
 }
 
 .table td{
@@ -364,6 +364,10 @@ button#modeToggle{
 	top: 0;
 	right: 0;
 	transform: translate(20%,-70%);
+	-webkit-transform: translate(20%,-70%);
+	-moz-transform: translate(20%,-70%);
+	-ms-transform: translate(20%,-70%);
+	-o-transform: translate(20%,-70%);
 }
 
 .lang-badge{

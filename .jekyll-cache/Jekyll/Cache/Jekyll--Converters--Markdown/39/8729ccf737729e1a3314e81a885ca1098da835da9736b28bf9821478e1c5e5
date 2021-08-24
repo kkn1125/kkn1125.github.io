@@ -1,0 +1,115 @@
+I"�/<h1 id="iterable-알아보기">Iterable 알아보기</h1>
+
+<h2 id="iteration-protocols">Iteration Protocols</h2>
+
+<blockquote>
+  <p>ECMAScript 2015(ES6)에 추가되었으며 2개의 protocol이 있습니다.</p>
+
+  <p>먼저 심볼에 대해 알아보려합니다. 이전에 투두리스트에 올려두었던 <code class="language-plaintext highlighter-rouge">Iterable</code>은 <code class="language-plaintext highlighter-rouge">Object.defineProperty</code>를 사용하다가 Enumerable과 함께 설명하려고 체크해두었는데 이제야 작성하게 됩니다.</p>
+</blockquote>
+
+<ol>
+  <li>iterable protocol</li>
+  <li>iterator protocol</li>
+</ol>
+
+<p>큰 주제는 Iteration입니다. iteration동작을 정의나, for..of의 loop, 사용자 정의 등을 허용합니다. 그 안에 주요한 개념인 2개의 protocol이 있습니다. <code class="language-plaintext highlighter-rouge">Iterator(반복자)</code>와 <code class="language-plaintext highlighter-rouge">Iterable(반복가능한)</code>인데요.</p>
+
+<p>어떤 내용인지 천천히 살펴보겠습니다.</p>
+
+<h3 id="iterable-protocol">Iterable protocol</h3>
+
+<p><code class="language-plaintext highlighter-rouge">iterable protocol</code>은 <code class="language-plaintext highlighter-rouge">javascript</code>객체들이 for..of 구조에서 <code class="language-plaintext highlighter-rouge">iteration</code>동작을 정의하거나 사용자 정의하는 것을 허용합니다.</p>
+
+<p>즉, <code class="language-plaintext highlighter-rouge">iterable</code>한 객체라는 것은 <code class="language-plaintext highlighter-rouge">@@iterator</code>메서드를 구현해야하며, <code class="language-plaintext highlighter-rouge">object</code> 또는 <code class="language-plaintext highlighter-rouge">prototype chain</code> 오브젝트 중 하나가 <code class="language-plaintext highlighter-rouge">Symbol.iterator</code> key 속성을 가져야 한다는 것을 의미하고, 자기자신(<code class="language-plaintext highlighter-rouge">iterator</code>)를 리턴해야합니다.</p>
+
+<blockquote>
+  <p>참고로 @@iterator는 메서드이기때문에 함수호출구문으로 적습니다.</p>
+</blockquote>
+
+<h4 id="사용예제">사용예제</h4>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+</pre></td><td class="rouge-code"><pre><span class="kd">let</span> <span class="nx">someWords</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">im a test</span><span class="dl">"</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span> <span class="nx">someWord</span><span class="p">[</span><span class="nb">Symbol</span><span class="p">.</span><span class="nx">iterator</span><span class="p">]);</span> <span class="c1">// function</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">someWord</span><span class="p">[</span><span class="nb">Symbol</span><span class="p">.</span><span class="nx">iterator</span><span class="p">]());</span> <span class="c1">// StringIterator {}</span>
+
+<span class="kd">let</span> <span class="nx">iterator1</span> <span class="o">=</span> <span class="nx">someWords</span><span class="p">[</span><span class="nb">Symbol</span><span class="p">.</span><span class="nx">iterator</span><span class="p">]();</span>
+<span class="c1">// iterator를 변수에 담지않고 그대로 .찍어서 출력하면 정상실행되지 않습니다.</span>
+
+<span class="c1">// 잘못된 사용 ❌</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">someWords</span><span class="p">[</span><span class="nb">Symbol</span><span class="p">.</span><span class="nx">iterator</span><span class="p">]().</span><span class="nx">next</span><span class="p">())</span> <span class="c1">// {value: "i", done: false}</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">someWords</span><span class="p">[</span><span class="nb">Symbol</span><span class="p">.</span><span class="nx">iterator</span><span class="p">]().</span><span class="nx">next</span><span class="p">())</span> <span class="c1">// {value: "i", done: false}</span>
+
+<span class="c1">// 올바른 사용 ✅</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">iterator1</span><span class="p">.</span><span class="nx">next</span><span class="p">())</span> <span class="c1">// {value: "i", done: false}</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">iterator1</span><span class="p">.</span><span class="nx">next</span><span class="p">())</span> <span class="c1">// {value: "m", done: false}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>위의 코드는 <code class="language-plaintext highlighter-rouge">String</code>의 <code class="language-plaintext highlighter-rouge">built-in</code> <code class="language-plaintext highlighter-rouge">iterable</code>객체의 예시입니다. <code class="language-plaintext highlighter-rouge">String</code>은 기본적으로 <code class="language-plaintext highlighter-rouge">iterable</code>합니다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="rouge-code"><pre><span class="kd">let</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span><span class="dl">'</span><span class="s1">test</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">kimson</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">tomson</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">tomcat</span><span class="dl">'</span><span class="p">];</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arr</span><span class="p">.</span><span class="nx">entries</span><span class="p">());</span><span class="c1">//  Array Iterator {}</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arr</span><span class="p">.</span><span class="nx">entries</span><span class="p">()[</span><span class="nb">Symbol</span><span class="p">.</span><span class="nx">iterator</span><span class="p">]());</span> <span class="c1">// Array Iterator {}</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arr</span><span class="p">.</span><span class="nx">entries</span><span class="p">()</span> <span class="o">===</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">entries</span><span class="p">()[</span><span class="nb">Symbol</span><span class="p">.</span><span class="nx">iterator</span><span class="p">]())</span> <span class="c1">// true</span>
+
+<span class="c1">// entries()와 entries()[Symbol.iterator]()는 동일합니다.</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>javascript에서 몇몇의 <code class="language-plaintext highlighter-rouge">iterator(반복자)</code>들은 <code class="language-plaintext highlighter-rouge">iterable(반복가능한)</code>입니다.</p>
+
+<h4 id="내장-iterable">내장 iterable</h4>
+
+<p>String, Array, Map, Set은 내장 iterable입니다. 이 객체들의 prototype은 모두 @@iterable 메서드를 가지고 있기 때문입니다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre></td><td class="rouge-code"><pre><span class="kd">let</span> <span class="nx">arr33</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+<span class="kd">let</span> <span class="nx">obj</span><span class="o">=</span><span class="p">{};</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">new</span> <span class="nb">Map</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span><span class="dl">"</span><span class="s2">kimson</span><span class="dl">"</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="dl">'</span><span class="s1">mota</span><span class="dl">'</span><span class="p">],[</span><span class="mi">2</span><span class="p">,</span><span class="dl">'</span><span class="s1">gero</span><span class="dl">'</span><span class="p">]]));</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">new</span> <span class="nb">Map</span><span class="p">([[</span><span class="dl">'</span><span class="s1">name</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">tom</span><span class="dl">'</span><span class="p">]]));</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">new</span> <span class="nb">Set</span><span class="p">(</span><span class="dl">"</span><span class="s2">123</span><span class="dl">"</span><span class="p">));</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">new</span> <span class="nb">Set</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]));</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">new</span> <span class="nb">Set</span><span class="p">([...</span><span class="nx">arr33</span><span class="p">]));</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">new</span> <span class="nb">Array</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">));</span>
+
+
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">Map</code>과 <code class="language-plaintext highlighter-rouge">Set</code>은 프로토타입으로 Entries가 내장되어 있고, Array는 entries()메서드가 내장되어 있어 모두 iterable입니다.</p>
+
+<h3 id="iterator-protocol">Iterator Protocol</h3>
+
+<p>영어로 되어 있어서 그런지 굉장히 헷갈리는데요. 나중에 표로 정리해둘 예정이니 표를 보시면 좀 더 한 눈에 들어오실 것이라 생각합니다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">Iterator</code>는 <code class="language-plaintext highlighter-rouge">next()</code>메서드를 가지고 있고, <code class="language-plaintext highlighter-rouge">object</code>를 반환하며 <code class="language-plaintext highlighter-rouge">done</code>과 <code class="language-plaintext highlighter-rouge">value</code> 프로퍼티를 가집니다.</p>
+
+<p>```</p>
+:ET
