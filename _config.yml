@@ -2,14 +2,14 @@
 name: "Devkimson"
 title: "Devkimson"
 description: "나를 표현하는 블로그. 끊임없이 도전하고 공부하는 예비 개발자입니다."
-logo: 'assets/images/logo-k-color.png'
-favicon: 'assets/images/logo-k-color.png'
+logo: "assets/images/logo-k-color.png"
+favicon: "assets/images/logo-k-color.png"
 url: "https://kkn1125.github.io"
 baseurl: ""
 # baseurl은 github 저장소 명으로 바꿔줘야함
-google_analytics: 'UA-179074259-1'
-disqus: 'demowebsite'
-mailchimp-list: 'https://wowthemes.us11.list-manage.com/subscribe/post?u=8aeb20a530e124561927d3bd8&amp;id=8c3d2d214b'
+google_analytics: "UA-179074259-1"
+disqus: "demowebsite"
+mailchimp-list: "https://wowthemes.us11.list-manage.com/subscribe/post?u=8aeb20a530e124561927d3bd8&amp;id=8c3d2d214b"
 include: ["_pages"]
 permalink: /:title/
 top: <a href="#" id="gotop"><i class="fas fa-arrow-alt-circle-up fa-2x"></i></a>
@@ -29,7 +29,6 @@ authors:
     github: https://github.com/kkn1125
     twitter: https://twitter.com/wowthemesnet
     description: "하루하루 게을리하지 않고 나만의 방식으로 발전해나가는 예비 개발자입니다"
-  
 
 # Plugins
 plugins:
@@ -46,7 +45,7 @@ jekyll-archives:
     - categories
   layout: archive
   permalinks:
-    category: '/category/:name/'
+    category: "/category/:name/"
 
 # Where things are
 jekyll-spaceship:
@@ -67,53 +66,53 @@ jekyll-spaceship:
     config:
       tex:
         inlineMath:
-          - ['$','$']
-          - ['\(','\)']
+          - ["$", "$"]
+          - ['\(', '\)']
         displayMath:
-          - ['$$','$$']
-          - ['\[','\]']
+          - ["$$", "$$"]
+          - ['\[', '\]']
       svg:
-        fontCache: 'global'
+        fontCache: "global"
     optimize: # optimization on building stage to check and add mathjax scripts
       enabled: true # value `false` for adding to all pages
-      include: []   # include patterns for math expressions checking (regexp)
-      exclude: []   # exclude patterns for math expressions checking (regexp)
+      include: [] # include patterns for math expressions checking (regexp)
+      exclude: [] # exclude patterns for math expressions checking (regexp)
   plantuml-processor:
-    mode: default  # mode value 'pre-fetch' for fetching image at building stage
+    mode: default # mode value 'pre-fetch' for fetching image at building stage
     css:
       class: plantuml
     syntax:
-      code: 'plantuml!'
-      custom: ['@startuml', '@enduml']
+      code: "plantuml!"
+      custom: ["@startuml", "@enduml"]
     src: http://www.plantuml.com/plantuml/svg/
   mermaid-processor:
-    mode: default  # mode value 'pre-fetch' for fetching image at building stage
+    mode: default # mode value 'pre-fetch' for fetching image at building stage
     css:
       class: mermaid
     syntax:
-      code: 'mermaid!'
-      custom: ['@startmermaid', '@endmermaid']
+      code: "mermaid!"
+      custom: ["@startmermaid", "@endmermaid"]
     config:
       theme: default
     src: https://mermaid.ink/svg/
   media-processor:
     default:
-      id: 'media-{id}'
-      class: 'media'
-      width: '100%'
+      id: "media-{id}"
+      class: "media"
+      width: "100%"
       height: 350
       frameborder: 0
-      style: 'max-width: 600px; outline: none;'
-      allow: 'encrypted-media; picture-in-picture'
+      style: "max-width: 600px; outline: none;"
+      allow: "encrypted-media; picture-in-picture"
   emoji-processor:
     css:
       class: emoji
     src: https://github.githubassets.com/images/icons/emoji/
-    
-# Pagination 
+
+# Pagination
 paginate: 6
 paginate_path: /page:num/
-    
+
 # Other
 markdown: kramdown
 
