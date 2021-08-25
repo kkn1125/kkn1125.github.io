@@ -1,0 +1,26 @@
+I"�
+<ul>
+  <li><a href="#todo-list">TODO List</a>
+    <ul>
+      <li><a href="#추가된-기능">추가된 기능</a>
+        <ul>
+          <li><a href="#todo-list-1">TODO List</a>
+            <ul>
+              <li><a href="#시작-안내-문구">시작 안내 문구</a></li>
+              <li><a href="#할-일-여부에-따른-뱃지와-개수-표기">할 일 여부에 따른 뱃지와 개수 표기</a></li>
+              <li><a href="#할-일-추가">할 일 추가</a></li>
+              <li><a href="#오늘로-이동-버튼-추가">오늘로 이동 버튼 추가</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><a href="#수정된-기능">수정된 기능</a>
+        <ul>
+          <li><a href="#비어있는-tr-추가되는-현상-수정">비어있는 tr 추가되는 현상 수정</a></li>
+          <li><a href="#설정-값">설정 값</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+:ET
