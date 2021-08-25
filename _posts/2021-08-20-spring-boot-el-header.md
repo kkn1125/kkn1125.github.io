@@ -37,22 +37,22 @@ EL에 대해서 사용하면서 header의 referer가 필요한 상황이 생겼�
 
 표로 정리해보겠습니다. 찾아보니 사용가능한 타입들이 많았습니다.
 
-|:No:|:Implicit Object:|:Desc.:|
-|---|:---|:---|
-|1|pageScope|페이지 범위 변수|
-|2|requestScope|request 범위 변수|
-|3|sessionScope|session 범위 변수|
-|4|applicationScope|application 범위 변수|
-|5|param|파라미터 정보|
-|6|paramValues|파라미터 전체|
-|7|header|헤더 정보|
-|8|headerValues|쿼리식으로 request headers 전체 출력|
-|9|initParam|컨텍스트 초기화 파라미터 출력|
-|10|cookie|쿠키 값|
-|11|pageContext|현재 페이지의 JSP PageContext 객체|
-|^|.request.queryString|^|
-|^|.session.queryString|^|
-|^|.response|^|
+|     No    | : Implicit Object  :| :       Desc.    : |
+| :-------: | :------------------ | :----------------- |
+|     1     | pageScope           | 페이지 범위 변수    |
+|     2     | requestScope        |request 범위 변수    |
+|     3     | sessionScope        |session 범위 변수    |
+|     4     | applicationScope    |application 범위 변수|
+|     5     | param               |파라미터 정보        |
+|     6     | paramValues         |파라미터 전체        |
+|     7     | header              |헤더 정보            |
+|     8     | headerValues        |쿼리식으로 request headers 전체 출력|
+|     9     | initParam           |컨텍스트 초기화 파라미터 출력|
+|     10    | cookie              |쿠키 값              |
+| :       : | pageContext         | :                   |
+|^^   11    | .request.queryString|^^ 현재 페이지의 JSP PageContext 객체  |
+|^^         | .session.queryString|^^                   |
+|^^         | .response           |^^                   |
 {:.table.text-dark.table-hover.text-center.bg-white}
 
 아래에 참고한 사이트를 링크하였습니다. 참고 바랍니다.

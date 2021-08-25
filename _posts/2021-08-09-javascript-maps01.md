@@ -39,7 +39,7 @@ Set은 이번 주제가 아니니 다음에 다루도록 하고, Map 객체의 �
 |Method|Params|Return|
 |---|---|---|
 |set|key, value|Map|
-**action**|:**key**와 **value**를 추가||
+|**action**|:**key**와 **value**를 추가||
 
 ```javascript
 let map = new Map();
@@ -56,7 +56,7 @@ map.set('age'); // value = undefined >> return Map
 |Method|Params|Return|
 |---|---|---|
 |get|key|string|
-**action**|:**key**의 **value**를 얻음||
+|**action**|:**key**의 **value**를 얻음||
 
 ```javascript
 map.get('name'); // return kimson
@@ -69,7 +69,7 @@ map.get('age'); // return undefined
 |method|Params|Return|
 |---|---|---|
 |delete|key|boolean|
-**action**|:**key**를 삭제||
+|**action**|:**key**를 삭제||
 
 ```javascript
 map.delete('age'); // return true
@@ -82,7 +82,7 @@ map.delete('nation'); // return false
 |method|Params|Return|
 |---|---|---|
 |has|key|boolean|
-**action**|:**key**가 있는지 여부||
+|**action**|:**key**가 있는지 여부||
 
 ```javascript
 map.has('name'); // return true
@@ -95,7 +95,7 @@ map.has('age'); // return false
 |method|Params|Return|
 |---|---|---|
 |clear|-|void|
-**action**|:**Map**객체의 내용 모두 삭제||
+|**action**|:**Map**객체의 내용 모두 삭제||
 
 ```javascript
 map.clear('name'); // return true
@@ -108,7 +108,7 @@ map.clear('age'); // return false
 |method|Params|Return|
 |---|---|---|
 |forEach|callback(val,key,map)|void|
-**action**|:**Map** 객체 순회||
+|**action**|:**Map** 객체 순회||
 
 ```javascript
 map.set('name','kimson');

@@ -184,10 +184,10 @@ console.log(it.next().value); // '2'
 > 정리해봅시다
 
 |구분|명칭|내용|
-|:---:|:---:|:---:|
-|: Iteration :|Iterable|object or prototype chain 중 어느 하나는 Symbol.iterator 키 속성을 가져야 한다.|
-|^^|Iterator|next()메서드를 가지고 있어야한다. next()메서드를 가진 객체를 Iterator라 한다.|
-|^^|: Object의 @@iterator메서드가 자신(Iterator)을 리턴하면 잘 정의된 iterable 이라 할 수 있다. :||
+| :---------: | :------: | :-----------------------------------------------------------------------------: |
+| :         : | Iterable | object or prototype chain 중 어느 하나는 Symbol.iterator 키 속성을 가져야 한다.    |
+| ^^ Iteration| Iterator |next()메서드를 가지고 있어야한다. next()메서드를 가진 객체를 Iterator라 한다.         |
+| ^^          | : Object의 @@iterator메서드가 자신(Iterator)을 리턴하면 잘 정의된 iterable 이라 할 수 있다. : ||
 {:.table.table-bordered.table-hover.text-dark.bg-white}
 
 그 외 for문을 사용하다가 조건부에 함수가 사용될 수도 있는 것을 알았습니다.
