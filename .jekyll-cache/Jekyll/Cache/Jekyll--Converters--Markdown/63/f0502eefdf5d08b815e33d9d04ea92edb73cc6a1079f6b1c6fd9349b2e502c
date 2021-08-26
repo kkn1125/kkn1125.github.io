@@ -1,0 +1,206 @@
+I"�+<h1 id="newtarget을-써보자">new.target을 써보자</h1>
+
+<p>인스턴스를 만들 때나 보던 new에 점을 찍고 target이라는 것을 사용하는게 굉장히 생소했습니다. 아직 배울게 많은가 봅니다.</p>
+
+<p>new.target은 new연산자를 사용했는지 여부를 감지하는 것인데요. 인스턴스화된 생성자와 함수에서 new.target은 생성자 or 함수참조를 반환합니다.</p>
+
+<h2 id="함수호출에서-newtarget">함수호출에서 new.target</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+</pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nx">kimson</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="k">new</span><span class="p">.</span><span class="nx">target</span><span class="p">){</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">new를 사용하지 않았다!</span><span class="dl">"</span><span class="p">);</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">new.target 값 : </span><span class="dl">"</span> <span class="o">+</span> <span class="k">new</span><span class="p">.</span><span class="nx">target</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">new를 사용했다!</span><span class="dl">"</span><span class="p">);</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">new.target 값 : </span><span class="dl">"</span> <span class="o">+</span> <span class="k">new</span><span class="p">.</span><span class="nx">target</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nx">kimson</span><span class="p">();</span>
+<span class="c1">// new를 사용하지 않았다!</span>
+<span class="c1">// new.target 값 : undefined</span>
+<span class="k">new</span> <span class="nx">kimson</span><span class="p">();</span>
+<span class="c1">// new를 사용했다!</span>
+<span class="c1">// new.target 값 : function kimson() {</span>
+<span class="c1">//     if(!new.target){</span>
+<span class="c1">//         console.log("new를 사용하지 않았다!");</span>
+<span class="c1">//         console.log("new.target 값 : " + new.target);</span>
+<span class="c1">//     } else {</span>
+<span class="c1">//         console.log("new를 사용했다!");</span>
+<span class="c1">//         console.log("new.target 값 : " + new.target);</span>
+<span class="c1">//     }</span>
+<span class="c1">// }</span>
+
+<span class="kd">function</span> <span class="nx">A</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">age</span><span class="p">){</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">age</span> <span class="o">=</span> <span class="nx">age</span><span class="p">;</span>
+    <span class="k">return</span> <span class="k">new</span><span class="p">.</span><span class="nx">target</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">let</span> <span class="nx">kim1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">A</span><span class="p">(</span><span class="dl">'</span><span class="s1">kimson</span><span class="dl">'</span><span class="p">,</span> <span class="mi">29</span><span class="p">);</span>
+<span class="kd">let</span> <span class="nx">kim2</span> <span class="o">=</span> <span class="nx">A</span><span class="p">(</span><span class="dl">'</span><span class="s1">kimson</span><span class="dl">'</span><span class="p">,</span> <span class="mi">29</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">kim1</span><span class="p">);</span>
+<span class="c1">// ƒ A(name, age){</span>
+<span class="c1">//     this.name = name;</span>
+<span class="c1">//     this.age = age;</span>
+<span class="c1">//     return new.target;</span>
+<span class="c1">// }</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">kim2</span><span class="p">);</span>
+<span class="c1">// undefined</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">new</code>를 사용하지 않았을 때의 결과값이 <code class="language-plaintext highlighter-rouge">undefined</code>이고, 여기에 느낌표가 붙어 <code class="language-plaintext highlighter-rouge">!undefined</code>이면 <code class="language-plaintext highlighter-rouge">undefined</code>는 <code class="language-plaintext highlighter-rouge">false</code>로 보기때문에 값이 <code class="language-plaintext highlighter-rouge">true</code>가 됩니다.</p>
+</blockquote>
+
+<p>코드에서 보듯이 <code class="language-plaintext highlighter-rouge">new.target</code>은 조건식에 느낌표를 붙여 <code class="language-plaintext highlighter-rouge">true</code>가 되었다해서 <code class="language-plaintext highlighter-rouge">boolean</code>으로 값을 리턴하는 것이 아닙니다. <code class="language-plaintext highlighter-rouge">new.target</code>은 형태가 <code class="language-plaintext highlighter-rouge">객체.속성명</code>으로 되어있지만 <code class="language-plaintext highlighter-rouge">new.</code>이 실제 객체는 아닙니다.</p>
+
+<p>MDN Web Docs의 <code class="language-plaintext highlighter-rouge">new.target</code>설명에 따르면 <code class="language-plaintext highlighter-rouge">new.</code>는 가상 문맥이고, <code class="language-plaintext highlighter-rouge">new.target</code> 속성은 모든 함수가 이용할 수 있는 메타 속성이라 합니다.</p>
+
+<h2 id="클래스생성자에서-newtarget">클래스생성자에서 new.target</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+</pre></td><td class="rouge-code"><pre><span class="kd">class</span> <span class="nx">Kimson</span><span class="p">{</span>
+    <span class="kd">constructor</span><span class="p">(){</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">new</span><span class="p">.</span><span class="nx">target</span><span class="p">);</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">new</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">name</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nx">Tomson</span> <span class="kd">extends</span> <span class="nx">Kimson</span><span class="p">{</span>
+    <span class="kd">constructor</span><span class="p">(){</span>
+        <span class="k">super</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">let</span> <span class="nx">a</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Kimson</span><span class="p">();</span>
+<span class="c1">// class Kimson{</span>
+<span class="c1">//     constructor(){</span>
+<span class="c1">//         console.log(new.target);</span>
+<span class="c1">//         console.log(new.target.name)</span>
+<span class="c1">//     }</span>
+<span class="c1">// }</span>
+<span class="c1">// Kimson</span>
+
+<span class="kd">let</span> <span class="nx">b</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Tomson</span><span class="p">();</span>
+<span class="c1">// class Tomson{</span>
+<span class="c1">//     constructor(){</span>
+<span class="c1">//         console.log(new.target);</span>
+<span class="c1">//         console.log(new.target.name)</span>
+<span class="c1">//     }</span>
+<span class="c1">// }</span>
+<span class="c1">// Tomson</span>
+
+<span class="c1">// let c = Kimson(); 에러 발생 class는 new 연산자 없이 호출이 불가</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>클래스는 함수와 다르게 <code class="language-plaintext highlighter-rouge">new</code> 연산자 없이는 호출이 불가하므로 <code class="language-plaintext highlighter-rouge">new</code>를 사용했을 때 <code class="language-plaintext highlighter-rouge">new.target</code>의 값에만 주목하였습니다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">new.target</code>을 사용하면 인스턴스화 된 클래스 자신을 반환하였습니다.</p>
+
+<h2 id="new를-사용하거나-안해도-되는-생성자-만들기">new를 사용하거나 안해도 되는 생성자 만들기</h2>
+
+<p>위의 내용을 토대로 간단하게 응용을 해보겠습니다. <code class="language-plaintext highlighter-rouge">new</code>를 쓰지 않고 실수로 함수를 바로 호출했을 때 그것을 방지하도록 막을 수도 있습니다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>아래의 표는 함수,생성자별로 호출 또는 인스턴스화 했을 때 반환되는 new.target의 값을 정리한 겁니다.</p>
+
+<table class="table table-hover text-dark bg-white">
+  <thead>
+    <tr>
+      <th style="text-align: center">**구분**</th>
+      <th style="text-align: center">**invoke**</th>
+      <th style="text-align: center">**new**</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">함수</td>
+      <td style="text-align: center">undefined</td>
+      <td style="text-align: center">function(자신)</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">생성자</td>
+      <td style="text-align: center">에러발생(new 없이 호출 불가)</td>
+      <td style="text-align: center">class(자신)</td>
+    </tr>
+  </tbody>
+</table>
+:ET

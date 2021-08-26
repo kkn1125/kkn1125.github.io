@@ -1,0 +1,16 @@
+I"(
+<ul>
+  <li><a href="#newtarget을-써보자">new.target을 써보자</a>
+    <ul>
+      <li><a href="#함수호출에서-newtarget">함수호출에서 new.target</a></li>
+      <li><a href="#클래스생성자에서-newtarget">클래스생성자에서 new.target</a></li>
+      <li><a href="#newtarget의-활용">new.target의 활용</a>
+        <ul>
+          <li><a href="#new-사용-강제하기">new 사용 강제하기</a></li>
+          <li><a href="#new-미사용시">new 미사용시</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+:ET
