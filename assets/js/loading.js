@@ -1,6 +1,6 @@
 'use strict';
-document.body.style = 'overflow:hidden';
 if(window.location.pathname == "/"){
+    document.body.style = 'overflow:hidden';
     window.addEventListener('DOMContentLoaded',function(event){
         let title = document.querySelectorAll(".load-item");
         let i=0;
