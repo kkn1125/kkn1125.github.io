@@ -327,7 +327,7 @@ com.devkimson.calendar = { // 기능들
 					latestAlert = "gray";
 					let count = 0;
 					for(let i in Object.keys(item)){
-						if(item[i].tag==="check" || item[i].tag==="rest" || item[i].tag==="prj"){
+						if(item[i].tag==="check" || item[i].tag==="rest" || item[i].tag==="prj" || item[i].tag==="cancel"){
 							count++;
 						}
 					}

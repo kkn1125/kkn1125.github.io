@@ -2,21 +2,34 @@
     "year": {
         "2021": {
             "month": {
+                "8": {
+                    "date": {
+                        "1": [
+                            {
+                                "todo": "정적 웹으로 저장소 사용하기 - 실험",
+                                "tag": "cancel",
+                                "time": "2021-8-30 18:53"
+                            }
+                        ]
+                    }
+                },
                 "7": {
                     "date": {
+                        "31": [
+                            {
+                                "todo": "파이썬 강의",
+                                "tag": "study",
+                                "time": "2021-8-30 18:28"
+                            }
+                        ],
                         "27": [
                             {
                                 "todo": "Spring Boot 연습 프로젝트 마무리",
-                                "tag": "prj",
+                                "tag": "check",
                                 "time": "2021-8-18 22:17"
                             }
                         ],
                         "26": [
-                            {
-                                "todo": "정적 웹으로 저장소 사용하기 - 실험",
-                                "tag": "idea",
-                                "time": "2021-8-24 11:41"
-                            },
                             {
                                 "todo": "new.target에 대해 포스팅 준비",
                                 "tag": "check",
@@ -33,14 +46,14 @@
                         "18": [
                             {
                                 "todo": "Spring Boot 연습 프로젝트 시작",
-                                "tag": "prj",
+                                "tag": "check",
                                 "time": "2021-8-18 21:36"
                             }
                         ],
                         "17": [
                             {
                                 "todo": "React로 TodoList 만들기",
-                                "tag": "study",
+                                "tag": "cancel",
                                 "time": "2021-8-13 13:35"
                             }
                         ],

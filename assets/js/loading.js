@@ -1,5 +1,5 @@
 'use strict';
-
+document.body.style = 'overflow:hidden';
 if(window.location.pathname == "/"){
     window.addEventListener('DOMContentLoaded',function(event){
         let title = document.querySelectorAll(".load-item");
@@ -14,27 +14,28 @@ if(window.location.pathname == "/"){
                 }, 700*i);
                 i++;
             });
-
+            
             setTimeout(()=>{
                 let hc = document.querySelector("#hiddenCover");
-                hc.style.animation = "hc 5s cubic-bezier(1,0,0,0.75) both";
+                hc.style.animation = "hc 2s cubic-bezier(1,0,0,0.75) both";
             }, 500);
-
-            setTimeout(()=>{
-                let wrap = document.querySelector("#loadWrap");
-                wrap.style.left = "-100%";
-                wrap.style.opacity = 0;
-            }, 6000);
 
             setTimeout(()=>{
                 let hellow = document.querySelector(".load-hellow");
                 hellow.style.animation = "lh 0.5s ease both";
-            }, 5200);
+            }, 1500);
 
-            setTimeout(()=>{
+            setTimeout(()=>{ // fadeout
+                let wrap = document.querySelector("#loadWrap");
+                wrap.style.left = "-100%";
+                wrap.style.opacity = 0;
+                document.body.style = 'overflow:none';
+            }, 2500);
+
+            setTimeout(()=>{ // remove fade
                 let wrap = document.querySelector("#loadWrap");
                 wrap.remove();
-            },6700);
+            },3500);
         // }
     });
 }
