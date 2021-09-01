@@ -315,6 +315,22 @@ com.devkimson.calendar = { // 기능들
 		// todo marker place
 		if(this.data.year[cal.$year]!=undefined && this.data.year[cal.$year].month[cal.$month]!=undefined) // json구조 바뀌면서 변경
 		{
+			let count = 0;
+			for(key of Object.keys(this.data.year).values()){
+				for(key2 of Object.keys(this.data.year[key].month)){
+					for(key3 of Object.keys(this.data.year[key].month[key2].date)){
+						for(key4 of this.data.year[key].month[key2].date[key3]){
+							if(key4.tag=='check'){
+								count++;
+							}
+						}
+					}
+				}
+			}
+			if(document.getElementById('totalCount')==null)
+				$(this._id).after(`
+					<div id="totalCount" class="text-end"><span class="badge bg-success fs-6">완료 <b>${count}</b> 개</span></div>
+				`);
 			for(key of Object.keys(this.data.year[cal.$year].month[cal.$month].date)){
 				// todo marker
 				var span = document.createElement('span');
@@ -357,6 +373,7 @@ com.devkimson.calendar = { // 기능들
 					"position":"relative"
 				});
 			}
+			
 		}
 	},
 
@@ -455,8 +472,10 @@ com.devkimson.calendar = { // 기능들
 		// tmp에 저장된 객체 끌어오기
 		if($('#dateLine'))
 			$('#dateLine').remove();
+		if($('#doneCount'))
+			$('#doneCount').remove();
 		$(div).prepend(`<span id="dateLine">
-		${year} ${month+1} <span class="h3">${date}</span>
+			${year} ${month+1} <span class="h3">${date}</span>
 		</span>`);
 	},
 
@@ -593,6 +612,7 @@ com.devkimson.calendar = { // 기능들
 									// console.log(len)
 									for(key4 of this.data.year[key].month[key2].date[date]){ 	// todolist
 										// 210809 add tag function
+										
 										todos += 
 										`
 											<div class="my-3 clearfix"><span>${this.tagging(key4.tag)}</span> ${key4.tag=='check'?"<del>"+key4.todo+"</del>":key4.todo}
