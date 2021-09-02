@@ -375,6 +375,8 @@ com.devkimson.calendar = { // 기능들
 			}
 			
 		}
+		if(__year==_$.fixed.year && __month==_$.fixed.month)
+			this.Marker(_$.fixed.date);
 	},
 
 	Prev: function () { // 저번달

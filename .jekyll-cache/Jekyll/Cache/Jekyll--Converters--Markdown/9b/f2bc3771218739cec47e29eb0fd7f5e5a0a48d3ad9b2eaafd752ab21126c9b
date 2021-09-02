@@ -1,0 +1,101 @@
+I"�<h1 id="메일-보내기">메일 보내기</h1>
+
+<p>이메일을 보내는데 서버 측에서 보내자니 자바 밖에 모르고, 배포해서 서버를 돌리자니 여기저기 제약이 많아 정적 사이트에서 메일을 보내는 방법을 찾고 있었습니다.</p>
+
+<p>현재 블로그는 운영 중이지만 포트폴리오를 정리한 페이지를 따로 만들어야 할 것 같아서 만드는 중에 궁금해져서 찾아봤습니다.</p>
+
+<h2 id="구글의-스프레드-시트">구글의 스프레드 시트</h2>
+
+<p>참고 사이트의 설명이 너무 상세해서 이번에는 간략한 사용법과 테스트 결과를 보여드리고자 합니다.</p>
+
+<h3 id="sample-spreadsheet">Sample Spreadsheet</h3>
+
+<p>링크에서 제공하는 스프레드시트를 사본으로 받습니다.
+그리고 사본에서 <code class="language-plaintext highlighter-rouge">도구 &gt; 스크립트 에디터</code>로 가서 <code class="language-plaintext highlighter-rouge">TO_ADDRESS</code>변수 주석을 풀고 값을 바꾸면 됩니다.</p>
+
+<p>여기서 <code class="language-plaintext highlighter-rouge">TO_ADDRESS</code>는 메일을 받는 사람이어야 합니다. (착오 없으시길…)</p>
+
+<h3 id="version">Version</h3>
+
+<p>내용 수정이 있을 시 꼭 버전을 새로 만들고 다시 배포하시기 바랍니다. 수정하고 적용이 안되어서 저는 한참 헤맸습니다.</p>
+
+<h2 id="전송-방식">전송 방식</h2>
+
+<h3 id="form-방식">form 방식</h3>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;form</span> <span class="na">class=</span><span class="s">"gform"</span> <span class="na">action=</span><span class="s">"[appURL]"</span> <span class="na">method=</span><span class="s">"post"</span> <span class="na">data-email=</span><span class="s">"yourmail@domain.com"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"name"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"email"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"message"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"submit"</span> <span class="na">value=</span><span class="s">"전송"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">action</code>에 <code class="language-plaintext highlighter-rouge">app url</code>을 복사하여 붙여넣습니다.</p>
+
+<p>이때 <code class="language-plaintext highlighter-rouge">data-email</code>은 스프레드시트에서 스크립트 에디터에 <code class="language-plaintext highlighter-rouge">TO_ADDRESS</code>를 사용하지 않으면 위처럼 적고, 변수설정 했다면 <code class="language-plaintext highlighter-rouge">data-email</code>속성을 빼도 됩니다.</p>
+
+<h3 id="ajax-방식">Ajax 방식</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+</pre></td><td class="rouge-code"><pre><span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+    <span class="na">data</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">name</span><span class="p">:</span> <span class="nx">name</span><span class="p">,</span>
+        <span class="na">message</span><span class="p">:</span> <span class="nx">message</span><span class="p">,</span>
+        <span class="na">email</span><span class="p">:</span> <span class="nx">email</span>
+    <span class="p">},</span>
+    <span class="na">url</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Your app url</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">post</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">success</span><span class="p">:</span> <span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span>
+        <span class="c1">// parsing = JSON.parse(data.data);</span>
+    <span class="p">},</span>
+    <span class="na">error</span><span class="p">:</span> <span class="p">(</span><span class="nx">xhr</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>마찬가지로 <code class="language-plaintext highlighter-rouge">form</code>에 있던 <code class="language-plaintext highlighter-rouge">data</code>와 같이 <code class="language-plaintext highlighter-rouge">name</code>, <code class="language-plaintext highlighter-rouge">message</code>, <code class="language-plaintext highlighter-rouge">email</code>를 설정합니다.</p>
+
+<p>참고로 다른 속성으로 데이터를 보내면 스프레드시트에 추가되어 내용이 삽입됩니다.</p>
+
+<p>success시 데이터 자체는 JSON이지만 data의 형태는 아래의 이미지와 같습니다.</p>
+
+<p><img src="/assets/images/post/sendMail/mail01.png" alt="메일" /></p>
+
+<ol>
+  <li>data, result</li>
+</ol>
+
+<hr />
+
+<blockquote>
+  <p>참고 사이트</p>
+</blockquote>
+
+<p><a href="https://zzinise.tistory.com/12" target="_blank">zzinise 님의 블로그 - 이메일 보내기</a></p>
+
+<p><a href="https://kutar37.tistory.com/entry/%EC%A0%95%EC%A0%81-HTML-form%ED%83%9C%EA%B7%B8%EC%97%90%EC%84%9C-%EB%A9%94%EC%9D%BC%EB%B3%B4%EB%82%B4%EA%B8%B0-Google-Apps-Mail" target="_blank">털 업님의 저장소</a></p>
+:ET
