@@ -45,6 +45,8 @@
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 
 <link href="{{ site.baseurl }}/assets/css/syntax.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
 
 </head>
 
@@ -128,7 +130,7 @@ ga('send', 'pageview');
                 {% endif %}
                     <a class="nav-link" href="{{ site.baseurl }}/profile">Profile</a>
                 </li>
-                    
+
                 {% if page.url == "/" %}
                 <li class="nav-item active">
                 {% else %}
@@ -189,12 +191,24 @@ ga('send', 'pageview');
             </p>
             {% assign author = site.authors.Kimson %}
             {% if author.github or author.email %}
-            <div>
-                <a href="mailto:chaplet01@gmail.com" class="badge bg-info" data-toggle="tooltip" data-placement="bottom" title="Mail">
+            <div class="d-flex align-items-center">
+                <a href="mailto:chaplet01@gmail.com" class="me-1 badge bg-info" data-toggle="tooltip" data-placement="bottom" title="Mail">
                     <i class="text-white fas fa-paper-plane fa-2x"></i>
                 </a>
-                <a href="{{author.github}}" class="badge bg-info" data-toggle="tooltip" data-placement="bottom" title="GitHub">
+                <a href="{{author.github}}" class="me-1 badge bg-info" data-toggle="tooltip" data-placement="bottom" title="GitHub">
                     <i class="text-white fab fa-github-alt fa-2x"></i>
+                </a>
+                <a href="{{author.web}}/portfolio/" class="me-1 badge bg-danger position-relative" data-toggle="tooltip" data-placement="bottom" title="Portfolio" style="max-height: 30px;">
+                    <span data-alert="new"
+                    {%- comment -%}
+                    {%- endcomment -%}
+                    style="width: 10px; height: 10px;"
+                    class="position-absolute translate-middle top-0 start-100 "
+                    ></span>
+                    <!-- bg-danger border rounded-circle -->
+                    <i class="material-icons text-white">
+                        dashboard_customize
+                    </i>
                 </a>
             </div>
             {% endif %}
@@ -292,6 +306,7 @@ ga('send', 'pageview');
 </script>
 
 <script src="{{ site.baseurl }}/assets/js/mediumish.js"></script>
+<script src="{{ site.baseurl }}/assets/js/devalert.js"></script>
 
 {% if site.lazyimages == "enabled" %}
 <script src="{{ site.baseurl }}/assets/js/lazyload.js"></script>
