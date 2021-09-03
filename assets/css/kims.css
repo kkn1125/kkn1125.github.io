@@ -3,6 +3,21 @@
 	transition: 0.5s cubic-bezier(1,0,0,1);
 } */
 
+#videoLimit{
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	overflow: hidden;
+}
+
+#videoBike{
+	width: auto;
+	/* object-fit: fill; */
+	filter: brightness(0.5);
+	-webkit-filter: brightness(0.5);
+}
+
 body.dark {
 	background-color: #2a2b31;
 }

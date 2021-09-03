@@ -289,3 +289,72 @@ window.addEventListener('load', function(){
         }
     });
 });
+
+window.addEventListener('load',()=>{
+    function httpGet(theUrl)
+    {
+        var xmlHttp = new XMLHttpRequest();
+        xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
+        xmlHttp.send( null );
+        return xmlHttp;
+    }
+    let response = httpGet(location.href);
+    if(response.status==404){
+        let b = document.getElementById('videoBike');
+        let vl = document.getElementById('videoLimit');
+        let [w, h] = [window.innerWidth, window.innerHeight];
+        let max = document.body.clientHeight;
+        if(window.innerWidth > b.clientWidth){
+            b.style.cssText = `
+                width: ${w}px;
+                height: auto;
+            `;
+        } else {
+            b.style.cssText = `
+                width: auto;
+                height: ${h}px;
+            `;
+        }
+        if(window.innerWidth <= 768){
+            vl.style.cssText = `
+                width:${w}px;
+                height: ${h}px;
+                max-height: ${max}px;
+            `;
+        } else {
+            vl.style.cssText = `
+                width:${w}px;
+                height: ${h-50}px;
+                max-height: ${max}px;
+            `;
+        }
+        window.addEventListener('resize', ()=>{
+            w = window.innerWidth;
+            h = window.innerHeight;
+            if(window.innerWidth > b.clientWidth){
+                b.style.cssText = `
+                    width: ${w}px;
+                    height: auto;
+                `;
+            } else {
+                b.style.cssText = `
+                    width: auto;
+                    height: ${h}px;
+                `;
+            }
+            if(window.innerWidth <= 768){
+                vl.style.cssText = `
+                    width:${w}px;
+                    height: ${h}px;
+                    max-height: ${max}px;
+                `;
+            } else {
+                vl.style.cssText = `
+                    width:${w}px;
+                    height: ${h-50}px;
+                    max-height: ${max}px;
+                `;
+            }
+        })
+    }
+});
