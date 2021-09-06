@@ -5,7 +5,7 @@ title:  "[JAVASCRIPT] 사천성 게임 만들기"
 author: Kimson
 categories: [ TIL, JAVASCRIPT ]
 tags: [sachunsung, 사천성, 그림맞추기]
-image: assets/images/post/covers/TIL-javascript.png
+image: assets/images/post/sachunsung/sa06.png
 description: "사천성 게임 만들기
 
 미리 사과말씀 드리자면 사천성이라기보다 같은 그림을 맞추는 기능을 구현했습니다. 아직 실력 부족으로 사천성의 룰을 구현하지는 못했습니다. 그래서 이번에는 구현한 코드를 보여드리면서 아래에 파일을 올리려 합니다.
