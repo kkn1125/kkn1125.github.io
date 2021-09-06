@@ -11,7 +11,7 @@ description: "기초 다지기
 16진수를 8진수로 변환
 10진수 유니코드로 변환
 정수 유니코드 문자로 변환"
-featured: true
+featured: false
 hidden: false
 rating: 3
 toc: true

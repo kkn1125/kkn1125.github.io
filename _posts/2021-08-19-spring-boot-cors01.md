@@ -9,7 +9,7 @@ image: assets/images/post/covers/TIL-spring.png
 description: "Method Not Allowed 405
 
 아주 골치 아픈 현상을 겪었습니다. 3시간 정도 이것 저것 수정하다가 드디어 원인을 발견하고 고쳤습니다. 저와 같은 상황인 분에게 도움이 되고자, 그리고 제가 까먹지 않게 포스팅으로 남기려합니다."
-featured: true
+featured: false
 hidden: false
 rating: 3.5
 toc: true

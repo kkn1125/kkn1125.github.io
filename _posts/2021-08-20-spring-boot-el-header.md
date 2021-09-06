@@ -9,7 +9,7 @@ image: assets/images/post/covers/TIL-spring.png
 description: "EL(Expression Language)
 
 EL에 대해서 사용하면서 header의 referer가 필요한 상황이 생겼습니다. 물론 getHeader메서드로 불러오는 방법도 있지만 굳이 변수에 담아서 하기에 번거로워질 것 같아 EL을 요즘 자주 쓰고 있습니다."
-featured: true
+featured: false
 hidden: false
 rating: 3.5
 toc: true

@@ -13,7 +13,7 @@ description: "스크롤 애니메이션 구현
 좋은 버릇도 아닐뿐더러 생각하는 힘을 기르는데는 좋은 것 같습니다.
 
 원래는 화면 뷰포트를 감지하는 코드를 참고해서 만들고자 하였지만 이 또한 만들고나서 참고해보자는 마음에 구현된 기능을 정리하여 올립니다."
-featured: true
+featured: false
 hidden: false
 rating: 4.5
 toc: true

@@ -11,7 +11,7 @@ description: "lombok 설정
 spring boot 시작하기 01에서 설치, 구동이 주제였다면 setter와 getter등의 <del>자질구레한</del> 것들을 간소화해주는 lombok을 설정하는 방법을 소개합니다.
 
 그 다음 tiles를 사용하는 방법을 이번 시간에 알아보겠습니다."
-featured: true
+featured: false
 hidden: false
 rating: 5
 toc: true

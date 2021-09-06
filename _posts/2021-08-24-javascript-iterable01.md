@@ -7,7 +7,7 @@ categories: [ TIL, JAVASCRIPT ]
 tags: [symbol, iterable, iterator]
 image: assets/images/post/covers/TIL-javascript.png
 description: "Iterable 알아보기 Iteration Protocols ECMAScript 2015(ES6)에 추가되었으며 2개의 protocol이 있습니다. 먼저 심볼에 대해 알아보려합니다. 이전에 투두리스트에 올려두었던 `Iterable`은 `Object.defineProperty`를 사용하다가 Enumerable과 함께 설명하려고 체크해두었는데 이제야 작성하게 됩니다."
-featured: true
+featured: false
 hidden: false
 rating: 4
 toc: true

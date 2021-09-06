@@ -10,7 +10,7 @@ description: "Object assign 메서드
 
 `assign`이라는 메서드는 이렇습니다. 대상 객체로부터 열거 가능한 하나 이상의 속성들을 목표 객체로 복사합니다. 수정된 객체를 반환하는 특징이있습니다.
 기본적으로 사용방법은 위와 같이 간단합니다. 만일 특정 요소에 `style`이나 `attribute`를 여러개 설정하려면 `setAttribute('property','value')`로 단일 요소를 작성하거나, `el.style.property = value`로 스타일을 단일로 지정하였습니다."
-featured: true
+featured: false
 hidden: false
 rating: 4
 toc: true
