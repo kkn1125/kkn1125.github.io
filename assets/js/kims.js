@@ -290,6 +290,23 @@ window.addEventListener('load', function(){
     });
 });
 
+window.addEventListener('keydown', (ev)=>{
+    if((ev.ctrlKey && ev.shiftKey && ev.key == 'I') || (ev.ctrlKey && ev.shiftKey && ev.key == 'C') || ev.key === "F12"){
+        ev.preventDefault();
+        alert("개발자 도구가 금지된 블로그입니다.");
+    }
+    if(ev.ctrlKey && ev.key == 'c'){
+        ev.preventDefault();
+        alert("무분별한 복사를 방지하기 위함입니다. 클립보드 버튼을 이용해주세요.");
+    }
+});
+
+window.addEventListener('contextmenu', (ev)=>{
+    ev.preventDefault();
+    alert("우클릭이 금지된 블로그입니다.")
+    return false;
+}, false);
+
 window.addEventListener('load',()=>{
     function httpGet(theUrl)
     {
@@ -357,4 +374,22 @@ window.addEventListener('load',()=>{
             }
         })
     }
+});
+
+// 클립보드
+
+document.querySelectorAll(".rouge-code").forEach(x=>{
+    let btn = document.createElement('button');
+    btn.innerHTML = "Copy";
+    btn.setAttribute("class","cpbtn btn btn-sm btn-info");
+    btn.addEventListener('click', ()=>{
+        let ta = document.createElement('textarea');
+        document.body.appendChild(ta);
+        ta.value = x.textContent;
+        ta.select();
+        document.execCommand("Copy");
+        document.body.removeChild(ta);
+        alert("복사가 완료되었습니다.");
+    });
+    x.parentNode.parentNode.parentNode.parentNode.parentNode.prepend(btn);
 });

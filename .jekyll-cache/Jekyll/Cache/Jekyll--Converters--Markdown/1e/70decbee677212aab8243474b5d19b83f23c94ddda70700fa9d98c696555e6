@@ -1,0 +1,35 @@
+I"�<h1 id="한글-타이핑-효과-구현">한글 타이핑 효과 구현</h1>
+
+<p>오늘은 한글 타이핑 효과를 구현해보려 합니다. 많은 노가다를 하다보니 알게 된 점이 몇 개 있고, 잘 작동 되는 모습에 굉장히 뿌듯함을 느꼈습니다.</p>
+
+<p>많은 블로그에서 타이핑에 관한 효과를 소개하는데요. 구현하고자 하는 효과가 한 글자씩 뚝 뚝 나오는게 아닌 모음 자음의 분리된 형태로 쌓이는 효과를 원했습니다.</p>
+
+<p>하지만 대부분이 글자 하나하나를 split하여 구현한 방식이고, 다른 블로그에서는 타이핑 효과를 주는 js 라이브러리를 사용하는 등의 방법을 알려주었습니다.</p>
+
+<p>ToDo List에도 이미 올려버렸고, 구상해둔 방법이 있어서 일단 시작했습니다.</p>
+
+<h2 id="초성-중성-종성">초성, 중성, 종성</h2>
+
+<p>먼저 한글을 분해하기 위해 한글의 구성을 짧게나마 알아야했습니다.</p>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th style="text-align: center">예제</th>
+      <th style="text-align: center">초성</th>
+      <th style="text-align: center">중성</th>
+      <th style="text-align: center">종성</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">킴</td>
+      <td style="text-align: center">"ㅋ"</td>
+      <td style="text-align: center">"ㅣ"</td>
+      <td style="text-align: center">"ㅁ"</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>초서</p>
+:ET

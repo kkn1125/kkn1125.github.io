@@ -3,6 +3,12 @@
 	transition: 0.5s cubic-bezier(1,0,0,1);
 } */
 
+button.cpbtn{
+	position: absolute;
+	right: 0;
+	bottom: 0;
+}
+
 #videoLimit{
 	position: fixed;
 	top: 0;
