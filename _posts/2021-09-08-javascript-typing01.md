@@ -3,10 +3,16 @@ layout: post
 date:   2021-09-08 18:28:12 +0900
 title:  "[JAVASCRIPT] 한글 타이핑 효과 구현하기"
 author: Kimson
-categories: [ TIL, SPRING, JAVASCRIPT ]
-tags: [database, external, storage]
+categories: [ TIL, JAVASCRIPT ]
+tags: [effect, typing, 한글]
 image: assets/images/post/covers/TIL-javascript.png
-description: ""
+description: "한글 타이핑 효과 구현
+
+오늘은 한글 타이핑 효과를 구현해보려 합니다. 많은 노가다를 하다보니 알게 된 점이 몇 개 있고, 잘 작동 되는 모습에 굉장히 뿌듯함을 느꼈습니다.
+
+많은 블로그에서 타이핑에 관한 효과를 소개하는데요. 구현하고자 하는 효과가 한 글자씩 뚝 뚝 나오는게 아닌 모음 자음의 분리된 형태로 쌓이는 효과를 원했습니다.
+
+하지만 대부분이 글자 하나하나를 split하여 구현한 방식이고, 다른 블로그에서는 타이핑 효과를 주는 js 라이브러리를 사용하는 등의 방법을 알려주었습니다."
 featured: true
 hidden: false
 rating: 5

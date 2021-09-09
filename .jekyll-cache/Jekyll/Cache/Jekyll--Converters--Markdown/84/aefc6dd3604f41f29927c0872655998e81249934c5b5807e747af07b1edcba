@@ -1,0 +1,120 @@
+I"0&<h1 id="1번-문제">1번 문제</h1>
+
+<blockquote>
+  <p>10보다 작은 자연수 중에서 3 또는 5의 배수는 3, 5, 6, 9 이고, 이것을 모두 더하면 23입니다.
+1000보다 작은 자연수 중에서 3 또는 5의 배수를 모두 더하면 얼마일까요?</p>
+</blockquote>
+
+<p>문제를 읽고 보면 이미 <code class="language-plaintext highlighter-rouge">or</code>로 조건을 걸어 더하기를 해주면 되는 쉬운 문제입니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="rouge-code"><pre><span class="n">limit</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="nb">sum</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">def</span> <span class="nf">sum_multi</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="k">global</span> <span class="nb">sum</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">limit</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="n">a</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">i</span> <span class="o">%</span> <span class="n">b</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="nb">sum</span> <span class="o">+=</span> <span class="n">i</span>
+    <span class="k">return</span> <span class="nb">sum</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>3 또는 5이기 때문에 인자를 두 개 받고, <code class="language-plaintext highlighter-rouge">limit</code>미만까지 돌아 해당되는 수를 더하여 출력합니다.</p>
+
+<p><img src="/assets/images/post/algo/algo01.png" alt="오일러" /></p>
+
+<p>그런데 이러한 문제들을 풀다보니 프로그램 실행 속도와 여러 공식을 보다보니 문득 생각이 들었습니다.</p>
+
+<ol>
+  <li><code class="language-plaintext highlighter-rouge">limit</code> 값이 높을 때는 얼마나 시간이 걸릴까?</li>
+  <li>공식을 만들어 시간복잡도를 줄일 수 없을까?</li>
+</ol>
+
+<h2 id="배수-합을-구하는-공식-세우기">배수 합을 구하는 공식 세우기</h2>
+
+<p>순차 합계인 <code class="language-plaintext highlighter-rouge">1 + 2 + 3 ... + n</code> 의 합을 구하는 공식은 모두가 아실겁니다. 그런데 배수의 합을 구하는 공식이 있지 않을까? 해서 끄적이던 결과 하나의 공식이 나오는 것을 알 수 있었습니다.</p>
+
+<p>범위의 수인 <code class="language-plaintext highlighter-rouge">limit</code>가 정하질 때 <code class="language-plaintext highlighter-rouge">s</code>의 배수 합을 구한다고 가정하면, 총 <code class="language-plaintext highlighter-rouge">limit</code> 범위 안의 <code class="language-plaintext highlighter-rouge">s</code>배수의 개수는 <code class="language-plaintext highlighter-rouge">n</code>로 가정합니다.</p>
+
+<p>만일 <code class="language-plaintext highlighter-rouge">s = 5</code>이고 <code class="language-plaintext highlighter-rouge">limit = 33</code>이라면 32의 범위 안에서 5의 배수의 합을 구해야합니다.</p>
+
+<p>[5, 10, 15, 20, 25, 30]이 나오게 되고, 여기서 양 끝의 합을 구하면 35로 동일하게 3개가 나옵니다. 즉, 35 * 3이 됩니다.</p>
+
+<p>여기서 이것을 문자로 바꾸어 공식을 세우면 <code class="language-plaintext highlighter-rouge">(s * n) + s</code> 가 35이고, 3이 <code class="language-plaintext highlighter-rouge">n</code>개의 절반이라는 것으로 가정할 수 있습니다.</p>
+
+<p>전체 공식을 쓰면, <code class="language-plaintext highlighter-rouge">((s * n) + s) * n / 2</code>입니다.</p>
+
+<p>더 정제하면 <code class="language-plaintext highlighter-rouge">(s * (n^2 + n)) / 2</code>으로 정리가 됩니다. 테스트로 다른 수와 <code class="language-plaintext highlighter-rouge">limit</code>를 달리하여 검증해보니 결과를 잘 도출합니다.</p>
+
+<h2 id="적용">적용</h2>
+
+<p>하지만 이 식을 그대로 3을 넣고 5를 넣어 합산한 수를 더하면 오답이 나옵니다. 문제를 잘 보면 3 또는 5의 배수이므로 3과 5의 공통된 배수인 15 배수의 합을 제외해야 합니다.</p>
+
+<p>코드로 보면 이렇습니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+</pre></td><td class="rouge-code"><pre><span class="n">limit</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="nb">sum</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">def</span> <span class="nf">sum_multi</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="k">global</span> <span class="nb">sum</span>
+
+    <span class="n">c</span> <span class="o">=</span> <span class="n">a</span><span class="o">*</span><span class="n">b</span> <span class="c1"># 15 배수
+</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="p">(</span><span class="n">limit</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">//</span><span class="n">a</span>
+    <span class="nb">sum</span> <span class="o">+=</span> <span class="nb">int</span><span class="p">((</span><span class="n">a</span><span class="o">*</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">n</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+
+    <span class="n">n</span> <span class="o">=</span> <span class="p">(</span><span class="n">limit</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">//</span><span class="n">b</span>
+    <span class="nb">sum</span> <span class="o">+=</span> <span class="nb">int</span><span class="p">((</span><span class="n">b</span><span class="o">*</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">n</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+
+    <span class="n">n</span> <span class="o">=</span> <span class="p">(</span><span class="n">limit</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">//</span><span class="n">c</span> <span class="c1"># 15배수 합
+</span>    <span class="nb">sum</span> <span class="o">-=</span> <span class="nb">int</span><span class="p">((</span><span class="n">c</span><span class="o">*</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">n</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># 15배수 합을 전체 합에서 제외
+</span>
+    <span class="k">return</span> <span class="nb">sum</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>답은 처음 <code class="language-plaintext highlighter-rouge">for</code>문과 <code class="language-plaintext highlighter-rouge">if</code>문을 쓴 것과 동일한 결과가 나옵니다. 하지만 결과를 출력하는 시간의 차이는 어마어마하다는 것을 발견할 수 있습니다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">limit</code>가 <code class="language-plaintext highlighter-rouge">1000</code>일 때는 두 코드 다 비슷한 <code class="language-plaintext highlighter-rouge">0.18 ~ 0.27 밀리초</code> 입니다.</p>
+
+<p>그런데 <code class="language-plaintext highlighter-rouge">limit</code>가 <code class="language-plaintext highlighter-rouge">100000 ~ 100000000</code> 이라면 이야기가 달라집니다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">100000000</code>일 때 비교를 해보겠습니다.</p>
+
+<p><img src="/assets/images/post/algo/algo03.png" alt="오일러" /></p>
+
+<p>동일 조건에서 <code class="language-plaintext highlighter-rouge">for</code>문이 있는 함수는 7148.68 밀리초가 걸립니다. 즉, 7.1초가 걸립니다.</p>
+
+<p><img src="/assets/images/post/algo/algo02.png" alt="오일러" /></p>
+
+<p>공식을 세운 <code class="language-plaintext highlighter-rouge">for</code>문이 없는 함수는 0.23 밀리초가 걸립니다. 이 차이는 약 31,081배의 속도 차이가 나는 것 입니다.</p>
+
+<h2 id="결론">결론</h2>
+
+<p>되도록 귀찮더라도 해당 문제에 패턴이나 원리를 찾아내보는 시간을 가져보는 것도 좋을 것 같습니다. 이러한 공식을 있는 공식에서 찾아 쓰는 것도 좋지만 찾지 않고, 생각 해보면서 공식을 찾아가는 것이 더 머리에 잘 남고 뿌듯해지는 것 같습니다.</p>
+
+<p>그리고 무엇보다도 공식이 생기면 불필요한 for문이 사라지고 코드가 길어지더라도 효율성이 이번 예제처럼 3만 배가 증가하니…</p>
+:ET
