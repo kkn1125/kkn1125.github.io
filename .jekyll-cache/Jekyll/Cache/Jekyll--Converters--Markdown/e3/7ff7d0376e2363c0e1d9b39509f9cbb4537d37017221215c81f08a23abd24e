@@ -1,0 +1,70 @@
+I"<h1 id="수평-사이즈-조절">수평 사이즈 조절</h1>
+
+<p>오늘 리트코드를 시작하다가 수평으로 왔다갔다 할 수 있는 조절바가 눈에 들어왔습니다.</p>
+
+<p>물론 프로그래머스나 문서화 페이지들을 보면 많이 보이지만 문득 만들어 보고 싶다는 생각이 스쳐서 만들게 됐습니다.</p>
+
+<h2 id="구조-잡기">구조 잡기</h2>
+
+<p>자세히 뜯어보지는 않았지만 대략 flex를 사용하는 것을 보고 <code class="language-plaintext highlighter-rouge">wrapper</code> <code class="language-plaintext highlighter-rouge">div</code>안에 3개의 <code class="language-plaintext highlighter-rouge">div</code>를 더 만듭니다.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+</pre></td><td class="rouge-code"><pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"en"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"UTF-8"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">http-equiv=</span><span class="s">"X-UA-Compatible"</span> <span class="na">content=</span><span class="s">"IE=edge"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"viewport"</span> <span class="na">content=</span><span class="s">"width=device-width, initial-scale=1.0"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;title&gt;</span>Document<span class="nt">&lt;/title&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"d-flex h-100"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"window_module overflow-hidden"</span> <span class="na">data-window-num=</span><span class="s">"1"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"h-100 overflow-auto"</span><span class="nt">&gt;</span>
+                    ...
+                <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"resize"</span> <span class="na">class=</span><span class="s">"window_module"</span> <span class="na">data-window-num=</span><span class="s">"2"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"point"</span><span class="nt">&gt;&lt;/span&gt;</span>
+                <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"point"</span><span class="nt">&gt;&lt;/span&gt;</span>
+                <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"point"</span><span class="nt">&gt;&lt;/span&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"window_module"</span> <span class="na">data-window-num=</span><span class="s">"3"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"container h-100 overflow-auto"</span><span class="nt">&gt;</span>
+                    ...
+                <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>구성은 세 가지 입니다. 겉으로 한번 감싸고 3개의 div로 양측</p>
+:ET
