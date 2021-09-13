@@ -385,7 +385,7 @@ document.querySelectorAll(".rouge-code").forEach(x=>{
     btn.addEventListener('click', ()=>{
         let ta = document.createElement('textarea');
         document.body.appendChild(ta);
-        ta.value = x.textContent;
+        ta.value = x.textContent+'[출처] :: devkimson 블로그';
         ta.select();
         document.execCommand("Copy");
         document.body.removeChild(ta);
