@@ -6,8 +6,11 @@ author: Kimson
 categories: [ TIL, JAVASCRIPT ]
 tags: [linkedlist, datastructure]
 image: assets/images/post/covers/TIL-javascript.png
-description: ""
-featured: true
+description: "LinkedList 구현
+이해한대로 만든 것이기 때문에 정확하지 않을 수 있습니다.
+
+LinkedList는 `node`의 연결로 이루어져있습니다. `node`는 데이터 값과 `next`, 혹은 `prev`값을 가지며, 이번 주제에서는 `next`만 있는 `node`를 가진 `LinkedList`를 만들어보려합니다."
+featured: false
 hidden: false
 rating: 4
 toc: true

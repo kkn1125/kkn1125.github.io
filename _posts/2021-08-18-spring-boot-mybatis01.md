@@ -12,7 +12,7 @@ ToDoList에도 올려두었던 녀석을 이제야 합니다. 여지껏 수동�
 
 최근에 롬복을 설치하고 사용해보니 굉장히 편리함을 느꼈습니다. 이제는 편리한 기능들을 계속 찾게 되는 것 같습니다.  
 아직 lombok을 안 써보신 분은 Spring Boot 시작하기 02를 참고해주세요."
-featured: true
+featured: false
 hidden: false
 rating: 4.5
 toc: true

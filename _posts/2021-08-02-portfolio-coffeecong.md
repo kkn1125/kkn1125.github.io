@@ -17,8 +17,8 @@ description: "주제 - 커피용품 온라인몰
 6. 관리자페이지
 7. 주문,배송처리
 8. 상품관리"
-featured: true
-hidden: false
+featured: false
+hidden: true
 rating: 4.5
 # beforetoc: "커버이미지"
 toc: true
