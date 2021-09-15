@@ -1,0 +1,14 @@
+I"q<h1 id="에러노트---mybatis-syntax-error">에러노트 - MyBatis Syntax Error</h1>
+
+<p>폰트 사이즈를 작게 해서 넓게 보려는 습관 때문에 자주 에러와 만납니다.</p>
+
+<p>너무 작다보니 오타를 놓치고 지나가기 마련인데요. 저와 같은 이유로 찾는 분이라면 해결 되시기를…</p>
+
+<p class="text-center"><img src="/assets/images/post/error/error02.png" alt="error" draggable="false" /></p>
+
+<p>코드의 일부 모습은 이랬습니다.</p>
+
+<p class="text-center"><img src="/assets/images/post/error/error03.png" alt="error" draggable="false" /></p>
+
+<p>select</p>
+:ET
