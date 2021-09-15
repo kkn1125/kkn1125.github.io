@@ -169,11 +169,11 @@ body button#modeToggle.btn-light{
 	transform: rotate3d(0, 1, 0, 180deg);
 } */
 
-button#modeToggle{
+div#mtWrap{
 	/* position: fixed;
 	top: 80px;
 	right: 8%; */
-	z-index: 1099;
+	z-index: 1020;
 }
 
 .table td{
