@@ -1,0 +1,6 @@
+I"}<h1 id="스크롤-방향-감지">스크롤 방향 감지</h1>
+
+<p><code class="language-plaintext highlighter-rouge">wheel</code> 이벤트를 쓰면 간단합니다만 저는 <code class="language-plaintext highlighter-rouge">wheel</code> 이벤트 말고 <code class="language-plaintext highlighter-rouge">scroll</code>로 감지를 하려합니다.</p>
+
+<p>현재 프로젝</p>
+:ET
