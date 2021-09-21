@@ -262,12 +262,12 @@ let tags = null;
 initHandler();
 
 function initHandler(){ // 초기화
-    let repo = localStorage.list_tag;
+    let repo = localStorage.tagsList;
 
     if(repo == ''){
-        localStorage.list_tag = `["테스트", "해보세요", "저장은됩니다", "다만", "이블로그는", "개발자도구가", "금지되어있습니다"]`;
+        localStorage.tagsList = `["테스트", "해보세요", "저장은됩니다", "다만", "이블로그는", "개발자도구가", "금지되어있습니다"]`;
     } else if(repo == '[]'){
-        localStorage.list_tag = `["테스트", "해보세요", "저장은됩니다", "다만", "이블로그는", "개발자도구가", "금지되어있습니다"]`;
+        localStorage.tagsList = `["테스트", "해보세요", "저장은됩니다", "다만", "이블로그는", "개발자도구가", "금지되어있습니다"]`;
     }
     // Events
     box.addEventListener('click', ()=>{ input.focus() });
@@ -279,12 +279,12 @@ function initHandler(){ // 초기화
 
 // 로컬스토리지 가져오기
 function getStorage(){
-    tags = localStorage.list_tag?JSON.parse(localStorage.list_tag):[];
+    tags = localStorage.tagsList?JSON.parse(localStorage.tagsList):[];
 }
 
 // 로컬스토리지 업데이트
 function updateStorage(){
-    localStorage.list_tag = JSON.stringify(tags);
+    localStorage.tagsList = JSON.stringify(tags);
     render();
 }
 
