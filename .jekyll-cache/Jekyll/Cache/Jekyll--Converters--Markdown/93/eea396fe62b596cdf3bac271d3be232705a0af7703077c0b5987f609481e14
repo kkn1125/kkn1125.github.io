@@ -1,0 +1,169 @@
+I"�,<h1 id="태그-입력-구현하기">태그 입력 구현하기</h1>
+
+<p>최근 기억하기 힘든 내용이나 블로그 내용을 부분 발췌하거나 급하게 기록할 때 노션을 자주 애용하는데요. 그 중에서 태그를 이쁘게 만들어서 뱃지모양으로 띄우는 기능을 구현하려합니다.</p>
+
+<p>구상은 이렇습니다.</p>
+
+<ol>
+  <li>태그가 담기는 배열 필요</li>
+  <li><code class="language-plaintext highlighter-rouge">"Enter"</code>키 또는 <code class="language-plaintext highlighter-rouge">","</code>로 추가하고 공백이 있을 시 분리해서 태그 추가</li>
+  <li>배열에서 태그내용을 뽑아 뿌려줄때 템플릿을 씌워서 뿌림</li>
+  <li><code class="language-plaintext highlighter-rouge">x</code> 버튼을 눌러 해당 태그 삭제</li>
+  <li>지우는 <code class="language-plaintext highlighter-rouge">backspace</code>키로는 뒤에 것부터 삭제</li>
+  <li>전체 삭제</li>
+</ol>
+
+<h2 id="태그-출력부">태그 출력부</h2>
+
+<p><code class="language-plaintext highlighter-rouge">localStorage</code>를 사용한 예 입니다. <code class="language-plaintext highlighter-rouge">DB</code>에 연결하신다면 받아오는 부분만 수정하면 됩니다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="rouge-code"><pre><span class="dl">'</span><span class="s1">use strict</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">box</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">.box</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">innerBox</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">.innerBox</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">input</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">input</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">alertList</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">#alertList</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">search</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">#search</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">let</span> <span class="nx">tags</span> <span class="o">=</span> <span class="p">[];</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+</pre></td><td class="rouge-code"><pre><span class="c1">// functions</span>
+<span class="kd">function</span> <span class="nx">initRepository</span><span class="p">(){</span>
+    <span class="kd">let</span> <span class="nx">repo</span> <span class="o">=</span> <span class="nx">localStorage</span><span class="p">.</span><span class="nx">getItem</span><span class="p">(</span><span class="dl">"</span><span class="s2">list_tag</span><span class="dl">"</span><span class="p">);</span>
+    <span class="k">if</span><span class="p">(</span><span class="k">typeof</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">repo</span><span class="p">)</span> <span class="o">===</span> <span class="dl">"</span><span class="s2">string</span><span class="dl">"</span><span class="p">){</span>
+        <span class="nx">localStorage</span><span class="p">.</span><span class="nx">setItem</span><span class="p">(</span><span class="dl">"</span><span class="s2">list_tag</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">[]</span><span class="dl">"</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="nx">removeTag</span><span class="p">();</span>
+    <span class="nx">render</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">getRepository</span><span class="p">(){</span>
+    <span class="nx">tags</span> <span class="o">=</span> <span class="nx">localStorage</span><span class="p">.</span><span class="nx">list_tag</span><span class="p">?</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">localStorage</span><span class="p">.</span><span class="nx">list_tag</span><span class="p">):[];</span>
+    <span class="k">return</span> <span class="nx">tags</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">setRepository</span><span class="p">(){</span>
+    <span class="nx">localStorage</span><span class="p">.</span><span class="nx">list_tag</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">tags</span><span class="p">);</span>
+    <span class="nx">render</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">addTag</span><span class="p">(</span><span class="nx">item</span><span class="p">){</span>
+    <span class="c1">// tags배열에 추가</span>
+    <span class="c1">// localStorage에 추가</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">removeTag</span><span class="p">(){</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">.box</span><span class="dl">'</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">click</span><span class="dl">'</span><span class="p">,(</span><span class="nx">ev</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
+        <span class="kd">let</span> <span class="nx">target</span> <span class="o">=</span> <span class="nx">ev</span><span class="p">.</span><span class="nx">target</span>
+        <span class="k">if</span><span class="p">(</span><span class="nx">target</span><span class="p">.</span><span class="nx">tagName</span> <span class="o">===</span> <span class="dl">"</span><span class="s2">SPAN</span><span class="dl">"</span> <span class="o">&amp;&amp;</span> <span class="nx">target</span><span class="p">.</span><span class="nx">className</span> <span class="o">===</span> <span class="dl">"</span><span class="s2">close</span><span class="dl">"</span><span class="p">){</span>
+            <span class="kd">let</span> <span class="nx">idx</span> <span class="o">=</span> <span class="nx">tags</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="nx">target</span><span class="p">.</span><span class="nx">previousElementSibling</span><span class="p">.</span><span class="nx">innerText</span><span class="p">.</span><span class="nx">trim</span><span class="p">());</span>
+            <span class="nx">tags</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="nx">idx</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+            <span class="nx">setRepository</span><span class="p">();</span>
+        <span class="p">}</span>
+    <span class="p">});</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">render</span><span class="p">(){</span>
+    <span class="kd">let</span> <span class="nx">tagList</span> <span class="o">=</span> <span class="nx">getRepository</span><span class="p">();</span>
+    <span class="nx">innerBox</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="dl">''</span><span class="p">;</span>
+    <span class="nx">tagList</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">x</span><span class="o">=&gt;</span><span class="p">{</span>
+        <span class="kd">let</span> <span class="nx">template</span> <span class="o">=</span> <span class="s2">`
+            &lt;span class="tag"&gt;
+                &lt;span&gt;
+                    </span><span class="p">${</span><span class="nx">x</span><span class="p">}</span><span class="s2">
+                &lt;/span&gt;
+                &lt;span class="close"&gt;
+                    &amp;times;
+                &lt;/span&gt;
+            &lt;/span&gt;
+        `</span><span class="p">;</span>
+        <span class="nx">innerBox</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">+=</span> <span class="nx">template</span><span class="p">;</span>
+    <span class="p">});</span>
+<span class="p">}</span>
+
+<span class="c1">// Events</span>
+<span class="nx">input</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">keydown</span><span class="dl">'</span><span class="p">,</span> <span class="p">(</span><span class="nx">ev</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">ev</span><span class="p">.</span><span class="nx">key</span> <span class="o">===</span> <span class="dl">"</span><span class="s2">Enter</span><span class="dl">"</span><span class="p">){</span>
+        <span class="nx">addTag</span><span class="p">(</span><span class="nx">input</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span>
+        <span class="nx">input</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="dl">""</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+
+<span class="nx">box</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">click</span><span class="dl">'</span><span class="p">,</span> <span class="p">(</span><span class="nx">ev</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
+    <span class="nx">input</span><span class="p">.</span><span class="nx">focus</span><span class="p">();</span>
+<span class="p">});</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+:ET
