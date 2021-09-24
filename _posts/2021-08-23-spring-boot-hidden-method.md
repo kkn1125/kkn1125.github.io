@@ -55,9 +55,9 @@ public class StartwebApplication {
 
 ```properties
 # multipart 설정
-spring.servlet.multipart.max-file-size=10MB
-spring.servlet.multipart.max-request-size=50MB
-spring.servlet.multipart.location=c:\\temp\\upload
+spring.servlet.multipart.max-file-size="10MB"
+spring.servlet.multipart.max-request-size="50MB"
+spring.servlet.multipart.location="c:/temp/upload"
 ```
 
 제일 많이 봤던 부분이 오타 확인과 타입이 꼬이는 부분이었습니다. 저와 같은 실수를 하지말기를...

@@ -7,7 +7,7 @@ categories: [ TIL, PYTHON ]
 tags: [error, eof]
 image: assets/images/post/covers/TIL-python.jpg
 description: ""
-featured: true
+featured: false
 hidden: false
 rating: 4
 toc: true

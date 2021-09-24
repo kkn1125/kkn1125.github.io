@@ -20,7 +20,7 @@ Layer의 개념
 
 `bid`는 `primary key`인 `id`와 동일해야합니다.
 `ordered`와 `layer`는 새 글일 경우 0으로 기본값을 가집니다."
-featured: true
+featured: false
 hidden: false
 rating: 4.5
 toc: true

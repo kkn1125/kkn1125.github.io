@@ -8,9 +8,10 @@ tags: [kakao, spring]
 image: assets/images/post/kakao/kakao-1.png
 description: ""
 featured: false
-hidden: false
+hidden: true
 rating: 4.5
 toc: true
+published: false
 ---
 
 # KAKAO PC ver

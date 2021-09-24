@@ -7,7 +7,7 @@ categories: [ TIL, JAVASCRIPT ]
 tags: [image, zoom]
 image: assets/images/post/covers/TIL-javascript.png
 description: ""
-featured: true
+featured: false
 hidden: false
 rating: 4
 toc: true

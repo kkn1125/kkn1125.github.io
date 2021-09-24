@@ -258,6 +258,10 @@ div#mtWrap{
 	}
 }
 
+.adsbygoogle{
+	display: none !important;
+}
+
 #loadWrap{
 	transition: 1s cubic-bezier(1,0,0,1);
 	z-index: 1100;
