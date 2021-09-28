@@ -258,6 +258,10 @@ div#mtWrap{
 	}
 }
 
+iframe[sandbox^="allow"]{
+	display: none !important;
+}
+
 .adsbygoogle{
 	display: none !important;
 }
