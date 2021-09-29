@@ -1,24 +1,18 @@
-<div style="text-align:center">
+<div style="text-align:center; font-size: 2rem;">
   
-  # Devkimson Blog
+  **Devkimson Blog**
 
 </div>
 
-<div style="text-align:center">
+<div style="text-align: center; border-radius: .5rem; padding: 1rem .5rem .05rem; background-color: rgba(0,0,0,0.05);">
 
-[Blog 운영의 목적][1] | [Blog 주 내용][2] | [Projects][3]
+[Blog 운영의 목적](#blog-운영의-목적) | [Blog 주 내용](#blog-주-내용) | [Projects](#projects) | [Copyright](#copyright)
 
 </div>
 
 -----
 
 `- 2021. 09. 29 12:52 수정`
-
-
-
-[1]: #Blog_운영의_목적 (Blog 운영의 목적)
-[2]: #Blog_주_내용 (Blog 주 내용)
-[3]: #Projects (Blog 프로젝트)
 
 ## Blog 운영의 목적
 
