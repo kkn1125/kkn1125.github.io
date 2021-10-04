@@ -1,8 +1,0 @@
-I"�<p>Documentify</p>
-<blockquote>
-  <p>현재 Github에 올려두었으니 관심 있으신 분은 사용해보시면 됩니다.</p>
-  <h2 id="문서화">문서화</h2>
-  <p>예전에 <code class="language-plaintext highlighter-rouge">JSDOC</code>을 이용해서 문서화를 해본 적이 있습니다. 하지만 아직 라이브러리를 만들어 낼 정도의 능력이 안되서 <code class="language-plaintext highlighter-rouge">JSDOC</code>을 구경만 했는데요.
-문득 생각이 들었던 것이 <code class="language-plaintext highlighter-rouge">Nodejs</code> 없이 문서화를 할 수 있지 않을까 해서 둘러보다가 결국 만들어 보게 되었습니다.</p>
-</blockquote>
-:ET

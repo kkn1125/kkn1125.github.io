@@ -4,7 +4,7 @@ date:   2021-10-01 20:30:32 +0900
 title:  "[JAVASCRIPT] Documentify ( 문서화 ) 구현"
 author: Kimson
 categories: [ TIM, TIL, JAVASCRIPT ]
-tags: [detect, direction, mouse]
+tags: [document, generator, documentify]
 image: assets/images/post/covers/TIM-none.png
 description: "Documentify
 
