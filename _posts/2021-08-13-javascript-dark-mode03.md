@@ -6,7 +6,8 @@ author: Kimson
 categories: [ TIL, JAVASCRIPT ]
 tags: [setTimeout]
 image: assets/images/post/covers/TIL-javascript.png
-description: ""
+description: "다크모드 부드러운 전환
+다크모드 1편이 단순하게 다크모드를 구현하는 주제였으면, 다크모드 2편은 \"언제 `body`태그에 `dark`클래스를 넣는가\"였습니다. 런데 문제는 `transition`을 주는 것이었습니다. `transition`을 주게 되면 `dark`클래스로 저장하여 여는 것 아니면 켤때마다 까매지고, 하얘지는 현상이 계속 됐습니다."
 featured: false
 hidden: false
 rating: 4

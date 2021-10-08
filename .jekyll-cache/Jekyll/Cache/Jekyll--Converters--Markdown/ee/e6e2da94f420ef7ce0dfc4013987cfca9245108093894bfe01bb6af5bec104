@@ -1,0 +1,32 @@
+I"�<h1 id="구조-분해-할당">구조 분해 할당</h1>
+
+<p>이번에 DocumentifyJS(문서화 js)를 만들면서 자주 사용한 표현식입니다. 구조 분해 할당은 배열이나 객체 속성을 헤체해서 값을 변수마다 담아주는 기특한? 표현입니다.</p>
+
+<h2 id="사용방법">사용방법</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+</pre></td><td class="rouge-code"><pre><span class="c1">// 배열의 예</span>
+<span class="kd">let</span> <span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">,</span> <span class="nx">c</span><span class="p">,</span> <span class="nx">obj</span><span class="p">,</span> <span class="nx">testObj</span><span class="p">,</span> <span class="nx">g</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">testArray</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">0</span><span class="p">];</span>
+
+<span class="p">[</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">,</span> <span class="p">...</span><span class="nx">c</span><span class="p">]</span> <span class="o">=</span> <span class="nx">testArray</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">,</span> <span class="nx">c</span><span class="p">);</span>  <span class="c1">// 1 2 (8) [3, 4, 5, 6, 7, 8, 9, 0]</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">testArray</span><span class="p">);</span> <span class="c1">// 20:56:03.513 main.js:10 (10) [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]</span>
+
+<span class="nx">g</span> <span class="o">=</span> <span class="p">[...</span><span class="nx">testArray</span><span class="p">];</span>
+<span class="nx">g</span><span class="p">.</span><span class="nx">pop</span><span class="p">();</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">g</span><span class="p">,</span> <span class="nx">testArray</span><span class="p">);</span> <span class="c1">// 20:56:03.513 main.js:14 (9) [1, 2, 3, 4, 5, 6, 7, 8, 9] (10) [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+:ET

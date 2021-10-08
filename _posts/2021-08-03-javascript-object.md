@@ -6,7 +6,13 @@ author: Kimson
 categories: [ TIL, JAVASCRIPT ]
 tags: [object, property, prototype]
 image: assets/images/post/covers/TIL-javascript.png
-description: " "
+description: "Object (객체)
+
+자바스크립트가 객체기반의 스크립트 언어인 만큼 중요하다 생각이 됩니다.
+
+객체만 잘 써도 간단한 기능을 하는 라이브러리를 곧바로 만들 수 있을 것이라 생각이 듭니다. (정말 간단히...)
+
+오늘 배운 객체에 대해 정리하고자 합니다."
 featured: false
 hidden: false
 rating: 5
@@ -20,8 +26,6 @@ _.keys(object) : 객체 열거 가능 프로퍼티 조회
 _.getOwnPropertyNames(object) : 객체 고유 프로퍼티 전체 조회
 _.defineProperty(object, "propName", {opt:optVal}) : 객체에 프로퍼티 추가'
 ---
-
-<br>
 
 # Object (객체)
 

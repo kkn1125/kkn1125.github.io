@@ -7,7 +7,7 @@ categories: [ TIL, SPRING, JAVASCRIPT ]
 tags: [database, external, storage]
 image: assets/images/post/database/db01.png
 description: ""
-featured: true
+featured: false
 hidden: false
 rating: 5
 toc: true

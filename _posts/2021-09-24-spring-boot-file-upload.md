@@ -10,7 +10,7 @@ description: "File Upload
 USED
 `org.springframework.web.multipart.MultipartFile`
 Multipart를 안 쓰다가 사용하니 처음에 조금 버벅거렸습니다."
-featured: true
+featured: false
 hidden: false
 rating: 3.5
 toc: true

@@ -11,7 +11,7 @@ description: "스크롤 방향 감지
 `wheel` 이벤트를 쓰면 간단합니다만 저는 `wheel` 이벤트 말고 `scroll`로 감지를 하려합니다.
 
 현재 작업 중인 프로젝트에 필요해서 생각하다보니 여기에 적용하는 중에 기록용으로 남깁니다."
-featured: true
+featured: false
 hidden: false
 rating: 3.5
 toc: true
