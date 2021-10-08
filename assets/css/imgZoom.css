@@ -14,7 +14,8 @@ body.noScroll{
     cursor: pointer;
 }
 
-img{
+.zoom img.zoomIn,
+.zoom img.zoomOut{
     width: 100%;
     object-position: center;
     object-fit: contain;

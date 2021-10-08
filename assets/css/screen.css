@@ -527,7 +527,7 @@ ul.tags li a:hover {
 .sep {
     height: 1px;
     width: 20px;
-    background: #999;
+    /* background: #999; */
     margin: 0px auto;
     margin-bottom: 1.2rem;
 }
@@ -762,9 +762,9 @@ span.navigation {
     text-align: center;
 }
 
-.pagination {
+/* .pagination {
     display: block;
-}
+} */
 
 iframe {
     max-width: 100%;

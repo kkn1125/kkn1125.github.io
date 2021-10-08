@@ -211,9 +211,16 @@ div#mtWrap{
 	transform-origin: 0% 0%;
 	background-color: rgba(255, 228, 188, 0.7);
 	border-radius: 50%;
-	border: .5px dashed gray;
+	/*border: .5px dashed gray;
+	*/
 	z-index: -1;
-	animation: bounce 3s both ease-in-out infinite;
+	/*animation: bounce 3s both ease-in-out infinite;
+	*/
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	-ms-border-radius: 50%;
+	-o-border-radius: 50%;
+	-webkit-border-radius: 50%;
 }
 
 @keyframes bounce{
@@ -291,6 +298,10 @@ iframe[sandbox^="allow"]{
 	}
 }
 
+.linkpop{
+	font-size: 1.3rem;
+}
+
 #loadImg-cover{
 	background-image: url(/assets/images/logo-k-color.png);
 	background-size: contain;
@@ -330,11 +341,15 @@ iframe[sandbox^="allow"]{
 
 .load-item{
 	position: fixed;
-	top: 45%;
+	top: 55%;
 	left: 50%;
 	transform: translate(-50%, -50%);
 	opacity: 0;
 	z-index: -1;
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	-o-transform: translate(-50%, -50%);
 }
 .load-hellow{
 	position: fixed;
@@ -343,6 +358,10 @@ iframe[sandbox^="allow"]{
 	transform: translate(-50%, -50%);
 	opacity: 0;
 	z-index: -1;
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	-o-transform: translate(-50%, -50%);
 }
 
 @keyframes lt{
