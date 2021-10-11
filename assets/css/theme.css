@@ -676,7 +676,7 @@ article blockquote:before {
 	content:"“";
 	font-family:Georgia;
 	font-size:8rem;
-	margin:-1rem 2rem 0 -3.9rem;
+	margin:-1rem 2rem 0 -4.9rem;
 	position:absolute;
 	opacity:1;
 	float:left;
@@ -734,7 +734,7 @@ article h1,article h2,article h3,article h4,article h5,article h6,article .h1,ar
 		font-size:25px;
 	}
 	.alertbar {
-		display: none !important;
+		/* display: none !important; 211011 edit kim*/
 	}
 }
 @media (min-width:992px) {

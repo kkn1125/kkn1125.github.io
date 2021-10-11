@@ -9,6 +9,16 @@ button.cpbtn{
 	bottom: 0;
 }
 
+pre.highlight::-webkit-scrollbar{
+	width: 8px;
+	height: 8px;
+	background: gray;
+}
+
+pre.highlight::-webkit-scrollbar-thumb{
+	background-color: black;
+}
+
 #videoLimit{
 	position: fixed;
 	top: 0;
@@ -193,6 +203,10 @@ div#mtWrap{
 }
 
 @media screen and (max-width: 768px){
+}
+
+.bd-search{
+	width: 100%;
 }
 
 #current{
@@ -419,11 +433,11 @@ iframe[sandbox^="allow"]{
 .wrap-badge{
 	top: 0;
 	right: 0;
-	transform: translate(20%,-70%);
-	-webkit-transform: translate(20%,-70%);
-	-moz-transform: translate(20%,-70%);
-	-ms-transform: translate(20%,-70%);
-	-o-transform: translate(20%,-70%);
+	transform: translate(0%,-70%);
+	-webkit-transform: translate(0%,-70%);
+	-moz-transform: translate(0%,-70%);
+	-ms-transform: translate(0%,-70%);
+	-o-transform: translate(0%,-70%);
 }
 
 .lang-badge{
@@ -758,10 +772,10 @@ div.minimize>div.start-0{
 	animation: nextBtns 2s cubic-bezier(0.52,-0.54, 0.4, 1.4) infinite;
 }
 
-blockquote{
+/* blockquote{
 	background-color: rgba(227, 255, 225, 0.3);
 	padding: 10px 20px;
-}
+} */
 
 blockquote p{
 	margin: auto 0 !important;

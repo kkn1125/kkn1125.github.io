@@ -344,16 +344,10 @@ span.post-read-more a:hover {
     color: rgba(0, 0, 0, .8);
 }
 
-blockquote {
-    border-left: 4px solid #00ab6b;
-    padding: 0 20px;
-    font-style: italic;
-    color: rgba(0, 0, 0, .5);
-}
-
-.article-post p,
+/* .article-post p, */
 .article-post blockquote {
-    margin: 0 0 1.5rem 0;
+    margin-left: 2rem;
+    color: rgb(95, 95, 95);
 }
 
 .featured-image {
@@ -409,8 +403,8 @@ blockquote {
     }
 
     .alertbar {
-        position: relative !Important;
-        margin-bottom: 20px;
+        position: fixed !Important;
+        margin-bottom: 0px;
         margin-top: 20px;
         box-shadow: none !Important;
         padding-right: 14px !Important;
