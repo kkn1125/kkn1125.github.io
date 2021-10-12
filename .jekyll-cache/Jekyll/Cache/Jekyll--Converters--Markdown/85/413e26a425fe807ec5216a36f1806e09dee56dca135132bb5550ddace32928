@@ -1,0 +1,5 @@
+I"7<p>Custom Tag
+이름을 뭐라 해야할지 몰라서 커스텀 태그라고 했습니다. 어떤 의미인지는 아래 예를 보면서 설명드리겠습니다.
+<code class="language-plaintext highlighter-rouge">jekyll</code>의 <code class="language-plaintext highlighter-rouge">liquid</code>를 쓰다가 문득 <code class="language-plaintext highlighter-rouge">ruby</code>없이 <code class="language-plaintext highlighter-rouge">javascript</code>로 <code class="language-plaintext highlighter-rouge">html</code>을 파싱하고 내가 정한 약속된 부분을 읽어서 설정한 내용을 적용할 수 없을까 하는 생각에 공부할 겸 구현해봤습니다.
+liquid에서는 <code class="language-plaintext highlighter-rouge">{{ ... }}</code> 이렇게 콧수염을 이중으로 씁니다. 혹은 <code class="language-plaintext highlighter-rouge">{% ... %}</code> 이렇게 <code class="language-plaintext highlighter-rouge">jsp</code>의 스크립틀릿태그의 종류가 있듯이 기능에 따라 조금씩 다르게 변화시켜서 사용합니다.</p>
+:ET
