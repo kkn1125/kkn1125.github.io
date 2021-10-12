@@ -1,0 +1,25 @@
+<!-- This goes before </head> closing tag, Google Analytics can be placed here -->
+
+<script src="{{site.baseurl}}/assets/js/loading.js" defer></script>
+
+<script>
+    let origin = window.location.origin;
+    let path = window.location.pathname;
+    if (path === "/index.html") {
+        location.href = origin + "/";
+    } else if (path === "/index") {
+        location.href = origin + "/";
+    }
+</script>
+
+<link href="{{ site.baseurl }}/assets/css/screen.css" rel="stylesheet">
+
+<link href="{{ site.baseurl }}/assets/css/kims.css" rel="stylesheet">
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<link href="{{ site.baseurl }}/assets/css/syntax.css" rel="stylesheet">
+
+<link rel="stylesheet" href="{{site.baseurl}}/assets/css/imgZoom.css">
