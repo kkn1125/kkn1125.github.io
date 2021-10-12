@@ -1,4 +1,4 @@
-I"��<div class="container">
+I"E�<div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="row align-items-center mb-5">
@@ -13,36 +13,6 @@
             </div>
             <h4 class="font-weight-bold spanborder"><span>Posts by Kimson</span></h4>
             
-            
-            <div class="mb-5 d-flex justify-content-between main-loop-card">
-<div class="pr-3">
-	<h2 class="mb-1 h4 font-weight-bold">
-	<a class="text-dark" href="/javascript-custom-tag01/">[JAVASCRIPT] HTML 커스텀 태그 만들어 사용하기</a>
-	</h2>
-	<p class="excerpt">
-	   Custom Tag
-	</p>
-	<small class="d-block text-muted">
-		In <span class="catlist">
-		
-		<a class="text-capitalize text-muted smoothscroll" href="/categories.html#til">TIL</a><span class="sep">, </span>
-		
-		<a class="text-capitalize text-muted smoothscroll" href="/categories.html#javascript">JAVASCRIPT</a><span class="sep">, </span>
-		
-		</span>
-	</small>
-	<small class="text-muted">
-		Oct 12, 2021
-	</small>
-</div>
-
-	<div class="col-md-3 pr-0 text-right">
-	<a href="/javascript-custom-tag01/">
-	<img class="w-100" src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] HTML 커스텀 태그 만들어 사용하기" />
-	</a>
-	</div>
-
-</div>
             
             <div class="mb-5 d-flex justify-content-between main-loop-card">
 <div class="pr-3">
