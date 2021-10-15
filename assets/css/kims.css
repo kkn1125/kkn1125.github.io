@@ -19,6 +19,15 @@ pre.highlight::-webkit-scrollbar-thumb{
 	background-color: black;
 }
 
+img{
+	object-fit: cover;
+}
+
+.text-decoration-line-through{
+	text-decoration-line: line-through;
+	-moz-text-decoration-line: line-through;
+}
+
 #videoLimit{
 	position: fixed;
 	top: 0;
