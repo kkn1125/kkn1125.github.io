@@ -1,6 +1,6 @@
 ---
 layout: post
-date:   2021-10-12 17:23:12 +0900
+date:   2021-10-15 15:24:13 +0900
 title:  "[JEKYLL] jekyll theme를 만들자 01"
 author: Kimson
 categories: [ JEKYLL, TIM ]
