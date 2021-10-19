@@ -1,4 +1,4 @@
-I"��<div class="container">
+I"R�<div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
         <h1 class="font-weight-bold title h6 text-uppercase mb-4">Categories</h1>
@@ -6,6 +6,41 @@
          
         <h4 class="font-weight-bold spanborder text-capitalize" id="til"><span>TIL</span></h4>
             
+        
+        
+        
+          
+         
+            <div class="mb-5 d-flex justify-content-between main-loop-card">
+<div class="pr-3">
+	<h2 class="mb-1 h4 font-weight-bold">
+	<a class="text-dark" href="/spring-jdbc-template01/">[SPRING] JDBC Template 사용 기록</a>
+	</h2>
+	<p class="excerpt">
+	   JDBC Template 사용법
+	</p>
+	<small class="d-block text-muted">
+		In <span class="catlist">
+		
+		<a class="text-capitalize text-muted smoothscroll" href="/categories.html#spring">SPRING</a><span class="sep">, </span>
+		
+		<a class="text-capitalize text-muted smoothscroll" href="/categories.html#til">TIL</a><span class="sep">, </span>
+		
+		</span>
+	</small>
+	<small class="text-muted">
+		Oct 19, 2021
+	</small>
+</div>
+
+	<div class="col-md-3 pr-0 text-right">
+	<a href="/spring-jdbc-template01/">
+	<img class="w-100" src="/assets/images/post/covers/TIL-spring.png" alt="[SPRING] JDBC Template 사용 기록" />
+	</a>
+	</div>
+
+</div>
+          
         
         
         
@@ -2900,7 +2935,7 @@
 		</span>
 	</small>
 	<small class="text-muted">
-		Oct 12, 2021
+		Oct 15, 2021
 	</small>
 </div>
 
@@ -3064,6 +3099,41 @@
          
         <h4 class="font-weight-bold spanborder text-capitalize" id="spring"><span>SPRING</span></h4>
             
+        
+        
+        
+          
+         
+            <div class="mb-5 d-flex justify-content-between main-loop-card">
+<div class="pr-3">
+	<h2 class="mb-1 h4 font-weight-bold">
+	<a class="text-dark" href="/spring-jdbc-template01/">[SPRING] JDBC Template 사용 기록</a>
+	</h2>
+	<p class="excerpt">
+	   JDBC Template 사용법
+	</p>
+	<small class="d-block text-muted">
+		In <span class="catlist">
+		
+		<a class="text-capitalize text-muted smoothscroll" href="/categories.html#spring">SPRING</a><span class="sep">, </span>
+		
+		<a class="text-capitalize text-muted smoothscroll" href="/categories.html#til">TIL</a><span class="sep">, </span>
+		
+		</span>
+	</small>
+	<small class="text-muted">
+		Oct 19, 2021
+	</small>
+</div>
+
+	<div class="col-md-3 pr-0 text-right">
+	<a href="/spring-jdbc-template01/">
+	<img class="w-100" src="/assets/images/post/covers/TIL-spring.png" alt="[SPRING] JDBC Template 사용 기록" />
+	</a>
+	</div>
+
+</div>
+          
         
         
         
@@ -3751,7 +3821,7 @@
 		</span>
 	</small>
 	<small class="text-muted">
-		Oct 12, 2021
+		Oct 15, 2021
 	</small>
 </div>
 
@@ -3777,6 +3847,28 @@
     <h4 class="font-weight-bold spanborder"><span>Featured</span></h4>
     <ol class="list-featured">
 
+
+        
+
+        
+        <li class="mb-4">
+            <span>
+                <h6 class="font-weight-bold">
+                    <a href="/spring-jdbc-template01/" class="text-dark">[SPRING] JDBC Template 사용 기록</a>
+                </h6>
+                <span class="d-block text-muted">
+                    In <span class="catlist">
+                        
+                        <a class="text-capitalize text-muted smoothscroll" href="/categories.html#spring">SPRING</a><span class="sep">, </span>
+                        
+                        <a class="text-capitalize text-muted smoothscroll" href="/categories.html#til">TIL</a><span class="sep">, </span>
+                        
+                    </span>
+                </span>
+            </span>
+        </li>
+
+        
 
         
 
