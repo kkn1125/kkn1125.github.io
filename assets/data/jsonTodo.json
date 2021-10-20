@@ -42,6 +42,11 @@
                                 "todo": "documentifyJS 커스텀 태그 추가",
                                 "tag": "idea",
                                 "time": "2021-10-19 18:42"
+                            },
+                            {
+                                "todo": "WebAssembly 기록",
+                                "tag": "check",
+                                "time": "2021-10-20 11:50"
                             }
                         ],
                         "19": [
