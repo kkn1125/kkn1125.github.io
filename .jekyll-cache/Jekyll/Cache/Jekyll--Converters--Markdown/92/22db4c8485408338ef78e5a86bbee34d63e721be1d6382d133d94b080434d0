@@ -1,4 +1,4 @@
-I"�<div class="container">
+I"��<div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="row align-items-center mb-5">
@@ -13,6 +13,36 @@
             </div>
             <h4 class="font-weight-bold spanborder"><span>Posts by Kimson</span></h4>
             
+            
+            <div class="mb-5 d-flex justify-content-between main-loop-card">
+<div class="pr-3">
+	<h2 class="mb-1 h4 font-weight-bold">
+	<a class="text-dark" href="/java-web-assembly01/">[JAVA] JWebAssembly를 사용해보자</a>
+	</h2>
+	<p class="excerpt">
+	   WebAssembly란
+	</p>
+	<small class="d-block text-muted">
+		In <span class="catlist">
+		
+		<a class="text-capitalize text-muted smoothscroll" href="/categories.html#spring">SPRING</a><span class="sep">, </span>
+		
+		<a class="text-capitalize text-muted smoothscroll" href="/categories.html#til">TIL</a><span class="sep">, </span>
+		
+		</span>
+	</small>
+	<small class="text-muted">
+		Oct 20, 2021
+	</small>
+</div>
+
+	<div class="col-md-3 pr-0 text-right">
+	<a href="/java-web-assembly01/">
+	<img class="w-100" src="/assets/images/post/covers/TIL-java.png" alt="[JAVA] JWebAssembly를 사용해보자" />
+	</a>
+	</div>
+
+</div>
             
             <div class="mb-5 d-flex justify-content-between main-loop-card">
 <div class="pr-3">

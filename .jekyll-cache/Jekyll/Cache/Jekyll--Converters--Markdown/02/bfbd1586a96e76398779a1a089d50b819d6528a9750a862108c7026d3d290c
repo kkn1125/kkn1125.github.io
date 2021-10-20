@@ -1,4 +1,4 @@
-I"kU<div class="container">
+I";X<div class="container">
 
     
     <!--endif page url is / -->
@@ -13,6 +13,38 @@
 
             <h4 class="font-weight-bold spanborder"><span>All Stories</span></h4>
 
+
+            
+
+            <div class="mb-5 d-flex justify-content-between main-loop-card">
+<div class="pr-3">
+	<h2 class="mb-1 h4 font-weight-bold">
+	<a class="text-dark" href="/java-el-jstl01/">[JAVA] forEach, forToken의 varStatus 사용하기</a>
+	</h2>
+	<p class="excerpt">
+	   forEach, forToken
+	</p>
+	<small class="d-block text-muted">
+		In <span class="catlist">
+		
+		<a class="text-capitalize text-muted smoothscroll" href="/categories.html#til">TIL</a><span class="sep">, </span>
+		
+		<a class="text-capitalize text-muted smoothscroll" href="/categories.html#java">JAVA</a><span class="sep">, </span>
+		
+		</span>
+	</small>
+	<small class="text-muted">
+		Sep 24, 2021
+	</small>
+</div>
+
+	<div class="col-md-3 pr-0 text-right">
+	<a href="/java-el-jstl01/">
+	<img class="w-100" src="/assets/images/post/covers/TIL-java.png" alt="[JAVA] forEach, forToken의 varStatus 사용하기" />
+	</a>
+	</div>
+
+</div>
 
             
 
@@ -306,38 +338,6 @@
 
             
 
-            <div class="mb-5 d-flex justify-content-between main-loop-card">
-<div class="pr-3">
-	<h2 class="mb-1 h4 font-weight-bold">
-	<a class="text-dark" href="/javascript-ant-get-directions01/">[JAVASCRIPT] 개미 길 찾기 - 파이썬 문제</a>
-	</h2>
-	<p class="excerpt">
-	   파이썬 문제 자바스크립트 변환
-	</p>
-	<small class="d-block text-muted">
-		In <span class="catlist">
-		
-		<a class="text-capitalize text-muted smoothscroll" href="/categories.html#til">TIL</a><span class="sep">, </span>
-		
-		<a class="text-capitalize text-muted smoothscroll" href="/categories.html#javascript">JAVASCRIPT</a><span class="sep">, </span>
-		
-		</span>
-	</small>
-	<small class="text-muted">
-		Sep 02, 2021
-	</small>
-</div>
-
-	<div class="col-md-3 pr-0 text-right">
-	<a href="/javascript-ant-get-directions01/">
-	<img class="w-100" src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] 개미 길 찾기 - 파이썬 문제" />
-	</a>
-	</div>
-
-</div>
-
-            
-
             <div class="mt-5">
                 <!-- Pagination links -->
                 
@@ -392,6 +392,28 @@
     <h4 class="font-weight-bold spanborder"><span>Featured</span></h4>
     <ol class="list-featured">
 
+
+        
+
+        
+        <li class="mb-4">
+            <span>
+                <h6 class="font-weight-bold">
+                    <a href="/java-web-assembly01/" class="text-dark">[JAVA] JWebAssembly를 사용해보자</a>
+                </h6>
+                <span class="d-block text-muted">
+                    In <span class="catlist">
+                        
+                        <a class="text-capitalize text-muted smoothscroll" href="/categories.html#spring">SPRING</a><span class="sep">, </span>
+                        
+                        <a class="text-capitalize text-muted smoothscroll" href="/categories.html#til">TIL</a><span class="sep">, </span>
+                        
+                    </span>
+                </span>
+            </span>
+        </li>
+
+        
 
         
 
