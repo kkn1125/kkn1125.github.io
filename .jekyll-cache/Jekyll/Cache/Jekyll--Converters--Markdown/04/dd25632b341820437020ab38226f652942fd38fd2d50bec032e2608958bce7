@@ -1,281 +1,4 @@
-I";s<div class="container">
-
-    
-
-    <!-- todolist -->
-    
-    
-<div class="container-fluid border rounded p-4 mb-5">
-    <script src="/assets/js/devkalendar.js"></script>
-    
-    <div>
-        <table id="kal" class="table text-center"></table>
-    </div>
-
-    <script>
-        const kal = com.devkimson.calendar.create(document.getElementById('kal')||'kal',{
-            marker:{ // 클릭 위치 마커 관련 설정
-                color: "coral", // color name or color code
-                thick: "3px", // num
-                // style: "dashed", // value
-                speed: ".3s", // value
-                // bezier: "ease", // value
-                width: "30px" // num
-            },
-            table:{ // 테이블 속성
-                // bgColor: "table-info",
-                color: "text-muted", // class name
-                // width: "80%", // num default auto
-                // padding: "15px", // num
-                // collapse: "separate", // value
-                spacing: ".5rem", // num
-                tr:{ // 1.1.0ver 추가
-                    height: "50px", // num default 50px
-                    valign: "middle" // num default middle
-                }
-            },
-            today:{
-                color: "coral"
-            }
-        });
-    </script>
-</div>
-
-    
-
-    <!-- Begin post excerpts, let's highlight the first 4 posts on top -->
-    <div class="row remove-site-content-margin">
-
-        <!-- latest post -->
-        
-        <div class="col-md-6">
-            <div class="card border-0 mb-4 box-shadow">
-                <a href="/spring-jdbc-template01/">
-                    <div class="topfirstimage" style="background-image: url( /assets/images/post/covers/TIL-spring.png); height: 200px;    background-size: cover;    background-repeat: no-repeat;">
-                    </div>
-                </a>
-                <div class="card-body px-0 pb-0 d-flex flex-column align-items-start">
-                    <h2 class="h4 font-weight-bold">
-                        <a class="text-dark" href="/spring-jdbc-template01/">[SPRING] JDBC Template 사용 기록</a>
-                    </h2>
-                    <p class="excerpt">
-                        JDBC Template 사용법
-                    </p>
-                    <div>
-                        <small class="d-block text-muted">
-                            In <span class="catlist">
-                                
-                                <a class="text-capitalize text-muted smoothscroll" href="/categories.html#spring">SPRING</a><span class="sep">, </span>
-                                
-                                <a class="text-capitalize text-muted smoothscroll" href="/categories.html#til">TIL</a><span class="sep">, </span>
-                                
-                            </span>
-                        </small>
-                        <small class="text-muted">
-                            Oct 19, 2021
-                        </small>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-6">
-
-            <!-- second latest post --><div class="mb-3 d-flex align-items-center">
-                
-                <div class="col-md-4">
-                    <a href="/jekyll-theme01/">
-                        <img class="w-100" src="http://localhost:4000/assets/images/post/jekyll-theme/jekyll01.png" alt="[JEKYLL] jekyll theme를 만들자 01" />
-                    </a>
-                </div>
-                
-                <div>
-                    <h2 class="mb-2 h6 font-weight-bold">
-                        <a class="text-dark" href="/jekyll-theme01/">[JEKYLL] jekyll theme를 만들자 01</a>
-                    </h2>
-                    <small class="d-block text-muted">
-                        In <span class="catlist">
-                            
-                            <a class="text-capitalize text-muted smoothscroll" href="/categories.html#jekyll">JEKYLL</a><span class="sep">, </span>
-                            
-                            <a class="text-capitalize text-muted smoothscroll" href="/categories.html#tim">TIM</a><span class="sep">, </span>
-                            
-                        </span>
-                    </small>
-                    <small class="text-muted">
-                        Oct 15, 2021
-                    </small>
-                </div>
-            </div>
-
-            <!-- third latest post --><div class="mb-3 d-flex align-items-center">
-                
-                <div class="col-md-4">
-                    <a href="/javascript-custom-tag01/">
-                        <img class="w-100" src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] HTML 커스텀 태그 만들어 사용하기" />
-                    </a>
-                </div>
-                
-                <div>
-                    <h2 class="mb-2 h6 font-weight-bold">
-                        <a class="text-dark" href="/javascript-custom-tag01/">[JAVASCRIPT] HTML 커스텀 태그 만들어 사용하기</a>
-                    </h2>
-                    <small class="d-block text-muted">
-                        In <span class="catlist">
-                            
-                            <a class="text-capitalize text-muted smoothscroll" href="/categories.html#til">TIL</a><span class="sep">, </span>
-                            
-                            <a class="text-capitalize text-muted smoothscroll" href="/categories.html#javascript">JAVASCRIPT</a><span class="sep">, </span>
-                            
-                        </span>
-                    </small>
-                    <small class="text-muted">
-                        Oct 12, 2021
-                    </small>
-                </div>
-            </div>
-
-            <!-- fourth latest post --><div class="mb-3 d-flex align-items-center">
-                
-                <div class="col-md-4">
-                    <a href="/javascript-destructuring-assignment/">
-                        <img class="w-100" src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] 구조 분해 할당" />
-                    </a>
-                </div>
-                
-                <div>
-                    <h2 class="mb-2 h6 font-weight-bold">
-                        <a class="text-dark" href="/javascript-destructuring-assignment/">[JAVASCRIPT] 구조 분해 할당</a>
-                    </h2>
-                    <small class="d-block text-muted">
-                        In <span class="catlist">
-                            
-                            <a class="text-capitalize text-muted smoothscroll" href="/categories.html#til">TIL</a><span class="sep">, </span>
-                            
-                            <a class="text-capitalize text-muted smoothscroll" href="/categories.html#javascript">JAVASCRIPT</a><span class="sep">, </span>
-                            
-                        </span>
-                    </small>
-                    <small class="text-muted">
-                        Oct 08, 2021
-                    </small>
-                </div>
-            </div>
-
-        </div>
-
-    </div>
-
-    <!-- Sticky - add sticky tag to the post you want to highlight here - tags: [sticky] -->
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
-
-
-
+I"YW<div class="container">
 
     
     <!--endif page url is / -->
@@ -296,74 +19,10 @@
             <div class="mb-5 d-flex justify-content-between main-loop-card">
 <div class="pr-3">
 	<h2 class="mb-1 h4 font-weight-bold">
-	<a class="text-dark" href="/spring-jdbc-template01/">[SPRING] JDBC Template 사용 기록</a>
+	<a class="text-dark" href="/javascript-ant-get-directions01/">[JAVASCRIPT] 개미 길 찾기 - 파이썬 문제</a>
 	</h2>
 	<p class="excerpt">
-	   JDBC Template 사용법
-	</p>
-	<small class="d-block text-muted">
-		In <span class="catlist">
-		
-		<a class="text-capitalize text-muted smoothscroll" href="/categories.html#spring">SPRING</a><span class="sep">, </span>
-		
-		<a class="text-capitalize text-muted smoothscroll" href="/categories.html#til">TIL</a><span class="sep">, </span>
-		
-		</span>
-	</small>
-	<small class="text-muted">
-		Oct 19, 2021
-	</small>
-</div>
-
-	<div class="col-md-3 pr-0 text-right">
-	<a href="/spring-jdbc-template01/">
-	<img class="w-100" src="/assets/images/post/covers/TIL-spring.png" alt="[SPRING] JDBC Template 사용 기록" />
-	</a>
-	</div>
-
-</div>
-
-            
-
-            <div class="mb-5 d-flex justify-content-between main-loop-card">
-<div class="pr-3">
-	<h2 class="mb-1 h4 font-weight-bold">
-	<a class="text-dark" href="/jekyll-theme01/">[JEKYLL] jekyll theme를 만들자 01</a>
-	</h2>
-	<p class="excerpt">
-	   Jekyll Theme를 만들자
-	</p>
-	<small class="d-block text-muted">
-		In <span class="catlist">
-		
-		<a class="text-capitalize text-muted smoothscroll" href="/categories.html#jekyll">JEKYLL</a><span class="sep">, </span>
-		
-		<a class="text-capitalize text-muted smoothscroll" href="/categories.html#tim">TIM</a><span class="sep">, </span>
-		
-		</span>
-	</small>
-	<small class="text-muted">
-		Oct 15, 2021
-	</small>
-</div>
-
-	<div class="col-md-3 pr-0 text-right">
-	<a href="/jekyll-theme01/">
-	<img class="w-100" src="/assets/images/post/jekyll-theme/jekyll01.png" alt="[JEKYLL] jekyll theme를 만들자 01" />
-	</a>
-	</div>
-
-</div>
-
-            
-
-            <div class="mb-5 d-flex justify-content-between main-loop-card">
-<div class="pr-3">
-	<h2 class="mb-1 h4 font-weight-bold">
-	<a class="text-dark" href="/javascript-custom-tag01/">[JAVASCRIPT] HTML 커스텀 태그 만들어 사용하기</a>
-	</h2>
-	<p class="excerpt">
-	   Custom Tag
+	   파이썬 문제 자바스크립트 변환
 	</p>
 	<small class="d-block text-muted">
 		In <span class="catlist">
@@ -375,13 +34,13 @@
 		</span>
 	</small>
 	<small class="text-muted">
-		Oct 12, 2021
+		Sep 02, 2021
 	</small>
 </div>
 
 	<div class="col-md-3 pr-0 text-right">
-	<a href="/javascript-custom-tag01/">
-	<img class="w-100" src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] HTML 커스텀 태그 만들어 사용하기" />
+	<a href="/javascript-ant-get-directions01/">
+	<img class="w-100" src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] 개미 길 찾기 - 파이썬 문제" />
 	</a>
 	</div>
 
@@ -392,10 +51,10 @@
             <div class="mb-5 d-flex justify-content-between main-loop-card">
 <div class="pr-3">
 	<h2 class="mb-1 h4 font-weight-bold">
-	<a class="text-dark" href="/javascript-destructuring-assignment/">[JAVASCRIPT] 구조 분해 할당</a>
+	<a class="text-dark" href="/javascript-send-mail/">[JAVASCRIPT] 자바스크립트 메일 보내기</a>
 	</h2>
 	<p class="excerpt">
-	   구조 분해 할당
+	   메일 보내기
 	</p>
 	<small class="d-block text-muted">
 		In <span class="catlist">
@@ -407,13 +66,13 @@
 		</span>
 	</small>
 	<small class="text-muted">
-		Oct 08, 2021
+		Sep 02, 2021
 	</small>
 </div>
 
 	<div class="col-md-3 pr-0 text-right">
-	<a href="/javascript-destructuring-assignment/">
-	<img class="w-100" src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] 구조 분해 할당" />
+	<a href="/javascript-send-mail/">
+	<img class="w-100" src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] 자바스크립트 메일 보내기" />
 	</a>
 	</div>
 
@@ -424,30 +83,28 @@
             <div class="mb-5 d-flex justify-content-between main-loop-card">
 <div class="pr-3">
 	<h2 class="mb-1 h4 font-weight-bold">
-	<a class="text-dark" href="/javascript-graph-editor/">[JAVASCRIPT] Graph Editor JS</a>
+	<a class="text-dark" href="/python-basic01/">[PYTHON] 파이썬 기초 - 진수 변환</a>
 	</h2>
 	<p class="excerpt">
-	   Graph Editor
+	   기초 다지기
 	</p>
 	<small class="d-block text-muted">
 		In <span class="catlist">
 		
-		<a class="text-capitalize text-muted smoothscroll" href="/categories.html#tim">TIM</a><span class="sep">, </span>
-		
 		<a class="text-capitalize text-muted smoothscroll" href="/categories.html#til">TIL</a><span class="sep">, </span>
 		
-		<a class="text-capitalize text-muted smoothscroll" href="/categories.html#javascript">JAVASCRIPT</a><span class="sep">, </span>
+		<a class="text-capitalize text-muted smoothscroll" href="/categories.html#python">PYTHON</a><span class="sep">, </span>
 		
 		</span>
 	</small>
 	<small class="text-muted">
-		Oct 04, 2021
+		Aug 31, 2021
 	</small>
 </div>
 
 	<div class="col-md-3 pr-0 text-right">
-	<a href="/javascript-graph-editor/">
-	<img class="w-100" src="/assets/images/post/covers/TIM-none.png" alt="[JAVASCRIPT] Graph Editor JS" />
+	<a href="/python-basic01/">
+	<img class="w-100" src="/assets/images/post/covers/TIL-python.jpg" alt="[PYTHON] 파이썬 기초 - 진수 변환" />
 	</a>
 	</div>
 
@@ -458,44 +115,10 @@
             <div class="mb-5 d-flex justify-content-between main-loop-card">
 <div class="pr-3">
 	<h2 class="mb-1 h4 font-weight-bold">
-	<a class="text-dark" href="/javascript-documentify-js/">[JAVASCRIPT] Documentify ( 문서화 ) 구현</a>
+	<a class="text-dark" href="/javascript-geolocation01/">[JAVASCRIPT] 현재 주소 알아내기</a>
 	</h2>
 	<p class="excerpt">
-	   Documentify
-	</p>
-	<small class="d-block text-muted">
-		In <span class="catlist">
-		
-		<a class="text-capitalize text-muted smoothscroll" href="/categories.html#tim">TIM</a><span class="sep">, </span>
-		
-		<a class="text-capitalize text-muted smoothscroll" href="/categories.html#til">TIL</a><span class="sep">, </span>
-		
-		<a class="text-capitalize text-muted smoothscroll" href="/categories.html#javascript">JAVASCRIPT</a><span class="sep">, </span>
-		
-		</span>
-	</small>
-	<small class="text-muted">
-		Oct 01, 2021
-	</small>
-</div>
-
-	<div class="col-md-3 pr-0 text-right">
-	<a href="/javascript-documentify-js/">
-	<img class="w-100" src="/assets/images/post/covers/TIM-none.png" alt="[JAVASCRIPT] Documentify ( 문서화 ) 구현" />
-	</a>
-	</div>
-
-</div>
-
-            
-
-            <div class="mb-5 d-flex justify-content-between main-loop-card">
-<div class="pr-3">
-	<h2 class="mb-1 h4 font-weight-bold">
-	<a class="text-dark" href="/javascript-mouse-direction01/">[JAVASCRIPT] 마우스 이동 방향 감지</a>
-	</h2>
-	<p class="excerpt">
-	   마우스 이동 방향 감지
+	   현재 주소를 알아내보자
 	</p>
 	<small class="d-block text-muted">
 		In <span class="catlist">
@@ -507,13 +130,13 @@
 		</span>
 	</small>
 	<small class="text-muted">
-		Sep 24, 2021
+		Aug 26, 2021
 	</small>
 </div>
 
 	<div class="col-md-3 pr-0 text-right">
-	<a href="/javascript-mouse-direction01/">
-	<img class="w-100" src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] 마우스 이동 방향 감지" />
+	<a href="/javascript-geolocation01/">
+	<img class="w-100" src="/assets/images/post/geolocation/geo01.png" alt="[JAVASCRIPT] 현재 주소 알아내기" />
 	</a>
 	</div>
 
@@ -524,10 +147,74 @@
             <div class="mb-5 d-flex justify-content-between main-loop-card">
 <div class="pr-3">
 	<h2 class="mb-1 h4 font-weight-bold">
-	<a class="text-dark" href="/spring-boot-referer/">[SPRING] 헤더 리퍼러(referer) 사용하기</a>
+	<a class="text-dark" href="/javascript-new-target01/">[JAVASCRIPT] new target 알아보기</a>
 	</h2>
 	<p class="excerpt">
-	   referer란
+	   new.target을 써보자
+	</p>
+	<small class="d-block text-muted">
+		In <span class="catlist">
+		
+		<a class="text-capitalize text-muted smoothscroll" href="/categories.html#til">TIL</a><span class="sep">, </span>
+		
+		<a class="text-capitalize text-muted smoothscroll" href="/categories.html#javascript">JAVASCRIPT</a><span class="sep">, </span>
+		
+		</span>
+	</small>
+	<small class="text-muted">
+		Aug 26, 2021
+	</small>
+</div>
+
+	<div class="col-md-3 pr-0 text-right">
+	<a href="/javascript-new-target01/">
+	<img class="w-100" src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] new target 알아보기" />
+	</a>
+	</div>
+
+</div>
+
+            
+
+            <div class="mb-5 d-flex justify-content-between main-loop-card">
+<div class="pr-3">
+	<h2 class="mb-1 h4 font-weight-bold">
+	<a class="text-dark" href="/javascript-iterable01/">[JAVASCRIPT] Iteration 알아보기</a>
+	</h2>
+	<p class="excerpt">
+	   Iterable 알아보기
+	</p>
+	<small class="d-block text-muted">
+		In <span class="catlist">
+		
+		<a class="text-capitalize text-muted smoothscroll" href="/categories.html#til">TIL</a><span class="sep">, </span>
+		
+		<a class="text-capitalize text-muted smoothscroll" href="/categories.html#javascript">JAVASCRIPT</a><span class="sep">, </span>
+		
+		</span>
+	</small>
+	<small class="text-muted">
+		Aug 24, 2021
+	</small>
+</div>
+
+	<div class="col-md-3 pr-0 text-right">
+	<a href="/javascript-iterable01/">
+	<img class="w-100" src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] Iteration 알아보기" />
+	</a>
+	</div>
+
+</div>
+
+            
+
+            <div class="mb-5 d-flex justify-content-between main-loop-card">
+<div class="pr-3">
+	<h2 class="mb-1 h4 font-weight-bold">
+	<a class="text-dark" href="/spring-boot-hidden-method/">[SPRING] Hidden Method 사용</a>
+	</h2>
+	<p class="excerpt">
+	   Hidden Method
 	</p>
 	<small class="d-block text-muted">
 		In <span class="catlist">
@@ -539,13 +226,13 @@
 		</span>
 	</small>
 	<small class="text-muted">
-		Sep 24, 2021
+		Aug 23, 2021
 	</small>
 </div>
 
 	<div class="col-md-3 pr-0 text-right">
-	<a href="/spring-boot-referer/">
-	<img class="w-100" src="/assets/images/post/covers/TIL-spring.png" alt="[SPRING] 헤더 리퍼러(referer) 사용하기" />
+	<a href="/spring-boot-hidden-method/">
+	<img class="w-100" src="/assets/images/post/covers/TIL-spring.png" alt="[SPRING] Hidden Method 사용" />
 	</a>
 	</div>
 
@@ -556,10 +243,10 @@
             <div class="mb-5 d-flex justify-content-between main-loop-card">
 <div class="pr-3">
 	<h2 class="mb-1 h4 font-weight-bold">
-	<a class="text-dark" href="/spring-boot-file-upload/">[SPRING] 파일 업로드 하기</a>
+	<a class="text-dark" href="/spring-boot-el-header/">[SPRING] header referer EL로 가져오기</a>
 	</h2>
 	<p class="excerpt">
-	   File Upload
+	   EL(Expression Language)
 	</p>
 	<small class="d-block text-muted">
 		In <span class="catlist">
@@ -571,13 +258,13 @@
 		</span>
 	</small>
 	<small class="text-muted">
-		Sep 24, 2021
+		Aug 20, 2021
 	</small>
 </div>
 
 	<div class="col-md-3 pr-0 text-right">
-	<a href="/spring-boot-file-upload/">
-	<img class="w-100" src="/assets/images/post/covers/TIL-spring.png" alt="[SPRING] 파일 업로드 하기" />
+	<a href="/spring-boot-el-header/">
+	<img class="w-100" src="/assets/images/post/covers/TIL-spring.png" alt="[SPRING] header referer EL로 가져오기" />
 	</a>
 	</div>
 
@@ -588,28 +275,60 @@
             <div class="mb-5 d-flex justify-content-between main-loop-card">
 <div class="pr-3">
 	<h2 class="mb-1 h4 font-weight-bold">
-	<a class="text-dark" href="/java-el-jstl01/">[JAVA] forEach, forToken의 varStatus 사용하기</a>
+	<a class="text-dark" href="/spring-boot-cors01/">[SPRING] Method Not Allowed 405 에러 발생과 해결</a>
 	</h2>
 	<p class="excerpt">
-	   forEach, forToken
+	   Method Not Allowed 405
 	</p>
 	<small class="d-block text-muted">
 		In <span class="catlist">
 		
 		<a class="text-capitalize text-muted smoothscroll" href="/categories.html#til">TIL</a><span class="sep">, </span>
 		
-		<a class="text-capitalize text-muted smoothscroll" href="/categories.html#java">JAVA</a><span class="sep">, </span>
+		<a class="text-capitalize text-muted smoothscroll" href="/categories.html#springboot">SPRINGBOOT</a><span class="sep">, </span>
 		
 		</span>
 	</small>
 	<small class="text-muted">
-		Sep 24, 2021
+		Aug 19, 2021
 	</small>
 </div>
 
 	<div class="col-md-3 pr-0 text-right">
-	<a href="/java-el-jstl01/">
-	<img class="w-100" src="/assets/images/post/covers/TIL-java.png" alt="[JAVA] forEach, forToken의 varStatus 사용하기" />
+	<a href="/spring-boot-cors01/">
+	<img class="w-100" src="/assets/images/post/covers/TIL-spring.png" alt="[SPRING] Method Not Allowed 405 에러 발생과 해결" />
+	</a>
+	</div>
+
+</div>
+
+            
+
+            <div class="mb-5 d-flex justify-content-between main-loop-card">
+<div class="pr-3">
+	<h2 class="mb-1 h4 font-weight-bold">
+	<a class="text-dark" href="/javascript-object-assign/">[JAVASCRIPT] Object assign 활용하기</a>
+	</h2>
+	<p class="excerpt">
+	   Object assign 메서드
+	</p>
+	<small class="d-block text-muted">
+		In <span class="catlist">
+		
+		<a class="text-capitalize text-muted smoothscroll" href="/categories.html#til">TIL</a><span class="sep">, </span>
+		
+		<a class="text-capitalize text-muted smoothscroll" href="/categories.html#javascript">JAVASCRIPT</a><span class="sep">, </span>
+		
+		</span>
+	</small>
+	<small class="text-muted">
+		Aug 19, 2021
+	</small>
+</div>
+
+	<div class="col-md-3 pr-0 text-right">
+	<a href="/javascript-object-assign/">
+	<img class="w-100" src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] Object assign 활용하기" />
 	</a>
 	</div>
 
@@ -622,12 +341,13 @@
                 
                 <ul class="pagination">
                     
-                    <li class="page-item disabled"><span class="prev page-link">&laquo;</span></li>
+                    <li class="page-item"><a class="page-link" href="/page2/">&laquo;
+                            Prev</a></li>
                     
 
                     
                     
-                    <li class="page-item disabled"><span class="webjeda page-link">1</span></li>
+                    <li class="page-item"><a class="page-link" href="/">1</a></li>
                     
                     
                     
@@ -636,8 +356,7 @@
                     
                     
                     
-                    <li class="page-item"><a class="page-link" href="/page3/">3</a>
-                    </li>
+                    <li class="page-item disabled"><span class="webjeda page-link">3</span></li>
                     
                     
                     
@@ -657,7 +376,7 @@
                     
 
                     
-                    <li class="page-item"><a class="page-link" href="/page2/">Next
+                    <li class="page-item"><a class="page-link" href="/page4/">Next
                             &raquo;</a></li>
                     
                 </ul>
@@ -671,6 +390,28 @@
     <h4 class="font-weight-bold spanborder"><span>Featured</span></h4>
     <ol class="list-featured">
 
+
+        
+
+        
+        <li class="mb-4">
+            <span>
+                <h6 class="font-weight-bold">
+                    <a href="/java-web-assembly01/" class="text-dark">[JAVA] JWebAssembly를 사용해보자</a>
+                </h6>
+                <span class="d-block text-muted">
+                    In <span class="catlist">
+                        
+                        <a class="text-capitalize text-muted smoothscroll" href="/categories.html#spring">SPRING</a><span class="sep">, </span>
+                        
+                        <a class="text-capitalize text-muted smoothscroll" href="/categories.html#til">TIL</a><span class="sep">, </span>
+                        
+                    </span>
+                </span>
+            </span>
+        </li>
+
+        
 
         
 
