@@ -1,0 +1,18 @@
+I"�<h1 id="웹-튜토리얼">웹 튜토리얼</h1>
+
+<p>이름을 웹 튜토리얼이라 붙이긴 했습니다만, 웹 상에서 UI가 복잡하거나 독특하게 꾸며졌을 때 사용자에게 안내를 해주는 기능을 구현하기로 했습니다.</p>
+
+<p>현재 문서화 어플리케이션을 프리 릴리즈 중에 있습니다. 문서화를 하면서 길게 늘어선 글 보다는 핵심적인 부분에 강조하여 필요한 설명만 붙이는 기능이 있으면 좋겠다는 생각에 만들게 되었습니다.</p>
+
+<p>문서화 어플리케이션에 추후 합쳐서 다시 포스팅으로 소개하려합니다.</p>
+
+<h2 id="기능-구현">기능 구현</h2>
+
+<p>주요 기능으로는 <code class="language-plaintext highlighter-rouge">selector</code>라는 html 태그 중 설명을 붙여야하는 태그정보(<code class="language-plaintext highlighter-rouge">id</code> &gt; <code class="language-plaintext highlighter-rouge">className</code> &gt; <code class="language-plaintext highlighter-rouge">tagName</code>)와 그에 따르는 설명(<code class="language-plaintext highlighter-rouge">msg</code>)만 있으면 알아서 태그를 찾습니다. 없는 태그정보는 에러를 반환하고, 찾은 태그정보는 배열에 담아 순차적으로 실행되도록 되어있습니다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">CDN</code>은 아래와 같습니다.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;script&gt;&lt;/script&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+:ET
