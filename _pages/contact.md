@@ -3,20 +3,6 @@ title: "Contact"
 permalink: "/contact.html"
 ---
 
-<!-- <form action="https://formspree.io/{{site.email}}" method="POST">    
-
-<div class="form-group row">
-<div class="col-md-6">
-<input class="form-control" type="text" name="name" placeholder="Name*" required>
-</div>
-<div class="col-md-6">
-<input class="form-control" type="email" name="_replyto" placeholder="E-mail Address*" required>
-</div>
-</div>
-<textarea rows="8" class="form-control mb-3" name="message" placeholder="Message*" required></textarea>    
-<input class="btn btn-success" type="submit" value="Send">
-</form> -->
-
 <div class="text-dark" style="background-color: var(--bs-gray-dark)">
     <p class="mb-4">{{site.name}}에게 메일을 발송합니다. 빠르게 회신 드리도록 하겠습니다!</p>
     <div class="form-group row">

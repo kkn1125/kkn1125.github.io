@@ -11,52 +11,19 @@
 
         <link rel="shortcut icon" type="image/x-icon" href="{{site.baseurl}}/{{site.favicon}}">
 
-        <!-- Font Awesome Icons -->
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
-            integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-
-        <!-- Google Fonts-->
-        <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700" rel="stylesheet">
-
-        <!-- Bootstrap Modified -->
-        <link rel="stylesheet" href="{{site.baseurl}}/assets/css/main.css">
-
-        <!-- Theme Stylesheet -->
-        <link rel="stylesheet" href="{{site.baseurl}}/assets/css/theme.css">
-
-        <!-- Jquery on header to make sure everything works, the rest  of the scripts in footer for fast loading -->
-        <script src="https://code.jquery.com/jquery-3.3.1.min.js"
-            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-
         {% include tracking-header.html %}
-
 
     </head>
 
     <body class="{% if page.url == "/" %} homefirstpage {% endif %}" data-aos-easing="ease-out-back"
         data-aos-duration="1000" data-aos-delay="0">
-        <!-- 210810 렌더시점에 dark입힘 -->
-        <script src="{{site.baseurl}}/assets/js/darkMode.js"></script>
 
         {% if page.url == "/" %}
-        <div id="loadWrap" class="loading" data-unselect="true">
-            <span class="display-2 text-white load-item">Devkimson</span>
-            <span id="loadImg">
-                <div id="hiddenCover" class="position-relative overflow-hidden">
-                    <span id="loadImg-cover">
-                    </span>
-                </div>
-            </span>
-            <span class="display-3 text-white load-hellow">Hello!</span>
-        </div>
+        {% include option-loading.html %}
         {% endif %}
-
-        <!-- 210810 darkmodebtn -->
-        <div id="mtWrap">
-            <button id="modeToggle" class="btn btn-sm btn-light">
-                <i class="fas fa-moon fa-2x"></i>
-            </button>
-        </div>
+        
+        <!-- new dark mode 2021-11-02 14:44:38 -->
+        <input type="checkbox" data-switch="mode">
 
         <!-- top btn -->
         {% if page.url == "/" or page.istop == true %}
@@ -94,52 +61,13 @@
             {{ content }}
         </main>
 
-
-        <!-- Scripts: popper, bootstrap, theme, lunr -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
-            integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous">
-        </script>
-
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
-            integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous">
-        </script>
-
-        <script src="{{site.baseurl}}/assets/js/theme.js"></script>
-
-        <script src="{{site.baseurl}}/assets/js/kims.js" defer async></script>
-
-        <script src="{{site.baseurl}}/assets/js/cookier.js"></script>
-
-        <script>
-            $(function () {
-                $('[data-toggle="tooltip"]').tooltip()
-            })
-        </script>
-
-        <script>
-            AOS.init();
-        </script>
-
-        <script src="{{ site.baseurl }}/assets/js/mediumish.js"></script>
-        <script src="{{ site.baseurl }}/assets/js/devalert.js"></script>
-        <script src="{{ site.baseurl }}/assets/js/imgZoom.js"></script>
-
-        {% if site.lazyimages == "enabled" %}
-        <script src="{{ site.baseurl }}/assets/js/lazyload.js"></script>
-        {% endif %}
-
-        <script src="{{ site.baseurl }}/assets/js/ie10-viewport-bug-workaround.js"></script>
-
-
         <!-- Footer -->
         <footer class="bg-white border-top p-3 text-muted small">
             <div class="container">
                 <div class="row align-items-center justify-content-between">
                     <div>
                         <span class="navbar-brand mr-2 mb-0"><strong>Devkimson</strong></span>
-                        <span>Copyright © <script>
-                                document.write(new Date().getFullYear())
-                            </script>.</span>
+                        <span>Copyright © 2021.</span>
 
                         <!--  Github Repo Star Btn-->
                         <a class="text-dark ml-1" target="_blank" href="https://github.com/kkn1125/"><i

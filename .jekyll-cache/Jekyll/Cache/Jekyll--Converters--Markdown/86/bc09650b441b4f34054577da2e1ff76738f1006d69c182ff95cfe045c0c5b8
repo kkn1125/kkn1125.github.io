@@ -1,0 +1,385 @@
+I"B<div class="my-5" style="margin-top: calc(56px + 5rem) !important">
+    <!-- section 1 -->
+    <div class="container-fluid my-5 text-uppercase" data-aos="fade-right">
+        <h2 class="fw-bold text-center text-md-start fs-md-2 text-uppercase">기본 정보</h2>
+    </div>
+    <!-- section 1 -->
+
+    <!-- section 2 -->
+    <div class="container-fluid p-5 mb-5 bg-light" data-aos="fade-right">
+        <div class="d-flex flex-md-row flex-column p-3 w-100" data-unselect="true">
+            <div class="d-block bg-white border imgfix">
+                <img src="{{site.baseurl}}/assets/images/kim.jpg" class="" alt="kim" />
+            </div>
+            <div class="d-flex flex-column mt-5 mt-md-0 ps-md-5 justify-content-center w-100 resfont">
+                <div class="d-inline-block p-1">
+                    <span style="width:3rem;" class="d-inline-block text-center text-uppercase fw-bold"><i class="far fa-id-card fa-2x"></i></span>
+                    <span class="float-end">김경남</span>
+                </div>
+                <hr />
+                <div class="d-inline-block p-1">
+                    <span style="width:3rem;" class="d-inline-block text-center text-uppercase fw-bold"><i class="fas fa-birthday-cake fa-2x"></i></span>
+                    <span class="float-end">29세</span>
+                </div>
+                <hr />
+                <div class="d-inline-block p-1">
+                    <span style="width:3rem;" class="d-inline-block text-center text-uppercase fw-bold"><i class="far fa-envelope fa-2x"></i></span>
+                    <span class="float-end"><a href="mailto:chaplet01@gmail.com">chaplet01@gmail.com</a></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- section 2 -->
+    <!-- introduce -->
+    <div class="container-fluid container-md rounded-0 rounded-lg-3 my-5 py-5 bg-dark overflow-hidden position-relative" data-type="window">
+        <div class="position-absolute bg-success top-0 start-0 p-2 w-100">
+            <span class="d-flex justify-content-between px-4" data-unselect="true">
+                <div class="fw-bold fs-4" style="line-height: 2.3rem;"><i class="fas fa-sign-out-alt"></i> 자기소개서</div>
+            </span>
+        </div>
+        <div class="my-5 p-5" data-unselect="true" data-lazy="false">
+            <div>
+                 <span class="fs-4" data-typer-name="intro" data-typer-loop="true" data-typer-start="0">✏️ 아이디어를 명확히 구현하는 예비 개발자</span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 학력 -->
+    <div class="container-fluid mb-5" data-lazy="false">
+        <div class="container-fluid">
+            <table class="table w-100" data-unselect="true">
+                <thead>
+                    <tr>
+                        <th colspan="3">
+                            <b>학력사항</b>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody class="text-center">
+                    <tr>
+                        <td width="20%">
+                            <span class="badge text-muted">2009 ~ 2012</span>
+                        </td>
+                        <td>
+                            <span class="fw-bold">명신고등학교</span>
+                        </td>
+                        <td width="25%">
+                            <span class="badge text-dark">졸업</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="20%">
+                            <span class="badge text-muted">2012 ~ 2018</span>
+                        </td>
+                        <td>
+                            <span class="fw-bold">한국국제대학교</span>
+                        </td>
+                        <td width="25%">
+                            <span class="badge text-dark">실내건축학과 졸업</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <!-- 경력 -->
+    <div class="container-fluid mb-5" data-lazy="false">
+        <div class="container-fluid">
+            <table class="table w-100" data-unselect="true">
+                <thead>
+                    <tr>
+                        <th colspan="2">
+                                <b class="bg-white">경력사항</b>
+                        </th>
+                        <th class="text-end" onclick="toggleBtn(this)">펼치기</th>
+                    </tr>
+                </thead>
+                <tbody id="career" class="text-center" data-folder="true" data-type="table">
+                    <tr>
+                        <td>
+                            <span class="badge text-muted">2018.01 ~ 2020.09</span>
+                        </td>
+                        <td>
+                            <span class="fw-bold">(주)대경건축사사무소</span>
+                        </td>
+                        <td>
+                            <span class="badge text-dark">사원 - 주임</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="fas fa-level-up-alt fa-rotate-90 text-muted"></i>
+                        </td>
+                        <td>
+                            <span class="badge text-muted">진주옥봉 행복주택 설계공모</span>
+                        </td>
+                        <td>
+                            <span class="badge text-muted">보고서 작성</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="fas fa-level-up-alt fa-rotate-90 text-muted"></i>
+                        </td>
+                        <td>
+                            <span class="badge text-muted">서귀포성산지구 공동주택 현상설계</span>
+                        </td>
+                        <td>
+                            <span class="badge text-muted">보고서 작성</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="fas fa-level-up-alt fa-rotate-90 text-muted"></i>
+                        </td>
+                        <td>
+                            <span class="badge text-muted">(공공임대리츠)창원가포 S-1BL 아파트 건설공사 2공구</span>
+                        </td>
+                        <td>
+                            <span class="badge text-muted">도면 및 보고서 작성</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="fas fa-level-up-alt fa-rotate-90 text-muted"></i>
+                        </td>
+                        <td>
+                            <span class="badge text-muted">남양주별내지구 A1-1BL 공동주택 현상설계</span>
+                        </td>
+                        <td>
+                            <span class="badge text-muted">도면 및 보고서 작성</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="fas fa-level-up-alt fa-rotate-90 text-muted"></i>
+                        </td>
+                        <td>
+                            <span class="badge text-muted">파주운정 A-37블록 공동주택 현상설계</span>
+                        </td>
+                        <td>
+                            <span class="badge text-muted">도면 및 보고서 작성</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="fas fa-level-up-alt fa-rotate-90 text-muted"></i>
+                        </td>
+                        <td>
+                            <span class="badge text-muted">제6회 주택설계 기술경진대회</span>
+                        </td>
+                        <td>
+                            <span class="badge text-muted">도면 및 보고서 작성</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="fas fa-level-up-alt fa-rotate-90 text-muted"></i>
+                        </td>
+                        <td>
+                            <span class="badge text-muted">파주운정3 A26블록 공동주택 현상설계</span>
+                        </td>
+                        <td>
+                            <span class="badge text-muted">도면 및 보고서 작성</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="fas fa-level-up-alt fa-rotate-90 text-muted"></i>
+                        </td>
+                        <td>
+                            <span class="badge text-muted">부산명지 A5블록 공동주택 현상설계</span>
+                        </td>
+                        <td>
+                            <span class="badge text-muted">도면 및 보고서 작성</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="fas fa-level-up-alt fa-rotate-90 text-muted"></i>
+                        </td>
+                        <td>
+                            <span class="badge text-muted">부산기장 A2BL 시공책임형 CMR 아파트 건설공사 1공구</span>
+                        </td>
+                        <td>
+                            <span class="badge text-muted">도면 및 보고서 작성</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="fas fa-level-up-alt fa-rotate-90 text-muted"></i>
+                        </td>
+                        <td>
+                            <span class="badge text-muted">시흥장현 A-3BL 공동주택 현상설계</span>
+                        </td>
+                        <td>
+                            <span class="badge text-muted">도면 및 보고서 작성</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="fas fa-level-up-alt fa-rotate-90 text-muted"></i>
+                        </td>
+                        <td>
+                            <span class="badge text-muted">창원명곡 A1-1BL 공동주택(신혼희망타운) 현상설계</span>
+                        </td>
+                        <td>
+                            <span class="badge text-muted">도면 및 보고서 작성</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="fas fa-level-up-alt fa-rotate-90 text-muted"></i>
+                        </td>
+                        <td>
+                            <span class="badge text-muted">남양주진접A8, 철원 철원행복주택</span>
+                        </td>
+                        <td>
+                            <span class="badge text-muted">PM 보조 및 도면 작성</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="fas fa-level-up-alt fa-rotate-90 text-muted"></i>
+                        </td>
+                        <td>
+                            <span class="badge text-muted">화성동탄2 트라이엠파크</span>
+                        </td>
+                        <td>
+                            <span class="badge text-muted">PM 보조 및 도면 작성</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="fas fa-level-up-alt fa-rotate-90 text-muted"></i>
+                        </td>
+                        <td>
+                            <span class="badge text-muted">의왕월암 A-1BL 현상설계</span>
+                        </td>
+                        <td>
+                            <span class="badge text-muted">PM 보조 및 도면 작성</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="fas fa-level-up-alt fa-rotate-90 text-muted"></i>
+                        </td>
+                        <td>
+                            <span class="badge text-muted">성남복정 A-3BL 현상설계</span>
+                        </td>
+                        <td>
+                            <span class="badge text-muted">PM 보조 및 도면 작성</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="fas fa-level-up-alt fa-rotate-90 text-muted"></i>
+                        </td>
+                        <td>
+                            <span class="badge text-muted">종로창신, 안양석수 현상설계</span>
+                        </td>
+                        <td>
+                            <span class="badge text-muted">PM 보조 및 도면 작성</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!-- section 2 -->
+    
+    <div class="container-fluid mb-5">
+        <div class="container-fluid">
+            
+        </div>
+    </div>
+
+    <!-- section 3 -->
+    <div class="container-fluid bg-dark text-white-50" data-lazy="false">
+        <div class="w-100 p-3" data-unselect="true">
+            <div><b>기술스택</b></div>
+            <hr class="text-white" style="height:2px" />
+            
+            <table class="table table-dark" data-select="false" data-skill="">
+                <tbody>
+                    <tr>
+                        <td>
+                            <span class="text-capitalize skill">html</span>
+                        </td>
+                        <td>
+                            <span data-value="95"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="text-capitalize skill">css</span>
+                        </td>
+                        <td>
+                            <span data-value="75"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="text-capitalize skill">javascript</span>
+                        </td>
+                        <td>
+                            <span data-value="82"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="text-capitalize skill">java</span>
+                        </td>
+                        <td>
+                            <span data-value="75"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="text-capitalize skill">mysql</span>
+                        </td>
+                        <td>
+                            <span data-value="65"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="text-capitalize skill">Maven</span>
+                        </td>
+                        <td>
+                            <span data-value="43"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="text-capitalize skill">Python</span>
+                        </td>
+                        <td>
+                            <span data-value="33"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="text-capitalize skill">react</span>
+                        </td>
+                        <td>
+                            <span data-value="25"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="text-capitalize skill">restful api</span>
+                        </td>
+                        <td>
+                            <span data-value="43"></span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+    <!-- section 3 -->
+</div>
+:ET

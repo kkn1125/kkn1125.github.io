@@ -1,41 +1,58 @@
 'use strict';
-if(window.location.pathname == "/"){
-    document.body.style = 'overflow:hidden';
-    window.addEventListener('DOMContentLoaded',function(event){
-        let title = document.querySelectorAll(".load-item");
-        let i=0;
-        // if(getCookie('user')!=undefined){
-        //     document.querySelector("#loadWrap").remove();
-        // } else {
-            title.forEach(el=>{
-                let e = el;
+
+! function () {
+    if(!sessionStorage['loadCover']) sessionStorage['loadCover'] = true;
+    let findTarget = null;
+    let isLoaded = null;
+    if(sessionStorage['loadCover'] == 'true')
+    findTarget = requestAnimationFrame(watchLoading.bind(findTarget, getTarget));
+    else {
+        isLoaded = requestAnimationFrame(watchLoaded.bind(isLoaded, detectLoad));
+    }
+}();
+
+function watchLoaded(callback){
+    let target = null;
+    target = document.querySelector('[data-option="loading"]');
+    if(target){
+        callback(target);
+        cancelAnimationFrame(this);
+    } else requestAnimationFrame(watchLoaded.bind(this));
+}
+
+function detectLoad(target){
+    if(target) target.remove();
+}
+
+function watchLoading(callback) {
+    let target = null;
+    target = document.querySelector('.loadingCover');
+    if(target) {
+        callback(target);
+        cancelAnimationFrame(this); 
+    } else requestAnimationFrame(watchLoading.bind(this));
+}
+
+function getTarget(target){
+    let percent = 0;
+    let loading = requestAnimationFrame(animationLoading);
+    let optionLoading = target.closest('[data-option="loading"]');
+    optionLoading.style.display = 'flex';
+    target.style.transition = `.5s cubic-bezier(0.215, 0.610, 0.355, 1)`;
+    function animationLoading(){
+        setTimeout(()=>{
+            if(percent>100){
+                sessionStorage['loadCover'] = false;
+                optionLoading.style.opacity = '0';
                 setTimeout(()=>{
-                    e.style.animation = "lt 1.5s ease both";
-                }, 700*i);
-                i++;
-            });
-            
-            setTimeout(()=>{
-                let hc = document.querySelector("#hiddenCover");
-                hc.style.animation = "hc 2s cubic-bezier(1,0,0,0.75) both";
-            }, 500);
-
-            setTimeout(()=>{
-                let hellow = document.querySelector(".load-hellow");
-                hellow.style.animation = "lh 0.5s ease both";
-            }, 1500);
-
-            setTimeout(()=>{ // fadeout
-                let wrap = document.querySelector("#loadWrap");
-                wrap.style.left = "-100%";
-                wrap.style.opacity = 0;
-                document.body.style = 'overflow:none';
-            }, 2500);
-
-            setTimeout(()=>{ // remove fade
-                let wrap = document.querySelector("#loadWrap");
-                wrap.remove();
-            },3500);
-        // }
-    });
+                    optionLoading.remove();
+                },1200);
+                cancelAnimationFrame(loading);
+            } else {
+                requestAnimationFrame(animationLoading)
+                target.style.height = `${percent}%`;
+                percent+=10;
+            }
+        }, parseInt(Math.random()*700));
+    }
 }
