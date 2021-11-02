@@ -4,6 +4,8 @@
  */
 pre{
   border: none;
+  background-color: inherit;
+  color: inherit;
 }
 
 td.rouge-gutter {

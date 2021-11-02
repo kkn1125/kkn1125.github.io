@@ -1,72 +1,78 @@
-let darkMode = localStorage.getItem("darkMode");
+!function initMode() {
+    // 최초 실행시 세션스토리지 읽고 값 적용
+    let mode = getMode() || 'off';
+    let label = document.createElement('label');
+    let btn = document.createElement('span');
+    label.htmlFor = 'mode';
+    label.id = 'mtWrap';
+    label.append(btn);
+    let target = null,findTarget = null;
+    findTarget = requestAnimationFrame(watchTarget.bind(target, {label, mode, findTarget}));
+}();
 
-setTimeout(()=>{
-    let style = document.createElement("style");
-    let css = document.createTextNode(`
-        body{
-            transition: .2s ease;
-        }
-    `);
-    style.appendChild(css);
-    document.head.appendChild(style);
-})
-if(darkMode === "Y"){
-    document.body.classList.add('dark');
-    localStorage.setItem('darkMode', 'Y');
-} else {
-    document.body.classList.remove('dark');
-    localStorage.setItem('darkMode', 'N');
-}
-
-
-const enableDarkMode = () => {
-    document.body.classList.add('dark');
-    document.querySelector('#modeToggle').innerHTML = `<i class="far fa-sun fa-2x"></i>`;
-    localStorage.setItem('darkMode', 'Y');
-
-    document.querySelector('#modeToggle').classList.remove("btn-secondary");
-    document.querySelector('#modeToggle').classList.add("btn-light");
-};
-
-const disableDarkMode = () => {
-    document.body.classList.remove('dark');
-    document.querySelector('#modeToggle').innerHTML = `<i class="fas fa-moon fa-2x"></i>`;
-    localStorage.setItem('darkMode', 'N');
-
-    document.querySelector('#modeToggle').classList.remove("btn-light");
-    document.querySelector('#modeToggle').classList.add("btn-secondary");
-};
-
-let deg = 180;
-
-window.onload = function(){
-    const darkModeToggle = document.querySelector("#modeToggle");
-    darkMode = localStorage.getItem("darkMode");
-    
-    darkModeToggle.addEventListener('click', () => {
-        darkMode = localStorage.getItem("darkMode");
-        if(darkMode !== "Y"){
-            enableDarkMode();
-            darkModeToggle.style.transform = "rotate3d(0, 1, 0, "+deg+"deg)"
-        } else {
-            disableDarkMode();
-            darkModeToggle.style.transform = "rotate3d(0, 1, 0, "+deg+"deg)"
-        }
-        deg+=180;
-    });
-}
-
-window.addEventListener('DOMContentLoaded',()=>{
-    document.querySelector('#modeToggle').innerHTML = darkMode==="Y"?`<i class="far fa-sun fa-2x"></i>`:`<i class="fas fa-moon fa-2x"></i>`;
-    if(darkMode==="Y"){
-        document.querySelector('#modeToggle').classList.remove("btn-secondary");
-        document.querySelector('#modeToggle').classList.add("btn-light");
+function watchTarget({label, mode, findTarget}){
+    target = document.querySelector(`[data-switch="${label.htmlFor}"]`);
+    if(target) {
+        target.insertAdjacentElement('beforebegin', label);
+        updateMode.call(label, mode);
+        window.addEventListener('click', modeHandler.bind(label));
+        cancelAnimationFrame(findTarget);
     } else {
-        document.querySelector('#modeToggle').classList.remove("btn-light");
-        document.querySelector('#modeToggle').classList.add("btn-secondary");
+        requestAnimationFrame(watchTarget);
+    }
+}
+
+window.addEventListener('load', ()=>{
+    let findTarget = requestAnimationFrame(detectMode);
+    function detectMode(){
+        if(document.body.classList.contains('dark')) {
+            setTimeout(()=>{
+                document.body.style.transition = `0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94)`;
+            },100);
+            cancelAnimationFrame(findTarget);
+        } else {
+            requestAnimationFrame(detectMode);
+        }
     }
 });
 
-//System.register
-// github 방식
-// localStorage를 사용하지만 body가 아닌 html태그에 클래스를 적용
+function modeHandler(ev) {
+    let valid = ev.target;
+    if (valid.tagName !== 'LABEL' || !valid.htmlFor) return;
+    ev.preventDefault();
+    let mode = this.classList.value == 'on' ? 'off' : 'on';
+    updateMode.call(this, mode);
+}
+
+function updateMode(mode) {
+    let shape = {
+        on: `<i class="far fa-sun"></i>`,
+        off: `<i class="fas fa-moon"></i>`
+    }
+    let body = document.body.classList;
+    clearMode.call(this);
+    this.classList.add(mode);
+    this.children[0].innerHTML = shape[mode];
+    if(mode=='off'){
+        body.add('dark');
+    } else {
+        body.remove('dark');
+    }
+    setMode(mode);
+}
+
+function clearMode() {
+    this.classList.value = '';
+}
+
+function getMode() {
+    let mode = sessionStorage['mode'];
+    return mode ? JSON.parse(mode).dark : null;
+}
+
+function setMode(status) {
+    sessionStorage['mode'] = JSON.stringify({
+        dark: status,
+        toggleTime: new Date()
+    });
+}
