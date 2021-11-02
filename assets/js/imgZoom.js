@@ -1,5 +1,5 @@
 const imgs = document.querySelectorAll('.article-post img');
-let click = false;
+let clicked = false;
 let zoomLayer = 100;
 let moved;
 let moving = false;
@@ -25,7 +25,7 @@ imgs.forEach(img=>{
     img.draggable = false;
     img.addEventListener('click', (ev)=>{
         document.body.classList.add("noScroll");
-        if(!click){
+        if(!clicked){
             let copy = img.cloneNode();
             let pop = document.createElement('div');
             let zoom = document.createElement('div');
@@ -44,7 +44,7 @@ imgs.forEach(img=>{
                 pop.classList.remove("show");
                 setTimeout(()=>{
                     pop.remove();
-                    click = false;
+                    clicked = false;
                     document.body.classList.remove("noScroll");
                 }, 300);
             });
@@ -97,7 +97,7 @@ imgs.forEach(img=>{
             setTimeout(()=>{
                 pop.classList.add('show');
             }, 300);
-            click = true;
+            clicked = true;
         }
     });
 });
