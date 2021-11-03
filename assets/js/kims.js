@@ -78,41 +78,41 @@ window.addEventListener('load', function(){
             
             switch(lang){
                 case 'java':
-                    color = "primary text-dark"
+                    color = "primary"
                     break;
                 case 'bash':
-                    color = "dark text-dark"
+                    color = "dark"
                     break;
                 case 'jsp':
-                    color = "warning text-dark"
+                    color = "warning"
                     break;
                 case 'html':
-                    color = "danger text-dark"
+                    color = "danger"
                     break;
                 case 'css':
-                    color = "info text-dark"
+                    color = "info"
                     break;
                 case 'javascript':
-                    color = "warning text-dark"
+                    color = "warning"
                     break;
                 case 'json':
-                    color = "light text-dark"
+                    color = "light"
                     break;
                 case 'sql':
-                    color = "secondary text-white"
+                    color = "secondary"
                     break;
                 case 'xml':
-                    color = "success text-white"
+                    color = "success"
                     break;
                 case 'properties':
-                    color = "dark text-white"
+                    color = "dark"
                     break;
             }
 
             made.innerHTML = `Devkimson`;
             made.setAttribute("class","d-block badge text-end text-light made")
             
-            badge.setAttribute("class","lang-badge p-2 badge badge-"+color);
+            badge.setAttribute("class","lang-badge p-2 badge bg-"+color);
             // 210809 mysql 설정
             badge.innerHTML = `${(lang=='sql'?"My":"")+lang.charAt(0).toUpperCase()+lang.slice(1)}`;
             wrap.setAttribute("class","wrap-badge position-absolute d-flex flex-column");

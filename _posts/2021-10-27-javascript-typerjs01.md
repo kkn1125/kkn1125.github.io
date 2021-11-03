@@ -58,22 +58,6 @@ Docs를 보시려면 [Typer Docs](https://kkn1125.github.io/type/){:.target="_bl
     kimson과 devkimson은 동일 인물입니다!
 </div>
 
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kkn1125/typer@update-v020/typer.css" integrity="sha384-VbWnIJQSG+E1SZUWa0XR8wgy50XDwAcF9A0vNbtXqGvWUP9BiHJg8L3UFXQv9a14" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/gh/kkn1125/typer@update-v020/typer.js" integrity="sha384-TjFbiXfZsWbm5r2BN+wk//8Y2G4UW+IJTvn+Hi69spImwbD0+SLOA55rMC2ScW10" crossorigin="anonymous"></script>
-<script>
-    const typer = Typer.init({
-        typer: {
-            words: {
-                test4: [
-                    '이것은 추가된 텍스트입니다.',
-                    '얼마든지 추가 가능합니다.'
-                ]
-            }
-        }
-    });
-</script>
-
 ## 이동 링크
 
 현재 포스팅 날짜 기준 v0.2.0이 최신입니다.
