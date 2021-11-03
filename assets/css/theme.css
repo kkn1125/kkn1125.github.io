@@ -1,8 +1,47 @@
 /*!
  * Mundana Jekyll Theme (https://www.wowthemes.net/mundana-jekyll-theme/)
  */
+:root{
+	--font-lora: 'Lora', serif;
+	--font-noto-sans: 'Noto Sans KR', sans-serif;
+	--font-noto-serif: 'Noto Serif KR', serif;
+}
+
+html {
+	font-family: sans-serif;
+	line-height: 1.15;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	-ms-overflow-style: scrollbar;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+@-ms-viewport {
+	width: device-width;
+}
+
+article,
+aside,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section {
+	display: block;
+}
 
 body {
+	margin: 0;
+	font-family: var(--font-noto-sans), "Segoe UI", "Helvetica Neue", "Arial";
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.6;
+	color: #212529;
+	text-align: left;
+	background-color: #fff;
 	overflow-x: hidden;
 	padding-top: 69.75px;
 }
@@ -1016,11 +1055,12 @@ div.a2a_full_footer {
 		font-size: 17px;
 	}
 
+	/* 
 	.container,
 	.container-lg {
 		width: 1280px;
 		max-width: 1280px;
-	}
+	} */
 
 	h6,
 	.h6 {

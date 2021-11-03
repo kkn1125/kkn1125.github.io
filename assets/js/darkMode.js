@@ -1,6 +1,6 @@
 !function initMode() {
     // 최초 실행시 세션스토리지 읽고 값 적용
-    let mode = getMode() || 'off';
+    let mode = getMode() || 'on';
     let label = document.createElement('label');
     let btn = document.createElement('span');
     label.htmlFor = 'mode';

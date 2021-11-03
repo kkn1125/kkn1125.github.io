@@ -87,6 +87,7 @@ label#mtWrap>span::before{
 
 body.dark {
 	background-color: #2a2b31;
+	color: white;
 }
 
 body.dark .modal-content{
@@ -120,10 +121,6 @@ body.dark .section-title h2 {
 
 body.dark div.border.rounded {
 	background-color: inherit !important;
-}
-
-body.dark #gotop {
-	color: rgb(216, 136, 71) !important;
 }
 
 body.dark .footer {
@@ -162,7 +159,19 @@ body.dark h3,
 body.dark h4,
 body.dark h5,
 body.dark h6 {
-	color: rgb(230, 230, 230);
+	color: rgb(230, 230, 230) !important;
+}
+
+body.dark .card{
+	background-color: inherit;
+}
+
+body.dark ol.list-featured li:before {
+	opacity: 1;
+}
+
+body.dark p.excerpt{
+	color: rgb(212, 212, 212);
 }
 
 body.dark hr{
@@ -170,14 +179,16 @@ body.dark hr{
 }
 
 body.dark ul,
-body.dark div,
+/* body.dark div, */
 body.dark .article-post p {
 	color: rgb(212, 212, 212) !important;
 }
 
-body.dark a {
-	color: rgb(223, 159, 76);
+body.dark .page-content p{
+	color: white;
 }
+
+body.dark
 
 body.dark time.post-date {
 	color: rgb(190, 190, 190);
@@ -660,7 +671,7 @@ transition: .5s cubic-bezier(1,0,0,1);
 
 /* typer attr start */
 [data-typer-name] {
-	color: white;
+	color: inherit;
 }
 [data-typer-name] span:hover{
 	color: rgb(216, 136, 71);
