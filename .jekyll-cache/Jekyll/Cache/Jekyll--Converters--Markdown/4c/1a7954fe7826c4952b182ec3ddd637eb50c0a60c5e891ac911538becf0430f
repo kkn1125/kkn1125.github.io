@@ -1,4 +1,4 @@
-I"g�<div class="container">
+I"�<div class="container">
 
     
 
@@ -59,7 +59,7 @@
                 </a>
                 <div class="card-body px-0 pb-0 d-flex flex-column align-items-start">
                     <h2 class="h4 font-weight-bold">
-                        <a class="text-dark" href="/javascript-dark-mode04/">[JAVASCRIPT] 정적웹에 다크모드 적용하기 04</a>
+                        <a style="color: inherit;" href="/javascript-dark-mode04/">[JAVASCRIPT] 정적웹에 다크모드 적용하기 04</a>
                     </h2>
                     <p class="excerpt">
                         다크모드 적용
@@ -94,7 +94,7 @@
                 
                 <div class="ps-3">
                     <h2 class="mb-2 h6 font-weight-bold">
-                        <a class="text-dark" href="/javascript-typerjs01/">[JAVASCRIPT] Typer 0.2.0 pre-release 한글 타이핑 효과</a>
+                        <a style="color: inherit;" href="/javascript-typerjs01/">[JAVASCRIPT] Typer 0.2.0 pre-release 한글 타이핑 효과</a>
                     </h2>
                     <small class="d-block text-muted">
                         In <span class="catlist">
@@ -123,7 +123,7 @@
                 
                 <div class="ps-3">
                     <h2 class="mb-2 h6 font-weight-bold">
-                        <a class="text-dark" href="/javascript-web-tutorial/">[JAVASCRIPT] 웹 튜토리얼 구현하기</a>
+                        <a style="color: inherit;" href="/javascript-web-tutorial/">[JAVASCRIPT] 웹 튜토리얼 구현하기</a>
                     </h2>
                     <small class="d-block text-muted">
                         In <span class="catlist">
@@ -152,7 +152,7 @@
                 
                 <div class="ps-3">
                     <h2 class="mb-2 h6 font-weight-bold">
-                        <a class="text-dark" href="/java-web-assembly01/">[JAVA] JWebAssembly를 사용해보자</a>
+                        <a style="color: inherit;" href="/java-web-assembly01/">[JAVA] JWebAssembly를 사용해보자</a>
                     </h2>
                     <small class="d-block text-muted">
                         In <span class="catlist">

@@ -1,17 +1,18 @@
-I"��<div class="container">
+I"|�
+<div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="row align-items-center mb-5">
                 <div class="col-md-9">
-                    <h2 class="font-weight-bold">Kimson <span class="small btn btn-outline-success btn-sm btn-round"><a href="">Follow</a></span></h2>
-                    <p><a href=""></a></p>
-                    <p class="excerpt"></p>
+                    <h2 class="font-weight-bold">kimson <span class="small btn btn-outline-success btn-sm btn-round"><a href="https://github.com/kkn1125">Follow</a></span></h2>
+                    <p><a href="https://kkn1125.github.io">https://kkn1125.github.io</a></p>
+                    <p class="excerpt">하루하루 게을리하지 않고 나만의 방식으로 발전해나가는 예비 개발자입니다.</p>
                 </div>
                 <div class="col-md-3 text-right">
-                    <img alt="" src="/" class="rounded-circle" height="100" width="100" />
+                    <img alt="kimson" src="/assets/images/profilecard.jpg" class="rounded-circle" height="100" width="100" />
                 </div>
             </div>
-            <h4 class="font-weight-bold spanborder"><span>Posts by Kimson</span></h4>
+            <h4 class="font-weight-bold spanborder"><span>Posts by kimson</span></h4>
             
             
             <div class="mb-5 d-flex justify-content-between main-loop-card">

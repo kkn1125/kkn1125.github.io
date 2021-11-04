@@ -234,3 +234,16 @@ document.getElementById('sendMail').addEventListener('click', function () {
     }
 
 });
+
+window.addEventListener('load', footerHandler);
+window.addEventListener('resize', footerHandler);
+function footerHandler(ev){
+    let footer = document.querySelector('footer.footer');
+    let winHeight = window.innerHeight;
+    let bodyHeight = document.body.clientHeight;
+    let footerHeight = footer.clientHeight;
+    if(winHeight>=bodyHeight){
+        if(footer.style.position!='absolute') footer.style.position = 'absolute';
+        footer.style.top = `${parseFloat(winHeight-footerHeight-51)}px`;
+    }
+}
