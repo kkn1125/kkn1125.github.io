@@ -15,12 +15,14 @@ permalink: "/authors-list.html"
                             src="{{site.baseurl}}/{{ author[1].avatar }}" class="rounded-circle" height="80" width="80">
                     </div>
                     <div class="col-md-9">
+                        <h4 class="text-dark mb-0"> {{ author[1].name }} </h4>
                         <a href="{{site.baseurl}}/profile">
-                            <h4 class="text-dark mb-0"> {{ author[1].name }} </h4>
-                            <small class="d-inline-block mt-1 mb-3 font-weight-normal"><i
-                                    class="far fa-user-circle fs-4"></i> (View Profile)</small>
-                            <div class="excerpt">{{ author[1].bio }}</div>
+                            <small class="d-inline-block mt-1 mb-3 font-weight-normal"><i class="far fa-user-circle fs-4"></i> (View Profile)</small>
                         </a>
+                        <a href="{{site.baseurl}}/author-{{author[1].name}}">
+                            <small class="d-inline-block mt-1 mb-3 font-weight-normal"><i class="fas fa-book fs-4"></i> (View Author Posts)</small>
+                        </a>
+                        <div class="excerpt">{{ author[1].bio }}</div>
                         <div class="icon-block mt-3 d-flex justify-content-between">
                             <div>
                                 <a target="_blank" href="{{ author[1].twitter }}"><i class="fab fa-twitter text-muted"

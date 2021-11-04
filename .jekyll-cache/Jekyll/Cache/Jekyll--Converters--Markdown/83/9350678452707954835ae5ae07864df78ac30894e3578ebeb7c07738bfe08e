@@ -1,4 +1,4 @@
-I"�A<div class="my-5" style="margin-top: calc(56px + 5rem) !important">
+I"�A<div class="my-5" style="margin-top: calc(56px + 5rem) !important">
     <!-- section 1 -->
     <div class="container-fluid my-5 text-uppercase" data-aos="fade-right">
         <h2 class="fw-bold text-center text-md-start fs-md-2 text-uppercase">기본 정보</h2>
@@ -6,7 +6,7 @@
     <!-- section 1 -->
 
     <!-- section 2 -->
-    <div class="container-fluid p-5 mb-5 bg-light" data-aos="fade-right">
+    <div class="container-fluid p-5 mb-5" data-aos="fade-right">
         <div class="d-flex flex-md-row flex-column p-3 w-100" data-unselect="true">
             <div class="d-block bg-white border imgfix">
                 <img src="/assets/images/kim.jpg" class="" alt="kim" />
@@ -37,9 +37,9 @@
                 <div class="fw-bold fs-4" style="line-height: 2.3rem;"><i class="fas fa-sign-out-alt"></i> 자기소개서</div>
             </span>
         </div>
-        <div class="my-5 p-5" data-unselect="true" data-lazy="false">
+        <div class="mt-5 p-5" data-unselect="true" data-lazy="false">
             <div>
-                 <span class="fs-4" data-typer-name="intro" data-typer-loop="true" data-typer-start="0">아이디어를 명확히 구현하는 예비 개발자</span>
+                 <span class="fs-4 text-light" data-typer-name="intro" data-typer-erase-mode="true" data-typer-delay="2" data-typer-loop-delay="2" data-typer-loop="true" data-typer-start="0">아이디어를 명확히 구현하는 예비 개발자</span>
             </div>
         </div>
     </div>
@@ -64,7 +64,7 @@
                             <span class="fw-bold">명신고등학교</span>
                         </td>
                         <td width="25%">
-                            <span class="badge text-dark">졸업</span>
+                            <span style="font-size: .9em;">졸업</span>
                         </td>
                     </tr>
                     <tr>
@@ -75,7 +75,7 @@
                             <span class="fw-bold">한국국제대학교</span>
                         </td>
                         <td width="25%">
-                            <span class="badge text-dark">실내건축학과 졸업</span>
+                            <span style="font-size: .9em;">실내건축학과 졸업</span>
                         </td>
                     </tr>
                 </tbody>
@@ -90,7 +90,7 @@
                 <thead>
                     <tr>
                         <th colspan="2">
-                                <b class="bg-white">경력사항</b>
+                                <b>경력사항</b>
                         </th>
                         <th class="text-end" onclick="toggleBtn(this)">펼치기</th>
                     </tr>
@@ -104,7 +104,7 @@
                             <span class="fw-bold">(주)대경건축사사무소</span>
                         </td>
                         <td>
-                            <span class="badge text-dark">사원 - 주임</span>
+                            <span style="font-size: .9em;">사원 - 주임</span>
                         </td>
                     </tr>
                     <tr>
@@ -296,12 +296,12 @@
     </div>
 
     <!-- section 3 -->
-    <div class="container-fluid bg-dark text-white-50" data-lazy="false">
-        <div class="w-100 p-3" data-unselect="true">
+    <div class="container-fluid" data-lazy="false">
+        <div class="w-100" data-unselect="true">
             <div><b>기술스택</b></div>
-            <hr class="text-white" style="height:2px" />
+            <hr />
             
-            <table class="table table-dark" data-select="false" data-skill="">
+            <table class="table" data-select="false" data-skill="">
                 <tbody>
                     <tr>
                         <td>
@@ -316,7 +316,7 @@
                             <span class="text-capitalize skill">css</span>
                         </td>
                         <td>
-                            <span data-value="75"></span>
+                            <span data-value="77"></span>
                         </td>
                     </tr>
                     <tr>
@@ -324,7 +324,7 @@
                             <span class="text-capitalize skill">javascript</span>
                         </td>
                         <td>
-                            <span data-value="82"></span>
+                            <span data-value="85"></span>
                         </td>
                     </tr>
                     <tr>
@@ -332,7 +332,7 @@
                             <span class="text-capitalize skill">java</span>
                         </td>
                         <td>
-                            <span data-value="75"></span>
+                            <span data-value="77"></span>
                         </td>
                     </tr>
                     <tr>
@@ -340,7 +340,7 @@
                             <span class="text-capitalize skill">mysql</span>
                         </td>
                         <td>
-                            <span data-value="65"></span>
+                            <span data-value="69"></span>
                         </td>
                     </tr>
                     <tr>
@@ -348,7 +348,7 @@
                             <span class="text-capitalize skill">Maven</span>
                         </td>
                         <td>
-                            <span data-value="43"></span>
+                            <span data-value="50"></span>
                         </td>
                     </tr>
                     <tr>
@@ -356,7 +356,7 @@
                             <span class="text-capitalize skill">Python</span>
                         </td>
                         <td>
-                            <span data-value="33"></span>
+                            <span data-value="35"></span>
                         </td>
                     </tr>
                     <tr>
@@ -364,7 +364,7 @@
                             <span class="text-capitalize skill">react</span>
                         </td>
                         <td>
-                            <span data-value="25"></span>
+                            <span data-value="30"></span>
                         </td>
                     </tr>
                     <tr>
@@ -372,7 +372,7 @@
                             <span class="text-capitalize skill">restful api</span>
                         </td>
                         <td>
-                            <span data-value="43"></span>
+                            <span data-value="47"></span>
                         </td>
                     </tr>
                 </tbody>

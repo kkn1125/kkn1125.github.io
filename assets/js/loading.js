@@ -39,6 +39,7 @@ function getTarget(target){
     let optionLoading = target.closest('[data-option="loading"]');
     optionLoading.style.display = 'flex';
     target.style.transition = `.5s cubic-bezier(0.215, 0.610, 0.355, 1)`;
+    document.body.setAttribute('scroll', 'disabled');
     function animationLoading(){
         setTimeout(()=>{
             if(percent>100){
@@ -46,7 +47,8 @@ function getTarget(target){
                 optionLoading.style.opacity = '0';
                 setTimeout(()=>{
                     optionLoading.remove();
-                },1200);
+                    document.body.removeAttribute('scroll');
+                },900);
                 cancelAnimationFrame(loading);
             } else {
                 requestAnimationFrame(animationLoading)

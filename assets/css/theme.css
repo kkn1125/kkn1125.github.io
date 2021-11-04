@@ -847,12 +847,6 @@ ol.list-featured li:before {
 	display: none;
 }
 
-footer {
-	margin-top: 50px;
-	z-index: 1022;
-	position: relative;
-}
-
 .sticky-top-offset {
 	top: 70px;
 }
@@ -940,7 +934,7 @@ article .h6 {
 	left: 0;
 	background-color: #fff;
 	width: 100%;
-	padding: 20px 0;
+	padding: 10px 0;
 	z-index: 1021;
 	display: none;
 }
