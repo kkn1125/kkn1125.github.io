@@ -247,3 +247,131 @@ function footerHandler(ev){
         footer.style.top = `${parseFloat(winHeight-footerHeight-51)}px`;
     }
 }
+
+let NewsAlert = (function () {
+    function Controller() {
+        let moduleModel = null;
+        let uiElem = null;
+        let moduleOptions = null;
+
+        this.init = function (model, ui, options) {
+            moduleModel = model;
+            uiElem = ui;
+            moduleOptions = options;
+
+            window.addEventListener('load', this.makeAlert);
+            uiElem.body.addEventListener('click', this.removeAlertHandler);
+        }
+
+        this.makeAlert = function (ev) {
+            moduleModel.makeAlert(ev, uiElem, moduleOptions);
+        }
+
+        this.removeAlertHandler = function (ev) {
+            moduleModel.removeAlertHandler(ev, uiElem);
+        }
+    }
+
+    function Model() {
+        let moduleView = null;
+        let alertList = [];
+
+
+        this.init = function (view) {
+            moduleView = view;
+        }
+
+        this.makeAlert = function (ev, ui, options) {
+            // let target = ev.target;
+
+            // if(!target.getAttribute('news-alert-tag') && !target.dataset.newsAlertTag) return;
+
+            let alert = function(text){
+                this.id = 0;
+                this.text = text;
+                this.show = true;
+                this.autoIndex = function(){
+                    this.id = alertList.indexOf(this);
+                }
+            }
+            this.addAlertList(new alert(options.alertlist[0]));
+            this.updateView();
+            let count = 1;
+            let delayInsert = setInterval(()=>{
+                this.addAlertList(new alert(options.alertlist[count]));
+                this.updateView();
+                count++;
+                if(count>options.alertlist.length-1) {
+                    clearInterval(delayInsert);
+                }
+            }, 500);
+        }
+
+        this.removeAlertHandler = function (ev, ui) {
+            let target = ev.target;
+            if (target.tagName !== 'SPAN' || target.className !== 'news-close') return;
+            ev.preventDefault();
+            let id = target.parentNode.dataset.newsAlertTag;
+            alertList = alertList.filter(alert=>alert.id!=id);
+            this.updateView();
+        }
+
+        this.addAlertList = function (alert) {
+            alertList.push(alert);
+            alertList.forEach(alert=>alert.autoIndex());
+        }
+
+        this.updateView = function () {
+            moduleView.updateView(alertList);
+        }
+    }
+
+    function View() {
+        let uiElem = null;
+
+        this.init = function (ui) {
+            uiElem = ui;
+        }
+
+        this.updateView = function (alertList) {
+            let view = uiElem.body.querySelector('[news-alert]')
+            this.clearView(view);
+            alertList.forEach(alert=>{
+                view.innerHTML += `<div data-news-alert-tag="${alert.id}"><span class="alert-text">${alert.text}</span>
+                <span class="news-close">&times;</span>
+                </div>
+                    `;
+            })
+        }
+
+        this.clearView = function(view){
+            view.innerHTML = '';
+        }
+    }
+    return {
+        init: function (options) {
+
+            const body = document.body;
+
+            const ui = {
+                body
+            };
+
+            const view = new View();
+            const model = new Model();
+            const controller = new Controller();
+
+            view.init(ui);
+            model.init(view);
+            controller.init(model, ui, options);
+        }
+    }
+})();
+
+NewsAlert.init({
+    alertlist: [
+        'DocumentifyJS 업데이트가 있습니다! 자세한 내용은 <a class="d-block" href="https://github.com/kkn1125/mkDocumentifyJS/tree/oho-update-4" target="_blank">[바로가기]</a>',
+        'Typer가 v0.2.1로 프리 릴리즈 되었습니다! <a class="d-block" href="https://github.com/kkn1125/typer" target="_blank">[바로가기]</a>',
+        'Jekyll Theme를 만드는 중입니다. <a class="d-block" href="https://github.com/kkn1125/lessmore-jekyll-theme" target="_blank">[바로가기]</a>'
+    ]
+});

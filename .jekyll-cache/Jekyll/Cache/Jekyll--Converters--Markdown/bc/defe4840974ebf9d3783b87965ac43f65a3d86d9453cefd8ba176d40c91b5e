@@ -1,4 +1,5 @@
-I"�b<div class="container">
+I"7c<div news-alert=""></div>
+<div class="container">
 
     
     <!--endif page url is / -->
@@ -24,28 +25,28 @@
             <div class="mb-5 d-flex justify-content-between main-loop-card">
 <div class="pr-3">
 	<h2 class="mb-1 h4 font-weight-bold">
-	<a class="text-dark" href="/react-study01/">[REACT] React 시작하기 01</a>
+	<a class="text-dark" href="/spring-boot-el-header/">[SPRING] header referer EL로 가져오기</a>
 	</h2>
 	<p class="excerpt">
-	   React 시작하기
+	   EL(Expression Language)
 	</p>
 	<small class="d-block text-muted">
 		In <span class="catlist">
 		
 		<a class="text-capitalize text-muted smoothscroll" href="/categories.html#til">TIL</a><span class="sep">, </span>
 		
-		<a class="text-capitalize text-muted smoothscroll" href="/categories.html#react">REACT</a><span class="sep">, </span>
+		<a class="text-capitalize text-muted smoothscroll" href="/categories.html#springboot">SPRINGBOOT</a><span class="sep">, </span>
 		
 		</span>
 	</small>
 	<small class="text-muted">
-		Aug 11, 2021
+		Aug 20, 2021
 	</small>
 </div>
 
 	<div class="col-md-3 pr-0 text-right">
-	<a href="/react-study01/">
-	<img class="w-100" src="/assets/images/post/covers/TIL-react.png" alt="[REACT] React 시작하기 01" />
+	<a href="/spring-boot-el-header/">
+	<img class="w-100" src="/assets/images/post/covers/TIL-spring.png" alt="[SPRING] header referer EL로 가져오기" />
 	</a>
 	</div>
 
@@ -56,28 +57,28 @@
             <div class="mb-5 d-flex justify-content-between main-loop-card">
 <div class="pr-3">
 	<h2 class="mb-1 h4 font-weight-bold">
-	<a class="text-dark" href="/javascript-dark-mode02/">[JAVASCRIPT] 정적웹에 다크모드 적용하기 02</a>
+	<a class="text-dark" href="/spring-boot-cors01/">[SPRING] Method Not Allowed 405 에러 발생과 해결</a>
 	</h2>
 	<p class="excerpt">
-	   다크모드의 적용 시기
+	   Method Not Allowed 405
 	</p>
 	<small class="d-block text-muted">
 		In <span class="catlist">
 		
 		<a class="text-capitalize text-muted smoothscroll" href="/categories.html#til">TIL</a><span class="sep">, </span>
 		
-		<a class="text-capitalize text-muted smoothscroll" href="/categories.html#spring">SPRING</a><span class="sep">, </span>
+		<a class="text-capitalize text-muted smoothscroll" href="/categories.html#springboot">SPRINGBOOT</a><span class="sep">, </span>
 		
 		</span>
 	</small>
 	<small class="text-muted">
-		Aug 10, 2021
+		Aug 19, 2021
 	</small>
 </div>
 
 	<div class="col-md-3 pr-0 text-right">
-	<a href="/javascript-dark-mode02/">
-	<img class="w-100" src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] 정적웹에 다크모드 적용하기 02" />
+	<a href="/spring-boot-cors01/">
+	<img class="w-100" src="/assets/images/post/covers/TIL-spring.png" alt="[SPRING] Method Not Allowed 405 에러 발생과 해결" />
 	</a>
 	</div>
 
@@ -88,74 +89,10 @@
             <div class="mb-5 d-flex justify-content-between main-loop-card">
 <div class="pr-3">
 	<h2 class="mb-1 h4 font-weight-bold">
-	<a class="text-dark" href="/javascript-dark-mode01/">[JAVASCRIPT] 정적웹에 다크모드 적용하기 01</a>
+	<a class="text-dark" href="/javascript-object-assign/">[JAVASCRIPT] Object assign 활용하기</a>
 	</h2>
 	<p class="excerpt">
-	   다크모드
-	</p>
-	<small class="d-block text-muted">
-		In <span class="catlist">
-		
-		<a class="text-capitalize text-muted smoothscroll" href="/categories.html#til">TIL</a><span class="sep">, </span>
-		
-		<a class="text-capitalize text-muted smoothscroll" href="/categories.html#spring">SPRING</a><span class="sep">, </span>
-		
-		</span>
-	</small>
-	<small class="text-muted">
-		Aug 09, 2021
-	</small>
-</div>
-
-	<div class="col-md-3 pr-0 text-right">
-	<a href="/javascript-dark-mode01/">
-	<img class="w-100" src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] 정적웹에 다크모드 적용하기 01" />
-	</a>
-	</div>
-
-</div>
-
-            
-
-            <div class="mb-5 d-flex justify-content-between main-loop-card">
-<div class="pr-3">
-	<h2 class="mb-1 h4 font-weight-bold">
-	<a class="text-dark" href="/spring-hierarchical-board01/">[SPRING] 계층형 게시판 만들기</a>
-	</h2>
-	<p class="excerpt">
-	   계층형 게시판
-	</p>
-	<small class="d-block text-muted">
-		In <span class="catlist">
-		
-		<a class="text-capitalize text-muted smoothscroll" href="/categories.html#til">TIL</a><span class="sep">, </span>
-		
-		<a class="text-capitalize text-muted smoothscroll" href="/categories.html#spring">SPRING</a><span class="sep">, </span>
-		
-		</span>
-	</small>
-	<small class="text-muted">
-		Aug 09, 2021
-	</small>
-</div>
-
-	<div class="col-md-3 pr-0 text-right">
-	<a href="/spring-hierarchical-board01/">
-	<img class="w-100" src="/assets/images/post/hierarchical/hierarchical13.png" alt="[SPRING] 계층형 게시판 만들기" />
-	</a>
-	</div>
-
-</div>
-
-            
-
-            <div class="mb-5 d-flex justify-content-between main-loop-card">
-<div class="pr-3">
-	<h2 class="mb-1 h4 font-weight-bold">
-	<a class="text-dark" href="/javascript-maps01/">[JAVASCRIPT] Map 객체 사용</a>
-	</h2>
-	<p class="excerpt">
-	   키 기반의 컬렉션
+	   Object assign 메서드
 	</p>
 	<small class="d-block text-muted">
 		In <span class="catlist">
@@ -167,13 +104,13 @@
 		</span>
 	</small>
 	<small class="text-muted">
-		Aug 09, 2021
+		Aug 19, 2021
 	</small>
 </div>
 
 	<div class="col-md-3 pr-0 text-right">
-	<a href="/javascript-maps01/">
-	<img class="w-100" src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] Map 객체 사용" />
+	<a href="/javascript-object-assign/">
+	<img class="w-100" src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] Object assign 활용하기" />
 	</a>
 	</div>
 
@@ -184,28 +121,28 @@
             <div class="mb-5 d-flex justify-content-between main-loop-card">
 <div class="pr-3">
 	<h2 class="mb-1 h4 font-weight-bold">
-	<a class="text-dark" href="/javascript-code-style/">[JAVASCRIPT] 복잡한 코드, 규칙을 만들자</a>
+	<a class="text-dark" href="/spring-boot-mybatis01/">[SPRING] SPRING BOOT MyBatis 시작하기</a>
 	</h2>
 	<p class="excerpt">
-	   깔끔한 코드는 무엇일까
+	   MyBatis
 	</p>
 	<small class="d-block text-muted">
 		In <span class="catlist">
 		
 		<a class="text-capitalize text-muted smoothscroll" href="/categories.html#til">TIL</a><span class="sep">, </span>
 		
-		<a class="text-capitalize text-muted smoothscroll" href="/categories.html#javascript">JAVASCRIPT</a><span class="sep">, </span>
+		<a class="text-capitalize text-muted smoothscroll" href="/categories.html#springboot">SPRINGBOOT</a><span class="sep">, </span>
 		
 		</span>
 	</small>
 	<small class="text-muted">
-		Aug 08, 2021
+		Aug 18, 2021
 	</small>
 </div>
 
 	<div class="col-md-3 pr-0 text-right">
-	<a href="/javascript-code-style/">
-	<img class="w-100" src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] 복잡한 코드, 규칙을 만들자" />
+	<a href="/spring-boot-mybatis01/">
+	<img class="w-100" src="/assets/images/post/covers/TIL-spring.png" alt="[SPRING] SPRING BOOT MyBatis 시작하기" />
 	</a>
 	</div>
 
@@ -216,74 +153,10 @@
             <div class="mb-5 d-flex justify-content-between main-loop-card">
 <div class="pr-3">
 	<h2 class="mb-1 h4 font-weight-bold">
-	<a class="text-dark" href="/java-exception01/">[SPRING] xml 없이 에러페이지 처리하기</a>
+	<a class="text-dark" href="/javascript-scroll-control/">[JAVASCRIPT] 스크롤 애니메이션 구현하기</a>
 	</h2>
 	<p class="excerpt">
-	   xml 없는 프로젝트
-	</p>
-	<small class="d-block text-muted">
-		In <span class="catlist">
-		
-		<a class="text-capitalize text-muted smoothscroll" href="/categories.html#til">TIL</a><span class="sep">, </span>
-		
-		<a class="text-capitalize text-muted smoothscroll" href="/categories.html#spring">SPRING</a><span class="sep">, </span>
-		
-		</span>
-	</small>
-	<small class="text-muted">
-		Aug 07, 2021
-	</small>
-</div>
-
-	<div class="col-md-3 pr-0 text-right">
-	<a href="/java-exception01/">
-	<img class="w-100" src="/assets/images/post/covers/TIL-spring.png" alt="[SPRING] xml 없이 에러페이지 처리하기" />
-	</a>
-	</div>
-
-</div>
-
-            
-
-            <div class="mb-5 d-flex justify-content-between main-loop-card">
-<div class="pr-3">
-	<h2 class="mb-1 h4 font-weight-bold">
-	<a class="text-dark" href="/javascript-public-data/">[JAVASCRIPT] 공공데이터로 페이징 처리하기</a>
-	</h2>
-	<p class="excerpt">
-	   공공데이터 페이지 처리하기
-	</p>
-	<small class="d-block text-muted">
-		In <span class="catlist">
-		
-		<a class="text-capitalize text-muted smoothscroll" href="/categories.html#til">TIL</a><span class="sep">, </span>
-		
-		<a class="text-capitalize text-muted smoothscroll" href="/categories.html#javascript">JAVASCRIPT</a><span class="sep">, </span>
-		
-		</span>
-	</small>
-	<small class="text-muted">
-		Aug 06, 2021
-	</small>
-</div>
-
-	<div class="col-md-3 pr-0 text-right">
-	<a href="/javascript-public-data/">
-	<img class="w-100" src="/assets/images/post/publicData/public-cover.png" alt="[JAVASCRIPT] 공공데이터로 페이징 처리하기" />
-	</a>
-	</div>
-
-</div>
-
-            
-
-            <div class="mb-5 d-flex justify-content-between main-loop-card">
-<div class="pr-3">
-	<h2 class="mb-1 h4 font-weight-bold">
-	<a class="text-dark" href="/javascript-category-filter/">[JAVASCRIPT] 카테고리 필터</a>
-	</h2>
-	<p class="excerpt">
-	   Category Filter
+	   스크롤 애니메이션 구현
 	</p>
 	<small class="d-block text-muted">
 		In <span class="catlist">
@@ -295,13 +168,13 @@
 		</span>
 	</small>
 	<small class="text-muted">
-		Aug 05, 2021
+		Aug 17, 2021
 	</small>
 </div>
 
 	<div class="col-md-3 pr-0 text-right">
-	<a href="/javascript-category-filter/">
-	<img class="w-100" src="/assets/images/post/covers/TIM-none.png" alt="[JAVASCRIPT] 카테고리 필터" />
+	<a href="/javascript-scroll-control/">
+	<img class="w-100" src="/assets/images/post/covers/TIM-none.png" alt="[JAVASCRIPT] 스크롤 애니메이션 구현하기" />
 	</a>
 	</div>
 
@@ -312,10 +185,10 @@
             <div class="mb-5 d-flex justify-content-between main-loop-card">
 <div class="pr-3">
 	<h2 class="mb-1 h4 font-weight-bold">
-	<a class="text-dark" href="/javascript-object/">[JAVASCRIPT] 객체와 프로토타입</a>
+	<a class="text-dark" href="/javascript-data-study/">[JAVASCRIPT] LinkedList 만들기</a>
 	</h2>
 	<p class="excerpt">
-	   Object (객체)
+	   LinkedList 구현
 	</p>
 	<small class="d-block text-muted">
 		In <span class="catlist">
@@ -327,13 +200,141 @@
 		</span>
 	</small>
 	<small class="text-muted">
-		Aug 03, 2021
+		Aug 16, 2021
 	</small>
 </div>
 
 	<div class="col-md-3 pr-0 text-right">
-	<a href="/javascript-object/">
-	<img class="w-100" src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] 객체와 프로토타입" />
+	<a href="/javascript-data-study/">
+	<img class="w-100" src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] LinkedList 만들기" />
+	</a>
+	</div>
+
+</div>
+
+            
+
+            <div class="mb-5 d-flex justify-content-between main-loop-card">
+<div class="pr-3">
+	<h2 class="mb-1 h4 font-weight-bold">
+	<a class="text-dark" href="/javascript-dropdown01/">[JAVASCRIPT] 드롭다운 메뉴 구현</a>
+	</h2>
+	<p class="excerpt">
+	   간단한 드롭다운 메뉴 만들기
+	</p>
+	<small class="d-block text-muted">
+		In <span class="catlist">
+		
+		<a class="text-capitalize text-muted smoothscroll" href="/categories.html#til">TIL</a><span class="sep">, </span>
+		
+		<a class="text-capitalize text-muted smoothscroll" href="/categories.html#springboot">SPRINGBOOT</a><span class="sep">, </span>
+		
+		</span>
+	</small>
+	<small class="text-muted">
+		Aug 13, 2021
+	</small>
+</div>
+
+	<div class="col-md-3 pr-0 text-right">
+	<a href="/javascript-dropdown01/">
+	<img class="w-100" src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] 드롭다운 메뉴 구현" />
+	</a>
+	</div>
+
+</div>
+
+            
+
+            <div class="mb-5 d-flex justify-content-between main-loop-card">
+<div class="pr-3">
+	<h2 class="mb-1 h4 font-weight-bold">
+	<a class="text-dark" href="/javascript-dark-mode03/">[JAVASCRIPT] 정적웹에 다크모드 적용하기 03</a>
+	</h2>
+	<p class="excerpt">
+	   다크모드 부드러운 전환
+	</p>
+	<small class="d-block text-muted">
+		In <span class="catlist">
+		
+		<a class="text-capitalize text-muted smoothscroll" href="/categories.html#til">TIL</a><span class="sep">, </span>
+		
+		<a class="text-capitalize text-muted smoothscroll" href="/categories.html#javascript">JAVASCRIPT</a><span class="sep">, </span>
+		
+		</span>
+	</small>
+	<small class="text-muted">
+		Aug 13, 2021
+	</small>
+</div>
+
+	<div class="col-md-3 pr-0 text-right">
+	<a href="/javascript-dark-mode03/">
+	<img class="w-100" src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] 정적웹에 다크모드 적용하기 03" />
+	</a>
+	</div>
+
+</div>
+
+            
+
+            <div class="mb-5 d-flex justify-content-between main-loop-card">
+<div class="pr-3">
+	<h2 class="mb-1 h4 font-weight-bold">
+	<a class="text-dark" href="/spring-boot-start02/">[SPRING] SPRING BOOT 시작하기 02</a>
+	</h2>
+	<p class="excerpt">
+	   lombok 설정
+	</p>
+	<small class="d-block text-muted">
+		In <span class="catlist">
+		
+		<a class="text-capitalize text-muted smoothscroll" href="/categories.html#til">TIL</a><span class="sep">, </span>
+		
+		<a class="text-capitalize text-muted smoothscroll" href="/categories.html#springboot">SPRINGBOOT</a><span class="sep">, </span>
+		
+		</span>
+	</small>
+	<small class="text-muted">
+		Aug 12, 2021
+	</small>
+</div>
+
+	<div class="col-md-3 pr-0 text-right">
+	<a href="/spring-boot-start02/">
+	<img class="w-100" src="/assets/images/post/covers/TIL-spring.png" alt="[SPRING] SPRING BOOT 시작하기 02" />
+	</a>
+	</div>
+
+</div>
+
+            
+
+            <div class="mb-5 d-flex justify-content-between main-loop-card">
+<div class="pr-3">
+	<h2 class="mb-1 h4 font-weight-bold">
+	<a class="text-dark" href="/spring-boot-start01/">[SPRING] SPRING BOOT 시작하기 01</a>
+	</h2>
+	<p class="excerpt">
+	   Spring boot 시드 프로젝트
+	</p>
+	<small class="d-block text-muted">
+		In <span class="catlist">
+		
+		<a class="text-capitalize text-muted smoothscroll" href="/categories.html#til">TIL</a><span class="sep">, </span>
+		
+		<a class="text-capitalize text-muted smoothscroll" href="/categories.html#springboot">SPRINGBOOT</a><span class="sep">, </span>
+		
+		</span>
+	</small>
+	<small class="text-muted">
+		Aug 12, 2021
+	</small>
+</div>
+
+	<div class="col-md-3 pr-0 text-right">
+	<a href="/spring-boot-start01/">
+	<img class="w-100" src="/assets/images/post/covers/TIL-spring.png" alt="[SPRING] SPRING BOOT 시작하기 01" />
 	</a>
 	</div>
 
@@ -346,7 +347,7 @@
                 
                 <ul class="pagination">
                     
-                    <li class="page-item"><a class="page-link" href="/page4/">&laquo;
+                    <li class="page-item"><a class="page-link" href="/page3/">&laquo;
                             Prev</a></li>
                     
 
@@ -366,12 +367,12 @@
                     
                     
                     
-                    <li class="page-item"><a class="page-link" href="/page4/">4</a>
+                    <li class="page-item disabled"><span class="webjeda page-link">4</span></li>
+                    
+                    
+                    
+                    <li class="page-item"><a class="page-link" href="/page5/">5</a>
                     </li>
-                    
-                    
-                    
-                    <li class="page-item disabled"><span class="webjeda page-link">5</span></li>
                     
                     
                     
@@ -381,7 +382,7 @@
                     
 
                     
-                    <li class="page-item"><a class="page-link" href="/page6/">Next
+                    <li class="page-item"><a class="page-link" href="/page5/">Next
                             &raquo;</a></li>
                     
                 </ul>
