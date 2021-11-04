@@ -1,4 +1,4 @@
-I"—(<div class="container">
+I"¯(<div class="container">
 
     {% if page.url == "/" %}
 
@@ -24,7 +24,7 @@
                 </a>
                 <div class="card-body px-0 pb-0 d-flex flex-column align-items-start">
                     <h2 class="h4 font-weight-bold">
-                        <a class="text-dark" href="{{site.baseurl}}{{latest_post.url}}">{{ latest_post.title }}</a>
+                        <a style="color: inherit;" href="{{site.baseurl}}{{latest_post.url}}">{{ latest_post.title }}</a>
                     </h2>
                     <p class="excerpt">
                         {{ latest_post.excerpt | strip_html | strip_newlines | truncate: 136 }}
@@ -61,7 +61,7 @@
                 {% endif %}
                 <div class="ps-3">
                     <h2 class="mb-2 h6 font-weight-bold">
-                        <a class="text-dark" href="{{site.baseurl}}{{second_post.url}}">{{ second_post.title }}</a>
+                        <a style="color: inherit;" href="{{site.baseurl}}{{second_post.url}}">{{ second_post.title }}</a>
                     </h2>
                     <small class="d-block text-muted">
                         In <span class="catlist">
@@ -90,7 +90,7 @@
                 {% endif %}
                 <div class="ps-3">
                     <h2 class="mb-2 h6 font-weight-bold">
-                        <a class="text-dark" href="{{site.baseurl}}{{third_post.url}}">{{ third_post.title }}</a>
+                        <a style="color: inherit;" href="{{site.baseurl}}{{third_post.url}}">{{ third_post.title }}</a>
                     </h2>
                     <small class="d-block text-muted">
                         In <span class="catlist">
@@ -119,7 +119,7 @@
                 {% endif %}
                 <div class="ps-3">
                     <h2 class="mb-2 h6 font-weight-bold">
-                        <a class="text-dark" href="{{site.baseurl}}{{fourth_post.url}}">{{ fourth_post.title }}</a>
+                        <a style="color: inherit;" href="{{site.baseurl}}{{fourth_post.url}}">{{ fourth_post.title }}</a>
                     </h2>
                     <small class="d-block text-muted">
                         In <span class="catlist">

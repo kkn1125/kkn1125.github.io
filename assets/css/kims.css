@@ -3,6 +3,10 @@
 	transition: 0.5s cubic-bezier(1,0,0,1);
 } */
 
+body[scroll="disabled"]{
+	overflow: hidden;
+}
+
 button.cpbtn{
 	position: absolute;
 	right: 0;
@@ -90,6 +94,10 @@ body.dark {
 	color: white;
 }
 
+body.dark .table{
+	color: inherit;
+}
+
 body.dark .modal-content{
 	background-color: #555555;
 }
@@ -123,7 +131,15 @@ body.dark div.border.rounded {
 	background-color: inherit !important;
 }
 
-body.dark .footer {
+footer.footer {
+	margin-top: 50px;
+	z-index: 1022;
+	position: relative;
+	width: 100%;
+	background-color: #ffffff;
+}
+
+body.dark footer.footer {
 	background-color: #222222;
 	color: rgb(133, 133, 133) !important;
 }
@@ -153,12 +169,19 @@ body.dark .lang-badge {
 	color: white !important;
 }
 
+body.dark footer a.text-dark,
 body.dark h1,
 body.dark h2,
 body.dark h3,
 body.dark h4,
 body.dark h5,
-body.dark h6 {
+body.dark h6,
+body.dark h1 a.text-dark,
+body.dark h2 a.text-dark,
+body.dark h3 a.text-dark,
+body.dark h4 a.text-dark,
+body.dark h5 a.text-dark,
+body.dark h6 a.text-dark {
 	color: rgb(230, 230, 230) !important;
 }
 
@@ -170,8 +193,8 @@ body.dark ol.list-featured li:before {
 	opacity: 1;
 }
 
-body.dark p.excerpt{
-	color: rgb(212, 212, 212);
+body.dark .excerpt{
+	color: inherit;
 }
 
 body.dark hr{
@@ -205,8 +228,12 @@ body.dark time.post-date::before{
 	text-decoration-color: lightcoral;
 }
 
-body.dark .navbar-brand {
-	color: white;
+body.dark .navbar .navbar-brand {
+	color: rgb(255, 255, 255);
+}
+
+body.dark .footer .navbar-brand {
+	color: rgb(134, 134, 134);
 }
 
 body.dark button.navbar-toggler {
@@ -636,12 +663,17 @@ transition: .5s cubic-bezier(1,0,0,1);
 	justify-content: center;
 	align-items: center;
 	position: fixed;
-	z-index: 1050;
+	z-index: 1200;
 	background-color: white;
 	top: 0;
 	left: 0;
 	right: 0;
 	bottom: 0;
+	transition: .5s cubic-bezier(0.215, 0.610, 0.355, 1);
+	-webkit-transition: .5s cubic-bezier(0.215, 0.610, 0.355, 1);
+	-moz-transition: .5s cubic-bezier(0.215, 0.610, 0.355, 1);
+	-ms-transition: .5s cubic-bezier(0.215, 0.610, 0.355, 1);
+	-o-transition: .5s cubic-bezier(0.215, 0.610, 0.355, 1);
 }
 
 [data-option="loading"] .loadingImg,
@@ -680,9 +712,9 @@ transition: .5s cubic-bezier(1,0,0,1);
 
 /* data bar */
 [data-value]{
-    background-color: rgb(58, 58, 58);
+    background-color: rgb(143, 143, 143);
     width: 50vw;
-    height: 5px;
+    height: 1em;
     display: inline-block;
     position: relative;
     margin-left: 1rem;
@@ -691,7 +723,7 @@ transition: .5s cubic-bezier(1,0,0,1);
 }
 
 .value{
-    background-color: rgb(111, 160, 37);
+    background-color: rgb(170, 223, 91);
     display: block;
     height: 100%;
 }
