@@ -803,3 +803,7 @@ transition: .5s cubic-bezier(1,0,0,1);
     cursor: pointer;
 }
 /* news alert end */
+
+kbd.kbd{
+	background-color: rgb(179, 42, 221);
+}
