@@ -372,6 +372,7 @@ NewsAlert.init({
     alertlist: [
         'DocumentifyJS 업데이트가 있습니다! 현재 v0.2.4 추가된 사항은 대표적으로 검색창과 채팅봇의 문의 연결기능입니다. 자세한 내용은 아래 링크 참조바랍니다. <a class="d-block" href="https://github.com/kkn1125/mkDocumentifyJS/tree/oho-update-4" target="_blank">[바로가기]</a>',
         'Typer가 v1.0.0로 릴리즈 되었습니다! 새로운 기능 <kbd class="kbd">realTyping</kbd>이 추가되었습니다. 자세한 사항은 아래 링크를! <a class="d-block" href="https://github.com/kkn1125/typer" target="_blank">[바로가기]</a>',
-        'Jekyll Theme를 만드는 중입니다. <a class="d-block" href="https://github.com/kkn1125/lessmore-jekyll-theme" target="_blank">[바로가기]</a>'
+        'Jekyll Theme를 만드는 중입니다. <a class="d-block" href="https://github.com/kkn1125/lessmore-jekyll-theme" target="_blank">[바로가기]</a>',
+        'Tutorial js 가 <kbd>v0.1.0</kbd>로 프리릴리즈 되었습니다. 많은 관심 바랍니다! <a class="d-block" href="https://github.com/kkn1125/tutorial" target="_blank">[바로가기]</a>'
     ]
 });
