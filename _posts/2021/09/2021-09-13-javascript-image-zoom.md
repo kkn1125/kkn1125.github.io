@@ -6,7 +6,10 @@ author: Kimson
 categories: [ TIL, JAVASCRIPT ]
 tags: [image, zoom]
 image: assets/images/post/covers/TIL-javascript.png
-description: ""
+description: "이미지 줌 구현
+사용 할 이미지는 저작권 영향을 받지 않는 픽사베이의 이미지를 사용했는데요. 크기가 다양해서 이미지가 필요할 때 자주 애용합니다.
+
+이미지를 두 개 구했습니다. `img`태그는 크기조절을 위해 `span`으로 한 번 감싸면 됩니다."
 featured: false
 hidden: false
 rating: 4

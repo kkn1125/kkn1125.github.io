@@ -6,8 +6,10 @@ author: Kimson
 categories: [ TIL, JAVASCRIPT ]
 tags: [destructuring assignment]
 image: assets/images/post/covers/TIL-javascript.png
-description: ""
-featured: true
+description: "구조 분해 할당
+
+이번에 DocumentifyJS(문서화 js)를 만들면서 자주 사용한 표현식입니다. 구조 분해 할당은 배열이나 객체 속성을 헤체해서 값을 변수마다 담아주는 기특한? 표현입니다."
+featured: false
 hidden: false
 rating: 4.5
 toc: true

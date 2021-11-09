@@ -1,3 +1,5 @@
+'use strict';
+
 $('.scrolldown').on('click', (self) => {
     var heights = $(self.currentTarget).parents().find('.section[id]').has($(self.currentTarget));
     var indexing = $(self.currentTarget).parents().find('.section[id]').index(heights);
@@ -190,6 +192,7 @@ function valid(){
         return false;
     }
 }
+
 // 메일 전송
 if(document.getElementById('sendMail'))
 document.getElementById('sendMail').addEventListener('click', function () {
@@ -276,16 +279,19 @@ let NewsAlert = (function () {
         let moduleView = null;
         let alertList = [];
 
-
         this.init = function (view) {
             moduleView = view;
         }
 
+        this.setStorage = function(){
+            sessionStorage['alertList'] = JSON.stringify(alertList);
+        }
+
+        this.getStorage = function(){
+            if(sessionStorage['alertList']) alertList = JSON.parse(sessionStorage['alertList']);
+        }
+
         this.makeAlert = function (ev, ui, options) {
-            // let target = ev.target;
-
-            // if(!target.getAttribute('news-alert-tag') && !target.dataset.newsAlertTag) return;
-
             let alert = function(text){
                 this.id = 0;
                 this.text = text;
@@ -293,18 +299,16 @@ let NewsAlert = (function () {
                 this.autoIndex = function(){
                     this.id = alertList.indexOf(this);
                 }
+                this.session = 'on';
             }
-            this.addAlertList(new alert(options.alertlist[0]));
+            this.getStorage();
+            if(alertList.length==0 || alertList[0]==null){
+                options.alertlist.forEach((news)=>{
+                    this.addAlertList(new alert(news));
+                });
+            }
+            this.setStorage();
             this.updateView();
-            let count = 1;
-            let delayInsert = setInterval(()=>{
-                this.addAlertList(new alert(options.alertlist[count]));
-                this.updateView();
-                count++;
-                if(count>options.alertlist.length-1) {
-                    clearInterval(delayInsert);
-                }
-            }, 500);
         }
 
         this.removeAlertHandler = function (ev, ui) {
@@ -312,7 +316,13 @@ let NewsAlert = (function () {
             if (target.tagName !== 'SPAN' || target.className !== 'news-close') return;
             ev.preventDefault();
             let id = target.parentNode.dataset.newsAlertTag;
-            alertList = alertList.filter(alert=>alert.id!=id);
+            alertList = alertList.map(alert=>{
+                if(alert.id==id) {
+                    alert.session = 'off';
+                }
+                return alert;
+            });
+            this.setStorage();
             this.updateView();
         }
 
@@ -322,7 +332,8 @@ let NewsAlert = (function () {
         }
 
         this.updateView = function () {
-            moduleView.updateView(alertList);
+            let usableSession = alertList.filter(alert=>alert.session!=='off');
+            moduleView.updateView(usableSession);
         }
     }
 
@@ -341,7 +352,7 @@ let NewsAlert = (function () {
                 <span class="news-close">&times;</span>
                 </div>
                     `;
-            })
+            });
         }
 
         this.clearView = function(view){
@@ -370,9 +381,9 @@ let NewsAlert = (function () {
 
 NewsAlert.init({
     alertlist: [
-        'DocumentifyJS 업데이트가 있습니다! 현재 v0.2.4 추가된 사항은 대표적으로 검색창과 채팅봇의 문의 연결기능입니다. 자세한 내용은 아래 링크 참조바랍니다. <a class="d-block" href="https://github.com/kkn1125/mkDocumentifyJS/tree/oho-update-4" target="_blank">[바로가기]</a>',
-        'Typer가 v1.0.0로 릴리즈 되었습니다! 새로운 기능 <kbd class="kbd">realTyping</kbd>이 추가되었습니다. 자세한 사항은 아래 링크를! <a class="d-block" href="https://github.com/kkn1125/typer" target="_blank">[바로가기]</a>',
-        'Jekyll Theme를 만드는 중입니다. <a class="d-block" href="https://github.com/kkn1125/lessmore-jekyll-theme" target="_blank">[바로가기]</a>',
-        'Tutorial js 가 <kbd>v0.1.0</kbd>로 프리릴리즈 되었습니다. 많은 관심 바랍니다! <a class="d-block" href="https://github.com/kkn1125/tutorial" target="_blank">[바로가기]</a>'
+        'DocumentifyJS 업데이트가 있습니다! 현재 v0.2.5 버전 최신입니다. 자세한 내용은 아래 링크 참조바랍니다. <a class="d-inline-block" href="https://github.com/kkn1125/mkDocumentifyJS/tree/main" target="_blank">[바로가기]</a>',
+        'Typer가 v1.0.0로 릴리즈 되었습니다! 새로운 기능 <kbd class="kbd">realTyping</kbd>이 추가되었습니다. 자세한 사항은 아래 링크를! <a class="d-inline-block" href="https://github.com/kkn1125/typer" target="_blank">[바로가기]</a>',
+        'Jekyll Theme를 만드는 중입니다. <a class="d-inline-block" href="https://github.com/kkn1125/lessmore-jekyll-theme" target="_blank">[바로가기]</a>',
+        'Tutorial js 가 <kbd>v0.1.1</kbd>로 업데이트 되었습니다. 많은 관심 바랍니다! <a class="d-inline-block" href="https://github.com/kkn1125/tutorial" target="_blank">[바로가기]</a>',
     ]
 });

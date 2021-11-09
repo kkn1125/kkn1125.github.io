@@ -19,7 +19,7 @@ description: "마우스 이동 방향 감지
 3. 이미지 색상 판별하여 배경 색 변경
 
 3가지 입니다."
-featured: true
+featured: false
 hidden: false
 rating: 4.5
 toc: true

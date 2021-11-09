@@ -69,7 +69,6 @@ com.devkimson.calendar = { // 기능들
 		this.$second = this.$time.getSeconds();
 		this.$first = new Date(this.$year, this.$month, 1).getDay(); // 이번달 시작 요일
 		this.$last = new Date(this.$year, this.$month + 1, 0).getDate(); // 이번달 말일
-		// console.log("now : " + this.$year + ":" + this.$month);
 		// style settings
 	},
 
@@ -301,7 +300,7 @@ com.devkimson.calendar = { // 기능들
 		var td = document.createElement('td');
 		var btn = document.createElement("button");
 		var node = document.createTextNode("Today");
-		$(btn).addClass("btn btn-outline-warning w-100")
+		$(btn).addClass("btn btn-outline-warning w-100 my-3")
 		.attr("onclick","com.devkimson.calendar.Now()");
 		btn.appendChild(node);
 		$(td).attr("colspan","7");
@@ -362,7 +361,7 @@ com.devkimson.calendar = { // 기능들
 					"bottom":"calc(55% + .5rem)",
 					"left":"calc(70%)",
 					"border":"1px solid black",
-					"borderRadius":"50%",
+					// "borderRadius":"50%",
 					"backgroundColor": latestAlert,
 					"width":".5rem",
 					"height":".5rem",
