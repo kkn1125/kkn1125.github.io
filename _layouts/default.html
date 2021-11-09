@@ -11,6 +11,10 @@
 
         <link rel="shortcut icon" type="image/x-icon" href="{{site.baseurl}}/{{site.favicon}}">
 
+        <script>
+            document.documentElement.lang = navigator.language.split('-').shift();
+        </script>
+
         {% include tracking-header.html %}
 
     </head>
@@ -42,9 +46,9 @@
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         {% include menu-header.html %}
                     </ul>
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        {% include search-lunr.html %}
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 w-100">
                     </ul>
+                    {% include search-lunr.html %}
                 </div>
             </div>
         </nav>
