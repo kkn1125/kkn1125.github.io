@@ -9,7 +9,7 @@ image: assets/images/post/covers/TIL-spring.png
 description: "referer란
 
 Referer 요청 헤더는 어디에서 사용자가 유입되었는지 알 수 있습니다. `#blah`나 `username`, `password`는 포함 할 수 없다고 합니다. `origin`, `path`, `query문`등이 포함된다고 하니 잘 사용하면 유용할 것 같습니다."
-featured: true
+featured: false
 hidden: false
 rating: 4.5
 toc: true

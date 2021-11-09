@@ -9,7 +9,7 @@ image: assets/images/post/covers/TIM-none.png
 description: "Graph Editor
 
 단순하게 그래프 이름과 값(%)를 입력하여 그래프 리스트를 만드는 기능입니다."
-featured: true
+featured: false
 hidden: false
 rating: 4.5
 toc: true

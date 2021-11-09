@@ -1,4 +1,4 @@
-I"�<div class="container">
+I"ߐ<div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
         <h1 class="font-weight-bold title h6 text-uppercase mb-4">Tags</h1>
@@ -6035,24 +6035,6 @@
         
 
         
-        <li class="mb-4">
-            <span>
-                <h6 class="font-weight-bold">
-                    <a href="/jekyll-theme01/" class="text-dark">[JEKYLL] jekyll theme를 만들자 01</a>
-                </h6>
-                <span class="d-block text-muted">
-                    In <span class="catlist">
-                        
-                        <a class="text-capitalize text-muted smoothscroll" href="/categories.html#jekyll">JEKYLL</a><span class="sep">, </span>
-                        
-                        <a class="text-capitalize text-muted smoothscroll" href="/categories.html#tim">TIM</a><span class="sep">, </span>
-                        
-                    </span>
-                </span>
-            </span>
-        </li>
-
-        
 
         
 
@@ -6079,46 +6061,8 @@
         
 
         
-        <li class="mb-4">
-            <span>
-                <h6 class="font-weight-bold">
-                    <a href="/javascript-destructuring-assignment/" class="text-dark">[JAVASCRIPT] 구조 분해 할당</a>
-                </h6>
-                <span class="d-block text-muted">
-                    In <span class="catlist">
-                        
-                        <a class="text-capitalize text-muted smoothscroll" href="/categories.html#til">TIL</a><span class="sep">, </span>
-                        
-                        <a class="text-capitalize text-muted smoothscroll" href="/categories.html#javascript">JAVASCRIPT</a><span class="sep">, </span>
-                        
-                    </span>
-                </span>
-            </span>
-        </li>
 
         
-
-        
-
-        
-        <li class="mb-4">
-            <span>
-                <h6 class="font-weight-bold">
-                    <a href="/javascript-graph-editor/" class="text-dark">[JAVASCRIPT] Graph Editor JS</a>
-                </h6>
-                <span class="d-block text-muted">
-                    In <span class="catlist">
-                        
-                        <a class="text-capitalize text-muted smoothscroll" href="/categories.html#tim">TIM</a><span class="sep">, </span>
-                        
-                        <a class="text-capitalize text-muted smoothscroll" href="/categories.html#til">TIL</a><span class="sep">, </span>
-                        
-                        <a class="text-capitalize text-muted smoothscroll" href="/categories.html#javascript">JAVASCRIPT</a><span class="sep">, </span>
-                        
-                    </span>
-                </span>
-            </span>
-        </li>
 
         
 
@@ -6149,44 +6093,6 @@
         
 
         
-        <li class="mb-4">
-            <span>
-                <h6 class="font-weight-bold">
-                    <a href="/javascript-mouse-direction01/" class="text-dark">[JAVASCRIPT] 마우스 이동 방향 감지</a>
-                </h6>
-                <span class="d-block text-muted">
-                    In <span class="catlist">
-                        
-                        <a class="text-capitalize text-muted smoothscroll" href="/categories.html#til">TIL</a><span class="sep">, </span>
-                        
-                        <a class="text-capitalize text-muted smoothscroll" href="/categories.html#javascript">JAVASCRIPT</a><span class="sep">, </span>
-                        
-                    </span>
-                </span>
-            </span>
-        </li>
-
-        
-
-        
-
-        
-        <li class="mb-4">
-            <span>
-                <h6 class="font-weight-bold">
-                    <a href="/spring-boot-referer/" class="text-dark">[SPRING] 헤더 리퍼러(referer) 사용하기</a>
-                </h6>
-                <span class="d-block text-muted">
-                    In <span class="catlist">
-                        
-                        <a class="text-capitalize text-muted smoothscroll" href="/categories.html#til">TIL</a><span class="sep">, </span>
-                        
-                        <a class="text-capitalize text-muted smoothscroll" href="/categories.html#springboot">SPRINGBOOT</a><span class="sep">, </span>
-                        
-                    </span>
-                </span>
-            </span>
-        </li>
 
         
 
@@ -6205,22 +6111,6 @@
         
 
         
-        <li class="mb-4">
-            <span>
-                <h6 class="font-weight-bold">
-                    <a href="/javascript-add-tag/" class="text-dark">[JAVASCRIPT] 태그 입력 구현하기</a>
-                </h6>
-                <span class="d-block text-muted">
-                    In <span class="catlist">
-                        
-                        <a class="text-capitalize text-muted smoothscroll" href="/categories.html#til">TIL</a><span class="sep">, </span>
-                        
-                        <a class="text-capitalize text-muted smoothscroll" href="/categories.html#javascript">JAVASCRIPT</a><span class="sep">, </span>
-                        
-                    </span>
-                </span>
-            </span>
-        </li>
 
         
 
