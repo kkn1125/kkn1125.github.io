@@ -13,6 +13,10 @@ button.cpbtn{
 	bottom: 0;
 }
 
+div.highlight{
+	user-select: none;
+}
+
 pre.highlight::-webkit-scrollbar{
 	width: 8px;
 	height: 8px;
