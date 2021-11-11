@@ -1,0 +1,31 @@
+I"�<h1 id="vue-시작하기">VUE 시작하기</h1>
+
+<p>Vue를 이번에 배우면서 기록하려고 합니다. 물론 Vue의 공식 홈에 튜토리얼이 워낙 잘 되어 있어서 따로 기록할 것이 없을 정도이지만 빠르게 접해보려고 하는 분들 이라면 참고가 될 것 같아서, 그리고 나중에 제가 볼 것이기 때문에 과정을 남기겠습니다.</p>
+
+<h2 id="사용법">사용법</h2>
+
+<p>설명에 따르면 node에 익숙하지 않으면 개발버전 파일을 받아 사용하는 것을 추천한다고 되어 있습니다. <del>저는 말을 잘 듣는 사람이니 따라하였습니다.</del></p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"app"</span><span class="nt">&gt;</span>
+  {{ message }}
+<span class="nt">&lt;/div&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">app</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Vue</span><span class="p">({</span>
+  <span class="na">el</span><span class="p">:</span> <span class="dl">'</span><span class="s1">#app</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">data</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">message</span><span class="p">:</span> <span class="dl">'</span><span class="s1">안녕하세요 Vue!</span><span class="dl">'</span>
+  <span class="p">}</span>
+<span class="p">})</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+:ET

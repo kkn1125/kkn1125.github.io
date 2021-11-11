@@ -1,4 +1,4 @@
-const imgs = document.querySelectorAll('.article-post img');
+const imgs = document.querySelectorAll('.article-post img:not(.donaricano)');
 let clicked = false;
 let zoomLayer = 100;
 let moved;
@@ -38,8 +38,8 @@ imgs.forEach(img=>{
             zoom.prepend(copy);
             zoom.prepend(btn);
             btn.innerHTML = "&times;";
-            btn.classList.add('btn','btn-danger', 'btn-close');
-
+            btn.classList.add('btn','btn-danger', 'position-absolute');
+            btn.style.right = '2em';
             btn.addEventListener('click', ()=>{
                 pop.classList.remove("show");
                 setTimeout(()=>{
