@@ -288,7 +288,21 @@ let NewsAlert = (function () {
         }
 
         this.getStorage = function(){
-            if(sessionStorage['alertList']) alertList = JSON.parse(sessionStorage['alertList']);
+            if(sessionStorage['alertList']) {
+                let alert = function(text, session){
+                    this.id = 0;
+                    this.text = text;
+                    this.show = true;
+                    this.autoIndex = function(){
+                        this.id = alertList.indexOf(this);
+                    }
+                    this.session = session;
+                }
+                let alerts = JSON.parse(sessionStorage['alertList']);
+                alerts.forEach(x=>{
+                    this.addAlertList(new alert(x.text, x.session));
+                });
+            }
         }
 
         this.makeAlert = function (ev, ui, options) {
@@ -302,6 +316,7 @@ let NewsAlert = (function () {
                 this.session = 'on';
             }
             this.getStorage();
+            if(this.changedValid(options)) this.resetStorage();
             if(alertList.length==0 || alertList[0]==null){
                 options.alertlist.forEach((news)=>{
                     this.addAlertList(new alert(news));
@@ -309,6 +324,19 @@ let NewsAlert = (function () {
             }
             this.setStorage();
             this.updateView();
+        }
+
+        this.resetStorage = function(){
+            sessionStorage['alertList'] = '';
+            alertList = [];
+        }
+
+        this.changedValid = function(options){
+            for(let valid in options.alertlist){
+                if(options.alertlist[valid].trim() != alertList[valid].text.trim()) return true;
+            }
+            if(options.alertlist.length != alertList.length) return true;
+            return false;
         }
 
         this.removeAlertHandler = function (ev, ui) {
@@ -381,7 +409,8 @@ let NewsAlert = (function () {
 
 NewsAlert.init({
     alertlist: [
-        'DocumentifyJS 업데이트가 있습니다! 현재 v0.2.5 버전 최신입니다. 자세한 내용은 아래 링크 참조바랍니다. <a class="d-inline-block" href="https://github.com/kkn1125/mkDocumentifyJS/tree/main" target="_blank">[바로가기]</a>',
+        'Penli CSS 가 <kbd>v0.1.1</kbd>로 업데이트 되었습니다. 많은 관심 바랍니다! <a class="d-inline-block" href="https://github.com/kkn1125/penli" target="_blank">[바로가기]</a>',
+        'DocumentifyJS 업데이트가 있습니다! 현재 v1.0.0 버전 최신입니다. 자세한 내용은 아래 링크 참조바랍니다. <a class="d-inline-block" href="https://github.com/kkn1125/mkDocumentifyJS/tree/main" target="_blank">[바로가기]</a>',
         'Typer가 v1.0.0로 릴리즈 되었습니다! 새로운 기능 <kbd class="kbd">realTyping</kbd>이 추가되었습니다. 자세한 사항은 아래 링크를! <a class="d-inline-block" href="https://github.com/kkn1125/typer" target="_blank">[바로가기]</a>',
         'Jekyll Theme를 만드는 중입니다. <a class="d-inline-block" href="https://github.com/kkn1125/lessmore-jekyll-theme" target="_blank">[바로가기]</a>',
         'Tutorial js 가 <kbd>v0.1.1</kbd>로 업데이트 되었습니다. 많은 관심 바랍니다! <a class="d-inline-block" href="https://github.com/kkn1125/tutorial" target="_blank">[바로가기]</a>',
