@@ -302,6 +302,8 @@ let NewsAlert = (function () {
                 alerts.forEach(x=>{
                     this.addAlertList(new alert(x.text, x.session));
                 });
+            } else {
+                this.setStorage();
             }
         }
 
@@ -333,7 +335,7 @@ let NewsAlert = (function () {
 
         this.changedValid = function(options){
             for(let valid in options.alertlist){
-                if(options.alertlist[valid].trim() != alertList[valid].text.trim()) return true;
+                if(alertList[valid] && options.alertlist[valid].trim() != alertList[valid].text.trim()) return true;
             }
             if(options.alertlist.length != alertList.length) return true;
             return false;
