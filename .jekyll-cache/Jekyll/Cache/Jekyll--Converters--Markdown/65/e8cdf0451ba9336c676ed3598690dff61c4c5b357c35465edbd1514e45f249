@@ -1,0 +1,534 @@
+I"�u<h1 id="module-pattern">Module Pattern</h1>
+
+<p>포스팅이 뜸 했습니다. 최근에 <code class="language-plaintext highlighter-rouge">Typer</code> 한글 분해 타이핑 기능과 <code class="language-plaintext highlighter-rouge">Documentify</code> 문서화 기능을 마무리 짓느라 포스팅에 소홀했는데요. 이번에는 이제 익숙해져버린 모듈 패턴을 기록해두려합니다.</p>
+
+<h2 id="구조">구조</h2>
+
+<p>몇 달 전에 참고했던 러시아 분의 <code class="language-plaintext highlighter-rouge">tagEditor</code> 라는 저장소를 방문하여 이슈를 주고 받고, 해당 코드를 공부삼아 클론한 적이 있습니다. 그 당시 이해되지 않던 복잡해보이는 패턴을 사용해보고 변경해보고 활용하다보니 이제는 이렇게 코드를 짜지 않으면 성에 안차는 정도가 되었습니다.</p>
+
+<p>활용되었던 형태는 이렇습니다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+</pre></td><td class="rouge-code"><pre><span class="dl">'</span><span class="s1">use strict</span><span class="dl">'</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">Sample</span> <span class="o">=</span> <span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+    <span class="kd">function</span> <span class="nx">Controller</span><span class="p">(){</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">init</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+            
+        <span class="p">}</span>
+        <span class="c1">// this.* :: method</span>
+    <span class="p">}</span>
+
+    <span class="kd">function</span> <span class="nx">Model</span><span class="p">(){</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">init</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+            
+        <span class="p">}</span>
+        <span class="c1">// this.* :: method</span>
+    <span class="p">}</span>
+
+    <span class="kd">function</span> <span class="nx">View</span><span class="p">(){</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">init</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+
+        <span class="p">}</span>
+        <span class="c1">// this.* :: method</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="na">init</span><span class="p">:</span> <span class="kd">function</span><span class="p">(){</span>
+            <span class="c1">// 정의되는 초기화 내용</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">})();</span> <span class="c1">// 괄호 있습니다!</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>전체적으로 기존에 전역으로 함수를 짜던 때와 달리 클로저 내에 감싸져 내용을 확실히 알기 어렵습니다. 깃허브에 올린다면 물론 공개되어지겠지만요.</p>
+
+<p>이런 부분에서는 난독화와 압축이 필요하겠지만 아직 모르기 때문에 추후에 기록을 남기려 합니다.</p>
+
+<p>위 코드를 보면 단순하게 3가지로 나뉘는데 아주 익숙한 이름들입니다.</p>
+
+<ol>
+  <li>Controller</li>
+  <li>Model</li>
+  <li>View</li>
+  <li>return init {function}</li>
+</ol>
+
+<h3 id="controller">Controller</h3>
+
+<p><code class="language-plaintext highlighter-rouge">MVC</code>패턴을 완전히 알고 있지 않지만 사용하는 측면에서 설명드리자면 여기서 <code class="language-plaintext highlighter-rouge">Controller</code>는 이벤트를 관리하는 것이 주 였습니다.</p>
+
+<p>페이지를 주제로 한다면 페이지 경로를 처리하는 부분이 되겠습니다. 예를 들어 <code class="language-plaintext highlighter-rouge">todo-list</code>를 만든다면 <code class="language-plaintext highlighter-rouge">Controller</code>에서 삭제 버튼이나 입력버튼에 대한 이벤트를 관리해주고, 메서드를 <code class="language-plaintext highlighter-rouge">Model</code>로 넘겨 처리하게됩니다.</p>
+
+<h3 id="model">Model</h3>
+
+<p><code class="language-plaintext highlighter-rouge">Controller</code>에서 실행된 메서드가 모델 내에 있는 메서드를 호출합니다. 호출된 메서드는 크게 두 가지로 나뉩니다.</p>
+
+<ol>
+  <li>데이터 <code class="language-plaintext highlighter-rouge">가공 | 처리</code></li>
+  <li><code class="language-plaintext highlighter-rouge">View</code> 메서드를 호출해서 <code class="language-plaintext highlighter-rouge">View</code> 내의 메서드에 <code class="language-plaintext highlighter-rouge">위임</code></li>
+</ol>
+
+<p>호출된 메서드는 필요에 따라 처리된 데이터를 가지고 혹은 없이 <code class="language-plaintext highlighter-rouge">View</code> 내의 메서드를 호출하며 <code class="language-plaintext highlighter-rouge">View</code>로 넘겨 처리합니다.</p>
+
+<h3 id="view">View</h3>
+
+<p><code class="language-plaintext highlighter-rouge">Model</code>에서 받은 데이터를 화면에 구현해주는 기능만 담당하게 됩니다. 이때 데이터를 보존해 두고 <code class="language-plaintext highlighter-rouge">template</code>형식으로 뿌려주는 것이 효과적이라는 생각이 듭니다. 여러 번 연습 할 때 자주 실수 했던 부분인데요. 데이터 원본을 변형시켜 출력하면 수정, 찾기, 삭제 등등의 이어지는 작업에 코드가 엉망이 되는 것을 많이 경험했습니다.</p>
+
+<h2 id="예제">예제</h2>
+
+<p>설명은 읽어도 사람마다 차이가 있기 때문에 예제를 몇가지 들겠습니다.</p>
+
+<p>만약 <code class="language-plaintext highlighter-rouge">todo-list</code>를 만든다는 가정을 들겠습니다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+</pre></td><td class="rouge-code"><pre><span class="kd">const</span> <span class="nx">TodoList</span> <span class="o">=</span> <span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+    <span class="kd">function</span> <span class="nx">Controller</span><span class="p">(){</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">init</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+            <span class="c1">// 초기화 코드</span>
+        <span class="p">}</span>
+        <span class="c1">// this.* :: method</span>
+    <span class="p">}</span>
+
+    <span class="kd">function</span> <span class="nx">Model</span><span class="p">(){</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">init</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+            <span class="c1">// 초기화 코드</span>
+        <span class="p">}</span>
+        <span class="c1">// this.* :: method</span>
+    <span class="p">}</span>
+
+    <span class="kd">function</span> <span class="nx">View</span><span class="p">(){</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">init</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+            <span class="c1">// 초기화 코드</span>
+        <span class="p">}</span>
+        <span class="c1">// this.* :: method</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="na">init</span><span class="p">:</span> <span class="kd">function</span><span class="p">(){</span>
+            <span class="c1">// 정의되는 초기화 내용</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">})();</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>우선 기본 틀을 같습니다. 그런데 여기 사용하는 방식 중에 두 가지 나눌 수 있는데요. <code class="language-plaintext highlighter-rouge">html</code>에 미리 컴포넌트를 만들고 그 대상으로 기능을 넣는 방식과 <code class="language-plaintext highlighter-rouge">TodoList</code>함수로 컴포넌트를 생성해서 사용하는 방식입니다.</p>
+
+<p>생성하는 방식을 저는 선호하기 때문에 두 번째 방법으로 하겠습니다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+</pre></td><td class="rouge-code"><pre><span class="c1">// 컴포넌트 생성과 init 설정</span>
+
+<span class="kd">const</span> <span class="nx">generator</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="dl">'</span><span class="s1">todos</span><span class="dl">'</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">wrapPannel</span><span class="p">:</span> <span class="p">{</span>
+            <span class="na">render</span><span class="p">:</span> <span class="p">()</span><span class="o">=&gt;</span><span class="s2">`&lt;div class="wrap-pannel"&gt;
+                &lt;div class="title"&gt;Todo List&lt;/div&gt;
+                &lt;div class="list-wrap"&gt;&lt;/div&gt;
+            &lt;/div&gt;`</span><span class="p">;</span>
+        <span class="p">},</span>
+        <span class="na">addPannel</span><span class="p">:</span> <span class="p">{</span>
+            <span class="na">render</span><span class="p">:</span> <span class="p">()</span><span class="o">=&gt;</span><span class="s2">`&lt;ol id="list-group"&gt;&lt;/ol&gt;`</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="dl">'</span><span class="s1">list-item</span><span class="dl">'</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">render</span><span class="p">:</span> <span class="p">({</span><span class="nx">key</span><span class="p">,</span> <span class="nx">text</span><span class="p">})</span><span class="o">=&gt;</span><span class="s2">`&lt;div data-key="</span><span class="p">${</span><span class="nx">key</span><span class="p">}</span><span class="s2">" class="list-item"&gt;
+            &lt;span class="text"&gt;</span><span class="p">${</span><span class="nx">text</span><span class="p">}</span><span class="s2">&lt;/span&gt;
+            &lt;span&gt;&lt;button class="del-btn"&gt;&amp;times;&lt;/button&gt;&lt;/span&gt;
+        &lt;/div&gt;`</span><span class="p">;</span>
+    <span class="p">},</span>
+<span class="p">};</span>
+
+<span class="kd">const</span> <span class="nx">TodoList</span> <span class="o">=</span> <span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+    <span class="c1">// mvc ... </span>
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="na">init</span><span class="p">:</span> <span class="kd">function</span><span class="p">(){</span>
+            <span class="kd">const</span> <span class="nx">components</span> <span class="o">=</span> <span class="p">{</span>
+                <span class="nx">generator</span>
+            <span class="p">}</span>
+
+            <span class="kd">const</span> <span class="nx">view</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">View</span><span class="p">();</span>
+            <span class="kd">const</span> <span class="nx">model</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Model</span><span class="p">();</span>
+            <span class="kd">const</span> <span class="nx">controller</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Controller</span><span class="p">();</span>
+
+            <span class="nx">view</span><span class="p">.</span><span class="nx">init</span><span class="p">(</span><span class="nx">components</span><span class="p">);</span>
+            <span class="nx">model</span><span class="p">.</span><span class="nx">init</span><span class="p">(</span><span class="nx">view</span><span class="p">);</span>
+            <span class="nx">controller</span><span class="p">.</span><span class="nx">init</span><span class="p">(</span><span class="nx">model</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>위 코드 처럼 <code class="language-plaintext highlighter-rouge">generator</code>를 만들고 <code class="language-plaintext highlighter-rouge">render</code>메서드를 하나씩 주고 이후에 <code class="language-plaintext highlighter-rouge">object</code>를 <code class="language-plaintext highlighter-rouge">for ... in</code>으로 처리하면 데이터를 받아 <code class="language-plaintext highlighter-rouge">render</code>만 찍어주면 알아서 순서에 맞게 <code class="language-plaintext highlighter-rouge">html</code>이 들어가도록 작업 할 수 있습니다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+</pre></td><td class="rouge-code"><pre><span class="c1">// mvc 설정 예</span>
+
+<span class="c1">// const generator...</span>
+
+<span class="kd">const</span> <span class="nx">TodoList</span> <span class="o">=</span> <span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+    <span class="c1">// mvc ... </span>
+
+    <span class="kd">function</span> <span class="nx">Controller</span><span class="p">(){</span>
+        <span class="kd">let</span> <span class="nx">models</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+
+        <span class="k">this</span><span class="p">.</span><span class="nx">init</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">model</span><span class="p">){</span>
+            <span class="nx">models</span> <span class="o">=</span> <span class="nx">model</span><span class="p">;</span>
+
+            <span class="nx">models</span><span class="p">.</span><span class="nx">renderList</span><span class="p">();</span>
+            <span class="nb">window</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">click</span><span class="dl">'</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">listHandler</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="k">this</span><span class="p">.</span><span class="nx">listHandler</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">ev</span><span class="p">){</span>
+            <span class="kd">let</span> <span class="nx">target</span> <span class="o">=</span> <span class="nx">ev</span><span class="p">.</span><span class="nx">target</span><span class="p">;</span>
+            <span class="kd">let</span> <span class="nx">type</span> <span class="o">=</span> <span class="nx">target</span><span class="p">.</span><span class="nx">dataset</span><span class="p">.</span><span class="nx">type</span><span class="p">;</span>
+            <span class="k">if</span><span class="p">(</span><span class="nx">type</span> <span class="o">!==</span> <span class="dl">'</span><span class="s1">add</span><span class="dl">'</span> <span class="o">&amp;&amp;</span> <span class="nx">type</span> <span class="o">!==</span> <span class="dl">'</span><span class="s1">delete</span><span class="dl">'</span> <span class="o">&amp;&amp;</span> <span class="nx">type</span> <span class="o">!==</span> <span class="dl">'</span><span class="s1">update</span><span class="dl">'</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span>
+            <span class="nx">ev</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
+            
+            <span class="k">switch</span><span class="p">(</span><span class="nx">type</span><span class="p">){</span>
+                <span class="k">case</span> <span class="dl">'</span><span class="s1">add</span><span class="dl">'</span><span class="p">:</span>
+                    <span class="k">this</span><span class="p">.</span><span class="nx">addList</span><span class="p">(</span><span class="nx">target</span><span class="p">);</span>
+                    <span class="k">break</span><span class="p">;</span>
+                <span class="k">case</span> <span class="dl">'</span><span class="s1">delete</span><span class="dl">'</span><span class="p">:</span>
+                    <span class="k">this</span><span class="p">.</span><span class="nx">deleteList</span><span class="p">(</span><span class="nx">target</span><span class="p">);</span>
+                    <span class="k">break</span><span class="p">;</span>
+                <span class="k">case</span> <span class="dl">'</span><span class="s1">update</span><span class="dl">'</span><span class="p">:</span>
+                    <span class="k">this</span><span class="p">.</span><span class="nx">updateList</span><span class="p">(</span><span class="nx">target</span><span class="p">);</span>
+                    <span class="k">break</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        
+        <span class="k">this</span><span class="p">.</span><span class="nx">addList</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+            <span class="nx">models</span><span class="p">.</span><span class="nx">addList</span><span class="p">();</span>
+        <span class="p">}</span>
+
+        <span class="k">this</span><span class="p">.</span><span class="nx">deleteList</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+            <span class="nx">models</span><span class="p">.</span><span class="nx">deleteList</span><span class="p">();</span>
+        <span class="p">}</span>
+
+        <span class="k">this</span><span class="p">.</span><span class="nx">updateList</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+            <span class="nx">models</span><span class="p">.</span><span class="nx">updateList</span><span class="p">();</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="kd">function</span> <span class="nx">Model</span><span class="p">(){</span>
+        <span class="kd">let</span> <span class="nx">views</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+        <span class="kd">let</span> <span class="nx">todos</span> <span class="o">=</span> <span class="p">[];</span>
+
+        <span class="k">this</span><span class="p">.</span><span class="nx">init</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">view</span><span class="p">){</span>
+            <span class="nx">views</span> <span class="o">=</span> <span class="nx">view</span><span class="p">;</span>
+
+            <span class="k">this</span><span class="p">.</span><span class="nx">getStorage</span><span class="p">();</span>
+        <span class="p">}</span>
+
+        <span class="k">this</span><span class="p">.</span><span class="nx">setStorage</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+            <span class="nx">localStorage</span><span class="p">[</span><span class="dl">'</span><span class="s1">todos</span><span class="dl">'</span><span class="p">]</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">todos</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="k">this</span><span class="p">.</span><span class="nx">getStorage</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+            <span class="nx">todos</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">localStorage</span><span class="p">[</span><span class="dl">'</span><span class="s1">todos</span><span class="dl">'</span><span class="p">])??</span><span class="dl">'</span><span class="s1">[]</span><span class="dl">'</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="k">this</span><span class="p">.</span><span class="nx">renderList</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+            <span class="nx">views</span><span class="p">.</span><span class="nx">renderList</span><span class="p">(</span><span class="nx">todos</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="k">this</span><span class="p">.</span><span class="nx">addList</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+            <span class="c1">// 작성해봅시다</span>
+        <span class="p">}</span>
+
+        <span class="k">this</span><span class="p">.</span><span class="nx">deleteList</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+            <span class="c1">// 작성해봅시다</span>
+        <span class="p">}</span>
+
+        <span class="k">this</span><span class="p">.</span><span class="nx">updateList</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+            <span class="c1">// 작성해봅시다</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="kd">function</span> <span class="nx">View</span><span class="p">(){</span>
+        <span class="kd">let</span> <span class="nx">parts</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+        <span class="kd">let</span> <span class="nx">app</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+        <span class="kd">let</span> <span class="nx">wrap</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+        <span class="kd">let</span> <span class="nx">listPannel</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+
+        <span class="k">this</span><span class="p">.</span><span class="nx">init</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">components</span><span class="p">){</span>
+            <span class="nx">parts</span> <span class="o">=</span> <span class="nx">components</span><span class="p">;</span>
+
+            <span class="k">this</span><span class="p">.</span><span class="nx">createApp</span><span class="p">();</span>
+        <span class="p">}</span>
+
+        <span class="k">this</span><span class="p">.</span><span class="nx">createApp</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+            <span class="nx">app</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="dl">'</span><span class="s1">div</span><span class="dl">'</span><span class="p">);</span>
+            <span class="nx">app</span><span class="p">.</span><span class="nx">id</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">app</span><span class="dl">'</span><span class="p">;</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">insertAdjacentElement</span><span class="p">(</span><span class="dl">'</span><span class="s1">beforeEnd</span><span class="dl">'</span><span class="p">,</span> <span class="nx">app</span><span class="p">);</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">generateAllParts</span><span class="p">();</span>
+        <span class="p">}</span>
+
+        <span class="k">this</span><span class="p">.</span><span class="nx">generateAllParts</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+            <span class="nx">app</span><span class="p">.</span><span class="nx">insertAdjacentElement</span><span class="p">(</span><span class="dl">'</span><span class="s1">beforeEnd</span><span class="dl">'</span><span class="p">,</span> <span class="nx">parts</span><span class="p">.</span><span class="nx">generator</span><span class="p">.</span><span class="nx">todos</span><span class="p">.</span><span class="nx">wrapPannel</span><span class="p">.</span><span class="nx">render</span><span class="p">());</span>
+
+            <span class="nx">wrap</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">list-wrap</span><span class="dl">'</span><span class="p">);</span>
+
+            <span class="nx">wrap</span><span class="p">.</span><span class="nx">insertAdjacentElement</span><span class="p">(</span><span class="dl">'</span><span class="s1">beforeEnd</span><span class="dl">'</span><span class="p">,</span> <span class="nx">parts</span><span class="p">.</span><span class="nx">generator</span><span class="p">.</span><span class="nx">todos</span><span class="p">.</span><span class="nx">addPannel</span><span class="p">.</span><span class="nx">render</span><span class="p">());</span>
+
+            <span class="nx">listPannel</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">list-group</span><span class="dl">'</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="k">this</span><span class="p">.</span><span class="nx">renderList</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">todos</span><span class="p">){</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">clearList</span><span class="p">();</span>
+
+            <span class="nx">todos</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">todo</span><span class="o">=&gt;</span><span class="p">{</span>
+                <span class="nx">app</span><span class="p">.</span><span class="nx">insertAdjacentHTML</span><span class="p">(</span><span class="dl">'</span><span class="s1">beforeEnd</span><span class="dl">'</span><span class="p">,</span> <span class="nx">parts</span><span class="p">.</span><span class="nx">generator</span><span class="p">[</span><span class="dl">'</span><span class="s1">list-item</span><span class="dl">'</span><span class="p">].</span><span class="nx">render</span><span class="p">(</span><span class="nx">todo</span><span class="p">));</span>
+            <span class="p">});</span>
+        <span class="p">}</span>
+
+        <span class="k">this</span><span class="p">.</span><span class="nx">clearList</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+            <span class="nx">listPannel</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="dl">''</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="c1">// this.* :: method</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="na">init</span><span class="p">:</span> <span class="kd">function</span><span class="p">(){</span>
+            <span class="c1">// init 설정 ...</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">add</code>와 <code class="language-plaintext highlighter-rouge">delete</code>, <code class="language-plaintext highlighter-rouge">update</code>기능은 제외 했습니다. 눈 대중으로 작성한 코드들이라 오작동할 수도 있으니 참고바랍니다.</p>
+
+<p>이벤트 연결과 뿌려지는 것까지 되었으니 이후 작업은 순조로울 듯 합니다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">mixin</code> 패턴을 공부 중에 있습니다만 조합해서 어떻게 활용할지는 다음 포스팅에 다루겠습니다.</p>
+
+<p>물론 기능이나 프로젝트 내용 등을 고려했을 때 적합한 패턴을 사용해야 할 것 같다는 생각이 듭니다만 체득하는 것이 우선이라는 생각에 이것저것 합니다.</p>
+
+<p>이런게 하나 씩 모이면 발전 되지 않을까 하며 포스팅을 마칩니다…</p>
+:ET
