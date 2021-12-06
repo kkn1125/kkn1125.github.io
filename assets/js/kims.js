@@ -264,6 +264,13 @@ let NewsAlert = (function () {
 
             window.addEventListener('load', this.makeAlert);
             uiElem.body.addEventListener('click', this.removeAlertHandler);
+            uiElem.body.addEventListener('click', this.allClose);
+        }
+
+        this.allClose = function(ev){
+            let target = ev.target;
+            if(target.id !== 'allClose') return;
+            moduleModel.allClose(ev);
         }
 
         this.makeAlert = function (ev) {
@@ -341,6 +348,17 @@ let NewsAlert = (function () {
             return false;
         }
 
+        this.allClose = function(ev){
+            ev.preventDefault();
+            ev.target.parentNode.remove();
+            alertList = alertList.map(alert=>{
+                alert.session = 'off';
+                return alert;
+            });
+            this.setStorage();
+            this.updateView();
+        }
+
         this.removeAlertHandler = function (ev, ui) {
             let target = ev.target;
             if (target.tagName !== 'SPAN' || target.className !== 'news-close') return;
@@ -377,6 +395,9 @@ let NewsAlert = (function () {
         this.updateView = function (alertList) {
             let view = uiElem.body.querySelector('[news-alert]')
             this.clearView(view);
+            if(alertList.length>0) view.innerHTML += `<div class="text-end">
+                <button id="allClose" class="btn btn-danger btn-sm">전부 닫기</button>
+            </div>`;
             alertList.forEach(alert=>{
                 view.innerHTML += `<div data-news-alert-tag="${alert.id}"><span class="alert-text">${alert.text}</span>
                 <span class="news-close">&times;</span>
@@ -411,10 +432,11 @@ let NewsAlert = (function () {
 
 NewsAlert.init({
     alertlist: [
-        'Penli CSS 가 <kbd>v0.1.1</kbd>로 업데이트 되었습니다. 많은 관심 바랍니다! <a class="d-inline-block" href="https://github.com/kkn1125/penli" target="_blank">[바로가기]</a>',
+        'Penli CSS 가 <kbd>v0.1.3</kbd>로 업데이트 되었습니다. 많은 관심 바랍니다! <a class="d-inline-block" href="https://github.com/kkn1125/penli" target="_blank">[바로가기]</a>',
+        '<kbd class="bg-info">Wikimson</kbd>을 구현하고 첫 게시했습니다! 많은 관심 부탁드립니다!',
         'DocumentifyJS 업데이트가 있습니다! 현재 v1.0.0 버전 최신입니다. 자세한 내용은 아래 링크 참조바랍니다. <a class="d-inline-block" href="https://github.com/kkn1125/mkDocumentifyJS/tree/main" target="_blank">[바로가기]</a>',
         'Typer가 v1.0.0로 릴리즈 되었습니다! 새로운 기능 <kbd class="kbd">realTyping</kbd>이 추가되었습니다. 자세한 사항은 아래 링크를! <a class="d-inline-block" href="https://github.com/kkn1125/typer" target="_blank">[바로가기]</a>',
-        'Jekyll Theme를 만드는 중입니다. <a class="d-inline-block" href="https://github.com/kkn1125/lessmore-jekyll-theme" target="_blank">[바로가기]</a>',
         'Tutorial js 가 <kbd>v0.1.1</kbd>로 업데이트 되었습니다. 많은 관심 바랍니다! <a class="d-inline-block" href="https://github.com/kkn1125/tutorial" target="_blank">[바로가기]</a>',
+        'Jekyll Theme를 만드는 중입니다. <a class="d-inline-block" href="https://github.com/kkn1125/lessmore-jekyll-theme" target="_blank">[바로가기]</a>',
     ]
 });

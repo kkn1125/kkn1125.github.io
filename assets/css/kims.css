@@ -768,6 +768,7 @@ transition: .5s cubic-bezier(1,0,0,1);
 	background-color: rgba(155, 236, 189, 0.5);
 	margin: 0.5em 0;
 	padding: 1em;
+	font-size: .9em;
 	transition: 1s;
 	-webkit-transition: 1s;
 	-moz-transition: 1s;
@@ -813,4 +814,8 @@ transition: .5s cubic-bezier(1,0,0,1);
 
 kbd.kbd{
 	background-color: rgb(179, 42, 221);
+}
+
+.us-none{
+	user-select: none;
 }
