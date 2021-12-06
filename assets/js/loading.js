@@ -55,6 +55,6 @@ function getTarget(target){
                 target.style.height = `${percent}%`;
                 percent+=10;
             }
-        }, parseInt(Math.random()*700));
+        }, parseInt(Math.random()*100));
     }
 }
