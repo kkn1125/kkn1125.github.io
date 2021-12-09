@@ -1,0 +1,451 @@
+I"�u<h1 id="spa-구현">SPA 구현</h1>
+
+<p>제목을 어떻게 지을까 하다가 임시로 아는 단어를 적어두었습니다…</p>
+
+<p><code class="language-plaintext highlighter-rouge">SPA</code>는 <code class="language-plaintext highlighter-rouge">Single Page Application</code>의 약자이고 하나의 페이지에 동적으로 화면을 바꿔가면서 상호작용하도록 합니다.</p>
+
+<p>아직 라우터에 대해 제대로된 지식이 없어 지적을 주시면 곧바로 수정하도록 하겠습니다. 기록할 주요 내용은 이렇습니다.</p>
+
+<p>먼저 <code class="language-plaintext highlighter-rouge">ajax</code>를 사용하는 것은 제외했습니다. <code class="language-plaintext highlighter-rouge">ajax</code>로 하기에 아직 <code class="language-plaintext highlighter-rouge">fetch</code>와 <code class="language-plaintext highlighter-rouge">async</code>, <code class="language-plaintext highlighter-rouge">await</code>를 잘 다루지 못하는 시점이라 <code class="language-plaintext highlighter-rouge">javascript</code>로 <code class="language-plaintext highlighter-rouge">render</code>와 <code class="language-plaintext highlighter-rouge">component</code>를 구현해서 데이터를 만들어 적용하는 연습을 해보았습니다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">SPA</code>에는 찾아보니 종류가 몇 가지 있었는데요.</p>
+
+<ol>
+  <li>Slash</li>
+  <li>Hash</li>
+  <li>Query</li>
+</ol>
+
+<p>이 외에도 더 있겠죠? 아닌가? 제가 해 본 내용은 3가지 다 구현을 해봤습니다.</p>
+
+<p>이중에서 마음에 드는 결과물을 주는 게 <code class="language-plaintext highlighter-rouge">hash</code>방식이었습니다.</p>
+
+<h2 id="slash-방식">Slash 방식</h2>
+
+<p><code class="language-plaintext highlighter-rouge">Slash</code>방식은 호기롭게 구현하다가 결국 리로드(새로고침)의 늪을 고민하게 되었습니다. 물론 <code class="language-plaintext highlighter-rouge">Slash</code>방식에서 새로고침시 보고있던 페이지의 내용을 다시 로드할 방법은 있습니다. 하지만 네이버나 구글의 서치콘솔에서 접근이 안되는 단점이 있습니다.</p>
+
+<p>폴더를 만들어보거나 빈파일을 만드는 등의 테스트를 거쳤지만 아직 미천한 실력으로 해결이 안되는 부분이기도 하구요…</p>
+
+<p>혹시나 <code class="language-plaintext highlighter-rouge">Slash</code>방식으로 구현하고 있는 분 중에 궁금해하시는 분을 위해 아래 예제 코드를 알려드리겠습니다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+</pre></td><td class="rouge-code"><pre><span class="c1">// router.js</span>
+
+<span class="kd">let</span> <span class="nx">isFirst</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+<span class="nb">window</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">beforeunload</span><span class="dl">'</span><span class="p">,</span> <span class="nx">handleInitializePage</span><span class="p">);</span>
+
+<span class="kd">function</span> <span class="nx">handleInitializePage</span><span class="p">(</span><span class="nx">ev</span><span class="p">){</span>
+    <span class="nx">ev</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
+    <span class="nx">ev</span><span class="p">.</span><span class="nx">returnValue</span> <span class="o">=</span> <span class="dl">''</span><span class="p">;</span>
+    <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">isFirst</span><span class="p">){</span>
+        <span class="nx">setTimeout</span><span class="p">(()</span><span class="o">=&gt;</span><span class="p">{</span>
+            <span class="nx">location</span><span class="p">.</span><span class="nx">href</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">/</span><span class="dl">"</span><span class="p">;</span>
+            <span class="nx">getBeforePage</span><span class="p">();</span> <span class="c1">// 적당히 구현하시면 됩니다.</span>
+        <span class="p">},</span> <span class="mi">10</span><span class="p">);</span>
+        <span class="nx">isFirst</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">beforeunload</code>이벤트를 사용한 예제입니다. <code class="language-plaintext highlighter-rouge">beforeunload</code>로 리로드되거나 종료될 때를 감지합니다. 크롬기준으로 이벤트 콜백함수 내에서 <code class="language-plaintext highlighter-rouge">alert()</code>을 사용하게되면 에러가 발생하고 실행되지 않는 것을 확인 할 수 있습니다. 물론 <code class="language-plaintext highlighter-rouge">location.href</code>도 그냥 쓰면 작동하지 않습니다.</p>
+
+<p>찰나에 뜨는 오류를 보면 <code class="language-plaintext highlighter-rouge">beforeunload</code>이벤트가 작동 되는 때에는 함수의 실행 등을 막는 것 같습니다. 그리고 <code class="language-plaintext highlighter-rouge">getBeforePage</code>라는 함수로 이전 페이지 정보를 가져와 <code class="language-plaintext highlighter-rouge">history API</code>의 <code class="language-plaintext highlighter-rouge">pushState</code>로 변경해주면 <code class="language-plaintext highlighter-rouge">/test</code>라는 주소를 <code class="language-plaintext highlighter-rouge">/</code>로 바꿨다가 <code class="language-plaintext highlighter-rouge">/test</code>로 다시 순식간에 바꿔줍니다.</p>
+
+<p>리로드 시 주소를 초기화했다가 바꿔주는 방식입니다. 이 방법을 사용하면 <code class="language-plaintext highlighter-rouge">Slash</code>방식으로 구현해도 잘 작동은 하지만 문제는 앞서 말한 것처럼 다른 곳에서 해당 <code class="language-plaintext highlighter-rouge">url</code>을 요청하면 페이지가 없다고 뜹니다.</p>
+
+<p>서버를 구현한다면 위의 작업이 아예 필요 없겠지만요…</p>
+
+<h2 id="hash-방식">Hash 방식</h2>
+
+<p><code class="language-plaintext highlighter-rouge">hash</code>방식은 비교적 쉬웠습니다. 어떻게하면 <code class="language-plaintext highlighter-rouge">Slash</code>방식 처럼 번거롭지 않을까 하다가 스크롤 조정할 때 자주 사용한 <code class="language-plaintext highlighter-rouge">#</code>이 떠올랐습니다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">hash</code>는 태그의 <code class="language-plaintext highlighter-rouge">id</code>선택자이기 때문에 리로드하지 않고 해당 <code class="language-plaintext highlighter-rouge">id</code>를 가진 태그로 스크롤 됩니다. 하지만 해쉬로 작업하면 외부 링크 이동이나 스크롤을 직접 구현해줘야 합니다.</p>
+
+<h3 id="스크롤-외부링크-페이징-처리">스크롤, 외부링크, 페이징 처리</h3>
+
+<p>여러 방법이 있겠지만 제가 사용하는 방법은 아래와 같습니다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+</pre></td><td class="rouge-code"><pre><span class="c1">// scroll</span>
+<span class="nb">window</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">click</span><span class="dl">'</span><span class="p">,</span> <span class="nx">handleAnchor</span><span class="p">);</span>
+<span class="kd">function</span> <span class="nx">handleAnchor</span><span class="p">(</span><span class="nx">ev</span><span class="p">){</span>
+    <span class="kd">const</span> <span class="nx">anchor</span> <span class="o">=</span> <span class="nx">ev</span><span class="p">.</span><span class="nx">target</span><span class="p">;</span>
+    <span class="kd">const</span> <span class="nx">name</span> <span class="o">=</span> <span class="nx">anchor</span><span class="p">.</span><span class="nx">tagName</span><span class="p">;</span>
+    <span class="kd">const</span> <span class="nx">href</span> <span class="o">=</span> <span class="nx">anchor</span><span class="p">.</span><span class="nx">href</span><span class="p">;</span>
+    <span class="kd">const</span> <span class="nx">hash</span> <span class="o">=</span> <span class="nx">anchor</span><span class="p">.</span><span class="nx">hash</span><span class="p">;</span>
+    <span class="kd">const</span> <span class="nx">attrs</span> <span class="o">=</span> <span class="nx">anchor</span><span class="p">.</span><span class="nx">attributes</span><span class="p">;</span>
+
+    <span class="k">if</span><span class="p">(</span><span class="nx">name</span> <span class="o">==</span> <span class="dl">'</span><span class="s1">A</span><span class="dl">'</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">ev</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
+
+        <span class="c1">// 여기서 anchor.href로 안하는 이유는</span>
+        <span class="c1">// anchor.href로 대조하면 #test로 지정했어도</span>
+        <span class="c1">// 프로토콜 포함하여 나오게 되기 때문입니다.</span>
+        <span class="k">if</span><span class="p">(</span><span class="nx">validHTTP</span><span class="p">(</span><span class="nx">attrs</span><span class="p">[</span><span class="dl">'</span><span class="s1">href</span><span class="dl">'</span><span class="p">].</span><span class="nx">value</span><span class="p">))</span> <span class="nb">window</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="nx">href</span><span class="p">);</span> <span class="c1">// 외부 링크 새창으로 열기</span>
+        <span class="k">else</span><span class="p">{</span>
+            <span class="k">if</span><span class="p">(</span><span class="nx">hash</span><span class="o">!==</span><span class="dl">''</span><span class="p">){</span>
+                <span class="nx">changeCurrentPage</span><span class="p">(</span><span class="nx">hash</span><span class="p">);</span> <span class="c1">// 페이징</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="nx">scrollIntoRef</span><span class="p">(</span><span class="nx">attrs</span><span class="p">[</span><span class="dl">'</span><span class="s1">scroll-to</span><span class="dl">'</span><span class="p">].</span><span class="nx">value</span><span class="p">);</span> <span class="c1">// 스크롤링</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">validHTTP</span><span class="p">(</span><span class="nx">url</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">url</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/http/gm</span><span class="p">)?</span><span class="kc">true</span><span class="p">:</span><span class="kc">false</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">scrollIntoRef</span><span class="p">(</span><span class="nx">target</span><span class="p">){</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="nx">target</span><span class="p">).</span><span class="nx">scrollIntoView</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>위 예제는 한 번에 보여드리기 위함입니다. 작업할 때는 이벤트마다 기능을 하나 이상 잘 넣지 않습니다.</p>
+
+<h3 id="페이지-처리">페이지 처리</h3>
+
+<p>초기에 했던 페이지 처리 보다 최근 구현한 페이지 처리가 더 좋지 않나 조심스레 생각해봅니다. 이전에는 페이지와 템플릿 등이 혼재되어 있었는데 점점 하다보니 정리가 되는 듯 합니다.</p>
+
+<p>준비한 내용은 3가지 입니다.</p>
+
+<ol>
+  <li><code class="language-plaintext highlighter-rouge">router.js</code></li>
+  <li><code class="language-plaintext highlighter-rouge">pages.js</code></li>
+  <li><code class="language-plaintext highlighter-rouge">main.js</code></li>
+</ol>
+
+<h4 id="router">router</h4>
+
+<p>라우터 js는 딱 페이지를 구성하는 모체가 되겠습니다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre><span class="c1">// router.js</span>
+<span class="kd">const</span> <span class="nx">router</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="dl">'</span><span class="s1">home</span><span class="dl">'</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">referrer</span><span class="p">:</span> <span class="nb">document</span><span class="p">.</span><span class="nx">referrer</span><span class="p">,</span>
+        <span class="na">select</span><span class="p">:</span> <span class="p">(</span><span class="nx">page</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">pages</span><span class="p">.</span><span class="nx">type</span><span class="p">(</span><span class="nx">page</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>페이지가 가지는 최상위 개념의 내용만을 가집니다. 페이지별 <code class="language-plaintext highlighter-rouge">title</code>을 저기에 줘도 됩니다. 저는 내용을 렌더하는 시점에 바꾸기위해 제외했습니다.</p>
+
+<h4 id="pages">pages</h4>
+
+<p>페이지는 페이지를 렌더할 템플릿만을 가집니다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+</pre></td><td class="rouge-code"><pre><span class="c1">// pages.js</span>
+<span class="kd">const</span> <span class="nx">pages</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">type</span><span class="p">:</span> <span class="p">(</span><span class="nx">type</span><span class="p">)</span><span class="o">=&gt;</span><span class="nx">templates</span><span class="p">[</span><span class="nx">type</span><span class="p">],</span>
+    <span class="na">item</span><span class="p">:</span> <span class="p">(</span><span class="nx">type</span><span class="p">)</span><span class="o">=&gt;</span><span class="nx">parts</span><span class="p">[</span><span class="nx">type</span><span class="p">],</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">templates</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="dl">'</span><span class="s1">home</span><span class="dl">'</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">render</span><span class="p">:</span> <span class="kd">function</span><span class="p">(){</span>
+            <span class="nx">setInterval</span><span class="p">(()</span><span class="o">=&gt;</span><span class="p">{</span>
+                <span class="k">if</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">#timer</span><span class="dl">'</span><span class="p">)){</span>
+                    <span class="kd">let</span> <span class="nx">base</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">();</span>
+                    <span class="kd">let</span> <span class="nx">h</span> <span class="o">=</span> <span class="nx">base</span><span class="p">.</span><span class="nx">getHours</span><span class="p">();</span>
+                    <span class="kd">let</span> <span class="nx">m</span> <span class="o">=</span> <span class="nx">base</span><span class="p">.</span><span class="nx">getMinutes</span><span class="p">();</span>
+                    <span class="kd">let</span> <span class="nx">s</span> <span class="o">=</span> <span class="nx">base</span><span class="p">.</span><span class="nx">getSeconds</span><span class="p">();</span>
+                    <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">#timer</span><span class="dl">'</span><span class="p">).</span><span class="nx">textContent</span> <span class="o">=</span> <span class="s2">`현재시간 </span><span class="p">${</span><span class="nx">h</span><span class="p">}</span><span class="s2">:</span><span class="p">${</span><span class="nx">m</span><span class="p">}</span><span class="s2">:</span><span class="p">${</span><span class="nx">s</span><span class="p">}</span><span class="s2">`</span><span class="p">;</span>
+                    <span class="c1">// textContent로 한 이유는 태그자체가 리렌더되는 게 아닌</span>
+                    <span class="c1">// 텍스트만 리렌더되서 깔끔하기 때문에 사용했습니다.</span>
+                <span class="p">}</span>
+            <span class="p">});</span>
+            <span class="k">return</span> <span class="s2">`&lt;div&gt;home 입니다. &lt;time id="timer"&gt;&lt;/time&gt;&lt;/div&gt;`</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">parts</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="dl">'</span><span class="s1">side-bar</span><span class="dl">'</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">render</span><span class="p">:</span> <span class="kd">function</span><span class="p">(){</span>
+            <span class="k">return</span> <span class="s2">`&lt;nav class="side-bar"&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;home&lt;/li&gt;
+                    &lt;li&gt;blog&lt;/li&gt;
+                    &lt;li&gt;about&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/nav&gt;`</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">templates</code>와 <code class="language-plaintext highlighter-rouge">parts</code>는 다른 성격입니다. <code class="language-plaintext highlighter-rouge">templates</code>는 페이지 처리할 때마다 바뀌는 내용들이고, <code class="language-plaintext highlighter-rouge">parts</code>는 모든 페이지의 공통되는 요소만을 표현해두었습니다.</p>
+
+<p>이후 페이지 처리에서 이 자료들을 어떻게 뿌려주고 관리하는지 간략하게 봅시다.</p>
+
+<h4 id="페이지처리">페이지처리</h4>
+
+<p>이전에 <a href="https://kkn1125.github.io/javascript-design-pattern01">자바스크립트 디자인 패턴 - 모듈 패턴</a>을 소개한 적이 있습니다. 자세한 내용은 해당 링크를 참조해주세요!</p>
+
+<p>모듈 패턴으로 구현을 했습니다. 그래서 위 코드에서 벗어나지 않게 설명드릴 것이기 때문에 코드를 쭉 짜지는 않겠습니다.</p>
+
+<blockquote>
+  <p>이벤트 처리</p>
+</blockquote>
+
+<p>이벤트는 위에서 분기해서 사용하는 것이 다 입니다.</p>
+
+<p>물론 <code class="language-plaintext highlighter-rouge">pushState</code>로 주소를 변경해주어야하고, 좀 더 추가를 하자면 아래와 같습니다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+</pre></td><td class="rouge-code"><pre><span class="c1">// main.js</span>
+<span class="c1">// controller 영역</span>
+<span class="kd">let</span> <span class="nx">models</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+
+<span class="k">this</span><span class="p">.</span><span class="nx">init</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">model</span><span class="p">){</span> <span class="c1">// 제일 먼저 실행</span>
+    <span class="c1">// model받고</span>
+    <span class="nx">models</span> <span class="o">=</span> <span class="nx">model</span><span class="p">;</span>
+
+    <span class="nb">window</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">mousedown</span><span class="dl">'</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">setBeforePage</span><span class="p">);</span>
+    <span class="nb">window</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">mouseup</span><span class="dl">'</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">handlePaging</span><span class="p">);</span>
+
+    <span class="k">this</span><span class="p">.</span><span class="nx">appInitialRender</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="k">this</span><span class="p">.</span><span class="nx">appInitialRender</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+    <span class="nx">models</span><span class="p">.</span><span class="nx">renderPage</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="k">this</span><span class="p">.</span><span class="nx">setBeforePage</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">ev</span><span class="p">){</span>
+    <span class="c1">// 모델에 클릭 시점의 해쉬를 보냄</span>
+    <span class="c1">// 제어문 작성후</span>
+    <span class="nx">models</span><span class="p">.</span><span class="nx">setBeforePage</span><span class="p">(</span><span class="nx">location</span><span class="p">.</span><span class="nx">hash</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">this</span><span class="p">.</span><span class="nx">handlePaging</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">ev</span><span class="p">){</span>
+    <span class="c1">// 제어문 작성후</span>
+    <span class="c1">// 페이지 처리</span>
+    <span class="c1">// 예를 들어</span>
+    <span class="nx">models</span><span class="p">.</span><span class="nx">handlePaging</span><span class="p">(</span><span class="nx">target</span><span class="p">.</span><span class="nx">hash</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// model 영역</span>
+<span class="kd">let</span> <span class="nx">views</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">pageList</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">currentPage</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">beforePage</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+
+<span class="k">this</span><span class="p">.</span><span class="nx">init</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">view</span><span class="p">){</span>
+    <span class="nx">views</span> <span class="o">=</span> <span class="nx">view</span><span class="p">;</span>
+    <span class="nx">pageList</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">keys</span><span class="p">(</span><span class="nx">router</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">this</span><span class="p">.</span><span class="nx">handlePaging</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">hash</span><span class="p">){</span>
+    <span class="nx">currentPage</span> <span class="o">=</span> <span class="nx">hash</span><span class="p">;</span>
+    
+    <span class="k">if</span><span class="p">(</span><span class="nx">beforePage</span> <span class="o">!==</span> <span class="nx">currentPage</span><span class="p">){</span>
+        <span class="c1">// 페이징 처리하기 view로 위임</span>
+    <span class="p">}</span>
+    <span class="c1">// 이외 요청은 현재 페이지를 또 요청하므로 아무 동작 하지 않도록 함</span>
+<span class="p">}</span>
+
+<span class="k">this</span><span class="p">.</span><span class="nx">setBeforePage</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">hash</span><span class="p">){</span>
+    <span class="nx">beforePage</span> <span class="o">=</span> <span class="nx">hash</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">this</span><span class="p">.</span><span class="nx">renderPage</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+    <span class="c1">// 현재 페이지 넘기면서 위임</span>
+    <span class="nx">views</span><span class="p">.</span><span class="nx">renderPage</span><span class="p">(</span><span class="nx">currentPage</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// view 영역</span>
+<span class="kd">let</span> <span class="nx">moduler</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">app</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+
+<span class="k">this</span><span class="p">.</span><span class="nx">init</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">components</span><span class="p">){</span>
+    <span class="nx">moduler</span> <span class="o">=</span> <span class="nx">components</span><span class="p">;</span>
+
+    <span class="nx">app</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">insertAdjacentElement</span><span class="p">(</span><span class="dl">'</span><span class="s1">beforeend</span><span class="dl">'</span><span class="p">,</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="dl">'</span><span class="s1">main</span><span class="dl">'</span><span class="p">));</span>
+    <span class="c1">// 생성하면서 변수에 저장 (insertAdjacentElement는 엘레멘트를 반환합니다.)</span>
+
+    <span class="k">this</span><span class="p">.</span><span class="nx">renderPublicOptions</span><span class="p">();</span> <span class="c1">// 페이지 공통 요소들 렌더</span>
+<span class="p">}</span>
+
+<span class="k">this</span><span class="p">.</span><span class="nx">renderPage</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+    <span class="c1">// 페이지 렌더</span>
+<span class="p">}</span>
+
+<span class="k">this</span><span class="p">.</span><span class="nx">renderPublicOptions</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+    <span class="nb">Object</span><span class="p">.</span><span class="nx">keys</span><span class="p">(</span><span class="nx">parts</span><span class="p">).</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">part</span><span class="o">=&gt;</span><span class="nx">app</span><span class="p">.</span><span class="nx">insertAdjacentHTML</span><span class="p">(</span><span class="dl">'</span><span class="s1">beforeend</span><span class="dl">'</span><span class="p">,</span> <span class="nx">moduler</span><span class="p">.</span><span class="nx">parts</span><span class="p">[</span><span class="nx">part</span><span class="p">].</span><span class="nx">render</span><span class="p">()));</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>현재 깃허브 저장소에 올라가 있는 초안의 일부를 작성해봤습니다. 더 자세히 보시려면 <a href="https://github.com/kkn1125/router">router</a>를 보시기 바랍니다.</p>
+
+:ET

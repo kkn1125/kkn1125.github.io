@@ -885,13 +885,21 @@ article embed {
 }
 
 article blockquote {
-	padding-left: 40px;
+	padding-left: 1em;
 	margin-left: 0px;
 	font-style: italic;
 	position: relative;
+	border-left: 5px solid rgb(155, 212, 48);
+	background-color: rgba(0,0,0,.1);
+	padding-top: 1em;
+	padding-bottom: 1em;
 }
 
-article blockquote:before {
+blockquote p{
+	margin-bottom: 0;
+}
+
+/* article blockquote:before {
 	content: "“";
 	font-family: Georgia;
 	font-size: 8rem;
@@ -900,7 +908,7 @@ article blockquote:before {
 	opacity: 1;
 	float: left;
 	line-height: 1;
-}
+} */
 
 article:first-letter {
 	float: left;
