@@ -1,0 +1,18 @@
+I"�<h1 id="spring에서-mybatis를-빠르게-사용해보자">Spring에서 MyBatis를 빠르게 사용해보자</h1>
+
+<p>기록용이라 다소 내용이 부실한 점 양해바라며 참고한 사이트의 링크를 남겨두겠습니다.</p>
+
+<h2 id="mybatis-적용">MyBatis 적용</h2>
+
+<blockquote>
+  <p>사용된 의존성</p>
+
+  <p>```xml</p>
+</blockquote>
+<dependency>
+    <groupId>org.mybatis</groupId>
+    <artifactId>mybatis-spring</artifactId>
+    <version>2.0.6</version>
+</dependency>
+<p>```</p>
+:ET

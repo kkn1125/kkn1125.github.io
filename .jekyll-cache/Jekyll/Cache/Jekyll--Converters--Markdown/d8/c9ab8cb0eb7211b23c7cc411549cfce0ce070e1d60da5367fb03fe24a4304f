@@ -1,0 +1,87 @@
+I"<h1 id="spring에서-mybatis를-빠르게-사용해보자">Spring에서 MyBatis를 빠르게 사용해보자</h1>
+
+<p>기록용이라 다소 내용이 부실한 점 양해바라며 참고한 사이트의 링크를 남겨두겠습니다.</p>
+
+<h2 id="mybatis-적용">MyBatis 적용</h2>
+
+<blockquote>
+  <p>사용된 의존성</p>
+</blockquote>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+</pre></td><td class="rouge-code"><pre><span class="c">&lt;!-- ${org.springframework-version} === 5.3.6 --&gt;</span>
+<span class="nt">&lt;dependency&gt;</span>
+    <span class="nt">&lt;groupId&gt;</span>org.springframework<span class="nt">&lt;/groupId&gt;</span>
+    <span class="nt">&lt;artifactId&gt;</span>spring-jdbc<span class="nt">&lt;/artifactId&gt;</span>
+    <span class="nt">&lt;version&gt;</span>${org.springframework-version}<span class="nt">&lt;/version&gt;</span>
+<span class="nt">&lt;/dependency&gt;</span>
+<span class="nt">&lt;dependency&gt;</span>
+    <span class="nt">&lt;groupId&gt;</span>org.mybatis<span class="nt">&lt;/groupId&gt;</span>
+    <span class="nt">&lt;artifactId&gt;</span>mybatis-spring<span class="nt">&lt;/artifactId&gt;</span>
+    <span class="nt">&lt;version&gt;</span>2.0.6<span class="nt">&lt;/version&gt;</span>
+<span class="nt">&lt;/dependency&gt;</span>
+<span class="nt">&lt;dependency&gt;</span>
+    <span class="nt">&lt;groupId&gt;</span>org.mybatis<span class="nt">&lt;/groupId&gt;</span>
+    <span class="nt">&lt;artifactId&gt;</span>mybatis<span class="nt">&lt;/artifactId&gt;</span>
+    <span class="nt">&lt;version&gt;</span>3.5.7<span class="nt">&lt;/version&gt;</span>
+<span class="nt">&lt;/dependency&gt;</span>
+<span class="nt">&lt;dependency&gt;</span>
+    <span class="nt">&lt;groupId&gt;</span>mysql<span class="nt">&lt;/groupId&gt;</span>
+    <span class="nt">&lt;artifactId&gt;</span>mysql-connector-java<span class="nt">&lt;/artifactId&gt;</span>
+    <span class="nt">&lt;version&gt;</span>8.0.24<span class="nt">&lt;/version&gt;</span>
+<span class="nt">&lt;/dependency&gt;</span>
+<span class="c">&lt;!-- 참고로 롬복 사용 중 입니다. --&gt;</span>
+<span class="nt">&lt;dependency&gt;</span>
+    <span class="nt">&lt;groupId&gt;</span>org.projectlombok<span class="nt">&lt;/groupId&gt;</span>
+    <span class="nt">&lt;artifactId&gt;</span>lombok<span class="nt">&lt;/artifactId&gt;</span>
+    <span class="nt">&lt;version&gt;</span>1.18.22<span class="nt">&lt;/version&gt;</span>
+    <span class="nt">&lt;scope&gt;</span>provided<span class="nt">&lt;/scope&gt;</span>
+<span class="nt">&lt;/dependency&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>의존성 추가할 때 발생하는 오류는 <code class="language-plaintext highlighter-rouge">mybatis-spring</code>과 <code class="language-plaintext highlighter-rouge">mybatis</code>의 버전에 따라 발생할 수 있으니 <code class="language-plaintext highlighter-rouge">maven repository</code>에서 확인하시기 바랍니다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">Spring-Boot</code>에서는 <code class="language-plaintext highlighter-rouge">application.properties</code>로 
+<code class="language-plaintext highlighter-rouge">mybatis.type-aliases-package='package.path'</code>만 설정해주면 <code class="language-plaintext highlighter-rouge">@Mapper</code> 어노테이션을 곧바로 사용해서 간단하게 사용했었습니다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">spring</code>도 되겠거니하고 달랑 <code class="language-plaintext highlighter-rouge">Mapper</code> 어노테이션을 붙였더니 엄청나게 긴 빨간글들을 뱉어냈습니다…</p>
+
+<p>오류들을 쭉 읽다보니 발견한 문제점 3가지!</p>
+
+<ol>
+  <li>sqlSessionFactory 어쩌고가 없어용</li>
+  <li>mysql.cj 어쩌고가 메모리누수 어쩌고…</li>
+  <li>mapper라는 Bean을 생성하지 못했어요!(라고 영어로 적혀있어요)</li>
+</ol>
+
+<p>보통 보면 에러 중에서 제일 윗 녀석이 원초적인 문제인 경우가 많더라구요.</p>
+
+<p><a href="{{site.baseurl}}/assets/images/post/springboot/mybatis/batis04.png"></a></p>
+:ET
