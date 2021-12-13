@@ -77,7 +77,7 @@ published: true
 
 ## MapperScan과 SqlSessionFactory
 
-> mapper를 설정하는 방법을 모르신다면 블로그에 있는 [SPRING BOOT MyBatis 시작하기](https://kkn1125/github.io/spring-boot-mybatis01)를 참고해주세요!
+> mapper를 설정하는 방법을 모르신다면 블로그에 있는 [SPRING BOOT MyBatis 시작하기](https://kkn1125.github.io/spring-boot-mybatis01){:target="_blank"}를 참고해주세요!
 
 두 가지가 필요합니다. `MapperScan`과 `SqlSessionFactory`인데요.
 
