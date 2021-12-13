@@ -6,7 +6,17 @@ author: Kimson
 categories: [ JAVASCRIPT, TIL ]
 image: assets/images/post/covers/TIL-javascript.png
 tags: [ spa, router, vanilla js ]
-description: ""
+description: "Vanilla JavaScript로 SPA 구현
+
+제목을 어떻게 지을까 하다가 임시로 아는 단어를 적어두었습니다...
+
+`SPA`는 `Single Page Application`의 약자이고 하나의 페이지에 동적으로 화면을 바꿔가면서 상호작용하도록 합니다.
+
+아직 라우터에 대해 제대로된 지식이 없어 지적을 주시면 곧바로 수정하도록 하겠습니다. 기록할 주요 내용은 이렇습니다. 
+
+먼저 `ajax`를 사용하는 것은 제외했습니다. `ajax`로 하기에 아직 `fetch`와 `async`, `await`를 잘 다루지 못하는 시점이라 `javascript`로 `render`와 `component`를 구현해서 데이터를 만들어 적용하는 연습을 해보았습니다.
+
+`SPA`에는 찾아보니 종류가 몇 가지 있었는데요."
 featured: true
 hidden: false
 rating: 4
