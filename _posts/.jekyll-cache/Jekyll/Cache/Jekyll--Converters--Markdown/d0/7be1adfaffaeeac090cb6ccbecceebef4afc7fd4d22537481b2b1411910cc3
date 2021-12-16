@@ -1,0 +1,42 @@
+I"�<h1 id="tiles-파일-못-찾을-때">Tiles 파일 못 찾을 때</h1>
+
+<p>저와 같은 상황이시라면 도움이 되시기를 바랍니다… 상황은 이렇습니다.</p>
+
+<p>분명 <code class="language-plaintext highlighter-rouge">inc</code>라는 폴더에 <code class="language-plaintext highlighter-rouge">layout.jsp</code>를 <code class="language-plaintext highlighter-rouge">template</code>으로 불러오고 <code class="language-plaintext highlighter-rouge">body</code>라는 이름으로 <code class="language-plaintext highlighter-rouge">Controller</code>에서 <code class="language-plaintext highlighter-rouge">root.*</code>로 요청되는 페이지를 <code class="language-plaintext highlighter-rouge">{1}</code>에 매핑하여 불러올 때</p>
+
+<p>분명히 <code class="language-plaintext highlighter-rouge">inc</code>폴더에 헤더나 푸터 파일을 생성하고 불러오면 안되는 현상이 발생했습니다.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="cp">&lt;!DOCTYPE tiles-definitions
+    PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" "http://tiles.apache.org/dtds/tiles-config_3_0.dtd"&gt;</span>
+<span class="nt">&lt;tiles-definitions&gt;</span>
+
+    <span class="nt">&lt;definition</span> <span class="na">name=</span><span class="s">"baseTemp"</span> <span class="na">template=</span><span class="s">"/WEB-INF/views/inc/layout.jsp"</span><span class="nt">&gt;</span>
+    	<span class="nt">&lt;put-attribute</span> <span class="na">name=</span><span class="s">"title"</span> <span class="na">value=</span><span class="s">"Home"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/definition&gt;</span>
+    
+    <span class="nt">&lt;definition</span> <span class="na">name=</span><span class="s">"root.*"</span> <span class="na">extends=</span><span class="s">"baseTemp"</span><span class="nt">&gt;</span>
+    	<span class="nt">&lt;put-attribute</span> <span class="na">name=</span><span class="s">"title"</span> <span class="na">value=</span><span class="s">"Home"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;put-attribute</span> <span class="na">name=</span><span class="s">"body"</span> <span class="na">value=</span><span class="s">"/WEB-INF/views/{1}.jsp"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;put-attribute</span> <span class="na">name=</span><span class="s">"leftSide"</span> <span class="na">value=</span><span class="s">"/WEB-INF/views/inc/lsb.jsp"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/definition&gt;</span>
+
+<span class="nt">&lt;/tiles-definitions&gt;</span>
+</code></pre></div></div>
+
+<p>위의 코드는 작업 중에 만났던 에러부분입니다.</p>
+
+<p>baseTemp에 template을 <code class="language-plaintext highlighter-rouge">/WEB-INF/views/inc/layout.jsp</code>로 지정했습니다. 로드가 안되는 부분이 <code class="language-plaintext highlighter-rouge">root.*</code>의 <code class="language-plaintext highlighter-rouge">leftSide</code>이구요.</p>
+
+<p>물론 <code class="language-plaintext highlighter-rouge">layout.jsp</code>에서 <code class="language-plaintext highlighter-rouge">insertAttribute</code>속성에 <code class="language-plaintext highlighter-rouge">ignore</code>을 <code class="language-plaintext highlighter-rouge">true</code>로 한 상태였습니다.</p>
+
+<p>이전 프로젝트에서 저렇게 불러왔던 기억이 있어 살펴보니 같은 경로가 아닌 서브폴더를 두고 불러오는 방식으로 되어 있는 것을 보고 폴더를 생성하여 <code class="language-plaintext highlighter-rouge">lsb.jsp</code>를 그 안에 넣고 실행했습니다.</p>
+
+<p>결과는 성공…</p>
+
+<h1 id="결론">결론</h1>
+
+<p><code class="language-plaintext highlighter-rouge">extends</code>사용 시 <code class="language-plaintext highlighter-rouge">template</code>으로 사용하는 <code class="language-plaintext highlighter-rouge">layoutjsp</code>와 같은 경로에 있는 <code class="language-plaintext highlighter-rouge">jsp</code>파일을 <code class="language-plaintext highlighter-rouge">put-attribute</code>로 가져오면 발생하는 오류인 것 같습니다.</p>
+
+<p>즉, <code class="language-plaintext highlighter-rouge">a/layout.jsp</code>로 <code class="language-plaintext highlighter-rouge">template</code>를 지정했다고 가정했을 때 <code class="language-plaintext highlighter-rouge">sidebar.jsp</code>를 특정 페이지에서만 붙이고 싶다면 파일경로를 <code class="language-plaintext highlighter-rouge">a/sidebar.jsp</code>가 아닌 <code class="language-plaintext highlighter-rouge">b/sidebar.jsp</code> 혹은 <code class="language-plaintext highlighter-rouge">a/b/sidebar.jsp</code>로 중첩되지 않는 경로로 설정해줘야 이런 에러를 피할 수 있을 것 같습니다.</p>
+:ET

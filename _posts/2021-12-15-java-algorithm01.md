@@ -6,7 +6,13 @@ author: Kimson
 categories: [ JAVA, TIL, ALGORITHM ]
 image: assets/images/post/covers/TIL-java.png
 tags: [ kakao, algorithm ]
-description: ""
+description: "2020 kakao 인턴 키패드 문제
+
+if문을 많이 남발하다가 결국 풀이를 슬쩍 보면서 풀었습니다...
+
+조건은 단순합니다.
+
+양손 엄지가 있고 키패드가 `0-9`까지 `*`과 `#`이 있습니다. 그리고 손잡이 유형이 왼쪽이냐 오른쪽이냐가 조건으로 주어집니다."
 featured: true
 hidden: false
 rating: 4
@@ -17,7 +23,6 @@ keysum: false
 keywords: ""
 published: true
 ---
-
 # 2020 kakao 인턴 키패드 문제
 
 if문을 많이 남발하다가 결국 풀이를 슬쩍 보면서 풀었습니다...

@@ -1,0 +1,40 @@
+I"p<h1 id="기초-다지기">기초 다지기</h1>
+
+<h2 id="10진수를-16진수로-변환">10진수를 16진수로 변환</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">a</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'%x'</span> <span class="o">%</span> <span class="nb">int</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+<span class="c1"># %x를 사용하면 16진수로 변환가능
+</span><span class="k">print</span><span class="p">(</span><span class="s">'%X'</span> <span class="o">%</span> <span class="nb">int</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+<span class="c1"># %X를 대문자로 하면 대문자로 16진수 출력 255 &gt;&gt; FF
+</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">hex</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">a</span><span class="p">)))</span>
+<span class="c1"># 0x가 붙고 변환이 된다.
+</span>
+<span class="c1"># ex a가 255면 %x는 ff
+# hex()는 0xff
+</span></code></pre></div></div>
+
+<h2 id="16진수를-8진수로-변환">16진수를 8진수로 변환</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">a</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'%o'</span> <span class="o">%</span> <span class="nb">int</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="mi">16</span><span class="p">))</span>
+<span class="c1"># int함수에 두번째 인자로 진수를 주면 해당 진수로 변환된다.
+</span></code></pre></div></div>
+
+<h2 id="10진수-유니코드로-변환">10진수 유니코드로 변환</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">a</span> <span class="o">=</span> <span class="nb">ord</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
+<span class="c1"># 입력이 A일때 반환은 65
+# 10이상은 안된다.
+# 문자값 -&gt; 정수값
+</span></code></pre></div></div>
+
+<h2 id="정수-유니코드-문자로-변환">정수 유니코드 문자로 변환</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">a</span> <span class="o">=</span> <span class="nb">chr</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">()))</span>
+<span class="c1"># 48부터 0, 48미만 없음
+# 음수 불가
+# 정수값 &gt; 문자값
+</span></code></pre></div></div>
+:ET

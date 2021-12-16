@@ -1,0 +1,103 @@
+I"5<h1 id="elexpression-language">EL(Expression Language)</h1>
+
+<p>EL에 대해서 사용하면서 header의 referer가 필요한 상황이 생겼습니다. 물론 <code class="language-plaintext highlighter-rouge">getHeader</code>메서드로 불러오는 방법도 있지만 굳이 변수에 담아서 하기에 번거로워질 것 같아 <code class="language-plaintext highlighter-rouge">EL</code>을 요즘 자주 쓰고 있습니다.</p>
+
+<h2 id="header-가져오기">header 가져오기</h2>
+
+<div class="language-jsp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"${header.referer}"</span><span class="nt">&gt;</span>이전페이지<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div></div>
+
+<p>이렇게 하면 header에 있는 referer를 받아와 이전페이지로 안내하기 간단해졌습니다.</p>
+
+<h2 id="그-외-사용">그 외 사용</h2>
+
+<p>표로 정리해보겠습니다. 찾아보니 사용가능한 타입들이 많았습니다.</p>
+
+<table class="table text-dark table-hover text-center bg-white">
+  <thead>
+    <tr>
+      <th style="text-align: center">No</th>
+      <th style="text-align: left">: Implicit Object  :</th>
+      <th style="text-align: left">:       Desc.    :</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">1</td>
+      <td style="text-align: left">pageScope</td>
+      <td style="text-align: left">페이지 범위 변수</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">2</td>
+      <td style="text-align: left">requestScope</td>
+      <td style="text-align: left">request 범위 변수</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">3</td>
+      <td style="text-align: left">sessionScope</td>
+      <td style="text-align: left">session 범위 변수</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">4</td>
+      <td style="text-align: left">applicationScope</td>
+      <td style="text-align: left">application 범위 변수</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">5</td>
+      <td style="text-align: left">param</td>
+      <td style="text-align: left">파라미터 정보</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">6</td>
+      <td style="text-align: left">paramValues</td>
+      <td style="text-align: left">파라미터 전체</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">7</td>
+      <td style="text-align: left">header</td>
+      <td style="text-align: left">헤더 정보</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">8</td>
+      <td style="text-align: left">headerValues</td>
+      <td style="text-align: left">쿼리식으로 request headers 전체 출력</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">9</td>
+      <td style="text-align: left">initParam</td>
+      <td style="text-align: left">컨텍스트 초기화 파라미터 출력</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">10</td>
+      <td style="text-align: left">cookie</td>
+      <td style="text-align: left">쿠키 값</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">:       :</td>
+      <td style="text-align: left">pageContext</td>
+      <td style="text-align: left">:</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">^^   11</td>
+      <td style="text-align: left">.request.queryString</td>
+      <td style="text-align: left">^^ 현재 페이지의 JSP PageContext 객체</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">^^</td>
+      <td style="text-align: left">.session.queryString</td>
+      <td style="text-align: left">^^</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">^^</td>
+      <td style="text-align: left">.response</td>
+      <td style="text-align: left">^^</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>아래에 참고한 사이트를 링크하였습니다. 참고 바랍니다.</p>
+
+<p><a href="https://www.tutorialspoint.com/jsp/jsp_expression_language.htm" target="_blank">JSP EL에 관한 참고 자료</a></p>
+:ET

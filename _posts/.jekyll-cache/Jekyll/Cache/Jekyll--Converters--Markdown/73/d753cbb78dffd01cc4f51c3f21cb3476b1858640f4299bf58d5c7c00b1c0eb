@@ -1,0 +1,75 @@
+I"R<h1 id="webassembly란">WebAssembly란</h1>
+
+<p>웹 어셈블리는 최신 웹 브라우저에서 실행할 수 있는 새로운 유형의 코드입니다. C나 C++, Rust, Java와 같은 언어를 웹에서 사용할 수 있게 해준다고 합니다. 아직 공부중인 영역이라 <a href="https://developer.mozilla.org/ko/docs/WebAssembly" target="_blank">MDN 웹어셈블리</a>를 참고하시면 좋을 것 같습니다. 추가로 참고한 사이트는 맨 하단에 링크를 남기겠습니다.</p>
+
+<p>웹어셈블리를 어제 막 알게 되었습니다. 유튜브의 신기한 알고리즘 덕에 <code class="language-plaintext highlighter-rouge">코딩애플</code>님의 영상을 보고 조금이나마 머리속에 남게 되었는데요.</p>
+
+<p>서버 없이 구동을 시킬 수 있다는 마법같은 이야기인지 단순히 빠르게 돌릴 수 있도록 해주는 것인지는 잘 모르겠습니다.</p>
+
+<p>주로 쓰는 언어인 Java를 webassembly로 변환할 수 있도록 도와주는 JWebAssembly라는 라이브러리를 받아 테스트한 것을 기록하고자 합니다.</p>
+
+<h2 id="jwebassembly-사용">JWebAssembly 사용</h2>
+
+<blockquote>
+  <p>실행환경<br />
+java openjdk 11.0.12<br />
+JWebAssembly-api v0.3<br />
+JWebAssembly Compiler v0.3<br />
+eclipse java</p>
+</blockquote>
+
+<p>스프링 Test도 작동 됩니다.</p>
+
+<p>WebAssembly로 변환할 대상 클래스를 생성합니다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Add.java</span>
+<span class="kn">import</span> <span class="nn">de.inetsoftware.jwebassembly.api.annotation.Export</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Add</span> <span class="o">{</span>
+	<span class="nd">@Export</span>
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">add</span><span class="o">(</span><span class="kt">int</span> <span class="n">a</span><span class="o">,</span> <span class="kt">int</span> <span class="n">b</span><span class="o">)</span> <span class="o">{</span>
+		<span class="k">return</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="o">;</span>
+	<span class="o">}</span>
+	<span class="nd">@Export</span>
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">minus</span><span class="o">(</span><span class="kt">int</span> <span class="n">a</span><span class="o">,</span> <span class="kt">int</span> <span class="n">b</span><span class="o">)</span> <span class="o">{</span>
+		<span class="k">return</span> <span class="n">a</span><span class="o">-</span><span class="n">b</span><span class="o">;</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>@Export라는 어노테이션으로 변환시킬 함수들을 내보냅니다. Export가 빠진 함수는 제외됩니다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// testWasm.java</span>
+<span class="kn">import</span> <span class="nn">java.io.File</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">de.inetsoftware.jwebassembly.JWebAssembly</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">testWasm</span> <span class="o">{</span>
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+		<span class="nc">JWebAssembly</span> <span class="n">wasm</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">JWebAssembly</span><span class="o">();</span>
+		<span class="n">wasm</span><span class="o">.</span><span class="na">addFile</span><span class="o">(</span><span class="k">new</span> <span class="nc">File</span><span class="o">(</span><span class="s">"bin/testwasm/Add.class"</span><span class="o">));</span>
+		<span class="nc">String</span> <span class="n">text</span> <span class="o">=</span> <span class="n">wasm</span><span class="o">.</span><span class="na">compileToText</span><span class="o">();</span>
+		<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="k">new</span> <span class="nc">File</span><span class="o">(</span><span class="s">"bin/testwasm/Add.class"</span><span class="o">).</span><span class="na">canRead</span><span class="o">());</span>
+		<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">text</span><span class="o">);</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>JWebAssembly을 하나 생성하고 addFile메서드로 변환대상 파일을 인자로 줍니다. 이때 Add.class인 점을 보셔야합니다. 계속 java로 해서 한참을…</p>
+
+<p>class파일은 java에서는 bin에 들어있고, spring이나 jsp는 target/classes에 들어있습니다.</p>
+
+<p>canRead로 확인해보고 <code class="language-plaintext highlighter-rouge">compileToText</code>로 변환 내용을 받아 출력해서  아래와 같이 나오면 성공입니다.</p>
+
+<p><img src="/assets/images/post/wasm/wasm01.png" alt="wasm" /></p>
+
+<p>이후로 어떻게 사용하고 하는지는 더 공부해서 기록에 남기려합니다.</p>
+
+<hr />
+
+<blockquote>
+  <p>참고사이트</p>
+</blockquote>
+
+<p target="_blank"><a href="https://speakerdeck.com/dalexandrov/webassembly-from-the-java-perspective?slide=108">WebAssembly from the Java Perspective</a></p>
+:ET
