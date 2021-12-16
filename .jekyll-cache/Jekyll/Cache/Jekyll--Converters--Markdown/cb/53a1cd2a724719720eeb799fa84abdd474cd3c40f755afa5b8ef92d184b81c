@@ -1,8 +1,12 @@
-I"��<div news-alert=""></div>
+I"҈<div news-alert=""></div>
 <div class="container">
 
     
-
+    <div>
+        <div><span class="badge bg-success">update</span><span class="badge text-muted">2021. 12. 16 14:26</span></div>
+        <div><span class="badge bg-primary">누적 방문자</span> <span id="total"></span></div>
+        <div><span class="badge bg-info">오늘 방문자</span> <span id="today"></span></div>
+    </div>
     <!-- todolist -->
     
     

@@ -440,3 +440,33 @@ NewsAlert.init({
         'Jekyll Theme를 만드는 중입니다. <a class="d-inline-block" href="https://github.com/kkn1125/lessmore-jekyll-theme" target="_blank">[바로가기]</a>',
     ]
 });
+
+// visite check
+async function checkVisite() {
+    const visiteCount = await fetch('https://url.kr/6po2f9', {
+        method: 'get',
+        mode: "no-cors",
+        credentials: 'same-origin'
+    });
+    const getResponse = await visiteCount.text().catch(e=>console.error(e.message)).finally(e=>console.info('fing'));
+}
+
+checkVisite();
+
+async function getVisiteCount(){
+    fetch(`https://api.allorigins.win/get?url=${encodeURIComponent('https://url.kr/6po2f9*')}`)
+  .then(response => {
+    if (response.ok) return response.json()
+    throw new Error('Network response was not ok.')
+  })
+  .then(data => {
+        const parsedResponse = new DOMParser();
+        const body = [...parsedResponse.parseFromString(data.contents, 'text/html').body.querySelectorAll('div#short_stat table.table tbody tr')];
+        const total = body[1].querySelector('td:last-child');
+        const today = body[2].querySelector('td:last-child');
+        document.querySelector('#total').textContent = total.textContent.replace(/\B(?=(\d{3})+(?!\d))/g, ",")+'명';
+        document.querySelector('#today').textContent = today.textContent.replace(/\B(?=(\d{3})+(?!\d))/g, ",")+'명';
+    });
+}
+
+getVisiteCount();
