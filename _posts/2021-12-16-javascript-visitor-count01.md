@@ -6,7 +6,11 @@ author: Kimson
 categories: [ JAVASCRIPT, TIL, ALGORITHM ]
 image: assets/images/post/covers/TIL-javascript.png
 tags: [ visitors, counting ]
-description: ""
+description: "정적 웹에서 방문자 수 나타내기
+
+사실 오래 전부터 고민하면서 이것저것 시도를 했었는데요. 나름 꼼수를 사용한 방법을 소개해드리려 합니다. 만일 문제 될 시 해당 글은 삭제할 것 입니다.
+
+이 글을 보시는 고수 분들은 어딘가에 저촉되는 부분이 있다면 알려주시기바랍니다 :)"
 featured: true
 hidden: false
 rating: 4

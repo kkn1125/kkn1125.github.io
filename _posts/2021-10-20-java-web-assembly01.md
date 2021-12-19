@@ -9,7 +9,7 @@ tags: [ jdbc, template ]
 description: "WebAssembly란
 
 웹 어셈블리는 최신 웹 브라우저에서 실행할 수 있는 새로운 유형의 코드입니다. C나 C++, Rust, Java와 같은 언어를 웹에서 사용할 수 있게 해준다고 합니다. 아직 공부중인 영역이라 MDN 웹어셈블리를 참고하시면 좋을 것 같습니다. 추가로 참고한 사이트는 맨 하단에 링크를 남기겠습니다."
-featured: true
+featured: false
 hidden: false
 rating: 4.5
 toc: true

@@ -13,7 +13,7 @@ description: "Tiles 파일 못 찾을 때
 분명 `inc`라는 폴더에 `layout.jsp`를 `template`으로 불러오고 `body`라는 이름으로 `Controller`에서 `root.*`로 요청되는 페이지를 `{1}`에 매핑하여 불러올 때
 
 분명히 `inc`폴더에 헤더나 푸터 파일을 생성하고 불러오면 안되는 현상이 발생했습니다."
-featured: true
+featured: false
 hidden: false
 rating: 4
 toc: true

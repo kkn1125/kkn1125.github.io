@@ -15,7 +15,7 @@ description: "Module Pattern
 몇 달 전에 참고했던 러시아 분의 `tagEditor` 라는 저장소를 방문하여 이슈를 주고 받고, 해당 코드를 공부삼아 클론한 적이 있습니다. 그 당시 이해되지 않던 복잡해보이는 패턴을 사용해보고 변경해보고 활용하다보니 이제는 이렇게 코드를 짜지 않으면 성에 안차는 정도가 되었습니다.
 
 활용되었던 형태는 이렇습니다."
-featured: true
+featured: false
 hidden: false
 rating: 4
 toc: true

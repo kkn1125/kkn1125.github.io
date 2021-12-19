@@ -13,7 +13,7 @@ description: "Custom Tag
 `jekyll`의 `liquid`를 쓰다가 문득 `ruby`없이 `javascript`로 `html`을 파싱하고 내가 정한 약속된 부분을 읽어서 설정한 내용을 적용할 수 없을까 하는 생각에 공부할 겸 구현해봤습니다.
 
 liquid에서는 `{{ ... }}` 이렇게 콧수염을 이중으로 씁니다. 혹은 `{% ... %}` 이렇게 `jsp`의 스크립틀릿태그의 종류가 있듯이 기능에 따라 조금씩 다르게 변화시켜서 사용합니다."
-featured: true
+featured: false
 hidden: false
 rating: 4.5
 toc: true
