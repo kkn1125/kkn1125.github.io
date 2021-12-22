@@ -1,12 +1,15 @@
 ---
 layout: post
+modified: 2021-12-22 13:16:09 +0900
 date:   2021-12-06 21:27:46 +0900
 title:  "[JAVA] URL 경로의 내용 읽어오기"
 author: Kimson
 categories: [ JAVA, TIL ]
 image: assets/images/post/covers/TIL-java.png
 tags: [ read, url ]
-description: ""
+description: "URL 경로 내용 읽어오기
+
+`api`를 사용하다보니 데이터를 가져오고 사용할 일이 많아졌습니다. `JSOUP`을 사용하는 방법도 있지만 베이직한 것부터 차츰 기록하려합니다."
 featured: false
 hidden: false
 rating: 3

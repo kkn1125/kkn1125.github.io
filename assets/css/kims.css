@@ -31,6 +31,21 @@ img{
 	object-fit: cover;
 }
 
+.latestImgs{
+	aspect-ratio: 9/6;
+	width: 20em;
+}
+
+@media (min-width: 576px) {
+	.latestImgs{
+		width: 100%;
+	}
+}
+
+.imgFix{
+	width: 100%;
+}
+
 .text-decoration-line-through{
 	text-decoration-line: line-through;
 	-moz-text-decoration-line: line-through;

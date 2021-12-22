@@ -407,7 +407,7 @@ let NewsAlert = (function () {
         }
 
         this.clearView = function(view){
-            view.innerHTML = '';
+            if(view) view.innerHTML = '';
         }
     }
     return {
@@ -440,8 +440,58 @@ NewsAlert.init({
         'Jekyll Theme를 만드는 중입니다. <a class="d-inline-block" href="https://github.com/kkn1125/lessmore-jekyll-theme" target="_blank">[바로가기]</a>',
     ]
 });
-
+const validTime = 1000*60*60*24;
 // visite check
+function getUserIdentity(){
+    if(!localStorage['userInfo']){
+        localStorage['userInfo'] = '{}';
+    }
+    return JSON.parse(localStorage['userInfo']);
+}
+
+function setUserIdentity(userData){
+    localStorage['userInfo'] = JSON.stringify(userData);
+}
+
+function isVisitedUser(){
+    const userInfo = getUserIdentity();
+    if(Object.keys(userInfo).length>0) return true;
+    else return false;
+}
+
+if(!isVisitedUser()){
+    console.warn('[Alert] create new user!');
+    checkVisite(); // update visitor count!
+    setUserIdentity({
+        sid: navigator.userAgent.replace(/[\s]*/gm, '')+uuidv4(),
+        maxTime: new Date().getTime() + validTime,
+    });
+} else {
+    const userInfo = getUserIdentity();
+    if(userInfo['sid'].startsWith(navigator.userAgent.replace(/[\s]*/gm, ''))){
+        console.warn('[Alert] revisit user!');
+        if(new Date().getTime() > new Date(userInfo['maxTime']).getTime()){
+            checkVisite(); // update visitor count!
+            userInfo['maxTime'] = new Date().getTime + validTime;
+            setUserIdentity({
+                sid: userInfo['sid'],
+                maxTime: userInfo['maxTime'],
+            })
+            console.warn('[Alert] reset user maxTime!');
+        } else {
+            console.warn('[Alert] maxTime is still valid!');
+        }
+    }
+    console.info('hello there! thank you for revisit!');
+}
+
+function uuidv4() {
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+      var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+      return v.toString(16);
+    });
+}
+
 async function checkVisite() {
     const visiteCount = await fetch('https://url.kr/6po2f9', {
         method: 'get',
@@ -450,8 +500,6 @@ async function checkVisite() {
     });
     const getResponse = await visiteCount.text().catch(e=>console.error(e.message)).finally(e=>console.info('fing'));
 }
-
-checkVisite();
 
 async function getVisiteCount(){
     fetch(`https://api.allorigins.win/get?url=${encodeURIComponent('https://url.kr/6po2f9*')}`)
@@ -464,8 +512,8 @@ async function getVisiteCount(){
         const body = [...parsedResponse.parseFromString(data.contents, 'text/html').body.querySelectorAll('div#short_stat table.table tbody tr')];
         const total = body[1].querySelector('td:last-child');
         const today = body[2].querySelector('td:last-child');
-        document.querySelector('#total').textContent = total.textContent.replace(/\B(?=(\d{3})+(?!\d))/g, ",")+'명';
-        document.querySelector('#today').textContent = today.textContent.replace(/\B(?=(\d{3})+(?!\d))/g, ",")+'명';
+        if(document.querySelector('#total')) document.querySelector('#total').textContent = total.textContent.replace(/\B(?=(\d{3})+(?!\d))/g, ",")+'명';
+        if(document.querySelector('#today')) document.querySelector('#today').textContent = today.textContent.replace(/\B(?=(\d{3})+(?!\d))/g, ",")+'명';
     });
 }
 

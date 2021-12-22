@@ -1,5 +1,6 @@
 ---
 layout: post
+modified: 2021-12-22 13:16:09 +0900
 date:   2021-07-15 17:40:27 +0900
 title:  "[JAVASCRIPT] 달력만들기"
 author: Kimson
@@ -16,6 +17,7 @@ toc: true
 ---
 
 # Calendar 만들기
+
 Javascript 라이브러리를 끌어 쓰던 중 " 내가 만들면 어떨까 " 해서 작업을 하게 되었습니다.
 
 저번에 중구난방으로 만들어봤지만 뭔가 설정 하나하나 커스터마이징 할 수 있게 하는 것이 라이브러리들의 특징이 아닐까 싶어 열심히 라이브러리 구조를 베끼고 관찰하면서 지금의 초본이 만들어졌습니다.
@@ -23,6 +25,7 @@ Javascript 라이브러리를 끌어 쓰던 중 " 내가 만들면 어떨까 " �
 이제 막 시작 단계이고 더 공부해서 Todo-List나 예매사이트 등 여러가지 활용방향을 고려해서 부품을 조립하듯이 만들 예정입니다.
 
 사용법은 간단합니다.
+
 ```html
 <html>
     <head>
@@ -37,6 +40,7 @@ Javascript 라이브러리를 끌어 쓰던 중 " 내가 만들면 어떨까 " �
     </body>
 </html>
 ```
+
 body에 div에 감싸여진 채로 table태그를 생성하고 id값을 줍니다.
 
 script를 body종료 전에 생성합니다. ( src로 불러와도 됩니다. 단, devkalendar.js 이후에 아래의 구문을 적어야합니다. )
@@ -61,6 +65,7 @@ const example = com.devkimson.calendar.create(document.getElementById("example")
      }   
 });
 ```
+
 namespace ( com.devkimson.calendar )를 작성하고 인자 값으로 html에서 설정한 table의 id값을 적어줍니다.
 중괄호의 settings는 필요한 부분만 커스터마이징하여 사용하면 됩니다.
 
