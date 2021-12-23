@@ -1,0 +1,151 @@
+---
+layout: post
+date:   2021-12-23 17:14:46 +0900
+title:  "[JAVA] TDD를 알아보자"
+author: Kimson
+categories: [ JAVA, TIL, DevOps ]
+image: assets/images/post/covers/TIL-java.png
+tags: [ tdd, test driven development ]
+description: "Test Driven Development (TDD)
+
+이 내용은 명확한 내용을 담고 있다기에 부족한 내용일 수 있습니다. 주기적으로 확인하며 수정할 예정이니, 부족한 내용이나 틀린 부분은 댓글 혹은 이슈로 남겨주시기 바랍니다. 더 많은 정보는 하단 링크를 참조하시기 바랍니다.
+
+`TDD`는 방법론을 말하며 직역하면 \"테스트 주도 개발\"이라 한다."
+featured: true
+hidden: false
+rating: 4
+toc: true
+profile: false
+istop: true
+keysum: true
+keywords: "TDD_ATDD_테스트 주도 개발_XP"
+published: true
+---
+
+# Test Driven Development (TDD)
+
+> 이 내용은 명확한 내용을 담고 있다기에 부족한 내용일 수 있습니다. 주기적으로 확인하며 수정할 예정이니, 부족한 내용이나 틀린 부분은 댓글 혹은 이슈로 남겨주시기 바랍니다. 더 많은 정보는 하단 링크를 참조하시기 바랍니다.
+
+`TDD`는 방법론을 말하며 직역하면 "테스트 주도 개발"이라 한다.
+
+테스트 주도 개발(이하 "`TDD`")은 설계 이후 코드 개발과 테스트 케이스를 작성하는 기존 개발 프로세스와 달리 테스트 케이스 작성 후 실제 코드를 개발하여 리펙토링하는 절차를 가집니다. 그 이유로 `TDD`를 `Test First Development`라고도 합니다.
+
+짧은 개발 주기의 반복에 의존하는 개발 프로세스이고, 애자일 방법론 중 하나인 `eXtream Programming(XP)`의 `Test-First` 개념에 기반을 둔 단순 설계를 중요시 한다고 합니다.
+
+<p align="center">
+    <figure class="d-inline-block">
+        <img src="https://miro.medium.com/max/384/1*rvV11YOy8YJtiY1cjTTE6g.png" alt="" title="TDD개념">
+        <figcaption>[출처] RoarzOnRailz medium</figcaption>
+    </figure>
+</p>
+
+위 그림에 따르면 TDD의 일련의 과정은 5가지의 행위가 반복이 되는 모양새입니다.
+
+1. 테스트코드를 작성하고
+2. 테스트가 실패하면
+3. 코드를 수정하고
+4. 테스트가 성공하면
+5. 리팩토링합니다.
+6. 다시 테스트코드를 작성하고...(반복)
+
+
+`Red`, `Green`, `Refactor`라는 키워드 세 개가 원형을 그리며 도식화된 그림을 많이 보셨을 겁니다. 이는 `TDD`의 개발 주기를 표현한 것입니다.
+
+1. Red
+   - 실패하는 테스트 코드를 작성합니다.
+2. Green
+   - 테스트를 통과시키기 위한 실제 코드를 작성합니다.
+3. Refactor
+   - 동작을 변경하지 않고 코드를 개선합니다. (중복 코드 제거, 일반화 등)
+
+## TDD 주의 사항
+
+TDD방법론에서 중요한 것은 실패하는 테스트 코드를 작성할 때까지 실제 코드를 작성하지 않는 것, 실패하는 테스트를 통과할 정도만의 최소 실제 코드를 작성해야 하는 것입니다. 이 과정을 통해 실제 코드에 대해 명확한 결과를 정의하면서 불필요한 설계를 피할 수 있고 정확한 요구 사항에 집중할 수 있게 합니다.
+
+## 일반 개발 vs TDD 개발
+
+일반 개발에 있어서 흐름은 디자인 &#8594; 코드개발 &#8594; 테스트의 주기를 갖습니다.
+
+### 일반 개발 특징
+
+소프트웨어 개발을 느리게하는 리스크가 있습니다.
+
+1. 클라이언트 요구사항이 명확하지 않을 수 있습니다. 고로 완벽한 설계를 어렵습니다.
+2. 자체 버그 검출 능력이 저하되거나 소스코드 품질이 저하될 수 있습니다.
+3. 자체 테스트 비용이 증가할 가능성이 있습니다.
+
+마치 건축 설계와 마찬가지로 초기에 클라이언트 요구사항이 진행 되는 시점에서 변경되는 경우가 있으므로 그를 염두에 두고 러프하게 매스를 정하는 것과 유사하다고 볼 수 있겠습니다.
+
+이러한 이유들로 초기 설계를 완벽하게 한다고 말하기 힘들고, 진행 중 디자인의 오류나 다른 조건에 의해 재설계를 거쳐 완벽한 설계로 나아가는데, 코드의 수정, 삽입, 삭제 과정에서 불필요한 코드가 남거나 중복될 가능성이 큽니다.
+
+즉, 유지보수 측면에서 코드들의 재사용 및 관리가 어려워지게 만듭니다.
+
+### TDD 개발 특징
+
+디자인 단계에서 프로그래밍 목적을 미리 정의 해야하고, 무엇을 테스트해야 할지 미리 테스트케이스를 작성해야 한다고 합니다.
+
+테스트 코드를 작성하는 중 발생되는 예외는 테스트 케이스에 추가하고 설계를 개선해 나갑니다.
+
+이후 테스트에 통과된 코드만을 코드 개발 단계에서 실제 코드로 작성에 옮깁니다.
+
+테스트 케이스를 작성함으로 인해 설계가 개선됨과 동시에 검증된 코드는 실제코드로 옮겨져 재설계 시간이 감소됩니다.
+
+1. 객체 지향적 코드 생산
+   - TDD는 코드 재사용 보장을 위해 소프트웨어 개발 시 기능별 철저한 모듈화가 이루어집니다. 의존성이 낮은 모듈로 구성된 소프트웨어 개발을 가능하게 하고, 모듈 추가, 제거 시 소프트웨어 전반 구조에 영향을 미치지 않게 됩니다.
+2. 재설계 시간 단축
+   - 테스트 코드를 먼저 작성하기 때문에 현재 무엇을 해야하는지 분명히 정의하고 개발을 시작합니다. 테스트 시나리오를 작성하면서 다양한 예외에 대해 생각해 볼 수 있고, 개발 진행 중 소프트웨어 전방 설계가 변경되는 일을 방지할 수 있게 됩니다.
+3. 디버깅 시간 단축
+   - 유닛 테스팅을 하는 이점이며 사용자 데이터가 잘못 출력되거나 DB 문제 혹은 비즈니스 레이어 문제인지 전부 디버깅 해야하지만, TDD의 자동화 된 유닛테스팅을 전제로 특정 버그를 쉽게 찾아 디버깅 할 수 있게 해줍니다.
+4. 테스트 문서 대체 가능
+   - SI 프로젝트 진행 과정에서 특정 요소가 테스트 되었는지 알기 위한 테스트 정의서를 만듭니다. 단순 통합 테스트 문서에 지나지 않지만 TDD를 하게 되면 테스팅 자동화 시킬과 동시에 정확한 테스트 근거를 산출할 수 있다고 합니다.
+
+### TDD 개발 단점
+
+TDD방식이 가지는 큰 단점이 생산성 저하입니다. 일반적인 개발 방식에 비해 대략 10~30%정도 늘어난다고 하는데 SI프로젝트의 경우 소프트웨어 품질보다 납기일 준수가 보다 중요하기에 TDD방식을 잘 사용하지 않는다고 합니다.
+
+### TDD 개발이 어려운 이유와 숙제
+
+#### 자신의 개발 방식의 변경
+
+체득된 것을 바꾸기란 어려운 일입니다. 마치 젓가락을 쥐는 방법을 어릴 때 정석으로 배운 사람과 본인이 편하게 쥐는 방법으로 살아온 사람이 이후에 서로의 방식으로 바꿔 잡으라고 한다면, 혹은 본인의 방식으로 살던 사람이 정석의 방법으로 쥐게 한다면 적응하는데 힘이 들뿐더러 본인의 방식으로 하려고 할 것 입니다.
+
+`TDD`를 생각하는 `frame`에서 오는 강박이 있을 수 있다고 생각합니다.
+
+저 역시 `TDD`를 처음 듣고 검색하면 `TDD`의 툴을 소개하는 영상과 글이 굉장히 많습니다.
+
+그 때문에 `TDD`를 접할 때 `javascript`의 유닛테스트에 사용하는 툴 중에 `Jest`를 먼저 사용하면서 테스트 코드를 작성했고, `java`의 `JUnit`을 먼저 사용하며 테스트코드를 작성했습니다.
+
+이러한 `TDD`의 개념과 방법론에 대한 지식없이 했기 때문에 마치 후라이팬의 조리용도를 모르고 후라이팬에 김치찌개를 끓이는 느낌을 받았습니다.
+
+1. `TDD`하면 무언가 툴을 써야한다는 생각
+2. 툴과 규칙에 대한 강박
+
+#### TDD개발에 친숙하고 발전하려면 어떻게 해야할까
+
+방법론에는 여러가지의 해석이 있다고 생각합니다. `TDD`가 가지는 기본 개념과 기초적인 방법론을 따르되 거기에 얽메이지 말아야한다고 생각합니다.
+
+기능을 구현하고 테스트코드를 작성하며 근거를 마련하는 등의 검증 작업이 주는 과정과 결과를 좀 더 효율적으로 발전시키는 것은 자신의 방식에 있다고 봅니다.
+
+`TDD` 관련 글을 읽고 외국 문서를 보며 느끼는 점은 하나같이 툴에 대한 강조보다 원칙과 방법에 대해 설명하고, 툴을 사용하지 않을 때 `TDD`하는 것과 툴을 사용했을 때 `TDD`하는 것을 설명한다.
+
+-----
+
+📚 함께 보면 좋은 내용
+
+[Agile Manifesto(애자일 선언문)](https://agilemanifesto.org/){:target="_blank"}
+
+[BrowserStack - What is Test Driven Development (TDD) : Approach & Benefits](https://www.browserstack.com/guide/what-is-test-driven-development){:target="_blank"}
+
+[RoarzOnRailz - Test Driven Development](https://medium.com/thelearningcurve/test-driven-development-24be406e185c){:target="_blank"}
+
+[heejeong Kwon님 블로그 - [Agile] TDD(테스트 주도 개발)란](https://gmlwjd9405.github.io/2018/06/03/agile-tdd.html){:target="_blank"}
+
+[heejeong Kwon님 블로그 - TDD(Test-Driven-Development) 방법론에 대하여…](http://clipsoft.co.kr/wp/blog/tddtest-driven-development-%EB%B0%A9%EB%B2%95%EB%A1%A0/){:target="_blank"}
+
+[HANAMON님 블로그 - TDD란? 테스트 주도 개발](https://hanamon.kr/tdd%EB%9E%80-%ED%85%8C%EC%8A%A4%ED%8A%B8-%EC%A3%BC%EB%8F%84-%EA%B0%9C%EB%B0%9C/){:target="_blank"}
+
+[otrodevym님 블로그 - TDD 학습 및 실습 정리1(TDD의 기본사용법)](https://otrodevym.tistory.com/entry/TDD-%ED%95%99%EC%8A%B5-%EB%B0%8F-%EC%8B%A4%EC%8A%B5-%EC%A0%95%EB%A6%AC1){:target="_blank"}
+
+[windtrip님 블로그 - ATDD(Acceptance Test Driven Development)](https://velog.io/@windtrip/ATDDAcceptance-Test-Driven-Development){:target="_blank"}
+
+[wooaoe님 블로그 - [기술면접] TDD(Test-Driven-Development) 방법론에 대해서](https://wooaoe.tistory.com/33){:target="_blank"}

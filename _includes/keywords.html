@@ -3,12 +3,16 @@
 <blockquote class="my-5">
     
     <div class="text-capitalize" id="mainKeywords">
-        <h3>main keywords</h3>
+        <h3>메인 키워드</h3>
     </div>
-    {% for keyword in keywords %}
-    <p>{{keyword}}<hr></p>
-    {% endfor %}
-
+    <div class="user-select-none">
+        {% for keyword in keywords %}
+        <span class="badge bg-danger">
+            {{keyword}}
+        </span>
+        {% endfor %}
+    </div>
+    <hr>
     <footer class="blockquote-footer">
         kimson
     </footer>

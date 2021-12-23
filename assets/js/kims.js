@@ -445,6 +445,16 @@ const validTime = 1000*60*60*24;
 function getUserIdentity(){
     if(!localStorage['userInfo']){
         localStorage['userInfo'] = '{}';
+    } else {
+        const validUserMaxTimeInfo = JSON.parse(localStorage['userInfo'])['maxTime'];
+        if(isNaN(validUserMaxTimeInfo)){
+            if(validUserMaxTimeInfo.match(/[^0-9]/gm)) {
+                console.info('버그 수정된 버전으로 데이터 변경이 완료되었습니다.');
+                localStorage['userInfo'] = '{}';
+            }
+        } else {
+            console.warn('[Matches] data is valid.');
+        }
     }
     return JSON.parse(localStorage['userInfo']);
 }
@@ -472,7 +482,7 @@ if(!isVisitedUser()){
         console.warn('[Alert] revisit user!');
         if(new Date().getTime() > new Date(userInfo['maxTime']).getTime()){
             checkVisite(); // update visitor count!
-            userInfo['maxTime'] = new Date().getTime + validTime;
+            userInfo['maxTime'] = new Date().getTime() + validTime;
             setUserIdentity({
                 sid: userInfo['sid'],
                 maxTime: userInfo['maxTime'],

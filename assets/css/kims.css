@@ -7,6 +7,14 @@ body[scroll="disabled"]{
 	overflow: hidden;
 }
 
+html, body{
+	overflow-x: hidden;
+}
+
+body{
+	position: relative;
+}
+
 button.cpbtn{
 	position: absolute;
 	right: 0;
@@ -33,7 +41,13 @@ img{
 
 .latestImgs{
 	aspect-ratio: 9/6;
-	width: 20em;
+	width: 10em;
+}
+
+figure figcaption{
+	background: #80808085;
+    color: white;
+	font-size: .8em;
 }
 
 @media (min-width: 576px) {

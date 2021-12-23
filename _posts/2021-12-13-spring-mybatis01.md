@@ -1,12 +1,15 @@
 ---
 layout: post
+modified: 2021-12-23 17:13:41 +0900
 date:   2021-12-13 17:16:37 +0900
 title:  "[SPRING] MyBatis 사용하기 01"
 author: Kimson
 categories: [ SPRING, TIL ]
 image: assets/images/post/springboot/mybatis/batis03.png
 tags: [ java configuration, mybatis, SqlSessionFactory ]
-description: ""
+description: "Spring에서 MyBatis를 빠르게 사용해보자
+
+기록용이라 다소 내용이 부실한 점 양해바라며 참고한 사이트의 링크를 남겨두겠습니다."
 featured: true
 hidden: false
 rating: 4
@@ -124,7 +127,7 @@ public class RootConfig {
 
 -----
 
-함께 보면 좋은 내용
+📚 함께 보면 좋은 내용
 
 [MySQL 페이지 - Connecting to MySQL Using the JDBC DriverManager Interface](https://dev.mysql.com/doc/connector-j/8.0/en/connector-j-usagenotes-connect-drivermanager.html){:target="_blank"}
 

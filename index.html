@@ -10,7 +10,8 @@ description: "나를 표현하는 블로그. 끊임없이 도전하고 공부하
 <div class="container">
 
     {% if page.url == "/" %}
-    <div>
+    <div class="mb-3">
+        <div><span class="badge bg-success">Record Start Date</span><span class="badge text-muted">2021. 12. 16</span></div>
         <div><span class="badge bg-success">update</span><span class="badge text-muted">{{"now" | date: "%Y. %m. %d %H:%M"}}</span></div>
         <div><span class="badge bg-primary">누적 방문자</span> <span id="total"></span></div>
         <div><span class="badge bg-info">오늘 방문자</span> <span id="today"></span></div>

@@ -75,10 +75,27 @@ layout: default
 
 
 		<div class="col-md-12 col-lg-8">
-
+			<!-- Toc -->
+			<!-- Toc if any -->
+			{% if page.toc %}
+				{% if page.beforetoc %}
+					<p><em>{{page.beforetoc}}</em></p>
+				{% endif %}
+				<div class="toc mt-4 mb-4 lead">
+					<h3 class="font-weight-bold">요약</h3>
+					{% include toc.html html=content %}
+				</div>
+			{% endif %}
+			<!-- End Toc -->
+			<!-- Toc -->
+			<!-- Keysum if any -->
+			{% if page.keysum %}
+				{% include keywords.html %}
+			{% endif %}
 			<!-- Article -->
 			<article class="article-post">
 				{{ content }}
+				
 				<!-- donaricano -->
 				{% include buymeacoffee.html %}
 			</article>
@@ -94,7 +111,7 @@ layout: default
 			</div>
 
 			<!-- Mailchimp Subscribe Form -->
-			{% if site.mailchimp-list %}
+			<!-- {% if site.mailchimp-list %}
 			<div class="border p-5 bg-lightblue">
 				<div class="row justify-content-between">
 					<div class="col-md-6 mb-2 mb-md-0">
@@ -121,7 +138,7 @@ layout: default
 					</div>
 				</div>
 			</div>
-			{% endif %}
+			{% endif %} -->
 
 
 			<!-- Author Box -->
