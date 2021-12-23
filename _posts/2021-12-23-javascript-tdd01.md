@@ -32,12 +32,12 @@ published: true
 
 짧은 개발 주기의 반복에 의존하는 개발 프로세스이고, 애자일 방법론 중 하나인 `eXtream Programming(XP)`의 `Test-First` 개념에 기반을 둔 단순 설계를 중요시 한다고 합니다.
 
-<p align="center">
+<div align="center">
     <figure class="d-inline-block">
         <img src="https://miro.medium.com/max/384/1*rvV11YOy8YJtiY1cjTTE6g.png" alt="" title="TDD개념">
         <figcaption>[출처] RoarzOnRailz medium</figcaption>
     </figure>
-</p>
+</div>
 
 위 그림에 따르면 TDD의 일련의 과정은 5가지의 행위가 반복이 되는 모양새입니다.
 
