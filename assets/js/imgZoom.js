@@ -40,6 +40,7 @@ imgs.forEach(img=>{
             btn.innerHTML = "&times;";
             btn.classList.add('btn','btn-danger', 'position-absolute');
             btn.style.right = '2em';
+            btn.style.zIndex = '100';
             btn.addEventListener('click', ()=>{
                 pop.classList.remove("show");
                 setTimeout(()=>{
