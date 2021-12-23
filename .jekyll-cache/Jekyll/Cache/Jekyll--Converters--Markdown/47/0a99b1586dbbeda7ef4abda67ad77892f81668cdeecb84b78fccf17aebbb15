@@ -1,0 +1,929 @@
+I"Jd<div news-alert=""></div>
+<div class="container">
+
+    
+    <!--endif page url is / -->
+
+
+
+    <!-- Now the rest of the posts with the usual loop but with an offset:4 on the first page so we can skeep the first 4 posts displayed above -->
+
+    <div class="row mt-3">
+
+        <div class="col-md-8 main-loop">
+
+            <div class="pb-3 mb-3 border-bottom">
+                <span class="h4 pb-3 border-bottom">All Stories</span>
+                <span>
+                    <span class="badge bg-primary">69</span>
+                </span>
+            </div>
+
+
+            
+
+            <div class="mb-5 d-flex justify-content-between flex-column flex-md-row main-loop-card">
+	<div class="pr-3">
+		<h2 class="mb-1 h4 font-weight-bold">
+		<a class="text-dark" href="/javascript-public-data/">[JAVASCRIPT] 공공데이터로 페이징 처리하기</a>
+		</h2>
+		<p class="excerpt">
+		공공데이터 페이지 처리하기
+		</p>
+		<small class="d-block text-muted">
+			In <span class="catlist">
+			
+			<a class="text-capitalize badge bg-success smoothscroll" href="/categories.html#til">TIL</a><span class="sep"> </span>
+			
+			<a class="text-capitalize badge bg-success smoothscroll" href="/categories.html#javascript">JAVASCRIPT</a><span class="sep"> </span>
+			
+			</span>
+		</small>
+		<small class="text-muted">
+			Aug 06, 2021
+		</small>
+	</div>
+	
+		<div class="col-md-3 pr-0 text-right">
+		<a href="/javascript-public-data/">
+		<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/publicData/public-cover.png" alt="[JAVASCRIPT] 공공데이터로 페이징 처리하기" />
+		</a>
+		</div>
+	
+</div>
+
+            
+
+            <div class="mb-5 d-flex justify-content-between flex-column flex-md-row main-loop-card">
+	<div class="pr-3">
+		<h2 class="mb-1 h4 font-weight-bold">
+		<a class="text-dark" href="/javascript-category-filter/">[JAVASCRIPT] 카테고리 필터</a>
+		</h2>
+		<p class="excerpt">
+		Category Filter
+		</p>
+		<small class="d-block text-muted">
+			In <span class="catlist">
+			
+			<a class="text-capitalize badge bg-success smoothscroll" href="/categories.html#tim">TIM</a><span class="sep"> </span>
+			
+			<a class="text-capitalize badge bg-success smoothscroll" href="/categories.html#javascript">JAVASCRIPT</a><span class="sep"> </span>
+			
+			</span>
+		</small>
+		<small class="text-muted">
+			Aug 05, 2021
+		</small>
+	</div>
+	
+		<div class="col-md-3 pr-0 text-right">
+		<a href="/javascript-category-filter/">
+		<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIM-none.png" alt="[JAVASCRIPT] 카테고리 필터" />
+		</a>
+		</div>
+	
+</div>
+
+            
+
+            <div class="mb-5 d-flex justify-content-between flex-column flex-md-row main-loop-card">
+	<div class="pr-3">
+		<h2 class="mb-1 h4 font-weight-bold">
+		<a class="text-dark" href="/javascript-object/">[JAVASCRIPT] 객체와 프로토타입</a>
+		</h2>
+		<p class="excerpt">
+		Object (객체)
+		</p>
+		<small class="d-block text-muted">
+			In <span class="catlist">
+			
+			<a class="text-capitalize badge bg-success smoothscroll" href="/categories.html#til">TIL</a><span class="sep"> </span>
+			
+			<a class="text-capitalize badge bg-success smoothscroll" href="/categories.html#javascript">JAVASCRIPT</a><span class="sep"> </span>
+			
+			</span>
+		</small>
+		<small class="text-muted">
+			Aug 03, 2021
+		</small>
+	</div>
+	
+		<div class="col-md-3 pr-0 text-right">
+		<a href="/javascript-object/">
+		<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] 객체와 프로토타입" />
+		</a>
+		</div>
+	
+</div>
+
+            
+
+            <div class="mb-5 d-flex justify-content-between flex-column flex-md-row main-loop-card">
+	<div class="pr-3">
+		<h2 class="mb-1 h4 font-weight-bold">
+		<a class="text-dark" href="/java-cookie/">[JAVA] Cookie에 관한 고찰</a>
+		</h2>
+		<p class="excerpt">
+		Cookie 사용
+		</p>
+		<small class="d-block text-muted">
+			In <span class="catlist">
+			
+			<a class="text-capitalize badge bg-success smoothscroll" href="/categories.html#til">TIL</a><span class="sep"> </span>
+			
+			<a class="text-capitalize badge bg-success smoothscroll" href="/categories.html#java">JAVA</a><span class="sep"> </span>
+			
+			</span>
+		</small>
+		<small class="text-muted">
+			Aug 02, 2021
+		</small>
+	</div>
+	
+		<div class="col-md-3 pr-0 text-right">
+		<a href="/java-cookie/">
+		<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/cookie/cookie.PNG" alt="[JAVA] Cookie에 관한 고찰" />
+		</a>
+		</div>
+	
+</div>
+
+            
+
+            <div class="mb-5 d-flex justify-content-between flex-column flex-md-row main-loop-card">
+	<div class="pr-3">
+		<h2 class="mb-1 h4 font-weight-bold">
+		<a class="text-dark" href="/javascript-calendar02/">[JAVASCRIPT] 달력만들기 - TODO LIST</a>
+		</h2>
+		<p class="excerpt">
+		TODO List
+		</p>
+		<small class="d-block text-muted">
+			In <span class="catlist">
+			
+			<a class="text-capitalize badge bg-success smoothscroll" href="/categories.html#til">TIL</a><span class="sep"> </span>
+			
+			<a class="text-capitalize badge bg-success smoothscroll" href="/categories.html#javascript">JAVASCRIPT</a><span class="sep"> </span>
+			
+			</span>
+		</small>
+		<small class="text-muted">
+			Jul 24, 2021
+		</small>
+	</div>
+	
+		<div class="col-md-3 pr-0 text-right">
+		<a href="/javascript-calendar02/">
+		<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/jsdevKal/devkal-3.png" alt="[JAVASCRIPT] 달력만들기 - TODO LIST" />
+		</a>
+		</div>
+	
+</div>
+
+            
+
+            <div class="mb-5 d-flex justify-content-between flex-column flex-md-row main-loop-card">
+	<div class="pr-3">
+		<h2 class="mb-1 h4 font-weight-bold">
+		<a class="text-dark" href="/java-timestamp01/">[JAVA] Timestamp 시간 나타내기</a>
+		</h2>
+		<p class="excerpt">
+		MySQL Timestamp타입 웹에서 시간 표기
+		</p>
+		<small class="d-block text-muted">
+			In <span class="catlist">
+			
+			<a class="text-capitalize badge bg-success smoothscroll" href="/categories.html#til">TIL</a><span class="sep"> </span>
+			
+			<a class="text-capitalize badge bg-success smoothscroll" href="/categories.html#java">JAVA</a><span class="sep"> </span>
+			
+			</span>
+		</small>
+		<small class="text-muted">
+			Jul 24, 2021
+		</small>
+	</div>
+	
+		<div class="col-md-3 pr-0 text-right">
+		<a href="/java-timestamp01/">
+		<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/mysql_cover.png" alt="[JAVA] Timestamp 시간 나타내기" />
+		</a>
+		</div>
+	
+</div>
+
+            
+
+            <div class="mb-5 d-flex justify-content-between flex-column flex-md-row main-loop-card">
+	<div class="pr-3">
+		<h2 class="mb-1 h4 font-weight-bold">
+		<a class="text-dark" href="/java-jackson-databind/">[JAVA] Json 기본 익히기</a>
+		</h2>
+		<p class="excerpt">
+		Jackson data bind
+		</p>
+		<small class="d-block text-muted">
+			In <span class="catlist">
+			
+			<a class="text-capitalize badge bg-success smoothscroll" href="/categories.html#til">TIL</a><span class="sep"> </span>
+			
+			<a class="text-capitalize badge bg-success smoothscroll" href="/categories.html#java">JAVA</a><span class="sep"> </span>
+			
+			</span>
+		</small>
+		<small class="text-muted">
+			Jul 18, 2021
+		</small>
+	</div>
+	
+		<div class="col-md-3 pr-0 text-right">
+		<a href="/java-jackson-databind/">
+		<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/jacksonbind/jacksonbind01.png" alt="[JAVA] Json 기본 익히기" />
+		</a>
+		</div>
+	
+</div>
+
+            
+
+            <div class="mb-5 d-flex justify-content-between flex-column flex-md-row main-loop-card">
+	<div class="pr-3">
+		<h2 class="mb-1 h4 font-weight-bold">
+		<a class="text-dark" href="/javascript-calendar/">[JAVASCRIPT] 달력만들기</a>
+		</h2>
+		<p class="excerpt">
+		Calendar 만들기
+		</p>
+		<small class="d-block text-muted">
+			In <span class="catlist">
+			
+			<a class="text-capitalize badge bg-success smoothscroll" href="/categories.html#til">TIL</a><span class="sep"> </span>
+			
+			<a class="text-capitalize badge bg-success smoothscroll" href="/categories.html#javascript">JAVASCRIPT</a><span class="sep"> </span>
+			
+			</span>
+		</small>
+		<small class="text-muted">
+			Jul 15, 2021
+		</small>
+	</div>
+	
+		<div class="col-md-3 pr-0 text-right">
+		<a href="/javascript-calendar/">
+		<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/jsdevKal/devkal.png" alt="[JAVASCRIPT] 달력만들기" />
+		</a>
+		</div>
+	
+</div>
+
+            
+
+            <div class="mb-5 d-flex justify-content-between flex-column flex-md-row main-loop-card">
+	<div class="pr-3">
+		<h2 class="mb-1 h4 font-weight-bold">
+		<a class="text-dark" href="/javascript-ajax01/">[JAVASCRIPT] AJAX 전송 한글 깨짐 문제</a>
+		</h2>
+		<p class="excerpt">
+		1. Ajax 전송 한글 깨짐
+		</p>
+		<small class="d-block text-muted">
+			In <span class="catlist">
+			
+			<a class="text-capitalize badge bg-success smoothscroll" href="/categories.html#til">TIL</a><span class="sep"> </span>
+			
+			<a class="text-capitalize badge bg-success smoothscroll" href="/categories.html#javascript">JAVASCRIPT</a><span class="sep"> </span>
+			
+			</span>
+		</small>
+		<small class="text-muted">
+			Jul 13, 2021
+		</small>
+	</div>
+	
+		<div class="col-md-3 pr-0 text-right">
+		<a href="/javascript-ajax01/">
+		<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/what.jpg" alt="[JAVASCRIPT] AJAX 전송 한글 깨짐 문제" />
+		</a>
+		</div>
+	
+</div>
+
+            
+
+            <div class="mt-5">
+                <!-- Pagination links -->
+                
+                <ul class="pagination">
+                    
+                    <li class="page-item"><a class="page-link" href="/page6/">&laquo;
+                            Prev</a></li>
+                    
+
+                    
+                    
+                    <li class="page-item"><a class="page-link" href="/">1</a></li>
+                    
+                    
+                    
+                    <li class="page-item"><a class="page-link" href="/page2/">2</a>
+                    </li>
+                    
+                    
+                    
+                    <li class="page-item"><a class="page-link" href="/page3/">3</a>
+                    </li>
+                    
+                    
+                    
+                    <li class="page-item"><a class="page-link" href="/page4/">4</a>
+                    </li>
+                    
+                    
+                    
+                    <li class="page-item"><a class="page-link" href="/page5/">5</a>
+                    </li>
+                    
+                    
+                    
+                    <li class="page-item"><a class="page-link" href="/page6/">6</a>
+                    </li>
+                    
+                    
+                    
+                    <li class="page-item disabled"><span class="webjeda page-link">7</span></li>
+                    
+                    
+
+                    
+                    <li class="page-item disabled"><span class="next page-link">&raquo;</span></li>
+                    
+                </ul>
+                
+            </div>
+
+        </div>
+
+        <div class="col-md-4">
+            <div class="sticky-top sticky-top-offset">
+    <div class="pb-3 mb-3 border-bottom">
+        <span class="h4 pb-3 border-bottom">Featured</span>
+    </div>
+    <ol class="list-featured">
+
+        
+
+        
+        <li class="mb-4">
+            <span>
+                <h6 class="font-weight-bold">
+                    <a href="/batch01/" class="text-dark">[Shell] Shell Script 공부 시작</a>
+                </h6>
+                <span class="d-block text-muted">
+                    In <span class="catlist">
+                        
+                        <a class="text-capitalize badge bg-success smoothscroll" href="/categories.html#shell">Shell</a><span class="sep"> </span>
+                        
+                        <a class="text-capitalize badge bg-success smoothscroll" href="/categories.html#til">TIL</a><span class="sep"> </span>
+                        
+                    </span>
+                </span>
+            </span>
+        </li>
+
+        
+
+        
+
+        
+        <li class="mb-4">
+            <span>
+                <h6 class="font-weight-bold">
+                    <a href="/javascript-jest01/" class="text-dark">[JAVASCRIPT] Jest를 사용해보자</a>
+                </h6>
+                <span class="d-block text-muted">
+                    In <span class="catlist">
+                        
+                        <a class="text-capitalize badge bg-success smoothscroll" href="/categories.html#javascript">JAVASCRIPT</a><span class="sep"> </span>
+                        
+                        <a class="text-capitalize badge bg-success smoothscroll" href="/categories.html#til">TIL</a><span class="sep"> </span>
+                        
+                        <a class="text-capitalize badge bg-success smoothscroll" href="/categories.html#devops">DevOps</a><span class="sep"> </span>
+                        
+                    </span>
+                </span>
+            </span>
+        </li>
+
+        
+
+        
+
+        
+        <li class="mb-4">
+            <span>
+                <h6 class="font-weight-bold">
+                    <a href="/java-tdd01/" class="text-dark">[JAVA] TDD를 알아보자</a>
+                </h6>
+                <span class="d-block text-muted">
+                    In <span class="catlist">
+                        
+                        <a class="text-capitalize badge bg-success smoothscroll" href="/categories.html#java">JAVA</a><span class="sep"> </span>
+                        
+                        <a class="text-capitalize badge bg-success smoothscroll" href="/categories.html#til">TIL</a><span class="sep"> </span>
+                        
+                        <a class="text-capitalize badge bg-success smoothscroll" href="/categories.html#devops">DevOps</a><span class="sep"> </span>
+                        
+                    </span>
+                </span>
+            </span>
+        </li>
+
+        
+
+        
+
+        
+        <li class="mb-4">
+            <span>
+                <h6 class="font-weight-bold">
+                    <a href="/javascript-char-count/" class="text-dark">[JAVASCRIPT] 2020 카카오 문자열 압축 풀이</a>
+                </h6>
+                <span class="d-block text-muted">
+                    In <span class="catlist">
+                        
+                        <a class="text-capitalize badge bg-success smoothscroll" href="/categories.html#javascript">JAVASCRIPT</a><span class="sep"> </span>
+                        
+                        <a class="text-capitalize badge bg-success smoothscroll" href="/categories.html#til">TIL</a><span class="sep"> </span>
+                        
+                        <a class="text-capitalize badge bg-success smoothscroll" href="/categories.html#algorithm">ALGORITHM</a><span class="sep"> </span>
+                        
+                    </span>
+                </span>
+            </span>
+        </li>
+
+        
+
+        
+
+        
+        <li class="mb-4">
+            <span>
+                <h6 class="font-weight-bold">
+                    <a href="/javascript-grabbing-loaded-page/" class="text-dark">[JAVASCRIPT] 페이지 내용이 동적으로 로드되는 페이지 자바스크립트로 읽어오기</a>
+                </h6>
+                <span class="d-block text-muted">
+                    In <span class="catlist">
+                        
+                        <a class="text-capitalize badge bg-success smoothscroll" href="/categories.html#javascript">JAVASCRIPT</a><span class="sep"> </span>
+                        
+                        <a class="text-capitalize badge bg-success smoothscroll" href="/categories.html#til">TIL</a><span class="sep"> </span>
+                        
+                        <a class="text-capitalize badge bg-success smoothscroll" href="/categories.html#algorithm">ALGORITHM</a><span class="sep"> </span>
+                        
+                    </span>
+                </span>
+            </span>
+        </li>
+
+        
+
+        
+
+        
+        <li class="mb-4">
+            <span>
+                <h6 class="font-weight-bold">
+                    <a href="/javascript-visitor-count01/" class="text-dark">[JAVASCRIPT] 정적 웹에서 방문자 수 나타내기</a>
+                </h6>
+                <span class="d-block text-muted">
+                    In <span class="catlist">
+                        
+                        <a class="text-capitalize badge bg-success smoothscroll" href="/categories.html#javascript">JAVASCRIPT</a><span class="sep"> </span>
+                        
+                        <a class="text-capitalize badge bg-success smoothscroll" href="/categories.html#til">TIL</a><span class="sep"> </span>
+                        
+                        <a class="text-capitalize badge bg-success smoothscroll" href="/categories.html#algorithm">ALGORITHM</a><span class="sep"> </span>
+                        
+                    </span>
+                </span>
+            </span>
+        </li>
+
+        
+
+        
+
+        
+        <li class="mb-4">
+            <span>
+                <h6 class="font-weight-bold">
+                    <a href="/java-algorithm01/" class="text-dark">[JAVA] Kakao 인턴</a>
+                </h6>
+                <span class="d-block text-muted">
+                    In <span class="catlist">
+                        
+                        <a class="text-capitalize badge bg-success smoothscroll" href="/categories.html#java">JAVA</a><span class="sep"> </span>
+                        
+                        <a class="text-capitalize badge bg-success smoothscroll" href="/categories.html#til">TIL</a><span class="sep"> </span>
+                        
+                        <a class="text-capitalize badge bg-success smoothscroll" href="/categories.html#algorithm">ALGORITHM</a><span class="sep"> </span>
+                        
+                    </span>
+                </span>
+            </span>
+        </li>
+
+        
+
+        
+
+        
+
+        
+
+        
+        <li class="mb-4">
+            <span>
+                <h6 class="font-weight-bold">
+                    <a href="/spring-mybatis01/" class="text-dark">[SPRING] MyBatis 사용하기 01</a>
+                </h6>
+                <span class="d-block text-muted">
+                    In <span class="catlist">
+                        
+                        <a class="text-capitalize badge bg-success smoothscroll" href="/categories.html#spring">SPRING</a><span class="sep"> </span>
+                        
+                        <a class="text-capitalize badge bg-success smoothscroll" href="/categories.html#til">TIL</a><span class="sep"> </span>
+                        
+                    </span>
+                </span>
+            </span>
+        </li>
+
+        
+
+        
+
+        
+        <li class="mb-4">
+            <span>
+                <h6 class="font-weight-bold">
+                    <a href="/javascript-routing01/" class="text-dark">[JAVASCRIPT] Vanilla JavaScript로 SPA를 구현해보자</a>
+                </h6>
+                <span class="d-block text-muted">
+                    In <span class="catlist">
+                        
+                        <a class="text-capitalize badge bg-success smoothscroll" href="/categories.html#javascript">JAVASCRIPT</a><span class="sep"> </span>
+                        
+                        <a class="text-capitalize badge bg-success smoothscroll" href="/categories.html#til">TIL</a><span class="sep"> </span>
+                        
+                    </span>
+                </span>
+            </span>
+        </li>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        <li class="mb-4">
+            <span>
+                <h6 class="font-weight-bold">
+                    <a href="/javascript-dark-mode04/" class="text-dark">[JAVASCRIPT] 정적웹에 다크모드 적용하기 04</a>
+                </h6>
+                <span class="d-block text-muted">
+                    In <span class="catlist">
+                        
+                        <a class="text-capitalize badge bg-success smoothscroll" href="/categories.html#javascript">JAVASCRIPT</a><span class="sep"> </span>
+                        
+                        <a class="text-capitalize badge bg-success smoothscroll" href="/categories.html#til">TIL</a><span class="sep"> </span>
+                        
+                    </span>
+                </span>
+            </span>
+        </li>
+
+        
+
+        
+
+        
+        <li class="mb-4">
+            <span>
+                <h6 class="font-weight-bold">
+                    <a href="/javascript-typerjs01/" class="text-dark">[JAVASCRIPT] Typer 0.2.0 pre-release 한글 타이핑 효과</a>
+                </h6>
+                <span class="d-block text-muted">
+                    In <span class="catlist">
+                        
+                        <a class="text-capitalize badge bg-success smoothscroll" href="/categories.html#javascript">JAVASCRIPT</a><span class="sep"> </span>
+                        
+                        <a class="text-capitalize badge bg-success smoothscroll" href="/categories.html#typer">Typer</a><span class="sep"> </span>
+                        
+                        <a class="text-capitalize badge bg-success smoothscroll" href="/categories.html#tim">TIM</a><span class="sep"> </span>
+                        
+                    </span>
+                </span>
+            </span>
+        </li>
+
+        
+
+        
+
+        
+        <li class="mb-4">
+            <span>
+                <h6 class="font-weight-bold">
+                    <a href="/javascript-web-tutorial/" class="text-dark">[JAVASCRIPT] 웹 튜토리얼 구현하기</a>
+                </h6>
+                <span class="d-block text-muted">
+                    In <span class="catlist">
+                        
+                        <a class="text-capitalize badge bg-success smoothscroll" href="/categories.html#javascript">JAVASCRIPT</a><span class="sep"> </span>
+                        
+                        <a class="text-capitalize badge bg-success smoothscroll" href="/categories.html#til">TIL</a><span class="sep"> </span>
+                        
+                        <a class="text-capitalize badge bg-success smoothscroll" href="/categories.html#tim">TIM</a><span class="sep"> </span>
+                        
+                    </span>
+                </span>
+            </span>
+        </li>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        <li class="mb-4">
+            <span>
+                <h6 class="font-weight-bold">
+                    <a href="/javascript-documentify-js/" class="text-dark">[JAVASCRIPT] Documentify ( 문서화 ) 구현</a>
+                </h6>
+                <span class="d-block text-muted">
+                    In <span class="catlist">
+                        
+                        <a class="text-capitalize badge bg-success smoothscroll" href="/categories.html#tim">TIM</a><span class="sep"> </span>
+                        
+                        <a class="text-capitalize badge bg-success smoothscroll" href="/categories.html#til">TIL</a><span class="sep"> </span>
+                        
+                        <a class="text-capitalize badge bg-success smoothscroll" href="/categories.html#javascript">JAVASCRIPT</a><span class="sep"> </span>
+                        
+                    </span>
+                </span>
+            </span>
+        </li>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        <li class="mb-4">
+            <span>
+                <h6 class="font-weight-bold">
+                    <a href="/javascript-send-mail/" class="text-dark">[JAVASCRIPT] 자바스크립트 메일 보내기</a>
+                </h6>
+                <span class="d-block text-muted">
+                    In <span class="catlist">
+                        
+                        <a class="text-capitalize badge bg-success smoothscroll" href="/categories.html#til">TIL</a><span class="sep"> </span>
+                        
+                        <a class="text-capitalize badge bg-success smoothscroll" href="/categories.html#javascript">JAVASCRIPT</a><span class="sep"> </span>
+                        
+                    </span>
+                </span>
+            </span>
+        </li>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+    </ol>
+</div>
+        </div>
+
+    </div>
+
+
+
+</div>
+:ET
