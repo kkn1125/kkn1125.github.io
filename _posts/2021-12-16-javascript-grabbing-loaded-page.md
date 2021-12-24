@@ -1,5 +1,6 @@
 ---
 layout: post
+modified: 2021-12-24 22:15:34 +0900
 date:   2021-12-16 18:41:37 +0900
 title:  "[JAVASCRIPT] 페이지 내용이 동적으로 로드되는 페이지 자바스크립트로 읽어오기"
 author: Kimson
@@ -12,7 +13,7 @@ description: "동적 로드 페이지 내용을 읽어오자
 \"`fetch`로 긁어오면 빈 태그들만 있고 심지어 클래스명도 다르네?\"
 
 자바스크립트로 동적 로드되어 내용의 클래스가 변경되고 나머지 요소들이 렌더링 되는 식으로 구현되어 있는 것 같아 로드된 내용을 불러 올 수 없을까 하는 마음에 시도해봤습니다."
-featured: true
+featured: false
 hidden: false
 rating: 4
 toc: true
