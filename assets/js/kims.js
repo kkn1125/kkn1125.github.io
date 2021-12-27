@@ -112,9 +112,9 @@ window.addEventListener('load', function(){
             }
 
             made.innerHTML = `Devkimson`;
-            made.setAttribute("class","d-block badge text-end text-light made")
+            made.setAttribute("class","w-block tag text-end text-light made")
             
-            badge.setAttribute("class","lang-badge p-2 badge bg-"+color);
+            badge.setAttribute("class","lang-badge tag tag-"+color);
             // 210809 mysql 설정
             badge.innerHTML = `${(lang=='sql'?"My":"")+lang.charAt(0).toUpperCase()+lang.slice(1)}`;
             wrap.setAttribute("class","wrap-badge position-absolute d-flex flex-column");
@@ -237,19 +237,6 @@ document.getElementById('sendMail').addEventListener('click', function () {
     }
 
 });
-
-window.addEventListener('load', footerHandler);
-window.addEventListener('resize', footerHandler);
-function footerHandler(ev){
-    let footer = document.querySelector('footer.footer');
-    let winHeight = window.innerHeight;
-    let bodyHeight = document.body.clientHeight;
-    let footerHeight = footer.clientHeight;
-    if(winHeight>=bodyHeight){
-        if(footer.style.position!='absolute') footer.style.position = 'absolute';
-        footer.style.top = `${parseFloat(winHeight-footerHeight-51)}px`;
-    }
-}
 
 let NewsAlert = (function () {
     function Controller() {

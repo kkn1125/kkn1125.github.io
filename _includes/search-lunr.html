@@ -52,10 +52,14 @@ var idx = lunr(function () {
 });
 
 function lunr_search(term) {
+    if(term.trim()=='') {
+        alert('검색어를 입력해주세요.');
+        return;
+    }
     $('#lunrsearchresults').show( 1000 );
     $( "body" ).addClass( "modal-open" );
     
-    document.getElementById('lunrsearchresults').innerHTML = '<div id="resultsmodal" class="modal fade show d-block"  tabindex="-1" role="dialog" aria-labelledby="resultsmodal"> <div class="modal-dialog shadow-lg" role="document"> <div class="modal-content"> <div class="modal-header" id="modtit"> <button type="button" class="btn-close btn-sm" id="btnx" data-dismiss="modal" aria-label="Close"></button> </div> <div class="modal-body"> <ul class="mb-0"> </ul>    </div> <div class="modal-footer"><button id="btnx" type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button></div></div> </div></div>';
+    document.getElementById('lunrsearchresults').innerHTML = '<div id="resultsmodal" class="modal fade show d-block"  tabindex="-1" role="dialog" aria-labelledby="resultsmodal"> <div class="modal-dialog shadow-lg" role="document"> <div class="modal-content"> <div class="modal-header" id="modtit"> <button type="button" class="btn px-1 btn-danger btn-sm" id="btnx" data-dismiss="modal" aria-label="Close">&times;</button> </div> <div class="modal-body"> <ul class="mb-0"> </ul>    </div> <div class="modal-footer"><button id="btnx" type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button></div></div> </div></div>';
     if(term) {
         document.getElementById('modtit').innerHTML = "<h5 class='modal-title'>Search results for '" + term + "'</h5>" + document.getElementById('modtit').innerHTML;
         //put results on the screen.
@@ -72,7 +76,7 @@ function lunr_search(term) {
                 document.querySelectorAll('#lunrsearchresults ul')[0].innerHTML = document.querySelectorAll('#lunrsearchresults ul')[0].innerHTML + "<li class='lunrsearchresult'><a href='" + url + "'><span class='title'>" + title + "</span><br /><small><span class='body'>"+ body +"</span><br /><span class='url'>"+ url +"</span></small></a></li>";
             }
         } else {
-            document.querySelectorAll('#lunrsearchresults ul')[0].innerHTML = "<li class='lunrsearchresult'>Sorry, no results found. Close & try a different search!</li>";
+            document.querySelectorAll('#lunrsearchresults ul')[0].innerHTML = "<li class='lunrsearchresult'>키워드 조회 결과가 없습니다! 다른 키워드로 검색해주세요 :)</li>";
         }
     }
     return false;
@@ -87,6 +91,12 @@ function lunr_search(term) {
     .lunrsearchresult a:hover .title {text-decoration: underline;}
 </style>
 
-<form class="bd-search hidden-sm-down" onSubmit="return lunr_search(document.getElementById('lunrsearch').value);">
-    <input type="text" class="form-control text-small"  id="lunrsearch" name="q" value="" placeholder="Type keyword and enter..."> 
-</form>
+
+<li>
+    <form class="search btn-bundle g-0" onSubmit="return lunr_search(document.getElementById('lunrsearch').value);">
+        <input type="text" class="form-input col" id="lunrsearch" name="q" value="" placeholder="검색어를 입력해주세요.">
+        <button class="btn btn-info">
+            <i class="fas fa-search"></i>
+        </button>
+    </form>
+</li>

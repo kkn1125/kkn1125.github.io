@@ -107,9 +107,9 @@ com.devkimson.calendar = { // 기능들
 		span.appendChild(btn);
 
 		// year select
-		var span2 = document.createElement("span");
+		// var span2 = document.createElement("span");
 		var select = document.createElement("select");
-		select.setAttribute("class", "form-select");
+		select.setAttribute("class", "form-select col");
 		select.addEventListener("change", (event) => {
 			now.$$year = parseInt(event.target.value);
 			this.Calendar(now.$$year, now.$$month);
@@ -123,11 +123,12 @@ com.devkimson.calendar = { // 기능들
 			option.appendChild(node);
 			select.appendChild(option);
 		}
-		span2.appendChild(select)
+		span.appendChild(select);
+		// span2.appendChild(select)
 
 		// month select
 		select = document.createElement("select");
-		select.setAttribute("class", "form-select");
+		select.setAttribute("class", "form-select col");
 		select.addEventListener("change", (event) => {
 			now.$$month = parseInt(event.target.value);
 			this.Calendar(now.$$year, now.$$month);
@@ -141,11 +142,12 @@ com.devkimson.calendar = { // 기능들
 			option.appendChild(node);
 			select.appendChild(option);
 		}
-		span2.appendChild(select)
+		// span2.appendChild(select)
 		// span2 attr
-		span2.setAttribute("class", "d-flex justify-content-center w-100");
+		// span2.setAttribute("class", "d-flex justify-content-center w-100");
 		span.style.paddingBottom = "20px";
-		span.appendChild(span2);
+		span.appendChild(select);
+		// span.appendChild(span2);
 
 		// next btn
 		btn = document.createElement("button");
@@ -158,7 +160,7 @@ com.devkimson.calendar = { // 기능들
 		span.appendChild(btn);
 
 		// span attr
-		span.setAttribute("class", "d-flex justify-content-between btn-group");
+		span.setAttribute("class", "w-flex justify-content-center btn-bundle");
 		td.setAttribute("colspan", "7"); // 210806수정
 		td.style.borderTop = "none";
 
@@ -182,13 +184,6 @@ com.devkimson.calendar = { // 기능들
 					"marginLeft": "auto",
 					"marginRight": "auto"
 				}) : "";
-
-			// $etting.table.height !== undefined ?
-			// 	$(this._id).css("height", $etting.table.height) : $(this._id).css("height", "25rem");
-
-			$etting.table.color !== undefined ?
-				this._id.setAttribute("class", this._id.getAttribute("class") + " " + $etting.table.color) :
-				this._id.setAttribute("class", this._id.getAttribute("class") + " text-muted");
 
 			$etting.table.bgColor !== undefined ?
 				this._id.setAttribute("class", this._id.getAttribute("class") + " " + $etting.table.bgColor) :
@@ -242,6 +237,22 @@ com.devkimson.calendar = { // 기능들
 		thead.appendChild(tr);
 		this._id.appendChild(thead);
 
+	},
+
+	getCountDone: function(){
+		let count = 0;
+		for(key of Object.keys(this.data.year).values()){
+			for(key2 of Object.keys(this.data.year[key].month)){
+				for(key3 of Object.keys(this.data.year[key].month[key2].date)){
+					for(key4 of this.data.year[key].month[key2].date[key3]){
+						if(key4.tag=='check'){
+							count++;
+						}
+					}
+				}
+			}
+		}
+		return count;
 	},
 
 	Calendar: function (__year, __month) { // 달력 만드는 기능
@@ -314,22 +325,6 @@ com.devkimson.calendar = { // 기능들
 		// todo marker place
 		if(this.data.year[cal.$year]!=undefined && this.data.year[cal.$year].month[cal.$month]!=undefined) // json구조 바뀌면서 변경
 		{
-			let count = 0;
-			for(key of Object.keys(this.data.year).values()){
-				for(key2 of Object.keys(this.data.year[key].month)){
-					for(key3 of Object.keys(this.data.year[key].month[key2].date)){
-						for(key4 of this.data.year[key].month[key2].date[key3]){
-							if(key4.tag=='check'){
-								count++;
-							}
-						}
-					}
-				}
-			}
-			if(document.getElementById('totalCount')==null)
-				$(this._id).after(`
-					<div id="totalCount" class="text-end"><span class="badge bg-success fs-6">완료 <b>${count}</b> 개</span></div>
-				`);
 			for(key of Object.keys(this.data.year[cal.$year].month[cal.$month].date)){
 				// todo marker
 				var span = document.createElement('span');
@@ -405,25 +400,25 @@ com.devkimson.calendar = { // 기능들
 
 	Marker: function ($marker) { // 클릭 날짜 표시
 		if (click == 0) {
-			var mark = document.createElement("span");
-			var node = document.createTextNode("");
+			let mark = document.createElement("span");
+			let node = document.createTextNode("");
 			mark.appendChild(node);
 			mark.setAttribute("id", "current");
 			mark.setAttribute("class", "position-absolute");
-			document.body.appendChild(mark);
+			document.querySelector('#kal').parentNode.appendChild(mark);
 			click += 1;
 		}
-		var cur = document.getElementById("current");
+		let cur = document.getElementById("current");
 
 		this.GetList(now.$$year, now.$$month, $marker);
 		
-		var ids = $marker == undefined ? document.getElementById(now.$$date) : document.getElementById($marker);
-		
-		var $top = $(ids).offset().top;
-		var $left = $(ids).offset().left;
-		var $height = $(ids).height();
-		var $width = $(ids).width();
-		var $etting = this._settings || {}; // or 연산자는 있는 값을 택해서 값을 저장시킴
+		let ids = $marker == undefined ? document.getElementById(now.$$date) : document.getElementById($marker);
+		let rect = ids.getBoundingClientRect();
+		let $top = ids.offsetTop;
+		let $left = ids.offsetLeft;
+		let $height = rect.height;
+		let $width = rect.width;
+		let $etting = this._settings || {}; // or 연산자는 있는 값을 택해서 값을 저장시킴
 		if (!$etting.marker) $etting.marker = {};
 		if (!$etting.transition) $etting.transition = {};
 		if (!$etting.attr) $etting.attr = {};
@@ -434,7 +429,7 @@ com.devkimson.calendar = { // 기능들
 		// 순서를 존재여부 값을 먼저 앞에 두고 디폴트값
 		// ".5s cubic-bezier(1, 0, 0, 1)"
 
-		var _mset = {
+		let _mset = {
 			transition: ($etting.marker.speed || ".5s") + " " + ($etting.marker.bezier || "cubic-bezier(1, 0, 0, 1)"), // settable
 
 			display: "inline-block",
@@ -456,7 +451,6 @@ com.devkimson.calendar = { // 기능들
 					:0)) 
 				+ "px)"
 		};
-		
 		cur.style.transition = _mset.transition; // settable
 		cur.style.display = _mset.display;
 		cur.style.borderBottom = _mset.borderBottom; // settable
@@ -478,6 +472,10 @@ com.devkimson.calendar = { // 기능들
 		$(div).prepend(`<span id="dateLine">
 			${year} ${month+1} <span class="h3">${date}</span>
 		</span>`);
+		if(document.getElementById('totalCount')==null)
+			$('#dateLine').after(`
+			<span id="totalCount" class="text-end"><span class="tag tag-success fs-6">완료 <b>${this.getCountDone()}</b> 개</span></span>
+		`);
 	},
 
 	_day: function(day){
@@ -515,12 +513,8 @@ com.devkimson.calendar = { // 기능들
 		$(list).attr({
 			"id":"list"
 		}).css({
-			"borderTop":"3px solid gray",
-			"borderBottom":"3px solid gray",
-			"borderRadius":"5px",
 			"padding":"1rem",
 			"marginTop":"1rem",
-			"backgroundColor":"rgba(0,0,0,0.02)"
 		});
 
 		$(list).html(`
@@ -535,8 +529,8 @@ com.devkimson.calendar = { // 기능들
 		});
 
 		// h3.append(node); 막음
-		h3.innerHTML = `<span data-unselect="true" class="text-white badge bg-primary">TODO LIST for Kimson</span>`;
-		div.append(h3); // 리스트 네임(title)
+		// h3.innerHTML = `<span data-unselect="true" class="text-white tag tag-primary">TODO LIST for Kimson</span>`;
+		// div.append(h3); // 리스트 네임(title)
 		div.append(list); // 리스트 표시부분
 		// div.append(btnlist); // 텍스트 입력 및 버튼 막음
 		par.append(div);
@@ -617,7 +611,7 @@ com.devkimson.calendar = { // 기능들
 										todos += 
 										`
 											<div class="my-3 clearfix"><span>${this.tagging(key4.tag)}</span> ${key4.tag=='check'?"<del>"+key4.todo+"</del>":key4.todo}
-												<span class="badge text-muted float-end">${key4.time}</span>
+												<span class="tag text-muted float-end">${key4.time}</span>
 											</div>
 											${idx!=len?"<hr>":""}
 										`; // todo

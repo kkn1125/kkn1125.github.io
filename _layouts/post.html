@@ -2,11 +2,11 @@
 layout: default
 ---
 {% assign author = site.authors[page.author] %}
-<div class="container">
+<div class="fence">
 	<div class="mb-3 pl-0 pt-0 pb-0 position-relative">
-		<div class="h-100 tofront">
-			<div class="row {% if page.image %} justify-content-between {% else %} justify-content-center {% endif %}">
-				<div class="{% if page.image %} col-md-6 {% else %} col-md-8 {% endif %} pr-0 pr-md-4 pt-4 pb-4 align-self-center">
+		<div class="h-100">
+			<div class="w-flex flex-column flex-row-md {% if page.image %}justify-content-between{% else %} justify-content-center {% endif %}">
+				<div class="{% if page.image %} col {% else %} col-md-16 {% endif %} pe-0 pe-md-4 pt-4 pb-4 align-self-center">
 					<p class="text-uppercase font-weight-bold">
 						<span class="catlist">
 							{% for category in page.categories %}
@@ -16,21 +16,23 @@ layout: default
 							{% endfor %}
 						</span>
 					</p>
-					<h1 class="display-4 mb-4 article-headline">{{ page.title }}</h1>
-					<div class="d-flex align-items-center">
+					<div class="mb-4">
+						<span class="h2">{{ page.title }}</span>
+					</div>
+					<div class="w-flex align-items-center">
 						{% if author.avatar %}
 						<img class="rounded-circle me-3" src="{{site.baseurl}}/{{author.avatar}}" alt="{{author.name}}"
 							width="90" height="90" />
 						{% endif %}
-						<small class="ml-3"> {{ author.name }} <span><a target="_blank" href="{{ author.github }}"
-									class="btn btn-outline-success btn-sm btn-round ml-1">Follow</a></span>
-							<span class="text-muted d-block mt-1">{{ page.date | date: '%b %d, %Y' }} ·
+						<small class="ms-3"> {{ author.name }} <span><a target="_blank" href="{{ author.github }}"
+									class="btn btn-frame-success btn-sm btn-round ms-1">Follow</a></span>
+							<span class="text-muted w-block mt-1">{{ page.date | date: '%b %d, %Y' }} ·
 								{% include meta-read-time.html %}</span>
 						</small>
 					</div>
 				</div>
 				{% if page.image %}
-				<div class="col-md-6 pr-0 align-self-center">
+				<div class="col pr-0 align-self-center">
 					<img class="imgFix" style="box-shadow: 0 2.5em 1em -30px rgb(0 0 0 / 30%);" src="{% if page.image contains "://" %}{{ page.image }}{% else %}{{ site.baseurl }}/{{ page.image }}{% endif %}"
 						alt="{{ page.title }}">
 				</div>
@@ -38,31 +40,25 @@ layout: default
 			</div>
 			{% if page.modified %}
 			<div>
-				<span class="badge bg-danger bg-opacity-75">Modified at</span>
-				<span class="text-muted badge">{{page.modified | date: '%Y. %m. %d %H:%M'}}</span>
+				<span class="tag tag-danger bg-opacity-75">Modified at</span>
+				<span class="text-muted tag">{{page.modified | date: '%Y. %m. %d %H:%M'}}</span>
 			</div>
 			{% endif %}
 		</div>
 	</div>
 </div>
 
-
-
-
-
-<div class="container-lg pt-4 pb-4">
-	<div class="row justify-content-center">
-
-
+<div class="fence-full fence-lg pt-4 pb-4">
+	<div class="w-flex justify-content-center">
 		<!-- Share -->
-		<div class="col-lg-2 pr-4 mb-4 col-md-12">
-			<div class="sticky-top sticky-top-offset text-center">
+		<div class="col-lg-2 pe-4 mb-4 col-md-20">
+			<div class="position-sticky text-center" style="top: 130px;">
 				<div class="text-muted">
 					Share this
 				</div>
-				<div class="share d-inline-block">
+				<div class="share w-inline-block">
 					<!-- AddToAny BEGIN -->
-					<div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+					<div class="a2a_kit a2a_kit_size_32 a2a_default_style text-center">
 						<a class="a2a_dd" href="https://www.addtoany.com/share"></a>
 						<a class="a2a_button_facebook"></a>
 						<a class="a2a_button_twitter"></a>
@@ -73,8 +69,7 @@ layout: default
 			</div>
 		</div>
 
-
-		<div class="col-md-12 col-lg-8">
+		<div class="col-20 col-lg-18">
 			<!-- Toc -->
 			<!-- Toc if any -->
 			{% if page.toc %}
@@ -82,7 +77,7 @@ layout: default
 					<p><em>{{page.beforetoc}}</em></p>
 				{% endif %}
 				<div class="toc mt-4 mb-4 lead">
-					<h3 class="font-weight-bold">요약</h3>
+					<div class="h5 fw-bold">요약</div>
 					{% include toc.html html=content %}
 				</div>
 			{% endif %}
@@ -110,51 +105,20 @@ layout: default
 				</span>
 			</div>
 
-			<!-- Mailchimp Subscribe Form -->
-			<!-- {% if site.mailchimp-list %}
-			<div class="border p-5 bg-lightblue">
-				<div class="row justify-content-between">
-					<div class="col-md-6 mb-2 mb-md-0">
-						<h5 class="font-weight-bold">Join Newsletter</h5>
-						Get the latest news right in your inbox. We never spam!
-					</div>
-					<div class="col-md-6">
-						<div class="row">
-							<form action="{{site.mailchimp-list}}" method="post" name="mc-embedded-subscribe-form"
-								class="wj-contact-form validate w-100" target="_blank" novalidate>
-								<div class="mc-field-group">
-
-									<input type="email" placeholder="Enter e-mail address" name="EMAIL"
-										class="required email form-control w-100" id="mce-EMAIL" autocomplete="on"
-										required>
-
-
-									<button type="submit" value="Subscribe" name="subscribe"
-										class="heart btn btn-success btn-block w-100 mt-2">Subscribe</button>
-
-								</div>
-							</form>
-						</div>
-					</div>
-				</div>
-			</div>
-			{% endif %} -->
-
-
 			<!-- Author Box -->
 			{% if page.author %}
-			<div class="row mt-5">
-				<div class="col-md-2 align-self-center">
+			<div class="w-flex mt-5">
+				<div class="col-md-6 align-self-center">
 					{% if author.avatar %}
 					<img class="rounded-circle" src="{{site.baseurl}}/{{author.avatar}}" alt="{{author.name}}"
 						width="90" height="90" />
 					{% endif %}
 				</div>
-				<div class="col-md-10">
-					<h5 class="font-weight-bold">Written by {{ author.name }} {% if author.twitter %}<span><a
-								target="_blank" href="{{ author.github }}"
-								class="btn btn-outline-success btn-sm btn-round ml-2">Follow</a></span>{% endif %}</h5>
-					{{ author.bio }}
+				<div class="col-md-18">
+					<div class="fw-bold">Written by {{ author.name }} {% if author.twitter %}<span><a target="_blank" href="{{ author.github }}" class="btn btn-frame-success btn-sm ms-2">Follow</a></span>{% endif %}</div>
+					<span class="text-muted">
+						{{ author.bio }}
+					</span>
 				</div>
 			</div>
 			{% endif %}
@@ -166,26 +130,25 @@ layout: default
 
 		</div>
 
-
 	</div>
 </div>
 
 
 <!-- Aletbar Prev/Next -->
 <div class="alertbar">
-	<div class="container">
-		<div class="row prevnextlinks small font-weight-bold">
+	<div class="fence-full">
+		<div class="w-flex fw-bold justify-content-between p-1">
 			{% if page.previous.url %}
-			<div class="text-center text-md-left col-12 col-md-6 rightborder pl-0">
+			<div class="text-center text-md-start col-20 col-md-10 rightborder ps-0">
 				<a class="text-dark" href="{{ site.baseurl }}{{ page.previous.url }}">{% if page.previous.image %} <img
-						height="30px" class="mr-1" src="{{site.baseurl}}/{{page.previous.image}}"> {% endif %}
+						height="30px" class="me-1" src="{{site.baseurl}}/{{page.previous.image}}"> {% endif %}
 					{{page.previous.title}}</a>
 			</div>
 			{% endif %}
 			{% if page.next.url %}
-			<div class="text-center col-12 col-md-6 text-md-right pr-0">
+			<div class="text-center col-20 col-md-10 text-md-end pe-0">
 				<a class="text-dark" href="{{ site.baseurl }}{{ page.next.url }}"> {{page.next.title}}
-					{% if page.next.image %} <img height="30px" class="ml-1" src="{{site.baseurl}}/{{page.next.image}}">
+					{% if page.next.image %} <img height="30px" class="ms-1" src="{{site.baseurl}}/{{page.next.image}}">
 					{% endif %}</a>
 			</div>
 			{% endif %}

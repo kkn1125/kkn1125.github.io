@@ -1,31 +1,87 @@
-<div class="sticky-top sticky-top-offset">
-    <div class="pb-3 mb-3 border-bottom">
-        <span class="h4 pb-3 border-bottom">Featured</span>
-    </div>
-    <ol class="list-featured">
-
-        {% for post in site.posts %}
-
-        {% if post.featured == true %}
-        <li class="mb-4">
-            <span>
-                <h6 class="font-weight-bold">
-                    <a href="{{site.baseurl}}{{ post.url }}" class="text-dark">{{ post.title }}</a>
-                </h6>
-                <span class="d-block text-muted">
-                    In <span class="catlist">
-                        {% for category in post.categories %}
-                        <a class="text-capitalize badge bg-success smoothscroll"
-                            href="{{site.baseurl}}/categories.html#{{ category | downcase }}">{{ category }}</a><span
-                            class="sep"> </span>
-                        {% endfor %}
-                    </span>
-                </span>
-            </span>
-        </li>
-
-        {% endif %}
-
-        {% endfor %}
-    </ol>
+<div class="">
+    <span class="h4">Featured</span>
 </div>
+<div class="card-group card-ghost card-pd-2 card-dv-1 card-dv-md-4 g-3 overflow-x-auto">
+
+    {% for post in site.posts %}
+
+    {% if post.featured == true %}
+    <div class="card">
+        <div class="card-title">
+            <a href="{{site.baseurl}}{{ post.url }}">{{ post.title | truncate: 30}}</a>
+        </div>
+        <div class="card-content">
+            <!-- <div class="card-body"></div> -->
+        </div>
+        <div>
+            In <span class="catlist">
+                {% for category in post.categories %}
+                <a class="text-capitalize text-white tag tag-success"
+                    href="{{site.baseurl}}/categories.html#{{ category | downcase }}">{{ category }}</a><span
+                    class="sep"> </span>
+                {% endfor %}
+            </span>
+        </div>
+        <time class="card-time">{{ second_post.date | date: '%b %d, %Y' }}</time>
+    </div>
+
+    {% endif %}
+
+    {% endfor %}
+
+</div>
+
+{%comment%}
+<div class="col-20">
+
+    <div class="pb-3 mb-3 border-bottom">
+        <span class="h4 pb-3 border-bottom">All Stories</span>
+        <span>
+            <span class="tag tag-primary">{{site.posts | size}}</span>
+        </span>
+    </div>
+
+
+    {% for post in paginator.posts %}
+
+    {% include main-loop-card.html %}
+
+    {% endfor %}
+
+    <div class="mt-5">
+        <!-- Pagination links -->
+        {% if paginator.total_pages > 1 %}
+        <ul class="pagination">
+            {% if paginator.previous_page %}
+            <li class="page-item"><a class="page-link"
+                    href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo;
+                    Prev</a></li>
+            {% else %}
+            <li class="page-item disabled"><span class="prev page-link">&laquo;</span></li>
+            {% endif %}
+
+            {% for page in (1..paginator.total_pages) %}
+            {% if page == paginator.page %}
+            <li class="page-item disabled"><span class="webjeda page-link">{{ page }}</span></li>
+            {% elsif page == 1 %}
+            <li class="page-item"><a class="page-link" href="{{site.baseurl}}/">{{ page }}</a></li>
+            {% else %}
+            <li class="page-item"><a class="page-link"
+                    href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a>
+            </li>
+            {% endif %}
+            {% endfor %}
+
+            {% if paginator.next_page %}
+            <li class="page-item"><a class="page-link"
+                    href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Next
+                    &raquo;</a></li>
+            {% else %}
+            <li class="page-item disabled"><span class="next page-link">&raquo;</span></li>
+            {% endif %}
+        </ul>
+        {% endif %}
+    </div>
+
+</div>
+{%endcomment%}

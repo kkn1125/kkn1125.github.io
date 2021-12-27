@@ -1,26 +1,7 @@
 <!--  Replace menu links here -->
-
-<li class="nav-item">
-    <a class="nav-link" href="{{site.baseurl}}/index">Home</a>
-</li>
-<li class="nav-item">
-    <a class="nav-link" href="{{site.baseurl}}/authors-list">Authors</a>
-</li>
-<li class="nav-item">
-    <a class="nav-link" href="{{site.baseurl}}/portfolio">Portfolio</a>
-</li>
-<li class="nav-item">
-    <a class="nav-link" href="{{site.baseurl}}/wikimson">Wikimson</a>
-</li>
-<li class="nav-item">
-    <a class="nav-link" href="{{site.baseurl}}/contact">Contact</a>
-</li>
-<!-- <li class="nav-item">
-<a target="_blank" class="nav-link" href="https://www.wowthemes.net/themes/mundana-wordpress/">WP</a>
-</li>
-<li class="nav-item">
-<a target="_blank" class="nav-link" href="https://www.wowthemes.net/themes/mundana-ghost/">Ghost</a>
-</li>
-<li class="nav-item">
-<a target="_blank" class="nav-link" href="https://www.wowthemes.net/donate/">Buy me a coffee <i class="fa fa-coffee text-danger"></i></a>
-</li> -->
+{%- comment -%}
+<li><span class="tag tag-success">Record Date</span><span class="tag text-muted">2021. 12. 16</span></li>
+<li><span class="tag tag-success">update</span><span class="tag text-muted">{{"now" | date: "%Y. %m. %d %H:%M"}}</span></li> 
+{%- endcomment -%}
+<li><span class="tag tag-info">오늘 방문자</span> <span id="today" class="tag text-white"></span></li>
+<li><span class="tag tag-primary">누적 방문자</span> <span id="total" class="tag text-white"></span></li>

@@ -8,6 +8,17 @@ pre{
   color: inherit;
 }
 
+code.language-plaintext{
+  color: rgba(var(--pl-danger-rgb), 1);
+  font-family: monospace;
+}
+
+pre.highlight{
+  margin-top: 1em;
+  margin-bottom: 1.5em;
+  overflow: auto;
+}
+
 td.rouge-gutter {
   border-right: 1px solid gray;
 }

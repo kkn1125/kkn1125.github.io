@@ -1,40 +1,30 @@
 !function initMode() {
     // 최초 실행시 세션스토리지 읽고 값 적용
-    let mode = getMode() || 'on';
+    let mode = getMode() || 'off';
     let label = document.createElement('label');
     let btn = document.createElement('span');
     label.htmlFor = 'mode';
-    label.id = 'mtWrap';
     label.append(btn);
-    let target = null,findTarget = null;
-    findTarget = requestAnimationFrame(watchTarget.bind(target, {label, mode, findTarget}));
+
+    let target = document.querySelector(`[data-switch="${label.htmlFor}"]`);
+    requestAnimationFrame(loopFind.bind(this, target, label, mode));
 }();
 
-function watchTarget({label, mode, findTarget}){
+function loopFind(target, label, mode){
     target = document.querySelector(`[data-switch="${label.htmlFor}"]`);
     if(target) {
         target.insertAdjacentElement('beforebegin', label);
-        updateMode.call(label, mode);
+        updateMode.call(label, mode, true);
         window.addEventListener('click', modeHandler.bind(label));
-        cancelAnimationFrame(findTarget);
+        cancelAnimationFrame(loopFind.bind(this, target));
     } else {
-        requestAnimationFrame(watchTarget);
+        requestAnimationFrame(loopFind.bind(this, target));
     }
 }
 
 window.addEventListener('load', ()=>{
-    let findTarget = requestAnimationFrame(detectMode);
-    function detectMode(){
-        if(document.body.classList.contains('dark')) {
-            setTimeout(()=>{
-                document.body.style.transition = `0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94)`;
-            },100);
-            cancelAnimationFrame(findTarget);
-        } else {
-            requestAnimationFrame(detectMode);
-        }
-    }
-});
+    document.body.style.transition = `0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94)`;
+})
 
 function modeHandler(ev) {
     let valid = ev.target;
@@ -44,7 +34,7 @@ function modeHandler(ev) {
     updateMode.call(this, mode);
 }
 
-function updateMode(mode) {
+function updateMode(mode, init=false) {
     let shape = {
         on: `<i class="far fa-sun"></i>`,
         off: `<i class="fas fa-moon"></i>`
@@ -53,7 +43,7 @@ function updateMode(mode) {
     clearMode.call(this);
     this.classList.add(mode);
     this.children[0].innerHTML = shape[mode];
-    if(mode=='off'){
+    if(mode=='on'){
         body.add('dark');
     } else {
         body.remove('dark');

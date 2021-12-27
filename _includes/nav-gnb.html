@@ -1,0 +1,16 @@
+<nav class="gnb position-sticky bg-light us-none gnb-primary">
+    <div class="gnb-inner gnb-expand-md hide align-items-center">
+        <div class="brand fw-bold">
+            <a href="{{ site.baseurl }}/"><strong>{{site.name}}</strong></a>
+        </div>
+        <div class="menu-btn">
+            <button class="btn btn-light text-gray fs-4 px-2 me-3" data-target="#gnbMenu" style="line-height: 1">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <ul id="gnbMenu" class="gnb-menu gx-2 w-flex hide">
+            {% include menu-header.html %}
+            {% include search-lunr.html %}
+        </ul>
+    </div>
+</nav>
