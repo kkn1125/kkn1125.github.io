@@ -1,4 +1,4 @@
-I"�_<div class="fence-full">
+I"��<div class="fence-full">
     <div>
         <span class="fw-bold h3 text-uppercase mb-4">Categories</span>
     </div>
@@ -39,7 +39,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/javascript-jest01/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] Jest를 사용해보자" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] Jest를 사용해보자" />
 	</a>
 	</div>
 	
@@ -77,7 +77,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/java-tdd01/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIL-java.png" alt="[JAVA] TDD를 알아보자" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-java.png" alt="[JAVA] TDD를 알아보자" />
 	</a>
 	</div>
 	
@@ -115,7 +115,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/javascript-char-count/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] 2020 카카오 문자열 압축 풀이" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] 2020 카카오 문자열 압축 풀이" />
 	</a>
 	</div>
 	
@@ -153,7 +153,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/javascript-grabbing-loaded-page/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] 페이지 내용이 동적으로 로드되는 페이지 자바스크립트로 읽어오기" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] 페이지 내용이 동적으로 로드되는 페이지 자바스크립트로 읽어오기" />
 	</a>
 	</div>
 	
@@ -191,7 +191,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/javascript-visitor-count01/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] 정적 웹에서 방문자 수 나타내기" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] 정적 웹에서 방문자 수 나타내기" />
 	</a>
 	</div>
 	
@@ -229,7 +229,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/java-algorithm01/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIL-java.png" alt="[JAVA] Kakao 인턴" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-java.png" alt="[JAVA] Kakao 인턴" />
 	</a>
 	</div>
 	
@@ -265,7 +265,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/spring-tiles-error01/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIL-spring.png" alt="[SPRING] Tiles 설정 시 경로에 있는 파일을 못 찾을 때" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-spring.png" alt="[SPRING] Tiles 설정 시 경로에 있는 파일을 못 찾을 때" />
 	</a>
 	</div>
 	
@@ -301,7 +301,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/spring-mybatis01/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/springboot/mybatis/batis03.png" alt="[SPRING] MyBatis 사용하기 01" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/springboot/mybatis/batis03.png" alt="[SPRING] MyBatis 사용하기 01" />
 	</a>
 	</div>
 	
@@ -337,7 +337,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/javascript-routing01/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] Vanilla JavaScript로 SPA를 구현해보자" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] Vanilla JavaScript로 SPA를 구현해보자" />
 	</a>
 	</div>
 	
@@ -373,7 +373,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/java-read-page/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIL-java.png" alt="[JAVA] URL 경로의 내용 읽어오기" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-java.png" alt="[JAVA] URL 경로의 내용 읽어오기" />
 	</a>
 	</div>
 	
@@ -409,7 +409,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/javascript-design-pattern01/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] 자바스크립트 디자인 패턴 - 모듈 패턴" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] 자바스크립트 디자인 패턴 - 모듈 패턴" />
 	</a>
 	</div>
 	
@@ -445,7 +445,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/vue-study01/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIL-vue.png" alt="[VUE] VUE를 아라뷰자 01" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-vue.png" alt="[VUE] VUE를 아라뷰자 01" />
 	</a>
 	</div>
 	
@@ -481,7 +481,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/javascript-dark-mode04/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] 정적웹에 다크모드 적용하기 04" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] 정적웹에 다크모드 적용하기 04" />
 	</a>
 	</div>
 	
@@ -519,7 +519,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/javascript-web-tutorial/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] 웹 튜토리얼 구현하기" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] 웹 튜토리얼 구현하기" />
 	</a>
 	</div>
 	
@@ -555,7 +555,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/java-web-assembly01/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIL-java.png" alt="[JAVA] JWebAssembly를 사용해보자" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-java.png" alt="[JAVA] JWebAssembly를 사용해보자" />
 	</a>
 	</div>
 	
@@ -591,7 +591,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/spring-jdbc-template01/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIL-spring.png" alt="[SPRING] JDBC Template 사용 기록" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-spring.png" alt="[SPRING] JDBC Template 사용 기록" />
 	</a>
 	</div>
 	
@@ -627,7 +627,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/javascript-custom-tag01/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] HTML 커스텀 태그 만들어 사용하기" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] HTML 커스텀 태그 만들어 사용하기" />
 	</a>
 	</div>
 	
@@ -663,7 +663,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/javascript-destructuring-assignment/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] 구조 분해 할당" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] 구조 분해 할당" />
 	</a>
 	</div>
 	
@@ -701,7 +701,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/javascript-graph-editor/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIM-none.png" alt="[JAVASCRIPT] Graph Editor JS" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIM-none.png" alt="[JAVASCRIPT] Graph Editor JS" />
 	</a>
 	</div>
 	
@@ -739,7 +739,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/javascript-documentify-js/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIM-none.png" alt="[JAVASCRIPT] Documentify ( 문서화 ) 구현" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIM-none.png" alt="[JAVASCRIPT] Documentify ( 문서화 ) 구현" />
 	</a>
 	</div>
 	
@@ -775,7 +775,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/javascript-mouse-direction01/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] 마우스 이동 방향 감지" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] 마우스 이동 방향 감지" />
 	</a>
 	</div>
 	
@@ -811,7 +811,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/spring-boot-referer/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIL-spring.png" alt="[SPRING] 헤더 리퍼러(referer) 사용하기" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-spring.png" alt="[SPRING] 헤더 리퍼러(referer) 사용하기" />
 	</a>
 	</div>
 	
@@ -847,7 +847,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/spring-boot-file-upload/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIL-spring.png" alt="[SPRING] 파일 업로드 하기" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-spring.png" alt="[SPRING] 파일 업로드 하기" />
 	</a>
 	</div>
 	
@@ -883,7 +883,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/java-el-jstl01/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIL-java.png" alt="[JAVA] forEach, forToken의 varStatus 사용하기" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-java.png" alt="[JAVA] forEach, forToken의 varStatus 사용하기" />
 	</a>
 	</div>
 	
@@ -919,7 +919,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/javascript-detecting-scroll-direction/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] 스크롤 방향 감지 (Detecting scroll direction)" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] 스크롤 방향 감지 (Detecting scroll direction)" />
 	</a>
 	</div>
 	
@@ -955,7 +955,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/javascript-add-tag/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] 태그 입력 구현하기" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] 태그 입력 구현하기" />
 	</a>
 	</div>
 	
@@ -991,7 +991,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/spring-boot-error-note01/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIL-spring.png" alt="[SPRING] 에러노트 - mybatis syntax error" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-spring.png" alt="[SPRING] 에러노트 - mybatis syntax error" />
 	</a>
 	</div>
 	
@@ -1027,7 +1027,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/javascript-image-zoom/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] 이미지 줌 구현하기" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] 이미지 줌 구현하기" />
 	</a>
 	</div>
 	
@@ -1063,7 +1063,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/javascript-resizebar01/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] 수평 사이즈 조절 바 구현하기" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] 수평 사이즈 조절 바 구현하기" />
 	</a>
 	</div>
 	
@@ -1099,7 +1099,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/python-algo01/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIL-python.jpg" alt="[PYTHON] 프로젝트 오일러 1번 문제" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-python.jpg" alt="[PYTHON] 프로젝트 오일러 1번 문제" />
 	</a>
 	</div>
 	
@@ -1135,7 +1135,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/javascript-typing01/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] 한글 타이핑 효과 구현하기" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] 한글 타이핑 효과 구현하기" />
 	</a>
 	</div>
 	
@@ -1173,7 +1173,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/database-use-db/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/database/db01.png" alt="[DATABASE] 정적 웹에서 데이터베이스 사용하기" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/database/db01.png" alt="[DATABASE] 정적 웹에서 데이터베이스 사용하기" />
 	</a>
 	</div>
 	
@@ -1209,7 +1209,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/javascript-game-sachunsung/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/sachunsung/sa06.png" alt="[JAVASCRIPT] 사천성 게임 만들기" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/sachunsung/sa06.png" alt="[JAVASCRIPT] 사천성 게임 만들기" />
 	</a>
 	</div>
 	
@@ -1245,7 +1245,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/javascript-ant-get-directions01/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] 개미 길 찾기 - 파이썬 문제" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] 개미 길 찾기 - 파이썬 문제" />
 	</a>
 	</div>
 	
@@ -1281,7 +1281,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/javascript-send-mail/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] 자바스크립트 메일 보내기" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] 자바스크립트 메일 보내기" />
 	</a>
 	</div>
 	
@@ -1317,7 +1317,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/python-basic01/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIL-python.jpg" alt="[PYTHON] 파이썬 기초 - 진수 변환" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-python.jpg" alt="[PYTHON] 파이썬 기초 - 진수 변환" />
 	</a>
 	</div>
 	
@@ -1353,7 +1353,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/javascript-geolocation01/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/geolocation/geo01.png" alt="[JAVASCRIPT] 현재 주소 알아내기" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/geolocation/geo01.png" alt="[JAVASCRIPT] 현재 주소 알아내기" />
 	</a>
 	</div>
 	
@@ -1389,7 +1389,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/javascript-new-target01/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] new target 알아보기" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] new target 알아보기" />
 	</a>
 	</div>
 	
@@ -1425,7 +1425,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/javascript-iterable01/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] Iteration 알아보기" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] Iteration 알아보기" />
 	</a>
 	</div>
 	
@@ -1461,7 +1461,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/spring-boot-hidden-method/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIL-spring.png" alt="[SPRING] Hidden Method 사용" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-spring.png" alt="[SPRING] Hidden Method 사용" />
 	</a>
 	</div>
 	
@@ -1497,7 +1497,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/spring-boot-el-header/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIL-spring.png" alt="[SPRING] header referer EL로 가져오기" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-spring.png" alt="[SPRING] header referer EL로 가져오기" />
 	</a>
 	</div>
 	
@@ -1533,7 +1533,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/spring-boot-cors01/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIL-spring.png" alt="[SPRING] Method Not Allowed 405 에러 발생과 해결" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-spring.png" alt="[SPRING] Method Not Allowed 405 에러 발생과 해결" />
 	</a>
 	</div>
 	
@@ -1569,7 +1569,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/javascript-object-assign/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] Object assign 활용하기" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] Object assign 활용하기" />
 	</a>
 	</div>
 	
@@ -1605,7 +1605,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/spring-boot-mybatis01/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIL-spring.png" alt="[SPRING] SPRING BOOT MyBatis 시작하기" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-spring.png" alt="[SPRING] SPRING BOOT MyBatis 시작하기" />
 	</a>
 	</div>
 	
@@ -1641,7 +1641,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/javascript-data-study/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] LinkedList 만들기" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] LinkedList 만들기" />
 	</a>
 	</div>
 	
@@ -1677,7 +1677,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/javascript-dropdown01/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] 드롭다운 메뉴 구현" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] 드롭다운 메뉴 구현" />
 	</a>
 	</div>
 	
@@ -1713,7 +1713,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/javascript-dark-mode03/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] 정적웹에 다크모드 적용하기 03" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] 정적웹에 다크모드 적용하기 03" />
 	</a>
 	</div>
 	
@@ -1749,7 +1749,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/spring-boot-start02/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIL-spring.png" alt="[SPRING] SPRING BOOT 시작하기 02" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-spring.png" alt="[SPRING] SPRING BOOT 시작하기 02" />
 	</a>
 	</div>
 	
@@ -1785,7 +1785,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/spring-boot-start01/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIL-spring.png" alt="[SPRING] SPRING BOOT 시작하기 01" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-spring.png" alt="[SPRING] SPRING BOOT 시작하기 01" />
 	</a>
 	</div>
 	
@@ -1821,7 +1821,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/react-study01/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIL-react.png" alt="[REACT] React 시작하기 01" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-react.png" alt="[REACT] React 시작하기 01" />
 	</a>
 	</div>
 	
@@ -1857,7 +1857,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/javascript-dark-mode02/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] 정적웹에 다크모드 적용하기 02" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] 정적웹에 다크모드 적용하기 02" />
 	</a>
 	</div>
 	
@@ -1893,7 +1893,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/javascript-dark-mode01/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] 정적웹에 다크모드 적용하기 01" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] 정적웹에 다크모드 적용하기 01" />
 	</a>
 	</div>
 	
@@ -1929,7 +1929,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/spring-hierarchical-board01/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/hierarchical/hierarchical13.png" alt="[SPRING] 계층형 게시판 만들기" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/hierarchical/hierarchical13.png" alt="[SPRING] 계층형 게시판 만들기" />
 	</a>
 	</div>
 	
@@ -1965,7 +1965,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/javascript-maps01/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] Map 객체 사용" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] Map 객체 사용" />
 	</a>
 	</div>
 	
@@ -2001,7 +2001,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/javascript-code-style/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] 복잡한 코드, 규칙을 만들자" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] 복잡한 코드, 규칙을 만들자" />
 	</a>
 	</div>
 	
@@ -2037,7 +2037,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/java-exception01/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIL-spring.png" alt="[SPRING] xml 없이 에러페이지 처리하기" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-spring.png" alt="[SPRING] xml 없이 에러페이지 처리하기" />
 	</a>
 	</div>
 	
@@ -2073,7 +2073,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/javascript-public-data/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/publicData/public-cover.png" alt="[JAVASCRIPT] 공공데이터로 페이징 처리하기" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/publicData/public-cover.png" alt="[JAVASCRIPT] 공공데이터로 페이징 처리하기" />
 	</a>
 	</div>
 	
@@ -2109,7 +2109,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/javascript-object/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] 객체와 프로토타입" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] 객체와 프로토타입" />
 	</a>
 	</div>
 	
@@ -2145,7 +2145,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/java-cookie/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/cookie/cookie.PNG" alt="[JAVA] Cookie에 관한 고찰" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/cookie/cookie.PNG" alt="[JAVA] Cookie에 관한 고찰" />
 	</a>
 	</div>
 	
@@ -2181,7 +2181,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/javascript-calendar02/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/jsdevKal/devkal-3.png" alt="[JAVASCRIPT] 달력만들기 - TODO LIST" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/jsdevKal/devkal-3.png" alt="[JAVASCRIPT] 달력만들기 - TODO LIST" />
 	</a>
 	</div>
 	
@@ -2217,7 +2217,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/java-timestamp01/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/mysql_cover.png" alt="[JAVA] Timestamp 시간 나타내기" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/mysql_cover.png" alt="[JAVA] Timestamp 시간 나타내기" />
 	</a>
 	</div>
 	
@@ -2253,7 +2253,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/java-jackson-databind/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/jacksonbind/jacksonbind01.png" alt="[JAVA] Json 기본 익히기" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/jacksonbind/jacksonbind01.png" alt="[JAVA] Json 기본 익히기" />
 	</a>
 	</div>
 	
@@ -2289,7 +2289,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/javascript-calendar/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/jsdevKal/devkal.png" alt="[JAVASCRIPT] 달력만들기" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/jsdevKal/devkal.png" alt="[JAVASCRIPT] 달력만들기" />
 	</a>
 	</div>
 	
@@ -2325,7 +2325,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/javascript-ajax01/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/what.jpg" alt="[JAVASCRIPT] AJAX 전송 한글 깨짐 문제" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/what.jpg" alt="[JAVASCRIPT] AJAX 전송 한글 깨짐 문제" />
 	</a>
 	</div>
 	
@@ -2372,7 +2372,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/javascript-jest01/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] Jest를 사용해보자" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] Jest를 사용해보자" />
 	</a>
 	</div>
 	
@@ -2410,7 +2410,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/javascript-char-count/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] 2020 카카오 문자열 압축 풀이" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] 2020 카카오 문자열 압축 풀이" />
 	</a>
 	</div>
 	
@@ -2448,7 +2448,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/javascript-grabbing-loaded-page/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] 페이지 내용이 동적으로 로드되는 페이지 자바스크립트로 읽어오기" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] 페이지 내용이 동적으로 로드되는 페이지 자바스크립트로 읽어오기" />
 	</a>
 	</div>
 	
@@ -2486,7 +2486,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/javascript-visitor-count01/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] 정적 웹에서 방문자 수 나타내기" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] 정적 웹에서 방문자 수 나타내기" />
 	</a>
 	</div>
 	
@@ -2522,7 +2522,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/javascript-routing01/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] Vanilla JavaScript로 SPA를 구현해보자" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] Vanilla JavaScript로 SPA를 구현해보자" />
 	</a>
 	</div>
 	
@@ -2558,7 +2558,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/javascript-design-pattern01/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] 자바스크립트 디자인 패턴 - 모듈 패턴" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] 자바스크립트 디자인 패턴 - 모듈 패턴" />
 	</a>
 	</div>
 	
@@ -2594,7 +2594,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/javascript-dark-mode04/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] 정적웹에 다크모드 적용하기 04" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] 정적웹에 다크모드 적용하기 04" />
 	</a>
 	</div>
 	
@@ -2632,7 +2632,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/javascript-typerjs01/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIM-none.png" alt="[JAVASCRIPT] Typer 0.2.0 pre-release 한글 타이핑 효과" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIM-none.png" alt="[JAVASCRIPT] Typer 0.2.0 pre-release 한글 타이핑 효과" />
 	</a>
 	</div>
 	
@@ -2670,7 +2670,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/javascript-web-tutorial/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] 웹 튜토리얼 구현하기" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] 웹 튜토리얼 구현하기" />
 	</a>
 	</div>
 	
@@ -2706,7 +2706,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/javascript-custom-tag01/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] HTML 커스텀 태그 만들어 사용하기" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] HTML 커스텀 태그 만들어 사용하기" />
 	</a>
 	</div>
 	
@@ -2742,7 +2742,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/javascript-destructuring-assignment/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] 구조 분해 할당" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] 구조 분해 할당" />
 	</a>
 	</div>
 	
@@ -2780,7 +2780,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/javascript-graph-editor/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIM-none.png" alt="[JAVASCRIPT] Graph Editor JS" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIM-none.png" alt="[JAVASCRIPT] Graph Editor JS" />
 	</a>
 	</div>
 	
@@ -2818,7 +2818,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/javascript-documentify-js/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIM-none.png" alt="[JAVASCRIPT] Documentify ( 문서화 ) 구현" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIM-none.png" alt="[JAVASCRIPT] Documentify ( 문서화 ) 구현" />
 	</a>
 	</div>
 	
@@ -2854,7 +2854,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/javascript-mouse-direction01/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] 마우스 이동 방향 감지" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] 마우스 이동 방향 감지" />
 	</a>
 	</div>
 	
@@ -2890,7 +2890,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/javascript-detecting-scroll-direction/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] 스크롤 방향 감지 (Detecting scroll direction)" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] 스크롤 방향 감지 (Detecting scroll direction)" />
 	</a>
 	</div>
 	
@@ -2926,7 +2926,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/javascript-add-tag/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] 태그 입력 구현하기" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] 태그 입력 구현하기" />
 	</a>
 	</div>
 	
@@ -2962,7 +2962,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/javascript-image-zoom/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] 이미지 줌 구현하기" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] 이미지 줌 구현하기" />
 	</a>
 	</div>
 	
@@ -2998,7 +2998,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/javascript-resizebar01/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] 수평 사이즈 조절 바 구현하기" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] 수평 사이즈 조절 바 구현하기" />
 	</a>
 	</div>
 	
@@ -3034,7 +3034,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/javascript-typing01/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] 한글 타이핑 효과 구현하기" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] 한글 타이핑 효과 구현하기" />
 	</a>
 	</div>
 	
@@ -3072,7 +3072,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/database-use-db/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/database/db01.png" alt="[DATABASE] 정적 웹에서 데이터베이스 사용하기" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/database/db01.png" alt="[DATABASE] 정적 웹에서 데이터베이스 사용하기" />
 	</a>
 	</div>
 	
@@ -3108,7 +3108,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/javascript-game-sachunsung/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/sachunsung/sa06.png" alt="[JAVASCRIPT] 사천성 게임 만들기" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/sachunsung/sa06.png" alt="[JAVASCRIPT] 사천성 게임 만들기" />
 	</a>
 	</div>
 	
@@ -3144,7 +3144,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/javascript-ant-get-directions01/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] 개미 길 찾기 - 파이썬 문제" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] 개미 길 찾기 - 파이썬 문제" />
 	</a>
 	</div>
 	
@@ -3180,7 +3180,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/javascript-send-mail/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] 자바스크립트 메일 보내기" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] 자바스크립트 메일 보내기" />
 	</a>
 	</div>
 	
@@ -3216,7 +3216,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/javascript-geolocation01/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/geolocation/geo01.png" alt="[JAVASCRIPT] 현재 주소 알아내기" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/geolocation/geo01.png" alt="[JAVASCRIPT] 현재 주소 알아내기" />
 	</a>
 	</div>
 	
@@ -3252,7 +3252,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/javascript-new-target01/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] new target 알아보기" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] new target 알아보기" />
 	</a>
 	</div>
 	
@@ -3288,7 +3288,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/javascript-iterable01/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] Iteration 알아보기" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] Iteration 알아보기" />
 	</a>
 	</div>
 	
@@ -3324,7 +3324,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/javascript-object-assign/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] Object assign 활용하기" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] Object assign 활용하기" />
 	</a>
 	</div>
 	
@@ -3360,7 +3360,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/javascript-scroll-control/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIM-none.png" alt="[JAVASCRIPT] 스크롤 애니메이션 구현하기" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIM-none.png" alt="[JAVASCRIPT] 스크롤 애니메이션 구현하기" />
 	</a>
 	</div>
 	
@@ -3396,7 +3396,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/javascript-data-study/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] LinkedList 만들기" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] LinkedList 만들기" />
 	</a>
 	</div>
 	
@@ -3432,7 +3432,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/javascript-dark-mode03/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] 정적웹에 다크모드 적용하기 03" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] 정적웹에 다크모드 적용하기 03" />
 	</a>
 	</div>
 	
@@ -3468,7 +3468,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/javascript-maps01/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] Map 객체 사용" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] Map 객체 사용" />
 	</a>
 	</div>
 	
@@ -3504,7 +3504,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/javascript-code-style/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] 복잡한 코드, 규칙을 만들자" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] 복잡한 코드, 규칙을 만들자" />
 	</a>
 	</div>
 	
@@ -3540,7 +3540,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/javascript-public-data/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/publicData/public-cover.png" alt="[JAVASCRIPT] 공공데이터로 페이징 처리하기" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/publicData/public-cover.png" alt="[JAVASCRIPT] 공공데이터로 페이징 처리하기" />
 	</a>
 	</div>
 	
@@ -3576,7 +3576,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/javascript-category-filter/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIM-none.png" alt="[JAVASCRIPT] 카테고리 필터" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIM-none.png" alt="[JAVASCRIPT] 카테고리 필터" />
 	</a>
 	</div>
 	
@@ -3612,7 +3612,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/javascript-object/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] 객체와 프로토타입" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] 객체와 프로토타입" />
 	</a>
 	</div>
 	
@@ -3648,7 +3648,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/javascript-calendar02/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/jsdevKal/devkal-3.png" alt="[JAVASCRIPT] 달력만들기 - TODO LIST" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/jsdevKal/devkal-3.png" alt="[JAVASCRIPT] 달력만들기 - TODO LIST" />
 	</a>
 	</div>
 	
@@ -3684,7 +3684,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/javascript-calendar/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/jsdevKal/devkal.png" alt="[JAVASCRIPT] 달력만들기" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/jsdevKal/devkal.png" alt="[JAVASCRIPT] 달력만들기" />
 	</a>
 	</div>
 	
@@ -3720,7 +3720,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/javascript-ajax01/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/what.jpg" alt="[JAVASCRIPT] AJAX 전송 한글 깨짐 문제" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/what.jpg" alt="[JAVASCRIPT] AJAX 전송 한글 깨짐 문제" />
 	</a>
 	</div>
 	
@@ -3767,7 +3767,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/java-tdd01/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIL-java.png" alt="[JAVA] TDD를 알아보자" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-java.png" alt="[JAVA] TDD를 알아보자" />
 	</a>
 	</div>
 	
@@ -3805,7 +3805,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/java-algorithm01/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIL-java.png" alt="[JAVA] Kakao 인턴" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-java.png" alt="[JAVA] Kakao 인턴" />
 	</a>
 	</div>
 	
@@ -3841,7 +3841,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/java-read-page/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIL-java.png" alt="[JAVA] URL 경로의 내용 읽어오기" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-java.png" alt="[JAVA] URL 경로의 내용 읽어오기" />
 	</a>
 	</div>
 	
@@ -3877,7 +3877,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/java-el-jstl01/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIL-java.png" alt="[JAVA] forEach, forToken의 varStatus 사용하기" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-java.png" alt="[JAVA] forEach, forToken의 varStatus 사용하기" />
 	</a>
 	</div>
 	
@@ -3913,7 +3913,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/java-cookie/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/cookie/cookie.PNG" alt="[JAVA] Cookie에 관한 고찰" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/cookie/cookie.PNG" alt="[JAVA] Cookie에 관한 고찰" />
 	</a>
 	</div>
 	
@@ -3949,7 +3949,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/java-timestamp01/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/mysql_cover.png" alt="[JAVA] Timestamp 시간 나타내기" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/mysql_cover.png" alt="[JAVA] Timestamp 시간 나타내기" />
 	</a>
 	</div>
 	
@@ -3985,7 +3985,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/java-jackson-databind/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/jacksonbind/jacksonbind01.png" alt="[JAVA] Json 기본 익히기" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/jacksonbind/jacksonbind01.png" alt="[JAVA] Json 기본 익히기" />
 	</a>
 	</div>
 	
@@ -4032,7 +4032,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/javascript-typerjs01/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIM-none.png" alt="[JAVASCRIPT] Typer 0.2.0 pre-release 한글 타이핑 효과" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIM-none.png" alt="[JAVASCRIPT] Typer 0.2.0 pre-release 한글 타이핑 효과" />
 	</a>
 	</div>
 	
@@ -4070,7 +4070,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/javascript-web-tutorial/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] 웹 튜토리얼 구현하기" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] 웹 튜토리얼 구현하기" />
 	</a>
 	</div>
 	
@@ -4106,7 +4106,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/jekyll-theme01/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/jekyll-theme/jekyll01.png" alt="[JEKYLL] jekyll theme를 만들자 01" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/jekyll-theme/jekyll01.png" alt="[JEKYLL] jekyll theme를 만들자 01" />
 	</a>
 	</div>
 	
@@ -4144,7 +4144,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/javascript-graph-editor/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIM-none.png" alt="[JAVASCRIPT] Graph Editor JS" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIM-none.png" alt="[JAVASCRIPT] Graph Editor JS" />
 	</a>
 	</div>
 	
@@ -4182,7 +4182,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/javascript-documentify-js/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIM-none.png" alt="[JAVASCRIPT] Documentify ( 문서화 ) 구현" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIM-none.png" alt="[JAVASCRIPT] Documentify ( 문서화 ) 구현" />
 	</a>
 	</div>
 	
@@ -4218,7 +4218,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/javascript-scroll-control/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIM-none.png" alt="[JAVASCRIPT] 스크롤 애니메이션 구현하기" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIM-none.png" alt="[JAVASCRIPT] 스크롤 애니메이션 구현하기" />
 	</a>
 	</div>
 	
@@ -4254,7 +4254,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/javascript-category-filter/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIM-none.png" alt="[JAVASCRIPT] 카테고리 필터" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIM-none.png" alt="[JAVASCRIPT] 카테고리 필터" />
 	</a>
 	</div>
 	
@@ -4299,7 +4299,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/spring-tiles-error01/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIL-spring.png" alt="[SPRING] Tiles 설정 시 경로에 있는 파일을 못 찾을 때" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-spring.png" alt="[SPRING] Tiles 설정 시 경로에 있는 파일을 못 찾을 때" />
 	</a>
 	</div>
 	
@@ -4335,7 +4335,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/spring-mybatis01/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/springboot/mybatis/batis03.png" alt="[SPRING] MyBatis 사용하기 01" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/springboot/mybatis/batis03.png" alt="[SPRING] MyBatis 사용하기 01" />
 	</a>
 	</div>
 	
@@ -4371,7 +4371,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/java-web-assembly01/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIL-java.png" alt="[JAVA] JWebAssembly를 사용해보자" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-java.png" alt="[JAVA] JWebAssembly를 사용해보자" />
 	</a>
 	</div>
 	
@@ -4407,7 +4407,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/spring-jdbc-template01/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIL-spring.png" alt="[SPRING] JDBC Template 사용 기록" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-spring.png" alt="[SPRING] JDBC Template 사용 기록" />
 	</a>
 	</div>
 	
@@ -4445,7 +4445,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/database-use-db/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/database/db01.png" alt="[DATABASE] 정적 웹에서 데이터베이스 사용하기" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/database/db01.png" alt="[DATABASE] 정적 웹에서 데이터베이스 사용하기" />
 	</a>
 	</div>
 	
@@ -4481,7 +4481,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/javascript-dark-mode02/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] 정적웹에 다크모드 적용하기 02" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] 정적웹에 다크모드 적용하기 02" />
 	</a>
 	</div>
 	
@@ -4517,7 +4517,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/javascript-dark-mode01/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] 정적웹에 다크모드 적용하기 01" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] 정적웹에 다크모드 적용하기 01" />
 	</a>
 	</div>
 	
@@ -4553,7 +4553,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/spring-hierarchical-board01/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/hierarchical/hierarchical13.png" alt="[SPRING] 계층형 게시판 만들기" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/hierarchical/hierarchical13.png" alt="[SPRING] 계층형 게시판 만들기" />
 	</a>
 	</div>
 	
@@ -4589,7 +4589,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/java-exception01/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIL-spring.png" alt="[SPRING] xml 없이 에러페이지 처리하기" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-spring.png" alt="[SPRING] xml 없이 에러페이지 처리하기" />
 	</a>
 	</div>
 	
@@ -4634,7 +4634,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/react-study01/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIL-react.png" alt="[REACT] React 시작하기 01" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-react.png" alt="[REACT] React 시작하기 01" />
 	</a>
 	</div>
 	
@@ -4679,7 +4679,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/spring-boot-referer/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIL-spring.png" alt="[SPRING] 헤더 리퍼러(referer) 사용하기" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-spring.png" alt="[SPRING] 헤더 리퍼러(referer) 사용하기" />
 	</a>
 	</div>
 	
@@ -4715,7 +4715,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/spring-boot-file-upload/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIL-spring.png" alt="[SPRING] 파일 업로드 하기" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-spring.png" alt="[SPRING] 파일 업로드 하기" />
 	</a>
 	</div>
 	
@@ -4751,7 +4751,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/spring-boot-error-note01/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIL-spring.png" alt="[SPRING] 에러노트 - mybatis syntax error" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-spring.png" alt="[SPRING] 에러노트 - mybatis syntax error" />
 	</a>
 	</div>
 	
@@ -4787,7 +4787,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/spring-boot-hidden-method/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIL-spring.png" alt="[SPRING] Hidden Method 사용" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-spring.png" alt="[SPRING] Hidden Method 사용" />
 	</a>
 	</div>
 	
@@ -4823,7 +4823,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/spring-boot-el-header/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIL-spring.png" alt="[SPRING] header referer EL로 가져오기" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-spring.png" alt="[SPRING] header referer EL로 가져오기" />
 	</a>
 	</div>
 	
@@ -4859,7 +4859,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/spring-boot-cors01/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIL-spring.png" alt="[SPRING] Method Not Allowed 405 에러 발생과 해결" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-spring.png" alt="[SPRING] Method Not Allowed 405 에러 발생과 해결" />
 	</a>
 	</div>
 	
@@ -4895,7 +4895,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/spring-boot-mybatis01/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIL-spring.png" alt="[SPRING] SPRING BOOT MyBatis 시작하기" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-spring.png" alt="[SPRING] SPRING BOOT MyBatis 시작하기" />
 	</a>
 	</div>
 	
@@ -4931,7 +4931,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/javascript-dropdown01/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] 드롭다운 메뉴 구현" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] 드롭다운 메뉴 구현" />
 	</a>
 	</div>
 	
@@ -4967,7 +4967,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/spring-boot-start02/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIL-spring.png" alt="[SPRING] SPRING BOOT 시작하기 02" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-spring.png" alt="[SPRING] SPRING BOOT 시작하기 02" />
 	</a>
 	</div>
 	
@@ -5003,7 +5003,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/spring-boot-start01/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIL-spring.png" alt="[SPRING] SPRING BOOT 시작하기 01" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-spring.png" alt="[SPRING] SPRING BOOT 시작하기 01" />
 	</a>
 	</div>
 	
@@ -5048,7 +5048,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/python-algo01/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIL-python.jpg" alt="[PYTHON] 프로젝트 오일러 1번 문제" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-python.jpg" alt="[PYTHON] 프로젝트 오일러 1번 문제" />
 	</a>
 	</div>
 	
@@ -5084,7 +5084,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/python-basic01/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIL-python.jpg" alt="[PYTHON] 파이썬 기초 - 진수 변환" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-python.jpg" alt="[PYTHON] 파이썬 기초 - 진수 변환" />
 	</a>
 	</div>
 	
@@ -5129,7 +5129,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/jekyll-theme01/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/jekyll-theme/jekyll01.png" alt="[JEKYLL] jekyll theme를 만들자 01" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/jekyll-theme/jekyll01.png" alt="[JEKYLL] jekyll theme를 만들자 01" />
 	</a>
 	</div>
 	
@@ -5176,7 +5176,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/javascript-typerjs01/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIM-none.png" alt="[JAVASCRIPT] Typer 0.2.0 pre-release 한글 타이핑 효과" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIM-none.png" alt="[JAVASCRIPT] Typer 0.2.0 pre-release 한글 타이핑 효과" />
 	</a>
 	</div>
 	
@@ -5221,7 +5221,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/vue-study01/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIL-vue.png" alt="[VUE] VUE를 아라뷰자 01" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-vue.png" alt="[VUE] VUE를 아라뷰자 01" />
 	</a>
 	</div>
 	
@@ -5268,7 +5268,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/javascript-char-count/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] 2020 카카오 문자열 압축 풀이" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] 2020 카카오 문자열 압축 풀이" />
 	</a>
 	</div>
 	
@@ -5306,7 +5306,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/javascript-grabbing-loaded-page/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] 페이지 내용이 동적으로 로드되는 페이지 자바스크립트로 읽어오기" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] 페이지 내용이 동적으로 로드되는 페이지 자바스크립트로 읽어오기" />
 	</a>
 	</div>
 	
@@ -5344,7 +5344,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/javascript-visitor-count01/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] 정적 웹에서 방문자 수 나타내기" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] 정적 웹에서 방문자 수 나타내기" />
 	</a>
 	</div>
 	
@@ -5382,7 +5382,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/java-algorithm01/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIL-java.png" alt="[JAVA] Kakao 인턴" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-java.png" alt="[JAVA] Kakao 인턴" />
 	</a>
 	</div>
 	
@@ -5429,7 +5429,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/javascript-jest01/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] Jest를 사용해보자" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] Jest를 사용해보자" />
 	</a>
 	</div>
 	
@@ -5467,7 +5467,7 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/java-tdd01/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="/assets/images/post/covers/TIL-java.png" alt="[JAVA] TDD를 알아보자" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-java.png" alt="[JAVA] TDD를 알아보자" />
 	</a>
 	</div>
 	

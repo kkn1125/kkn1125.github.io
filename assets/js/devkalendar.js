@@ -705,3 +705,29 @@ com.devkimson.calendar = { // 기능들
 	
 
 }
+
+const kal = com.devkimson.calendar.create(document.getElementById('kal')||'kal',{
+	marker:{ // 클릭 위치 마커 관련 설정
+		color: "coral", // color name or color code
+		thick: "3px", // num
+		// style: "dashed", // value
+		speed: ".3s", // value
+		// bezier: "ease", // value
+		width: "30px" // num
+	},
+	table:{ // 테이블 속성
+		// bgColor: "table-info",
+		color: "text-muted", // class name
+		// width: "80%", // num default auto
+		// padding: "15px", // num
+		// collapse: "separate", // value
+		spacing: ".5rem", // num
+		tr:{ // 1.1.0ver 추가
+			height: "50px", // num default 50px
+			valign: "middle" // num default middle
+		}
+	},
+	today:{
+		color: "coral"
+	}
+});

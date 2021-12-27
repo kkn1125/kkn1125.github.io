@@ -1,5 +1,67 @@
 'use strict';
 
+// loading
+! function () {
+    if(!sessionStorage['loadCover']) sessionStorage['loadCover'] = true;
+    let findTarget = null;
+    let isLoaded = null;
+    if(sessionStorage['loadCover'] == 'true')
+    findTarget = requestAnimationFrame(watchLoading.bind(findTarget, getTarget));
+    else {
+        isLoaded = requestAnimationFrame(watchLoaded.bind(isLoaded, detectLoad));
+    }
+}();
+
+function watchLoaded(callback){
+    let target = null;
+    target = document.querySelector('[data-option="loading"]');
+    if(target){
+        callback(target);
+        cancelAnimationFrame(this);
+    } else requestAnimationFrame(watchLoaded.bind(this));
+}
+
+function detectLoad(target){
+    if(target) target.remove();
+}
+
+function watchLoading(callback) {
+    let target = null;
+    target = document.querySelector('.loadingCover');
+    if(target) {
+        callback(target);
+        cancelAnimationFrame(this); 
+    } else requestAnimationFrame(watchLoading.bind(this));
+}
+
+function getTarget(target){
+    let percent = 0;
+    let loading = requestAnimationFrame(animationLoading);
+    let optionLoading = target.closest('[data-option="loading"]');
+    optionLoading.style.display = 'flex';
+    target.style.transition = `.5s cubic-bezier(0.215, 0.610, 0.355, 1)`;
+    document.body.setAttribute('scroll', 'disabled');
+    function animationLoading(){
+        setTimeout(()=>{
+            if(percent>100){
+                sessionStorage['loadCover'] = false;
+                optionLoading.style.opacity = '0';
+                setTimeout(()=>{
+                    optionLoading.remove();
+                    document.body.removeAttribute('scroll');
+                },900);
+                cancelAnimationFrame(loading);
+            } else {
+                requestAnimationFrame(animationLoading)
+                target.style.height = `${percent}%`;
+                percent+=10;
+            }
+        }, parseInt(Math.random()*100));
+    }
+}
+// loading
+
+// kims.js
 $('.scrolldown').on('click', (self) => {
     var heights = $(self.currentTarget).parents().find('.section[id]').has($(self.currentTarget));
     var indexing = $(self.currentTarget).parents().find('.section[id]').index(heights);
@@ -522,3 +584,360 @@ document.querySelector('#tags').innerHTML = `
         return a;
     },{})).sort().map(tag=>`<a class="text-white tag tag-primary fs-6 text-capitalize" href="/tags#${tag.toLowerCase()}">${tag}</a>`).join(' ')}
 `;
+// kims.js
+
+// // selectView.js
+// const viewWrap = document.querySelector('#viewWrap');
+// const latestBtn = document.querySelector('#latestBtn');
+// const latestPosts = document.querySelector('.latest-posts');
+// const validTime = 1000*60*60*24;
+// let hiddenInfo;
+
+// function isHidden(){
+//     return getHiddenInfo().hidden;
+// }
+
+// function getHiddenInfo(){
+//     if(!localStorage['isHidden']) localStorage['isHidden'] = '{}';
+//     return JSON.parse(localStorage['isHidden']);
+// }
+
+// function setHiddenInfo(data){
+//     localStorage['isHidden'] = JSON.stringify(data);
+// }
+
+// hiddenInfo = getHiddenInfo();
+
+// if(isHidden()){
+//     // 히든일 때
+//     if(getHiddenInfo()['maxTime']<new Date().getTime()){
+//         // 새로 갱신
+//         hiddenInfo['hidden'] = false;
+//         setHiddenInfo(hiddenInfo);
+//         // 다시 최신글 보여줘야함
+//         latestPosts.removeAttribute('hidden');
+//     } else {
+//         // 최신 글 히든
+//         latestPosts.hidden = true;
+//     }
+// }
+
+// window.addEventListener('click', handleView);
+
+// function handleView(ev){
+//     const target = ev.target;
+//     if(target.id != 'latestBtn') return;
+    
+//     if(target.dataset.btn == 'latest' && !isHidden()){
+//         setHiddenInfo({
+//             maxTime: new Date().getTime() + validTime,
+//             hidden: true
+//         });
+//         latestPosts.hidden = true;
+//     }
+// }
+// // selectView.js
+
+// img Lazy Load
+const options = {
+    threshold: 0
+};
+
+const loadedStorage = [];
+
+function detectImg(entries, obs, e){
+    entries.forEach((entry)=>{
+        if(entry.isIntersecting){
+            // observer.unobserve(entry.target);
+            // console.log('show');
+            const target = entry.target;
+            // console.log(target)
+            if(target.dataset.src){
+                if(target.src.match(/imagekit/gm)){
+                    if(!loadedStorage.includes(target.dataset.src)){
+                        loadedStorage.push(target.dataset.src);
+                        target.src = target.dataset.src;
+                    } else {
+                        target.src = target.dataset.src;
+                    }
+                }
+            }
+        } else {
+            // console.log('out')
+        }
+    })
+}
+
+let observer = new IntersectionObserver(detectImg, options);
+document.querySelectorAll('img').forEach(img=>{
+    observer.observe(img);
+})
+// img Lazy Load
+
+// article img zoom
+const imgs = document.querySelectorAll('.article-post img:not(.donaricano)');
+let clicked = false;
+let zoomLayer = 100;
+let moved;
+let moving = false;
+let click_position_X = 0;
+let click_position_Y = 0;
+let originX = 0;
+let originY = 0;
+
+let downListener = (ev)=>{
+    moved = true;
+    moving = false;
+    originX = parseInt(getComputedStyle(ev.target)['left'].slice(0,-2));
+    originY = parseInt(getComputedStyle(ev.target)['top'].slice(0,-2));
+    click_position_X = ev.clientX;
+    click_position_Y = ev.clientY;
+}
+
+let upListener = () => {
+    moved = false;
+}
+
+imgs.forEach(img=>{
+    img.draggable = false;
+    img.addEventListener('click', (ev)=>{
+        document.body.classList.add("noScroll");
+        if(!clicked){
+            let copy = img.cloneNode();
+            let pop = document.createElement('div');
+            let zoom = document.createElement('div');
+            let btn = document.createElement('button');
+            copy.classList.add("zoomIn");
+            pop.id = "pop";
+            pop.classList.add("popup");
+            pop.prepend(zoom);
+            zoom.classList.add('zoom');
+            zoom.prepend(copy);
+            zoom.prepend(btn);
+            btn.innerHTML = "&times;";
+            btn.classList.add('btn','btn-danger', 'position-absolute');
+            btn.style.right = '2em';
+            btn.style.zIndex = '100';
+            btn.addEventListener('click', ()=>{
+                pop.classList.remove("show");
+                setTimeout(()=>{
+                    pop.remove();
+                    clicked = false;
+                    document.body.classList.remove("noScroll");
+                }, 300);
+            });
+
+            copy.addEventListener('click', (evt)=>{
+                if(!moved && !moving){
+                    if(copy.classList.contains("zoomOut")){
+                        copy.classList.replace("zoomOut","zoomIn");
+                    }
+                    let zoomIn = evt.target;
+                    zoomIn.style.cssText = `
+                        width: ${zoomLayer}%;
+                        top: ${evt.target.style.top};
+                        left: ${evt.target.style.left};
+                    `;
+                    if(zoomLayer == 150){
+                        copy.classList.replace("zoomIn","zoomOut");
+                    }
+                    if(zoomLayer>150){
+                        zoomLayer = 100;
+                        zoomIn.style.cssText = `
+                            width: ${zoomLayer}%;
+                            top: 0;
+                            left: 0;
+                        `;
+                    }
+                    zoomLayer+=10;
+                }
+            });
+
+            copy.addEventListener('mousedown', downListener);
+            copy.addEventListener('mousemove', evt=>{
+                if (moved) {
+                    moving = true;
+                    let oX = evt.clientX;
+                    let oY = evt.clientY;
+                    evt.target.style.cssText = `
+                        top: ${originY + (oY-click_position_Y)}px;
+                        left: ${originX + (oX-click_position_X)}px;
+                        width: ${evt.target.style.width};
+                    `;
+                } else {
+                    moving = false;
+                    moved = false;
+                }
+            });
+            window.addEventListener('mouseup', upListener);
+
+            document.body.prepend(pop);
+            setTimeout(()=>{
+                pop.classList.add('show');
+            }, 300);
+            clicked = true;
+        }
+    });
+});
+// article img zoom
+
+// scrollViewer
+const body = document.body;
+const main = document.querySelector('main');
+const gnb = document.querySelector('nav.gnb');
+let scrolled = 'pause';
+let scrollMaxPauseTime = 2;
+
+body.addEventListener('scroll', scrollViewer);
+window.addEventListener('click', handleSideBar);
+
+function handleSideBar(ev){
+    const target = ev.target;
+    if(target.id != 'delBtn') return;
+
+    document.querySelector('#lsb').classList.remove('show');
+    document.querySelector('#lsb').classList.add('hide');
+}
+
+function scrollViewer(ev){
+    const scrollBarVisiblePoint = document.body.scrollHeight;
+    scrolled = 'scroll';
+    // 스크롤 되는 비율을 나타내고자 한다.
+    // 1. 전체길이와 화면길이의 차이를 구한다.
+    // 2. 스크롤의 현재 위치를 구한다.
+    // console.log(window.innerHeight,scrollBarVisiblePoint)
+    if(window.innerHeight<scrollBarVisiblePoint){
+        // 윈도우 높이가 스크롤 발생지점 값보다 작다면
+        // 스크롤이 발생하기 때문에 수치화된 스크롤 비율을 나타낸다.
+        
+        const scrollMaximumValue = scrollBarVisiblePoint - window.innerHeight;
+        const currentScrollPoint = body.scrollTop;
+        const scrollPercent = parseInt((currentScrollPoint/scrollMaximumValue)*100);
+        
+        renderScrollGauge(scrollPercent);
+    } else {
+        // 스크롤이 없기 때문에 동작 안하도록 한다.
+    }
+    return body.scrollTop;
+}
+
+function renderScrollGauge(gaugeValue){
+    const gauge = body.querySelector('#scrollGauge');
+    const validDigit = gaugeValue.toString().split('.');
+    let temp = validDigit[1] == '00'
+    ?validDigit[0]
+    :gaugeValue;
+
+    if(!gauge){
+        const box = document.createElement('div');
+        box.id = 'scrollGauge';
+        box.classList.add('tag','tag-info');
+        body.append(box);
+        box.innerHTML = `<span></span><span> / </span><span>100</span>`;
+    } else {
+        gauge.children[0].textContent = `${temp>100?100:temp}`;
+    }
+}
+
+let detectPauseScrolling = setInterval(() => {
+    const gauge = body.querySelector('#scrollGauge');
+
+    if(scrolled!=='scroll'){
+        setTimeout(()=>{
+            scrolled = 'ready';
+            if(gauge) {
+                gauge.classList.add('gauge-hide');
+                setTimeout(()=>{
+                    gauge.remove();
+                }, 300);
+            }
+        }, scrollMaxPauseTime);
+    } else {
+        scrolled = 'pause';
+    }
+}, 1000);
+// scrollViewer
+
+// typer
+const typer = Typer.init({
+    typer: {
+        // data-typer-name 지정태그에 텍스트 추가 모습
+        words: {
+            intro: ['사용자 공간, 시각 디자인등을 생각하는 건축에 매력을 느껴 실내건축을 전공했습니다.',
+                '졸업 후 설계사무소에 입사하여 디자인, 프로젝트관리, 도면 작도 업무를 했고',
+                '디자인 원리와 일정관리, 건축법규, 사용자입장의 사고를 배웠습니다.',
+                '많은 분야에 실무자와 대면하며 각자 업무에 대한 여러 정보를 얻었고,',
+                '새로운 분야에 대한 도전을 생각하게 되었습니다.',
+                'AutoCAD로 도면을 그리면서 작도 능력향상을 위해 LISP언어를 알게 됐고,',
+                '점점 프로그래밍에 관심을 가지면서 이직을 결심했습니다.',
+                '학원을 이수하고 현재 Spring과 RestFul API를 공부 중입니다.'
+            ],
+            test4: [
+                '이것은 추가된 텍스트입니다.',
+                '얼마든지 추가 가능합니다.'
+            ]
+        },
+        // 전역 스타일 값 지정
+        speed: 0.1,
+        delay: 1.5,
+        loop: false,
+        loopDelay: 1,
+        start: 0,
+        eraseMode: false,
+        eraseSpeed: 0.1,
+        style: {
+            cursorBlink: 'horizontal'
+        },
+    }
+})
+
+// load lunr
+
+function loadSearch(){
+    // Create a new Index
+    idx = lunr(function(){
+        this.field('id')
+        this.field('title', { boost: 10 })
+        this.field('summary')
+    })
+ 
+    // Send a request to get the content json file
+    $.getJSON('/content.json', function(data){
+ 
+        // Put the data into the window global so it can be used later
+        window.searchData = data
+ 
+        // Loop through each entry and add it to the index
+        $.each(data, function(index, entry){
+            idx.add($.extend({"id": index}, entry))
+        })
+    })
+ 
+    // When search is pressed on the menu toggle the search box
+    $('#search').on('click', function(){
+        $('.searchForm').toggleClass('show')
+    })
+ 
+    // When the search form is submitted
+    $('#searchForm').on('submit', function(e){
+        // Stop the default action
+        e.preventDefault()
+ 
+        // Find the results from lunr
+        results = idx.search($('#searchField').val())
+ 
+        // Empty #content and put a list in for the results
+        $('#content').html('<h1>Search Results (' + results.length + ')</h1>')
+        $('#content').append('<ul id="searchResults"></ul>')
+ 
+        // Loop through results
+        $.each(results, function(index, result){
+            // Get the entry from the window global
+            entry = window.searchData[result.ref]
+ 
+            // Append the entry to the list.
+            $('#searchResults').append('<li><a href="' + entry.url + '">' + entry.title + '</li>')
+        })
+    })
+}
+// typer

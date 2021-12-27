@@ -673,6 +673,7 @@ transition: .5s cubic-bezier(1,0,0,1);
     right: 1em;
     user-select: none;
 	z-index: 1099;
+	font-size: 90%;
 }
 
 [news-alert] [data-news-alert-tag]{

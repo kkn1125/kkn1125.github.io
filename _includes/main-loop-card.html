@@ -22,7 +22,7 @@
 	{% if post.image %}
 	<div class="col-md-5 pe-0 text-right">
 	<a href="{{site.baseurl}}{{post.url}}">
-	<img class="w-100" style="aspect-ratio: 9/6" src="{% if post.image contains "://" %}{{ post.image }}{% else %}{{ site.baseurl }}/{{ post.image }}{% endif %}" alt="{{ post.title }}">
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="{% if post.image contains "://" %}{{ post.image }}{% else %}{{ site.baseurl }}/{{ post.image }}{% endif %}" alt="{{ post.title }}">
 	</a>
 	</div>
 	{% endif %}

@@ -1,26 +1,125 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <script>
+            let origin = window.location.origin;
+            let path = window.location.pathname;
+            if (path === "/index.html") {
+                location.href = origin + "/";
+            } else if (path === "/index") {
+                location.href = origin + "/";
+            }
+        </script>
+        
+        <!-- preload -->
+        <link rel="preload"
+            href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Noto+Serif+KR:wght@200;300;400;500;600;700;900&display=swap"
+            as="style">
+
+        <link rel="preload" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+            integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"
+            as="style">
+
+        <link rel="preload" href="https://cdn.jsdelivr.net/gh/kkn1125/penli@52b4a23/docs/assets/css/penli.css"
+            as="style">
+        <link rel="preload" href="https://cdn.jsdelivr.net/gh/kkn1125/penli@52b4a23/docs/assets/css/penli.theme.css"
+            as="style">
+        <link rel="preload" href="https://cdn.jsdelivr.net/gh/kkn1125/typer@update-v020/typer.css"
+            integrity="sha384-WlGS/BGsTdvbKjfrZ9IJE45xkq8xElk1ASfEwycwMlwu0DO+shSOgBF/odcC4afX" crossorigin="anonymous"
+            as="style">
+        <link rel="preload" href="{{ site.baseurl }}/assets/css/syntax.css" as="style">
+        <link rel="preload" href="{{ site.baseurl }}/assets/css/theme.css" as="style">
+        <link rel="preload" href="{{ site.baseurl }}/assets/css/kims.css" as="style">
+        <link rel="preload" href="{{site.baseurl}}/assets/css/imgZoom.css" as="style">
+        <link rel="preload" href="{{site.baseurl}}/assets/js/devkimson.bundle.js" as="script">
+
+        <link rel="preload" href="{{ site.baseurl }}/assets/js/darkMode.js" as="script">
+
+        {%- comment -%}
+        <link rel="preload" href="{{site.baseurl}}/assets/js/loading.js" as="script">
+        <link rel="preload" href="{{ site.baseurl }}/assets/js/theme.js" as="script">
+        <link rel="preload" href="{{ site.baseurl }}/assets/js/scrollViewer.js" as="script">
+        <link rel="preload" href="{{site.baseurl}}/assets/js/kims.js" as="script">
+        <link rel="preload" href="{{ site.baseurl }}/assets/js/imgZoom.js" as="script">
+        <link rel="preload" href="{{site.baseurl}}/assets/js/lunr.js" as="script">
+        <link rel="preload" href="{{site.baseurl}}/assets/js/imgLazyLoad.js" as="script">
+
+        <link rel="preload" href="https://cdn.jsdelivr.net/gh/kkn1125/typer@update-v020/typer.js"
+            integrity="sha384-s62GQWchBcBh82YhldUNQK9Cqw6iFB+eBau07ihjICofE7TLkSimbCI4+djd4soo" crossorigin="anonymous"
+            as="script">
+        <link rel="preload" href="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous" as="script">
+        {%- endcomment -%}
+
+        <link rel="prefetch" href="{{ site.baseurl }}/assets/data/jsonTodo.json" as="fetch">
+
+        <script>
             document.documentElement.lang = navigator.language.split('-').shift();
         </script>
+        <!-- preload -->
+
         <title>{{page.title}} | {{site.name}}</title>
 
         {% seo %}
 
         <link rel="shortcut icon" type="image/x-icon" href="{{site.baseurl}}/{{site.favicon}}">
 
-        {% include tracking-header.html %}
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kkn1125/penli@52b4a23/docs/assets/css/penli.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kkn1125/penli@52b4a23/docs/assets/css/penli.theme.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kkn1125/typer@update-v020/typer.css"
+            integrity="sha384-WlGS/BGsTdvbKjfrZ9IJE45xkq8xElk1ASfEwycwMlwu0DO+shSOgBF/odcC4afX" crossorigin="anonymous">
 
+        <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/theme.css">
+        <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/kims.css">
+        <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/imgZoom.css">
+        <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/syntax.css">
+
+        <!-- JQuery -->
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous" async></script>
+
+        <!-- font awesome -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+            integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+
+        <!-- Google Fonts-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Noto+Serif+KR:wght@200;300;400;500;600;700;900&display=swap"
+            rel="stylesheet">
+
+        {% include tracking-header.html %}
+        <style>
+            .lunrsearchresult .title {
+                color: #d9230f;
+            }
+
+            .lunrsearchresult .url {
+                color: silver;
+            }
+
+            .lunrsearchresult a {
+                display: block;
+                color: #777;
+            }
+
+            .lunrsearchresult a:hover,
+            .lunrsearchresult a:focus {
+                text-decoration: none;
+            }
+
+            .lunrsearchresult a:hover .title {
+                text-decoration: underline;
+            }
+        </style>
+        <script src="{{ site.baseurl }}/assets/js/darkMode.js"></script>
     </head>
 
-    <body data-aos-easing="ease-out-back"
-        data-aos-duration="1000" data-aos-delay="0">
-        <script src="{{ site.baseurl }}/assets/js/darkMode.js" async></script>
+    <body>
 
         <button class="btn btn-danger py-5 px-1" data-target="#lsb">
             <i class="fas fa-chevron-right"></i>

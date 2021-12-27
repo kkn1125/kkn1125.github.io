@@ -1,6 +1,6 @@
 <script src="{{site.baseurl}}/assets/js/lunr.js"></script>
 
-<script>
+<script defer>
 $(function() {
     $("#lunrsearchresults").on('click', '#btnx', function () {
         $('#lunrsearchresults').hide( 1000 );
@@ -83,16 +83,6 @@ function lunr_search(term) {
     return false;
 }
 </script>
-
-<style>
-    .lunrsearchresult .title {color: #d9230f;}
-    .lunrsearchresult .url {color: silver;}
-    .lunrsearchresult a {display: block; color: #777;}
-    .lunrsearchresult a:hover, .lunrsearchresult a:focus {text-decoration: none;}
-    .lunrsearchresult a:hover .title {text-decoration: underline;}
-</style>
-
-
 <li>
     <form class="search btn-bundle g-0" onSubmit="return lunr_search(document.getElementById('lunrsearch').value);">
         <input type="text" class="form-input col" id="lunrsearch" name="q" value="" placeholder="검색어를 입력해주세요.">
