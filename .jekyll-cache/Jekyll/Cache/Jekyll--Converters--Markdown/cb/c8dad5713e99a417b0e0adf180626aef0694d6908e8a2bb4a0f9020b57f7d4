@@ -1,10 +1,4 @@
----
-title: "Kimson"
-layout: default
-permalink: "/author-kimson.html"
----
-
-{% assign author = site.authors[page.title] %}
+I"‹<p>{% assign author = site.authors[page.title] %}</p>
 <div class="fence-full">
     <div class="w-flex justify-content-center">
         <div class="col-md-20">
@@ -18,8 +12,7 @@ permalink: "/author-kimson.html"
                     <p class="excerpt">{{ author.bio }}</p>
                 </div>
                 <div class="col-md-5 text-right">
-                    <img alt="{{ author.name }}" src="{{site.baseurl}}/{{ author.avatar }}"
-                        class="rounded-circle" height="100" width="100">
+                    <img alt="{{ author.name }}" src="{{site.baseurl}}/{{ author.avatar }}" class="rounded-circle" height="100" width="100" />
                 </div>
             </div>
             <h4 class="fw-bold"><span>Posts by {{author.name}}</span></h4>
@@ -30,3 +23,4 @@ permalink: "/author-kimson.html"
         </div>
     </div>
 </div>
+:ET

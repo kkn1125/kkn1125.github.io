@@ -11,7 +11,7 @@ layout: default
 						<span class="catlist">
 							{% for category in page.categories %}
 							<a class="sscroll text-danger"
-								href="{{site.baseurl}}/categories.html#{{ category | downcase }}">{{ category | downcase }}</a><span
+								href="{{site.baseurl}}/categories#{{ category | downcase }}">{{ category | downcase }}</a><span
 								class="sep">, </span>
 							{% endfor %}
 						</span>
@@ -51,7 +51,7 @@ layout: default
 <div class="fence-full fence-lg pt-4 pb-4">
 	<div class="w-flex justify-content-center">
 		<!-- Share -->
-		<div class="col-lg-2 pe-4 mb-4 col-md-20">
+		<div class="col-lg-4 pe-4 mb-4 col-md-20">
 			<div class="position-sticky text-center" style="top: 130px;">
 				<div class="text-muted">
 					Share this
@@ -69,7 +69,7 @@ layout: default
 			</div>
 		</div>
 
-		<div class="col-20 col-lg-18">
+		<div class="col-20 col-lg-16">
 			<!-- Toc -->
 			<!-- Toc if any -->
 			{% if page.toc %}
@@ -100,7 +100,7 @@ layout: default
 				<span class="taglist">
 					{% for tag in page.tags %}
 					<a class="sscroll btn btn-light btn-sm font-weight-bold"
-						href="{{site.baseurl}}/tags.html#{{ tag | downcase }}">{{ tag | downcase }}</a>
+						href="{{site.baseurl}}/tags#{{ tag | downcase }}">{{ tag | downcase }}</a>
 					{% endfor %}
 				</span>
 			</div>

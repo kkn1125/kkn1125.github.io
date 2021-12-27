@@ -1,0 +1,20 @@
+I"y<style type="text/css" media="screen">
+  h1 {
+    margin: 30px 0;
+    font-size: 4em;
+    line-height: 1;
+    letter-spacing: -1px;
+  }
+</style>
+
+<div class="fence">
+  <div class="text-center">
+    <span class="h3">
+      404
+    </span>
+  </div>
+
+  <p align="center"><strong>Page not found :(</strong></p>
+  <p align="center">The requested page could not be found.</p>
+</div>
+:ET

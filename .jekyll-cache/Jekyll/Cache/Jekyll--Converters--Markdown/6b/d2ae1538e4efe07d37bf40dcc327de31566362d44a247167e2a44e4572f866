@@ -1,10 +1,4 @@
----
-title: "Tags"
-layout: default
-permalink: "/tags.html"
----
-
-<div class="fence-full">
+I"—<div class="fence-full">
     <div>
         <span class="fw-bold h3 text-uppercase mb-4">Tags</span>
     </div>
@@ -25,3 +19,4 @@ permalink: "/tags.html"
 
     {% endfor %}
 </div>
+:ET

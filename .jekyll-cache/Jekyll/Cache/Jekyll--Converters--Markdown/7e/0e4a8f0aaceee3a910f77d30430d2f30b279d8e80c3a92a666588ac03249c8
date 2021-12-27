@@ -1,9 +1,4 @@
----
-layout: default
-permalink: /404.html
----
-
-<style type="text/css" media="screen">
+I"¿<style type="text/css" media="screen">
   h1 {
     margin: 30px 0;
     font-size: 4em;
@@ -23,3 +18,4 @@ permalink: /404.html
     <p align="center">The requested page could not be found.</p>
   </div>
 </div>
+:ET

@@ -36,8 +36,8 @@ function modeHandler(ev) {
 
 function updateMode(mode, init=false) {
     let shape = {
-        on: `<i class="far fa-sun"></i>`,
-        off: `<i class="fas fa-moon"></i>`
+        off: `<i class="far fa-sun"></i>`,
+        on: `<i class="fas fa-moon"></i>`
     }
     let body = document.body.classList;
     clearMode.call(this);

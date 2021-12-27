@@ -515,3 +515,10 @@ async function getVisiteCount(){
 }
 
 getVisiteCount();
+
+document.querySelector('#tags').innerHTML = `
+    ${Object.keys(documents.filter(({tags})=>tags).reduce((a,b)=>{
+        b.tags.forEach(t=>a[t]=1);
+        return a;
+    },{})).sort().map(tag=>`<a class="text-white tag tag-primary fs-6 text-capitalize" href="/tags#${tag.toLowerCase()}">${tag}</a>`).join(' ')}
+`;

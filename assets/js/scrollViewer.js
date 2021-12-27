@@ -28,10 +28,9 @@ function scrollViewer(ev){
         
         const scrollMaximumValue = scrollBarVisiblePoint - window.innerHeight;
         const currentScrollPoint = body.scrollTop;
-        const scrollPercent = (currentScrollPoint/scrollMaximumValue)*100;
+        const scrollPercent = parseInt((currentScrollPoint/scrollMaximumValue)*100);
         
-        console.log()
-        renderScrollGauge(scrollPercent.toFixed(2));
+        renderScrollGauge(scrollPercent);
     } else {
         // 스크롤이 없기 때문에 동작 안하도록 한다.
     }
@@ -52,7 +51,7 @@ function renderScrollGauge(gaugeValue){
         body.append(box);
         box.innerHTML = `<span></span><span> / </span><span>100</span>`;
     } else {
-        gauge.children[0].textContent = `${temp}`;
+        gauge.children[0].textContent = `${temp>100?100:temp}`;
     }
 }
 

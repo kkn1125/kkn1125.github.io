@@ -9,10 +9,10 @@
                 </div>
                 <div class="card-title"> {{ author[1].name }} </div>
                 <div class="card-content">
+                    {%- comment -%}
                     <a class="card-link" href="{{site.baseurl}}/profile">
                         <small class="d-inline-block mt-1 mb-3 font-weight-normal"><i class="far fa-user-circle fs-4"></i> (View Profile)</small>
                     </a>
-                    {%- comment -%}
                     <a class="card-link" href="{{site.baseurl}}/author-{{author[1].name}}">
                         <small class="d-inline-block mt-1 mb-3 font-weight-normal"><i class="fas fa-book fs-4"></i> (View Author Posts)</small>
                     </a>
@@ -20,10 +20,9 @@
                     <div class="excerpt">{{ author[1].bio }}</div>
                     <div class="icon-block mt-3 d-flex justify-content-between">
                         <div>
-                            <a target="_blank" href="{{ author[1].twitter }}"><i class="fab fa-twitter text-muted"
-                                    aria-hidden="true"></i></a> &nbsp;
-                            <a target="_blank" href="{{ author[1].site }}"><i class="fa fa-globe text-muted"
-                                    aria-hidden="true"></i></a> &nbsp;
+                            <a target="_blank" href="{{ author[1].site }}">
+                                <i class="fa fa-globe text-muted" aria-hidden="true"></i>
+                            </a>
                         </div>
                     </div>
                 </div>

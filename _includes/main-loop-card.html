@@ -1,15 +1,17 @@
-<div class="mb-5 d-flex justify-content-between flex-column flex-md-row main-loop-card">
-	<div class="pr-3">
-		<h2 class="mb-1 h4 font-weight-bold">
-		<a class="text-dark" href="{{site.baseurl}}{{post.url}}">{{ post.title | truncate: 30 }}</a>
-		</h2>
+<div class="mb-5 w-flex justify-content-between flex-column flex-row-md main-loop-card">
+	<div class="col pe-3">
+		<div>
+			<span class="mb-1 h5 fw-bold">
+			<a class="text-dark" href="{{site.baseurl}}{{post.url}}">{{ post.title | truncate: 30 }}</a>
+			</span>
+		</div>
 		<p class="excerpt">
 		{{ post.excerpt  | strip_html | strip_newlines | truncate: 186}}
 		</p>
-		<small class="d-block text-muted">
+		<small class="w-block text-muted">
 			In <span class="catlist">
 			{% for category in post.categories %}
-			<a class="text-capitalize badge bg-success smoothscroll" href="{{site.baseurl}}/categories.html#{{ category | downcase }}">{{ category }}</a><span class="sep"> </span>
+			<a class="text-capitalize tag tag-success text-white" href="{{site.baseurl}}/categories#{{ category | downcase }}">{{ category }}</a><span class="sep"> </span>
 			{% endfor %}
 			</span>
 		</small>
@@ -18,10 +20,10 @@
 		</small>
 	</div>
 	{% if post.image %}
-		<div class="col-md-3 pr-0 text-right">
-		<a href="{{site.baseurl}}{{post.url}}">
-		<img class="w-100" style="aspect-ratio: 9/6" src="{% if post.image contains "://" %}{{ post.image }}{% else %}{{ site.baseurl }}/{{ post.image }}{% endif %}" alt="{{ post.title }}">
-		</a>
-		</div>
+	<div class="col-md-5 pe-0 text-right">
+	<a href="{{site.baseurl}}{{post.url}}">
+	<img class="w-100" style="aspect-ratio: 9/6" src="{% if post.image contains "://" %}{{ post.image }}{% else %}{{ site.baseurl }}/{{ post.image }}{% endif %}" alt="{{ post.title }}">
+	</a>
+	</div>
 	{% endif %}
 </div>

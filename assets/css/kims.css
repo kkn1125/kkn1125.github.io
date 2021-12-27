@@ -69,57 +69,57 @@ figure figcaption{
 	dark mode start
  */
 
- [data-switch="mode"] {
-    display: none;
+[data-switch="mode"] {
+	display: none;
 }
 
-label#mtWrap {
-    user-select: none;
-    cursor: pointer;
-    position: relative;
-    display: inline-block;
-    width: 4rem;
-    height: 2rem;
-    background-color: rgba(114, 157, 250, 0.5);
-    border-radius: 2rem;
-    -webkit-border-radius: 2rem;
-    -moz-border-radius: 2rem;
-    -ms-border-radius: 2rem;
-    -o-border-radius: 2rem;
+label {
+	user-select: none;
+	cursor: pointer;
+	position: relative;
+	display: inline-block;
+	width: 4rem;
+	height: 2rem;
+	background-color: rgba(114, 157, 250, 0.5);
+	border-radius: 2rem;
+	-webkit-border-radius: 2rem;
+	-moz-border-radius: 2rem;
+	-ms-border-radius: 2rem;
+	-o-border-radius: 2rem;
 }
 
-label#mtWrap.on>span{
-    left: 0%;
+label.on>span {
+	left: 0%;
 }
 
-label#mtWrap.off>span{
-    left: 50%;
+label.off>span {
+	left: 50%;
 }
 
-label#mtWrap>span{
-    position: absolute;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    pointer-events: none;
-    width: 2rem;
-    height: 2rem;
-    background-color: rgba(0, 0, 0, .5);
-    color: wheat;
-    border-radius: 2rem;
-    -webkit-border-radius: 2rem;
-    -moz-border-radius: 2rem;
-    -ms-border-radius: 2rem;
-    -o-border-radius: 2rem;
-    transition: 0.3s left cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    -webkit-transition: 0.3s left cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    -moz-transition: 0.3s left cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    -ms-transition: 0.3s left cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    -o-transition: 0.3s left cubic-bezier(0.25, 0.46, 0.45, 0.94);
+label>span {
+	position: absolute;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	pointer-events: none;
+	width: 2rem;
+	height: 2rem;
+	background-color: rgba(0, 0, 0, .5);
+	color: wheat;
+	border-radius: 2rem;
+	-webkit-border-radius: 2rem;
+	-moz-border-radius: 2rem;
+	-ms-border-radius: 2rem;
+	-o-border-radius: 2rem;
+	transition: 0.3s left cubic-bezier(0.25, 0.46, 0.45, 0.94);
+	-webkit-transition: 0.3s left cubic-bezier(0.25, 0.46, 0.45, 0.94);
+	-moz-transition: 0.3s left cubic-bezier(0.25, 0.46, 0.45, 0.94);
+	-ms-transition: 0.3s left cubic-bezier(0.25, 0.46, 0.45, 0.94);
+	-o-transition: 0.3s left cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-label#mtWrap>span::before{
-    position: absolute;
+label>span::before {
+	position: absolute;
 }
 
 body.dark {
@@ -162,6 +162,28 @@ body.dark .section-title h2 {
 
 body.dark div.border.rounded {
 	background-color: inherit !important;
+}
+
+body.dark .card-title>a{
+	color: white;
+}
+body.dark .card-body{
+	color: rgb(211, 211, 211) !important;
+}
+body.dark .card-content{
+	color: rgb(180, 180, 180);
+}
+
+body.dark #kal.table td{
+	color: rgb(155, 155, 155);
+}
+
+body.dark .table>thead>tr>* {
+    --pl-table-bg: none !important;
+}
+
+body.dark .card{
+	color: rgb(175, 175, 175);
 }
 
 footer.footer {
