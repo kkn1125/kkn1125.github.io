@@ -48,13 +48,13 @@
         <link rel="preload" href="{{site.baseurl}}/assets/js/lunr.js" as="script">
         <link rel="preload" href="{{site.baseurl}}/assets/js/imgLazyLoad.js" as="script">
 
-        <link rel="preload" href="https://cdn.jsdelivr.net/gh/kkn1125/typer@update-v020/typer.js"
-            integrity="sha384-s62GQWchBcBh82YhldUNQK9Cqw6iFB+eBau07ihjICofE7TLkSimbCI4+djd4soo" crossorigin="anonymous"
-            as="script">
         <link rel="preload" href="https://code.jquery.com/jquery-3.3.1.min.js"
             integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous" as="script">
         {%- endcomment -%}
 
+        <link rel="preload" href="https://cdn.jsdelivr.net/gh/kkn1125/typer@update-v020/typer.js"
+        integrity="sha384-s62GQWchBcBh82YhldUNQK9Cqw6iFB+eBau07ihjICofE7TLkSimbCI4+djd4soo" crossorigin="anonymous"
+        as="script">
         <link rel="prefetch" href="{{ site.baseurl }}/assets/data/jsonTodo.json" as="fetch">
 
         <script>
@@ -79,7 +79,7 @@
         <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/syntax.css">
 
         <!-- JQuery -->
-        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous" async></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 
         <!-- font awesome -->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
@@ -116,11 +116,11 @@
                 text-decoration: underline;
             }
         </style>
-        <script src="{{ site.baseurl }}/assets/js/darkMode.js"></script>
     </head>
-
+    
     <body>
-
+        <script src="{{ site.baseurl }}/assets/js/darkMode.js" async></script>
+        
         <button class="btn btn-danger py-5 px-1" data-target="#lsb">
             <i class="fas fa-chevron-right"></i>
         </button>
@@ -142,6 +142,7 @@
         <div class="main">
             <!-- Content -->
             {% include left-sidebar.html %}
+            
             <main>
                 {{ content }}
             </main>

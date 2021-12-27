@@ -1,24 +1,22 @@
 !function initMode() {
     // 최초 실행시 세션스토리지 읽고 값 적용
+    requestAnimationFrame(loopFind);
+}();
+
+function loopFind(){
     let mode = getMode() || 'off';
     let label = document.createElement('label');
     let btn = document.createElement('span');
     label.htmlFor = 'mode';
     label.append(btn);
-
-    let target = document.querySelector(`[data-switch="${label.htmlFor}"]`);
-    requestAnimationFrame(loopFind.bind(this, target, label, mode));
-}();
-
-function loopFind(target, label, mode){
-    target = document.querySelector(`[data-switch="${label.htmlFor}"]`);
-    if(target) {
+    let target = document.querySelector(`[data-switch="mode"]`);
+    if(target && label) {
         target.insertAdjacentElement('beforebegin', label);
         updateMode.call(label, mode, true);
         window.addEventListener('click', modeHandler.bind(label));
-        cancelAnimationFrame(loopFind.bind(this, target));
+        cancelAnimationFrame(loopFind);
     } else {
-        requestAnimationFrame(loopFind.bind(this, target));
+        requestAnimationFrame(loopFind);
     }
 }
 
