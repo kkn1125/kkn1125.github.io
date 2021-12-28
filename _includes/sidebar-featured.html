@@ -1,19 +1,20 @@
 <div class="">
     <span class="h4">Featured</span>
 </div>
-<div class="card-group card-light card-pd-2 card-dv-1 card-dv-md-4 g-3 overflow-x-auto">
+<div class="card-group card-ghost card-pd-0 card-dv-1 card-dv-sm-2 g-3">
 
     {% for post in site.posts %}
 
     {% if post.featured == true %}
-    <div class="card">
-        <div class="card-title">
+    <div class="card p-0" style="overflow: hidden;">
+        <img src="{{post.image}}" alt="post/cover" class="w-100">
+        <div class="card-title px-3">
             <a href="{{site.baseurl}}{{ post.url }}">{{ post.title | truncate: 30}}</a>
         </div>
         <div class="card-content">
             <!-- <div class="card-body"></div> -->
         </div>
-        <div>
+        <div class="pb-3 px-3">
             In <span class="catlist">
                 {% for category in post.categories %}
                 <a class="text-capitalize text-white tag tag-success"

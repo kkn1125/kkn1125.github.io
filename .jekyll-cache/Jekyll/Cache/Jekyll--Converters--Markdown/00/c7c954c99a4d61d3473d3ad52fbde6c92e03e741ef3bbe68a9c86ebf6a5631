@@ -1,112 +1,64 @@
-I"w;<div class="fence-full">
-    <div>
-        <span class="h5">누적 태그</span>
-        <div id="tags" class="w-flex g-1 p-1" style="overflow: auto;min-height: 5em;height: 5em; resize: vertical;"></div>
-    </div>
-    <div class="w-flex gx-3">
-        <div class="col-20 col-md-10" style="order: 2;">
-            <!-- Begin post excerpts, let's highlight the first 4 posts on top -->
-            <div class="border-bottom">
-                <span class="h4">Latest Posts</span>
-            </div>
-            <div class="card-group card-pd-1 card-dv-1 card-dv-md-2 card-ghost gx-5 latestPost">
-                <!-- latest post -->
-                
-                <div class="card">
-                    
-                    <div class="card-img">
-                        <a href="/javascript-jest01/" title="[JAVASCRIPT] Jest를 사용해보자">
-                            <img class="latestImgs" src="http://localhost:4000/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] Jest를 사용해보자" />
-                        </a>
-                    </div>
-                    
-                    <div class="card-title"><a href="/javascript-jest01/" title="[JAVASCRIPT] Jest를 사용해보자">[JAVASCRIPT] Jest를 사용해보자</a></div>
-                    <div class="card-content">
-                        <div class="card-body">
-                            Jest 사용하기
-                        </div>
-                    </div>
-                    
-                    
-                    In <span class="catlist">
-                        
-                        <a class="text-capitalize tag tag-success text-white" href="/categories.html#javascript">JAVASCRIPT</a><span class="sep"> </span>
-                        
-                        <a class="text-capitalize tag tag-success text-white" href="/categories.html#til">TIL</a><span class="sep"> </span>
-                        
-                        <a class="text-capitalize tag tag-success text-white" href="/categories.html#devops">DevOps</a><span class="sep"> </span>
-                        
-                    </span>
-                    <time class="card-time"></time>
-                    
-                    
-                </div>
-                
-                <div class="card">
-                    
-                    <div class="card-img">
-                        <a href="/java-tdd01/" title="[JAVA] TDD를 알아보자">
-                            <img class="latestImgs" src="http://localhost:4000/assets/images/post/covers/TIL-java.png" alt="[JAVA] TDD를 알아보자" />
-                        </a>
-                    </div>
-                    
-                    <div class="card-title"><a href="/java-tdd01/" title="[JAVA] TDD를 알아보자">[JAVA] TDD를 알아보자</a></div>
-                    <div class="card-content">
-                        <div class="card-body">
-                            Test Driven Development (TDD)
-                        </div>
-                    </div>
-                    
-                </div>
-                
-                <div class="card">
-                    
-                    <div class="card-img">
-                        <a href="/javascript-char-count/" title="[JAVASCRIPT] 2020 카카오 문자열 압축 풀이">
-                            <img class="latestImgs" src="http://localhost:4000/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] 2020 카카오 문자열 압축 풀이" />
-                        </a>
-                    </div>
-                    
-                    <div class="card-title"><a href="/javascript-char-count/" title="[JAVASCRIPT] 2020 카카오 문자열 압축 풀이">[JAVASCRIPT] 2020 카카오 문자열 압축 풀이</a></div>
-                    <div class="card-content">
-                        <div class="card-body">
-                            2020 카카오 문자열 압축 풀이
-                        </div>
-                    </div>
-                    
-                </div>
-                
-            </div>
-        </div>
-
+I"UE<div class="fence-full">
+    <div class="w-flex gx-3 justify-content-center">
         <!-- todolist -->
         
-        <div class="col-20 col-md-10" style="order: 1;" draggable="false">
-    <div class="position-relative">
-        <table id="kal" class="table text-center"></table>
-    </div>
+        <div id="kals" class="col-20 col-md-10" draggable="false">
+    
 </div>
 
         
+
+        <div class="col-20 col-md-10">
+            <span class="h5">Tags</span>
+            <div id="tags" class="w-flex g-1 p-1" style="overflow: auto; resize: vertical; max-height: 430px;"></div>
+        </div>
     </div>
 
-    <div class="w-flex mt-3">
-        <div class="">
+    <div class="w-flex">
+
+        <div class="w-flex mt-3 col-10 col-md-8">
+            <div class="">
     <span class="h4">Featured</span>
 </div>
-<div class="card-group card-ghost card-pd-2 card-dv-1 card-dv-md-4 g-3 overflow-x-auto">
+<div class="card-group card-ghost card-pd-0 card-dv-2 g-3">
 
     
 
     
-    <div class="card">
-        <div class="card-title">
+    <div class="card p-0" style="overflow: hidden;">
+        <img src="assets/images/post/covers/TIL-SPRING.png" alt="post/cover" class="w-100" />
+        <div class="card-title px-3">
+            <a href="/spring-jpa01/">[SPRING] Spring에서 JPA를 사용해보자</a>
+        </div>
+        <div class="card-content">
+            <!-- <div class="card-body"></div> -->
+        </div>
+        <div class="pb-3 px-3">
+            In <span class="catlist">
+                
+                <a class="text-capitalize text-white tag tag-success" href="/categories.html#spring">SPRING</a><span class="sep"> </span>
+                
+                <a class="text-capitalize text-white tag tag-success" href="/categories.html#til">TIL</a><span class="sep"> </span>
+                
+            </span>
+        </div>
+        <time class="card-time"></time>
+    </div>
+
+    
+
+    
+
+    
+    <div class="card p-0" style="overflow: hidden;">
+        <img src="assets/images/post/covers/TIL-javascript.png" alt="post/cover" class="w-100" />
+        <div class="card-title px-3">
             <a href="/javascript-jest01/">[JAVASCRIPT] Jest를 사용해보자</a>
         </div>
         <div class="card-content">
             <!-- <div class="card-body"></div> -->
         </div>
-        <div>
+        <div class="pb-3 px-3">
             In <span class="catlist">
                 
                 <a class="text-capitalize text-white tag tag-success" href="/categories.html#javascript">JAVASCRIPT</a><span class="sep"> </span>
@@ -125,14 +77,15 @@
     
 
     
-    <div class="card">
-        <div class="card-title">
+    <div class="card p-0" style="overflow: hidden;">
+        <img src="assets/images/post/covers/TIL-java.png" alt="post/cover" class="w-100" />
+        <div class="card-title px-3">
             <a href="/java-tdd01/">[JAVA] TDD를 알아보자</a>
         </div>
         <div class="card-content">
             <!-- <div class="card-body"></div> -->
         </div>
-        <div>
+        <div class="pb-3 px-3">
             In <span class="catlist">
                 
                 <a class="text-capitalize text-white tag tag-success" href="/categories.html#java">JAVA</a><span class="sep"> </span>
@@ -151,14 +104,15 @@
     
 
     
-    <div class="card">
-        <div class="card-title">
+    <div class="card p-0" style="overflow: hidden;">
+        <img src="assets/images/post/covers/TIL-javascript.png" alt="post/cover" class="w-100" />
+        <div class="card-title px-3">
             <a href="/javascript-char-count/">[JAVASCRIPT] 2020 카카오 문자열 압...</a>
         </div>
         <div class="card-content">
             <!-- <div class="card-body"></div> -->
         </div>
-        <div>
+        <div class="pb-3 px-3">
             In <span class="catlist">
                 
                 <a class="text-capitalize text-white tag tag-success" href="/categories.html#javascript">JAVASCRIPT</a><span class="sep"> </span>
@@ -181,14 +135,15 @@
     
 
     
-    <div class="card">
-        <div class="card-title">
+    <div class="card p-0" style="overflow: hidden;">
+        <img src="assets/images/post/covers/TIL-javascript.png" alt="post/cover" class="w-100" />
+        <div class="card-title px-3">
             <a href="/javascript-visitor-count01/">[JAVASCRIPT] 정적 웹에서 방문자 수 나타내기</a>
         </div>
         <div class="card-content">
             <!-- <div class="card-body"></div> -->
         </div>
-        <div>
+        <div class="pb-3 px-3">
             In <span class="catlist">
                 
                 <a class="text-capitalize text-white tag tag-success" href="/categories.html#javascript">JAVASCRIPT</a><span class="sep"> </span>
@@ -211,14 +166,15 @@
     
 
     
-    <div class="card">
-        <div class="card-title">
+    <div class="card p-0" style="overflow: hidden;">
+        <img src="assets/images/post/covers/TIL-spring.png" alt="post/cover" class="w-100" />
+        <div class="card-title px-3">
             <a href="/spring-tiles-error01/">[SPRING] Tiles 설정 시 경로에 있는 ...</a>
         </div>
         <div class="card-content">
             <!-- <div class="card-body"></div> -->
         </div>
-        <div>
+        <div class="pb-3 px-3">
             In <span class="catlist">
                 
                 <a class="text-capitalize text-white tag tag-success" href="/categories.html#spring">SPRING</a><span class="sep"> </span>
@@ -235,14 +191,15 @@
     
 
     
-    <div class="card">
-        <div class="card-title">
+    <div class="card p-0" style="overflow: hidden;">
+        <img src="assets/images/post/springboot/mybatis/batis03.png" alt="post/cover" class="w-100" />
+        <div class="card-title px-3">
             <a href="/spring-mybatis01/">[SPRING] MyBatis 사용하기 01</a>
         </div>
         <div class="card-content">
             <!-- <div class="card-body"></div> -->
         </div>
-        <div>
+        <div class="pb-3 px-3">
             In <span class="catlist">
                 
                 <a class="text-capitalize text-white tag tag-success" href="/categories.html#spring">SPRING</a><span class="sep"> </span>
@@ -259,14 +216,15 @@
     
 
     
-    <div class="card">
-        <div class="card-title">
+    <div class="card p-0" style="overflow: hidden;">
+        <img src="assets/images/post/covers/TIL-javascript.png" alt="post/cover" class="w-100" />
+        <div class="card-title px-3">
             <a href="/javascript-routing01/">[JAVASCRIPT] Vanilla JavaSc...</a>
         </div>
         <div class="card-content">
             <!-- <div class="card-body"></div> -->
         </div>
-        <div>
+        <div class="pb-3 px-3">
             In <span class="catlist">
                 
                 <a class="text-capitalize text-white tag tag-success" href="/categories.html#javascript">JAVASCRIPT</a><span class="sep"> </span>
@@ -295,14 +253,15 @@
     
 
     
-    <div class="card">
-        <div class="card-title">
+    <div class="card p-0" style="overflow: hidden;">
+        <img src="assets/images/post/covers/TIL-javascript.png" alt="post/cover" class="w-100" />
+        <div class="card-title px-3">
             <a href="/javascript-dark-mode04/">[JAVASCRIPT] 정적웹에 다크모드 적용하기 04</a>
         </div>
         <div class="card-content">
             <!-- <div class="card-body"></div> -->
         </div>
-        <div>
+        <div class="pb-3 px-3">
             In <span class="catlist">
                 
                 <a class="text-capitalize text-white tag tag-success" href="/categories.html#javascript">JAVASCRIPT</a><span class="sep"> </span>
@@ -319,14 +278,15 @@
     
 
     
-    <div class="card">
-        <div class="card-title">
+    <div class="card p-0" style="overflow: hidden;">
+        <img src="assets/images/post/covers/TIM-none.png" alt="post/cover" class="w-100" />
+        <div class="card-title px-3">
             <a href="/javascript-typerjs01/">[JAVASCRIPT] Typer 0.2.0 pr...</a>
         </div>
         <div class="card-content">
             <!-- <div class="card-body"></div> -->
         </div>
-        <div>
+        <div class="pb-3 px-3">
             In <span class="catlist">
                 
                 <a class="text-capitalize text-white tag tag-success" href="/categories.html#javascript">JAVASCRIPT</a><span class="sep"> </span>
@@ -345,14 +305,15 @@
     
 
     
-    <div class="card">
-        <div class="card-title">
+    <div class="card p-0" style="overflow: hidden;">
+        <img src="assets/images/post/covers/TIL-javascript.png" alt="post/cover" class="w-100" />
+        <div class="card-title px-3">
             <a href="/javascript-web-tutorial/">[JAVASCRIPT] 웹 튜토리얼 구현하기</a>
         </div>
         <div class="card-content">
             <!-- <div class="card-body"></div> -->
         </div>
-        <div>
+        <div class="pb-3 px-3">
             In <span class="catlist">
                 
                 <a class="text-capitalize text-white tag tag-success" href="/categories.html#javascript">JAVASCRIPT</a><span class="sep"> </span>
@@ -395,14 +356,15 @@
     
 
     
-    <div class="card">
-        <div class="card-title">
+    <div class="card p-0" style="overflow: hidden;">
+        <img src="assets/images/post/covers/TIM-none.png" alt="post/cover" class="w-100" />
+        <div class="card-title px-3">
             <a href="/javascript-documentify-js/">[JAVASCRIPT] Documentify ( ...</a>
         </div>
         <div class="card-content">
             <!-- <div class="card-body"></div> -->
         </div>
-        <div>
+        <div class="pb-3 px-3">
             In <span class="catlist">
                 
                 <a class="text-capitalize text-white tag tag-success" href="/categories.html#tim">TIM</a><span class="sep"> </span>
@@ -477,14 +439,15 @@
     
 
     
-    <div class="card">
-        <div class="card-title">
+    <div class="card p-0" style="overflow: hidden;">
+        <img src="assets/images/post/covers/TIL-javascript.png" alt="post/cover" class="w-100" />
+        <div class="card-title px-3">
             <a href="/javascript-send-mail/">[JAVASCRIPT] 자바스크립트 메일 보내기</a>
         </div>
         <div class="card-content">
             <!-- <div class="card-body"></div> -->
         </div>
-        <div>
+        <div class="pb-3 px-3">
             In <span class="catlist">
                 
                 <a class="text-capitalize text-white tag tag-success" href="/categories.html#til">TIL</a><span class="sep"> </span>
@@ -626,6 +589,81 @@
 
 </div>
 
+
+        </div>
+    
+        <div class="col-10 col-md-12">
+            <!-- Begin post excerpts, let's highlight the first 4 posts on top -->
+            <div class="border-bottom">
+                <span class="h4">Latest Posts</span>
+            </div>
+            <div class="card-group card-pd-0 card-dv-1 card-dv-md-2 card-ghost latestPost" style="gap: 1rem;">
+                <!-- latest post -->
+                
+                <div class="card p-0 m-0" style="overflow: hidden;">
+                    
+                    <div class="card-img">
+                        <a href="/spring-jpa01/" title="[SPRING] Spring에서 JPA를 사용해보자">
+                            <img class="latestImgs" src="http://localhost:4000/assets/images/post/covers/TIL-SPRING.png" alt="[SPRING] Spring에서 JPA를 사용해보자" />
+                        </a>
+                    </div>
+                    
+                    <div class="card-title"><a href="/spring-jpa01/" title="[SPRING] Spring에서 JPA를 사용해보자">[SPRING] Spring에서 JPA를 사용해보자</a></div>
+                    <div class="card-content">
+                        <div class="card-body">
+                            드디어 Spring JPA를 사용해보자
+                        </div>
+                    </div>
+                    
+                    
+                    In <span class="catlist">
+                        
+                        <a class="text-capitalize tag tag-success text-white" href="/categories.html#spring">SPRING</a><span class="sep"> </span>
+                        
+                        <a class="text-capitalize tag tag-success text-white" href="/categories.html#til">TIL</a><span class="sep"> </span>
+                        
+                    </span>
+                    <time class="card-time"></time>
+                    
+                    
+                </div>
+                
+                <div class="card p-0 m-0" style="overflow: hidden;">
+                    
+                    <div class="card-img">
+                        <a href="/javascript-jest01/" title="[JAVASCRIPT] Jest를 사용해보자">
+                            <img class="latestImgs" src="http://localhost:4000/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] Jest를 사용해보자" />
+                        </a>
+                    </div>
+                    
+                    <div class="card-title"><a href="/javascript-jest01/" title="[JAVASCRIPT] Jest를 사용해보자">[JAVASCRIPT] Jest를 사용해보자</a></div>
+                    <div class="card-content">
+                        <div class="card-body">
+                            Jest 사용하기
+                        </div>
+                    </div>
+                    
+                </div>
+                
+                <div class="card p-0 m-0" style="overflow: hidden;">
+                    
+                    <div class="card-img">
+                        <a href="/java-tdd01/" title="[JAVA] TDD를 알아보자">
+                            <img class="latestImgs" src="http://localhost:4000/assets/images/post/covers/TIL-java.png" alt="[JAVA] TDD를 알아보자" />
+                        </a>
+                    </div>
+                    
+                    <div class="card-title"><a href="/java-tdd01/" title="[JAVA] TDD를 알아보자">[JAVA] TDD를 알아보자</a></div>
+                    <div class="card-content">
+                        <div class="card-body">
+                            Test Driven Development (TDD)
+                        </div>
+                    </div>
+                    
+                </div>
+                
+            </div>
+        </div>
 
     </div>
 

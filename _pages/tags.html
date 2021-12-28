@@ -10,7 +10,7 @@ permalink: "/tags.html"
     </div>
 
     {% for tag in site.tags %}
-    <div id="{{ tag[0] | downcase }}" style="padding-top: 64px;border-bottom: 2px solid rgba(0,0,0,0.2); margin-bottom: 1em"><span class="h5 fw-bold text-capitalize">{{ tag[0] }}</span></div>
+    <div id="{{ tag[0] | downcase }}" style="padding-top: 64px;border-bottom: 2px solid rgb(133 133 133); margin-bottom: 1em"><span class="h5 fw-bold text-capitalize">{{ tag[0] }}</span></div>
 
     {% assign pages_list = tag[1] %}
     {% for post in pages_list %}

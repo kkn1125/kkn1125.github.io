@@ -1,0 +1,22 @@
+I"o<h1 id="드디어-spring-jpa를-사용해보자">드디어 Spring JPA를 사용해보자</h1>
+
+<hr />
+
+<p>📚 함께 보면 좋은 내용</p>
+
+<p><a href="https://docs.spring.io/spring-data/jpa/docs/1.5.0.RELEASE/reference/html/jpa.repositories.html" target="_blank">DOCS Spring 2.JPA Repositories</a></p>
+
+<p><a href="https://spring.io/projects/spring-data-jpa#samples" target="_blank">Spring.io 문서 - Book Example</a></p>
+
+<p><a href="https://www.baeldung.com/the-persistence-layer-with-spring-and-jpa" target="_blank">odrotbohm - A Guide to JPA with Spring</a></p>
+
+<p><a href="https://github.com/spring-projects/spring-data-book/blob/master/jpa/src/main/java/com/oreilly/springdata/jpa/core/CustomerRepository.java" target="_blank">Baeldung - spring-projects/spring-data-book</a></p>
+
+<p><a href="https://github.com/eugenp/tutorials/blob/master/persistence-modules/spring-jpa-2/src/main/resources/hibernate5Configuration.xml" target="_blank">fdpro - Github Repository::tutorials</a></p>
+
+<p><a href="https://araikuma.tistory.com/329" target="_blank">devkuma님 - [Spring] JpaRepository 이용</a></p>
+
+<p><a href="https://goddaehee.tistory.com/209" target="_blank">갓대희님 - [스프링부트 (7)] Spring Boot JPA(1) - 시작 및 기본 설정</a></p>
+
+<p><a href="https://data-make.tistory.com/621" target="_blank">Cristoval님 - [Spring + JPA] Spring Data JPA 란? (1)</a></p>
+:ET

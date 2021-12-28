@@ -11,6 +11,16 @@ html, body{
 	overflow-x: hidden;
 }
 
+a[href]{
+	color:rgb(53, 53, 53);
+}
+
+article ol,
+article ul{
+	list-style: auto !important;
+	margin-left: 1em;
+}
+
 body{
 	position: relative;
 }

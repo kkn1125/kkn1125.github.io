@@ -14,11 +14,11 @@ if(document.querySelector('#kals')) fetch('/assets/data/jsonTodo.json')
                 endDay: (y, m) => new Date(y, m, 0).getDate()
             },
             genDate: (empty, lastDate) => new Array(empty).fill('').concat(...(new Array(lastDate).fill(0).map((x, i) => i + 1))).concat(...(new Array(Math.ceil((lastDate+empty)/7)*7 - (lastDate+empty)).fill(''))),
-            todayBtn: () => `<button data-btn="today">today</button>`,
-            prevBtn: () => `<button data-btn="prev">prev</button>`,
-            nextBtn: () => `<button data-btn="next">next</button>`,
-            yearSelector: () => `<select>${new Array(101).fill(0).map((x,i)=>`<option value="${i+1999}">${i+1999}</option>`).join('')}</select>`,
-            monthSelector: () => `<select>${new Array(12).fill(0).map((x,i)=>`<option value="${i}">${i+1}</option>`)}</select>`,
+            todayBtn: () => `<button class="btn btn-danger btn-lg" data-btn="today">today</button>`,
+            prevBtn: () => `<button class="btn btn-success btn-lg" data-btn="prev">prev</button>`,
+            nextBtn: () => `<button class="btn btn-success btn-lg" data-btn="next">next</button>`,
+            yearSelector: () => `<select class="form-select form-select-lg col mx-0">${new Array(101).fill(0).map((x,i)=>`<option value="${i+1999}">${i+1999}</option>`).join('')}</select>`,
+            monthSelector: () => `<select class="form-select form-select-lg col mx-0">${new Array(12).fill(0).map((x,i)=>`<option value="${i}">${i+1}</option>`)}</select>`,
         };
     
         const modules = {
@@ -26,7 +26,7 @@ if(document.querySelector('#kals')) fetch('/assets/data/jsonTodo.json')
                 <thead>
                 <tr>
                     <th colspan="7">
-                        <span>
+                        <span class="btn-bundle justify-content-center">
                             ${dataModules.prevBtn()}
                             ${dataModules.yearSelector()}
                             ${dataModules.monthSelector()}
@@ -235,7 +235,7 @@ if(document.querySelector('#kals')) fetch('/assets/data/jsonTodo.json')
                 components = component;
                 renderTarget = document.querySelector('#kals');
     
-                renderTarget.insertAdjacentHTML('beforeend', `<div id="totalCount" style="margin-top: 32px; margin-bottom: 10px;"><span class="tag tag-info">${count}개 완료</span></div><span id="kalWrap"></span>`);
+                renderTarget.insertAdjacentHTML('beforeend', `<div id="totalCount" class="text-end" style="margin-top: 32px; margin-bottom: 10px;"><span class="tag tag-info">${count}개 완료</span></div><span id="kalWrap"></span>`);
                 renderTarget = document.querySelector('#kalWrap');
             }
     
@@ -397,20 +397,19 @@ if(document.querySelector('#kals')) fetch('/assets/data/jsonTodo.json')
                     }
     
                     table#kal>*>*>td{
-                        width: 30px;
-                        height: 30px;
+                        width: 50px;
+                        height: 50px !important;
                     }
     
                     table#kal th[colspan="7"]{
-                        padding-left: 1rem;
-                        padding-right: 1rem;
+                        padding-bottom: 1em;
                     }
     
-                    table#kal th[colspan="7"]>span{
+                    /*table#kal th[colspan="7"]>span{
                         display: inline-flex;
                         justify-content: space-between;
                         width: 100%;
-                    }
+                    }*/
     
                     table#kal>thead>tr:last-child{
                         border-bottom: 2px solid rgba(0,0,0,0.5);
@@ -499,31 +498,31 @@ if(document.querySelector('#kals')) fetch('/assets/data/jsonTodo.json')
                         font-size: 110%;
                     }
 
-                    table#kal>*>*>td:not(:empty),
-                    table#kal select,
-                    table#kal button{
+                    /*table#kal select,
+                    table#kal button{*/
+                    table#kal>*>*>td:not(:empty){
                         transition: box-shadow 150ms;
                         cursor: pointer;
                     }
     
-                    table#kal select,
+                    /*table#kal select,
                     table#kal button{
                         border: none;
                         background: none;
                         border-radius: .5rem;
                         outline: none;
                         height: 2em;
-                    }
+                    }*/
     
-                    table#kal button{
+                    /*table#kal button{
                         background-color: lightgray;
                         padding: .3rem .5rem;
-                    }
+                    }*/
     
-                    table#kal button:focus,
+                    /*table#kal button:focus,
                     table#kal select:focus{
                         box-shadow: 0 0 0 .3rem rgb(255 92 92 / 54%);
-                    }
+                    }*/
     
                     #now {
                         font-weight: bold;

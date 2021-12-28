@@ -1,0 +1,17 @@
+I"N
+<ul>
+  <li><a href="#spring-boot말고-spring에서-jpa를-사용해보자">Spring Boot말고 Spring에서 JPA를 사용해보자</a>
+    <ul>
+      <li><a href="#필요한-설정">필요한 설정</a></li>
+      <li><a href="#코드-작성">코드 작성</a>
+        <ul>
+          <li><a href="#config-구현">Config 구현</a></li>
+          <li><a href="#repository-구현">Repository 구현</a></li>
+          <li><a href="#service-구현">Service 구현</a></li>
+          <li><a href="#controller-구현">Controller 구현</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+:ET

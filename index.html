@@ -7,20 +7,22 @@ description: "나를 표현하는 블로그. 끊임없이 도전하고 공부하
 ---
 
 <div class="fence-full">
-    <div>
-        <span class="h5">누적 태그</span>
-        <div id="tags" class="w-flex g-1 p-1" style="overflow: auto;min-height: 5em;height: 5em; resize: vertical;"></div>
-    </div>
-    <div class="w-flex gx-3">
-        <div class="col-20 col-md-10" style="order: 2;">
+
+    <div class="w-flex gx-4">
+
+        <div class="col-20 col-md-8">
+            {% include sidebar-featured.html %}
+        </div>
+    
+        <div class="col-20 col-md-12">
             <!-- Begin post excerpts, let's highlight the first 4 posts on top -->
             <div class="border-bottom">
                 <span class="h4">Latest Posts</span>
             </div>
-            <div class="card-group card-pd-1 card-dv-1 card-dv-md-2 card-ghost gx-5 latestPost">
+            <div class="card-group pt-1 card-pd-0 card-dv-1 card-dv-md-2 card-ghost latestPost" style="gap: 1rem;">
                 <!-- latest post -->
                 {% for post in site.posts limit:3 %}
-                <div class="card">
+                <div class="card p-0 m-0" style="overflow: hidden;">
                     {% if post.image %}
                     <div class="card-img">
                         <a href="{{site.baseurl}}{{post.url}}" title="{{ post.title }}">
@@ -50,16 +52,20 @@ description: "나를 표현하는 블로그. 끊임없이 도전하고 공부하
                 </div>
                 {% endfor %}
             </div>
+
+            <div class="w-flex flex-column">
+                <!-- todolist -->
+                {% if site.todo %}
+                {% include todolist.html %}
+                {% endif %}
+        
+                <div class="col">
+                    <span class="h5">Tags</span>
+                    <div id="tags" class="w-flex g-1 p-1" style="overflow: auto; resize: vertical; max-height: 430px;"></div>
+                </div>
+            </div>
         </div>
 
-        <!-- todolist -->
-        {% if site.todo %}
-        {% include todolist.html %}
-        {% endif %}
-    </div>
-
-    <div class="w-flex mt-3">
-        {% include sidebar-featured.html %}
     </div>
 
 </div>

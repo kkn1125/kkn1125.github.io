@@ -1,0 +1,54 @@
+I"‡<div class="fence-full">
+    <div class="w-flex gx-3 justify-content-center">
+        <!-- todolist -->
+        {% if site.todo %}
+        {% include todolist.html %}
+        {% endif %}
+
+        <div class="col-20 col-md-10">
+            <span class="h5">Tags</span>
+            <div id="tags" class="w-flex g-1 p-1" style="height: 22em; overflow: auto; resize: vertical;"></div>
+        </div>
+    </div>
+    <!-- Begin post excerpts, let's highlight the first 4 posts on top -->
+    <div class="border-bottom">
+        <span class="h4">Latest Posts</span>
+    </div>
+    <div class="card-group card-pd-0 card-dv-1 card-dv-md-2 card-ghost latestPost">
+        <!-- latest post -->
+        {% for post in site.posts limit:3 %}
+        <div class="card p-0 m-0" style="overflow: hidden;">
+            {% if post.image %}
+            <div class="card-img">
+                <a href="{{site.baseurl}}{{post.url}}" title="{{ post.title }}">
+                    &lt;img class="latestImgs" src="{% if post.image contains "://" %}{{ post.image }}{% else %}{{ post.image | absolute_url }}{% endif %}"
+                        alt="{{ post.title }}"&gt;
+                </a>
+            </div>
+            {% endif %}
+            <div class="card-title"><a href="{{site.baseurl}}{{post.url}}" title="{{ post.title }}">{{ post.title }}</a></div>
+            <div class="card-content">
+                <div class="card-body">
+                    {{ post.excerpt  | strip_html | strip_newlines | truncate: 186}}
+                </div>
+            </div>
+            {% if forloop.first == true %}
+            
+            In <span class="catlist">
+                {% for category in post.categories %}
+                <a class="text-capitalize tag tag-success text-white" href="{{site.baseurl}}/categories.html#{{ category | downcase }}">{{ category }}</a><span class="sep"> </span>
+                {% endfor %}
+            </span>
+            <time class="card-time">{{ second_post.date | date: '%b %d, %Y' }}</time>
+            
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+
+    <div class="w-flex mt-3">
+        {% include sidebar-featured.html %}
+    </div>
+
+</div>
+:ET
