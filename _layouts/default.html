@@ -38,9 +38,9 @@
         <link rel="preload" href="{{site.baseurl}}/assets/js/devkimson.bundle.js" as="script">
 
         <link rel="preload" href="{{ site.baseurl }}/assets/js/darkMode.js" as="script">
+        <link rel="preload" href="{{site.baseurl}}/assets/js/loading.js" as="script">
 
         {%- comment -%}
-        <link rel="preload" href="{{site.baseurl}}/assets/js/loading.js" as="script">
         <link rel="preload" href="{{ site.baseurl }}/assets/js/theme.js" as="script">
         <link rel="preload" href="{{ site.baseurl }}/assets/js/scrollViewer.js" as="script">
         <link rel="preload" href="{{site.baseurl}}/assets/js/kims.js" as="script">
@@ -119,14 +119,14 @@
     </head>
     
     <body>
-        <script src="{{ site.baseurl }}/assets/js/darkMode.js" async></script>
+        <script src="{{ site.baseurl }}/assets/js/darkMode.js"></script>
         
         <button class="btn btn-danger py-5 px-1" data-target="#lsb">
             <i class="fas fa-chevron-right"></i>
         </button>
 
         {% if page.url == "/" %}
-        {% include option-loading.html %}
+        <script src="{{ site.baseurl }}/assets/js/loading.js"></script>
         {% endif %}
 
         <!-- nav-gnb -->

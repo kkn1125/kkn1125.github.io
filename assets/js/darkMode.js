@@ -1,5 +1,11 @@
 !function initMode() {
     // 최초 실행시 세션스토리지 읽고 값 적용
+    const mode = JSON.parse(sessionStorage['mode']).dark;
+    if(mode=='on'){
+        document.body.classList.add('dark');
+    } else {
+        document.body.classList.remove('dark');
+    }
     requestAnimationFrame(loopFind);
 }();
 
@@ -10,7 +16,7 @@ function loopFind(){
     label.htmlFor = 'mode';
     label.append(btn);
     let target = document.querySelector(`[data-switch="mode"]`);
-    if(target && label) {
+    if(target) {
         target.insertAdjacentElement('beforebegin', label);
         updateMode.call(label, mode, true);
         window.addEventListener('click', modeHandler.bind(label));
