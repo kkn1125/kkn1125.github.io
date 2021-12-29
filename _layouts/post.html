@@ -58,12 +58,30 @@ layout: default
 				</div>
 				<div class="share w-inline-block">
 					<!-- AddToAny BEGIN -->
-					<div class="a2a_kit a2a_kit_size_32 a2a_default_style text-center">
+					<div class="a2a_kit a2a_kit_size_32 a2a_default_style" data-a2a-url="https://kkn1125.github.io">
 						<a class="a2a_dd" href="https://www.addtoany.com/share"></a>
 						<a class="a2a_button_facebook"></a>
 						<a class="a2a_button_twitter"></a>
+						<a class="a2a_button_google_gmail"></a>
+						<a class="a2a_button_kakao"></a>
+						<a class="a2a_button_pinterest"></a>
 					</div>
+					<script>
+					var a2a_config = a2a_config || {};
+					a2a_config.locale = "ko";
+					</script>
 					<script async src="https://static.addtoany.com/menu/page.js"></script>
+					<script defer>
+						setTimeout(()=>{
+							const drop = document.querySelector('#a2apage_dropdown');
+							const plusBtn = document.querySelector('.a2a_dd');
+							function dropDownHolder(ev){
+								let offsetParent = plusBtn.parentNode.parentNode.parentNode.parentNode;
+								drop.style.top = offsetParent.offsetTop+drop.offsetHeight-(plusBtn.offsetHeight/2)+'px';
+							}
+							plusBtn.addEventListener('mouseenter', dropDownHolder);
+						}, 100);
+					</script>
 					<!-- AddToAny END -->
 				</div>
 			</div>

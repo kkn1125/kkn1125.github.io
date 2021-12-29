@@ -83,7 +83,7 @@ figure figcaption{
 	display: none;
 }
 
-label {
+label[for="mode"] {
 	user-select: none;
 	cursor: pointer;
 	position: relative;
@@ -98,15 +98,15 @@ label {
 	-o-border-radius: 2rem;
 }
 
-label.on>span {
+label[for="mode"].on>span {
 	left: 0%;
 }
 
-label.off>span {
+label[for="mode"].off>span {
 	left: 50%;
 }
 
-label>span {
+label[for="mode"]>span {
 	position: absolute;
 	display: inline-flex;
 	justify-content: center;
@@ -128,7 +128,7 @@ label>span {
 	-o-transition: 0.3s left cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-label>span::before {
+label[for="mode"]>span::before {
 	position: absolute;
 }
 
@@ -324,6 +324,10 @@ body #mtWrap{
 	top: 80px;
 	right: 8%;
 	z-index: 1020;
+}
+
+body.dark label:not([for="mode"]){
+	color: #b9b9b9;
 }
 
 /* 

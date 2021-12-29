@@ -34,7 +34,7 @@ window.addEventListener('load', ()=>{
 
 function modeHandler(ev) {
     let valid = ev.target;
-    if (valid.tagName !== 'LABEL' || !valid.htmlFor) return;
+    if (valid.tagName !== 'LABEL' || valid.htmlFor!='mode') return;
     ev.preventDefault();
     let mode = this.classList.value == 'on' ? 'off' : 'on';
     updateMode.call(this, mode);

@@ -379,7 +379,9 @@ if(document.querySelector('#kals')) fetch('/assets/data/jsonTodo.json')
                     }
     
                     #mark{
-                        transition: top 150ms ease-in-out, left 150ms ease-in-out;
+                        transition: top 500ms cubic-bezier(0.68, -0.55, 0.27, 1.55), left 500ms cubic-bezier(0.68, -0.55, 0.27, 1.55);
+                        box-shadow: 0 0 0.5em 0 coral;
+                        border-radius: 0.5em;
                     }
     
                     table#kal{
@@ -423,18 +425,22 @@ if(document.querySelector('#kals')) fetch('/assets/data/jsonTodo.json')
                         border-bottom: 1px solid rgba(0,0,0,0.2);
                     }
     
+                    /*
                     table#kal>tbody>tr>td{
                         border-right: 1px solid rgba(0,0,0,0.2);
                     }
+                    */
     
                     table#kal>tbody>tr:last-child{
                         border-bottom: none
                     }
-    
+
+                    /*
                     table#kal>tbody>tr>td:last-child{
                         border-right: none
                     }
-    
+                    */
+
                     table#kal>*>tr>*:nth-child(1),
                     table#kal>*>tr>*:nth-child(7){
                         font-weight: bold;

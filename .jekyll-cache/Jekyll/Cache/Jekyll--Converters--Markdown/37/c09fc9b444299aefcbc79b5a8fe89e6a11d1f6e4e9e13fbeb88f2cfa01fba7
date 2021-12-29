@@ -1,20 +1,13 @@
----
-title: "개발자를 준비하는 블로그"
-layout: default
-pagination:
-enabled: true
-description: "나를 표현하는 블로그. 끊임없이 도전하고 공부하는 예비 개발자입니다."
----
-
+I"n
 <div class="fence-full">
 
     <div class="w-flex gx-4">
 
-        <div class="col-20 col-md-10">
+        <div class="col-20 col-md-8">
             {% include sidebar-featured.html %}
         </div>
     
-        <div class="col-20 col-md-10">
+        <div class="col-20 col-md-12">
             <!-- Begin post excerpts, let's highlight the first 4 posts on top -->
             <div class="border-bottom">
                 <span class="h4">Latest Posts</span>
@@ -26,8 +19,8 @@ description: "나를 표현하는 블로그. 끊임없이 도전하고 공부하
                     {% if post.image %}
                     <div class="card-img">
                         <a href="{{site.baseurl}}{{post.url}}" title="{{ post.title }}">
-                            <img class="latestImgs" src="{% if post.image contains "://" %}{{ post.image }}{% else %}{{ post.image | absolute_url }}{% endif %}"
-                                alt="{{ post.title }}">
+                            &lt;img class="latestImgs" src="{% if post.image contains "://" %}{{ post.image }}{% else %}{{ post.image | absolute_url }}{% endif %}"
+                                alt="{{ post.title }}"&gt;
                         </a>
                     </div>
                     {% endif %}
@@ -41,12 +34,10 @@ description: "나를 표현하는 블로그. 끊임없이 도전하고 공부하
                     
                     In <span class="catlist">
                         {% for category in post.categories %}
-                        <a class="text-capitalize tag tag-success text-white"
-                            href="{{site.baseurl}}/categories.html#{{ category | downcase }}">{{ category }}</a><span
-                            class="sep"> </span>
+                        <a class="text-capitalize tag tag-success text-white" href="{{site.baseurl}}/categories.html#{{ category | downcase }}">{{ category }}</a><span class="sep"> </span>
                         {% endfor %}
                     </span>
-                    <time class="card-time">{{ post.date | date: '%b %d, %Y' }}</time>
+                    <time class="card-time">{{ second_post.date | date: '%b %d, %Y' }}</time>
                     
                     {% endif %}
                 </div>
@@ -69,3 +60,4 @@ description: "나를 표현하는 블로그. 끊임없이 도전하고 공부하
     </div>
 
 </div>
+:ET

@@ -7,9 +7,9 @@
 
     {% if post.featured == true %}
     <div class="card p-0" style="overflow: hidden;">
-        <img src="{{post.image}}" alt="post/cover" class="w-100">
+        <a href="{{site.baseurl}}{{ post.url }}" title="{{ post.title }}"><img src="{{post.image}}" alt="post/cover" class="w-100"></a>
         <div class="card-title px-3">
-            <a href="{{site.baseurl}}{{ post.url }}">{{ post.title | truncate: 30}}</a>
+            <a href="{{site.baseurl}}{{ post.url }}" title="{{ post.title }}">{{ post.title | truncate: 30}}</a>
         </div>
         <div class="card-content">
             <!-- <div class="card-body"></div> -->
@@ -23,7 +23,7 @@
                 {% endfor %}
             </span>
         </div>
-        <time class="card-time">{{ second_post.date | date: '%b %d, %Y' }}</time>
+        <time class="card-time">{{ post.date | date: '%b %d, %Y' }}</time>
     </div>
 
     {% endif %}
