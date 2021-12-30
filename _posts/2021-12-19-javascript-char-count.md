@@ -3,7 +3,7 @@ layout: post
 date:   2021-12-19 22:36:51 +0900
 title:  "[JAVASCRIPT] 2020 카카오 문자열 압축 풀이"
 author: Kimson
-categories: [ JAVASCRIPT, TIL, ALGORITHM ]
+categories: [ JAVASCRIPT, TIL, ALGORITHM, PROGRAMMERS ]
 image: assets/images/post/covers/TIL-javascript.png
 tags: [ algorithm, strToZip ]
 description: "2020 카카오 문자열 압축 풀이

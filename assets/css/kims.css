@@ -11,9 +11,9 @@ html, body{
 	overflow-x: hidden;
 }
 
-a[href]{
+/* a[href]{
 	color:rgb(53, 53, 53);
-}
+} */
 
 article ol,
 article ul{
