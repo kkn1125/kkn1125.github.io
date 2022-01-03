@@ -6,8 +6,10 @@ author: Kimson
 categories: [ JAVASCRIPT, TIL, PROGRAMMERS ]
 image: assets/images/post/covers/TIL-javascript.png
 tags: [ prime number, combination ]
-description: " "
-featured: false
+description: "소수 찾기 문제
+
+요즘 프로그래머스의 문제를 단계별로 하나씩 풀어나가고 있는데요. 소수에 대한 이해도가 부족해서 딜레이 되었던지라 정리하기 위해 기록합니다."
+featured: true
 hidden: false
 rating: 4
 toc: true
