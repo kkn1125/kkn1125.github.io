@@ -261,8 +261,9 @@ if(document.querySelector('#kals')) fetch('/assets/data/jsonTodo.json')
                 const dataList = data[year]?data[year][month]:null;
                 if(dataList){
                     [...document.querySelectorAll('tbody td:not(:empty)')].forEach(tag=>{
+                        let dateHasList = dataList[tag.textContent];
                         if(Object.keys(dataList).includes(tag.textContent)){
-                            tag.querySelector('span').insertAdjacentHTML('beforeend', `<span class="badge">+${dataList[tag.textContent].length}</span>`);
+                            tag.querySelector('span').insertAdjacentHTML('beforeend', `<span class="badge ${dateHasList&&dateHasList.filter(({tag})=>tag.match(/check|rest|cancel/gim)).length>dateHasList.length/2?'text-success':''}">+${dateHasList.length}</span>`);
                         }
                     });
                 }
@@ -277,12 +278,14 @@ if(document.querySelector('#kals')) fetch('/assets/data/jsonTodo.json')
             }
     
             this.markNow = function(year, month){
-                const now = new Date();
-                if(year == now.getFullYear() && month == now.getMonth()){
-                    const date = [...document.querySelectorAll('tbody td:not(:empty)')].filter(day=>day.textContent == now.getDate())[0];
-                    date.id = 'now';
-                    this.markSelectDate(date);
-                }
+                const now = document.querySelector('tbody td:not(:empty)#now');
+                this.markSelectDate(now);
+                this.renderListInSelectDate(now);
+                // if(year == now.getFullYear() && month == now.getMonth()){
+                //     const date = [...document.querySelectorAll('tbody td:not(:empty)')].filter(day=>day.textContent == now.getDate())[0];
+                //     date.id = 'now';
+                //     this.markSelectDate(date);
+                // }
             }
     
             this.markSelectDate = function(date){
@@ -336,7 +339,7 @@ if(document.querySelector('#kals')) fetch('/assets/data/jsonTodo.json')
                         <span class="date">${date}</span>
                     </div>
                     <ul class="data-list">
-                        ${data[selectY.value][selectM.value][date]?data[selectY.value][selectM.value][date].map(item=>modules.list.render(item)).join(''):`<li>데이터가 없습니다.</li>`}
+                        ${data[selectY.value][selectM.value]&&data[selectY.value][selectM.value][date]?data[selectY.value][selectM.value][date].map(item=>modules.list.render(item)).join(''):`<li>데이터가 없습니다.</li>`}
                     </ul>
                 `;
                 renderTarget.append(listWrap);
