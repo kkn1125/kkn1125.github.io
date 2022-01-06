@@ -1,4 +1,4 @@
-I"�[<div class="fence-full">
+I"�`<div class="fence-full">
 
     <div class="w-flex gx-4">
 
@@ -7,6 +7,33 @@
     <span class="h4">Featured</span>
 </div>
 <div class="card-group card-ghost card-pd-0 card-dv-1 card-dv-sm-2 g-3">
+
+    
+
+    
+    <div class="card p-0" style="overflow: hidden;">
+        <a href="/spring-vue01/" title="[SPRING] 게시판 구현 - Spring &amp; Vue"><img src="assets/images/post/covers/TIL-spring.png" alt="post/cover" class="w-100" /></a>
+        <div class="card-title px-3">
+            <a href="/spring-vue01/" title="[SPRING] 게시판 구현 - Spring &amp; Vue">[SPRING] 게시판 구현 - Spring &amp; Vue</a>
+        </div>
+        <div class="card-content">
+            <!-- <div class="card-body"></div> -->
+        </div>
+        <div class="pb-3 px-3">
+            In <span class="catlist">
+                
+                <a class="text-capitalize text-white tag tag-success" href="/categories.html#spring">SPRING</a><span class="sep"> </span>
+                
+                <a class="text-capitalize text-white tag tag-success" href="/categories.html#til">TIL</a><span class="sep"> </span>
+                
+                <a class="text-capitalize text-white tag tag-success" href="/categories.html#programmers">PROGRAMMERS</a><span class="sep"> </span>
+                
+            </span>
+        </div>
+        <time class="card-time">Jan 04, 2022</time>
+    </div>
+
+    
 
     
 
@@ -622,6 +649,36 @@
                 <div class="card p-0 m-0" style="overflow: hidden;">
                     
                     <div class="card-img">
+                        <a href="/spring-vue01/" title="[SPRING] 게시판 구현 - Spring &amp; Vue">
+                            <img class="latestImgs" src="http://localhost:4000/assets/images/post/covers/TIL-spring.png" alt="[SPRING] 게시판 구현 - Spring &amp; Vue" />
+                        </a>
+                    </div>
+                    
+                    <div class="card-title"><a href="/spring-vue01/" title="[SPRING] 게시판 구현 - Spring &amp; Vue">[SPRING] 게시판 구현 - Spring &amp; Vue</a></div>
+                    <div class="card-content">
+                        <div class="card-body">
+                            게시판 구현
+                        </div>
+                    </div>
+                    
+                    
+                    In <span class="catlist">
+                        
+                        <a class="text-capitalize tag tag-success text-white" href="/categories.html#spring">SPRING</a><span class="sep"> </span>
+                        
+                        <a class="text-capitalize tag tag-success text-white" href="/categories.html#til">TIL</a><span class="sep"> </span>
+                        
+                        <a class="text-capitalize tag tag-success text-white" href="/categories.html#programmers">PROGRAMMERS</a><span class="sep"> </span>
+                        
+                    </span>
+                    <time class="card-time">Jan 04, 2022</time>
+                    
+                    
+                </div>
+                
+                <div class="card p-0 m-0" style="overflow: hidden;">
+                    
+                    <div class="card-img">
                         <a href="/javascript-prime-number/" title="[JAVASCRIPT] 소수(Prime Number) 찾기">
                             <img class="latestImgs" src="http://localhost:4000/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] 소수(Prime Number) 찾기" />
                         </a>
@@ -633,19 +690,6 @@
                             소수 찾기 문제
                         </div>
                     </div>
-                    
-                    
-                    In <span class="catlist">
-                        
-                        <a class="text-capitalize tag tag-success text-white" href="/categories.html#javascript">JAVASCRIPT</a><span class="sep"> </span>
-                        
-                        <a class="text-capitalize tag tag-success text-white" href="/categories.html#til">TIL</a><span class="sep"> </span>
-                        
-                        <a class="text-capitalize tag tag-success text-white" href="/categories.html#programmers">PROGRAMMERS</a><span class="sep"> </span>
-                        
-                    </span>
-                    <time class="card-time">Dec 30, 2021</time>
-                    
                     
                 </div>
                 
@@ -695,23 +739,6 @@
                     <div class="card-content">
                         <div class="card-body">
                             Jest 사용하기
-                        </div>
-                    </div>
-                    
-                </div>
-                
-                <div class="card p-0 m-0" style="overflow: hidden;">
-                    
-                    <div class="card-img">
-                        <a href="/java-tdd01/" title="[JAVA] TDD를 알아보자">
-                            <img class="latestImgs" src="http://localhost:4000/assets/images/post/covers/TIL-java.png" alt="[JAVA] TDD를 알아보자" />
-                        </a>
-                    </div>
-                    
-                    <div class="card-title"><a href="/java-tdd01/" title="[JAVA] TDD를 알아보자">[JAVA] TDD를 알아보자</a></div>
-                    <div class="card-content">
-                        <div class="card-body">
-                            Test Driven Development (TDD)
                         </div>
                     </div>
                     

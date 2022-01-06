@@ -1,0 +1,203 @@
+I"+<h1 id="게시판-구현---spring--vue">게시판 구현 - <strong>Spring</strong> &amp; Vue</h1>
+
+<h2 id="used">Used</h2>
+
+<blockquote class="blockquote blockquote-info">
+  <ol>
+    <li>Lombok 1.18.22</li>
+    <li>SpringFramework 5.3.6</li>
+    <li>jdbc</li>
+    <li>MyBatis 3.5.7</li>
+    <li>MyBatis-Spring 2.0.6</li>
+    <li>Tiles 3.0.8</li>
+    <li>MySql connector java 8.0.24</li>
+    <li>jackson-databind 2.13.1</li>
+  </ol>
+</blockquote>
+
+<h2 id="spring-부분">Spring 부분</h2>
+
+<p>게시판 구현에 있어서 <code class="language-plaintext highlighter-rouge">MyBatis</code>를 사용했습니다. <code class="language-plaintext highlighter-rouge">MyBatis</code>의 자바 구현과정은 이전 포스팅이 있어 생략할 예정이기 때문에 <code class="language-plaintext highlighter-rouge">Spring Mvc</code>사용자는 <a href="/spring-mybatis01">[SPRING] MyBatis 사용하기 01</a>을 참고 하시고, <code class="language-plaintext highlighter-rouge">Spring Boot</code>사용자는 <a href="/spring-boot-mybatis01">[SPRING] SPRING BOOT MyBatis 시작하기</a>를 참고하시기 바랍니다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">Java Configuration</code>을 작성했다는 가정에서 출발하겠습니다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">BoardMapper</code> 인터페이스를 작성합니다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+</pre></td><td class="rouge-code"><pre><span class="c1">// BoardMapper.java</span>
+
+<span class="nd">@Mapper</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">BoardMapper</span> <span class="o">{</span>
+    <span class="nd">@Select</span><span class="o">(</span><span class="s">"SELECT * FROM board"</span><span class="o">)</span>
+    <span class="kd">public</span> <span class="nc">List</span><span class="o">&lt;</span><span class="nc">Board</span><span class="o">&gt;</span> <span class="nf">findAll</span><span class="o">();</span>
+
+    <span class="nd">@Select</span><span class="o">(</span><span class="s">"SELECT * FROM board WHERE num=#{num}"</span><span class="o">)</span>
+    <span class="kd">public</span> <span class="nc">Optional</span><span class="o">&lt;</span><span class="nc">Board</span><span class="o">&gt;</span> <span class="nf">findByNum</span><span class="o">(</span><span class="kt">int</span> <span class="n">num</span><span class="o">);</span>
+
+    <span class="nd">@Insert</span><span class="o">(</span><span class="s">"INSERT INTO board () VALUES()"</span><span class="o">)</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">save</span><span class="o">(</span><span class="nc">Board</span> <span class="n">board</span><span class="o">);</span>
+
+    <span class="nd">@Update</span><span class="o">(</span><span class="s">"UPDATE board SET title=#{title}, content=#{content} WHERE num=#{num}"</span><span class="o">)</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">update</span><span class="o">(</span><span class="nc">Board</span> <span class="n">board</span><span class="o">,</span> <span class="kt">int</span> <span class="n">num</span><span class="o">);</span>
+
+    <span class="nd">@Delete</span><span class="o">(</span><span class="s">"DELETE FROM board WHERE num=#{num}"</span><span class="o">)</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">delete</span><span class="o">(</span><span class="kt">int</span> <span class="n">num</span><span class="o">);</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>매퍼를 작성했으니 서비스도 구현해줍니다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+</pre></td><td class="rouge-code"><pre><span class="c1">// BoardService.java</span>
+
+<span class="nd">@Service</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">BoardService</span> <span class="o">{</span>
+    <span class="nd">@Autowired</span>
+    <span class="nc">BoardMapper</span> <span class="n">boardMapper</span><span class="o">;</span>
+
+    <span class="kd">public</span> <span class="nc">List</span><span class="o">&lt;</span><span class="nc">Board</span><span class="o">&gt;</span> <span class="nf">findAll</span><span class="o">(){</span>
+        <span class="k">return</span> <span class="n">boardMapper</span><span class="o">.</span><span class="na">findAll</span><span class="o">();</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="nc">Optional</span><span class="o">&lt;</span><span class="nc">Board</span><span class="o">&gt;</span> <span class="nf">findByNum</span><span class="o">(</span><span class="kt">int</span> <span class="n">num</span><span class="o">){</span>
+        <span class="k">return</span> <span class="n">boardMapper</span><span class="o">.</span><span class="na">findByNum</span><span class="o">(</span><span class="n">num</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">save</span><span class="o">(</span><span class="nc">Board</span> <span class="n">board</span><span class="o">){</span>
+        <span class="n">boardMapper</span><span class="o">.</span><span class="na">save</span><span class="o">(</span><span class="n">board</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">update</span><span class="o">(</span><span class="nc">Board</span> <span class="n">board</span><span class="o">,</span> <span class="kt">int</span> <span class="n">num</span><span class="o">){</span>
+        <span class="n">boardMapper</span><span class="o">.</span><span class="na">update</span><span class="o">(</span><span class="n">board</span><span class="o">,</span> <span class="n">num</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">delete</span><span class="o">(</span><span class="kt">int</span> <span class="n">num</span><span class="o">){</span>
+        <span class="n">boardMapper</span><span class="o">.</span><span class="na">delete</span><span class="o">(</span><span class="n">num</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>그리고 페이지 처리를 위한 컨트롤러도 작성합니다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+</pre></td><td class="rouge-code"><pre><span class="c1">// BoardController.java</span>
+
+<span class="nd">@Controller</span>
+<span class="nd">@RequestMapping</span><span class="o">(</span><span class="s">"/board"</span><span class="o">)</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">BoardController</span> <span class="o">{</span>
+
+    <span class="nd">@GetMapping</span><span class="o">(</span><span class="s">""</span><span class="o">)</span>
+    <span class="kd">public</span> <span class="nc">String</span> <span class="nf">list</span><span class="o">(){</span>
+        <span class="k">return</span> <span class="s">"board.list"</span>
+    <span class="o">}</span>
+
+    <span class="nd">@GetMapping</span><span class="o">(</span><span class="s">"/{num}"</span><span class="o">)</span>
+    <span class="kd">public</span> <span class="nc">String</span> <span class="nf">detail</span><span class="o">(</span><span class="nd">@PathVariable</span><span class="o">(</span><span class="s">"num"</span><span class="o">)</span> <span class="kt">int</span> <span class="n">num</span><span class="o">){</span>
+        <span class="k">return</span> <span class="s">"board.detail"</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">axios</code>나 <code class="language-plaintext highlighter-rouge">fetch</code>로 비동기로 데이터를 가져올 것이기 때문에 <code class="language-plaintext highlighter-rouge">RestController</code>를 작성합니다. 이때 내용을 자동으로 <code class="language-plaintext highlighter-rouge">json</code>처리를 해주기 위해서는 <code class="language-plaintext highlighter-rouge">jackson-databind</code>가 필요합니다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+</pre></td><td class="rouge-code"><pre><span class="c1">// BoardRestController.java</span>
+
+<span class="nd">@RestController</span>
+<span class="nd">@RequestMapping</span><span class="o">(</span><span class="s">"/board/list"</span><span class="o">)</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">BoardRestController</span> <span class="o">{</span>
+    <span class="nd">@Autowired</span>
+    <span class="nc">BoardService</span> <span class="n">boardService</span><span class="o">;</span>
+
+    <span class="nd">@GetMapping</span><span class="o">(</span><span class="s">""</span><span class="o">)</span>
+    <span class="kd">public</span> <span class="nc">List</span><span class="o">&lt;</span><span class="nc">Board</span><span class="o">&gt;</span> <span class="nf">findAll</span><span class="o">(){</span>
+        <span class="k">return</span> <span class="n">boardService</span><span class="o">.</span><span class="na">findAll</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>여기까지 테스트할 내용을 작성했습니다. 이제 프론트 부분을 만져야합니다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">Vue</code>를 사용한 내용은 다음 포스팅에서 기록하겠습니다!</p>
+
+<hr />
+
+<p>📚 함께 보면 좋은 내용</p>
+
+<p><a href="/spring-mybatis01" target="_blank">DevKimson::[SPRING] MyBatis 사용하기 01</a></p>
+
+<p><a href="https://www.programiz.com/javascript/examples/prime-number" target="_blank">programiz::JavaScript Program to Check Prime Number</a></p>
+
+<p><a href="https://mathbang.net/199" target="_blank">mathbang::소수와 합성수, 소수의 뜻, 합성수의 뜻</a></p>
+:ET

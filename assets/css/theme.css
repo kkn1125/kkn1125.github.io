@@ -2,6 +2,8 @@
 	--lm-lora: 'Lora', serif;
 	--lm-noto-sans: 'Noto Sans KR', sans-serif;
 	--lm-noto-serif: 'Noto Serif KR', serif;
+	--lm-comfortaa: 'Comfortaa', cursive;
+	--lm-gugi: 'Gugi', cursive;
 	--lm-color-dark: rgb(22, 22, 22);
 	--lm-color-dark-50: rgb(50, 50, 50);
 	--lm-color-gray-1: rgb(87, 87, 87);
@@ -76,6 +78,7 @@ aside#rsb>div {
 	bottom: 120px;
 	right: 30px;
 	z-index: 1500;
+    pointer-events: none;
 }
 
 /* 

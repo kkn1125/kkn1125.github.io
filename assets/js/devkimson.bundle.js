@@ -419,11 +419,12 @@ let NewsAlert = (function () {
 
 NewsAlert.init({
     alertlist: [
-        'Penli CSS 가 <kbd>v0.1.3</kbd>로 업데이트 되었습니다. 많은 관심 바랍니다! <a class="d-inline-block" href="https://github.com/kkn1125/penli" target="_blank">[바로가기]</a>',
-        '<kbd class="bg-info">Wikimson</kbd>을 구현하고 첫 게시했습니다! 많은 관심 부탁드립니다!',
-        'DocumentifyJS 업데이트가 있습니다! 현재 v1.0.0 버전 최신입니다. 자세한 내용은 아래 링크 참조바랍니다. <a class="d-inline-block" href="https://github.com/kkn1125/mkDocumentifyJS/tree/main" target="_blank">[바로가기]</a>',
-        'Typer가 v1.0.0로 릴리즈 되었습니다! 새로운 기능 <kbd class="kbd">realTyping</kbd>이 추가되었습니다. 자세한 사항은 아래 링크를! <a class="d-inline-block" href="https://github.com/kkn1125/typer" target="_blank">[바로가기]</a>',
-        'Tutorial js 가 <kbd>v0.1.1</kbd>로 업데이트 되었습니다. 많은 관심 바랍니다! <a class="d-inline-block" href="https://github.com/kkn1125/tutorial" target="_blank">[바로가기]</a>',
+        'Penli CSS 가 <kbd>v0.2.1-bugfix</kbd>로 업데이트 되었습니다. 많은 관심 바랍니다! <a class="d-inline-block" href="https://github.com/kkn1125/penli" target="_blank">[바로가기]</a>',
+        '<kbd class="kbd">Solitaire</kbd> 게임을 구현 해봤습니다. 해당 링크에서 둘러보실 수 있습니다✨ <a target="_blank" href="https://kkn1125.github.io/solitaire">[게임으로]</a> <a target="_blank" href="https://github.com/kkn1125/solitaire">[저장소 보기]</a>',
+        '웹에서 포토샵처럼 그리고 만들어서 html로 변환하는 <kbd class="kbd">griza</kbd> 프로젝트를 하려합니다. 많은 관심 부탁드립니다 😁',
+        // 'DocumentifyJS 업데이트가 있습니다! 현재 v1.0.0 버전 최신입니다. 자세한 내용은 아래 링크 참조바랍니다. <a class="d-inline-block" href="https://github.com/kkn1125/mkDocumentifyJS/tree/main" target="_blank">[바로가기]</a>',
+        // 'Typer가 v1.0.0로 릴리즈 되었습니다! 새로운 기능 <kbd class="kbd">realTyping</kbd>이 추가되었습니다. 자세한 사항은 아래 링크를! <a class="d-inline-block" href="https://github.com/kkn1125/typer" target="_blank">[바로가기]</a>',
+        // 'Tutorial js 가 <kbd class="kbd">v0.1.1</kbd>로 업데이트 되었습니다. 많은 관심 바랍니다! <a class="d-inline-block" href="https://github.com/kkn1125/tutorial" target="_blank">[바로가기]</a>',
         'Jekyll Theme를 만드는 중입니다. <a class="d-inline-block" href="https://github.com/kkn1125/lessmore-jekyll-theme" target="_blank">[바로가기]</a>',
     ]
 });

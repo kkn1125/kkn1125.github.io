@@ -55,7 +55,7 @@ var idx = lunr(function () {
 function lunr_search(term) {
     if(term.trim()=='') {
         alert('검색어를 입력해주세요.');
-        return;
+        return false;
     }
     $('#lunrsearchresults').show( 1000 );
     $( "body" ).addClass( "modal-open" );

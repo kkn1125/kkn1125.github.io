@@ -84,7 +84,7 @@ if(document.querySelector('#kals')) fetch('/assets/data/jsonTodo.json')
                     })();
 
                     return `
-                    <li class="w-flex justify-content-between">
+                    <li class="w-flex justify-content-between py-1">
                         <span${tag.match(/✅|❎|☕/gm)?' class="check-item"':''}>
                             <span>${todo}</span>
                             <span>${tag}</span>
@@ -259,11 +259,14 @@ if(document.querySelector('#kals')) fetch('/assets/data/jsonTodo.json')
     
             this.markHasData = function(year, month){
                 const dataList = data[year]?data[year][month]:null;
+                const base = new Date();
                 if(dataList){
                     [...document.querySelectorAll('tbody td:not(:empty)')].forEach(tag=>{
                         let dateHasList = dataList[tag.textContent];
+                        let counting = dateHasList&&dateHasList.filter(({tag})=>tag.match(/check|rest|cancel/gim)).length;
+                        let isBefore = base.getDate()>parseInt(tag.textContent)||base.getMonth()>month||base.getFullYear()>year;
                         if(Object.keys(dataList).includes(tag.textContent)){
-                            tag.querySelector('span').insertAdjacentHTML('beforeend', `<span class="badge ${dateHasList&&dateHasList.filter(({tag})=>tag.match(/check|rest|cancel/gim)).length>dateHasList.length/2?'text-success':''}">+${dateHasList.length}</span>`);
+                            tag.querySelector('span').insertAdjacentHTML('beforeend', `<span class="badge ${counting>dateHasList.length/2&&isBefore?'text-success':counting<=dateHasList.length/2&&isBefore?'text-warning':''}">+${dateHasList.length}</span>`);
                         }
                     });
                 }
@@ -338,7 +341,7 @@ if(document.querySelector('#kals')) fetch('/assets/data/jsonTodo.json')
                         <span class="month">${parseInt(selectM.value)+1}</span>
                         <span class="date">${date}</span>
                     </div>
-                    <ul class="data-list">
+                    <ul class="data-list list-group">
                         ${data[selectY.value][selectM.value]&&data[selectY.value][selectM.value][date]?data[selectY.value][selectM.value][date].map(item=>modules.list.render(item)).join(''):`<li>데이터가 없습니다.</li>`}
                     </ul>
                 `;
