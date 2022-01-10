@@ -6,7 +6,7 @@ author: Kimson
 categories: [ JAVASCRIPT, TIM, GAME ]
 image: assets/images/post/solitaire/solitaire.png
 tags: [ game, solitaire, card ]
-description: "솔리테어를 만들어 보자
+description: "솔리테어를 만들어 보자 1편
 
 솔리테어는 대부분 컴퓨터에 설치되어 있는 것으로 알고 있습니다. 구글에서 솔리테어를 검색하면 나오는 게임이기도 하구요.
 
@@ -24,7 +24,7 @@ keywords: ""
 published: true
 ---
 
-# 솔리테어를 만들어 보자
+# 솔리테어를 만들어 보자 1편
 
 솔리테어는 대부분 컴퓨터에 설치되어 있는 것으로 알고 있습니다. 구글에서 솔리테어를 검색하면 나오는 게임이기도 하구요.
 
