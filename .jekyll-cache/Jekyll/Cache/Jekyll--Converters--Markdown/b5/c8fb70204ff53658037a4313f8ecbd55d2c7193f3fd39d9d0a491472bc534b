@@ -1,0 +1,417 @@
+I"�k<h1 id="솔리테어를-만들어-보자">솔리테어를 만들어 보자</h1>
+
+<p>솔리테어는 대부분 컴퓨터에 설치되어 있는 것으로 알고 있습니다. 구글에서 솔리테어를 검색하면 나오는 게임이기도 하구요.</p>
+
+<p>규칙과 카드를 짚거나 하는 등이 꽤 복잡하다고 생각이 듭니다만, 막상 게임을 하나하나 만들어 보니 어려운 작업은 딱히 없었다고 생각 됩니다.</p>
+
+<p>솔리테어를 만들기에 앞서 규칙을 알아야합니다. 해본 사람들은 아실테지만 모르시는 분을 위해 규칙을 아래와 같이 나열해보겠습니다.</p>
+
+<h2 id="솔리테어-규칙">솔리테어 규칙</h2>
+
+<figure class="text-center">
+<span class="w-inline-block">
+   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Set_of_playing_cards_52.JPG/800px-Set_of_playing_cards_52.JPG" alt="위키 백과 - 플레잉카드" title="위키 백과 - 플레잉카드" />
+   <figcaption>[출처] 위키 백과 - 플레잉카드</figcaption>
+</span>
+</figure>
+
+<p>카드는 트럼프카드를 사용하고 A(Ace) 부터 K(King)까지 각 문양에 맞춰 4 묶음을 차례로 모으는 게임입니다. 총 52장으로 구성되고, <code class="language-plaintext highlighter-rouge">Spade</code>, <code class="language-plaintext highlighter-rouge">Clover</code>(Club), <code class="language-plaintext highlighter-rouge">Heart</code>, <code class="language-plaintext highlighter-rouge">Diamond</code>로 네 가지 슈트로 구성되어 있습니다.</p>
+
+<p>각 슈트당 13장 씩 다 모아야 게임이 끝나고, 어느정도 끝나게 되는 시점에는 자동완성 기능으로 빨리 끝낼 수도 있습니다.</p>
+
+<p>아래 그림을 보면서 영역에 따른 규칙을 이야기하며 큰 규칙들을 정리하겠습니다.</p>
+
+<figure class="text-center">
+<span class="w-inline-block">
+   <img class="w-100" src="{{site.baseurl}}/assets/images/post/solitaire/solitaire01.png" alt="Solitaire 형태" title="Solitaire 형태" />
+   <figcaption>나중에 만들게 될 결과물</figcaption>
+</span>
+</figure>
+
+<ol>
+  <li>초록색 영역은 1장 씩 카드를 뽑는 곳 입니다. 아래 분홍영역을 맞추다가 맞출 카드가 없다면 뽑고, 계속 뽑을 수는 있지만 제일 마지막 뽑은 카드 포함 3개만이 노출됩니다.</li>
+  <li>주황 영역은 왼쪽부터 <code class="language-plaintext highlighter-rouge">Spades</code>(♠), <code class="language-plaintext highlighter-rouge">Clubs</code>(♣), <code class="language-plaintext highlighter-rouge">Hearts</code>(♥), <code class="language-plaintext highlighter-rouge">Diamonds</code>(♦)를 쌓아 나갑니다.</li>
+  <li>분홍 영역은 카드를 순서대로 맞추어 나가는 플레이 영역입니다. (단, 순서대로 카드를 겹칠때 룰이 있습니다.)
+    <ol>
+      <li>k, q, j, 10 …으로 맞추되 색상이 교차되도록 겹쳐야 합니다.</li>
+      <li>카드를 옮길 때 생기는 빈 열(column)에는 <code class="language-plaintext highlighter-rouge">King</code>만 배치할 수 있습니다.</li>
+      <li>분홍영역은 카드가 마지막 패 외에는 뒷면이어야 합니다. 마지막 패를 없애면 자동으로 뒤집히게 하거나 클릭하여 뒤집을 수도 있습니다.</li>
+    </ol>
+  </li>
+  <li>카드를 옮길 때 묶음으로 옮길 수 있습니다. 예를 들면 3(♥), 2(♣), a(♥)은 묶을으로 옮길 수 있고, 색상이 교차되지 않은 3, 2, a의 경우 불가합니다.</li>
+  <li>카드를 단일로 옮길 수 있습니다.</li>
+  <li>초록영역에서는 카드를 뺄 수만 있고, 주황영역에 모은 카드는 필요에 따라 분홍영역에 다시 둘 수 있습니다.</li>
+</ol>
+
+<p>기능 구현에 있어서 만들어야 하는 기능은 모두 만들어야 하지만 주요하게 보면 카드를 이동하고 유효성 검토를 관심 있게 해주면 금방 만들 수 있습니다.</p>
+
+<h2 id="모양-잡기">모양 잡기</h2>
+
+<p>위의 모양대로 안하셔도 되고 카드를 밑으로 뽑아도 무관합니다. 저는 이미 만들었던 위의 모양으로 코드를 작성하고 테스트할 예정입니다.</p>
+
+<p>인덱스파일 하나를 만듭니다.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+</pre></td><td class="rouge-code"><pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"ko"</span><span class="nt">&gt;</span>
+
+    <span class="nt">&lt;head&gt;</span>
+        <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"UTF-8"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;meta</span> <span class="na">http-equiv=</span><span class="s">"X-UA-Compatible"</span> <span class="na">content=</span><span class="s">"IE=edge"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"viewport"</span> <span class="na">content=</span><span class="s">"width=device-width, initial-scale=1.0"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"./src/css/Solitaire.css"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;script </span><span class="na">id=</span><span class="s">"inject"</span><span class="nt">&gt;</span>
+            <span class="c1">// 이렇게 넣는 이유는 딱히 없습니다.</span>
+
+            <span class="nx">cmt</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createComment</span><span class="p">(</span><span class="dl">'</span><span class="s1">Code injected By Solitaire</span><span class="dl">'</span><span class="p">);</span>
+            <span class="nx">js</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="dl">'</span><span class="s1">script</span><span class="dl">'</span><span class="p">);</span>
+            <span class="nx">js</span><span class="p">.</span><span class="nx">src</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">./src/js/Solitaire.js</span><span class="dl">'</span><span class="p">;</span>
+            <span class="nx">js</span><span class="p">.</span><span class="nx">type</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">module</span><span class="dl">'</span><span class="p">;</span>
+            <span class="nx">injection</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+                <span class="k">if</span> <span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">readyState</span> <span class="o">==</span> <span class="dl">'</span><span class="s1">interactive</span><span class="dl">'</span> <span class="o">&amp;&amp;</span> <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="nx">cancelAnimationFrame</span><span class="p">(</span><span class="nx">injection</span><span class="p">);</span>
+                    <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="nx">cmt</span><span class="p">,</span> <span class="nx">js</span><span class="p">);</span>
+                    <span class="k">delete</span> <span class="nx">js</span><span class="p">;</span>
+                    <span class="k">delete</span> <span class="nx">cmt</span><span class="p">;</span>
+                    <span class="k">delete</span> <span class="nx">injection</span><span class="p">;</span>
+                    <span class="nx">inject</span><span class="p">.</span><span class="nx">remove</span><span class="p">();</span>
+                <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                    <span class="nx">requestAnimationFrame</span><span class="p">(</span><span class="nx">injection</span><span class="p">);</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+            <span class="nx">requestAnimationFrame</span><span class="p">(</span><span class="nx">injection</span><span class="p">);</span>
+        <span class="nt">&lt;/script&gt;</span>
+        <span class="nt">&lt;title&gt;</span>Document<span class="nt">&lt;/title&gt;</span>
+    <span class="nt">&lt;/head&gt;</span>
+
+    <span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;/body&gt;</span>
+
+<span class="nt">&lt;/html&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>그리고 기본적으로 필요한 카드 정보를 아래와 같이 작성합니다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+</pre></td><td class="rouge-code"><pre><span class="c1">// app.js</span>
+<span class="cm">/**
+ * 모듈 패턴으로 하겠습니다.
+ */</span>
+
+<span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+
+    <span class="kd">function</span> <span class="nx">Controller</span><span class="p">(){</span>
+        <span class="kd">let</span> <span class="nx">models</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+
+        <span class="k">this</span><span class="p">.</span><span class="nx">init</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">model</span><span class="p">){</span>
+            <span class="nx">models</span> <span class="o">=</span> <span class="nx">model</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="kd">function</span> <span class="nx">Model</span><span class="p">(){</span>
+        <span class="kd">let</span> <span class="nx">views</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+        <span class="kd">let</span> <span class="nx">parts</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+
+        <span class="k">this</span><span class="p">.</span><span class="nx">init</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">view</span><span class="p">){</span>
+            <span class="nx">views</span> <span class="o">=</span> <span class="nx">view</span><span class="p">;</span>
+            <span class="nx">parts</span> <span class="o">=</span> <span class="nx">views</span><span class="p">.</span><span class="nx">getParts</span><span class="p">();</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="kd">function</span> <span class="nx">View</span><span class="p">(){</span>
+        <span class="kd">let</span> <span class="nx">parts</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+
+        <span class="k">this</span><span class="p">.</span><span class="nx">init</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">part</span><span class="p">){</span>
+            <span class="nx">parts</span> <span class="o">=</span> <span class="nx">part</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="k">this</span><span class="p">.</span><span class="nx">getParts</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+            <span class="c1">// model에서 사용하기 위해 getter를 만들었습니다.</span>
+            <span class="c1">// init할 때 인자로 줘도 됩니다.</span>
+            <span class="k">return</span> <span class="nx">parts</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="nx">init</span><span class="p">()</span> <span class="p">{</span>
+            <span class="kd">const</span> <span class="nx">parts</span> <span class="o">=</span> <span class="p">{</span>
+                <span class="na">card</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="na">suits</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">spades</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">clubs</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">hearts</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">diamonds</span><span class="dl">'</span><span class="p">],</span>
+                    <span class="na">shape</span><span class="p">:</span> <span class="p">{</span>
+                        <span class="na">spades</span><span class="p">:</span><span class="dl">'</span><span class="s1">♠</span><span class="dl">'</span><span class="p">,</span>
+                        <span class="na">clubs</span><span class="p">:</span> <span class="dl">'</span><span class="s1">♣</span><span class="dl">'</span><span class="p">,</span>
+                        <span class="na">hearts</span><span class="p">:</span> <span class="dl">'</span><span class="s1">♥</span><span class="dl">'</span><span class="p">,</span>
+                        <span class="na">diamonds</span><span class="p">:</span> <span class="dl">'</span><span class="s1">♦</span><span class="dl">'</span><span class="p">,</span>
+                    <span class="p">},</span>
+                    <span class="na">list</span><span class="p">:</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">(</span><span class="mi">13</span><span class="p">).</span><span class="nx">fill</span><span class="p">(</span><span class="mi">0</span><span class="p">).</span><span class="nx">map</span><span class="p">((</span><span class="nx">num</span><span class="p">,</span> <span class="nx">idx</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">idx</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span>
+                    <span class="nx">render</span><span class="p">(</span><span class="nx">card</span><span class="p">)</span> <span class="p">{</span>
+                        <span class="kd">const</span> <span class="nx">side</span> <span class="o">=</span> <span class="nx">card</span> <span class="p">?.</span><span class="nx">isBack</span> <span class="o">==</span> <span class="kc">undefined</span> <span class="p">?</span> <span class="dl">'</span><span class="s1">empty</span><span class="dl">'</span> <span class="p">:</span> <span class="nx">card</span><span class="p">.</span><span class="nx">isBack</span> <span class="p">?</span> <span class="dl">'</span><span class="s1">front</span><span class="dl">'</span> <span class="p">:</span> <span class="dl">'</span><span class="s1">back</span><span class="dl">'</span><span class="p">;</span>
+                        <span class="k">return</span> <span class="s2">`
+                            &lt;div class="card </span><span class="p">${</span><span class="nx">side</span><span class="p">}</span><span class="s2">"
+                            data-card-id="</span><span class="p">${</span><span class="nx">card</span><span class="p">?.</span><span class="nx">id</span><span class="p">??</span><span class="dl">'</span><span class="s1">-1</span><span class="dl">'</span><span class="p">}</span><span class="dl">"</span><span class="s2"> 
+                            data-card-suit=</span><span class="dl">"</span><span class="nx">$</span><span class="p">{</span><span class="nx">card</span><span class="p">?.</span><span class="nx">$suit</span><span class="p">??</span><span class="dl">'</span><span class="s1">none</span><span class="dl">'</span><span class="p">}</span><span class="dl">"</span><span class="s2">
+                            data-card-deno=</span><span class="dl">"</span><span class="nx">$</span><span class="p">{</span><span class="nx">card</span><span class="p">?.</span><span class="nx">deno</span><span class="p">??</span><span class="dl">'</span><span class="s1">none</span><span class="dl">'</span><span class="p">}</span><span class="dl">"</span><span class="s2">&gt;
+                            &lt;/div&gt;
+                        `
+                    }
+                },
+            }
+
+            const view = new View();
+            const model = new Model();
+            const controller = new Controller();
+
+            view.init(parts);
+            model.init(view);
+            controller.init(model);
+        }
+    }
+})().init();
+</span></pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>이제부터 컨트롤러와 모델, 뷰의 영역마다 코드를 작성하는 부분을 따로 떼어 하나씩 만들어 나가려합니다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+</pre></td><td class="rouge-code"><pre><span class="c1">// app.js :: Model</span>
+
+<span class="kd">function</span> <span class="nx">Model</span><span class="p">(){</span>
+    <span class="kd">const</span> <span class="nx">cardStock</span> <span class="o">=</span> <span class="p">[];</span> <span class="c1">// 카드를 한 장씩 뽑는 덱</span>
+    <span class="kd">const</span> <span class="nx">cardPlaying</span> <span class="o">=</span> <span class="nb">Array</span><span class="p">.</span><span class="k">from</span><span class="p">(</span><span class="k">new</span> <span class="nb">Array</span><span class="p">(</span><span class="mi">7</span><span class="p">),()</span><span class="o">=&gt;</span><span class="p">[]);</span> <span class="c1">// 카드를 맞추는 메인 덱</span>
+    <span class="kd">const</span> <span class="nx">cardStack</span> <span class="o">=</span> <span class="p">[[],[],[],[]];</span> <span class="c1">// 카드를 모으는 4가지 슈트 덱</span>
+
+    <span class="kd">let</span> <span class="nx">views</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+    <span class="kd">let</span> <span class="nx">parts</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+
+    <span class="nx">Model</span><span class="p">.</span><span class="nx">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// 카드의 아이디를 부여하기 위한 카운트</span>
+
+    <span class="k">this</span><span class="p">.</span><span class="nx">init</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">view</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">views</span> <span class="o">=</span> <span class="nx">view</span><span class="p">;</span>
+        <span class="nx">parts</span> <span class="o">=</span> <span class="nx">views</span><span class="p">.</span><span class="nx">getParts</span><span class="p">();</span> <span class="c1">// 파츠 가져오기</span>
+
+        <span class="k">this</span><span class="p">.</span><span class="nx">cardSettings</span><span class="p">();</span> <span class="c1">// 카드 시작 세팅</span>
+    <span class="p">}</span>
+
+    <span class="k">this</span><span class="p">.</span><span class="nx">cardSettings</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">generateCardSuits</span><span class="p">(</span><span class="nx">parts</span><span class="p">.</span><span class="nx">card</span><span class="p">);</span> <span class="c1">// 카드 슈트 52장 생성</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">shuffleCard</span><span class="p">();</span> <span class="c1">// 카드 섞기</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">handOutCard</span><span class="p">();</span> <span class="c1">// 카드 나누어주기 &gt;&gt; cardPlaying(28) / cardStock(24)</span>
+    <span class="p">}</span>
+
+    <span class="k">this</span><span class="p">.</span><span class="nx">generateCardSuits</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">({</span>
+        <span class="nx">suits</span><span class="p">,</span>
+        <span class="nx">list</span>
+    <span class="p">})</span> <span class="p">{</span>
+        <span class="p">[...</span><span class="nx">suits</span><span class="p">].</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">type</span> <span class="o">=&gt;</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="p">[...</span><span class="nx">list</span><span class="p">].</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">num</span> <span class="o">=&gt;</span> <span class="p">{</span>
+                <span class="nx">cardStock</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span>
+                    <span class="na">id</span><span class="p">:</span> <span class="nx">Model</span><span class="p">.</span><span class="nx">count</span><span class="o">++</span><span class="p">,</span>
+                    <span class="na">$suit</span><span class="p">:</span> <span class="nx">type</span><span class="p">,</span> <span class="c1">// 속성 이름을 위로 올리기 위해서 $를 붙인 것 뿐입니다.</span>
+                    <span class="na">deno</span><span class="p">:</span> <span class="nx">num</span><span class="p">,</span>
+                    <span class="na">shape</span><span class="p">:</span> <span class="nx">parts</span><span class="p">.</span><span class="nx">card</span><span class="p">.</span><span class="nx">shape</span><span class="p">[</span><span class="nx">type</span><span class="p">],</span>
+                    <span class="na">isBack</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+                    <span class="na">isStaged</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                    <span class="na">isSelected</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="p">});</span>
+            <span class="p">});</span>
+        <span class="p">});</span>
+    <span class="p">}</span>
+
+    <span class="k">this</span><span class="p">.</span><span class="nx">shuffleCard</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">card</span> <span class="k">in</span> <span class="nx">cardStock</span><span class="p">)</span> <span class="p">{</span>
+            <span class="kd">let</span> <span class="nx">random</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span> <span class="o">*</span> <span class="nx">cardStock</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span>
+            <span class="kd">let</span> <span class="nx">tmp</span> <span class="o">=</span> <span class="nx">cardStock</span><span class="p">[</span><span class="nx">random</span><span class="p">];</span>
+            <span class="nx">cardStock</span><span class="p">[</span><span class="nx">random</span><span class="p">]</span> <span class="o">=</span> <span class="nx">cardStock</span><span class="p">[</span><span class="nx">card</span><span class="p">];</span>
+            <span class="nx">cardStock</span><span class="p">[</span><span class="nx">card</span><span class="p">]</span> <span class="o">=</span> <span class="nx">tmp</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="k">this</span><span class="p">.</span><span class="nx">handOutCard</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">col</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">col</span> <span class="o">&lt;</span> <span class="mi">7</span><span class="p">;</span> <span class="nx">col</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">row</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">row</span> <span class="o">&lt;=</span> <span class="nx">col</span><span class="p">;</span> <span class="nx">row</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nx">cardPlaying</span><span class="p">[</span><span class="nx">col</span><span class="p">].</span><span class="nx">push</span><span class="p">(</span><span class="nx">cardStock</span><span class="p">.</span><span class="nx">pop</span><span class="p">());</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>카드를 생성하고 <code class="language-plaintext highlighter-rouge">Play</code>할 카드를 할당해주었습니다. 카드를 맞추어나가는 플레이 덱에는 7개의 열이 있고, 왼쪽부터 1장 2장 … 마지막 열 7장 규칙으로 나열 되어야 합니다.</p>
+
+<p>이제 카드가 완성되었으니 view 단을 작성합니다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<hr />
+
+<p>📚 함께 보면 좋은 내용</p>
+
+<p><a href="{{site.baseurl}}/spring-mybatis01" target="_blank">DevKimson::[SPRING] MyBatis 사용하기 01</a></p>
+
+<p><a href="{{site.baseurl}}/spring-boot-mybatis01" target="_blank">DevKimson::[SPRING] SPRING BOOT MyBatis 시작하기</a></p>
+:ET

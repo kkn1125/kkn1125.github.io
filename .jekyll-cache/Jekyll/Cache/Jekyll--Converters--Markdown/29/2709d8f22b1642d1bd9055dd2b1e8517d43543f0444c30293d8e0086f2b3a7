@@ -1,0 +1,1166 @@
+I"<h1 id="솔리테어를-만들어-보자">솔리테어를 만들어 보자</h1>
+
+<p>솔리테어는 대부분 컴퓨터에 설치되어 있는 것으로 알고 있습니다. 구글에서 솔리테어를 검색하면 나오는 게임이기도 하구요.</p>
+
+<p>규칙과 카드를 짚거나 하는 등이 꽤 복잡하다고 생각이 듭니다만, 막상 게임을 하나하나 만들어 보니 어려운 작업은 딱히 없었다고 생각 됩니다.</p>
+
+<p>솔리테어를 만들기에 앞서 규칙을 알아야합니다. 해본 사람들은 아실테지만 모르시는 분을 위해 규칙을 아래와 같이 나열해보겠습니다.</p>
+
+<h2 id="솔리테어-규칙">솔리테어 규칙</h2>
+
+<figure class="text-center">
+<span class="w-inline-block">
+   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Set_of_playing_cards_52.JPG/800px-Set_of_playing_cards_52.JPG" alt="위키 백과 - 플레잉카드" title="위키 백과 - 플레잉카드" />
+   <figcaption>[출처] 위키 백과 - 플레잉카드</figcaption>
+</span>
+</figure>
+
+<p>카드는 트럼프카드를 사용하고 A(Ace) 부터 K(King)까지 각 문양에 맞춰 4 묶음을 차례로 모으는 게임입니다. 총 52장으로 구성되고, <code class="language-plaintext highlighter-rouge">Spade</code>, <code class="language-plaintext highlighter-rouge">Clover</code>(Club), <code class="language-plaintext highlighter-rouge">Heart</code>, <code class="language-plaintext highlighter-rouge">Diamond</code>로 네 가지 슈트로 구성되어 있습니다.</p>
+
+<p>각 슈트당 13장 씩 다 모아야 게임이 끝나고, 어느정도 끝나게 되는 시점에는 자동완성 기능으로 빨리 끝낼 수도 있습니다.</p>
+
+<p>아래 그림을 보면서 영역에 따른 규칙을 이야기하며 큰 규칙들을 정리하겠습니다.</p>
+
+<figure class="text-center">
+<span class="w-inline-block">
+   <img class="w-100" src="/assets/images/post/solitaire/solitaire01.png" alt="Solitaire 형태" title="Solitaire 형태" />
+   <figcaption>나중에 만들게 될 결과물</figcaption>
+</span>
+</figure>
+
+<ol>
+  <li>초록색 영역은 1장 씩 카드를 뽑는 곳 입니다. 아래 분홍영역을 맞추다가 맞출 카드가 없다면 뽑고, 계속 뽑을 수는 있지만 제일 마지막 뽑은 카드 포함 3개만이 노출됩니다.</li>
+  <li>주황 영역은 왼쪽부터 <code class="language-plaintext highlighter-rouge">Spades</code>(♠), <code class="language-plaintext highlighter-rouge">Clubs</code>(♣), <code class="language-plaintext highlighter-rouge">Hearts</code>(♥), <code class="language-plaintext highlighter-rouge">Diamonds</code>(♦)를 쌓아 나갑니다.</li>
+  <li>분홍 영역은 카드를 순서대로 맞추어 나가는 플레이 영역입니다. (단, 순서대로 카드를 겹칠때 룰이 있습니다.)
+    <ol>
+      <li>k, q, j, 10 …으로 맞추되 색상이 교차되도록 겹쳐야 합니다.</li>
+      <li>카드를 옮길 때 생기는 빈 열(column)에는 <code class="language-plaintext highlighter-rouge">King</code>만 배치할 수 있습니다.</li>
+      <li>분홍영역은 카드가 마지막 패 외에는 뒷면이어야 합니다. 마지막 패를 없애면 자동으로 뒤집히게 하거나 클릭하여 뒤집을 수도 있습니다.</li>
+    </ol>
+  </li>
+  <li>카드를 옮길 때 묶음으로 옮길 수 있습니다. 예를 들면 3(♥), 2(♣), a(♥)은 묶을으로 옮길 수 있고, 색상이 교차되지 않은 3, 2, a의 경우 불가합니다.</li>
+  <li>카드를 단일로 옮길 수 있습니다.</li>
+  <li>초록영역에서는 카드를 뺄 수만 있고, 주황영역에 모은 카드는 필요에 따라 분홍영역에 다시 둘 수 있습니다.</li>
+</ol>
+
+<p>기능 구현에 있어서 만들어야 하는 기능은 모두 만들어야 하지만 주요하게 보면 카드를 이동하고 유효성 검토를 관심 있게 해주면 금방 만들 수 있습니다.</p>
+
+<h2 id="모양-잡기">모양 잡기</h2>
+
+<p>위의 모양대로 안하셔도 되고 카드를 밑으로 뽑아도 무관합니다. 저는 이미 만들었던 위의 모양으로 코드를 작성하고 테스트할 예정입니다.</p>
+
+<p>인덱스파일 하나를 만듭니다.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+</pre></td><td class="rouge-code"><pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"ko"</span><span class="nt">&gt;</span>
+
+    <span class="nt">&lt;head&gt;</span>
+        <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"UTF-8"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;meta</span> <span class="na">http-equiv=</span><span class="s">"X-UA-Compatible"</span> <span class="na">content=</span><span class="s">"IE=edge"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"viewport"</span> <span class="na">content=</span><span class="s">"width=device-width, initial-scale=1.0"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"./src/css/Solitaire.css"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;script </span><span class="na">id=</span><span class="s">"inject"</span><span class="nt">&gt;</span>
+            <span class="c1">// 이렇게 넣는 이유는 딱히 없습니다.</span>
+
+            <span class="nx">cmt</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createComment</span><span class="p">(</span><span class="dl">'</span><span class="s1">Code injected By Solitaire</span><span class="dl">'</span><span class="p">);</span>
+            <span class="nx">js</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="dl">'</span><span class="s1">script</span><span class="dl">'</span><span class="p">);</span>
+            <span class="nx">js</span><span class="p">.</span><span class="nx">src</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">./src/js/Solitaire.js</span><span class="dl">'</span><span class="p">;</span>
+            <span class="nx">js</span><span class="p">.</span><span class="nx">type</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">module</span><span class="dl">'</span><span class="p">;</span>
+            <span class="nx">injection</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+                <span class="k">if</span> <span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">readyState</span> <span class="o">==</span> <span class="dl">'</span><span class="s1">interactive</span><span class="dl">'</span> <span class="o">&amp;&amp;</span> <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="nx">cancelAnimationFrame</span><span class="p">(</span><span class="nx">injection</span><span class="p">);</span>
+                    <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="nx">cmt</span><span class="p">,</span> <span class="nx">js</span><span class="p">);</span>
+                    <span class="k">delete</span> <span class="nx">js</span><span class="p">;</span>
+                    <span class="k">delete</span> <span class="nx">cmt</span><span class="p">;</span>
+                    <span class="k">delete</span> <span class="nx">injection</span><span class="p">;</span>
+                    <span class="nx">inject</span><span class="p">.</span><span class="nx">remove</span><span class="p">();</span>
+                <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                    <span class="nx">requestAnimationFrame</span><span class="p">(</span><span class="nx">injection</span><span class="p">);</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+            <span class="nx">requestAnimationFrame</span><span class="p">(</span><span class="nx">injection</span><span class="p">);</span>
+        <span class="nt">&lt;/script&gt;</span>
+        <span class="nt">&lt;title&gt;</span>Document<span class="nt">&lt;/title&gt;</span>
+    <span class="nt">&lt;/head&gt;</span>
+
+    <span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;/body&gt;</span>
+
+<span class="nt">&lt;/html&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>그리고 기본적으로 필요한 카드 정보를 아래와 같이 작성합니다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+</pre></td><td class="rouge-code"><pre><span class="c1">// app.js</span>
+<span class="cm">/**
+ * 모듈 패턴으로 하겠습니다.
+ */</span>
+
+<span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+
+    <span class="kd">function</span> <span class="nx">Controller</span><span class="p">(){</span>
+        <span class="kd">let</span> <span class="nx">models</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+
+        <span class="k">this</span><span class="p">.</span><span class="nx">init</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">model</span><span class="p">){</span>
+            <span class="nx">models</span> <span class="o">=</span> <span class="nx">model</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="kd">function</span> <span class="nx">Model</span><span class="p">(){</span>
+        <span class="kd">let</span> <span class="nx">views</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+        <span class="kd">let</span> <span class="nx">parts</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+
+        <span class="k">this</span><span class="p">.</span><span class="nx">init</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">view</span><span class="p">){</span>
+            <span class="nx">views</span> <span class="o">=</span> <span class="nx">view</span><span class="p">;</span>
+            <span class="nx">parts</span> <span class="o">=</span> <span class="nx">views</span><span class="p">.</span><span class="nx">getParts</span><span class="p">();</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="kd">function</span> <span class="nx">View</span><span class="p">(){</span>
+        <span class="kd">let</span> <span class="nx">parts</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+
+        <span class="k">this</span><span class="p">.</span><span class="nx">init</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">part</span><span class="p">){</span>
+            <span class="nx">parts</span> <span class="o">=</span> <span class="nx">part</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="k">this</span><span class="p">.</span><span class="nx">getParts</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+            <span class="c1">// model에서 사용하기 위해 getter를 만들었습니다.</span>
+            <span class="c1">// init할 때 인자로 줘도 됩니다.</span>
+            <span class="k">return</span> <span class="nx">parts</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="nx">init</span><span class="p">()</span> <span class="p">{</span>
+            <span class="kd">const</span> <span class="nx">parts</span> <span class="o">=</span> <span class="p">{</span>
+                <span class="na">card</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="na">suits</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">spades</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">clubs</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">hearts</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">diamonds</span><span class="dl">'</span><span class="p">],</span>
+                    <span class="na">shape</span><span class="p">:</span> <span class="p">{</span>
+                        <span class="na">spades</span><span class="p">:</span><span class="dl">'</span><span class="s1">♠</span><span class="dl">'</span><span class="p">,</span>
+                        <span class="na">clubs</span><span class="p">:</span> <span class="dl">'</span><span class="s1">♣</span><span class="dl">'</span><span class="p">,</span>
+                        <span class="na">hearts</span><span class="p">:</span> <span class="dl">'</span><span class="s1">♥</span><span class="dl">'</span><span class="p">,</span>
+                        <span class="na">diamonds</span><span class="p">:</span> <span class="dl">'</span><span class="s1">♦</span><span class="dl">'</span><span class="p">,</span>
+                    <span class="p">},</span>
+                    <span class="na">list</span><span class="p">:</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">(</span><span class="mi">13</span><span class="p">).</span><span class="nx">fill</span><span class="p">(</span><span class="mi">0</span><span class="p">).</span><span class="nx">map</span><span class="p">((</span><span class="nx">num</span><span class="p">,</span> <span class="nx">idx</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">idx</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span>
+                    <span class="nx">render</span><span class="p">(</span><span class="nx">card</span><span class="p">)</span> <span class="p">{</span>
+                        <span class="kd">const</span> <span class="nx">side</span> <span class="o">=</span> <span class="nx">card</span> <span class="p">?.</span><span class="nx">isBack</span> <span class="o">==</span> <span class="kc">undefined</span> <span class="p">?</span> <span class="dl">'</span><span class="s1">empty</span><span class="dl">'</span> <span class="p">:</span> <span class="nx">card</span><span class="p">.</span><span class="nx">isBack</span> <span class="p">?</span> <span class="dl">'</span><span class="s1">front</span><span class="dl">'</span> <span class="p">:</span> <span class="dl">'</span><span class="s1">back</span><span class="dl">'</span><span class="p">;</span>
+                        <span class="k">return</span> <span class="s2">`
+                            &lt;div class="card </span><span class="p">${</span><span class="nx">side</span><span class="p">}</span><span class="s2">"
+                            data-card-id="</span><span class="p">${</span><span class="nx">card</span><span class="p">?.</span><span class="nx">id</span><span class="p">??</span><span class="dl">'</span><span class="s1">-1</span><span class="dl">'</span><span class="p">}</span><span class="dl">"</span><span class="s2"> 
+                            data-card-suit=</span><span class="dl">"</span><span class="nx">$</span><span class="p">{</span><span class="nx">card</span><span class="p">?.</span><span class="nx">$suit</span><span class="p">??</span><span class="dl">'</span><span class="s1">none</span><span class="dl">'</span><span class="p">}</span><span class="dl">"</span><span class="s2">
+                            data-card-deno=</span><span class="dl">"</span><span class="nx">$</span><span class="p">{</span><span class="nx">card</span><span class="p">?.</span><span class="nx">deno</span><span class="p">??</span><span class="dl">'</span><span class="s1">none</span><span class="dl">'</span><span class="p">}</span><span class="dl">"</span><span class="s2">&gt;
+                            &lt;/div&gt;
+                        `
+                    }
+                },
+            }
+
+            const view = new View();
+            const model = new Model();
+            const controller = new Controller();
+
+            view.init(parts);
+            model.init(view);
+            controller.init(model);
+        }
+    }
+})().init();
+</span></pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>이제부터 컨트롤러와 모델, 뷰의 영역마다 코드를 작성하는 부분을 따로 떼어 하나씩 만들어 나가려합니다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+</pre></td><td class="rouge-code"><pre><span class="c1">// app.js :: Model</span>
+
+<span class="kd">function</span> <span class="nx">Model</span><span class="p">(){</span>
+    <span class="kd">const</span> <span class="nx">cardStock</span> <span class="o">=</span> <span class="p">[];</span> <span class="c1">// 카드를 한 장씩 뽑는 덱</span>
+    <span class="kd">const</span> <span class="nx">cardPlaying</span> <span class="o">=</span> <span class="nb">Array</span><span class="p">.</span><span class="k">from</span><span class="p">(</span><span class="k">new</span> <span class="nb">Array</span><span class="p">(</span><span class="mi">7</span><span class="p">),()</span><span class="o">=&gt;</span><span class="p">[]);</span> <span class="c1">// 카드를 맞추는 메인 덱</span>
+    <span class="kd">const</span> <span class="nx">cardStack</span> <span class="o">=</span> <span class="p">[[],[],[],[]];</span> <span class="c1">// 카드를 모으는 4가지 슈트 덱</span>
+
+    <span class="kd">let</span> <span class="nx">views</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+    <span class="kd">let</span> <span class="nx">parts</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+
+    <span class="nx">Model</span><span class="p">.</span><span class="nx">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// 카드의 아이디를 부여하기 위한 카운트</span>
+
+    <span class="k">this</span><span class="p">.</span><span class="nx">init</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">view</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">views</span> <span class="o">=</span> <span class="nx">view</span><span class="p">;</span>
+        <span class="nx">parts</span> <span class="o">=</span> <span class="nx">views</span><span class="p">.</span><span class="nx">getParts</span><span class="p">();</span> <span class="c1">// 파츠 가져오기</span>
+
+        <span class="k">this</span><span class="p">.</span><span class="nx">cardSettings</span><span class="p">();</span> <span class="c1">// 카드 시작 세팅</span>
+    <span class="p">}</span>
+
+    <span class="k">this</span><span class="p">.</span><span class="nx">cardSettings</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">generateCardSuits</span><span class="p">(</span><span class="nx">parts</span><span class="p">.</span><span class="nx">card</span><span class="p">);</span> <span class="c1">// 카드 슈트 52장 생성</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">shuffleCard</span><span class="p">();</span> <span class="c1">// 카드 섞기</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">handOutCard</span><span class="p">();</span> <span class="c1">// 카드 나누어주기 &gt;&gt; cardPlaying(28) / cardStock(24)</span>
+    <span class="p">}</span>
+
+    <span class="k">this</span><span class="p">.</span><span class="nx">generateCardSuits</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">({</span>
+        <span class="nx">suits</span><span class="p">,</span>
+        <span class="nx">list</span>
+    <span class="p">})</span> <span class="p">{</span>
+        <span class="p">[...</span><span class="nx">suits</span><span class="p">].</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">type</span> <span class="o">=&gt;</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="p">[...</span><span class="nx">list</span><span class="p">].</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">num</span> <span class="o">=&gt;</span> <span class="p">{</span>
+                <span class="nx">cardStock</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span>
+                    <span class="na">id</span><span class="p">:</span> <span class="nx">Model</span><span class="p">.</span><span class="nx">count</span><span class="o">++</span><span class="p">,</span>
+                    <span class="na">$suit</span><span class="p">:</span> <span class="nx">type</span><span class="p">,</span> <span class="c1">// 속성 이름을 위로 올리기 위해서 $를 붙인 것 뿐입니다.</span>
+                    <span class="na">deno</span><span class="p">:</span> <span class="nx">num</span><span class="p">,</span>
+                    <span class="na">shape</span><span class="p">:</span> <span class="nx">parts</span><span class="p">.</span><span class="nx">card</span><span class="p">.</span><span class="nx">shape</span><span class="p">[</span><span class="nx">type</span><span class="p">],</span>
+                    <span class="na">isBack</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+                    <span class="na">isStaged</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                    <span class="na">isSelected</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="p">});</span>
+            <span class="p">});</span>
+        <span class="p">});</span>
+    <span class="p">}</span>
+
+    <span class="k">this</span><span class="p">.</span><span class="nx">shuffleCard</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">card</span> <span class="k">in</span> <span class="nx">cardStock</span><span class="p">)</span> <span class="p">{</span>
+            <span class="kd">let</span> <span class="nx">random</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span> <span class="o">*</span> <span class="nx">cardStock</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span>
+            <span class="kd">let</span> <span class="nx">tmp</span> <span class="o">=</span> <span class="nx">cardStock</span><span class="p">[</span><span class="nx">random</span><span class="p">];</span>
+            <span class="nx">cardStock</span><span class="p">[</span><span class="nx">random</span><span class="p">]</span> <span class="o">=</span> <span class="nx">cardStock</span><span class="p">[</span><span class="nx">card</span><span class="p">];</span>
+            <span class="nx">cardStock</span><span class="p">[</span><span class="nx">card</span><span class="p">]</span> <span class="o">=</span> <span class="nx">tmp</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="k">this</span><span class="p">.</span><span class="nx">handOutCard</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">col</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">col</span> <span class="o">&lt;</span> <span class="mi">7</span><span class="p">;</span> <span class="nx">col</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">row</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">row</span> <span class="o">&lt;=</span> <span class="nx">col</span><span class="p">;</span> <span class="nx">row</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nx">cardPlaying</span><span class="p">[</span><span class="nx">col</span><span class="p">].</span><span class="nx">push</span><span class="p">(</span><span class="nx">cardStock</span><span class="p">.</span><span class="nx">pop</span><span class="p">());</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>카드를 생성하고 <code class="language-plaintext highlighter-rouge">Play</code>할 카드를 할당해주었습니다. 카드를 맞추어나가는 플레이 덱에는 7개의 열이 있고, 왼쪽부터 1장 2장 … 마지막 열 7장 규칙으로 나열 되어야 합니다.</p>
+
+<p>이제 카드가 완성되었으니 view 단을 작성합니다. css는 포스팅 하단에 올려두도록 하겠습니다. 그리고 카드 이미지는 깃허브 저장소의 이미지를 받으시거나 따로 구하셔서 사용해도 됩니다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+</pre></td><td class="rouge-code"><pre><span class="c1">// app.js :: View</span>
+
+<span class="kd">function</span> <span class="nx">View</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">parts</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+
+    <span class="k">this</span><span class="p">.</span><span class="nx">init</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">part</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">parts</span> <span class="o">=</span> <span class="nx">part</span><span class="p">;</span>
+
+        <span class="k">this</span><span class="p">.</span><span class="nx">renderFrames</span><span class="p">();</span>
+    <span class="p">}</span>
+
+    <span class="k">this</span><span class="p">.</span><span class="nx">renderFrames</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">insertAdjacentHTML</span><span class="p">(</span><span class="dl">'</span><span class="s1">afterbegin</span><span class="dl">'</span><span class="p">,</span> <span class="nx">parts</span><span class="p">.</span><span class="nx">template</span><span class="p">.</span><span class="nx">render</span><span class="p">());</span>
+    <span class="p">}</span>
+
+    <span class="k">this</span><span class="p">.</span><span class="nx">getParts</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">parts</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">return</span> <span class="p">{</span>
+    <span class="nx">init</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kd">const</span> <span class="nx">parts</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="na">card</span><span class="p">:</span> <span class="p">{</span>
+                <span class="c1">// ...</span>
+            <span class="p">},</span>
+            <span class="na">template</span><span class="p">:</span> <span class="p">{</span> <span class="c1">// ++</span>
+                <span class="nx">render</span><span class="p">(){</span>
+                    <span class="kd">const</span> <span class="nx">column</span> <span class="o">=</span> <span class="s2">`&lt;div class="columns"&gt;
+                        &lt;div class="card"&gt;&lt;/div&gt;
+                    &lt;/div&gt;`</span><span class="p">;</span>
+                    <span class="k">return</span> <span class="s2">`
+                    &lt;div class="title" style="margin-bottom: 3em; width: 90%;"&gt;
+                        &lt;div align="center" style="margin-bottom: 1em; font-size: 150%;"&gt;Solitaire&lt;/div&gt;
+                        &lt;div style="display: flex; justify-content: space-between;"&gt;
+                            &lt;span&gt;
+                                &lt;span&gt;Score&lt;/span&gt;
+                                &lt;span&gt;0&lt;/span&gt;
+                            &lt;/span&gt;
+                            &lt;span&gt;
+                                &lt;span&gt;Moved&lt;/span&gt;
+                                &lt;span&gt;0&lt;/span&gt;
+                            &lt;/span&gt;
+                            &lt;span&gt;
+                                &lt;span&gt;Time&lt;/span&gt;
+                                &lt;span&gt;0&lt;/span&gt;
+                            &lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div id="app"&gt;
+                        &lt;div class="ground"&gt;
+                            &lt;div class="row"&gt;
+                                &lt;div class="stock"&gt;
+                                    &lt;div class="card back"&gt;&lt;/div&gt;
+                                    &lt;div class="stacking"&gt;
+                                        &lt;div class="card"&gt;&lt;/div&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                                &lt;div class="stack"&gt;
+                                &lt;div class="card"&gt;&lt;/div&gt;
+                                &lt;div class="card"&gt;&lt;/div&gt;
+                                &lt;div class="card"&gt;&lt;/div&gt;
+                                &lt;div class="card"&gt;&lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;div class="row"&gt;
+                                </span><span class="p">${</span><span class="k">new</span> <span class="nb">Array</span><span class="p">(</span><span class="mi">7</span><span class="p">).</span><span class="nx">fill</span><span class="p">(</span><span class="nx">column</span><span class="p">).</span><span class="nx">join</span><span class="p">(</span><span class="dl">''</span><span class="p">)}</span><span class="s2">
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    `</span><span class="p">;</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="c1">// ... inits</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<figure class="text-center">
+<span class="w-inline-block">
+   <img class="w-100" src="/assets/images/post/solitaire/solitaire02.png" alt="Solitaire 형태" title="Solitaire 형태" />
+   <figcaption>view까지 만들었습니다.</figcaption>
+</span>
+</figure>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+</pre></td><td class="rouge-code"><pre><span class="nd">:root</span> <span class="p">{</span>
+    <span class="py">--scard-width</span><span class="p">:</span> <span class="m">40px</span><span class="p">;</span>
+    <span class="py">--scard-height</span><span class="p">:</span> <span class="n">calc</span><span class="p">(</span><span class="n">var</span><span class="p">(</span><span class="n">--scard-width</span><span class="p">)</span> <span class="err">*</span> <span class="m">1.4</span><span class="p">);</span>
+    <span class="py">--scard-gap</span><span class="p">:</span> <span class="m">0rem</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">@media</span> <span class="p">(</span><span class="n">min-width</span><span class="p">:</span> <span class="m">768px</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nd">:root</span><span class="p">{</span>
+        <span class="py">--scard-width</span><span class="p">:</span> <span class="m">70px</span><span class="p">;</span>
+        <span class="py">--scard-height</span><span class="p">:</span> <span class="n">calc</span><span class="p">(</span><span class="n">var</span><span class="p">(</span><span class="n">--scard-width</span><span class="p">)</span> <span class="err">*</span> <span class="m">1.445</span><span class="p">);</span>
+        <span class="py">--scard-gap</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c">/*
+    저는 css reset을 사용했습니다.
+*/</span>
+
+<span class="o">*</span> <span class="p">{</span>
+    <span class="nl">box-sizing</span><span class="p">:</span> <span class="n">border-box</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">html</span><span class="o">,</span>
+<span class="nt">body</span> <span class="p">{</span>
+    <span class="nl">height</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">body</span> <span class="p">{</span>
+    <span class="nl">display</span><span class="p">:</span> <span class="n">flex</span><span class="p">;</span>
+    <span class="nl">flex-wrap</span><span class="p">:</span> <span class="n">wrap</span><span class="p">;</span>
+    <span class="nl">flex-direction</span><span class="p">:</span> <span class="n">column</span><span class="p">;</span>
+    <span class="nl">align-items</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>
+    <span class="nl">justify-content</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>
+    <span class="nl">background-image</span><span class="p">:</span> <span class="sx">url('../img/background.jpg')</span><span class="p">;</span>
+    <span class="nl">background-size</span><span class="p">:</span> <span class="n">cover</span><span class="p">;</span>
+    <span class="nl">background-origin</span><span class="p">:</span> <span class="nb">center</span> <span class="nb">center</span><span class="p">;</span>
+    <span class="nl">background-repeat</span><span class="p">:</span> <span class="nb">no-repeat</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.title</span><span class="p">{</span>
+    <span class="nl">font-weight</span><span class="p">:</span> <span class="nb">bold</span><span class="p">;</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="no">white</span><span class="p">;</span>
+    <span class="nl">font-size</span><span class="p">:</span> <span class="m">120%</span><span class="p">;</span>
+    <span class="nl">text-transform</span><span class="p">:</span> <span class="nb">capitalize</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.restart</span><span class="p">{</span>
+    <span class="nl">border</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+    <span class="nl">cursor</span><span class="p">:</span> <span class="nb">pointer</span><span class="p">;</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="no">white</span><span class="p">;</span>
+    <span class="nl">margin-left</span><span class="p">:</span> <span class="m">2em</span><span class="p">;</span>
+    <span class="nl">font-weight</span><span class="p">:</span> <span class="nb">bold</span><span class="p">;</span>
+    <span class="nl">padding</span><span class="p">:</span> <span class="m">.3rem</span> <span class="m">.6rem</span><span class="p">;</span>
+    <span class="nl">background-color</span><span class="p">:</span><span class="nb">rgb</span><span class="p">(</span><span class="m">147</span><span class="p">,</span> <span class="m">65</span><span class="p">,</span> <span class="m">255</span><span class="p">);</span>
+    <span class="nl">border-radius</span><span class="p">:</span> <span class="m">.3rem</span><span class="p">;</span>
+    <span class="nl">-webkit-border-radius</span><span class="p">:</span> <span class="m">.3rem</span><span class="p">;</span>
+    <span class="nl">-moz-border-radius</span><span class="p">:</span> <span class="m">.3rem</span><span class="p">;</span>
+    <span class="nl">-ms-border-radius</span><span class="p">:</span> <span class="m">.3rem</span><span class="p">;</span>
+    <span class="nl">-o-border-radius</span><span class="p">:</span> <span class="m">.3rem</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nf">#app</span> <span class="p">{</span>
+    <span class="nl">max-width</span><span class="p">:</span> <span class="m">900px</span><span class="p">;</span>
+    <span class="nl">width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+    <span class="nl">height</span><span class="p">:</span> <span class="m">30em</span><span class="p">;</span>
+    <span class="nl">padding</span><span class="p">:</span> <span class="m">1em</span><span class="p">;</span>
+    <span class="nl">background-image</span><span class="p">:</span> <span class="sx">url('../img/ground.jpg')</span><span class="p">;</span>
+    <span class="nl">background-size</span><span class="p">:</span> <span class="n">cover</span><span class="p">;</span>
+    <span class="nl">background-position</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>
+    <span class="nl">background-repeat</span><span class="p">:</span> <span class="nb">no-repeat</span><span class="p">;</span>
+    <span class="nl">border-radius</span><span class="p">:</span> <span class="m">1em</span><span class="p">;</span>
+    <span class="nl">-webkit-border-radius</span><span class="p">:</span> <span class="m">1em</span><span class="p">;</span>
+    <span class="nl">-moz-border-radius</span><span class="p">:</span> <span class="m">1em</span><span class="p">;</span>
+    <span class="nl">-ms-border-radius</span><span class="p">:</span> <span class="m">1em</span><span class="p">;</span>
+    <span class="nl">-o-border-radius</span><span class="p">:</span> <span class="m">1em</span><span class="p">;</span>
+    <span class="nl">border</span><span class="p">:</span> <span class="m">10px</span> <span class="nb">groove</span> <span class="nb">rgb</span><span class="p">(</span><span class="m">182</span><span class="p">,</span> <span class="m">86</span><span class="p">,</span> <span class="m">48</span><span class="p">);</span>
+    <span class="nl">box-shadow</span><span class="p">:</span> <span class="m">0</span> <span class="m">0</span> <span class="m">1rem</span> <span class="m">0</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span> <span class="m">0</span> <span class="m">0</span> <span class="p">/</span> <span class="m">50</span><span class="p">),</span> <span class="nb">inset</span> <span class="m">0</span> <span class="m">0</span> <span class="m">1rem</span> <span class="m">0</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span> <span class="m">0</span> <span class="m">0</span> <span class="p">/</span> <span class="m">50</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nf">#success</span><span class="p">{</span>
+    <span class="nl">font-size</span><span class="p">:</span> <span class="m">5rem</span><span class="p">;</span>
+    <span class="nl">line-height</span><span class="p">:</span> <span class="m">1.5</span><span class="p">;</span>
+    <span class="nl">position</span><span class="p">:</span> <span class="nb">absolute</span><span class="p">;</span>
+    <span class="nl">top</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+    <span class="nl">bottom</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+    <span class="nl">left</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+    <span class="nl">right</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="no">white</span><span class="p">;</span>
+    <span class="nl">display</span><span class="p">:</span> <span class="n">flex</span><span class="p">;</span>
+    <span class="nl">flex-direction</span><span class="p">:</span> <span class="n">column</span><span class="p">;</span>
+    <span class="nl">justify-content</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>
+    <span class="nl">align-items</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>
+    <span class="nl">z-index</span><span class="p">:</span> <span class="m">1500</span><span class="p">;</span>
+    <span class="nl">background-color</span><span class="p">:</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0.5</span><span class="p">);</span>
+    <span class="py">backdrop-filter</span><span class="p">:</span> <span class="n">blur</span><span class="p">(</span><span class="m">5px</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nf">#success</span> <span class="nc">.restart</span><span class="p">{</span>
+    <span class="nl">font-size</span><span class="p">:</span> <span class="m">3rem</span><span class="p">;</span>
+    <span class="nl">margin-left</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nf">#success</span><span class="o">&gt;</span><span class="nd">:not</span><span class="o">(</span><span class="nd">:nth</span><span class="o">(</span><span class="err">3</span><span class="o">)</span><span class="nt">-child</span><span class="o">)</span><span class="p">{</span>
+    <span class="nl">font-weight</span><span class="p">:</span> <span class="nb">bold</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nf">#app</span> <span class="nc">.ground</span> <span class="p">{</span>
+    <span class="c">/* background-color: black; */</span>
+    <span class="nl">width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+    <span class="c">/* height: 100%; */</span>
+    <span class="py">--scard-gap</span><span class="p">:</span> <span class="m">1em</span> <span class="cp">!important</span><span class="p">;</span>
+    <span class="nl">display</span><span class="p">:</span> <span class="n">flex</span><span class="p">;</span>
+    <span class="nl">flex-direction</span><span class="p">:</span> <span class="n">column</span><span class="p">;</span>
+    <span class="py">gap</span><span class="p">:</span> <span class="n">var</span><span class="p">(</span><span class="n">--scard-gap</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nf">#app</span> <span class="nc">.ground</span> <span class="nc">.row</span> <span class="p">{</span>
+    <span class="c">/* background-color: red; */</span>
+    <span class="nl">display</span><span class="p">:</span> <span class="n">flex</span><span class="p">;</span>
+    <span class="py">gap</span><span class="p">:</span> <span class="n">var</span><span class="p">(</span><span class="n">--scard-gap</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nf">#app</span> <span class="nc">.ground</span> <span class="nc">.row</span><span class="nd">:first-child</span> <span class="p">{</span>
+    <span class="nl">flex</span><span class="p">:</span> <span class="m">0</span> <span class="m">0</span> <span class="nb">auto</span><span class="p">;</span>
+    <span class="nl">min-height</span><span class="p">:</span> <span class="m">100px</span><span class="p">;</span>
+    <span class="nl">height</span><span class="p">:</span> <span class="m">20%</span><span class="p">;</span>
+    <span class="nl">flex-direction</span><span class="p">:</span> <span class="n">column</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nf">#app</span> <span class="nc">.ground</span> <span class="nc">.row</span><span class="nd">:last-child</span> <span class="p">{</span>
+    <span class="nl">flex</span><span class="p">:</span> <span class="m">1</span> <span class="m">1</span> <span class="m">0%</span><span class="p">;</span>
+    <span class="nl">min-height</span><span class="p">:</span> <span class="m">250px</span><span class="p">;</span>
+    <span class="nl">height</span><span class="p">:</span> <span class="nb">auto</span><span class="p">;</span>
+    <span class="nl">justify-content</span><span class="p">:</span> <span class="n">space-around</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nf">#app</span> <span class="nc">.ground</span> <span class="nc">.row</span> <span class="nc">.stock</span><span class="o">,</span>
+<span class="nf">#app</span> <span class="nc">.ground</span> <span class="nc">.row</span> <span class="nc">.play</span><span class="o">,</span>
+<span class="nf">#app</span> <span class="nc">.ground</span> <span class="nc">.row</span> <span class="nc">.stack</span> <span class="p">{</span>
+    <span class="c">/* background-color: coral; */</span>
+    <span class="nl">height</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+    <span class="nl">display</span><span class="p">:</span> <span class="n">flex</span><span class="p">;</span>
+    <span class="nl">justify-content</span><span class="p">:</span> <span class="n">flex-start</span><span class="p">;</span>
+    <span class="nl">align-items</span><span class="p">:</span> <span class="n">flex-start</span><span class="p">;</span>
+    <span class="nl">padding</span><span class="p">:</span> <span class="m">0.3rem</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nf">#app</span> <span class="nc">.ground</span> <span class="nc">.row</span> <span class="nc">.play</span> <span class="p">{</span>
+    <span class="nl">justify-content</span><span class="p">:</span> <span class="n">space-around</span><span class="p">;</span>
+    <span class="py">gap</span><span class="p">:</span> <span class="n">var</span><span class="p">(</span><span class="n">--scard-gap</span><span class="p">);</span>
+    <span class="nl">width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nf">#app</span> <span class="nc">.ground</span> <span class="nc">.row</span> <span class="nc">.stack</span><span class="p">{</span>
+    <span class="nl">justify-content</span><span class="p">:</span> <span class="n">space-around</span><span class="p">;</span>
+    <span class="py">--scard-gap</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
+    <span class="py">gap</span><span class="p">:</span> <span class="n">var</span><span class="p">(</span><span class="n">--scard-gap</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nf">#app</span> <span class="nc">.ground</span> <span class="nc">.row</span> <span class="nc">.stock</span><span class="o">,</span>
+<span class="nf">#app</span> <span class="nc">.ground</span> <span class="nc">.row</span> <span class="nc">.stack</span> <span class="p">{</span>
+    <span class="nl">width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">@media</span> <span class="p">(</span><span class="n">min-width</span><span class="p">:</span> <span class="m">768px</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nf">#app</span> <span class="nc">.ground</span> <span class="nc">.row</span><span class="nd">:first-child</span> <span class="p">{</span>
+        <span class="nl">flex</span><span class="p">:</span> <span class="m">0</span> <span class="m">0</span> <span class="nb">auto</span><span class="p">;</span>
+        <span class="nl">min-height</span><span class="p">:</span> <span class="m">120px</span><span class="p">;</span>
+        <span class="nl">flex-direction</span><span class="p">:</span> <span class="n">row</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="nf">#app</span> <span class="nc">.ground</span> <span class="nc">.row</span> <span class="nc">.stock</span> <span class="p">{</span>
+        <span class="nl">width</span><span class="p">:</span> <span class="m">30%</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="nf">#app</span> <span class="nc">.ground</span> <span class="nc">.row</span> <span class="nc">.stack</span> <span class="p">{</span>
+        <span class="nl">width</span><span class="p">:</span> <span class="m">70%</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nf">#app</span> <span class="nc">.ground</span> <span class="nc">.row</span> <span class="nc">.card</span> <span class="p">{</span>
+    <span class="nl">cursor</span><span class="p">:</span> <span class="nb">pointer</span><span class="p">;</span>
+    <span class="nl">width</span><span class="p">:</span> <span class="n">var</span><span class="p">(</span><span class="n">--scard-width</span><span class="p">);</span>
+    <span class="nl">height</span><span class="p">:</span> <span class="n">var</span><span class="p">(</span><span class="n">--scard-height</span><span class="p">);</span>
+    <span class="nl">background-color</span><span class="p">:</span> <span class="no">white</span><span class="p">;</span>
+    <span class="nl">border-radius</span><span class="p">:</span> <span class="m">.3rem</span><span class="p">;</span>
+    <span class="nl">-webkit-border-radius</span><span class="p">:</span> <span class="m">.3rem</span><span class="p">;</span>
+    <span class="nl">-moz-border-radius</span><span class="p">:</span> <span class="m">.3rem</span><span class="p">;</span>
+    <span class="nl">-ms-border-radius</span><span class="p">:</span> <span class="m">.3rem</span><span class="p">;</span>
+    <span class="nl">-o-border-radius</span><span class="p">:</span> <span class="m">.3rem</span><span class="p">;</span>
+    <span class="nl">box-shadow</span><span class="p">:</span> <span class="m">0</span> <span class="m">0</span> <span class="m">0</span> <span class="m">0</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0.1</span><span class="p">);</span>
+    <span class="nl">position</span><span class="p">:</span> <span class="nb">relative</span><span class="p">;</span>
+    <span class="nl">transition</span><span class="p">:</span> <span class="m">200ms</span> <span class="n">ease-in-out</span><span class="p">;</span>
+    <span class="nl">-webkit-transition</span><span class="p">:</span> <span class="m">200ms</span> <span class="n">ease-in-out</span><span class="p">;</span>
+    <span class="nl">-moz-transition</span><span class="p">:</span> <span class="m">200ms</span> <span class="n">ease-in-out</span><span class="p">;</span>
+    <span class="nl">-ms-transition</span><span class="p">:</span> <span class="m">200ms</span> <span class="n">ease-in-out</span><span class="p">;</span>
+    <span class="nl">-o-transition</span><span class="p">:</span> <span class="m">200ms</span> <span class="n">ease-in-out</span><span class="p">;</span>
+    <span class="nl">background-size</span><span class="p">:</span> <span class="n">contain</span><span class="p">;</span>
+    <span class="nl">background-repeat</span><span class="p">:</span> <span class="nb">no-repeat</span><span class="p">;</span>
+    <span class="nl">background-position</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nf">#app</span> <span class="nc">.ground</span> <span class="nc">.row</span> <span class="nc">.card</span><span class="nd">::before</span> <span class="p">{</span>
+    <span class="nl">display</span><span class="p">:</span> <span class="n">flex</span><span class="p">;</span>
+    <span class="nl">justify-content</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>
+    <span class="nl">align-items</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>
+    <span class="nl">content</span><span class="p">:</span> <span class="s2">''</span><span class="p">;</span>
+    <span class="nl">position</span><span class="p">:</span> <span class="nb">absolute</span><span class="p">;</span>
+    <span class="nl">top</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+    <span class="nl">bottom</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+    <span class="nl">left</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+    <span class="nl">right</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+    <span class="nl">border-radius</span><span class="p">:</span> <span class="nb">inherit</span><span class="p">;</span>
+    <span class="nl">-webkit-border-radius</span><span class="p">:</span> <span class="nb">inherit</span><span class="p">;</span>
+    <span class="nl">-moz-border-radius</span><span class="p">:</span> <span class="nb">inherit</span><span class="p">;</span>
+    <span class="nl">-ms-border-radius</span><span class="p">:</span> <span class="nb">inherit</span><span class="p">;</span>
+    <span class="nl">-o-border-radius</span><span class="p">:</span> <span class="nb">inherit</span><span class="p">;</span>
+    <span class="nl">pointer-events</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">@keyframes</span> <span class="nb">show</span> <span class="p">{</span>
+    <span class="err">0</span><span class="o">%</span> <span class="p">{</span>
+        <span class="nl">opacity</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="err">100</span><span class="o">%</span> <span class="p">{</span>
+        <span class="nl">opacity</span><span class="p">:</span> <span class="m">1</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nf">#app</span> <span class="nc">.ground</span> <span class="nc">.row</span> <span class="nc">.card</span><span class="nd">:hover::before</span> <span class="p">{</span>
+    <span class="nl">box-shadow</span><span class="p">:</span> <span class="m">0</span> <span class="m">0</span> <span class="m">0</span> <span class="m">5px</span> <span class="nb">rgb</span><span class="p">(</span><span class="m">157</span><span class="p">,</span> <span class="m">104</span><span class="p">,</span> <span class="m">255</span><span class="p">);</span>
+    <span class="nl">animation</span><span class="p">:</span> <span class="nb">show</span> <span class="m">200ms</span> <span class="n">ease-in-out</span> <span class="nb">both</span><span class="p">;</span>
+    <span class="nl">-webkit-animation</span><span class="p">:</span> <span class="nb">show</span> <span class="m">200ms</span> <span class="n">ease-in-out</span> <span class="nb">both</span><span class="p">;</span>
+    <span class="nl">pointer-events</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nf">#app</span> <span class="nc">.ground</span> <span class="nc">.row</span> <span class="nc">.card.active</span> <span class="p">{</span>
+    <span class="nl">box-shadow</span><span class="p">:</span> <span class="m">0</span> <span class="m">0</span> <span class="m">0.5rem</span> <span class="m">5px</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0.5</span><span class="p">);</span>
+    <span class="nl">animation</span><span class="p">:</span> <span class="m">150ms</span> <span class="n">pick</span> <span class="n">ease-in-out</span> <span class="nb">both</span><span class="p">;</span>
+    <span class="nl">-webkit-animation</span><span class="p">:</span> <span class="m">150ms</span> <span class="n">pick</span> <span class="n">ease-in-out</span> <span class="nb">both</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nf">#app</span> <span class="nc">.ground</span> <span class="nc">.row</span> <span class="nc">.card.active</span><span class="nd">::before</span> <span class="p">{</span>
+    <span class="nl">content</span><span class="p">:</span> <span class="s2">'✅'</span><span class="p">;</span>
+    <span class="nl">box-shadow</span><span class="p">:</span> <span class="m">0</span> <span class="m">0</span> <span class="m">0</span> <span class="m">3px</span> <span class="nb">rgb</span><span class="p">(</span><span class="m">157</span><span class="p">,</span> <span class="m">104</span><span class="p">,</span> <span class="m">255</span><span class="p">);</span>
+    <span class="nl">background-color</span><span class="p">:</span> <span class="n">rgba</span><span class="p">(</span><span class="m">255</span><span class="p">,</span> <span class="m">255</span><span class="p">,</span> <span class="m">255</span><span class="p">,</span> <span class="m">0.5</span><span class="p">);</span>
+    <span class="nl">pointer-events</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nf">#app</span> <span class="nc">.ground</span> <span class="nc">.row</span> <span class="nc">.card.active</span><span class="nd">:hover::before</span><span class="p">{</span>
+    <span class="nl">animation</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+    <span class="nl">-webkit-animation</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">@keyframes</span> <span class="n">pick</span> <span class="p">{</span>
+    <span class="err">0</span><span class="o">%</span><span class="p">{</span> <span class="nl">transform</span><span class="p">:</span><span class="n">scale</span><span class="p">(</span><span class="m">1</span><span class="p">)</span> <span class="p">;</span> <span class="nl">-webkit-transform</span><span class="p">:</span><span class="n">scale</span><span class="p">(</span><span class="m">1</span><span class="p">)</span> <span class="p">;</span> <span class="nl">-moz-transform</span><span class="p">:</span><span class="n">scale</span><span class="p">(</span><span class="m">1</span><span class="p">)</span> <span class="p">;</span> <span class="nl">-ms-transform</span><span class="p">:</span><span class="n">scale</span><span class="p">(</span><span class="m">1</span><span class="p">)</span> <span class="p">;</span> <span class="nl">-o-transform</span><span class="p">:</span><span class="n">scale</span><span class="p">(</span><span class="m">1</span><span class="p">)</span> <span class="p">;</span> <span class="p">}</span>
+    <span class="err">100</span><span class="o">%</span><span class="p">{</span> <span class="nl">transform</span><span class="p">:</span><span class="n">scale</span><span class="p">(</span><span class="m">1.1</span><span class="p">)</span> <span class="p">;</span> <span class="nl">-webkit-transform</span><span class="p">:</span><span class="n">scale</span><span class="p">(</span><span class="m">1.1</span><span class="p">)</span> <span class="p">;</span> <span class="nl">-moz-transform</span><span class="p">:</span><span class="n">scale</span><span class="p">(</span><span class="m">1.1</span><span class="p">)</span> <span class="p">;</span> <span class="nl">-ms-transform</span><span class="p">:</span><span class="n">scale</span><span class="p">(</span><span class="m">1.1</span><span class="p">)</span> <span class="p">;</span> <span class="nl">-o-transform</span><span class="p">:</span><span class="n">scale</span><span class="p">(</span><span class="m">1.1</span><span class="p">)</span> <span class="p">;</span> <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nc">.stacking</span><span class="p">{</span>
+    <span class="nl">position</span><span class="p">:</span> <span class="nb">relative</span><span class="p">;</span>
+    <span class="nl">margin-left</span><span class="p">:</span> <span class="m">0.5rem</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.stacking</span> <span class="nc">.card</span><span class="p">{</span>
+    <span class="nl">position</span><span class="p">:</span> <span class="nb">absolute</span> <span class="cp">!important</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.columns</span><span class="p">{</span>
+    <span class="nl">position</span><span class="p">:</span> <span class="nb">relative</span><span class="p">;</span>
+    <span class="nl">width</span><span class="p">:</span> <span class="n">var</span><span class="p">(</span><span class="n">--scard-width</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nc">.columns</span> <span class="nc">.card</span><span class="p">{</span>
+    <span class="nl">position</span><span class="p">:</span> <span class="nb">absolute</span> <span class="cp">!important</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.card.back</span><span class="p">{</span>
+    <span class="nl">background-image</span><span class="p">:</span> <span class="sx">url('../img/back.png')</span> <span class="cp">!important</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.card.active</span><span class="p">{</span>
+    <span class="nl">transform</span><span class="p">:</span> <span class="n">scale</span><span class="p">(</span><span class="m">1.1</span><span class="p">);</span>
+    <span class="nl">-webkit-transform</span><span class="p">:</span> <span class="n">scale</span><span class="p">(</span><span class="m">1.1</span><span class="p">);</span>
+    <span class="nl">-moz-transform</span><span class="p">:</span> <span class="n">scale</span><span class="p">(</span><span class="m">1.1</span><span class="p">);</span>
+    <span class="nl">-ms-transform</span><span class="p">:</span> <span class="n">scale</span><span class="p">(</span><span class="m">1.1</span><span class="p">);</span>
+    <span class="nl">-o-transform</span><span class="p">:</span> <span class="n">scale</span><span class="p">(</span><span class="m">1.1</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nc">.card.stop</span><span class="p">{</span>
+    <span class="nl">opacity</span><span class="p">:</span> <span class="m">0.5</span><span class="p">;</span>
+    <span class="nl">border</span><span class="p">:</span> <span class="m">3px</span> <span class="nb">dashed</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">1</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<hr />
+
+<p>📚 함께 보면 좋은 내용</p>
+
+<p><a href="/spring-mybatis01" target="_blank">DevKimson::[SPRING] MyBatis 사용하기 01</a></p>
+
+<p><a href="/spring-boot-mybatis01" target="_blank">DevKimson::[SPRING] SPRING BOOT MyBatis 시작하기</a></p>
+:ET
