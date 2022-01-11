@@ -426,3 +426,5 @@ function View() {
 📚 함께 보면 좋은 내용
 
 [DevKimson::[JAVASCRIPT] Solitaire를 만들어 보자 01]({{site.baseurl}}/javascript-solitaire01){:target="_blank"}
+
+[DevKimson::[JAVASCRIPT] Solitaire를 만들어 보자 03]({{site.baseurl}}/javascript-solitaire03){:target="_blank"}

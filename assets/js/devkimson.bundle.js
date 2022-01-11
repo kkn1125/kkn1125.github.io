@@ -673,7 +673,7 @@ imgs.forEach(img=>{
                     }
                     let zoomIn = evt.target;
                     zoomIn.style.cssText = `
-                        width: ${zoomLayer}%;
+                        width: ${zoomLayer}% !important;
                         top: ${evt.target.style.top};
                         left: ${evt.target.style.left};
                     `;
@@ -683,7 +683,7 @@ imgs.forEach(img=>{
                     if(zoomLayer>150){
                         zoomLayer = 100;
                         zoomIn.style.cssText = `
-                            width: ${zoomLayer}%;
+                            width: ${zoomLayer}% !important;
                             top: 0;
                             left: 0;
                         `;
@@ -701,7 +701,7 @@ imgs.forEach(img=>{
                     evt.target.style.cssText = `
                         top: ${originY + (oY-click_position_Y)}px;
                         left: ${originX + (oX-click_position_X)}px;
-                        width: ${evt.target.style.width};
+                        width: ${evt.target.style.width} !important;
                     `;
                 } else {
                     moving = false;
