@@ -6,7 +6,15 @@ author: Kimson
 categories: [ JAVASCRIPT, TIM, GAME ]
 image: assets/images/post/solitaire/solitaire04.png
 tags: [ game, solitaire, card ]
-description: "솔리테어를 만들어 보자 3편"
+description: "솔리테어를 만들어 보자 3편
+
+얼른 기록하고 다른 공부를 하려다보니 급하게 올리게 되었습니다. 이전에 다음 포스팅에서 다룰 3가지를 먼저 알려드렸습니다.
+
+1. 카드 이동 (묶음/단일)
+2. 솔리테어 규칙 적용
+3. 자동 카드 뒤집기
+
+간단한 카드 뒤집기부터 해서 카드이동, 규칙 적용으로 대부분의 기능을 마무리 하도록 하겠습니다. 이후 주제는 타이머, 점수, 이동횟수, 자동완성이기 때문에 천천히 포스팅하려합니다."
 featured: true
 hidden: false
 rating: 4.5
