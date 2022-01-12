@@ -15,7 +15,7 @@ description: "Documentify
 예전에 `JSDOC`을 이용해서 문서화를 해본 적이 있습니다. 하지만 아직 라이브러리를 만들어 낼 정도의 능력이 안되서 `JSDOC`을 구경만 했는데요.
 
 문득 생각이 들었던 것이 `Nodejs` 없이 문서화를 할 수 있지 않을까 해서 둘러보다가 결국 만들어 보게 되었습니다."
-featured: true
+featured: false
 hidden: false
 rating: 4.5
 toc: true
