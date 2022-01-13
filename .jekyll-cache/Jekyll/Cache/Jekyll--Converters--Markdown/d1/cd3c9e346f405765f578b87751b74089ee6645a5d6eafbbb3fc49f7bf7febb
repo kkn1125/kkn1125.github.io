@@ -1,4 +1,4 @@
-I"aa<div class="fence-full">
+I"�X<div class="fence-full">
 
     <div class="w-flex gx-4">
 
@@ -7,6 +7,33 @@
     <span class="h4">Featured</span>
 </div>
 <div class="card-group card-ghost card-pd-0 card-dv-1 card-dv-sm-2 g-3">
+
+    
+
+    
+    <div class="card p-0" style="overflow: hidden;">
+        <a href="/javascript-chess01/" title="[JAVASCRIPT] 체스게임 구현"><img src="assets/images/post/chess/chess04.png" alt="post/cover" class="w-100" /></a>
+        <div class="card-title px-3">
+            <a href="/javascript-chess01/" title="[JAVASCRIPT] 체스게임 구현">[JAVASCRIPT] 체스게임 구현</a>
+        </div>
+        <div class="card-content">
+            <!-- <div class="card-body"></div> -->
+        </div>
+        <div class="pb-3 px-3">
+            In <span class="catlist">
+                
+                <a class="text-capitalize text-white tag tag-success" href="/categories.html#javascript">JAVASCRIPT</a><span class="sep"> </span>
+                
+                <a class="text-capitalize text-white tag tag-success" href="/categories.html#tim">TIM</a><span class="sep"> </span>
+                
+                <a class="text-capitalize text-white tag tag-success" href="/categories.html#game">GAME</a><span class="sep"> </span>
+                
+            </span>
+        </div>
+        <time class="card-time">Jan 13, 2022</time>
+    </div>
+
+    
 
     
 
@@ -357,52 +384,6 @@
     
 
     
-    <div class="card p-0" style="overflow: hidden;">
-        <a href="/javascript-dark-mode04/" title="[JAVASCRIPT] 정적웹에 다크모드 적용하기 04"><img src="assets/images/post/covers/TIL-javascript.png" alt="post/cover" class="w-100" /></a>
-        <div class="card-title px-3">
-            <a href="/javascript-dark-mode04/" title="[JAVASCRIPT] 정적웹에 다크모드 적용하기 04">[JAVASCRIPT] 정적웹에 다크모드 적용하기 04</a>
-        </div>
-        <div class="card-content">
-            <!-- <div class="card-body"></div> -->
-        </div>
-        <div class="pb-3 px-3">
-            In <span class="catlist">
-                
-                <a class="text-capitalize text-white tag tag-success" href="/categories.html#javascript">JAVASCRIPT</a><span class="sep"> </span>
-                
-                <a class="text-capitalize text-white tag tag-success" href="/categories.html#til">TIL</a><span class="sep"> </span>
-                
-            </span>
-        </div>
-        <time class="card-time">Nov 02, 2021</time>
-    </div>
-
-    
-
-    
-
-    
-    <div class="card p-0" style="overflow: hidden;">
-        <a href="/javascript-typerjs01/" title="[JAVASCRIPT] Typer 0.2.0 pre-release 한글 타이핑 효과"><img src="assets/images/post/covers/TIM-none.png" alt="post/cover" class="w-100" /></a>
-        <div class="card-title px-3">
-            <a href="/javascript-typerjs01/" title="[JAVASCRIPT] Typer 0.2.0 pre-release 한글 타이핑 효과">[JAVASCRIPT] Typer 0.2.0 pr...</a>
-        </div>
-        <div class="card-content">
-            <!-- <div class="card-body"></div> -->
-        </div>
-        <div class="pb-3 px-3">
-            In <span class="catlist">
-                
-                <a class="text-capitalize text-white tag tag-success" href="/categories.html#javascript">JAVASCRIPT</a><span class="sep"> </span>
-                
-                <a class="text-capitalize text-white tag tag-success" href="/categories.html#typer">Typer</a><span class="sep"> </span>
-                
-                <a class="text-capitalize text-white tag tag-success" href="/categories.html#tim">TIM</a><span class="sep"> </span>
-                
-            </span>
-        </div>
-        <time class="card-time">Oct 27, 2021</time>
-    </div>
 
     
 
@@ -497,25 +478,6 @@
     
 
     
-    <div class="card p-0" style="overflow: hidden;">
-        <a href="/javascript-send-mail/" title="[JAVASCRIPT] 자바스크립트 메일 보내기"><img src="assets/images/post/covers/TIL-javascript.png" alt="post/cover" class="w-100" /></a>
-        <div class="card-title px-3">
-            <a href="/javascript-send-mail/" title="[JAVASCRIPT] 자바스크립트 메일 보내기">[JAVASCRIPT] 자바스크립트 메일 보내기</a>
-        </div>
-        <div class="card-content">
-            <!-- <div class="card-body"></div> -->
-        </div>
-        <div class="pb-3 px-3">
-            In <span class="catlist">
-                
-                <a class="text-capitalize text-white tag tag-success" href="/categories.html#til">TIL</a><span class="sep"> </span>
-                
-                <a class="text-capitalize text-white tag tag-success" href="/categories.html#javascript">JAVASCRIPT</a><span class="sep"> </span>
-                
-            </span>
-        </div>
-        <time class="card-time">Sep 02, 2021</time>
-    </div>
 
     
 
@@ -661,15 +623,15 @@
                 <div class="card p-0 m-0" style="overflow: hidden;">
                     
                     <div class="card-img">
-                        <a href="/javascript-solitaire03/" title="[JAVASCRIPT] Solitaire를 만들어 보자 03">
-                            <img class="latestImgs" src="http://localhost:4000/assets/images/post/solitaire/solitaire04.png" alt="[JAVASCRIPT] Solitaire를 만들어 보자 03" />
+                        <a href="/javascript-chess01/" title="[JAVASCRIPT] 체스게임 구현">
+                            <img class="latestImgs" src="http://localhost:4000/assets/images/post/chess/chess04.png" alt="[JAVASCRIPT] 체스게임 구현" />
                         </a>
                     </div>
                     
-                    <div class="card-title"><a href="/javascript-solitaire03/" title="[JAVASCRIPT] Solitaire를 만들어 보자 03">[JAVASCRIPT] Solitaire를 만들어 보자 03</a></div>
+                    <div class="card-title"><a href="/javascript-chess01/" title="[JAVASCRIPT] 체스게임 구현">[JAVASCRIPT] 체스게임 구현</a></div>
                     <div class="card-content">
                         <div class="card-body">
-                            솔리테어를 만들어 보자 3편
+                            체스 게임 구현
                         </div>
                     </div>
                     
@@ -683,8 +645,25 @@
                         <a class="text-capitalize tag tag-success text-white" href="/categories.html#game">GAME</a><span class="sep"> </span>
                         
                     </span>
-                    <time class="card-time">Jan 11, 2022</time>
+                    <time class="card-time">Jan 13, 2022</time>
                     
+                    
+                </div>
+                
+                <div class="card p-0 m-0" style="overflow: hidden;">
+                    
+                    <div class="card-img">
+                        <a href="/javascript-solitaire03/" title="[JAVASCRIPT] Solitaire를 만들어 보자 03">
+                            <img class="latestImgs" src="http://localhost:4000/assets/images/post/solitaire/solitaire04.png" alt="[JAVASCRIPT] Solitaire를 만들어 보자 03" />
+                        </a>
+                    </div>
+                    
+                    <div class="card-title"><a href="/javascript-solitaire03/" title="[JAVASCRIPT] Solitaire를 만들어 보자 03">[JAVASCRIPT] Solitaire를 만들어 보자 03</a></div>
+                    <div class="card-content">
+                        <div class="card-body">
+                            솔리테어를 만들어 보자 3편
+                        </div>
+                    </div>
                     
                 </div>
                 
@@ -734,23 +713,6 @@
                     <div class="card-content">
                         <div class="card-body">
                             게시판 구현 - Spring &amp; Vue 01
-                        </div>
-                    </div>
-                    
-                </div>
-                
-                <div class="card p-0 m-0" style="overflow: hidden;">
-                    
-                    <div class="card-img">
-                        <a href="/javascript-prime-number/" title="[JAVASCRIPT] 소수(Prime Number) 찾기">
-                            <img class="latestImgs" src="http://localhost:4000/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] 소수(Prime Number) 찾기" />
-                        </a>
-                    </div>
-                    
-                    <div class="card-title"><a href="/javascript-prime-number/" title="[JAVASCRIPT] 소수(Prime Number) 찾기">[JAVASCRIPT] 소수(Prime Number) 찾기</a></div>
-                    <div class="card-content">
-                        <div class="card-body">
-                            소수 찾기 문제
                         </div>
                     </div>
                     
