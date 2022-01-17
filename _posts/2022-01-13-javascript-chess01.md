@@ -6,8 +6,10 @@ author: Kimson
 categories: [ JAVASCRIPT, TIM, GAME ]
 image: assets/images/post/chess/chess01.png
 tags: [ game, chess ]
-description: ""
-featured: true
+description: "체스 게임 구현
+
+저번에 올린 솔리테어처럼 코드를 하나씩 뜯어보며 만들어가는 포스팅이 아닙니다. 추후에 시간 될 때 차근차근 만들어나가는 포스팅을 하려합니다. 아래는 자바스크립트로 체스게임이 구현 되는지 테스트 해서 올리는 결과물입니다."
+featured: false
 hidden: false
 rating: 4.5
 toc: true

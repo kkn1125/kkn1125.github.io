@@ -13,7 +13,7 @@ description: "솔리테어를 만들어 보자 2편
 카드를 뽑고 모으고 출력하기만 하면 이제 규칙을 만들어 제어만 하면 완성이 됩니다.
 
 이전에 만들었던 코드를 정제하면서 기록하려하니 시간이 배로 걸리는 느낌이 들지만 하나하나 만들어 봅시다."
-featured: true
+featured: false
 hidden: false
 rating: 4.5
 toc: true
