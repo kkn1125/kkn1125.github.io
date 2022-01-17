@@ -1,0 +1,91 @@
+I"�*<h1 id="정적-웹에서-방문자-수-나타내기">정적 웹에서 방문자 수 나타내기</h1>
+
+<p>사실 오래 전부터 고민하면서 이것저것 시도를 했었는데요. 나름 꼼수를 사용한 방법을 소개해드리려 합니다. 만일 문제 될 시 해당 글은 삭제할 것 입니다.</p>
+
+<p>이 글을 보시는 고수 분들은 어딘가에 저촉되는 부분이 있다면 알려주시기바랍니다 :)</p>
+
+<h2 id="시도했던-기억">시도했던 기억</h2>
+
+<blockquote>
+  <p>여담이 필요없으신 분은 아래로 스크롤하셔서 방법부터 보시기 바랍니다.</p>
+</blockquote>
+
+<p>예전에 정적 웹에서 데이터베이스를 사용할 수 없을까 해서 올린 <a href="https://kkn1125.github.io/database-use-db" target="_blank">[DATABASE] 정적 웹에서 데이터베이스 사용하기</a> 에서 이야기를 다룬 적 있습니다. 그런 생각들이 점점 꼬꼬무해서 방문자 표시를 하고 싶다는 생각이 들어 정말 여러가지를 해봤습니다.</p>
+
+<ol>
+  <li>IndexedDB
+    <ol>
+      <li>쓰기가 너무 번거롭습니다. 초반에 이해하는데 조금 시간이 걸렸고, 막상 써보니 제가 기대한 <code class="language-plaintext highlighter-rouge">데이터 공유</code>가 되지 않아 포기했습니다.</li>
+    </ol>
+  </li>
+  <li>LocalStorage
+    <ol>
+      <li>이 방법은 보통 다크모드나 사용자의 정보를 담는데 사용하는 것으로 알고 있는데요. 다크모드 할 때 자주 사용했지만 이 또한 <code class="language-plaintext highlighter-rouge">데이터 공유</code>가 되지 않아 다른 방향으로 사용하고 있습니다.</li>
+    </ol>
+  </li>
+  <li>SessionStorage
+    <ol>
+      <li>위와 같은 이유로 다른 쓰임으로 사용 중에 있고, 무엇보다도 브라우저가 켜져있을 때만 데이터가 유지되어 휘발성이 셋 중 가장 강합니다.</li>
+    </ol>
+  </li>
+  <li>API서버
+    <ol>
+      <li><code class="language-plaintext highlighter-rouge">JAVA</code>로 <code class="language-plaintext highlighter-rouge">Restful API</code>를 공부하는 중에 실험삼아 <code class="language-plaintext highlighter-rouge">herokuapp</code>을 통해 <code class="language-plaintext highlighter-rouge">API</code>서버를 만들고 데이터를 <code class="language-plaintext highlighter-rouge">CRUD</code>하는 테스트를 했습니다. 아주 성공적이었지만 굳이 이렇게 할 바엔…<code class="language-plaintext highlighter-rouge">nodejs</code>나 루비기반 <code class="language-plaintext highlighter-rouge">jekyll</code>을 쓰는 편이 좋겠다 싶어 접어두었습니다. (물론 DB는 JawsDB라는 대여? DB를 사용해서 딱히 보안에 대한 위협은 없었습니다.)</li>
+    </ol>
+  </li>
+  <li>외부사이트 정보 가져오기
+    <ol>
+      <li>크롤링과는 다르지만 이전에 파이썬을 공부하다가 <code class="language-plaintext highlighter-rouge">SOUP</code>을 알게 되었고, 현재 <code class="language-plaintext highlighter-rouge">fetch</code>와 <code class="language-plaintext highlighter-rouge">async</code>를 공부하다보니 자연스레 해당 <code class="language-plaintext highlighter-rouge">URL</code>의 데이터를 긁어와 태그로 변환하는 등의 작업을 하다보니 응용하게 되었습니다. “아 요거를 긁어다가 쓰면 되겠구나?” 어떻게 보면 API서버에서 데이터를 끌어와 쓰던 것과 유사하지만 <code class="language-plaintext highlighter-rouge">CUD</code>를 제외하고 읽기만이라도 되면 가져와 활용 할 만 했습니다. 왜냐면 <code class="language-plaintext highlighter-rouge">CUD</code>는 해당 페이지에서 알아서 업데이트 되기 때문이죠.</li>
+    </ol>
+  </li>
+</ol>
+
+<h2 id="방문자-수를-불러오자">방문자 수를 불러오자</h2>
+
+<p>우연히 <a href="https://url.kr/" target="_blank">url.kr</a> 라는 사이트를 알았고, 주로 긴 <code class="language-plaintext highlighter-rouge">url</code>을 줄여주는 역할을 하는 것 같습니다. 호기심에 어떻게 줄여지고, 줄여진 주소가 작동하는지 테스트하던 중 방문자 수를 조회하는 페이지가 있었습니다.</p>
+
+<p>그래서 이거다..!</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">async</span> <span class="kd">function</span> <span class="nx">sendFing</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">visiteCount</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">targetUrl</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
+        <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">get</span><span class="dl">'</span><span class="p">,</span>
+        <span class="na">mode</span><span class="p">:</span> <span class="dl">"</span><span class="s2">no-cors</span><span class="dl">"</span><span class="p">,</span>
+        <span class="na">credentials</span><span class="p">:</span> <span class="dl">'</span><span class="s1">same-origin</span><span class="dl">'</span>
+    <span class="p">});</span>
+    <span class="kd">const</span> <span class="nx">getResponse</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">visiteCount</span><span class="p">.</span><span class="nx">text</span><span class="p">().</span><span class="k">catch</span><span class="p">(</span><span class="nx">e</span><span class="o">=&gt;</span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">message</span><span class="p">)).</span><span class="k">finally</span><span class="p">(</span><span class="nx">e</span><span class="o">=&gt;</span><span class="nx">console</span><span class="p">.</span><span class="nx">info</span><span class="p">(</span><span class="dl">'</span><span class="s1">fing</span><span class="dl">'</span><span class="p">));</span>
+<span class="p">}</span>
+
+<span class="nx">sendFing</span><span class="p">();</span>
+</code></pre></div></div>
+
+<p>해당 주소로 요청 될 때를 기준으로 방문자 수가 카운팅 되는 것으로 보아 <code class="language-plaintext highlighter-rouge">fetch</code>로 테스트 해보니 잘 카운팅 되었습니다. 이렇게 블로그나 특정 사이트에 접속하면 해당 주소를 요청시키도록 함수를 짭니다.</p>
+
+<p>방문 카운팅이 된 후 결과 값을 가져와야하기 때문에 방문자 수를 표시해주는 <code class="language-plaintext highlighter-rouge">url</code>로 함수를 하나 더 만듭니다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">async</span> <span class="kd">function</span> <span class="nx">getVisitorCount</span><span class="p">(){</span>
+    <span class="kd">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">fetch</span><span class="p">(</span><span class="s2">`yourUrl`</span><span class="p">,</span> <span class="p">{</span>
+        <span class="c1">// 설정들...</span>
+    <span class="p">});</span>
+    <span class="kd">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">response</span><span class="p">.</span><span class="nx">text</span><span class="p">();</span>
+
+    <span class="kd">const</span> <span class="nx">parsedResponse</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DOMParser</span><span class="p">();</span>
+    <span class="kd">const</span> <span class="nx">body</span> <span class="o">=</span> <span class="p">[...</span><span class="nx">parsedResponse</span><span class="p">.</span><span class="nx">parseFromString</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">contents</span><span class="p">,</span> <span class="dl">'</span><span class="s1">text/html</span><span class="dl">'</span><span class="p">).</span><span class="nx">body</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="dl">'</span><span class="s1">targetParent</span><span class="dl">'</span><span class="p">)];</span>
+
+    <span class="kd">const</span> <span class="nx">total</span> <span class="o">=</span> <span class="nx">body</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+    <span class="kd">const</span> <span class="nx">today</span> <span class="o">=</span> <span class="nx">body</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span>
+
+    <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">#total</span><span class="dl">'</span><span class="p">).</span><span class="nx">textContent</span> <span class="o">=</span> <span class="nx">total</span><span class="p">.</span><span class="nx">textContent</span><span class="o">+</span><span class="dl">'</span><span class="s1">명</span><span class="dl">'</span><span class="p">;</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">#today</span><span class="dl">'</span><span class="p">).</span><span class="nx">textContent</span> <span class="o">=</span> <span class="nx">today</span><span class="p">.</span><span class="nx">textContent</span><span class="o">+</span><span class="dl">'</span><span class="s1">명</span><span class="dl">'</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nx">getVisitorCount</span><span class="p">();</span>
+</code></pre></div></div>
+
+<p>이렇게 가져온 데이터를 <code class="language-plaintext highlighter-rouge">DOMParser</code>를 사용해 엘리먼트로 변환하고, <code class="language-plaintext highlighter-rouge">querySelector</code>를 사용해 원하는 영역에 데이터를 가공해서 뿌려주면 됩니다.</p>
+
+<h2 id="마무리">마무리</h2>
+
+<p>여러가지를 쭉 배우기보다는 하나를 배워서 쭉 써보고 다음 것을 배우는 습관이 있습니다. 대단한 것을 소개하는 블로그가 아니지만 명확하지는 않더라도 저와 같은 입장에 있을 누군가에게 도움이 되었으면 하는 바람과 시간이 지나서 제가 볼 때 기억을 하기 위해 포스팅에 노력을 합니다.</p>
+
+<p>만일 해당 포스팅에 문제가 있다면 깃허브 저장소에 이슈로 작성해주시면 감사하겠습니다.</p>
+:ET

@@ -1,0 +1,50 @@
+I"<h1 id="깃-브랜치-덮어쓰기">깃 브랜치 덮어쓰기</h1>
+
+<p>main 브랜치를 새로운 브랜치로 교체할 일이 생겨 시도하다보니 아래와 같은 메세지가 나왔습니다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="nv">$ </span>git checkout main
+<span class="nv">$ </span>git merge newBranch
+<span class="c"># error...</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<figure class="text-center">
+<span class="w-inline-block">
+   <img class="w-100" src="{{site.baseurl}}/assets/images/post/covers/TIL-git.pn" alt="에러" title="에러" />
+   <figcaption>에러 메세지</figcaption>
+</span>
+</figure>
+
+<p>스택오버플로우의 글과 여러 블로그를 참고하고 아래와 같이 해결했습니다.</p>
+
+<ol>
+  <li>덮어쓰고자하는 새로운 브랜치를 <code class="language-plaintext highlighter-rouge">newBranch</code>라 하고</li>
+  <li>덮을 기존의 브랜치를 <code class="language-plaintext highlighter-rouge">oldBranch</code>라 했을 때</li>
+</ol>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="nv">$ </span>git checkout oldBranch
+<span class="nv">$ </span>git merge <span class="nt">-Xtheirs</span> newBranch
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>이렇게 해서 해결이 된다면 괜찮습니다만 “관련없는 기록 병합 거부(fatal: refusing to merge unrelated histories)”라는 메세지가 뜬다면 아래와 같이</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="nv">$ </span>git checkout oldBranch
+<span class="nv">$ </span>git merge <span class="nt">-Xtheirs</span> newBranch <span class="nt">--allow-unrelated</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<hr />
+
+<p>📚 함께 보면 좋은 내용</p>
+
+<p><a href="https://stackoverflow.com/questions/40517129/git-merge-with-force-overwrite" target="_blank">stackoverflow::Git merge with force overwrite</a></p>
+
+<p><a href="https://engineer135.tistory.com/166#recentComments" target="_blank">Engineer135님::git merge 덮어쓰기(overwrite)</a></p>
+
+<p><a href="https://gdtbgl93.tistory.com/63" target="_blank">호기심 많은 오리님::Git push가 안되는 경우 (fatal: refusing to merge unrelated histories)</a></p>
+:ET

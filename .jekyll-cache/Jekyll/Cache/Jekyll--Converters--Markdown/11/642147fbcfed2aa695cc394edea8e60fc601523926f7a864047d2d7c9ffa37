@@ -1,0 +1,32 @@
+I"<div class="container">
+    <h4 class="font-weight-bold spanborder"><span>Authors</span></h4>
+    <div class="row gap-y listrecent listrecent listauthor">
+        
+        <div class="col-lg-6 mb-4">
+            <div class="p-4 border rounded">
+                <div class="row">
+                    <div class="col-md-3 mb-4 mb-md-0"><img alt="kimson" src="/assets/images/profilecard.jpg" class="rounded-circle" height="80" width="80" />
+                    </div>
+                    <div class="col-md-9">
+                        <h4 class="text-dark mb-0"> kimson </h4>
+                        <a href="/profile">
+                            <small class="d-inline-block mt-1 mb-3 font-weight-normal"><i class="far fa-user-circle fs-4"></i> (View Profile)</small>
+                        </a>
+                        <a href="/author-kimson">
+                            <small class="d-inline-block mt-1 mb-3 font-weight-normal"><i class="fas fa-book fs-4"></i> (View Author Posts)</small>
+                        </a>
+                        <div class="excerpt">하루하루 게을리하지 않고 나만의 방식으로 발전해나가는 예비 개발자입니다 🙋‍♂️</div>
+                        <div class="icon-block mt-3 d-flex justify-content-between">
+                            <div>
+                                <a target="_blank" href="https://twitter.com/wowthemesnet"><i class="fab fa-twitter text-muted" aria-hidden="true"></i></a> &nbsp;
+                                <a target="_blank" href="https://kkn1125.github.io"><i class="fa fa-globe text-muted" aria-hidden="true"></i></a> &nbsp;
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+:ET

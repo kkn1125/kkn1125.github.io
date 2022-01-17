@@ -1,7 +1,7 @@
 ---
 layout: post
 date:   2022-01-13 22:12:28 +0900
-title:  "[JAVASCRIPT] 체스게임 구현"
+title:  "[JAVASCRIPT] 체스게임 구현 01"
 author: Kimson
 categories: [ JAVASCRIPT, TIM, GAME ]
 image: assets/images/post/chess/chess01.png
