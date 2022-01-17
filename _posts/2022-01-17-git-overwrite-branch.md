@@ -4,7 +4,7 @@ date:   2022-01-17 12:40:42 +0900
 title:  "[GIT] 깃 브랜치 덮어쓰기"
 author: Kimson
 categories: [ GIT, TIL ]
-image: assets/images/post/git/git01.png
+image: assets/images/post/covers/TIL-git.png
 tags: [ git, branch, overwrite ]
 description: "깃 브랜치 덮어쓰기
 
