@@ -1,5 +1,6 @@
 ---
 layout: post
+modified: 2022-01-19 15:48:20 +0900
 date:   2021-08-16 13:50:20 +0900
 title:  "[JAVASCRIPT] LinkedList 만들기"
 author: Kimson

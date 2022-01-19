@@ -1,10 +1,11 @@
 ---
 layout: post
+modified: 2022-01-19 15:55:53 +0900
 date:   2021-09-21 17:31:12 +0900
 title:  "[JAVASCRIPT] 태그 입력 구현하기"
 author: Kimson
 categories: [ TIL, JAVASCRIPT ]
-tags: [tag, easy]
+tags: [tag, input, badge]
 image: assets/images/post/covers/TIL-javascript.png
 description: "태그 입력 구현하기
 
@@ -14,7 +15,6 @@ hidden: false
 rating: 4
 toc: true
 profile: false
-istop: true
 keysum: false
 keywords: ""
 ---

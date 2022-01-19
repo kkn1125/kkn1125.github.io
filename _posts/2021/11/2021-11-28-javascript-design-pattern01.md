@@ -1,5 +1,6 @@
 ---
 layout: post
+modified: 2022-01-19 15:55:53 +0900
 date:   2021-11-28 14:35:56 +0900
 title:  "[JAVASCRIPT] 자바스크립트 디자인 패턴 - 모듈 패턴"
 author: Kimson
@@ -20,7 +21,6 @@ hidden: false
 rating: 4
 toc: true
 profile: false
-istop: true
 keysum: false
 keywords: ""
 published: true

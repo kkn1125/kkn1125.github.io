@@ -1,5 +1,6 @@
 ---
 layout: post
+modified: 2022-01-19 15:55:53 +0900
 date:   2021-09-24 20:15:27 +0900
 title:  "[SPRING] 파일 업로드 하기"
 author: Kimson
@@ -15,7 +16,6 @@ hidden: false
 rating: 3.5
 toc: true
 profile: false
-istop: true
 keysum: false
 keywords: ""
 ---

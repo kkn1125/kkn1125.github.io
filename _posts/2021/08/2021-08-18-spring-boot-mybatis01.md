@@ -1,7 +1,8 @@
 ---
 layout: post
+modified: 2022-01-19 15:48:20 +0900
 date:   2021-08-18 19:54:48 +0900
-title:  "[SPRING] SPRING BOOT MyBatis 시작하기"
+title:  "[SPRINGBOOT] SPRING BOOT MyBatis 시작하기"
 author: Kimson
 categories: [ TIL, SPRINGBOOT ]
 tags: [mybatis]

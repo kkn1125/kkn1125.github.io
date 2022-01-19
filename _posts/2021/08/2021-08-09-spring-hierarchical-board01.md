@@ -1,10 +1,11 @@
 ---
 layout: post
+modified: 2022-01-19 15:55:53 +0900
 date:   2021-08-09 13:19:05 +0900
 title:  "[SPRING] 계층형 게시판 만들기"
 author: Kimson
 categories: [ TIL, SPRING ]
-tags: [maps, key, value]
+tags: [ board, layer, hierarchical ]
 image: assets/images/post/hierarchical/hierarchical13.png
 description: "계층형 게시판
 

@@ -1,10 +1,11 @@
 ---
 layout: post
+modified: 2022-01-19 15:55:53 +0900
 date:   2021-10-20 11:27:25 +0900
-title:  "[JAVA] JWebAssembly를 사용해보자"
+title:  "[SPRING] JWebAssembly를 사용해보자"
 author: Kimson
 categories: [ SPRING, TIL ]
-image: assets/images/post/covers/TIL-java.png
+image: assets/images/post/covers/TIL-spring.png
 tags: [ jdbc, template ]
 description: "WebAssembly란
 
@@ -14,7 +15,6 @@ hidden: false
 rating: 4.5
 toc: true
 profile: false
-istop: true
 keysum: false
 keywords: ""
 published: true

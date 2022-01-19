@@ -1,10 +1,11 @@
 ---
 layout: post
+modified: 2022-01-19 15:55:53 +0900
 date:   2021-08-09 13:19:05 +0900
 title:  "[JAVASCRIPT] Map 객체 사용"
 author: Kimson
 categories: [ TIL, JAVASCRIPT ]
-tags: [maps, key, value]
+tags: [map, key, value]
 image: assets/images/post/covers/TIL-javascript.png
 description: "키 기반의 컬렉션
 

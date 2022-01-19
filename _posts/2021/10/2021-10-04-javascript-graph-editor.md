@@ -1,5 +1,6 @@
 ---
 layout: post
+modified: 2022-01-19 15:55:53 +0900
 date:   2021-10-04 19:55:23 +0900
 title:  "[JAVASCRIPT] Graph Editor JS"
 author: Kimson
@@ -14,7 +15,6 @@ hidden: false
 rating: 4.5
 toc: true
 profile: false
-istop: true
 keysum: false
 keywords: ""
 ---

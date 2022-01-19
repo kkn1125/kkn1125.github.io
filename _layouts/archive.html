@@ -1,0 +1,39 @@
+---
+title: "Archives"
+layout: default
+---
+
+<!-- Begin List Posts
+================================================== -->
+<div class="fence-full">
+
+    <div class="fw-bold h3 text-uppercase mb-4">
+        <h2><span>{{ page.type }} '{{ page.title }}'</span> List</h2>
+    </div>
+    <div class="row">
+
+    {% for category in site.categories %}
+
+    {% if page.title == category[0] %}
+        
+    <div id="{{ category[0] | downcase }}" style="padding-top: 64px; border-bottom: 2px solid rgb(133 133 133); margin-bottom: 1em"><span class="h5 fw-bold text-capitalize">{{ category[0] }}</span>
+    </div>
+
+    {% assign pages_list = category[1] %}
+    {% for post in pages_list %}
+    {% if post.title != null %}
+    {% if group == null or group == post.group %}
+    {% include main-loop-card.html %}
+    {% endif %}
+    {% endif %}
+    {% endfor %}
+    {% assign pages_list = nil %}
+    {% assign group = nil %}
+
+    {% endif %}
+
+    {% endfor %}
+
+    </div>
+
+</div>

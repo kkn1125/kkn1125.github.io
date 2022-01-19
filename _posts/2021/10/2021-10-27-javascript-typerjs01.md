@@ -1,5 +1,6 @@
 ---
 layout: post
+modified: 2022-01-19 15:55:53 +0900
 date:   2021-10-27 21:39:53 +0900
 title:  "[JAVASCRIPT] Typer 0.2.0 pre-release 한글 타이핑 효과"
 author: Kimson
@@ -16,7 +17,6 @@ hidden: false
 rating: 5
 toc: true
 profile: false
-istop: true
 keysum: false
 keywords: ""
 published: true

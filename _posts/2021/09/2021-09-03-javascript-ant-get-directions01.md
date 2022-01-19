@@ -14,7 +14,6 @@ hidden: false
 rating: 4.5
 toc: true
 profile: false
-istop: true
 keysum: false
 keywords: ""
 ---

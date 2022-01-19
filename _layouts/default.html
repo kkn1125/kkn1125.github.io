@@ -128,7 +128,15 @@
         <!-- nav-gnb -->
         {% include nav-gnb.html %}
 
-        <div class="sr"></div>
+        <div>
+            <ul class="submenu w-flex flex-nowrap vgap-4 px-3" style="overflow-x: auto; white-space: nowrap;">
+                {% for category in site.categories %}
+                <li class="list-item fs-6 py-1">
+                    <a href="/category/{{category[0] | downcase}}">{{category[0]}} <span class="fs-8 text-muted">({{category[1] | size}})</span></a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
 
         <!-- Search Results -->
         <div id="lunrsearchresults">

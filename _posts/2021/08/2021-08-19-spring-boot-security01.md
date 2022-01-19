@@ -1,12 +1,19 @@
 ---
 layout: post
+modified: 2022-01-19 15:48:20 +0900
 date:   2021-08-19 17:40:02 +0900
-title:  "[SPRING] SPRING BOOT Security 01"
+title:  "[SPRINGBOOT] SPRING BOOT Security 01"
 author: Kimson
 categories: [ TIL, SPRINGBOOT ]
 tags: [mybatis]
 image: assets/images/post/covers/TIL-spring.png
-description: ""
+description: "Spring Boot Security 시작하기
+
+시큐리티 시작해야지 했던 게 벌써 일주일이 지난 것  같습니다. 그 날 못한 일을 계속 꼼수로 수정해서 달력 저어~ 뒤로 미루던 것을 이제 그만 해야할 것 같습니다. TodoList를 만든 보람과 신뢰가 자신에게 사라지는 느낌이라 자제를...
+
+`Security` 설정은 `Spring boot security`를 검색하면 스프링부트 가이드에 잘 나와있습니다. 하나하나 따라하면서 필요한 기능들을 검색해서 알아보았습니다.
+
+잊을 것 같아 포스팅으로 기록을 남깁니다."
 featured: false
 hidden: false
 rating: 5
@@ -14,13 +21,7 @@ toc: true
 profile: false
 istop: true
 keysum: false
-keywords: "Spring Boot Security 시작하기
-
-시큐리티 시작해야지 했던 게 벌써 일주일이 지난 것  같습니다. 그 날 못한 일을 계속 꼼수로 수정해서 달력 저어~ 뒤로 미루던 것을 이제 그만 해야할 것 같습니다. TodoList를 만든 보람과 신뢰가 자신에게 사라지는 느낌이라 자제를...
-
-`Security` 설정은 `Spring boot security`를 검색하면 스프링부트 가이드에 잘 나와있습니다. 하나하나 따라하면서 필요한 기능들을 검색해서 알아보았습니다.
-
-잊을 것 같아 포스팅으로 기록을 남깁니다."
+keywords: ""
 published: false
 ---
 

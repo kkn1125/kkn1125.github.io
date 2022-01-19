@@ -1,5 +1,6 @@
 ---
 layout: post
+modified: 2022-01-19 15:48:20 +0900
 date:   2021-07-13 15:35:27 +0900
 title:  "[JAVASCRIPT] AJAX 전송 한글 깨짐 문제"
 author: Kimson

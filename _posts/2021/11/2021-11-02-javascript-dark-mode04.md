@@ -1,5 +1,6 @@
 ---
 layout: post
+modified: 2022-01-19 15:55:53 +0900
 date:   2021-11-02 12:23:29 +0900
 title:  "[JAVASCRIPT] 정적웹에 다크모드 적용하기 04"
 author: Kimson
@@ -14,7 +15,6 @@ hidden: false
 rating: 4
 toc: true
 profile: false
-istop: true
 keysum: false
 keywords: ""
 published: true

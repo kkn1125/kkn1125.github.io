@@ -1,7 +1,8 @@
 ---
 layout: post
+modified: 2022-01-19 15:55:53 +0900
 date:   2021-08-12 12:38:19 +0900
-title:  "[SPRING] SPRING BOOT 시작하기 01"
+title:  "[SPRINGBOOT] SPRING BOOT 시작하기 01"
 author: Kimson
 categories: [ TIL, SPRINGBOOT ]
 tags: [spring, lombok, thymeleaf]

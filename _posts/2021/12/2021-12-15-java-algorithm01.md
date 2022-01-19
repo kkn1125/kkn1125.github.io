@@ -1,7 +1,8 @@
 ---
 layout: post
+modified: 2022-01-19 15:55:53 +0900
 date:   2021-12-15 17:44:57 +0900
-title:  "[JAVA] Kakao 인턴"
+title:  "[ALGORITHM] Kakao 인턴"
 author: Kimson
 categories: [ JAVA, TIL, ALGORITHM, PROGRAMMERS ]
 image: assets/images/post/covers/TIL-java.png

@@ -1,9 +1,10 @@
 ---
 layout: post
+modified: 2022-01-19 15:48:20 +0900
 date:   2021-08-13 13:50:20 +0900
 title:  "[JAVASCRIPT] 드롭다운 메뉴 구현"
 author: Kimson
-categories: [ TIL, SPRINGBOOT ]
+categories: [ TIL, JAVASCRIPT ]
 tags: [dropdown]
 image: assets/images/post/covers/TIL-javascript.png
 description: "간단한 드롭다운 메뉴 만들기

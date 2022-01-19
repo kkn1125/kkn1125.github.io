@@ -2,7 +2,7 @@
 layout: post
 modified: 2021-12-22 19:48:17 +0900
 date:   2021-08-19 20:02:35 +0900
-title:  "[SPRING] Method Not Allowed 405 에러 발생과 해결"
+title:  "[SPRINGBOOT] Method Not Allowed 405 에러 발생과 해결"
 author: Kimson
 categories: [ TIL, SPRINGBOOT ]
 tags: [cors, "405", post]

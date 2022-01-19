@@ -1,5 +1,6 @@
 ---
 layout: post
+modified: 2022-01-19 15:55:53 +0900
 date:   2021-10-12 17:23:12 +0900
 title:  "[JAVASCRIPT] HTML 커스텀 태그 만들어 사용하기"
 author: Kimson
@@ -18,7 +19,6 @@ hidden: false
 rating: 4.5
 toc: true
 profile: false
-istop: true
 keysum: false
 keywords: ""
 published: true

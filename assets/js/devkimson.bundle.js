@@ -772,9 +772,9 @@ function renderScrollGauge(gaugeValue){
         box.id = 'scrollGauge';
         box.classList.add('tag','tag-info');
         body.append(box);
-        box.innerHTML = `<span></span><span> / </span><span>100</span>`;
+        box.innerHTML = `<span></span>`;
     } else {
-        gauge.children[0].textContent = `${temp>100?100:temp}`;
+        gauge.children[0].textContent = `${temp>100?100:temp}%`;
     }
 }
 
@@ -796,3 +796,44 @@ let detectPauseScrolling = setInterval(() => {
     }
 }, 1000);
 // scrollViewer
+
+// submenu scroll horizontal
+let horizonScroll = 0;
+window.addEventListener('wheel', scrollHorizontal, {passive: false})
+function scrollHorizontal(ev){
+    const target = ev.target;
+    const isTargetMenu = target.closest('.submenu');
+    if(isTargetMenu){
+        ev.preventDefault();
+        ev.stopPropagation();
+        horizonScroll -= ev.wheelDeltaY;
+        if(horizonScroll<0){
+            horizonScroll = 0;
+        } else if (horizonScroll>isTargetMenu.scrollWidth-120){
+            horizonScroll = isTargetMenu.scrollWidth-120;
+        }
+        isTargetMenu.scrollTo({left: horizonScroll, top: isTargetMenu.scrollHeight, behavior: 'smooth'});
+
+        return false;
+    }
+}
+
+let clickForScroll = false;
+let first = 0;
+let originWidth = 0;
+window.addEventListener('mousedown', (ev)=>{
+    if(ev.target.closest('.submenu')){
+        clickForScroll = true;
+        originWidth = document.querySelector('.submenu').scrollLeft;
+        first = ev.clientX;
+    }
+})
+window.addEventListener('mouseup', (ev)=>{
+    clickForScroll = false;
+})
+window.addEventListener('mousemove', (ev)=>{
+    let menu = document.querySelector('.submenu');
+    if(clickForScroll){
+        menu.scrollTo({left: originWidth-(ev.clientX-first), top: menu.scrollTop, behavior: 'auto'});
+    }
+})

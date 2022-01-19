@@ -1,9 +1,10 @@
 ---
 layout: post
+modified: 2022-01-19 15:55:53 +0900
 date:   2021-12-16 14:31:34 +0900
 title:  "[JAVASCRIPT] 정적 웹에서 방문자 수 나타내기"
 author: Kimson
-categories: [ JAVASCRIPT, TIL, ALGORITHM ]
+categories: [ JAVASCRIPT, TIL ]
 image: assets/images/post/covers/TIL-javascript.png
 tags: [ visitors, counting ]
 description: "정적 웹에서 방문자 수 나타내기

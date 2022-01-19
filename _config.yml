@@ -23,7 +23,7 @@ plugins:
   - jekyll-sitemap
   - jekyll-feed
   - jekyll-seo-tag
-  # - jekyll-archives
+  - jekyll-archives
 
 authors:
   Kimson:
@@ -63,6 +63,13 @@ kramdown:
       line_numbers: true
 
 highlighter: rouge
+
+jekyll-archives:
+  enabled:
+  - categories
+  layout: archive
+  permalinks:
+    category: "/category/:name/"
 
 # Where things are
 jekyll-spaceship:

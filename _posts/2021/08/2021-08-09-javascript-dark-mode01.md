@@ -1,10 +1,11 @@
 ---
 layout: post
+modified: 2022-01-19 15:55:53 +0900
 date:   2021-08-09 20:01:15 +0900
 title:  "[JAVASCRIPT] 정적웹에 다크모드 적용하기 01"
 author: Kimson
-categories: [ TIL, SPRING ]
-tags: [maps, key, value]
+categories: [ TIL, JAVASCRIPT ]
+tags: [ darkmode ]
 image: assets/images/post/covers/TIL-javascript.png
 description: "다크모드
 

@@ -1,6 +1,6 @@
 ---
 layout: post
-modified: 2021-12-22 13:16:09 +0900
+modified: 2022-01-19 15:55:53 +0900
 date:   2021-12-06 21:27:46 +0900
 title:  "[JAVA] URL 경로의 내용 읽어오기"
 author: Kimson
@@ -15,7 +15,6 @@ hidden: false
 rating: 3
 toc: true
 profile: false
-istop: true
 keysum: false
 keywords: ""
 published: true

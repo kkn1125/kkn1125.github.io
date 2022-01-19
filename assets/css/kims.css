@@ -414,6 +414,10 @@ iframe[sandbox^="allow"]{
 	text-shadow: 0px 0px 2px black;
 }
 
+a{
+	-webkit-user-drag: none;
+}
+
 .wrap-badge{
 	top: 0;
 	right: 0;
@@ -422,6 +426,10 @@ iframe[sandbox^="allow"]{
 	-moz-transform: translate(0%,-70%);
 	-ms-transform: translate(0%,-70%);
 	-o-transform: translate(0%,-70%);
+}
+
+.submenu::-webkit-scrollbar{
+	display: none;
 }
 
 .lang-badge{

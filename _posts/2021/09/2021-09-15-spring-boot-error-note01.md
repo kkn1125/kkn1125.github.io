@@ -1,9 +1,10 @@
 ---
 layout: post
+modified: 2022-01-19 15:55:53 +0900
 date:   2021-09-15 21:26:12 +0900
-title:  "[SPRING] 에러노트 - mybatis syntax error"
+title:  "[SPRINGBOOT] 에러노트 - mybatis syntax error"
 author: Kimson
-categories: [ TIL, SPRINGBOOT ]
+categories: [ TIL, SPRINGBOOT, NOTE ]
 tags: [mybatis, error, note]
 image: assets/images/post/covers/TIL-spring.png
 description: "에러노트 - MyBatis Syntax Error
@@ -16,7 +17,6 @@ hidden: false
 rating: 4
 toc: true
 profile: false
-istop: true
 keysum: false
 keywords: ""
 ---
