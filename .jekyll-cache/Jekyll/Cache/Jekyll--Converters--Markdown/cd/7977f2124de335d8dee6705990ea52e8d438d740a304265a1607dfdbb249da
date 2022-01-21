@@ -1,4 +1,4 @@
-I"	<div class="fence-full">
+I"�<div class="fence-full">
     <div>
         <span class="fw-bold h3 text-uppercase mb-4">Categories</span>
     </div>
@@ -4524,6 +4524,44 @@
 	<div class="col pe-3">
 		<div>
 			<span class="mb-1 h5 fw-bold">
+			<a class="nav-link" href="/vue-add-attributes/">[VUE] 컴포넌트, 엘리먼트에 다중 속성 보내기</a>
+			</span>
+		</div>
+		<p class="excerpt">
+		컴포넌트, 엘리먼트에 다중 속성 보내기
+		</p>
+		<small class="w-block text-muted">
+			In <span class="catlist">
+			
+			<a class="text-capitalize tag tag-success text-white" href="/categories#vue">VUE</a><span class="sep"> </span>
+			
+			<a class="text-capitalize tag tag-success text-white" href="/categories#tim">TIM</a><span class="sep"> </span>
+			
+			<a class="text-capitalize tag tag-success text-white" href="/categories#game">GAME</a><span class="sep"> </span>
+			
+			</span>
+		</small>
+		<small class="text-muted">
+			Jan 21, 2022
+		</small>
+	</div>
+	
+	<div class="col-md-5 pe-0 text-right">
+	<a href="/vue-add-attributes/">
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-vue.png" alt="[VUE] 컴포넌트, 엘리먼트에 다중 속성 보내기" />
+	</a>
+	</div>
+	
+</div>
+    
+    
+    
+    
+    
+    <div class="mb-5 w-flex justify-content-between flex-column flex-row-md main-loop-card">
+	<div class="col pe-3">
+		<div>
+			<span class="mb-1 h5 fw-bold">
 			<a class="nav-link" href="/javascript-chess02/">[JAVASCRIPT] 체스게임 구현 02</a>
 			</span>
 		</div>
@@ -5925,6 +5963,44 @@
 	<div class="col pe-3">
 		<div>
 			<span class="mb-1 h5 fw-bold">
+			<a class="nav-link" href="/vue-add-attributes/">[VUE] 컴포넌트, 엘리먼트에 다중 속성 보내기</a>
+			</span>
+		</div>
+		<p class="excerpt">
+		컴포넌트, 엘리먼트에 다중 속성 보내기
+		</p>
+		<small class="w-block text-muted">
+			In <span class="catlist">
+			
+			<a class="text-capitalize tag tag-success text-white" href="/categories#vue">VUE</a><span class="sep"> </span>
+			
+			<a class="text-capitalize tag tag-success text-white" href="/categories#tim">TIM</a><span class="sep"> </span>
+			
+			<a class="text-capitalize tag tag-success text-white" href="/categories#game">GAME</a><span class="sep"> </span>
+			
+			</span>
+		</small>
+		<small class="text-muted">
+			Jan 21, 2022
+		</small>
+	</div>
+	
+	<div class="col-md-5 pe-0 text-right">
+	<a href="/vue-add-attributes/">
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-vue.png" alt="[VUE] 컴포넌트, 엘리먼트에 다중 속성 보내기" />
+	</a>
+	</div>
+	
+</div>
+    
+    
+    
+    
+    
+    <div class="mb-5 w-flex justify-content-between flex-column flex-row-md main-loop-card">
+	<div class="col pe-3">
+		<div>
+			<span class="mb-1 h5 fw-bold">
 			<a class="nav-link" href="/vue-study01/">[VUE] VUE를 아라뷰자 01</a>
 			</span>
 		</div>
@@ -6263,6 +6339,44 @@
     <div id="game" style="padding-top: 64px; border-bottom: 2px solid rgb(133 133 133); margin-bottom: 1em"><span class="h5 fw-bold text-capitalize">GAME</span>
     </div>
 
+    
+    
+    
+    
+    <div class="mb-5 w-flex justify-content-between flex-column flex-row-md main-loop-card">
+	<div class="col pe-3">
+		<div>
+			<span class="mb-1 h5 fw-bold">
+			<a class="nav-link" href="/vue-add-attributes/">[VUE] 컴포넌트, 엘리먼트에 다중 속성 보내기</a>
+			</span>
+		</div>
+		<p class="excerpt">
+		컴포넌트, 엘리먼트에 다중 속성 보내기
+		</p>
+		<small class="w-block text-muted">
+			In <span class="catlist">
+			
+			<a class="text-capitalize tag tag-success text-white" href="/categories#vue">VUE</a><span class="sep"> </span>
+			
+			<a class="text-capitalize tag tag-success text-white" href="/categories#tim">TIM</a><span class="sep"> </span>
+			
+			<a class="text-capitalize tag tag-success text-white" href="/categories#game">GAME</a><span class="sep"> </span>
+			
+			</span>
+		</small>
+		<small class="text-muted">
+			Jan 21, 2022
+		</small>
+	</div>
+	
+	<div class="col-md-5 pe-0 text-right">
+	<a href="/vue-add-attributes/">
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-vue.png" alt="[VUE] 컴포넌트, 엘리먼트에 다중 속성 보내기" />
+	</a>
+	</div>
+	
+</div>
+    
     
     
     
