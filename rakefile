@@ -40,3 +40,4 @@ task :publish => [:generate] do
 end
 
 # $ rake publish // instead of bundle exec ...
+# 내용 수정하면 bundle exec 한번 해줘야 rake publish 됨

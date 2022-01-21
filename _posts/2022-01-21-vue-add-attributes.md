@@ -111,7 +111,7 @@ export default {
             value: 'testValue',
          }
       }
-   }
+   },
    template: `
       <input
       v-bind="attributes"
