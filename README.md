@@ -4,11 +4,15 @@
 
 </div>
 
-<div style="text-align: center; border-radius: .5rem; padding: 1rem .5rem .05rem; background-color: rgba(0,0,0,0.05);">
-
-[Blog 운영의 목적](#blog-운영의-목적) | [Blog 주 내용](#blog-주-내용) | [Projects](#projects) | [Copyright](#copyright)
-
-</div>
+<p align="center">
+  <a href="#blog-운영의-목적" title="Blog 운영의 목적">Blog 운영의 목적</a>
+  |
+  <a href="#blog-주-내용" title="Blog 주 내용">Blog 주 내용</a>
+  |
+  <a href="#projects" title="Projects">Projects</a>
+  |
+  <a href="#copyright" title="Copyright">Copyright</a>
+</p>
 
 -----
 
@@ -60,7 +64,7 @@
 
 ### Copyright
 
-Copyright (C) 2021 kimson, <https://kkn1125.github.io/>
+Copyright (C) 2022 kimson, <https://kkn1125.github.io/>
 
 -----
 
@@ -71,34 +75,3 @@ Copyright (C) 2021 kimson, <https://kkn1125.github.io/>
 [MD 참고 사이트 3](https://about.gitlab.com/handbook/markdown-guide/#tables 'Markdown Guide') - Markdown Guide
 
 [Liquid 자료](https://shopify.github.io/liquid/tags/control-flow/ 'Liquid Guide')
-
-| / | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;URL&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;|
-|:-:|:-:|
-| Blog | <https://kkn1125.github.io/> |
-| Portfolio | <https://kkn1125.github.io/portfolio/> |
-| Email | <chaplet01@gmail.com> |
-| Phone | <a href="tel:010-5017-1437">010 5017 1437</a> |
-
-<!-- # Mediumish - Jekyll Theme
-
-[Live Demo](https://wowthemesnet.github.io/mediumish-theme-jekyll/) &nbsp; | &nbsp; [Download](https://github.com/wowthemesnet/mediumish-theme-jekyll/archive/master.zip) &nbsp; | &nbsp; [Documentation](https://bootstrapstarter.com/template-mediumish-bootstrap-jekyll/) &nbsp; | &nbsp; [Buy me a coffee](https://www.wowthemes.net/donate/)
-
-![mediumish](assets/images/mediumish-jekyll-template.png)
-
-
-### Copyright
-
-Copyright (C) 2019 Sal, https://www.wowthemes.net
-
-**Mediumish for Jekyll** is designed and developed by [Sal](https://www.wowthemes.net) and it is *free* under MIT license. 
-
-<a href="https://www.wowthemes.net/donate/" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" ></a>
-
-### Contribute
-
-1. [Fork the repo](https://github.com/wowthemesnet/mediumish-theme-jekyll).
-2. Clone a copy of your fork on your local
-3. Create a branch off of master and give it a meaningful name (e.g. my-new-mediumish-feature).
-4. Make necessary changes, commit, push and open a pull request on GitHub.
-
-Thank you! -->

@@ -130,7 +130,8 @@
 
         <div>
             <ul class="submenu w-flex flex-nowrap vgap-4 px-3" style="overflow-x: auto; white-space: nowrap;">
-                {% for category in site.categories %}
+                {% assign sortedCategories = site.categories | sort %}
+                {% for category in sortedCategories %}
                 <li class="list-item fs-6 py-1">
                     <a href="/category/{{category[0] | downcase}}">{{category[0]}} <span class="fs-8 text-muted">({{category[1] | size}})</span></a>
                 </li>

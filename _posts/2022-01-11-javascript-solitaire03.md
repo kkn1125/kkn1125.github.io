@@ -15,7 +15,7 @@ description: "솔리테어를 만들어 보자 3편
 3. 자동 카드 뒤집기
 
 간단한 카드 뒤집기부터 해서 카드이동, 규칙 적용으로 대부분의 기능을 마무리 하도록 하겠습니다. 이후 주제는 타이머, 점수, 이동횟수, 자동완성이기 때문에 천천히 포스팅하려합니다."
-featured: true
+featured: false
 hidden: false
 rating: 4.5
 toc: true
