@@ -1,4 +1,4 @@
-I"M<div class="fence-full">
+I"M<div class="fence-full">
 
     <div class="w-flex gx-4">
 
@@ -588,7 +588,7 @@
                     
                     <div class="card-img">
                         <a href="/vue-async-data01/" title="[VUE] 비동기 데이터 프로퍼티 null값 처리하기">
-                            <img class="latestImgs" src="http://localhost:4000/assets/images/post/covers/TIL-vue.png" alt="[VUE] 비동기 데이터 프로퍼티 null값 처리하기" />
+                            <img class="latestImgs" src="https://kkn1125.github.io/assets/images/post/covers/TIL-vue.png" alt="[VUE] 비동기 데이터 프로퍼티 null값 처리하기" />
                         </a>
                     </div>
                     
@@ -616,7 +616,7 @@
                     
                     <div class="card-img">
                         <a href="/vue-add-attributes/" title="[VUE] 컴포넌트, 엘리먼트에 다중 속성 보내기">
-                            <img class="latestImgs" src="http://localhost:4000/assets/images/post/covers/TIL-vue.png" alt="[VUE] 컴포넌트, 엘리먼트에 다중 속성 보내기" />
+                            <img class="latestImgs" src="https://kkn1125.github.io/assets/images/post/covers/TIL-vue.png" alt="[VUE] 컴포넌트, 엘리먼트에 다중 속성 보내기" />
                         </a>
                     </div>
                     
@@ -633,7 +633,7 @@
                     
                     <div class="card-img">
                         <a href="/git-overwrite-branch/" title="[GIT] 깃 브랜치 덮어쓰기">
-                            <img class="latestImgs" src="http://localhost:4000/assets/images/post/covers/TIL-git.png" alt="[GIT] 깃 브랜치 덮어쓰기" />
+                            <img class="latestImgs" src="https://kkn1125.github.io/assets/images/post/covers/TIL-git.png" alt="[GIT] 깃 브랜치 덮어쓰기" />
                         </a>
                     </div>
                     
@@ -650,7 +650,7 @@
                     
                     <div class="card-img">
                         <a href="/javascript-chess02/" title="[JAVASCRIPT] 체스게임 구현 02">
-                            <img class="latestImgs" src="http://localhost:4000/assets/images/post/chess/chess02.png" alt="[JAVASCRIPT] 체스게임 구현 02" />
+                            <img class="latestImgs" src="https://kkn1125.github.io/assets/images/post/chess/chess02.png" alt="[JAVASCRIPT] 체스게임 구현 02" />
                         </a>
                     </div>
                     
@@ -667,7 +667,7 @@
                     
                     <div class="card-img">
                         <a href="/javascript-chess01/" title="[JAVASCRIPT] 체스게임 구현 01">
-                            <img class="latestImgs" src="http://localhost:4000/assets/images/post/chess/chess01.png" alt="[JAVASCRIPT] 체스게임 구현 01" />
+                            <img class="latestImgs" src="https://kkn1125.github.io/assets/images/post/chess/chess01.png" alt="[JAVASCRIPT] 체스게임 구현 01" />
                         </a>
                     </div>
                     
