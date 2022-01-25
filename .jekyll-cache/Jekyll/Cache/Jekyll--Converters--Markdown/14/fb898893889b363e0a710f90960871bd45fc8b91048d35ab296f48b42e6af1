@@ -1,4 +1,4 @@
-I"J<div class="fence-full">
+I"M<div class="fence-full">
 
     <div class="w-flex gx-4">
 
@@ -7,6 +7,31 @@
     <span class="h4">Featured</span>
 </div>
 <div class="card-group card-ghost card-pd-0 card-dv-1 card-dv-sm-2 g-3">
+
+    
+
+    
+    <div class="card p-0" style="overflow: hidden;">
+        <a href="/vue-async-data01/" title="[VUE] 비동기 데이터 프로퍼티 null값 처리하기"><img src="assets/images/post/covers/TIL-vue.png" alt="post/cover" class="w-100" /></a>
+        <div class="card-title px-3">
+            <a href="/vue-async-data01/" title="[VUE] 비동기 데이터 프로퍼티 null값 처리하기">[VUE] 비동기 데이터 프로퍼티 null값 처리하기</a>
+        </div>
+        <div class="card-content">
+            <!-- <div class="card-body"></div> -->
+        </div>
+        <div class="pb-3 px-3">
+            In <span class="catlist">
+                
+                <a class="text-capitalize text-white tag tag-success" href="/categories.html#vue">VUE</a><span class="sep"> </span>
+                
+                <a class="text-capitalize text-white tag tag-success" href="/categories.html#til">TIL</a><span class="sep"> </span>
+                
+            </span>
+        </div>
+        <time class="card-time">Jan 24, 2022</time>
+    </div>
+
+    
 
     
 
@@ -24,9 +49,7 @@
                 
                 <a class="text-capitalize text-white tag tag-success" href="/categories.html#vue">VUE</a><span class="sep"> </span>
                 
-                <a class="text-capitalize text-white tag tag-success" href="/categories.html#tim">TIM</a><span class="sep"> </span>
-                
-                <a class="text-capitalize text-white tag tag-success" href="/categories.html#game">GAME</a><span class="sep"> </span>
+                <a class="text-capitalize text-white tag tag-success" href="/categories.html#til">TIL</a><span class="sep"> </span>
                 
             </span>
         </div>
@@ -564,8 +587,36 @@
                 <div class="card p-0 m-0" style="overflow: hidden;">
                     
                     <div class="card-img">
+                        <a href="/vue-async-data01/" title="[VUE] 비동기 데이터 프로퍼티 null값 처리하기">
+                            <img class="latestImgs" src="http://localhost:4000/assets/images/post/covers/TIL-vue.png" alt="[VUE] 비동기 데이터 프로퍼티 null값 처리하기" />
+                        </a>
+                    </div>
+                    
+                    <div class="card-title"><a href="/vue-async-data01/" title="[VUE] 비동기 데이터 프로퍼티 null값 처리하기">[VUE] 비동기 데이터 프로퍼티 null값 처리하기</a></div>
+                    <div class="card-content">
+                        <div class="card-body">
+                            비동기 데이터
+                        </div>
+                    </div>
+                    
+                    
+                    In <span class="catlist">
+                        
+                        <a class="text-capitalize tag tag-success text-white" href="/categories.html#vue">VUE</a><span class="sep"> </span>
+                        
+                        <a class="text-capitalize tag tag-success text-white" href="/categories.html#til">TIL</a><span class="sep"> </span>
+                        
+                    </span>
+                    <time class="card-time">Jan 24, 2022</time>
+                    
+                    
+                </div>
+                
+                <div class="card p-0 m-0" style="overflow: hidden;">
+                    
+                    <div class="card-img">
                         <a href="/vue-add-attributes/" title="[VUE] 컴포넌트, 엘리먼트에 다중 속성 보내기">
-                            <img class="latestImgs" src="https://kkn1125.github.io/assets/images/post/covers/TIL-vue.png" alt="[VUE] 컴포넌트, 엘리먼트에 다중 속성 보내기" />
+                            <img class="latestImgs" src="http://localhost:4000/assets/images/post/covers/TIL-vue.png" alt="[VUE] 컴포넌트, 엘리먼트에 다중 속성 보내기" />
                         </a>
                     </div>
                     
@@ -576,26 +627,13 @@
                         </div>
                     </div>
                     
-                    
-                    In <span class="catlist">
-                        
-                        <a class="text-capitalize tag tag-success text-white" href="/categories.html#vue">VUE</a><span class="sep"> </span>
-                        
-                        <a class="text-capitalize tag tag-success text-white" href="/categories.html#tim">TIM</a><span class="sep"> </span>
-                        
-                        <a class="text-capitalize tag tag-success text-white" href="/categories.html#game">GAME</a><span class="sep"> </span>
-                        
-                    </span>
-                    <time class="card-time">Jan 21, 2022</time>
-                    
-                    
                 </div>
                 
                 <div class="card p-0 m-0" style="overflow: hidden;">
                     
                     <div class="card-img">
                         <a href="/git-overwrite-branch/" title="[GIT] 깃 브랜치 덮어쓰기">
-                            <img class="latestImgs" src="https://kkn1125.github.io/assets/images/post/covers/TIL-git.png" alt="[GIT] 깃 브랜치 덮어쓰기" />
+                            <img class="latestImgs" src="http://localhost:4000/assets/images/post/covers/TIL-git.png" alt="[GIT] 깃 브랜치 덮어쓰기" />
                         </a>
                     </div>
                     
@@ -612,7 +650,7 @@
                     
                     <div class="card-img">
                         <a href="/javascript-chess02/" title="[JAVASCRIPT] 체스게임 구현 02">
-                            <img class="latestImgs" src="https://kkn1125.github.io/assets/images/post/chess/chess02.png" alt="[JAVASCRIPT] 체스게임 구현 02" />
+                            <img class="latestImgs" src="http://localhost:4000/assets/images/post/chess/chess02.png" alt="[JAVASCRIPT] 체스게임 구현 02" />
                         </a>
                     </div>
                     
@@ -629,7 +667,7 @@
                     
                     <div class="card-img">
                         <a href="/javascript-chess01/" title="[JAVASCRIPT] 체스게임 구현 01">
-                            <img class="latestImgs" src="https://kkn1125.github.io/assets/images/post/chess/chess01.png" alt="[JAVASCRIPT] 체스게임 구현 01" />
+                            <img class="latestImgs" src="http://localhost:4000/assets/images/post/chess/chess01.png" alt="[JAVASCRIPT] 체스게임 구현 01" />
                         </a>
                     </div>
                     
@@ -637,23 +675,6 @@
                     <div class="card-content">
                         <div class="card-body">
                             체스 게임 구현
-                        </div>
-                    </div>
-                    
-                </div>
-                
-                <div class="card p-0 m-0" style="overflow: hidden;">
-                    
-                    <div class="card-img">
-                        <a href="/javascript-solitaire03/" title="[JAVASCRIPT] Solitaire를 만들어 보자 03">
-                            <img class="latestImgs" src="https://kkn1125.github.io/assets/images/post/solitaire/solitaire04.png" alt="[JAVASCRIPT] Solitaire를 만들어 보자 03" />
-                        </a>
-                    </div>
-                    
-                    <div class="card-title"><a href="/javascript-solitaire03/" title="[JAVASCRIPT] Solitaire를 만들어 보자 03">[JAVASCRIPT] Solitaire를 만들어 보자 03</a></div>
-                    <div class="card-content">
-                        <div class="card-body">
-                            솔리테어를 만들어 보자 3편
                         </div>
                     </div>
                     

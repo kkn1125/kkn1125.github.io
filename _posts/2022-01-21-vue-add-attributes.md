@@ -1,9 +1,10 @@
 ---
 layout: post
+modified: 2022-01-25 01:44:12 +0900
 date:   2022-01-21 20:17:54 +0900
 title:  "[VUE] 컴포넌트, 엘리먼트에 다중 속성 보내기"
 author: Kimson
-categories: [ VUE, TIM, GAME ]
+categories: [ VUE, TIL ]
 image: assets/images/post/covers/TIL-vue.png
 tags: [ attributes, multi, component ]
 description: "컴포넌트, 엘리먼트에 다중 속성 보내기
@@ -31,7 +32,7 @@ published: true
 
 `vue`에 대한 감이 잡히는 시점에서 속성명 동적 바인딩이나 동적 컴포넌트를 로드하는 것도 알겠는데 여러 속성이 있고 각 엘리먼트마다 적용되는 속성이 다를 때 어떻게 한 번에 적용할까 생각을 했습니다.
 
-## 이것만 기억하자
+## 문제 상황
 
 ```javascript
 // module-signup.js
@@ -63,9 +64,7 @@ Vue.component('module-signup', {
 });
 ```
 
-`module-signup`이라는 전역 컴포넌트가 있습니다. 다른 페이지에서 재사용하기 위해서 전달되는 옵션들을 자동으로 넣으려하는데 잘 안됩니다.
-
-이 모듈을 사용하는 곳은 아래와 같습니다.
+`module-signup`이라는 전역 컴포넌트가 있습니다. 다른 페이지에서 재사용하기 위해서 전달되는 옵션들을 자동으로 넣으려하는 상황입니다. 이 모듈을 사용하는 곳은 아래와 같습니다.
 
 ```javascript
 // app-signup.js
@@ -98,7 +97,9 @@ export default {
 }
 ```
 
-대충 이렇게 생긴 곳에서 사용을 하는데 `signOrder`라는 배열 데이터가 전달되면 여러 속성을 담아 `module-signup`에 뿌리는 게 도통 어떻게 해야할지 몰랐습니다.
+대충 이렇게 생긴 곳에서 사용을 하는데 `signOrder`라는 배열 데이터가 전달되면 여러 속성을 담아 `module-signup`에 전달하고 싶었습니다.
+
+## 이것만 기억하고자
 
 `stackoverflow`에서 알아낸 방법은 아래와 같습니다.
 
@@ -136,7 +137,7 @@ export default {
 </span>
 </figure>
 
-이제 뭔가 감이 옵니다. 객체가 `v-bind`속성의 값에 전달되면 `key`와 `value`가 분류되고 속성 이름과 속성 값에 자동 할당되는 구조로 보입니다. 그렇다면 `app-signup`에서 `data`부분만 따로 떼어 예제로 작성해보면
+객체가 `v-bind`속성의 값에 전달되면 `key`와 `value`가 분류되고 속성 이름과 속성 값에 자동 할당되는 구조로 보입니다. `app-signup`에서 `data`부분만 따로 떼어 예제로 작성해보면
 
 ```javascript
 data() {
@@ -164,11 +165,9 @@ data() {
 },
 ```
 
-이렇게 작성하면 `stackoverflow`에서 소개한 그대로 입니다만 원리를 알고서 쓰니 `v-bind`에 `:title` 등 콜론을 붙여 사용하는 것의 형태가 어떤 원리인지도 감이 옵니다.
+`stackoverflow`에서 소개한 그대로 입니다만 원리를 짐작이라도 해서 쓰니 `v-bind`에 `:title` 등 콜론을 붙여 사용하는 형태가 어떤 원리인지 알 것도 같습니다.
 
-`v-bind:title="value"`는 `v-bind`에 정해진 메서드가 실행되는데 콜론으로 속성명이 명시되면 해당 속성에만 value라는 값이 할당되고 콜론 없이 객체형태로 전달하면 객체의 유효한 속성이 모두 적용되는 원리로 보입니다.
-
-위에서 소개된 방법과 비슷하지만 배열에 여러 객체를 담아 전달해도 적용되는 것을 알 수 있습니다.
+`v-bind:title="value"`는 `v-bind`에 정해진 메서드가 실행되는데 콜론으로 속성명이 명시되면 해당 속성에만 `value`라는 값이 할당되고 콜론 없이 객체형태로 전달하면 객체의 유효한 속성이 모두 적용되는 원리로 생각됩니다. 배열에 담아 전달해도 적용됩니다.
 
 ```javascript
 data() {
@@ -182,12 +181,12 @@ data() {
             show: true,
             input: [
                {
-                     name: 'name',
-                     type: 'text',
-                     options: [ // 여기서 다중 속성을 넣고자 합니다.
-                        {name: 'test value1'},
-                        {placeholder: 'test value2'},
-                     ]
+                  name: 'name',
+                  type: 'text',
+                  options: [ // 여기서 다중 속성을 넣고자 합니다.
+                     {name: 'test value1'},
+                     {placeholder: 'test value2'},
+                  ]
                }, 
             ]
          }
@@ -196,7 +195,7 @@ data() {
 },
 ```
 
-위의 예시처럼 배열에 객체를 담아 전송해도 다중 속성이 잘 적용되는 것을 확인 할 수 있습니다. 객체냐 배열이냐의 차이는 쓰임에 관해서 당장 마땅히 떠오르는 차별점은 없습니다만, 다중 속성을 적용하시려는데 어려움을 겪으신다면 작은 도움이 되었으면 합니다 😀
+배열에 객체를 담아 전송해도 다중 속성이 잘 적용되는 것을 확인했습니다. 객체인지 배열인지의 차이는 아직 떠오르는 차별점은 없습니다만, 다중 속성을 적용하려는데 어려움을 겪으신다면 도움이 됐으면 합니다 😀
 
 -----
 

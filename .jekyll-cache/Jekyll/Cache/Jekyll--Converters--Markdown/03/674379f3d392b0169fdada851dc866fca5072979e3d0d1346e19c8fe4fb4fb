@@ -1,4 +1,4 @@
-I";E<h1 id="컴포넌트-엘리먼트에-다중-속성-보내기">컴포넌트, 엘리먼트에 다중 속성 보내기</h1>
+I"�D<h1 id="컴포넌트-엘리먼트에-다중-속성-보내기">컴포넌트, 엘리먼트에 다중 속성 보내기</h1>
 
 <blockquote>
   <p>기억하고자 가볍게 올리는 것이니 참고 바랍니다.</p>
@@ -10,7 +10,7 @@
 
 <p><code class="language-plaintext highlighter-rouge">vue</code>에 대한 감이 잡히는 시점에서 속성명 동적 바인딩이나 동적 컴포넌트를 로드하는 것도 알겠는데 여러 속성이 있고 각 엘리먼트마다 적용되는 속성이 다를 때 어떻게 한 번에 적용할까 생각을 했습니다.</p>
 
-<h2 id="이것만-기억하자">이것만 기억하자</h2>
+<h2 id="문제-상황">문제 상황</h2>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -68,9 +68,7 @@
 <span class="p">});</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
-<p><code class="language-plaintext highlighter-rouge">module-signup</code>이라는 전역 컴포넌트가 있습니다. 다른 페이지에서 재사용하기 위해서 전달되는 옵션들을 자동으로 넣으려하는데 잘 안됩니다.</p>
-
-<p>이 모듈을 사용하는 곳은 아래와 같습니다.</p>
+<p><code class="language-plaintext highlighter-rouge">module-signup</code>이라는 전역 컴포넌트가 있습니다. 다른 페이지에서 재사용하기 위해서 전달되는 옵션들을 자동으로 넣으려하는 상황입니다. 이 모듈을 사용하는 곳은 아래와 같습니다.</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -130,7 +128,9 @@
 <span class="p">}</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
-<p>대충 이렇게 생긴 곳에서 사용을 하는데 <code class="language-plaintext highlighter-rouge">signOrder</code>라는 배열 데이터가 전달되면 여러 속성을 담아 <code class="language-plaintext highlighter-rouge">module-signup</code>에 뿌리는 게 도통 어떻게 해야할지 몰랐습니다.</p>
+<p>대충 이렇게 생긴 곳에서 사용을 하는데 <code class="language-plaintext highlighter-rouge">signOrder</code>라는 배열 데이터가 전달되면 여러 속성을 담아 <code class="language-plaintext highlighter-rouge">module-signup</code>에 전달하고 싶었습니다.</p>
+
+<h2 id="이것만-기억하고자">이것만 기억하고자</h2>
 
 <p><code class="language-plaintext highlighter-rouge">stackoverflow</code>에서 알아낸 방법은 아래와 같습니다.</p>
 
@@ -182,7 +182,7 @@
 </span>
 </figure>
 
-<p>이제 뭔가 감이 옵니다. 객체가 <code class="language-plaintext highlighter-rouge">v-bind</code>속성의 값에 전달되면 <code class="language-plaintext highlighter-rouge">key</code>와 <code class="language-plaintext highlighter-rouge">value</code>가 분류되고 속성 이름과 속성 값에 자동 할당되는 구조로 보입니다. 그렇다면 <code class="language-plaintext highlighter-rouge">app-signup</code>에서 <code class="language-plaintext highlighter-rouge">data</code>부분만 따로 떼어 예제로 작성해보면</p>
+<p>객체가 <code class="language-plaintext highlighter-rouge">v-bind</code>속성의 값에 전달되면 <code class="language-plaintext highlighter-rouge">key</code>와 <code class="language-plaintext highlighter-rouge">value</code>가 분류되고 속성 이름과 속성 값에 자동 할당되는 구조로 보입니다. <code class="language-plaintext highlighter-rouge">app-signup</code>에서 <code class="language-plaintext highlighter-rouge">data</code>부분만 따로 떼어 예제로 작성해보면</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -232,11 +232,9 @@
 <span class="p">},</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
-<p>이렇게 작성하면 <code class="language-plaintext highlighter-rouge">stackoverflow</code>에서 소개한 그대로 입니다만 원리를 알고서 쓰니 <code class="language-plaintext highlighter-rouge">v-bind</code>에 <code class="language-plaintext highlighter-rouge">:title</code> 등 콜론을 붙여 사용하는 것의 형태가 어떤 원리인지도 감이 옵니다.</p>
+<p><code class="language-plaintext highlighter-rouge">stackoverflow</code>에서 소개한 그대로 입니다만 원리를 짐작이라도 해서 쓰니 <code class="language-plaintext highlighter-rouge">v-bind</code>에 <code class="language-plaintext highlighter-rouge">:title</code> 등 콜론을 붙여 사용하는 형태가 어떤 원리인지 알 것도 같습니다.</p>
 
-<p><code class="language-plaintext highlighter-rouge">v-bind:title="value"</code>는 <code class="language-plaintext highlighter-rouge">v-bind</code>에 정해진 메서드가 실행되는데 콜론으로 속성명이 명시되면 해당 속성에만 value라는 값이 할당되고 콜론 없이 객체형태로 전달하면 객체의 유효한 속성이 모두 적용되는 원리로 보입니다.</p>
-
-<p>위에서 소개된 방법과 비슷하지만 배열에 여러 객체를 담아 전달해도 적용되는 것을 알 수 있습니다.</p>
+<p><code class="language-plaintext highlighter-rouge">v-bind:title="value"</code>는 <code class="language-plaintext highlighter-rouge">v-bind</code>에 정해진 메서드가 실행되는데 콜론으로 속성명이 명시되면 해당 속성에만 <code class="language-plaintext highlighter-rouge">value</code>라는 값이 할당되고 콜론 없이 객체형태로 전달하면 객체의 유효한 속성이 모두 적용되는 원리로 생각됩니다. 배열에 담아 전달해도 적용됩니다.</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -272,12 +270,12 @@
             <span class="na">show</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
             <span class="na">input</span><span class="p">:</span> <span class="p">[</span>
                <span class="p">{</span>
-                     <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">name</span><span class="dl">'</span><span class="p">,</span>
-                     <span class="na">type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">text</span><span class="dl">'</span><span class="p">,</span>
-                     <span class="na">options</span><span class="p">:</span> <span class="p">[</span> <span class="c1">// 여기서 다중 속성을 넣고자 합니다.</span>
-                        <span class="p">{</span><span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">test value1</span><span class="dl">'</span><span class="p">},</span>
-                        <span class="p">{</span><span class="na">placeholder</span><span class="p">:</span> <span class="dl">'</span><span class="s1">test value2</span><span class="dl">'</span><span class="p">},</span>
-                     <span class="p">]</span>
+                  <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">name</span><span class="dl">'</span><span class="p">,</span>
+                  <span class="na">type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">text</span><span class="dl">'</span><span class="p">,</span>
+                  <span class="na">options</span><span class="p">:</span> <span class="p">[</span> <span class="c1">// 여기서 다중 속성을 넣고자 합니다.</span>
+                     <span class="p">{</span><span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">test value1</span><span class="dl">'</span><span class="p">},</span>
+                     <span class="p">{</span><span class="na">placeholder</span><span class="p">:</span> <span class="dl">'</span><span class="s1">test value2</span><span class="dl">'</span><span class="p">},</span>
+                  <span class="p">]</span>
                <span class="p">},</span> 
             <span class="p">]</span>
          <span class="p">}</span>
@@ -286,7 +284,7 @@
 <span class="p">},</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
-<p>위의 예시처럼 배열에 객체를 담아 전송해도 다중 속성이 잘 적용되는 것을 확인 할 수 있습니다. 객체냐 배열이냐의 차이는 쓰임에 관해서 당장 마땅히 떠오르는 차별점은 없습니다만, 다중 속성을 적용하시려는데 어려움을 겪으신다면 작은 도움이 되었으면 합니다 😀</p>
+<p>배열에 객체를 담아 전송해도 다중 속성이 잘 적용되는 것을 확인했습니다. 객체인지 배열인지의 차이는 아직 떠오르는 차별점은 없습니다만, 다중 속성을 적용하려는데 어려움을 겪으신다면 도움이 됐으면 합니다 😀</p>
 
 <hr />
 

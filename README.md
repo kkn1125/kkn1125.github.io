@@ -18,51 +18,31 @@
 
 ## Blog 운영의 목적
 
-> 블로그는 TIL(Today I Learned)과 포트폴리오를 등재하고 공부외 수집된 정보를 기록하고 공유하는 용도로 쓰입니다.
+배운 기술을 사용하면서 생기는 오류상황이나 아이디어 등을 공유하고, 내용을 기록하여 최종적으로는 공유를 목표로 합니다.
 
 ## Blog 주 내용
 
-오늘 공부한 내용과 다양한 기능 구현에 관심을 가지고 `todo_list`를 만들어 할 일을 만듭니다. 예정된 일자에 완료하거나 포스팅으로 정리하여 등재합니다.
+`포트폴리오`, `TIL`, `TIM`, `JAVA`, `JAVASCRIPT`, `JSON`, `SPRING (Boot)`, `MySQL`, `Mybatis`, `Css`, `JavaScript`, `Library`, `Api`
 
-- 포트폴리오
-- TIL
-- TIM
-- JAVA
-- JAVASCRIPT
-- JSON
-- SPRING (Boot)
-- MySQL
-- Mybatis
-- Css
-- JavaScript
-- Library
-- Api
+## 블로그 외 페이지
 
-## Portfolio
+### 위키 페이지
 
-포트폴리오만 따로 담은 페이지입니다.
+가볍고 쓰기 편한 위키를 만드는 중입니다. CS지식과 면접관련한 내용을 다루기 위해 만들어졌습니다. [Wikimson 바로가기](https://kkn1125.github.io/wikimson)
 
-[Portfolio](https://kkn1125.github.io/portfolio)
+### 포트폴리오 페이지
 
-## Wiki
+`Vue.js`, `Java`, `JSP`, `Spring` 등을 공부하며 만든 프로젝트가 있습니다. 포트폴리오를 정리해둔 페이지를 참고하시기 바랍니다. [Portfolio 바로가기](https://kkn1125.github.io/portfolio)
 
-가볍고 쓰기 편한 위키를 만드는 중입니다. CS지식과 면접관련한 내용을 다루기 위해 만들어졌습니다.
+### 기타 소규모 토이프로젝트
 
-[Wikimson](https://kkn1125.github.io/wikimson)
-
-## Projects
-
-커피용품 온라인 몰, Heroku기반 블로그, 멘티(mentee) 커뮤니티 프로젝트가 포트폴리오 페이지에 등재 되어 있습니다.
-
-- [Coffeecong 시연사이트](https://devkims-on.herokuapp.com/main.me '커피용품 온라인 몰')
 - [Mentees 프로젝트](https://kkn1125.github.io/portfolio-coffeecong '멘티 커뮤니티')
-- [Dev Blog](https://devkimson.herokuapp.com/home '주소이전')
 - [Typer](https://kkn1125.github.io/typer '한글타이핑')
 - [mkDocumentifyJS](https://kkn1125.github.io/mkDocumentifyJS '자바스크립트 문서화')
 - [Tutorial](https://kkn1125.github.io/tutorial '웹 튜토리얼 생성')
 - [Penli](https://kkn1125.github.io/penli '편리한 CSS')
 
-### Copyright
+## Copyright
 
 Copyright (C) 2022 kimson, <https://kkn1125.github.io/>
 
