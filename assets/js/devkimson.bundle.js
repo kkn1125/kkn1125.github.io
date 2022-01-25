@@ -117,7 +117,7 @@ window.addEventListener('load', function(){
             badge.setAttribute("class","lang-badge tag tag-"+color);
             // 210809 mysql 설정
             badge.innerHTML = `${(lang=='sql'?"My":"")+lang.charAt(0).toUpperCase()+lang.slice(1)}`;
-            wrap.setAttribute("class","wrap-badge position-absolute d-flex flex-column");
+            wrap.setAttribute("class","wrap-badge position-absolute w-flex flex-column align-items-end");
 
             wrap.setAttribute("data-unselect","true");
             

@@ -1,4 +1,4 @@
-I"�_
+I"�c
 <div class="fence-full">
     <div class="w-flex justify-content-center">
         <div class="col-md-20">
@@ -17,6 +17,38 @@
             </div>
             <h4 class="fw-bold"><span>Posts by kimson</span></h4>
             
+            
+            <div class="mb-5 w-flex justify-content-between flex-column flex-row-md main-loop-card">
+	<div class="col pe-3">
+		<div>
+			<span class="mb-1 h5 fw-bold">
+			<a class="nav-link" href="/mybatis-query-like/">[SPRING] MyBatis Like 쿼리 작성</a>
+			</span>
+		</div>
+		<p class="excerpt">
+		MyBatis Like
+		</p>
+		<small class="w-block text-muted">
+			In <span class="catlist">
+			
+			<a class="text-capitalize tag tag-success text-white" href="/categories#spring">SPRING</a><span class="sep"> </span>
+			
+			<a class="text-capitalize tag tag-success text-white" href="/categories#til">TIL</a><span class="sep"> </span>
+			
+			</span>
+		</small>
+		<small class="text-muted">
+			Jan 25, 2022
+		</small>
+	</div>
+	
+	<div class="col-md-5 pe-0 text-right">
+	<a href="/mybatis-query-like/">
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-spring.png" alt="[SPRING] MyBatis Like 쿼리 작성" />
+	</a>
+	</div>
+	
+</div>
             
             <div class="mb-5 w-flex justify-content-between flex-column flex-row-md main-loop-card">
 	<div class="col pe-3">
