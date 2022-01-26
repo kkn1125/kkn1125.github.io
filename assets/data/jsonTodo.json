@@ -15,16 +15,38 @@
                     "time": "2022-01-06 16:23"
                 }
             ],
-            "26": [
+            "27": [
                 {
                     "todo": "OS wiki에 정리",
                     "tag": "1",
+                    "time": "2022-01-26 19:42"
+                }
+            ],
+            "26": [
+                {
+                    "todo": "Coffeecong API 작성 완료하고 테스트",
+                    "tag": "check",
                     "time": "2022-01-25 13:32"
                 },
                 {
-                    "todo": "Coffeecong API 완료하고 테스트",
-                    "tag": "2",
-                    "time": "2022-01-25 13:32"
+                    "todo": "Vue external script 추가 방법 <a href=\"https://subji.github.io/posts/2019/07/05/vuejs-appendingscript-howto\">참고</a>",
+                    "tag": "check",
+                    "time": "2022-01-26 00:59"
+                },
+                {
+                    "todo": "Vue axios 추가 방법 <a href=\"https://kdydesign.github.io/2019/04/22/vue-cli3-tutorial/\">참고</a>",
+                    "tag": "check",
+                    "time": "2022-01-26 00:59"
+                },
+                {
+                    "todo": "Vue 비동기 컴포넌트 추가 방법 <a href=\"https://v3.ko.vuejs.org/guide/migration/async-components.html#_3-x-%E1%84%80%E1%85%AE%E1%84%86%E1%85%AE%E1%86%AB\">참고</a>",
+                    "tag": "check",
+                    "time": "2022-01-26 00:59"
+                },
+                {
+                    "todo": "Vue Spring 연동 참고 <a href=\"https://github.com/ednadev/project-book\">참고</a>",
+                    "tag": "check",
+                    "time": "2022-01-26 00:59"
                 }
             ],
             "25": [
