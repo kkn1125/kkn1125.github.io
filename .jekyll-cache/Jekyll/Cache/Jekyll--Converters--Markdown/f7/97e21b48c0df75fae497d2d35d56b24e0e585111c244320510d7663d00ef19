@@ -1,4 +1,4 @@
-I"Q<div class="fence-full">
+I"�U<div class="fence-full">
 
     <div class="w-flex gx-4">
 
@@ -7,6 +7,31 @@
     <span class="h4">Featured</span>
 </div>
 <div class="card-group card-ghost card-pd-0 card-dv-1 card-dv-sm-2 g-3">
+
+    
+
+    
+    <div class="card p-0" style="overflow: hidden;">
+        <a href="/javascript-routing02/" title="[JAVASCRIPT] Vanilla JavaScript로 SPA를 구현해보자 02"><img src="assets/images/post/covers/TIL-javascript.png" alt="post/cover" class="w-100" /></a>
+        <div class="card-title px-3">
+            <a href="/javascript-routing02/" title="[JAVASCRIPT] Vanilla JavaScript로 SPA를 구현해보자 02">[JAVASCRIPT] Vanilla JavaSc...</a>
+        </div>
+        <div class="card-content">
+            <!-- <div class="card-body"></div> -->
+        </div>
+        <div class="pb-3 px-3">
+            In <span class="catlist">
+                
+                <a class="text-capitalize text-white tag tag-success" href="/categories.html#javascript">JAVASCRIPT</a><span class="sep"> </span>
+                
+                <a class="text-capitalize text-white tag tag-success" href="/categories.html#tim">TIM</a><span class="sep"> </span>
+                
+            </span>
+        </div>
+        <time class="card-time">Jan 28, 2022</time>
+    </div>
+
+    
 
     
 
@@ -337,9 +362,9 @@
 
     
     <div class="card p-0" style="overflow: hidden;">
-        <a href="/javascript-routing01/" title="[JAVASCRIPT] Vanilla JavaScript로 SPA를 구현해보자"><img src="assets/images/post/covers/TIL-javascript.png" alt="post/cover" class="w-100" /></a>
+        <a href="/javascript-routing01/" title="[JAVASCRIPT] Vanilla JavaScript로 SPA를 구현해보자 01"><img src="assets/images/post/covers/TIL-javascript.png" alt="post/cover" class="w-100" /></a>
         <div class="card-title px-3">
-            <a href="/javascript-routing01/" title="[JAVASCRIPT] Vanilla JavaScript로 SPA를 구현해보자">[JAVASCRIPT] Vanilla JavaSc...</a>
+            <a href="/javascript-routing01/" title="[JAVASCRIPT] Vanilla JavaScript로 SPA를 구현해보자 01">[JAVASCRIPT] Vanilla JavaSc...</a>
         </div>
         <div class="card-content">
             <!-- <div class="card-body"></div> -->
@@ -612,6 +637,34 @@
                 <div class="card p-0 m-0" style="overflow: hidden;">
                     
                     <div class="card-img">
+                        <a href="/javascript-routing02/" title="[JAVASCRIPT] Vanilla JavaScript로 SPA를 구현해보자 02">
+                            <img class="latestImgs" src="https://kkn1125.github.io/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] Vanilla JavaScript로 SPA를 구현해보자 02" />
+                        </a>
+                    </div>
+                    
+                    <div class="card-title"><a href="/javascript-routing02/" title="[JAVASCRIPT] Vanilla JavaScript로 SPA를 구현해보자 02">[JAVASCRIPT] Vanilla JavaScript로 SPA를 구현해보자 02</a></div>
+                    <div class="card-content">
+                        <div class="card-body">
+                            Router 구현
+                        </div>
+                    </div>
+                    
+                    
+                    In <span class="catlist">
+                        
+                        <a class="text-capitalize tag tag-success text-white" href="/categories.html#javascript">JAVASCRIPT</a><span class="sep"> </span>
+                        
+                        <a class="text-capitalize tag tag-success text-white" href="/categories.html#tim">TIM</a><span class="sep"> </span>
+                        
+                    </span>
+                    <time class="card-time">Jan 28, 2022</time>
+                    
+                    
+                </div>
+                
+                <div class="card p-0 m-0" style="overflow: hidden;">
+                    
+                    <div class="card-img">
                         <a href="/mybatis-query-like/" title="[SPRING] MyBatis Like 쿼리 작성">
                             <img class="latestImgs" src="https://kkn1125.github.io/assets/images/post/covers/TIL-spring.png" alt="[SPRING] MyBatis Like 쿼리 작성" />
                         </a>
@@ -623,17 +676,6 @@
                             MyBatis Like
                         </div>
                     </div>
-                    
-                    
-                    In <span class="catlist">
-                        
-                        <a class="text-capitalize tag tag-success text-white" href="/categories.html#spring">SPRING</a><span class="sep"> </span>
-                        
-                        <a class="text-capitalize tag tag-success text-white" href="/categories.html#til">TIL</a><span class="sep"> </span>
-                        
-                    </span>
-                    <time class="card-time">Jan 25, 2022</time>
-                    
                     
                 </div>
                 
@@ -683,23 +725,6 @@
                     <div class="card-content">
                         <div class="card-body">
                             깃 브랜치 덮어쓰기
-                        </div>
-                    </div>
-                    
-                </div>
-                
-                <div class="card p-0 m-0" style="overflow: hidden;">
-                    
-                    <div class="card-img">
-                        <a href="/javascript-chess02/" title="[JAVASCRIPT] 체스게임 구현 02">
-                            <img class="latestImgs" src="https://kkn1125.github.io/assets/images/post/chess/chess02.png" alt="[JAVASCRIPT] 체스게임 구현 02" />
-                        </a>
-                    </div>
-                    
-                    <div class="card-title"><a href="/javascript-chess02/" title="[JAVASCRIPT] 체스게임 구현 02">[JAVASCRIPT] 체스게임 구현 02</a></div>
-                    <div class="card-content">
-                        <div class="card-body">
-                            체스 게임 구현
                         </div>
                     </div>
                     

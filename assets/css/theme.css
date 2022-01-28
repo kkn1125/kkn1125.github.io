@@ -565,7 +565,7 @@ aside#rsb>div {
 
 h1,h2,h3,h4,h5,h6{
     font-weight: bold;
-    margin-top: 1em;
+    padding-top: 60px;
     margin-bottom: 0.5em;
 }
 

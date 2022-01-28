@@ -1,0 +1,208 @@
+I"�=<h1 id="router-구현">Router 구현</h1>
+
+<p>작년 12월 즈음 spa에 관한 이야기를 했었습니다. 그 당시 구현 방식에 대해 짧게 다루어 보았는데요. 궁금하신 분은 <a class="text-danger" href="{{site.baseurl}}/javascript-routing01">[링크]</a>를 참조하시기 바랍니다. 지금보니 쓸데없이 메서드가 많은 느낌이 들어서 개편?하고자 새롭게 <code class="language-plaintext highlighter-rouge">rotuer</code>를 만들게 되었습니다.</p>
+
+<p>처음에는 테스트로 시작했지만 만들고보니 뿌듯하면서도 아직 손 볼 곳이 많습니다.</p>
+
+<h2 id="import와-export-사용">import와 export 사용</h2>
+
+<p><code class="language-plaintext highlighter-rouge">nodejs</code>를 사용해야만 가능할 줄 알았던 <code class="language-plaintext highlighter-rouge">import</code>와 <code class="language-plaintext highlighter-rouge">export</code>가 단지 <code class="language-plaintext highlighter-rouge">script</code>태그에 <code class="language-plaintext highlighter-rouge">type</code>속성 값을 <code class="language-plaintext highlighter-rouge">module</code>로만 주면 사용가능 한 줄 최근에야 알았습니다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">import</code>와 <code class="language-plaintext highlighter-rouge">export</code>를 사용하면 장점이 생기는데요. 객체를 사용하면 해당 객체는 데이터가 기억되고 있으면서도 다른 <code class="language-plaintext highlighter-rouge">js</code>파일에서 직접 사용할 수 없다는 장점이 있습니다.</p>
+
+<p>변수를 지정하거나 메서드를 지정할 때 전역으로 남게 되는 경우가 현저히 줄어들게 됩니다. 단점은 경로 설정을 잘못하면 무지하게 헤맬 수 있습니다 😥</p>
+
+<p><code class="language-plaintext highlighter-rouge">import</code>와 <code class="language-plaintext highlighter-rouge">export</code>를 테스트하면서 알게 된 이점과 단점으로 경로 중복 최소화를 목표로 해야했습니다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">core</code>라는 핵심 기능들이 담긴 툴박스를 두고 페이지 등록, 서브페이지 등록, 모듈 등록 세 가지를 염두에 두고 개발을 진행했습니다.</p>
+
+<h2 id="3--1가지-설정">3 + 1가지 설정</h2>
+
+<p>설정을 더 간소화하기 위해 <code class="language-plaintext highlighter-rouge">import</code>를 <code class="language-plaintext highlighter-rouge">promise</code>로 받으려하는데 아직 능력이 부족하여 잘 되지 않습니다.</p>
+
+<h3 id="core-bus-설정">core bus 설정</h3>
+
+<p>코어 버스는 나름의 이름을 임시로 붙인 것입니다. 코어 버스를 사용하는 이유는 단지 <code class="language-plaintext highlighter-rouge">cdn</code> 경로가 길어서 함축하고자 하는 이유입니다. 어느 영역에나 <code class="language-plaintext highlighter-rouge">cdn</code> 경로를 사용하면 너무 지저분해이기도 하고 버전 테스트에서 하나의 파일에서만 경로를 바꿔주면 되기 때문입니다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="c1">// coreBus.js</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">Router</span><span class="p">,</span> <span class="nx">Route</span><span class="p">,</span> <span class="nx">Layout</span><span class="p">,</span> <span class="nx">App</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">/cdn/path</span><span class="dl">'</span>
+<span class="k">export</span> <span class="p">{</span> <span class="nx">Router</span><span class="p">,</span> <span class="nx">Route</span><span class="p">,</span> <span class="nx">Layout</span><span class="p">,</span> <span class="nx">App</span> <span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">import</code> 후 바로 <code class="language-plaintext highlighter-rouge">export</code>해줍니다. 사용방식은 <code class="language-plaintext highlighter-rouge">vue</code>와 유사하지만 <code class="language-plaintext highlighter-rouge">vue</code>를 언급하기에는 너무나도 허접해서 민망합니다 :(</p>
+
+<p>이렇게 export한 내용을 여러 파일에서 끌어와 사용할 요소만 가져다 쓰면 됩니다.</p>
+
+<h3 id="routerjs-설정">router.js 설정</h3>
+
+<p>페이지 설정의 핵심입니다. 라우터 설정하고 페이지의 템플릿을 설정하며 페이지 공통요소(nav, footer…)등을 설정합니다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">router</code>는 아래와 같이 설정합니다.</p>
+
+<p>{%raw%}</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+</pre></td><td class="rouge-code"><pre><span class="c1">// router.js</span>
+<span class="k">import</span> <span class="p">{</span><span class="nx">Router</span><span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./core/core.js</span><span class="dl">'</span>
+
+<span class="k">import</span> <span class="nx">Home</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./views/page/home.js</span><span class="dl">'</span>
+<span class="k">import</span> <span class="nx">nav</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./views/module/nav.js</span><span class="dl">'</span>
+
+<span class="c1">// 페이지 설정</span>
+<span class="nx">Router</span><span class="p">.</span><span class="nx">setPage</span><span class="p">(</span><span class="dl">'</span><span class="s1">pageHash</span><span class="dl">'</span><span class="p">,</span> <span class="nx">Home</span><span class="p">);</span>
+
+<span class="c1">// 모듈 설정</span>
+<span class="nx">Router</span><span class="p">.</span><span class="nx">setModulePage</span><span class="p">(</span><span class="dl">'</span><span class="s1">templateModuleName</span><span class="dl">'</span><span class="p">,</span> <span class="nx">nav</span><span class="p">);</span>
+
+<span class="c1">// page는 약속된 명칭이기 때문에 바꾸면 안됩니다.</span>
+<span class="c1">// page부분에는 알아서 페이지가 교체되어 들어갑니다.</span>
+<span class="c1">// templateModuleName는 모듈설정에서 지정한 이름을 사용하면 됩니다. </span>
+<span class="nx">Layout</span><span class="p">.</span><span class="nx">template</span><span class="p">(</span><span class="s2">`
+    {{templateModuleName}}
+    {{page}}
+`</span><span class="p">);</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>{%endraw%}</p>
+
+<h3 id="route-설정">route 설정</h3>
+
+<p>이제 페이지 설정이 끝났으니 페이지를 생성해주고 페이지를 <code class="language-plaintext highlighter-rouge">hash</code>방식으로 조작가능하게 해주는 <code class="language-plaintext highlighter-rouge">route</code> 설정입니다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="rouge-code"><pre><span class="k">import</span> <span class="p">{</span><span class="nx">Router</span><span class="p">,</span> <span class="nx">Route</span><span class="p">,</span> <span class="nx">Layout</span><span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./core/core.js</span><span class="dl">'</span>
+<span class="k">import</span> <span class="nx">router</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./routes/router.js</span><span class="dl">'</span>
+
+<span class="nx">Route</span><span class="p">.</span><span class="nx">init</span><span class="p">({</span>
+    <span class="na">el</span><span class="p">:</span> <span class="dl">'</span><span class="s1">#app</span><span class="dl">'</span><span class="p">,</span> <span class="c1">// index.html에 &lt;div id="app"&gt;&lt;/div&gt;을 만들어 두어야 합니다.</span>
+    <span class="nx">Layout</span><span class="p">,</span>
+    <span class="nx">router</span><span class="p">,</span> <span class="c1">// 대소문자 주의해주세요.</span>
+<span class="p">})</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="각-페이지-설정">각 페이지 설정</h3>
+
+<p>이제 페이지만 설정해주면 끝이 납니다. <code class="language-plaintext highlighter-rouge">router.js</code>에서 봤던 import로 각 페이지들 불러오는 것을 작동되도록 하기 위해서입니다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+</pre></td><td class="rouge-code"><pre><span class="k">import</span> <span class="p">{</span><span class="nx">Router</span><span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">../../core/core.js</span><span class="dl">'</span>
+
+<span class="k">import</span> <span class="nx">homesub</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./home.sub.js</span><span class="dl">'</span>
+
+<span class="nx">homesub</span><span class="p">.</span><span class="nx">parent</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">#home</span><span class="dl">'</span><span class="p">;</span>
+<span class="nx">Router</span><span class="p">.</span><span class="nx">setPage</span><span class="p">(</span><span class="dl">'</span><span class="s1">homesub</span><span class="dl">'</span><span class="p">,</span> <span class="nx">homesub</span><span class="p">);</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="p">{</span>
+    <span class="na">title</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Home</span><span class="dl">'</span><span class="p">,</span>
+    <span class="c1">// 1. 즉시 실행함수 (onclick 등 이벤트 속성 사용시)</span>
+    <span class="na">counter</span><span class="p">:</span> <span class="s2">`(()=&gt;{
+        if(isNaN(this.innerHTML)) this.innerHTML = 1;
+        else this.innerHTML = parseInt(this.innerHTML)+1
+    })()`</span><span class="p">,</span>
+    <span class="c1">// 2. 구문만 (onclick 등 이벤트 속성 사용시)</span>
+    <span class="na">counter</span><span class="p">:</span> <span class="s2">`if(isNaN(this.innerHTML)) this.innerHTML = 1;
+        else this.innerHTML = parseInt(this.innerHTML)+1`</span><span class="p">,</span>
+    <span class="c1">// 3. 클로저 사용 (onclick 등 이벤트 속성 사용시)</span>
+    <span class="na">counter</span><span class="p">:</span> <span class="s2">`{
+        if(isNaN(this.innerHTML)) this.innerHTML = 1;
+        else this.innerHTML = parseInt(this.innerHTML)+1
+    }`</span><span class="p">,</span>
+    <span class="na">capitalize</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="k">this</span><span class="p">.</span><span class="nx">title</span><span class="p">.</span><span class="nx">charAt</span><span class="p">(</span><span class="mi">0</span><span class="p">).</span><span class="nx">toUpperCase</span><span class="p">()</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">title</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span>
+    <span class="na">module</span><span class="p">:</span> <span class="p">{</span>
+        <span class="c1">// 페이지에 종속된 하위 페이지를 만들기 위함</span>
+        <span class="na">homesub</span><span class="p">:</span> <span class="nx">Router</span><span class="p">[</span><span class="dl">'</span><span class="s1">homesub</span><span class="dl">'</span><span class="p">]</span>
+    <span class="p">},</span>
+    <span class="nx">template</span><span class="p">(){</span> <span class="c1">// 모듈, 페이지, 종속 페이지 모두 동일하게 있어야합니다. (필수)</span>
+    <span class="c1">// return 에서 템플릿 리터럴 안에 해당 default에서 지정한 속성을 this로 사용할 수 있습니다.</span>
+        <span class="k">return</span> <span class="s2">`
+            &lt;div&gt;</span><span class="p">${</span><span class="k">this</span><span class="p">.</span><span class="nx">title</span><span class="p">}</span><span class="s2">&lt;/div&gt;
+            &lt;div&gt;</span><span class="p">${</span><span class="k">this</span><span class="p">.</span><span class="nx">capitalize</span><span class="p">()}</span><span class="s2">&lt;/div&gt;
+            &lt;div onclick="</span><span class="p">${</span><span class="k">this</span><span class="p">.</span><span class="nx">counter</span><span class="p">}</span><span class="s2">"&gt;0&lt;/div&gt;
+        `</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">default</code>내에 작성한 속성은 <code class="language-plaintext highlighter-rouge">return</code>시에 <code class="language-plaintext highlighter-rouge">this</code>로 가져와 사용할 수 있습니다. <code class="language-plaintext highlighter-rouge">this.title</code> 혹은 메서드인 <code class="language-plaintext highlighter-rouge">this.capitalize()</code> 또한 사용 가능합니다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">default</code>의 속성중 메서드를 <code class="language-plaintext highlighter-rouge">onclick</code>속성에서 사용할 수 있으며 해당 메서드는 <code class="language-plaintext highlighter-rouge">this</code>가 태그로 바인드됩니다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">module</code>은 페이지를 등록하여 하위 페이지로 사용하기 편하게 합니다. 위에서 <code class="language-plaintext highlighter-rouge">setPage</code>로 등록한 페이지를 <code class="language-plaintext highlighter-rouge">module</code>에 넣습니다. 그리고 페이지에 <code class="language-plaintext highlighter-rouge">parent</code> 속성에 상위 파일의 해쉬경로를 넣습니다.</p>
+
+<p>응용해서 여러가지를 할 수 있습니다. <code class="language-plaintext highlighter-rouge">nav.js</code>를 만들어 하위 페이지를 안보이도록 하고 싶으시면 아래에 제가 위키에 사용한 방식을 참고하시면 됩니다.</p>
+
+<p>이후에는 이 작업을 <code class="language-plaintext highlighter-rouge">setPage</code>에서 처리하도록 할 예정입니다 :)</p>
+
+<p>조금이나마 흥미롭다면 👏</p>
+
+<hr />
+
+<p>📚 함께 보면 좋은 내용</p>
+
+<p><a href="{{site.baseurl}}/javascript-routing01" target="_blank">devkimson::[JAVASCRIPT] Vanilla JavaScript로 SPA를 구현해보자 01</a></p>
+
+<p><a href="https://github.com/kkn1125/router" target="_blank">devkimson::router js repository</a></p>
+:ET

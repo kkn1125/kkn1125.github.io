@@ -2,7 +2,7 @@
 layout: post
 modified: 2022-01-19 15:55:53 +0900
 date:   2021-12-09 17:44:58 +0900
-title:  "[JAVASCRIPT] Vanilla JavaScript로 SPA를 구현해보자"
+title:  "[JAVASCRIPT] Vanilla JavaScript로 SPA를 구현해보자 01"
 author: Kimson
 categories: [ JAVASCRIPT, TIL ]
 image: assets/images/post/covers/TIL-javascript.png

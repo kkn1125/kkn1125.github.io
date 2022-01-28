@@ -1,0 +1,17 @@
+I"
+<ul>
+  <li><a href="#router-구현">Router 구현</a>
+    <ul>
+      <li><a href="#import와-export-사용">import와 export 사용</a></li>
+      <li><a href="#3--1가지-설정">3 + 1가지 설정</a>
+        <ul>
+          <li><a href="#core-bus-설정">core bus 설정</a></li>
+          <li><a href="#routerjs-설정">router.js 설정</a></li>
+          <li><a href="#route-설정">route 설정</a></li>
+          <li><a href="#각-페이지-설정">각 페이지 설정</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+:ET
