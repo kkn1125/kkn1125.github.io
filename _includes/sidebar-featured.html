@@ -1,15 +1,17 @@
 <div class="">
     <span class="h4">Featured</span>
 </div>
-<div class="card-group card-ghost card-pd-0 card-dv-1 card-dv-sm-2 g-3">
+<div class="card-group card-ghost card-pd-0 card-dv-1 g-3">
 
     {% for post in site.posts %}
 
     {% if post.featured == true %}
     <div class="card p-0" style="overflow: hidden;">
-        <a href="{{site.baseurl}}{{ post.url }}" title="{{ post.title }}"><img src="{{post.image}}" alt="post/cover" class="w-100"></a>
+        <!-- <a href="{{site.baseurl}}{{ post.url }}" title="{{ post.title }}">
+            <img src="{{post.image}}" alt="post/cover" class="w-100">
+        </a> -->
         <div class="card-title px-3">
-            <a href="{{site.baseurl}}{{ post.url }}" title="{{ post.title }}">{{ post.title | truncate: 30}}</a>
+            <a href="{{site.baseurl}}{{ post.url }}" title="{{ post.title }}">{{ post.title | truncate: 50}}</a>
         </div>
         <div class="card-content">
             <!-- <div class="card-body"></div> -->
@@ -22,8 +24,8 @@
                     class="sep"> </span>
                 {% endfor %}
             </span>
+            <time class="card-time">{{ post.date | date: '%b %d, %Y' }}</time>
         </div>
-        <time class="card-time">{{ post.date | date: '%b %d, %Y' }}</time>
     </div>
 
     {% endif %}
