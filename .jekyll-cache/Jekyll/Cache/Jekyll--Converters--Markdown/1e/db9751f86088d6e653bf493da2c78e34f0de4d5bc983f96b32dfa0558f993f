@@ -1,4 +1,4 @@
-I"�U<div class="fence-full">
+I"eZ<div class="fence-full">
 
     <div class="w-flex gx-4">
 
@@ -7,6 +7,31 @@
     <span class="h4">Featured</span>
 </div>
 <div class="card-group card-ghost card-pd-0 card-dv-1 card-dv-sm-2 g-3">
+
+    
+
+    
+    <div class="card p-0" style="overflow: hidden;">
+        <a href="/spring-deploy01/" title="[SPRING] Spring MVC 프로젝트 Heroku 배포 시 404 에러 기록"><img src="assets/images/post/covers/TIL-spring.png" alt="post/cover" class="w-100" /></a>
+        <div class="card-title px-3">
+            <a href="/spring-deploy01/" title="[SPRING] Spring MVC 프로젝트 Heroku 배포 시 404 에러 기록">[SPRING] Spring MVC 프로젝트 He...</a>
+        </div>
+        <div class="card-content">
+            <!-- <div class="card-body"></div> -->
+        </div>
+        <div class="pb-3 px-3">
+            In <span class="catlist">
+                
+                <a class="text-capitalize text-white tag tag-success" href="/categories.html#spring">SPRING</a><span class="sep"> </span>
+                
+                <a class="text-capitalize text-white tag tag-success" href="/categories.html#til">TIL</a><span class="sep"> </span>
+                
+            </span>
+        </div>
+        <time class="card-time">Feb 03, 2022</time>
+    </div>
+
+    
 
     
 
@@ -637,6 +662,34 @@
                 <div class="card p-0 m-0" style="overflow: hidden;">
                     
                     <div class="card-img">
+                        <a href="/spring-deploy01/" title="[SPRING] Spring MVC 프로젝트 Heroku 배포 시 404 에러 기록">
+                            <img class="latestImgs" src="https://kkn1125.github.io/assets/images/post/covers/TIL-spring.png" alt="[SPRING] Spring MVC 프로젝트 Heroku 배포 시 404 에러 기록" />
+                        </a>
+                    </div>
+                    
+                    <div class="card-title"><a href="/spring-deploy01/" title="[SPRING] Spring MVC 프로젝트 Heroku 배포 시 404 에러 기록">[SPRING] Spring MVC 프로젝트 Heroku 배포 시 404 에러 기록</a></div>
+                    <div class="card-content">
+                        <div class="card-body">
+                            Heroku war deploy
+                        </div>
+                    </div>
+                    
+                    
+                    In <span class="catlist">
+                        
+                        <a class="text-capitalize tag tag-success text-white" href="/categories.html#spring">SPRING</a><span class="sep"> </span>
+                        
+                        <a class="text-capitalize tag tag-success text-white" href="/categories.html#til">TIL</a><span class="sep"> </span>
+                        
+                    </span>
+                    <time class="card-time">Feb 03, 2022</time>
+                    
+                    
+                </div>
+                
+                <div class="card p-0 m-0" style="overflow: hidden;">
+                    
+                    <div class="card-img">
                         <a href="/javascript-routing02/" title="[JAVASCRIPT] Vanilla JavaScript로 SPA를 구현해보자 02">
                             <img class="latestImgs" src="https://kkn1125.github.io/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] Vanilla JavaScript로 SPA를 구현해보자 02" />
                         </a>
@@ -648,17 +701,6 @@
                             Router 구현
                         </div>
                     </div>
-                    
-                    
-                    In <span class="catlist">
-                        
-                        <a class="text-capitalize tag tag-success text-white" href="/categories.html#javascript">JAVASCRIPT</a><span class="sep"> </span>
-                        
-                        <a class="text-capitalize tag tag-success text-white" href="/categories.html#tim">TIM</a><span class="sep"> </span>
-                        
-                    </span>
-                    <time class="card-time">Jan 28, 2022</time>
-                    
                     
                 </div>
                 
@@ -708,23 +750,6 @@
                     <div class="card-content">
                         <div class="card-body">
                             컴포넌트, 엘리먼트에 다중 속성 보내기
-                        </div>
-                    </div>
-                    
-                </div>
-                
-                <div class="card p-0 m-0" style="overflow: hidden;">
-                    
-                    <div class="card-img">
-                        <a href="/git-overwrite-branch/" title="[GIT] 깃 브랜치 덮어쓰기">
-                            <img class="latestImgs" src="https://kkn1125.github.io/assets/images/post/covers/TIL-git.png" alt="[GIT] 깃 브랜치 덮어쓰기" />
-                        </a>
-                    </div>
-                    
-                    <div class="card-title"><a href="/git-overwrite-branch/" title="[GIT] 깃 브랜치 덮어쓰기">[GIT] 깃 브랜치 덮어쓰기</a></div>
-                    <div class="card-content">
-                        <div class="card-body">
-                            깃 브랜치 덮어쓰기
                         </div>
                     </div>
                     
