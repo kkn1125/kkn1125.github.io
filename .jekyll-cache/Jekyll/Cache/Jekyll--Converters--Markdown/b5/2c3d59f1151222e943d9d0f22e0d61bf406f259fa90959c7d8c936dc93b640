@@ -1,4 +1,4 @@
-I"�`<div class="fence-full">
+I"Oa<div class="fence-full">
 
     <div class="w-flex gx-4">
 
@@ -709,7 +709,9 @@
         <div class="col-20 col-md-10">
             <!-- Begin post excerpts, let's highlight the first 4 posts on top -->
             <div class="border-bottom">
+                
                 <span class="h4">Latest Posts</span>
+                <button class="btn btn-danger ms-2 px-3" onclick="location='/author-kimson'">더 보기 + 79</button>
             </div>
             <div class="card-group pt-1 card-pd-0 card-dv-1 card-dv-md-2 card-ghost latestPost" style="gap: 1rem;">
                 <!-- latest post -->
