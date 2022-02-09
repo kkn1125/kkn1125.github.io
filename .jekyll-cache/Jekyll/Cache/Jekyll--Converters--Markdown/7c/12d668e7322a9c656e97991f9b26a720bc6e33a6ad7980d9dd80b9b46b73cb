@@ -1,6 +1,11 @@
-I"�f<h1 id="markdown-parser를-만들어보자">Markdown Parser를 만들어보자</h1>
+I"�a<h1 id="markdown-parser를-만들어보자">Markdown Parser를 만들어보자</h1>
 
-<p>마크다운을 HTML로 파싱해주는 라이브러리가 여러가지 있지만 한 번 구현해 보면 공부가 되겠다 싶어 기록합니다.</p>
+<blockquote>
+  <p>내용이 수정 되었습니다 !
+코드에 오류가 있어서 고쳤습니다. 계층형으로 리스트화 되지 않던 부분 완전 작동하도록 수정했습니다.</p>
+</blockquote>
+
+<p>마크다운을 <code class="language-plaintext highlighter-rouge">HTML</code>로 파싱해주는 라이브러리가 여러가지 있지만 한 번 구현해 보면 공부가 되겠다 싶어 기록합니다.</p>
 
 <p>이전에 <code class="language-plaintext highlighter-rouge">router</code>를 구현해서 포스팅 한 적이 있는데요. <code class="language-plaintext highlighter-rouge">router</code>를 응용해서 <code class="language-plaintext highlighter-rouge">wiki</code>페이지를 만들어 페이지를 관리하고 있습니다.</p>
 
@@ -221,68 +226,58 @@
 52
 53
 54
-55
-56
-57
-58
-59
 </pre></td><td class="rouge-code"><pre><span class="k">this</span><span class="p">.</span><span class="nx">listify</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(){</span>
     <span class="kd">let</span> <span class="nx">indent</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">before</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
     <span class="kd">let</span> <span class="nx">isDouble</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-    <span class="kd">let</span> <span class="nx">tag</span> <span class="o">=</span> <span class="dl">''</span><span class="p">;</span>
     <span class="kd">let</span> <span class="nx">types</span> <span class="o">=</span> <span class="p">[];</span>
 
     <span class="nx">block</span><span class="p">.</span><span class="nx">forEach</span><span class="p">((</span><span class="nx">line</span><span class="p">,</span> <span class="nx">id</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
-        <span class="k">if</span><span class="p">(</span><span class="nx">line</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="err">\</span><span class="o">/</span><span class="err">\</span><span class="nx">s</span><span class="o">*</span><span class="p">[</span><span class="mi">0</span><span class="o">-</span><span class="mi">9</span><span class="p">]</span><span class="o">+</span><span class="err">\</span><span class="p">.</span><span class="err">\</span><span class="nx">s</span><span class="p">(.</span><span class="o">+</span><span class="p">)</span><span class="err">\</span><span class="o">/</span><span class="nx">g</span><span class="p">)){</span>
-            <span class="nx">converted</span><span class="p">[</span><span class="nx">id</span><span class="p">]</span> <span class="o">=</span> <span class="nx">line</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="dl">'</span><span class="se">\n</span><span class="dl">'</span><span class="p">).</span><span class="nx">filter</span><span class="p">(</span><span class="nx">li</span><span class="o">=&gt;</span><span class="nx">li</span><span class="o">!=</span><span class="dl">''</span><span class="p">).</span><span class="nx">map</span><span class="p">(</span><span class="nx">li</span><span class="o">=&gt;</span><span class="p">{</span>
+        <span class="k">if</span><span class="p">(</span><span class="nx">line</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/</span><span class="se">\s</span><span class="sr">*</span><span class="se">\-</span><span class="sr">/gm</span><span class="p">)){</span>
+            <span class="nx">convertedHTML</span><span class="p">[</span><span class="nx">id</span><span class="p">]</span> <span class="o">=</span> <span class="nx">line</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="sr">/</span><span class="se">\n</span><span class="sr">/gm</span><span class="p">).</span><span class="nx">filter</span><span class="p">(</span><span class="nx">x</span><span class="o">=&gt;</span><span class="nx">x</span><span class="o">!=</span><span class="dl">''</span><span class="p">).</span><span class="nx">map</span><span class="p">(</span><span class="nx">li</span><span class="o">=&gt;</span><span class="p">{</span>
                 <span class="kd">let</span> <span class="nx">temp</span> <span class="o">=</span> <span class="dl">''</span><span class="p">;</span>
-                <span class="kd">let</span> <span class="nx">space</span> <span class="o">=</span> <span class="nx">x</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="err">\</span><span class="o">/</span><span class="p">(</span><span class="o">^</span><span class="err">\</span><span class="nx">s</span><span class="o">*</span><span class="p">)</span><span class="err">\</span><span class="o">/</span><span class="nx">gm</span><span class="p">)[</span><span class="mi">0</span><span class="p">];</span>
+                <span class="kd">let</span> <span class="nx">space</span> <span class="o">=</span> <span class="nx">li</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/</span><span class="se">(</span><span class="sr">^</span><span class="se">\s</span><span class="sr">*</span><span class="se">)</span><span class="sr">/</span><span class="p">)[</span><span class="mi">1</span><span class="p">];</span>
                 
                 <span class="nx">indent</span> <span class="o">=</span> <span class="nx">space</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
 
-                <span class="k">if</span><span class="p">(</span><span class="nx">indent</span><span class="o">&gt;</span><span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="nx">before</span><span class="o">==-</span><span class="mi">1</span><span class="p">){</span>
-                    <span class="nx">isDouble</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">indent</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span>
-                    <span class="c1">// 처음 시작하는 리스트가 얼마나 래핑되어야 하는지</span>
-                <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-                    <span class="nx">isDouble</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-                <span class="p">}</span>
+                <span class="k">if</span><span class="p">(</span><span class="nx">indent</span><span class="o">&gt;</span><span class="nx">before</span><span class="p">){</span> <span class="c1">// 들여쓰기가 늘어날 때</span>
+                    <span class="kd">let</span> <span class="nx">gap</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 
-                <span class="k">if</span><span class="p">(</span><span class="nx">indent</span> <span class="o">&gt;</span> <span class="nx">before</span><span class="p">){</span> <span class="c1">// 들여쓰기가 늘어날 때</span>
-                    <span class="k">if</span><span class="p">(</span><span class="nx">line</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="err">\</span><span class="o">/</span><span class="err">\</span><span class="nx">s</span><span class="o">*</span><span class="p">[</span><span class="mi">0</span><span class="o">-</span><span class="mi">9</span><span class="p">]</span><span class="o">+</span><span class="err">\</span><span class="p">.</span><span class="err">\</span><span class="nx">s</span><span class="p">(.</span><span class="o">+</span><span class="p">)</span><span class="err">\</span><span class="o">/</span><span class="nx">g</span><span class="p">)){</span>
-                        <span class="c1">// ... ul과 blockquote도 분기문으로 types에 push</span>
-                        <span class="nx">types</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="dl">'</span><span class="s1">ol</span><span class="dl">'</span><span class="p">);</span>
+                    <span class="k">if</span><span class="p">(</span><span class="nx">indent</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="nx">before</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">){</span>
+                        <span class="nx">gap</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">indent</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+                        <span class="c1">// 처음 시작하는 리스트가 얼마나 래핑되어야 하는지</span>
+                    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                        <span class="nx">gap</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">((</span><span class="nx">indent</span> <span class="o">-</span> <span class="nx">before</span><span class="p">)</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="nx">before</span><span class="o">&gt;-</span><span class="mi">1</span><span class="p">?</span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">);</span>
+                        <span class="c1">// 처음 래핑 외에 gap을 그대로 사용합니다.</span>
                     <span class="p">}</span>
-                    <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">i</span><span class="o">&lt;</span><span class="nx">isDouble</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">){</span>
-                        <span class="k">if</span><span class="p">(</span><span class="nx">i</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">)</span> <span class="nx">types</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">types</span><span class="p">[</span><span class="nx">types</span><span class="p">.</span><span class="nx">length</span><span class="o">-</span><span class="mi">1</span><span class="p">]);</span>
+
+                    <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">i</span><span class="o">&lt;</span><span class="nx">gap</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">){</span>
+                        <span class="c1">// ... ol과 blockquote도 분기문으로 types에 push</span>
+                        <span class="k">if</span><span class="p">(</span><span class="nx">li</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/^</span><span class="se">\s</span><span class="sr">*</span><span class="se">\-</span><span class="sr">/gm</span><span class="p">)){</span>
+                            <span class="nx">array</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="dl">'</span><span class="s1">ul</span><span class="dl">'</span><span class="p">);</span>
+                        <span class="p">}</span>
                         <span class="nx">temp</span> <span class="o">+=</span> <span class="s2">`&lt;</span><span class="p">${</span><span class="nx">types</span><span class="p">[</span><span class="nx">types</span><span class="p">.</span><span class="nx">length</span><span class="o">-</span><span class="mi">1</span><span class="p">]}</span><span class="s2">&gt;`</span><span class="p">;</span>
                     <span class="p">}</span>
-                    <span class="c1">// temp에 래핑횟수만큼 types의 마지막 태그네임으로 열어줍니다.</span>
-                <span class="p">}</span> <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="nx">indent</span> <span class="o">==</span> <span class="nx">before</span><span class="p">)</span> <span class="p">{</span>
-                    <span class="c1">// 같은 계층일 때</span>
-                <span class="p">}</span> <span class="k">else</span> <span class="p">{</span> <span class="c1">// 들여쓰기가 이전보다 적을 때</span>
-                    <span class="kd">let</span> <span class="nx">gap</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">before</span><span class="o">/</span><span class="nx">indent</span><span class="p">);</span>
+                <span class="p">}</span> <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="nx">indent</span> <span class="o">&lt;</span> <span class="nx">before</span><span class="p">){</span> <span class="c1">// 들여쓰기가 이전보다 적을 때</span>
+                    <span class="kd">let</span> <span class="nx">gap</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">((</span><span class="nx">before</span> <span class="o">-</span> <span class="nx">indent</span><span class="p">)</span><span class="o">/</span><span class="mi">4</span><span class="p">);</span>
                     <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">i</span><span class="o">&lt;</span><span class="nx">gap</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">){</span>
                         <span class="nx">temp</span> <span class="o">+=</span> <span class="s2">`&lt;/</span><span class="p">${</span><span class="nx">types</span><span class="p">.</span><span class="nx">pop</span><span class="p">()}</span><span class="s2">&gt;`</span><span class="p">;</span>
                     <span class="p">}</span>
-                    <span class="nx">temp</span> <span class="o">+=</span> <span class="s2">`&lt;</span><span class="p">${</span><span class="nx">types</span><span class="p">[</span><span class="nx">types</span><span class="p">.</span><span class="nx">length</span><span class="o">-</span><span class="mi">1</span><span class="p">]}</span><span class="s2">&gt;`</span><span class="p">;</span>
                 <span class="p">}</span>
 
-                <span class="nx">temp</span> <span class="o">+=</span> <span class="s2">`&lt;li&gt;</span><span class="p">${</span><span class="nx">li</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="err">\</span><span class="o">/</span><span class="err">\</span><span class="nx">s</span><span class="o">*</span><span class="p">[</span><span class="mi">0</span><span class="o">-</span><span class="mi">9</span><span class="p">]</span><span class="err">\</span><span class="p">.</span><span class="err">\</span><span class="nx">s</span><span class="o">*</span><span class="err">\</span><span class="o">/</span><span class="nx">gm</span><span class="p">,</span> <span class="dl">''</span><span class="p">)}</span><span class="s2">&lt;/li&gt;`</span><span class="p">;</span>
-
+                <span class="nx">temp</span> <span class="o">+=</span> <span class="s2">`&lt;li&gt;</span><span class="p">${</span><span class="nx">li</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/^</span><span class="se">\s</span><span class="sr">*</span><span class="se">\-\s</span><span class="sr">*</span><span class="se">(</span><span class="sr">.+</span><span class="se">)</span><span class="sr">/gm</span><span class="p">,</span> <span class="dl">'</span><span class="s1">$1</span><span class="dl">'</span><span class="p">)}</span><span class="s2">&lt;/li&gt;`</span><span class="p">;</span>
+                
                 <span class="nx">before</span> <span class="o">=</span> <span class="nx">indent</span><span class="p">;</span>
                 <span class="k">return</span> <span class="nx">temp</span><span class="p">;</span>
             <span class="p">}).</span><span class="nx">join</span><span class="p">(</span><span class="dl">'</span><span class="se">\n</span><span class="dl">'</span><span class="p">);</span>
-
-            <span class="k">while</span><span class="p">(</span><span class="nx">array</span><span class="p">.</span><span class="nx">length</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">){</span> <span class="c1">// 나머지 태그 닫기</span>
-                <span class="nx">convertedHTML</span><span class="p">[</span><span class="nx">id</span><span class="p">]</span> <span class="o">+=</span> <span class="s2">`&lt;/</span><span class="p">${</span><span class="nx">array</span><span class="p">.</span><span class="nx">pop</span><span class="p">()}</span><span class="s2">&gt;`</span><span class="p">;</span>
+            <span class="k">while</span><span class="p">(</span><span class="nx">types</span><span class="p">.</span><span class="nx">length</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">){</span> <span class="c1">// 나머지 태그 닫기</span>
+                <span class="nx">convertedHTML</span><span class="p">[</span><span class="nx">id</span><span class="p">]</span> <span class="o">+=</span> <span class="s2">`&lt;/</span><span class="p">${</span><span class="nx">types</span><span class="p">.</span><span class="nx">pop</span><span class="p">()}</span><span class="s2">&gt;`</span><span class="p">;</span>
             <span class="p">}</span>
-
             <span class="nx">block</span><span class="p">[</span><span class="nx">id</span><span class="p">]</span> <span class="o">=</span> <span class="dl">''</span><span class="p">;</span>
         <span class="p">}</span>
         <span class="c1">// 초기화</span>
         <span class="nx">indent</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
         <span class="nx">before</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
-        <span class="nx">array</span> <span class="o">=</span> <span class="p">[];</span>
+        <span class="nx">types</span> <span class="o">=</span> <span class="p">[];</span>
     <span class="p">});</span>
 <span class="p">}</span>
 </pre></td></tr></tbody></table></code></pre></div></div>

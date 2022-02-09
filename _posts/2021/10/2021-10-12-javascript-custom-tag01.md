@@ -1,6 +1,6 @@
 ---
 layout: post
-modified: 2022-01-19 15:55:53 +0900
+modified: 2022-02-09 12:54:30 +0900
 date:   2021-10-12 17:23:12 +0900
 title:  "[JAVASCRIPT] HTML 커스텀 태그 만들어 사용하기"
 author: Kimson
@@ -34,7 +34,7 @@ liquid에서는 `{\{ ... }\}` 이렇게 콧수염을 이중으로 씁니다. 혹
 
 ## 태그 모양 정하기
 
-```javascript
+```html
 <html>
     <head>
     ...
@@ -158,8 +158,8 @@ function requestInclude(ev){
 }
 
 function ksRegex(ev){
-    let replace = document.body.innerHTML.replace(/\{\@\s*[\s\w\.]*\n*\s*\@\}/gim, e=>{
-        let commend = e.replace(/[\{\}\@]/gm, '').trim();
+    let replace = document.body.innerHTML.replace(\/\{\@\s*[\s\w\.]*\n*\s*\@\}\/gim, e=>{
+        let commend = e.replace(\/[\{\}\@]\/gm, '').trim();
         if(commend.includes('include')){
            readInclude(commend.split('include ')[1]);
            return includes;

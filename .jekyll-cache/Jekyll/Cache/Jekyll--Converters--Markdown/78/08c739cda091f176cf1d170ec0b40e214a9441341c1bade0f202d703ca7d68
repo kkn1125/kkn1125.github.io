@@ -1,4 +1,4 @@
-I"Oa<div class="fence-full">
+I"�a<div class="fence-full">
 
     <div class="w-flex gx-4">
 
@@ -12,11 +12,11 @@
 
     
     <div class="card p-0" style="overflow: hidden;">
-        <!-- <a href="/javascript-markdown-parser01/" title="[JAVASCRIPT] Markdown Parser를 만들어보자">
+        <!-- <a href="/javascript-markdown-parser01/" title="[JAVASCRIPT] Markdown Parser를 만들어보자 (특히 리스트)">
             <img src="assets/images/post/covers/TIL-javascript.png" alt="post/cover" class="w-100">
         </a> -->
         <div class="card-title px-3">
-            <a href="/javascript-markdown-parser01/" title="[JAVASCRIPT] Markdown Parser를 만들어보자">[JAVASCRIPT] Markdown Parser를 만들어보자</a>
+            <a href="/javascript-markdown-parser01/" title="[JAVASCRIPT] Markdown Parser를 만들어보자 (특히 리스트)">[JAVASCRIPT] Markdown Parser를 만들어보자 (특히 리스트)</a>
         </div>
         <div class="card-content">
             <!-- <div class="card-body"></div> -->
@@ -719,12 +719,12 @@
                 <div class="card p-0 m-0" style="overflow: hidden;">
                     
                     <div class="card-img">
-                        <a href="/javascript-markdown-parser01/" title="[JAVASCRIPT] Markdown Parser를 만들어보자">
-                            <img class="latestImgs" src="https://kkn1125.github.io/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] Markdown Parser를 만들어보자" />
+                        <a href="/javascript-markdown-parser01/" title="[JAVASCRIPT] Markdown Parser를 만들어보자 (특히 리스트)">
+                            <img class="latestImgs" src="https://kkn1125.github.io/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] Markdown Parser를 만들어보자 (특히 리스트)" />
                         </a>
                     </div>
                     
-                    <div class="card-title"><a href="/javascript-markdown-parser01/" title="[JAVASCRIPT] Markdown Parser를 만들어보자">[JAVASCRIPT] Markdown Parser를 만들어보자</a></div>
+                    <div class="card-title"><a href="/javascript-markdown-parser01/" title="[JAVASCRIPT] Markdown Parser를 만들어보자 (특히 리스트)">[JAVASCRIPT] Markdown Parser를 만들어보자 (특히 리스트)</a></div>
                     <div class="card-content">
                         <div class="card-body">
                             Markdown Parser를 만들어보자

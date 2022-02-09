@@ -13,9 +13,21 @@
             } else if (path === "/index") {
                 location.href = origin + "/";
             }
+            let base = `{{ site.baseurl }}/assets/images/post/covers/`;
+            const preloading = function(imgs){
+                for(let img of imgs){
+                    let imgs = new Image();
+                    imgs.src = base+img;
+                }
+            }
+
+            preloading(['TIL-batch.png', 'TIL-git.png', 'TIL-java.png', 'TIL-javascript.png', 'TIL-python.jpg', 'TIL-react.png', 'TIL-vue.png', 'TIM-none.png', 'TIL-spring.png', 'TIL-shell.png']);
         </script>
         
         <!-- preload -->
+        <link rel="preload"
+            href="/assets/data/jsonTodo.json"
+            as="fetch">
         <link rel="preload"
             href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;500;700&family=Gugi&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
             as="style">
@@ -37,18 +49,6 @@
 
         <link rel="preload" href="{{ site.baseurl }}/assets/js/darkMode.js" as="script">
         <link rel="prefetch" href="{{site.baseurl}}/assets/js/loading.js" as="script">
-
-        {%- comment -%}
-        <link rel="preload" href="{{ site.baseurl }}/assets/js/theme.js" as="script">
-        <link rel="preload" href="{{ site.baseurl }}/assets/js/scrollViewer.js" as="script">
-        <link rel="preload" href="{{site.baseurl}}/assets/js/kims.js" as="script">
-        <link rel="preload" href="{{ site.baseurl }}/assets/js/imgZoom.js" as="script">
-        <link rel="preload" href="{{site.baseurl}}/assets/js/lunr.js" as="script">
-        <link rel="preload" href="{{site.baseurl}}/assets/js/imgLazyLoad.js" as="script">
-
-        <link rel="preload" href="https://code.jquery.com/jquery-3.3.1.min.js"
-            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous" as="script">
-        {%- endcomment -%}
 
         <link rel="preload" href="https://cdn.jsdelivr.net/gh/kkn1125/typer@update-v020/typer.js"
         integrity="sha384-s62GQWchBcBh82YhldUNQK9Cqw6iFB+eBau07ihjICofE7TLkSimbCI4+djd4soo" crossorigin="anonymous"

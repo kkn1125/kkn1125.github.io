@@ -1,7 +1,8 @@
 ---
 layout: post
+modified: 2022-02-08 21:38:38 +0900
 date:   2022-02-07 19:53:39 +0900
-title:  "[JAVASCRIPT] Markdown Parser를 만들어보자"
+title:  "[JAVASCRIPT] Markdown Parser를 만들어보자 (특히 리스트)"
 author: Kimson
 categories: [ JAVASCRIPT, TIL ]
 image: assets/images/post/covers/TIL-javascript.png
@@ -26,7 +27,10 @@ published: true
 
 # Markdown Parser를 만들어보자
 
-마크다운을 HTML로 파싱해주는 라이브러리가 여러가지 있지만 한 번 구현해 보면 공부가 되겠다 싶어 기록합니다.
+> 내용이 수정 되었습니다 !
+> 코드에 오류가 있어서 고쳤습니다. 계층형으로 리스트화 되지 않던 부분 완전 작동하도록 수정했습니다.
+
+마크다운을 `HTML`로 파싱해주는 라이브러리가 여러가지 있지만 한 번 구현해 보면 공부가 되겠다 싶어 기록합니다.
 
 이전에 `router`를 구현해서 포스팅 한 적이 있는데요. `router`를 응용해서 `wiki`페이지를 만들어 페이지를 관리하고 있습니다.
 
@@ -155,60 +159,55 @@ this.heading = function (){
 this.listify = function (){
     let indent = 0, before = -1;
     let isDouble = 1;
-    let tag = '';
     let types = [];
 
     block.forEach((line, id)=>{
-        if(line.match(\/\s*[0-9]+\.\s(.+)\/g)){
-            converted[id] = line.split('\n').filter(li=>li!='').map(li=>{
+        if(line.match(/\s*\-/gm)){
+            convertedHTML[id] = line.split(/\n/gm).filter(x=>x!='').map(li=>{
                 let temp = '';
-                let space = x.match(\/(^\s*)\/gm)[0];
+                let space = li.match(/(^\s*)/)[1];
                 
                 indent = space.length;
 
-                if(indent>0 && before==-1){
-                    isDouble = parseInt(indent/4)+1;
-                    // 처음 시작하는 리스트가 얼마나 래핑되어야 하는지
-                } else {
-                    isDouble = 1;
-                }
+                if(indent>before){ // 들여쓰기가 늘어날 때
+                    let gap = 0;
 
-                if(indent > before){ // 들여쓰기가 늘어날 때
-                    if(line.match(\/\s*[0-9]+\.\s(.+)\/g)){
-                        // ... ul과 blockquote도 분기문으로 types에 push
-                        types.push('ol');
+                    if(indent > 0 && before == -1){
+                        gap = parseInt(indent/4) + 1;
+                        // 처음 시작하는 리스트가 얼마나 래핑되어야 하는지
+                    } else {
+                        gap = parseInt((indent - before)/4)+(before>-1?0:1);
+                        // 처음 래핑 외에 gap을 그대로 사용합니다.
                     }
-                    for(let i=0; i<isDouble; i++){
-                        if(i>0) types.push(types[types.length-1]);
+
+                    for(let i=0; i<gap; i++){
+                        // ... ol과 blockquote도 분기문으로 types에 push
+                        if(li.match(/^\s*\-/gm)){
+                            array.push('ul');
+                        }
                         temp += `<${types[types.length-1]}>`;
                     }
-                    // temp에 래핑횟수만큼 types의 마지막 태그네임으로 열어줍니다.
-                } else if(indent == before) {
-                    // 같은 계층일 때
-                } else { // 들여쓰기가 이전보다 적을 때
-                    let gap = parseInt(before/indent);
+                } else if(indent < before){ // 들여쓰기가 이전보다 적을 때
+                    let gap = parseInt((before - indent)/4);
                     for(let i=0; i<gap; i++){
                         temp += `</${types.pop()}>`;
                     }
-                    temp += `<${types[types.length-1]}>`;
                 }
 
-                temp += `<li>${li.replace(\/\s*[0-9]\.\s*\/gm, '')}</li>`;
-
+                temp += `<li>${li.replace(/^\s*\-\s*(.+)/gm, '$1')}</li>`;
+                
                 before = indent;
                 return temp;
             }).join('\n');
-
-            while(array.length>0){ // 나머지 태그 닫기
-                convertedHTML[id] += `</${array.pop()}>`;
+            while(types.length>0){ // 나머지 태그 닫기
+                convertedHTML[id] += `</${types.pop()}>`;
             }
-
             block[id] = '';
         }
         // 초기화
         indent = 0;
         before = -1;
-        array = [];
+        types = [];
     });
 }
 ```
