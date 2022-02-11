@@ -1,4 +1,4 @@
-I"x<h1 id="이미지-줌-구현">이미지 줌 구현</h1>
+I""x<h1 id="이미지-줌-구현">이미지 줌 구현</h1>
 
 <blockquote>
   <p>주요 기능</p>
@@ -397,7 +397,7 @@
 
 <p>클릭 상태로 움직이면 클릭 했을 때 이미지 노드의 <code class="language-plaintext highlighter-rouge">top</code>, <code class="language-plaintext highlighter-rouge">left</code> 값과 <code class="language-plaintext highlighter-rouge">clientX</code>, <code class="language-plaintext highlighter-rouge">Y</code>값을 구하고, 움직일 때의 <code class="language-plaintext highlighter-rouge">client</code>값을 받아 클릭 시의 <code class="language-plaintext highlighter-rouge">client</code>값을 빼고 <code class="language-plaintext highlighter-rouge">top</code>, <code class="language-plaintext highlighter-rouge">left</code>값과 더합니다.</p>
 
-<p>아직 이미지 드래그를 구현하는 것을 다 이해하지는 못 했지만 <code class="language-plaintext highlighter-rouge">stackoverflow</code>의 은혜로운 글을 보고 만들었습니다…</p>
+<p>아직 이미지 드래그를 구현하는 것을 다 이해하지는 못 했지만 <code class="language-plaintext highlighter-rouge">stackoverflow</code>의 은혜로운 글을 보고 만들었습니다&#8230;</p>
 
 <p><img src="{{site.baseurl}}/assets/images/post/zoom/zoom02.png" alt="view" /></p>
 

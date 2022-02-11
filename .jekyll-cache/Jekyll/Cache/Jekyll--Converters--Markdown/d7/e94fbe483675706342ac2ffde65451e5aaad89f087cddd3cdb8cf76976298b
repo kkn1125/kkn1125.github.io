@@ -1,4 +1,4 @@
-I"�<h1 id="깃-브랜치-덮어쓰기">깃 브랜치 덮어쓰기</h1>
+I"�<h1 id="깃-브랜치-덮어쓰기">깃 브랜치 덮어쓰기</h1>
 
 <p>main 브랜치를 새로운 브랜치로 교체할 일이 생겨 시도하다보니 아래와 같은 메세지가 나왔습니다.</p>
 
@@ -30,7 +30,7 @@
 <span class="nv">$ </span>git merge <span class="nt">-Xtheirs</span> newBranch
 </pre></td></tr></tbody></table></code></pre></div></div>
 
-<p>이렇게 해서 해결이 된다면 괜찮습니다만 “관련없는 기록 병합 거부(fatal: refusing to merge unrelated histories)”라는 메세지가 뜬다면 아래와 같이 하면 됩니다.</p>
+<p>이렇게 해서 해결이 된다면 괜찮습니다만 &#8220;관련없는 기록 병합 거부(fatal: refusing to merge unrelated histories)&#8221;라는 메세지가 뜬다면 아래와 같이 하면 됩니다.</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2

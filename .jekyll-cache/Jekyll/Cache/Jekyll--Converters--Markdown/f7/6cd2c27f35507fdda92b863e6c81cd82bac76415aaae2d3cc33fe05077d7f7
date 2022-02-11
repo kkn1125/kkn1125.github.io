@@ -1,4 +1,4 @@
-I"!X<h1 id="custom-tag">Custom Tag</h1>
+I"%X<h1 id="custom-tag">Custom Tag</h1>
 
 <p>이름을 뭐라 해야할지 몰라서 커스텀 태그라고 했습니다. 어떤 의미인지는 아래 예를 보면서 설명드리겠습니다.</p>
 
@@ -103,7 +103,7 @@
 </span></pre></td></tr></tbody></table></code></pre></div></div>
 
 <blockquote>
-  <p><code class="language-plaintext highlighter-rouge">yml</code>을 사용하고 싶으시면 <code class="language-plaintext highlighter-rouge">npm</code>에서 <code class="language-plaintext highlighter-rouge">yml</code>을 파싱하는 기능을 받아 사용하시면 됩니다. <code class="language-plaintext highlighter-rouge">yml</code>을 <code class="language-plaintext highlighter-rouge">json</code>으로 변환하려 했지만 아직 능력이 안되서 보류해뒀습니다…</p>
+  <p><code class="language-plaintext highlighter-rouge">yml</code>을 사용하고 싶으시면 <code class="language-plaintext highlighter-rouge">npm</code>에서 <code class="language-plaintext highlighter-rouge">yml</code>을 파싱하는 기능을 받아 사용하시면 됩니다. <code class="language-plaintext highlighter-rouge">yml</code>을 <code class="language-plaintext highlighter-rouge">json</code>으로 변환하려 했지만 아직 능력이 안되서 보류해뒀습니다&#8230;</p>
 </blockquote>
 
 <p><code class="language-plaintext highlighter-rouge">json</code>파일은 읽어와서 객체로 만들기가 용이해서 <code class="language-plaintext highlighter-rouge">json</code>을 쓰겠습니다.</p>

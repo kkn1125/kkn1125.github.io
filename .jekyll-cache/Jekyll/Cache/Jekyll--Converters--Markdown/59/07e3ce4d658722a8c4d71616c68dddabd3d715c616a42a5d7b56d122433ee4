@@ -1,5 +1,5 @@
-I"s<p>Vanilla JavaScript로 SPA 구현
-제목을 어떻게 지을까 하다가 임시로 아는 단어를 적어두었습니다…
+I"w<p>Vanilla JavaScript로 SPA 구현
+제목을 어떻게 지을까 하다가 임시로 아는 단어를 적어두었습니다&#8230;
 <code class="language-plaintext highlighter-rouge">SPA</code>는 <code class="language-plaintext highlighter-rouge">Single Page Application</code>의 약자이고 하나의 페이지에 동적으로 화면을 바꿔가면서 상호작용하도록 합니다.
 아직 라우터에 대해 제대로된 지식이 없어 지적을 주시면 곧바로 수정하도록 하겠습니다. 기록할 주요 내용은 이렇습니다.
 먼저 <code class="language-plaintext highlighter-rouge">ajax</code>를 사용하는 것은 제외했습니다. <code class="language-plaintext highlighter-rouge">ajax</code>로 하기에 아직 <code class="language-plaintext highlighter-rouge">fetch</code>와 <code class="language-plaintext highlighter-rouge">async</code>, <code class="language-plaintext highlighter-rouge">await</code>를 잘 다루지 못하는 시점이라 <code class="language-plaintext highlighter-rouge">javascript</code>로 <code class="language-plaintext highlighter-rouge">render</code>와 <code class="language-plaintext highlighter-rouge">component</code>를 구현해서 데이터를 만들어 적용하는 연습을 해보았습니다.

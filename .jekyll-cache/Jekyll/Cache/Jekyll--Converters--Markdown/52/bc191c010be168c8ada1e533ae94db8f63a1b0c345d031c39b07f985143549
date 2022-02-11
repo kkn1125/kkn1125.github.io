@@ -1,4 +1,4 @@
-I"7<h1 id="mybatis">MyBatis</h1>
+I"7<h1 id="mybatis">MyBatis</h1>
 
 <p>ToDoList에도 올려두었던 녀석을 이제야 합니다. 여지껏 수동으로 작성하는 방법에 길들여져서 새로운 방법을 저도 모르게 멀리하려고 핑계댔는지도 모르겠습니다.</p>
 
@@ -206,7 +206,7 @@
 
 <p class="text-center"><img src="{{site.baseurl}}/assets/images/post/springboot/mybatis/batis02.png" alt="mybatis backup" /></p>
 
-<p><code class="language-plaintext highlighter-rouge">Postman</code>은 <code class="language-plaintext highlighter-rouge">Json</code>이 깔끔하게 나와서 <code class="language-plaintext highlighter-rouge">json</code>출력 보기용으로 자주 사용하고 있습니다. (원래 이 용도가 아닐텐데…)</p>
+<p><code class="language-plaintext highlighter-rouge">Postman</code>은 <code class="language-plaintext highlighter-rouge">Json</code>이 깔끔하게 나와서 <code class="language-plaintext highlighter-rouge">json</code>출력 보기용으로 자주 사용하고 있습니다. (원래 이 용도가 아닐텐데&#8230;)</p>
 
 <p>오늘은 <code class="language-plaintext highlighter-rouge">select</code>구문만 해보았습니다. <code class="language-plaintext highlighter-rouge">MyBatis</code>를 시작했다는 것에 만족을 하고 <code class="language-plaintext highlighter-rouge">CRUD</code>를 구현하면서 고급 SQL적용까지 공부해서 다시 포스팅하겠습니다.</p>
 

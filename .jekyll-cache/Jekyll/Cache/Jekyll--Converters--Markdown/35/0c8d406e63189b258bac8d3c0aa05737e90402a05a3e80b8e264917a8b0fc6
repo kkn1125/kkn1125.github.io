@@ -1,4 +1,4 @@
-I"<h1 id="메일-보내기">메일 보내기</h1>
+I"<h1 id="메일-보내기">메일 보내기</h1>
 
 <p>이메일을 보내는데 서버 측에서 보내자니 자바 밖에 모르고, 배포해서 서버를 돌리자니 여기저기 제약이 많아 정적 사이트에서 메일을 보내는 방법을 찾고 있었습니다.</p>
 
@@ -13,7 +13,7 @@
 <p>링크에서 제공하는 스프레드시트를 사본으로 받습니다.
 그리고 사본에서 <code class="language-plaintext highlighter-rouge">도구 &gt; 스크립트 에디터</code>로 가서 <code class="language-plaintext highlighter-rouge">TO_ADDRESS</code>변수 주석을 풀고 값을 바꾸면 됩니다.</p>
 
-<p>여기서 <code class="language-plaintext highlighter-rouge">TO_ADDRESS</code>는 메일을 받는 사람이어야 합니다. (착오 없으시길…)</p>
+<p>여기서 <code class="language-plaintext highlighter-rouge">TO_ADDRESS</code>는 메일을 받는 사람이어야 합니다. (착오 없으시길&#8230;)</p>
 
 <h3 id="version">Version</h3>
 

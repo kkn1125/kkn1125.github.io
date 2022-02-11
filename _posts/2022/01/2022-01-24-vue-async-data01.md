@@ -39,7 +39,7 @@ published: true
 
 ## 배열 데이터
 
-예를 들기 위해 [Sample APIs::Coffee](https://sampleapis.com/api-list/coffee)의 샘플을 사용하겠습니다.
+예를 들기 위해 [Sample APIs::Coffee](https://sampleapis.com/api-list/coffee){:target="blank"}의 샘플을 사용하겠습니다.
 
 {% raw %}
 

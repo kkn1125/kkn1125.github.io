@@ -1,4 +1,4 @@
-I"�Q<h1 id="다크모드">다크모드</h1>
+I"R<h1 id="다크모드">다크모드</h1>
 
 <blockquote>
   <p>사용자 인터페이스에서 밝고 검은 글자 대신 어둡고 흰 글자를 나타내는 테마</p>
@@ -36,7 +36,7 @@
 
 <p><img src="{{site.baseurl}}/assets/images/post/darkMode/dark04.png" alt="네이버" title="네이버" /></p>
 
-<p>벌써부터 “나 다크모드 설정이야!”라고 외치는 녀석이 보입니다. 라이트모드를 켜서 명확히 보겠습니다.</p>
+<p>벌써부터 &#8220;나 다크모드 설정이야!&#8221;라고 외치는 녀석이 보입니다. 라이트모드를 켜서 명확히 보겠습니다.</p>
 
 <p><img src="{{site.baseurl}}/assets/images/post/darkMode/dark05.png" alt="네이버" title="네이버" /></p>
 
@@ -314,7 +314,7 @@ sessionStorage 데이터는 페이지를 닫을 때 사라지는 것이 차이�
 <em class="text-muted">- 다시 켜보겠습니다. 다크로 유지가 되면 곧 바로 이 블로그에 적용해두겠습니다. 헤헤</em></p>
 
 <p><img src="{{site.baseurl}}/assets/images/post/darkMode/dark13.png" alt="테스트" title="테스트" />
-<em class="text-muted">- 와… 왜 되는거지… 됩니다.</em></p>
+<em class="text-muted">- 와&#8230; 왜 되는거지&#8230; 됩니다.</em></p>
 
 <p>여기까지 정적웹에 다크모드를 알아보고 직접 적용해봤습니다.<br />
 제가 참고한 사이트는 아래 링크로 남겨두었습니다.</p>

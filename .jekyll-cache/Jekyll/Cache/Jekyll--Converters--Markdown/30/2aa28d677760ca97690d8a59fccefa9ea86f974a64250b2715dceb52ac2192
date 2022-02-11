@@ -1,4 +1,4 @@
-I"g�<h1 id="솔리테어를-만들어-보자-3편">솔리테어를 만들어 보자 3편</h1>
+I"��<h1 id="솔리테어를-만들어-보자-3편">솔리테어를 만들어 보자 3편</h1>
 
 <p>얼른 기록하고 다른 공부를 하려다보니 급하게 올리게 되었습니다. 이전에 다음 포스팅에서 다룰 3가지를 먼저 알려드렸습니다.</p>
 
@@ -578,7 +578,7 @@
 
 <h3 id="솔리테어-규칙">솔리테어 규칙</h3>
 
-<p>먼저 교차관계인지 검사하는 <code class="language-plaintext highlighter-rouge">isCrossable</code>을 만들었습니다. 192줄에서 <code class="language-plaintext highlighter-rouge">first</code>, <code class="language-plaintext highlighter-rouge">second</code>는 각 카드의 <code class="language-plaintext highlighter-rouge">suit</code>입니다. 미리 설정해둔 카드의 <code class="language-plaintext highlighter-rouge">suits</code>에는 [‘spades’, ‘clubs’, ‘hearts’, ‘diamonds’]가 있습니다. 이때 절반 쪼개면 흑과 적으로 나뉘고 흑에서 <code class="language-plaintext highlighter-rouge">first</code>가, 적에서 <code class="language-plaintext highlighter-rouge">second</code>가 있거나 반대로 흑에서 <code class="language-plaintext highlighter-rouge">second</code>, 적에서 <code class="language-plaintext highlighter-rouge">first</code>가 있다면 교차, 둘 다 아니라면 교차가 되지 않도록 합니다.</p>
+<p>먼저 교차관계인지 검사하는 <code class="language-plaintext highlighter-rouge">isCrossable</code>을 만들었습니다. 192줄에서 <code class="language-plaintext highlighter-rouge">first</code>, <code class="language-plaintext highlighter-rouge">second</code>는 각 카드의 <code class="language-plaintext highlighter-rouge">suit</code>입니다. 미리 설정해둔 카드의 <code class="language-plaintext highlighter-rouge">suits</code>에는 [&#8216;spades&#8217;, &#8216;clubs&#8217;, &#8216;hearts&#8217;, &#8216;diamonds&#8217;]가 있습니다. 이때 절반 쪼개면 흑과 적으로 나뉘고 흑에서 <code class="language-plaintext highlighter-rouge">first</code>가, 적에서 <code class="language-plaintext highlighter-rouge">second</code>가 있거나 반대로 흑에서 <code class="language-plaintext highlighter-rouge">second</code>, 적에서 <code class="language-plaintext highlighter-rouge">first</code>가 있다면 교차, 둘 다 아니라면 교차가 되지 않도록 합니다.</p>
 
 <p>183줄은 <code class="language-plaintext highlighter-rouge">isCrossable</code>과 더해서 쌓기 가능한지 검사하는 <code class="language-plaintext highlighter-rouge">isStackable</code>입니다. 추가되는 조건은 첫번째 선택한 카드의 수가 두번째 선택한 카드의 수보다 1 작은지 입니다.</p>
 

@@ -8,9 +8,9 @@ pre{
   color: inherit;
 }
 
-code.language-plaintext{
+code[class|=language]{
   color: rgba(var(--pl-danger-rgb), 1);
-  font-family: monospace;
+  font-family: inherit;
 }
 
 pre.highlight{

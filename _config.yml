@@ -56,6 +56,7 @@ defaults:
 markdown: kramdown
 
 kramdown:
+  entity_output: :as_input
   input: GFM
   syntax_highlighter: rouge
   syntax_highlighter_opts:

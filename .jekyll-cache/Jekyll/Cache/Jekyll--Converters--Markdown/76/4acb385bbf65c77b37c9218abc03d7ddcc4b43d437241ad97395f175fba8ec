@@ -1,4 +1,4 @@
-I"1<h1 id="referer란">referer란</h1>
+I"5<h1 id="referer란">referer란</h1>
 
 <p>Referer 요청 헤더는 어디에서 사용자가 유입되었는지 알 수 있습니다. <code class="language-plaintext highlighter-rouge">#blah</code>나 <code class="language-plaintext highlighter-rouge">username</code>, <code class="language-plaintext highlighter-rouge">password</code>는 포함 할 수 없다고 합니다. <code class="language-plaintext highlighter-rouge">origin</code>, <code class="language-plaintext highlighter-rouge">path</code>, <code class="language-plaintext highlighter-rouge">query문</code>등이 포함된다고 하니 잘 사용하면 유용할 것 같습니다.</p>
 
@@ -79,7 +79,7 @@
 <span class="o">}</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
-<p><code class="language-plaintext highlighter-rouge">null</code>값을 한 번 걸러주고 쓰는 방식으로 쓰고는 있습니다만, 다른 분의 비슷한 코드라도 봐야 어떻게 쓰는 게 맞는지 알 것 같습니다. 지금은 이렇게 쓰는 걸로…</p>
+<p><code class="language-plaintext highlighter-rouge">null</code>값을 한 번 걸러주고 쓰는 방식으로 쓰고는 있습니다만, 다른 분의 비슷한 코드라도 봐야 어떻게 쓰는 게 맞는지 알 것 같습니다. 지금은 이렇게 쓰는 걸로&#8230;</p>
 
 <h2 id="referer의-쓰임">referer의 쓰임</h2>
 

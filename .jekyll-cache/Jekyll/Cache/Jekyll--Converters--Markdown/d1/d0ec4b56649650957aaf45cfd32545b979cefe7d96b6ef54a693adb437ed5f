@@ -1,4 +1,4 @@
-I"Eb<h1 id="markdown-parser를-만들어보자">Markdown Parser를 만들어보자</h1>
+I"Ib<h1 id="markdown-parser를-만들어보자">Markdown Parser를 만들어보자</h1>
 
 <blockquote>
   <p>내용이 수정 되었습니다 !
@@ -170,7 +170,7 @@
 
 <p>{%endraw%}</p>
 
-<p><code class="language-plaintext highlighter-rouge">ol</code>, <code class="language-plaintext highlighter-rouge">ul</code>, <code class="language-plaintext highlighter-rouge">blockquote</code>를 제외한 나머지를 이런 식으로 변환시키면 <code class="language-plaintext highlighter-rouge">converted</code>에 변환된 내용만 담기게 되므로 나중에 <code class="language-plaintext highlighter-rouge">join</code>해서 화면에 렌더해주면 됩니다. 처음 만들어 보시는 분들은 나머지 기능은 한 번 구현해보시면서 익혀보시길…</p>
+<p><code class="language-plaintext highlighter-rouge">ol</code>, <code class="language-plaintext highlighter-rouge">ul</code>, <code class="language-plaintext highlighter-rouge">blockquote</code>를 제외한 나머지를 이런 식으로 변환시키면 <code class="language-plaintext highlighter-rouge">converted</code>에 변환된 내용만 담기게 되므로 나중에 <code class="language-plaintext highlighter-rouge">join</code>해서 화면에 렌더해주면 됩니다. 처음 만들어 보시는 분들은 나머지 기능은 한 번 구현해보시면서 익혀보시길&#8230;</p>
 
 <h3 id="ol과-ul-blockquote">ol과 ul, blockquote</h3>
 

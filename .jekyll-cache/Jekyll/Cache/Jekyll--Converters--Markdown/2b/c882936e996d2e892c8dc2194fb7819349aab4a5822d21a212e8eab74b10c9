@@ -1,4 +1,4 @@
-I"C?<h1 id="lombok-설정">lombok 설정</h1>
+I"K?<h1 id="lombok-설정">lombok 설정</h1>
 
 <p>spring boot 시작하기 01에서 설치, 구동이 주제였다면 setter와 getter등의 <del>자질구레한</del> 것들을 간소화해주는 lombok을 설정하는 방법을 소개합니다.</p>
 
@@ -21,7 +21,7 @@
 <p>Eclipse는 재시작해주시고, 만들던 VO로 돌아와 getter/setter 어노테이션을 등록해줍니다.
 @Data로 한번에 등록가능합니다.</p>
 
-<p>이때 outline 탭을 확인해보면 lombok이 알아서 setter와 getter를 만들어 줍니다… 심지어 toString까지… 와우..</p>
+<p>이때 outline 탭을 확인해보면 lombok이 알아서 setter와 getter를 만들어 줍니다&#8230; 심지어 toString까지&#8230; 와우..</p>
 
 <blockquote>
   <p>배포할때 lombok이 유효한지는 계속 찾고 있습니다. 만일 방법이 따로 있다면 다음에 포스팅하겠습니다.</p>

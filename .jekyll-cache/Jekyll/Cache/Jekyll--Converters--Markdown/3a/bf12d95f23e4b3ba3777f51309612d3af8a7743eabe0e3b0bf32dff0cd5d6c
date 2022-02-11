@@ -1,4 +1,4 @@
-I"�(<h1 id="웹-튜토리얼">웹 튜토리얼</h1>
+I"�(<h1 id="웹-튜토리얼">웹 튜토리얼</h1>
 
 <p>이름을 웹 튜토리얼이라 붙이긴 했습니다만, 웹 상에서 UI가 복잡하거나 독특하게 꾸며졌을 때 사용자에게 안내를 해주는 기능을 구현하기로 했습니다.</p>
 
@@ -153,7 +153,7 @@
     <tr>
       <td>border</td>
       <td>강조 박스 테두리를 설정 (css dimensions)</td>
-      <td> </td>
+      <td>&#160;</td>
     </tr>
     <tr>
       <td>- rounded</td>
@@ -178,7 +178,7 @@
     <tr>
       <td>msgBox</td>
       <td>설명 박스 설정 (css dimensions)</td>
-      <td> </td>
+      <td>&#160;</td>
     </tr>
     <tr>
       <td>- bgColor</td>

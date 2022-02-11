@@ -1,4 +1,4 @@
-I"�+<h1 id="키-기반의-컬렉션">키 기반의 컬렉션</h1>
+I"�+<h1 id="키-기반의-컬렉션">키 기반의 컬렉션</h1>
 
 <p>Set과 비슷하지만 Set은 중복값을 허용하지 않는다는 차이점이 있습니다.<br />
 Set은 이번 주제가 아니니 다음에 다루도록 하고, Map 객체의 특징과 메서드에 대해 알아보겠습니다.</p>
@@ -30,7 +30,7 @@ Set은 이번 주제가 아니니 다음에 다루도록 하고, Map 객체의 �
     <tr>
       <td><strong>action</strong></td>
       <td>:<strong>key</strong>와 <strong>value</strong>를 추가</td>
-      <td> </td>
+      <td>&#160;</td>
     </tr>
   </tbody>
 </table>
@@ -66,7 +66,7 @@ Set은 이번 주제가 아니니 다음에 다루도록 하고, Map 객체의 �
     <tr>
       <td><strong>action</strong></td>
       <td>:<strong>key</strong>의 <strong>value</strong>를 얻음</td>
-      <td> </td>
+      <td>&#160;</td>
     </tr>
   </tbody>
 </table>
@@ -96,7 +96,7 @@ Set은 이번 주제가 아니니 다음에 다루도록 하고, Map 객체의 �
     <tr>
       <td><strong>action</strong></td>
       <td>:<strong>key</strong>를 삭제</td>
-      <td> </td>
+      <td>&#160;</td>
     </tr>
   </tbody>
 </table>
@@ -126,7 +126,7 @@ Set은 이번 주제가 아니니 다음에 다루도록 하고, Map 객체의 �
     <tr>
       <td><strong>action</strong></td>
       <td>:<strong>key</strong>가 있는지 여부</td>
-      <td> </td>
+      <td>&#160;</td>
     </tr>
   </tbody>
 </table>
@@ -156,7 +156,7 @@ Set은 이번 주제가 아니니 다음에 다루도록 하고, Map 객체의 �
     <tr>
       <td><strong>action</strong></td>
       <td>:<strong>Map</strong>객체의 내용 모두 삭제</td>
-      <td> </td>
+      <td>&#160;</td>
     </tr>
   </tbody>
 </table>
@@ -186,7 +186,7 @@ Set은 이번 주제가 아니니 다음에 다루도록 하고, Map 객체의 �
     <tr>
       <td><strong>action</strong></td>
       <td>:<strong>Map</strong> 객체 순회</td>
-      <td> </td>
+      <td>&#160;</td>
     </tr>
   </tbody>
 </table>
