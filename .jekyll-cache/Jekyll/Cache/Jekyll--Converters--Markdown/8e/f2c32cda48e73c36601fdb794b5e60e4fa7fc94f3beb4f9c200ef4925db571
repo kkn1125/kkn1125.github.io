@@ -1,4 +1,4 @@
-I"�2<div class="fence-full">
+I"MB<div class="fence-full">
     <div>
         <span class="fw-bold h3 text-uppercase mb-4">Tags</span>
     </div>
@@ -5544,6 +5544,44 @@
 	<div class="col pe-3">
 		<div>
 			<span class="mb-1 h5 fw-bold">
+			<a class="nav-link" href="/javascript-gantt-chart01/">[JAVASCRIPT] 간트차트를 만들어보자</a>
+			</span>
+		</div>
+		<p class="excerpt">
+		Gantt Chart
+		</p>
+		<small class="w-block text-muted">
+			In <span class="catlist">
+			
+			<a class="text-capitalize tag tag-success text-white" href="/categories#javascript">JAVASCRIPT</a><span class="sep"> </span>
+			
+			<a class="text-capitalize tag tag-success text-white" href="/categories#til">TIL</a><span class="sep"> </span>
+			
+			<a class="text-capitalize tag tag-success text-white" href="/categories#tim">TIM</a><span class="sep"> </span>
+			
+			</span>
+		</small>
+		<small class="text-muted">
+			Feb 17, 2022
+		</small>
+	</div>
+	
+	<div class="col-md-5 pe-0 text-right">
+	<a href="/javascript-gantt-chart01/">
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] 간트차트를 만들어보자" />
+	</a>
+	</div>
+	
+</div>
+    
+    
+    
+    
+    
+    <div class="mb-5 w-flex justify-content-between flex-column flex-row-md main-loop-card">
+	<div class="col pe-3">
+		<div>
+			<span class="mb-1 h5 fw-bold">
 			<a class="nav-link" href="/javascript-graph-editor/">[JAVASCRIPT] Graph Editor JS</a>
 			</span>
 		</div>
@@ -9215,6 +9253,98 @@
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/javascript-template-literal-async01/">
 	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] 템플릿 리터럴에서 비동기로 내용을 넣어보자" />
+	</a>
+	</div>
+	
+</div>
+    
+    
+    
+    
+    
+
+    
+    <div id="web tool" style="padding-top: 64px;border-bottom: 2px solid rgb(133 133 133); margin-bottom: 1em"><span class="h5 fw-bold text-capitalize">web tool</span></div>
+
+    
+    
+    
+    
+    <div class="mb-5 w-flex justify-content-between flex-column flex-row-md main-loop-card">
+	<div class="col pe-3">
+		<div>
+			<span class="mb-1 h5 fw-bold">
+			<a class="nav-link" href="/javascript-gantt-chart01/">[JAVASCRIPT] 간트차트를 만들어보자</a>
+			</span>
+		</div>
+		<p class="excerpt">
+		Gantt Chart
+		</p>
+		<small class="w-block text-muted">
+			In <span class="catlist">
+			
+			<a class="text-capitalize tag tag-success text-white" href="/categories#javascript">JAVASCRIPT</a><span class="sep"> </span>
+			
+			<a class="text-capitalize tag tag-success text-white" href="/categories#til">TIL</a><span class="sep"> </span>
+			
+			<a class="text-capitalize tag tag-success text-white" href="/categories#tim">TIM</a><span class="sep"> </span>
+			
+			</span>
+		</small>
+		<small class="text-muted">
+			Feb 17, 2022
+		</small>
+	</div>
+	
+	<div class="col-md-5 pe-0 text-right">
+	<a href="/javascript-gantt-chart01/">
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] 간트차트를 만들어보자" />
+	</a>
+	</div>
+	
+</div>
+    
+    
+    
+    
+    
+
+    
+    <div id="gannt chart" style="padding-top: 64px;border-bottom: 2px solid rgb(133 133 133); margin-bottom: 1em"><span class="h5 fw-bold text-capitalize">gannt chart</span></div>
+
+    
+    
+    
+    
+    <div class="mb-5 w-flex justify-content-between flex-column flex-row-md main-loop-card">
+	<div class="col pe-3">
+		<div>
+			<span class="mb-1 h5 fw-bold">
+			<a class="nav-link" href="/javascript-gantt-chart01/">[JAVASCRIPT] 간트차트를 만들어보자</a>
+			</span>
+		</div>
+		<p class="excerpt">
+		Gantt Chart
+		</p>
+		<small class="w-block text-muted">
+			In <span class="catlist">
+			
+			<a class="text-capitalize tag tag-success text-white" href="/categories#javascript">JAVASCRIPT</a><span class="sep"> </span>
+			
+			<a class="text-capitalize tag tag-success text-white" href="/categories#til">TIL</a><span class="sep"> </span>
+			
+			<a class="text-capitalize tag tag-success text-white" href="/categories#tim">TIM</a><span class="sep"> </span>
+			
+			</span>
+		</small>
+		<small class="text-muted">
+			Feb 17, 2022
+		</small>
+	</div>
+	
+	<div class="col-md-5 pe-0 text-right">
+	<a href="/javascript-gantt-chart01/">
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] 간트차트를 만들어보자" />
 	</a>
 	</div>
 	

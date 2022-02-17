@@ -134,6 +134,9 @@ aside#rsb>div {
     }
 }
 
+.article-post img{
+    width: 100%;
+}
 .article-post p{
     margin-top: 0.5em;
     margin-bottom: 1em;

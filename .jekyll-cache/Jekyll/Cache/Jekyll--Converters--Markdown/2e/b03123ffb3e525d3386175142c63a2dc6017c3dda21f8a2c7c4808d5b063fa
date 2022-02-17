@@ -1,4 +1,4 @@
-I"�f<div class="fence-full">
+I"�l<div class="fence-full">
 
     <div class="w-flex gx-4">
 
@@ -7,6 +7,35 @@
     <span class="h4">Featured</span>
 </div>
 <div class="card-group card-ghost card-pd-0 card-dv-1 g-3">
+
+    
+
+    
+    <div class="card p-0" style="overflow: hidden;">
+        <!-- <a href="/javascript-gantt-chart01/" title="[JAVASCRIPT] 간트차트를 만들어보자">
+            <img src="assets/images/post/covers/TIL-javascript.png" alt="post/cover" class="w-100">
+        </a> -->
+        <div class="card-title px-3">
+            <a href="/javascript-gantt-chart01/" title="[JAVASCRIPT] 간트차트를 만들어보자">[JAVASCRIPT] 간트차트를 만들어보자</a>
+        </div>
+        <div class="card-content">
+            <!-- <div class="card-body"></div> -->
+        </div>
+        <div class="pb-3 px-3">
+            In <span class="catlist">
+                
+                <a class="text-capitalize text-white tag tag-success" href="/categories.html#javascript">JAVASCRIPT</a><span class="sep"> </span>
+                
+                <a class="text-capitalize text-white tag tag-success" href="/categories.html#til">TIL</a><span class="sep"> </span>
+                
+                <a class="text-capitalize text-white tag tag-success" href="/categories.html#tim">TIM</a><span class="sep"> </span>
+                
+            </span>
+            <time class="card-time">Feb 17, 2022</time>
+        </div>
+    </div>
+
+    
 
     
 
@@ -738,10 +767,40 @@
             <div class="border-bottom">
                 
                 <span class="h4">Latest Posts</span>
-                <button class="btn btn-danger ms-2 px-3" onclick="location='/author-kimson'">더 보기 + 80</button>
+                <button class="btn btn-danger ms-2 px-3" onclick="location='/author-kimson'">더 보기 + 81</button>
             </div>
             <div class="card-group pt-1 card-pd-0 card-dv-1 card-dv-md-2 card-ghost latestPost" style="gap: 1rem;">
                 <!-- latest post -->
+                
+                <div class="card p-0 m-0" style="overflow: hidden;">
+                    
+                    <div class="card-img">
+                        <a href="/javascript-gantt-chart01/" title="[JAVASCRIPT] 간트차트를 만들어보자">
+                            <img class="latestImgs" src="https://kkn1125.github.io/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] 간트차트를 만들어보자" />
+                        </a>
+                    </div>
+                    
+                    <div class="card-title"><a href="/javascript-gantt-chart01/" title="[JAVASCRIPT] 간트차트를 만들어보자">[JAVASCRIPT] 간트차트를 만들어보자</a></div>
+                    <div class="card-content">
+                        <div class="card-body">
+                            Gantt Chart
+                        </div>
+                    </div>
+                    
+                    
+                    In <span class="catlist">
+                        
+                        <a class="text-capitalize tag tag-success text-white" href="/categories.html#javascript">JAVASCRIPT</a><span class="sep"> </span>
+                        
+                        <a class="text-capitalize tag tag-success text-white" href="/categories.html#til">TIL</a><span class="sep"> </span>
+                        
+                        <a class="text-capitalize tag tag-success text-white" href="/categories.html#tim">TIM</a><span class="sep"> </span>
+                        
+                    </span>
+                    <time class="card-time">Feb 17, 2022</time>
+                    
+                    
+                </div>
                 
                 <div class="card p-0 m-0" style="overflow: hidden;">
                     
@@ -757,17 +816,6 @@
                             템플릿 리터럴
                         </div>
                     </div>
-                    
-                    
-                    In <span class="catlist">
-                        
-                        <a class="text-capitalize tag tag-success text-white" href="/categories.html#javascript">JAVASCRIPT</a><span class="sep"> </span>
-                        
-                        <a class="text-capitalize tag tag-success text-white" href="/categories.html#til">TIL</a><span class="sep"> </span>
-                        
-                    </span>
-                    <time class="card-time">Feb 11, 2022</time>
-                    
                     
                 </div>
                 
@@ -817,23 +865,6 @@
                     <div class="card-content">
                         <div class="card-body">
                             Router 구현
-                        </div>
-                    </div>
-                    
-                </div>
-                
-                <div class="card p-0 m-0" style="overflow: hidden;">
-                    
-                    <div class="card-img">
-                        <a href="/mybatis-query-like/" title="[SPRING] MyBatis Like 쿼리 작성">
-                            <img class="latestImgs" src="https://kkn1125.github.io/assets/images/post/covers/TIL-spring.png" alt="[SPRING] MyBatis Like 쿼리 작성" />
-                        </a>
-                    </div>
-                    
-                    <div class="card-title"><a href="/mybatis-query-like/" title="[SPRING] MyBatis Like 쿼리 작성">[SPRING] MyBatis Like 쿼리 작성</a></div>
-                    <div class="card-content">
-                        <div class="card-body">
-                            MyBatis Like
                         </div>
                     </div>
                     

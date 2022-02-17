@@ -29,7 +29,7 @@
                     "time": "2022-02-02 19:31"
                 }
             ],
-            "14": [
+            "18": [
                 {
                     "todo": "JavaScript: Reflect 테스트",
                     "tag": "1",
@@ -39,6 +39,18 @@
                     "todo": "Spring Vue 연동 테스트",
                     "tag": "study",
                     "time": "2022-02-11 15:14"
+                }
+            ],
+            "17": [
+                {
+                    "todo": "Gantt Chart 포스팅",
+                    "tag": "check",
+                    "time": "2022-02-17 19:53"
+                },
+                {
+                    "todo": "OS 준비",
+                    "tag": "check",
+                    "time": "2022-02-17 19:53"
                 }
             ],
             "13": [
