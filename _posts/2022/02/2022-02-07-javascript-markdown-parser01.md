@@ -162,10 +162,10 @@ this.listify = function (){
     let types = [];
 
     block.forEach((line, id)=>{
-        if(line.match(/\s*\-/gm)){
-            convertedHTML[id] = line.split(/\n/gm).filter(x=>x!='').map(li=>{
+        if(line.match(\/\s*\-\/gm)){
+            convertedHTML[id] = line.split(\/\n\/gm).filter(x=>x!='').map(li=>{
                 let temp = '';
-                let space = li.match(/(^\s*)/)[1];
+                let space = li.match(\/(^\s*)\/)[1];
                 
                 indent = space.length;
 
@@ -182,7 +182,7 @@ this.listify = function (){
 
                     for(let i=0; i<gap; i++){
                         // ... ol과 blockquote도 분기문으로 types에 push
-                        if(li.match(/^\s*\-/gm)){
+                        if(li.match(\/^\s*\-\/gm)){
                             array.push('ul');
                         }
                         temp += `<${types[types.length-1]}>`;
@@ -194,7 +194,7 @@ this.listify = function (){
                     }
                 }
 
-                temp += `<li>${li.replace(/^\s*\-\s*(.+)/gm, '$1')}</li>`;
+                temp += `<li>${li.replace(\/^\s*\-\s*(.+)\/gm, '$1')}</li>`;
                 
                 before = indent;
                 return temp;
