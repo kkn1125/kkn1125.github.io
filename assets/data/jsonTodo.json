@@ -18,17 +18,17 @@
             "22": [
                 {
                     "todo": "JavaScript: Reflect 테스트",
-                    "tag": "1",
+                    "tag": "check",
                     "time": "2022-02-21 15:05:14"
                 },
                 {
                     "todo": "Spring Vue 연동 테스트",
-                    "tag": "study",
+                    "tag": "check",
                     "time": "2022-02-21 15:05:14"
                 },
                 {
                     "todo": "Gantt Chart 셀 합치기/나누기 작업",
-                    "tag": "1",
+                    "tag": "check",
                     "time": "2022-02-21 15:04:35"
                 }
             ],

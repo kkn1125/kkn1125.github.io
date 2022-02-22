@@ -1,0 +1,113 @@
+I"�(<h1 id="proxy-와-reflect">Proxy 와 Reflect</h1>
+
+<h2 id="proxy">Proxy</h2>
+
+<p>프록시 객체는 기본적인 동작의 새로운 행동을 정의할 때 사용한다고 MDN에 정리 되어 있습니다. 사용해보고 느낀 것은 동작되는 것을 가로채서 무언가 부수적인 일을 시킬 때 사용하는 것으로 보입니다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">Proxy</code>는 <code class="language-plaintext highlighter-rouge">new</code> 연산자로 인스턴스를 만들어 사용합니다.</p>
+
+<p>기본적인 구문은 아래와 같습니다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="k">new</span> <span class="nb">Proxy</span><span class="p">(</span><span class="nx">target</span><span class="p">,</span> <span class="nx">handler</span><span class="p">);</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>예제를 보면 <code class="language-plaintext highlighter-rouge">validate</code>나 함수 호출 감지 등의 예제가 많은데요. 간단하게 특정 함수 호출을 감지하는 것을 예제로 보겠습니다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+</pre></td><td class="rouge-code"><pre><span class="kd">const</span> <span class="nx">handler</span> <span class="o">=</span> <span class="p">{</span>
+   <span class="na">apply</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">target</span><span class="p">,</span> <span class="nx">thisArg</span><span class="p">,</span> <span class="nx">args</span><span class="p">){</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">함수 호출!</span><span class="dl">'</span><span class="p">);</span>
+      <span class="k">return</span> <span class="nb">Reflect</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="nx">target</span><span class="p">,</span> <span class="nx">thisArg</span><span class="p">,</span> <span class="nx">args</span><span class="p">);</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">introduce</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">age</span><span class="p">){</span>
+   <span class="k">return</span> <span class="s2">`My name is </span><span class="p">${</span><span class="nx">name</span><span class="p">}</span><span class="s2">, </span><span class="p">${</span><span class="nx">age</span><span class="p">}</span><span class="s2"> year-old!`</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">intro</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Proxy</span><span class="p">(</span><span class="nx">introduce</span><span class="p">,</span> <span class="nx">handler</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">intro</span><span class="p">(</span><span class="dl">'</span><span class="s1">킴슨</span><span class="dl">'</span><span class="p">,</span> <span class="mi">30</span><span class="p">));</span>
+<span class="c1">// 함수 호출!</span>
+<span class="c1">// My name is 킴슨, 30 year-old!</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>위의 예제에서 보면 <code class="language-plaintext highlighter-rouge">intro</code>라는 프록시는 함수가 호출될 때 <code class="language-plaintext highlighter-rouge">handler</code>의 <code class="language-plaintext highlighter-rouge">apply</code>가 <code class="language-plaintext highlighter-rouge">introduce</code>함수의 <code class="language-plaintext highlighter-rouge">apply</code>를 가로채서 내용을 조작 또는 수정 가능하게 합니다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">handler</code>에서 <code class="language-plaintext highlighter-rouge">return</code>을 주는 이유는 <code class="language-plaintext highlighter-rouge">introduce</code>의 리턴 값을 원래 설정한 리턴 값으로 주기 위해서 입니다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">Reflect</code>는 <code class="language-plaintext highlighter-rouge">Proxy</code>와 동일한 메서드를 가지고 있고, <code class="language-plaintext highlighter-rouge">Proxy</code> 내에서 사용될 때 <code class="language-plaintext highlighter-rouge">Reflect</code>를 반환하면 <code class="language-plaintext highlighter-rouge">Side effct(부작용)</code> 없이 사용 할 수 있습니다.</p>
+
+<h2 id="reflect">Reflect</h2>
+
+<p><code class="language-plaintext highlighter-rouge">Reflect</code>는 <code class="language-plaintext highlighter-rouge">Object</code>의 메서드들과 비슷합니다. 그 중에서 편리한 차이점을 가진 <code class="language-plaintext highlighter-rouge">defineProperty</code>를 보면</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre><span class="nb">Object</span><span class="p">.</span><span class="nx">defineProperty</span><span class="p">({},</span> <span class="dl">'</span><span class="s1">name</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span><span class="na">value</span><span class="p">:</span> <span class="dl">'</span><span class="s1">test</span><span class="dl">'</span><span class="p">});</span>
+<span class="c1">// {name: 'test'}</span>
+<span class="nb">Reflect</span><span class="p">.</span><span class="nx">defineProperty</span><span class="p">({},</span> <span class="dl">'</span><span class="s1">name</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span><span class="na">value</span><span class="p">:</span> <span class="dl">'</span><span class="s1">test</span><span class="dl">'</span><span class="p">});</span>
+<span class="c1">// true</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>코드를 보면 <code class="language-plaintext highlighter-rouge">Object</code>의 <code class="language-plaintext highlighter-rouge">defineproperty</code>는 재정의된 객체를 반환하는 반면, <code class="language-plaintext highlighter-rouge">Reflect</code>의 <code class="language-plaintext highlighter-rouge">defineProperty</code>는 <code class="language-plaintext highlighter-rouge">boolean</code> 값을 반환합니다.</p>
+
+<p>성공하면 <code class="language-plaintext highlighter-rouge">true</code>, 실패하면 <code class="language-plaintext highlighter-rouge">false</code>입니다. <code class="language-plaintext highlighter-rouge">Object</code>로 할 경우 실패하면 <code class="language-plaintext highlighter-rouge">Error</code>를 <code class="language-plaintext highlighter-rouge">throw</code>해서 <code class="language-plaintext highlighter-rouge">try...catch</code>로 에러를 처리해줘야 하지만 <code class="language-plaintext highlighter-rouge">Reflect</code>로 재정의 하면 <code class="language-plaintext highlighter-rouge">try...catch</code>문 쓸 필요 없이 <code class="language-plaintext highlighter-rouge">if...else</code>로 처리 가능하게 됩니다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+</pre></td><td class="rouge-code"><pre><span class="c1">// Object</span>
+<span class="k">try</span><span class="p">{</span>
+   <span class="nb">Object</span><span class="p">.</span><span class="nx">defineProperty</span><span class="p">({},</span> <span class="dl">'</span><span class="s1">name</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span><span class="na">value</span><span class="p">:</span> <span class="nx">data</span><span class="p">});</span>
+<span class="p">}</span> <span class="k">catch</span><span class="p">(</span><span class="nx">e</span><span class="p">){</span>
+   <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// Reflect</span>
+<span class="k">if</span><span class="p">(</span><span class="nb">Reflect</span><span class="p">.</span><span class="nx">defineProperty</span><span class="p">({},</span> <span class="dl">'</span><span class="s1">name</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span><span class="na">value</span><span class="p">:</span> <span class="nx">data</span><span class="p">})){</span>
+   <span class="c1">// 성공했을 때 !</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+   <span class="c1">// 실패했을 때 !</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>아주 간단하게 사용법만 훑어보았습니다. 개인적으로 굉장히 유용하다고 생각이 됩니다. 아직 못 해본 기능을 테스트할 때 많이 활용해보고 제 것으로 만들어 봐야겠다는 생각이 듭니다 😁</p>
+
+<p>이 다음 포스팅도 이어서 해보려 합니다. 기록은 여기까지고 더 폭 넓게 알아보시려면 아래에 참고한 링크를 보시면 되겠습니다 👋</p>
+
+<hr />
+
+<p>📚 함께 보면 좋은 내용</p>
+
+<p><a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Proxy">MDN Web Docs :: proxy</a>
+<a href="https://pks2974.medium.com/javascript-proxy-%EC%99%80-reflect-%EA%B0%84%EB%8B%A8-%EC%A0%95%EB%A6%AC%ED%95%98%EA%B8%B0-5f1ccaa51b2e">박성룡님 미디움</a></p>
+:ET

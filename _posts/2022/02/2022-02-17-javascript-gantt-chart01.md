@@ -1,12 +1,13 @@
 ---
 layout: post
 date:   2022-02-17 13:51:02 +0900
+modified: 2022-02-22 20:14:18 +0900
 title:  "[JAVASCRIPT] 간트차트를 만들어보자"
 author: Kimson
 categories: [ JAVASCRIPT, TIL, TIM ]
 image: assets/images/post/covers/TIL-javascript.png
 tags: [ web tool, gannt chart, table ]
-description: ""
+description: "Gantt Chart 간트 차트는 프로젝트 일정관리를 위해서 사용이 되는데요. 처음 간트 차트를 접하게 된 때는 설계사무소를 다닐 때 였습니다. 물론 테이블을 다루는 라이브러리를 많이 있고, 아예 엑셀을 만들어 배포하는 것도 많이 봤습니다. 하지만 원리와 구성을 모른 채 라이브러리에 의존하다보니 문득 궁금해졌습니다. 하드코딩이라도 괜찮으니 한 번 만들어 보기로 한거죠."
 featured: true
 hidden: false
 rating: 4.5
@@ -20,6 +21,8 @@ published: true
 
 # Gantt Chart
 
+> 수정사항: 업데이트된 내용을 추가 하였습니다.
+
 <figure class="text-center">
 <span class="w-inline-block">
    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/GanttChartAnatomy.png/300px-GanttChartAnatomy.png" alt="위키 백과 - 플레잉카드" title="위키 백과 - 간트 차트">
@@ -31,7 +34,7 @@ published: true
 
 물론 테이블을 다루는 라이브러리를 많이 있고, 아예 엑셀을 만들어 배포하는 것도 많이 봤습니다.
 
-하지만 원리와 구성을 모른 채 라이브러리에 의존하다보니 문득 궁금해졌습니다. 하드코딩이라도 괜찮으니 한 번 만들어 보기로 한거죠.
+하지만 원리와 구성을 모른 채 라이브러리에 의존하다보니 문득 궁금해졌습니다. 무엇보다도 계기는 태그 하나씩 짜는게 마음대로 안되고 귀찮고, 노동이 필요하고, 필요로하는 사람이 있어 하드코딩이라도 괜찮으니 한 번 만들어 보기로 했습니다.
 
 ## 의사 코드 작성
 
@@ -215,6 +218,48 @@ window.addEventListener('change', (ev)=>{
 </span>
 </figure>
 
+### 업데이트 사항
+
+#### 시트 기능 추가
+
+<figure class="text-center">
+<span class="w-inline-block">
+   <img src="https://kkn1125.github.io/portfolio/assets/images/portfolio/ganttChart/gantt02.png" alt="sample" title="sample">
+   <figcaption>시트 기능 추가</figcaption>
+</span>
+</figure>
+
+#### 컨트롤 바 UI 변경
+
+<figure class="text-center">
+<span class="w-inline-block">
+   <img src="https://kkn1125.github.io/portfolio/assets/images/portfolio/ganttChart/gantt03.png" alt="sample" title="sample">
+   <figcaption>컨트롤 바 UI 변경</figcaption>
+</span>
+</figure>
+
+#### 셀 4방향 추가로 변경
+
+<figure class="text-center">
+<span class="w-inline-block">
+   <img src="https://kkn1125.github.io/portfolio/assets/images/portfolio/ganttChart/gantt04.png" alt="sample" title="sample">
+   <figcaption>셀 4방향 추가로 변경</figcaption>
+</span>
+</figure>
+
+#### 셀 드래그 선택 기능 추가
+
+<figure class="text-center">
+<span class="w-inline-block">
+   <img src="https://kkn1125.github.io/portfolio/assets/images/portfolio/ganttChart/gantt05.png" alt="sample" title="sample">
+   <figcaption>셀 드래그 선택 기능 추가</figcaption>
+</span>
+</figure>
+
+아래의 간트 차트는 직접 만든 `ganttChart`에 의해 만들어졌습니다. 아래 표의 작업 시간은 1채 안 됩니다.
+
+{% include test-table01.html %}
+
 ## 정리
 
 도식화 툴을 하던 중에 너무 버거워서 잠시 중단했었습니다. 그러다가 테이블을 작업하던 중에 이제 데이터를 어떻게 `CRUD`를 간편하게 하는지 조금 알 것 같습니다.
@@ -223,4 +268,4 @@ window.addEventListener('change', (ev)=>{
 
 웹 툴 기능을 모두 모아 배포를 하는 그 날까지 🙇‍♂️
 
-[테스트 페이지](https://kkn1125.github.io/ganttchart/)
+[테스트 페이지](https://kkn1125.github.io/ganttChart/)

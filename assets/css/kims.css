@@ -84,6 +84,16 @@ figure figcaption{
 	-moz-text-decoration-line: line-through;
 }
 
+#gantt table th:hover,
+#gantt table td:hover{
+	box-shadow: inset 0 0 0 9999px rgba(0, 0, 0, 0.1);
+	transition: 150ms ease;
+	-webkit-transition: 150ms ease;
+	-moz-transition: 150ms ease;
+	-ms-transition: 150ms ease;
+	-o-transition: 150ms ease;
+}
+
 /* 
 	dark mode start
  */
