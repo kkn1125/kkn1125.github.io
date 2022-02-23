@@ -99,4 +99,5 @@ if(Reflect.defineProperty({}, 'name', {value: data})){
 📚 함께 보면 좋은 내용
 
 [MDN Web Docs :: proxy](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Proxy)
+
 [박성룡님 미디움](https://pks2974.medium.com/javascript-proxy-%EC%99%80-reflect-%EA%B0%84%EB%8B%A8-%EC%A0%95%EB%A6%AC%ED%95%98%EA%B8%B0-5f1ccaa51b2e)
