@@ -1,7 +1,7 @@
 ---
 layout: post
 date:   2022-02-22 21:22:08 +0900
-title:  "[JAVASCRIPT] Proxy와 Reflect 맛보기"
+title:  "[JAVASCRIPT] Proxy와 Reflect 맛보기 01 - 기본편"
 author: Kimson
 categories: [ JAVASCRIPT, TIL ]
 image: assets/images/post/covers/TIL-javascript.png

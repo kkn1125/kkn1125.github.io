@@ -1,4 +1,4 @@
-I"�o<div class="fence-full">
+I"u<div class="fence-full">
 
     <div class="w-flex gx-4">
 
@@ -12,11 +12,38 @@
 
     
     <div class="card p-0" style="overflow: hidden;">
-        <!-- <a href="/javascript-reflect01copy/" title="[JAVASCRIPT] Proxy와 Reflect 맛보기">
+        <!-- <a href="/javascript-proxy01/" title="[JAVASCRIPT] Proxy와 Reflect 맛보기 02 - Todo List를 만들어보자">
             <img src="assets/images/post/covers/TIL-javascript.png" alt="post/cover" class="w-100">
         </a> -->
         <div class="card-title px-3">
-            <a href="/javascript-reflect01copy/" title="[JAVASCRIPT] Proxy와 Reflect 맛보기">[JAVASCRIPT] Proxy와 Reflect 맛보기</a>
+            <a href="/javascript-proxy01/" title="[JAVASCRIPT] Proxy와 Reflect 맛보기 02 - Todo List를 만들어보자">[JAVASCRIPT] Proxy와 Reflect 맛보기 02 - Todo List를...</a>
+        </div>
+        <div class="card-content">
+            <!-- <div class="card-body"></div> -->
+        </div>
+        <div class="pb-3 px-3">
+            In <span class="catlist">
+                
+                <a class="text-capitalize text-white tag tag-success" href="/categories.html#javascript">JAVASCRIPT</a><span class="sep"> </span>
+                
+                <a class="text-capitalize text-white tag tag-success" href="/categories.html#til">TIL</a><span class="sep"> </span>
+                
+            </span>
+            <time class="card-time">Feb 22, 2022</time>
+        </div>
+    </div>
+
+    
+
+    
+
+    
+    <div class="card p-0" style="overflow: hidden;">
+        <!-- <a href="/javascript-reflect01/" title="[JAVASCRIPT] Proxy와 Reflect 맛보기 01 - 기본편">
+            <img src="assets/images/post/covers/TIL-javascript.png" alt="post/cover" class="w-100">
+        </a> -->
+        <div class="card-title px-3">
+            <a href="/javascript-reflect01/" title="[JAVASCRIPT] Proxy와 Reflect 맛보기 01 - 기본편">[JAVASCRIPT] Proxy와 Reflect 맛보기 01 - 기본편</a>
         </div>
         <div class="card-content">
             <!-- <div class="card-body"></div> -->
@@ -794,7 +821,7 @@
             <div class="border-bottom">
                 
                 <span class="h4">Latest Posts</span>
-                <button class="btn btn-danger ms-2 px-3" onclick="location='/author-kimson'">더 보기 + 82</button>
+                <button class="btn btn-danger ms-2 px-3" onclick="location='/author-kimson'">더 보기 + 83</button>
             </div>
             <div class="card-group pt-1 card-pd-0 card-dv-1 card-dv-md-2 card-ghost latestPost" style="gap: 1rem;">
                 <!-- latest post -->
@@ -802,15 +829,15 @@
                 <div class="card p-0 m-0" style="overflow: hidden;">
                     
                     <div class="card-img">
-                        <a href="/javascript-reflect01copy/" title="[JAVASCRIPT] Proxy와 Reflect 맛보기">
-                            <img class="latestImgs" src="https://kkn1125.github.io/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] Proxy와 Reflect 맛보기" />
+                        <a href="/javascript-proxy01/" title="[JAVASCRIPT] Proxy와 Reflect 맛보기 02 - Todo List를 만들어보자">
+                            <img class="latestImgs" src="https://kkn1125.github.io/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] Proxy와 Reflect 맛보기 02 - Todo List를 만들어보자" />
                         </a>
                     </div>
                     
-                    <div class="card-title"><a href="/javascript-reflect01copy/" title="[JAVASCRIPT] Proxy와 Reflect 맛보기">[JAVASCRIPT] Proxy와 Reflect 맛보기</a></div>
+                    <div class="card-title"><a href="/javascript-proxy01/" title="[JAVASCRIPT] Proxy와 Reflect 맛보기 02 - Todo List를 만들어보자">[JAVASCRIPT] Proxy와 Reflect 맛보기 02 - Todo List를 만들어보자</a></div>
                     <div class="card-content">
                         <div class="card-body">
-                            Proxy 와 Reflect
+                            Todo List를 만들어 보자
                         </div>
                     </div>
                     
@@ -824,6 +851,23 @@
                     </span>
                     <time class="card-time">Feb 22, 2022</time>
                     
+                    
+                </div>
+                
+                <div class="card p-0 m-0" style="overflow: hidden;">
+                    
+                    <div class="card-img">
+                        <a href="/javascript-reflect01/" title="[JAVASCRIPT] Proxy와 Reflect 맛보기 01 - 기본편">
+                            <img class="latestImgs" src="https://kkn1125.github.io/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] Proxy와 Reflect 맛보기 01 - 기본편" />
+                        </a>
+                    </div>
+                    
+                    <div class="card-title"><a href="/javascript-reflect01/" title="[JAVASCRIPT] Proxy와 Reflect 맛보기 01 - 기본편">[JAVASCRIPT] Proxy와 Reflect 맛보기 01 - 기본편</a></div>
+                    <div class="card-content">
+                        <div class="card-body">
+                            Proxy 와 Reflect
+                        </div>
+                    </div>
                     
                 </div>
                 
@@ -873,23 +917,6 @@
                     <div class="card-content">
                         <div class="card-body">
                             Markdown Parser를 만들어보자
-                        </div>
-                    </div>
-                    
-                </div>
-                
-                <div class="card p-0 m-0" style="overflow: hidden;">
-                    
-                    <div class="card-img">
-                        <a href="/spring-deploy01/" title="[SPRING] Spring MVC 프로젝트 Heroku 배포 시 404 에러 기록">
-                            <img class="latestImgs" src="https://kkn1125.github.io/assets/images/post/covers/TIL-spring.png" alt="[SPRING] Spring MVC 프로젝트 Heroku 배포 시 404 에러 기록" />
-                        </a>
-                    </div>
-                    
-                    <div class="card-title"><a href="/spring-deploy01/" title="[SPRING] Spring MVC 프로젝트 Heroku 배포 시 404 에러 기록">[SPRING] Spring MVC 프로젝트 Heroku 배포 시 404 에러 기록</a></div>
-                    <div class="card-content">
-                        <div class="card-body">
-                            Heroku war deploy
                         </div>
                     </div>
                     

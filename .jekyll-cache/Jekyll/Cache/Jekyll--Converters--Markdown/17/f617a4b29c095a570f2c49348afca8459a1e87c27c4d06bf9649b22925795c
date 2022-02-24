@@ -1,4 +1,4 @@
-I";L<div class="fence-full">
+I"U<div class="fence-full">
     <div>
         <span class="fw-bold h3 text-uppercase mb-4">Tags</span>
     </div>
@@ -9366,11 +9366,11 @@
 	<div class="col pe-3">
 		<div>
 			<span class="mb-1 h5 fw-bold">
-			<a class="nav-link" href="/javascript-reflect01/">[JAVASCRIPT] Proxy와 Reflect...</a>
+			<a class="nav-link" href="/javascript-proxy01/">[JAVASCRIPT] Proxy와 Reflect...</a>
 			</span>
 		</div>
 		<p class="excerpt">
-		Proxy 와 Reflect
+		Todo List를 만들어 보자
 		</p>
 		<small class="w-block text-muted">
 			In <span class="catlist">
@@ -9387,21 +9387,13 @@
 	</div>
 	
 	<div class="col-md-5 pe-0 text-right">
-	<a href="/javascript-reflect01/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] Proxy와 Reflect 맛보기" />
+	<a href="/javascript-proxy01/">
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] Proxy와 Reflect 맛보기 02 - Todo List를 만들어보자" />
 	</a>
 	</div>
 	
 </div>
     
-    
-    
-    
-    
-
-    
-    <div id="reflect" style="padding-top: 64px;border-bottom: 2px solid rgb(133 133 133); margin-bottom: 1em"><span class="h5 fw-bold text-capitalize">reflect</span></div>
-
     
     
     
@@ -9432,7 +9424,87 @@
 	
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/javascript-reflect01/">
-	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] Proxy와 Reflect 맛보기" />
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] Proxy와 Reflect 맛보기 01 - 기본편" />
+	</a>
+	</div>
+	
+</div>
+    
+    
+    
+    
+    
+
+    
+    <div id="reflect" style="padding-top: 64px;border-bottom: 2px solid rgb(133 133 133); margin-bottom: 1em"><span class="h5 fw-bold text-capitalize">reflect</span></div>
+
+    
+    
+    
+    
+    <div class="mb-5 w-flex justify-content-between flex-column flex-row-md main-loop-card">
+	<div class="col pe-3">
+		<div>
+			<span class="mb-1 h5 fw-bold">
+			<a class="nav-link" href="/javascript-proxy01/">[JAVASCRIPT] Proxy와 Reflect...</a>
+			</span>
+		</div>
+		<p class="excerpt">
+		Todo List를 만들어 보자
+		</p>
+		<small class="w-block text-muted">
+			In <span class="catlist">
+			
+			<a class="text-capitalize tag tag-success text-white" href="/categories#javascript">JAVASCRIPT</a><span class="sep"> </span>
+			
+			<a class="text-capitalize tag tag-success text-white" href="/categories#til">TIL</a><span class="sep"> </span>
+			
+			</span>
+		</small>
+		<small class="text-muted">
+			Feb 22, 2022
+		</small>
+	</div>
+	
+	<div class="col-md-5 pe-0 text-right">
+	<a href="/javascript-proxy01/">
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] Proxy와 Reflect 맛보기 02 - Todo List를 만들어보자" />
+	</a>
+	</div>
+	
+</div>
+    
+    
+    
+    
+    
+    <div class="mb-5 w-flex justify-content-between flex-column flex-row-md main-loop-card">
+	<div class="col pe-3">
+		<div>
+			<span class="mb-1 h5 fw-bold">
+			<a class="nav-link" href="/javascript-reflect01/">[JAVASCRIPT] Proxy와 Reflect...</a>
+			</span>
+		</div>
+		<p class="excerpt">
+		Proxy 와 Reflect
+		</p>
+		<small class="w-block text-muted">
+			In <span class="catlist">
+			
+			<a class="text-capitalize tag tag-success text-white" href="/categories#javascript">JAVASCRIPT</a><span class="sep"> </span>
+			
+			<a class="text-capitalize tag tag-success text-white" href="/categories#til">TIL</a><span class="sep"> </span>
+			
+			</span>
+		</small>
+		<small class="text-muted">
+			Feb 22, 2022
+		</small>
+	</div>
+	
+	<div class="col-md-5 pe-0 text-right">
+	<a href="/javascript-reflect01/">
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] Proxy와 Reflect 맛보기 01 - 기본편" />
 	</a>
 	</div>
 	
