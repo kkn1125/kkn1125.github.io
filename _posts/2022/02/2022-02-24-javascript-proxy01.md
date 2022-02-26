@@ -1,6 +1,6 @@
 ---
 layout: post
-date:   2022-02-22 21:22:08 +0900
+date:   2022-02-24 21:22:08 +0900
 title:  "[JAVASCRIPT] Proxy와 Reflect 맛보기 02 - Todo List를 만들어보자"
 author: Kimson
 categories: [ JAVASCRIPT, TIL ]
@@ -65,7 +65,7 @@ console.log(autoValue.watch);
 
 `Proxy`가 물론 이러한 쓰임새는 아닐거라 생각합니다. 더 폭 넓은 이유를 가졌을 것이고, Proxy를 다른 영역에 사용하면 더 많은 유용한 기능을 만들 수 있겠죠 :\)
 
-각설하고, `Proxy`에서 setter와 getter를 지정하는 방법을 보겠습니다.
+각설하고, `Proxy`에서 `setter`와 `getter`를 지정하는 방법을 보겠습니다.
 
 ```javascript
 let autoValue = {};
@@ -120,7 +120,7 @@ todoList = new Proxy(list, {
          writeOnDisplay(origin[`_${propName}`]);
       }
       else origin[`_${propName}`] = arg;
-      // todos 외에는
+      // todos 외에는 그냥 저장
    },
    get(origin, propName, proxy) {
       if(propName == 'todos') return origin[`_${propName}`] || [];
@@ -133,13 +133,12 @@ function completionCountNotification(target) {
 }
 
 function writeOnDisplay(target) {
-    return display.innerHTML = target.map((t, i) =>
-        `<li>
-            <span class="${t.done?'check':''}">${i+1}. ${t.text||''}</span>
-            <button ${t.done?'class="checked"':''} onclick="checkHandler(${t.id})">Check</button>
-            <button onclick="deleteHandler(${t.id})">&times;</button>
-        </li>`)
-        .join('');
+   return display.innerHTML = target.map((t, i) =>
+      `<li>
+         <span class="${t.done?'check':''}">${i+1}. ${t.text||''}</span>
+         <button ${t.done?'class="checked"':''} onclick="checkHandler(${t.id})">Check</button>
+         <button onclick="deleteHandler(${t.id})">&times;</button>
+      </li>`).join('');
 }
 ```
 
@@ -151,13 +150,6 @@ function writeOnDisplay(target) {
 
 ```javascript
 function writeOnDisplay(target) {
-   //  return display.innerHTML = target.map((t, i)=>
-   //      `<li>
-   //          <span class="${t.done?'check':''}">${i+1} ${t.text||''}</span>
-   //          <button>Check</button>
-   //          <button>&times;</button>
-   //      </li>`)
-   //  .join('');
    return display.innerHTML = target.map((t, i)=>
         `<li>
             <span class="${t.done?'check':''}">${i+1} ${t.text||''}</span>
