@@ -79,6 +79,9 @@ window.addEventListener('load', function(){
             let badge = document.createElement("span");
             
             switch(lang){
+                case 'vue':
+                    color = "primary"
+                    break;
                 case 'java':
                     color = "primary"
                     break;
@@ -109,6 +112,9 @@ window.addEventListener('load', function(){
                 case 'properties':
                     color = "dark"
                     break;
+                case 'sh':
+                    color = "dark"
+                    break;
             }
 
             made.innerHTML = `Devkimson`;
@@ -124,7 +130,6 @@ window.addEventListener('load', function(){
             el.classList.add("position-relative");
             wrap.appendChild(made);
             wrap.appendChild(badge);
-            // wrap.appendChild(br);
             el.prepend(wrap);
         }
     });

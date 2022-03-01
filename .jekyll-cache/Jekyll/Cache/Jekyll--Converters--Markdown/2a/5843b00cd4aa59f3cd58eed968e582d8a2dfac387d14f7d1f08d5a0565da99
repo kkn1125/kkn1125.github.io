@@ -1,46 +1,65 @@
-I"�O<h1 id="vue3--vite로-multi-page를-만들어보자">VUE3 + VITE로 Multi Page를 만들어보자</h1>
+I"�Q<h1 id="vue3--vite로-multi-page를-만들어보자">VUE3 + VITE로 Multi Page를 만들어보자</h1>
 
 <p>매번 이 글, 저 글 찾아다니다 보니 시간을 너무 많이 잡아 먹습니다. 이번에는 Vue3로 Vite기반 프로젝트를 생성할 때 SPA가 아닌 Multi page 설정에 대해 기록하려합니다.</p>
 
 <h2 id="파일-구조">파일 구조</h2>
 
-<p>─ .vscode
-─ 404
-  ─ index.html
-  ─ main.js
-─ about
-  ─ index.html
-  ─ main.js
-─ dist # build 된 파일
-─ node_modules
-─ public
-─ router
-  ─ index.js
-─ src
-  ─ assets
-  ─ components
-    ─ About.vue
-    ─ App.vue
-    ─ Home.vue
-    ─ Layout.vue
-    ─ NotFounds.vue
-─ .eslintrc.cjs
-─ .gitignore
-─ deploy.sh
-─ index.html
-─ main.js
-─ package-lock.json
-─ package.json
-─ README.json
-─ vite.config.js</p>
+<ul>
+  <li>.vscode</li>
+  <li>404
+    <ul>
+      <li>index.html</li>
+      <li>main.js</li>
+    </ul>
+  </li>
+  <li>about
+    <ul>
+      <li>index.html</li>
+      <li>main.js</li>
+    </ul>
+  </li>
+  <li>dist # build 된 파일</li>
+  <li>node_modules</li>
+  <li>public</li>
+  <li>router
+    <ul>
+      <li>index.js</li>
+    </ul>
+  </li>
+  <li>src
+    <ul>
+      <li>assets</li>
+      <li>components
+        <ul>
+          <li>About.vue</li>
+          <li>App.vue</li>
+          <li>Home.vue</li>
+          <li>Layout.vue</li>
+          <li>NotFounds.vue</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>.eslintrc.cjs</li>
+  <li>.gitignore</li>
+  <li>deploy.sh</li>
+  <li>index.html</li>
+  <li>main.js</li>
+  <li>package-lock.json</li>
+  <li>package.json</li>
+  <li>README.json</li>
+  <li>vite.config.js</li>
+</ul>
 
 <p>기존에 파일구조는 <code class="language-plaintext highlighter-rouge">src/</code> 안에 <code class="language-plaintext highlighter-rouge">index.html</code>과 <code class="language-plaintext highlighter-rouge">main.js</code>가 하나 있고 <code class="language-plaintext highlighter-rouge">App.vue</code>가 존재합니다.</p>
 
 <p>나머지 기타 컴포넌트는 <code class="language-plaintext highlighter-rouge">components/</code>에 있습니다.</p>
 
+<h2 id="파일-세팅">파일 세팅</h2>
+
 <p>설명을 드리자면 모든 <code class="language-plaintext highlighter-rouge">vue</code>확장자 파일은 <code class="language-plaintext highlighter-rouge">components</code>에서 관리하려합니다. 그리고 <code class="language-plaintext highlighter-rouge">root</code>경로에 존재하는 <code class="language-plaintext highlighter-rouge">index.html</code>과 <code class="language-plaintext highlighter-rouge">main.js</code>는 <code class="language-plaintext highlighter-rouge">App.vue</code>를 실행하게 됩니다. <code class="language-plaintext highlighter-rouge">App.vue</code>는 아래와 같습니다.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+<div class="language-vue highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -50,17 +69,17 @@
 8
 9
 10
-</pre></td><td class="rouge-code"><pre><span class="c1">// App.vue</span>
-<span class="o">&lt;</span><span class="nx">script</span> <span class="nx">setup</span><span class="o">&gt;</span>
+</pre></td><td class="rouge-code"><pre>// App.vue
+<span class="nt">&lt;</span><span class="k">script</span> <span class="na">setup</span><span class="nt">&gt;</span>
 <span class="k">import</span> <span class="nx">Layout</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./Layout.vue</span><span class="dl">"</span><span class="p">;</span>
-<span class="o">&lt;</span><span class="sr">/script</span><span class="err">&gt;
-</span>
-<span class="o">&lt;</span><span class="nx">template</span><span class="o">&gt;</span>
-  <span class="o">&lt;</span><span class="nx">Layout</span><span class="o">&gt;</span>
-    <span class="o">&lt;</span><span class="nx">router</span><span class="o">-</span><span class="nx">view</span><span class="o">&gt;&lt;</span><span class="sr">/router-view</span><span class="err">&gt;
-</span>  <span class="o">&lt;</span><span class="sr">/Layout</span><span class="err">&gt;
-</span><span class="o">&lt;</span><span class="sr">/template</span><span class="err">&gt;
-</span></pre></td></tr></tbody></table></code></pre></div></div>
+<span class="nt">&lt;/</span><span class="k">script</span><span class="nt">&gt;</span>
+
+<span class="nt">&lt;</span><span class="k">template</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;Layout&gt;</span>
+    <span class="nt">&lt;router-view&gt;&lt;/router-view&gt;</span>
+  <span class="nt">&lt;/Layout&gt;</span>
+<span class="nt">&lt;/</span><span class="k">template</span><span class="nt">&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>그리고 <code class="language-plaintext highlighter-rouge">Layout.vue</code>는 다음과 같습니다.</p>
 
@@ -280,6 +299,10 @@
 <span class="p">});</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
+<blockquote>
+  <p><em>global foo, bar, baz</em>은 global 뒤에 오는 변수, 함수를 eslint에서 에러 제외시킵니다.</p>
+</blockquote>
+
 <h2 id="deploysh">deploy.sh</h2>
 
 <p>추가로 배포를 자동으로 하기 위해 deploy.sh를 설정합니다.</p>
@@ -355,4 +378,6 @@ git push <span class="nt">-f</span> https://github.com/&lt;USER-ID&gt;/django-do
 <p><a href="https://velog.io/@byungjur_96/vue.js-404-Error-%ED%95%B8%EB%93%A4%EB%A7%81">byungju_96님 vlog :: 404 Error 핸들링</a></p>
 
 <p><a href="https://router.vuejs.org/guide/#javascript">Vue Router :: router 기본 설정</a></p>
+
+<p><a href="https://stackoverflow.com/questions/65868976/how-to-build-a-multi-pages-application-by-vite2-and-vue3">Stackoverflow :: How to build a multi pages application by vite2 and vue3？</a></p>
 :ET
