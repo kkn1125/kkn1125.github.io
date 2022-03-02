@@ -256,26 +256,26 @@ def post_detail(request):
 
 📚 함께 보면 좋은 내용
 
-[Stackoverflow :: PUT and DELETE Django](https://stackoverflow.com/questions/36455189/put-and-delete-django)
+[Stackoverflow :: PUT and DELETE Django](https://stackoverflow.com/questions/36455189/put-and-delete-django){:target="_blank"}
 
-[Django :: Documentation](https://docs.djangoproject.com/en/4.0/topics/db/queries/)
+[Django :: Documentation](https://docs.djangoproject.com/en/4.0/topics/db/queries/){:target="_blank"}
 
-[Django REST framework :: api_view](https://www.django-rest-framework.org/api-guide/views/#api_view)
+[Django REST framework :: api_view](https://www.django-rest-framework.org/api-guide/views/#api_view){:target="_blank"}
 
-[BezKoder :: Django: POST, PUT, GET, DELETE requests example \| Rest Apis](https://www.bezkoder.com/django-rest-api/)
+[BezKoder :: Django: POST, PUT, GET, DELETE requests example \| Rest Apis](https://www.bezkoder.com/django-rest-api/){:target="_blank"}
 
-[naon님 :: Django Rest Framework 활용하기 2 - @api_view](https://naon.me/posts/til57)
+[naon님 :: Django Rest Framework 활용하기 2 - @api_view](https://naon.me/posts/til57){:target="_blank"}
 
-[eungding님 :: HTTP Request를 받아서 응답해주기 (GET, POST, PUT, DELETE)](https://eunjin3786.tistory.com/133)
+[eungding님 :: HTTP Request를 받아서 응답해주기 (GET, POST, PUT, DELETE)](https://eunjin3786.tistory.com/133){:target="_blank"}
 
-[Sunwoo Park님 :: API 그리고 Django REST framework View들 비교하기](https://parksunwoo.github.io/django/2020/12/25/api-rest-framework-view.html)
+[Sunwoo Park님 :: API 그리고 Django REST framework View들 비교하기](https://parksunwoo.github.io/django/2020/12/25/api-rest-framework-view.html){:target="_blank"}
 
-[ssung.k님 :: Cross Site Request Forgery, csrf 공격과 대응](https://ssungkang.tistory.com/entry/DjangoCross-Site-Request-Forgery-csrf-%EA%B3%B5%EA%B2%A9%EA%B3%BC-%EB%8C%80%EC%9D%91)
+[ssung.k님 :: Cross Site Request Forgery, csrf 공격과 대응](https://ssungkang.tistory.com/entry/DjangoCross-Site-Request-Forgery-csrf-%EA%B3%B5%EA%B2%A9%EA%B3%BC-%EB%8C%80%EC%9D%91){:target="_blank"}
 
-[woolbro님 :: 장고 (Django)를 사용한 CRUD 예제 만들기](https://woolbro.tistory.com/98)
+[woolbro님 :: 장고 (Django)를 사용한 CRUD 예제 만들기](https://woolbro.tistory.com/98){:target="_blank"}
 
-[new_wisdom님 :: #4 Django로 CRUD하기](https://velog.io/@new_wisdom/django-4-Django%EB%A1%9C-CRUD%ED%95%98%EA%B8%B0)
+[new_wisdom님 :: #4 Django로 CRUD하기](https://velog.io/@new_wisdom/django-4-Django%EB%A1%9C-CRUD%ED%95%98%EA%B8%B0){:target="_blank"}
 
-[d-yong님 :: 간단한 REST API 서버 만들기4 - Class Based View에서 POST, GET, PUT, DELETE 구현](https://d-yong.tistory.com/61)
+[d-yong님 :: 간단한 REST API 서버 만들기4 - Class Based View에서 POST, GET, PUT, DELETE 구현](https://d-yong.tistory.com/61){:target="_blank"}
 
-[swhan9404님 :: django rest api 게시글, 댓글 실습](https://velog.io/@swhan9404/django-rest-api-%EA%B2%8C%EC%8B%9C%EA%B8%80-%EB%8C%93%EA%B8%80-%EC%8B%A4%EC%8A%B5)
+[swhan9404님 :: django rest api 게시글, 댓글 실습](https://velog.io/@swhan9404/django-rest-api-%EA%B2%8C%EC%8B%9C%EA%B8%80-%EB%8C%93%EA%B8%80-%EC%8B%A4%EC%8A%B5){:target="_blank"}

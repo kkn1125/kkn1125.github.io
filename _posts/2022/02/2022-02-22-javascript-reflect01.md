@@ -1,5 +1,6 @@
 ---
 layout: post
+modified: 2022-03-02 22:30:57 + 0900
 date:   2022-02-22 21:22:08 +0900
 title:  "[JAVASCRIPT] Proxy와 Reflect 맛보기 01 - 기본편"
 author: Kimson
@@ -98,6 +99,6 @@ if(Reflect.defineProperty({}, 'name', {value: data})){
 
 📚 함께 보면 좋은 내용
 
-[MDN Web Docs :: proxy](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Proxy)
+[MDN Web Docs :: proxy](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Proxy){:target="_blank"}
 
-[박성룡님 미디움](https://pks2974.medium.com/javascript-proxy-%EC%99%80-reflect-%EA%B0%84%EB%8B%A8-%EC%A0%95%EB%A6%AC%ED%95%98%EA%B8%B0-5f1ccaa51b2e)
+[박성룡님 미디움](https://pks2974.medium.com/javascript-proxy-%EC%99%80-reflect-%EA%B0%84%EB%8B%A8-%EC%A0%95%EB%A6%AC%ED%95%98%EA%B8%B0-5f1ccaa51b2e){:target="_blank"}

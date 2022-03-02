@@ -1,5 +1,6 @@
 ---
 layout: post
+modified: 2022-03-02 22:30:57 + 0900
 date:   2022-02-24 21:22:08 +0900
 title:  "[JAVASCRIPT] Proxy와 Reflect 맛보기 02 - Todo List를 만들어보자"
 author: Kimson
@@ -215,4 +216,4 @@ input.addEventListener('keyup', (ev) => {
 
 📚 함께 보면 좋은 내용
 
-[MDN Web Docs :: proxy](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Proxy)
+[MDN Web Docs :: proxy](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Proxy){:target="_blank"}

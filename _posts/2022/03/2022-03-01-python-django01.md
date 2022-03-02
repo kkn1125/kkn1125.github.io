@@ -218,10 +218,10 @@ def post_list(request):
 
 📚 함께 보면 좋은 내용
 
-[Django :: Documentation](https://docs.djangoproject.com/en/4.0/ref/templates/language/)
+[Django :: Documentation](https://docs.djangoproject.com/en/4.0/ref/templates/language/){:target="_blank"}
 
-[Django tutorial :: 장고 템플릿](https://tutorial.djangogirls.org/ko/django_templates/)
+[Django tutorial :: 장고 템플릿](https://tutorial.djangogirls.org/ko/django_templates/){:target="_blank"}
 
-[천사진수님 :: Django Template Does Not Exist](https://angel-jinsu.tistory.com/5)
+[천사진수님 :: Django Template Does Not Exist](https://angel-jinsu.tistory.com/5){:target="_blank"}
 
-[Tigercow.Door님 :: 장고(django) #3_ django에서 postgreSQL 사용하기](https://doorbw.tistory.com/183)
+[Tigercow.Door님 :: 장고(django) #3_ django에서 postgreSQL 사용하기](https://doorbw.tistory.com/183){:target="_blank"}

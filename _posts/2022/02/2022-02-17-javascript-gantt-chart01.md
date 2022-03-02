@@ -1,5 +1,6 @@
 ---
 layout: post
+modified: 2022-03-02 22:30:57 + 0900
 date:   2022-02-17 13:51:02 +0900
 modified: 2022-02-22 20:14:18 +0900
 title:  "[JAVASCRIPT] 간트차트를 만들어보자"
@@ -268,4 +269,4 @@ window.addEventListener('change', (ev)=>{
 
 웹 툴 기능을 모두 모아 배포를 하는 그 날까지 🙇‍♂️
 
-[테스트 페이지](https://kkn1125.github.io/ganttChart/)
+[테스트 페이지](https://kkn1125.github.io/ganttChart/){:target="_blank"}
