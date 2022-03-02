@@ -1,4 +1,4 @@
-I"�x<div class="fence-full">
+I"5�<div class="fence-full">
 
     <div class="w-flex gx-4">
 
@@ -7,6 +7,60 @@
     <span class="h4">Featured</span>
 </div>
 <div class="card-group card-ghost card-pd-0 card-dv-1 g-3">
+
+    
+
+    
+    <div class="card p-0" style="overflow: hidden;">
+        <!-- <a href="/python-django02/" title="[PYTHON] Django 서버를 만들자 02">
+            <img src="assets/images/post/covers/TIL-python.jpg" alt="post/cover" class="w-100">
+        </a> -->
+        <div class="card-title px-3">
+            <a href="/python-django02/" title="[PYTHON] Django 서버를 만들자 02">[PYTHON] Django 서버를 만들자 02</a>
+        </div>
+        <div class="card-content">
+            <!-- <div class="card-body"></div> -->
+        </div>
+        <div class="pb-3 px-3">
+            In <span class="catlist">
+                
+                <a class="text-capitalize text-white tag tag-success" href="/categories.html#python">PYTHON</a><span class="sep"> </span>
+                
+                <a class="text-capitalize text-white tag tag-success" href="/categories.html#til">TIL</a><span class="sep"> </span>
+                
+            </span>
+            <time class="card-time">Mar 02, 2022</time>
+        </div>
+    </div>
+
+    
+
+    
+
+    
+    <div class="card p-0" style="overflow: hidden;">
+        <!-- <a href="/python-django01/" title="[PYTHON] Django 서버를 만들자 01">
+            <img src="assets/images/post/covers/TIL-python.jpg" alt="post/cover" class="w-100">
+        </a> -->
+        <div class="card-title px-3">
+            <a href="/python-django01/" title="[PYTHON] Django 서버를 만들자 01">[PYTHON] Django 서버를 만들자 01</a>
+        </div>
+        <div class="card-content">
+            <!-- <div class="card-body"></div> -->
+        </div>
+        <div class="pb-3 px-3">
+            In <span class="catlist">
+                
+                <a class="text-capitalize text-white tag tag-success" href="/categories.html#python">PYTHON</a><span class="sep"> </span>
+                
+                <a class="text-capitalize text-white tag tag-success" href="/categories.html#til">TIL</a><span class="sep"> </span>
+                
+            </span>
+            <time class="card-time">Mar 01, 2022</time>
+        </div>
+    </div>
+
+    
 
     
 
@@ -848,10 +902,55 @@
             <div class="border-bottom">
                 
                 <span class="h4">Latest Posts</span>
-                <button class="btn btn-danger ms-2 px-3" onclick="location='/author-kimson'">더 보기 + 84</button>
+                <button class="btn btn-danger ms-2 px-3" onclick="location='/author-kimson'">더 보기 + 86</button>
             </div>
             <div class="card-group pt-1 card-pd-0 card-dv-1 card-dv-md-2 card-ghost latestPost" style="gap: 1rem;">
                 <!-- latest post -->
+                
+                <div class="card p-0 m-0" style="overflow: hidden;">
+                    
+                    <div class="card-img">
+                        <a href="/python-django02/" title="[PYTHON] Django 서버를 만들자 02">
+                            <img class="latestImgs" src="https://kkn1125.github.io/assets/images/post/covers/TIL-python.jpg" alt="[PYTHON] Django 서버를 만들자 02" />
+                        </a>
+                    </div>
+                    
+                    <div class="card-title"><a href="/python-django02/" title="[PYTHON] Django 서버를 만들자 02">[PYTHON] Django 서버를 만들자 02</a></div>
+                    <div class="card-content">
+                        <div class="card-body">
+                            Django MySQL연결과 Rest framework
+                        </div>
+                    </div>
+                    
+                    
+                    In <span class="catlist">
+                        
+                        <a class="text-capitalize tag tag-success text-white" href="/categories.html#python">PYTHON</a><span class="sep"> </span>
+                        
+                        <a class="text-capitalize tag tag-success text-white" href="/categories.html#til">TIL</a><span class="sep"> </span>
+                        
+                    </span>
+                    <time class="card-time">Mar 02, 2022</time>
+                    
+                    
+                </div>
+                
+                <div class="card p-0 m-0" style="overflow: hidden;">
+                    
+                    <div class="card-img">
+                        <a href="/python-django01/" title="[PYTHON] Django 서버를 만들자 01">
+                            <img class="latestImgs" src="https://kkn1125.github.io/assets/images/post/covers/TIL-python.jpg" alt="[PYTHON] Django 서버를 만들자 01" />
+                        </a>
+                    </div>
+                    
+                    <div class="card-title"><a href="/python-django01/" title="[PYTHON] Django 서버를 만들자 01">[PYTHON] Django 서버를 만들자 01</a></div>
+                    <div class="card-content">
+                        <div class="card-body">
+                            Django 서버 구축
+                        </div>
+                    </div>
+                    
+                </div>
                 
                 <div class="card p-0 m-0" style="overflow: hidden;">
                     
@@ -867,17 +966,6 @@
                             VUE3 + VITE로 Multi Page를 만들어보자
                         </div>
                     </div>
-                    
-                    
-                    In <span class="catlist">
-                        
-                        <a class="text-capitalize tag tag-success text-white" href="/categories.html#vue">VUE</a><span class="sep"> </span>
-                        
-                        <a class="text-capitalize tag tag-success text-white" href="/categories.html#til">TIL</a><span class="sep"> </span>
-                        
-                    </span>
-                    <time class="card-time">Mar 01, 2022</time>
-                    
                     
                 </div>
                 
@@ -910,40 +998,6 @@
                     <div class="card-content">
                         <div class="card-body">
                             Proxy 와 Reflect
-                        </div>
-                    </div>
-                    
-                </div>
-                
-                <div class="card p-0 m-0" style="overflow: hidden;">
-                    
-                    <div class="card-img">
-                        <a href="/javascript-gantt-chart01/" title="[JAVASCRIPT] 간트차트를 만들어보자">
-                            <img class="latestImgs" src="https://kkn1125.github.io/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] 간트차트를 만들어보자" />
-                        </a>
-                    </div>
-                    
-                    <div class="card-title"><a href="/javascript-gantt-chart01/" title="[JAVASCRIPT] 간트차트를 만들어보자">[JAVASCRIPT] 간트차트를 만들어보자</a></div>
-                    <div class="card-content">
-                        <div class="card-body">
-                            Gantt Chart
-                        </div>
-                    </div>
-                    
-                </div>
-                
-                <div class="card p-0 m-0" style="overflow: hidden;">
-                    
-                    <div class="card-img">
-                        <a href="/javascript-template-literal-async01/" title="[JAVASCRIPT] 템플릿 리터럴에서 비동기로 내용을 넣어보자">
-                            <img class="latestImgs" src="https://kkn1125.github.io/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] 템플릿 리터럴에서 비동기로 내용을 넣어보자" />
-                        </a>
-                    </div>
-                    
-                    <div class="card-title"><a href="/javascript-template-literal-async01/" title="[JAVASCRIPT] 템플릿 리터럴에서 비동기로 내용을 넣어보자">[JAVASCRIPT] 템플릿 리터럴에서 비동기로 내용을 넣어보자</a></div>
-                    <div class="card-content">
-                        <div class="card-body">
-                            템플릿 리터럴
                         </div>
                     </div>
                     
