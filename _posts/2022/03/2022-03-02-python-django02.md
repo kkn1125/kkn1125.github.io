@@ -154,11 +154,11 @@ urlpatterns = [
 ]
 ```
 
-> 테스트 할 때 `postman`을 사용하신다면 `GET`요청 외에는 `csrftoken`값을 넘겨줘야 합니다. `csrftoken`은 쿠키에 보시면 있습니다
+> 테스트 할 때 `postman`을 사용하신다면 `GET`요청 외에는 `csrftoken`값을 넘겨줘야 합니다. `csrftoken`은 쿠키에 보시면 있습니다.
 
 공식 홈페이지에서 본 튜토리얼과는 좀 다른 형태입니다. 함수들을 타고타고 올라가서 구성된 내용을 보니 대강은 이해가 됩니다.
 
-이렇게 보니 하나의 `path`에 4가지 메서드 요청을 처리해주고 있습니다. `api`를 만들고 `axios`로 나중에 프론트에서 만져주면 될 것 같다는 생각이 듭니다. 아직 익숙하지 않아서 방법만 알고 넘어가려합니다.
+이렇게 보니 하나의 `path`에 4가지 메서드 요청을 처리해주고 있습니다. `api`를 만들고 `axios`로 나중에 프론트에서 만져주면 될 것 같다는 생각이 듭니다. 아직 익숙하지 않아서 **방법만 알고 넘어가려**합니다.
 
 각 `path`별로 `class`를 만들고 `GET`, `POST`, `PUT`, `DELETE`를 따로 만들어 관리하면 직관적이라 관리할 때 용이 할 것 같습니다.
 
@@ -167,6 +167,9 @@ urlpatterns = [
 현재 계속해서 사용중인 `api_view`입니다.
 
 ```python
+from django.shortcuts import render, redirect
+from rest_framework.decorators import api_view
+
 @api_view(['GET', 'POST', 'PUT', 'DELETE'])
 def post_control(request, num):
     print(request.method)
@@ -259,7 +262,7 @@ def post_detail(request):
 
 [Django REST framework :: api_view](https://www.django-rest-framework.org/api-guide/views/#api_view)
 
-[BezKoder :: Django: POST, PUT, GET, DELETE requests example | Rest Apis](https://www.bezkoder.com/django-rest-api/)
+[BezKoder :: Django: POST, PUT, GET, DELETE requests example \| Rest Apis](https://www.bezkoder.com/django-rest-api/)
 
 [naon님 :: Django Rest Framework 활용하기 2 - @api_view](https://naon.me/posts/til57)
 
