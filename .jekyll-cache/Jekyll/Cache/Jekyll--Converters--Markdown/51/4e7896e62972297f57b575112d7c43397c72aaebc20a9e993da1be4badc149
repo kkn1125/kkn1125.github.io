@@ -1,4 +1,4 @@
-I"%~<div class="fence-full">
+I"��<div class="fence-full">
     <div>
         <span class="fw-bold h3 text-uppercase mb-4">Categories</span>
     </div>
@@ -7,6 +7,78 @@
     <div id="til" style="padding-top: 64px; border-bottom: 2px solid rgb(133 133 133); margin-bottom: 1em"><span class="h5 fw-bold text-capitalize">TIL</span>
     </div>
 
+    
+    
+    
+    
+    <div class="mb-5 w-flex justify-content-between flex-column flex-row-md main-loop-card">
+	<div class="col pe-3">
+		<div>
+			<span class="mb-1 h5 fw-bold">
+			<a class="nav-link" href="/linux-ubuntu/">[TERMINAL] 윈도우에서 Linux Ubun...</a>
+			</span>
+		</div>
+		<p class="excerpt">
+		C/C++을 사용하기 위해
+		</p>
+		<small class="w-block text-muted">
+			In <span class="catlist">
+			
+			<a class="text-capitalize tag tag-success text-white" href="/categories#terminal">TERMINAL</a><span class="sep"> </span>
+			
+			<a class="text-capitalize tag tag-success text-white" href="/categories#til">TIL</a><span class="sep"> </span>
+			
+			</span>
+		</small>
+		<small class="text-muted">
+			Mar 03, 2022
+		</small>
+	</div>
+	
+	<div class="col-md-5 pe-0 text-right">
+	<a href="/linux-ubuntu/">
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-terminal.png" alt="[TERMINAL] 윈도우에서 Linux Ubuntu 터미널 사용" />
+	</a>
+	</div>
+	
+</div>
+    
+    
+    
+    
+    
+    <div class="mb-5 w-flex justify-content-between flex-column flex-row-md main-loop-card">
+	<div class="col pe-3">
+		<div>
+			<span class="mb-1 h5 fw-bold">
+			<a class="nav-link" href="/shell01/">[SHELL] Shell Script 공부 시작</a>
+			</span>
+		</div>
+		<p class="excerpt">
+		알아볼까 말까하던 Shell Script를 알아보자
+		</p>
+		<small class="w-block text-muted">
+			In <span class="catlist">
+			
+			<a class="text-capitalize tag tag-success text-white" href="/categories#shell">SHELL</a><span class="sep"> </span>
+			
+			<a class="text-capitalize tag tag-success text-white" href="/categories#til">TIL</a><span class="sep"> </span>
+			
+			</span>
+		</small>
+		<small class="text-muted">
+			Mar 02, 2022
+		</small>
+	</div>
+	
+	<div class="col-md-5 pe-0 text-right">
+	<a href="/shell01/">
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-shell.png" alt="[SHELL] Shell Script 공부 시작" />
+	</a>
+	</div>
+	
+</div>
+    
     
     
     
@@ -7471,6 +7543,96 @@
 	<div class="col-md-5 pe-0 text-right">
 	<a href="/git-overwrite-branch/">
 	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-git.png" alt="[GIT] 깃 브랜치 덮어쓰기" />
+	</a>
+	</div>
+	
+</div>
+    
+    
+    
+    
+    
+
+    
+    <div id="shell" style="padding-top: 64px; border-bottom: 2px solid rgb(133 133 133); margin-bottom: 1em"><span class="h5 fw-bold text-capitalize">SHELL</span>
+    </div>
+
+    
+    
+    
+    
+    <div class="mb-5 w-flex justify-content-between flex-column flex-row-md main-loop-card">
+	<div class="col pe-3">
+		<div>
+			<span class="mb-1 h5 fw-bold">
+			<a class="nav-link" href="/shell01/">[SHELL] Shell Script 공부 시작</a>
+			</span>
+		</div>
+		<p class="excerpt">
+		알아볼까 말까하던 Shell Script를 알아보자
+		</p>
+		<small class="w-block text-muted">
+			In <span class="catlist">
+			
+			<a class="text-capitalize tag tag-success text-white" href="/categories#shell">SHELL</a><span class="sep"> </span>
+			
+			<a class="text-capitalize tag tag-success text-white" href="/categories#til">TIL</a><span class="sep"> </span>
+			
+			</span>
+		</small>
+		<small class="text-muted">
+			Mar 02, 2022
+		</small>
+	</div>
+	
+	<div class="col-md-5 pe-0 text-right">
+	<a href="/shell01/">
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-shell.png" alt="[SHELL] Shell Script 공부 시작" />
+	</a>
+	</div>
+	
+</div>
+    
+    
+    
+    
+    
+
+    
+    <div id="terminal" style="padding-top: 64px; border-bottom: 2px solid rgb(133 133 133); margin-bottom: 1em"><span class="h5 fw-bold text-capitalize">TERMINAL</span>
+    </div>
+
+    
+    
+    
+    
+    <div class="mb-5 w-flex justify-content-between flex-column flex-row-md main-loop-card">
+	<div class="col pe-3">
+		<div>
+			<span class="mb-1 h5 fw-bold">
+			<a class="nav-link" href="/linux-ubuntu/">[TERMINAL] 윈도우에서 Linux Ubun...</a>
+			</span>
+		</div>
+		<p class="excerpt">
+		C/C++을 사용하기 위해
+		</p>
+		<small class="w-block text-muted">
+			In <span class="catlist">
+			
+			<a class="text-capitalize tag tag-success text-white" href="/categories#terminal">TERMINAL</a><span class="sep"> </span>
+			
+			<a class="text-capitalize tag tag-success text-white" href="/categories#til">TIL</a><span class="sep"> </span>
+			
+			</span>
+		</small>
+		<small class="text-muted">
+			Mar 03, 2022
+		</small>
+	</div>
+	
+	<div class="col-md-5 pe-0 text-right">
+	<a href="/linux-ubuntu/">
+	<img class="w-100" style="aspect-ratio: 9/6" src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-1,h-1:w-400,h-300" data-src="/assets/images/post/covers/TIL-terminal.png" alt="[TERMINAL] 윈도우에서 Linux Ubuntu 터미널 사용" />
 	</a>
 	</div>
 	

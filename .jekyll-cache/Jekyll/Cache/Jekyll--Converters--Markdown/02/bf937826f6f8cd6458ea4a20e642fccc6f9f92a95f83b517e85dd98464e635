@@ -1,4 +1,4 @@
-I"5�<div class="fence-full">
+I"�<div class="fence-full">
 
     <div class="w-flex gx-4">
 
@@ -7,6 +7,60 @@
     <span class="h4">Featured</span>
 </div>
 <div class="card-group card-ghost card-pd-0 card-dv-1 g-3">
+
+    
+
+    
+    <div class="card p-0" style="overflow: hidden;">
+        <!-- <a href="/linux-ubuntu/" title="[TERMINAL] 윈도우에서 Linux Ubuntu 터미널 사용">
+            <img src="assets/images/post/covers/TIL-terminal.png" alt="post/cover" class="w-100">
+        </a> -->
+        <div class="card-title px-3">
+            <a href="/linux-ubuntu/" title="[TERMINAL] 윈도우에서 Linux Ubuntu 터미널 사용">[TERMINAL] 윈도우에서 Linux Ubuntu 터미널 사용</a>
+        </div>
+        <div class="card-content">
+            <!-- <div class="card-body"></div> -->
+        </div>
+        <div class="pb-3 px-3">
+            In <span class="catlist">
+                
+                <a class="text-capitalize text-white tag tag-success" href="/categories.html#terminal">TERMINAL</a><span class="sep"> </span>
+                
+                <a class="text-capitalize text-white tag tag-success" href="/categories.html#til">TIL</a><span class="sep"> </span>
+                
+            </span>
+            <time class="card-time">Mar 03, 2022</time>
+        </div>
+    </div>
+
+    
+
+    
+
+    
+    <div class="card p-0" style="overflow: hidden;">
+        <!-- <a href="/shell01/" title="[SHELL] Shell Script 공부 시작">
+            <img src="assets/images/post/covers/TIL-shell.png" alt="post/cover" class="w-100">
+        </a> -->
+        <div class="card-title px-3">
+            <a href="/shell01/" title="[SHELL] Shell Script 공부 시작">[SHELL] Shell Script 공부 시작</a>
+        </div>
+        <div class="card-content">
+            <!-- <div class="card-body"></div> -->
+        </div>
+        <div class="pb-3 px-3">
+            In <span class="catlist">
+                
+                <a class="text-capitalize text-white tag tag-success" href="/categories.html#shell">SHELL</a><span class="sep"> </span>
+                
+                <a class="text-capitalize text-white tag tag-success" href="/categories.html#til">TIL</a><span class="sep"> </span>
+                
+            </span>
+            <time class="card-time">Mar 02, 2022</time>
+        </div>
+    </div>
+
+    
 
     
 
@@ -902,10 +956,55 @@
             <div class="border-bottom">
                 
                 <span class="h4">Latest Posts</span>
-                <button class="btn btn-danger ms-2 px-3" onclick="location='/author-kimson'">더 보기 + 86</button>
+                <button class="btn btn-danger ms-2 px-3" onclick="location='/author-kimson'">더 보기 + 88</button>
             </div>
             <div class="card-group pt-1 card-pd-0 card-dv-1 card-dv-md-2 card-ghost latestPost" style="gap: 1rem;">
                 <!-- latest post -->
+                
+                <div class="card p-0 m-0" style="overflow: hidden;">
+                    
+                    <div class="card-img">
+                        <a href="/linux-ubuntu/" title="[TERMINAL] 윈도우에서 Linux Ubuntu 터미널 사용">
+                            <img class="latestImgs" src="https://kkn1125.github.io/assets/images/post/covers/TIL-terminal.png" alt="[TERMINAL] 윈도우에서 Linux Ubuntu 터미널 사용" />
+                        </a>
+                    </div>
+                    
+                    <div class="card-title"><a href="/linux-ubuntu/" title="[TERMINAL] 윈도우에서 Linux Ubuntu 터미널 사용">[TERMINAL] 윈도우에서 Linux Ubuntu 터미널 사용</a></div>
+                    <div class="card-content">
+                        <div class="card-body">
+                            C/C++을 사용하기 위해
+                        </div>
+                    </div>
+                    
+                    
+                    In <span class="catlist">
+                        
+                        <a class="text-capitalize tag tag-success text-white" href="/categories.html#terminal">TERMINAL</a><span class="sep"> </span>
+                        
+                        <a class="text-capitalize tag tag-success text-white" href="/categories.html#til">TIL</a><span class="sep"> </span>
+                        
+                    </span>
+                    <time class="card-time">Mar 03, 2022</time>
+                    
+                    
+                </div>
+                
+                <div class="card p-0 m-0" style="overflow: hidden;">
+                    
+                    <div class="card-img">
+                        <a href="/shell01/" title="[SHELL] Shell Script 공부 시작">
+                            <img class="latestImgs" src="https://kkn1125.github.io/assets/images/post/covers/TIL-shell.png" alt="[SHELL] Shell Script 공부 시작" />
+                        </a>
+                    </div>
+                    
+                    <div class="card-title"><a href="/shell01/" title="[SHELL] Shell Script 공부 시작">[SHELL] Shell Script 공부 시작</a></div>
+                    <div class="card-content">
+                        <div class="card-body">
+                            알아볼까 말까하던 Shell Script를 알아보자
+                        </div>
+                    </div>
+                    
+                </div>
                 
                 <div class="card p-0 m-0" style="overflow: hidden;">
                     
@@ -921,17 +1020,6 @@
                             Django MySQL연결과 Rest framework
                         </div>
                     </div>
-                    
-                    
-                    In <span class="catlist">
-                        
-                        <a class="text-capitalize tag tag-success text-white" href="/categories.html#python">PYTHON</a><span class="sep"> </span>
-                        
-                        <a class="text-capitalize tag tag-success text-white" href="/categories.html#til">TIL</a><span class="sep"> </span>
-                        
-                    </span>
-                    <time class="card-time">Mar 02, 2022</time>
-                    
                     
                 </div>
                 
@@ -964,40 +1052,6 @@
                     <div class="card-content">
                         <div class="card-body">
                             VUE3 + VITE로 Multi Page를 만들어보자
-                        </div>
-                    </div>
-                    
-                </div>
-                
-                <div class="card p-0 m-0" style="overflow: hidden;">
-                    
-                    <div class="card-img">
-                        <a href="/javascript-proxy01/" title="[JAVASCRIPT] Proxy와 Reflect 맛보기 02 - Todo List를 만들어보자">
-                            <img class="latestImgs" src="https://kkn1125.github.io/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] Proxy와 Reflect 맛보기 02 - Todo List를 만들어보자" />
-                        </a>
-                    </div>
-                    
-                    <div class="card-title"><a href="/javascript-proxy01/" title="[JAVASCRIPT] Proxy와 Reflect 맛보기 02 - Todo List를 만들어보자">[JAVASCRIPT] Proxy와 Reflect 맛보기 02 - Todo List를 만들어보자</a></div>
-                    <div class="card-content">
-                        <div class="card-body">
-                            Todo List를 만들어 보자
-                        </div>
-                    </div>
-                    
-                </div>
-                
-                <div class="card p-0 m-0" style="overflow: hidden;">
-                    
-                    <div class="card-img">
-                        <a href="/javascript-reflect01/" title="[JAVASCRIPT] Proxy와 Reflect 맛보기 01 - 기본편">
-                            <img class="latestImgs" src="https://kkn1125.github.io/assets/images/post/covers/TIL-javascript.png" alt="[JAVASCRIPT] Proxy와 Reflect 맛보기 01 - 기본편" />
-                        </a>
-                    </div>
-                    
-                    <div class="card-title"><a href="/javascript-reflect01/" title="[JAVASCRIPT] Proxy와 Reflect 맛보기 01 - 기본편">[JAVASCRIPT] Proxy와 Reflect 맛보기 01 - 기본편</a></div>
-                    <div class="card-content">
-                        <div class="card-body">
-                            Proxy 와 Reflect
                         </div>
                     </div>
                     
