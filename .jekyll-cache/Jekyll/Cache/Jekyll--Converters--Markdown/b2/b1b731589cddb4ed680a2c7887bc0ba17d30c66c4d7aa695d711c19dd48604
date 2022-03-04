@@ -1,0 +1,56 @@
+I"�<h1 id="파일-변환-감지">파일 변환 감지</h1>
+
+<p>파이썬을 사용하면서 불편했던 점이 실행할 때마다 입력하는게 번거롭기도 하고 live-server의 저장시 새로고침 되는 기능을 만들 수 있을까 싶었습니다.</p>
+
+<p>여러 커뮤니티를 찾다가 그 내용이 역시 갓오버플로우에 있었습니다. 👏</p>
+
+<h2 id="sh파일-만들기">sh파일 만들기</h2>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="rouge-code"><pre><span class="nv">LEDIT</span><span class="o">=</span><span class="si">$(</span><span class="nb">stat</span> <span class="nt">-c</span> %Z /path/filename.extension<span class="si">)</span>
+<span class="k">while </span><span class="nb">true
+</span><span class="k">do
+  </span><span class="nv">CEDIT</span><span class="o">=</span><span class="si">$(</span><span class="nb">stat</span> <span class="nt">-c</span> %Z /path/filename.extension<span class="si">)</span>
+  <span class="k">if</span> <span class="o">[[</span> <span class="s2">"</span><span class="nv">$CEDIT</span><span class="s2">"</span> <span class="o">!=</span> <span class="s2">"</span><span class="nv">$LEDIT</span><span class="s2">"</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then
+      </span><span class="nb">echo</span> <span class="s2">"===== RUN PYTHON COMMNAD ====="</span>
+      python test01.py
+      <span class="nv">LEDIT</span><span class="o">=</span><span class="nv">$CEDIT</span>
+  <span class="k">fi
+  </span><span class="nb">sleep </span>0.5
+<span class="k">done</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="stat-명령어">stat 명령어</h3>
+
+<p><code class="language-plaintext highlighter-rouge">stat</code>명령어는 파일이나 파일 시스템 상태를 표시하는 명령어 입니다. 뒤에 따르는 옵션을 하나하나 알아봅시다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">-c</code>는 포맷을 사용할 때마다 개행 출력을 해줍니다. 그리고 그 뒤에 따르는 <code class="language-plaintext highlighter-rouge">%Z</code>는 해당 경로 파일의 마지막 상태변경 시간을 초단위로 나타냅니다.</p>
+
+<p>즉, 전체 구문을 보면 <code class="language-plaintext highlighter-rouge">LEDIT</code>에 해당 파일의 마지막 변경 시간이 담기게 되고, <code class="language-plaintext highlighter-rouge">while</code>문을 돌면서 <code class="language-plaintext highlighter-rouge">CEDIT</code>변수에 <code class="language-plaintext highlighter-rouge">sleep</code>을 걸어 <code class="language-plaintext highlighter-rouge">0.5</code>초 간격으로 잠자게 합니다. 그냥 <code class="language-plaintext highlighter-rouge">0.5</code>초 딜레이 주고 <code class="language-plaintext highlighter-rouge">while</code>문 돌리는 겁니다.</p>
+
+<p>그러면 <code class="language-plaintext highlighter-rouge">if</code>문에서 <code class="language-plaintext highlighter-rouge">CEDIT</code>과 <code class="language-plaintext highlighter-rouge">LEDIT</code>이 다르다면 <code class="language-plaintext highlighter-rouge">python test01.py</code>를 <code class="language-plaintext highlighter-rouge">command</code>로 <code class="language-plaintext highlighter-rouge">execute</code>합니다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">if</code>문 나오기 전에 <code class="language-plaintext highlighter-rouge">LEDIT</code>을 <code class="language-plaintext highlighter-rouge">CEDIT</code>으로 초기화 해줍니다.</p>
+
+<p>파이썬이나 c언어를 컴파일하고 실행하는데 계속 명령줄에 입력하기가 번거로웠는데 만들어 두고 사용하면 참 편리합니다. 😁👍</p>
+
+<blockquote>
+  <p>stat의 옵션 정보는 stat &#8211;help에 잘 나와 있습니다. 😮</p>
+</blockquote>
+
+<hr />
+
+<p>📚 함께 보면 좋은 내용</p>
+
+<p><a href="https://hashnode.com/post/creating-your-own-scripting-language-where-should-one-start-ciudleyz70jksvy532q1y4uk7" target="_blank">hashnode :: Creating your own scripting language? Where should one start?</a></p>
+:ET
