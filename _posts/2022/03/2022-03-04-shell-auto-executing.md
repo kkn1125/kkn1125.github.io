@@ -60,8 +60,30 @@ done
 
 > stat의 옵션 정보는 stat --help에 잘 나와 있습니다. 😮
 
+### 추가
+
+만일 파일 하나를 대상으로 하는게 아닌 폴더 내에 있는 파일 어느 하나라도 변경되면 `command`를 실행하고 싶을 때는 아래와 같이 조금만 바꿔주면 됩니다.
+
+```sh
+LEDIT=$(stat -c %Z *)
+while true
+do
+  CEDIT=$(stat -c %Z *)
+  if [[ "$CEDIT" != "$LEDIT" ]]; then
+      echo "===== RUN PYTHON COMMNAD ====="
+      python test01.py
+      LEDIT=$CEDIT
+  fi
+  sleep 0.5
+done
+```
+
+즉, `sh`파일이 있는 위치에서 `stat *`을 하면 디렉토리 내 모든 파일 정보를 불러오는데 -c로 시스템 정보에 접근하고 %Z로 마지막 변경 시간만을 가져와 비교하게 되므로 어느 파일이던 변경되면 지정한 명령줄이 실행됩니다. 😉
+
 -----
 
 📚 함께 보면 좋은 내용
 
-[hashnode :: Creating your own scripting language? Where should one start?](https://hashnode.com/post/creating-your-own-scripting-language-where-should-one-start-ciudleyz70jksvy532q1y4uk7){:target="_blank"}
+[DAVE MCKAY :: How to Use the stat Command on Linux](https://www.howtogeek.com/451022/how-to-use-the-stat-command-on-linux/){:target="_blank"}
+
+[StackOverflow :: How to execute a shell script when a file changes?](https://stackoverflow.com/questions/66857291/how-to-execute-a-shell-script-when-a-file-changes#answers-header){:target="_blank"}
