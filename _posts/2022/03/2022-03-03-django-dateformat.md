@@ -32,11 +32,15 @@ published: true
 
 > 위 표는 [ganttChart](https://kkn1125.github.io/ganttChart/)로 만들어 졌습니다.
 
+{%raw%}
+
 ```html
 <span>
     {{ value|date:"D d M Y" }}
 </span>
 ```
+
+{%endraw%}
 
 -----
 

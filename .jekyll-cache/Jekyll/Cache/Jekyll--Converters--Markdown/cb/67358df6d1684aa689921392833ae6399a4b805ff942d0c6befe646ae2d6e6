@@ -1,4 +1,4 @@
-I"w3<h1 id="날짜-포맷-변환">날짜 포맷 변환</h1>
+I"�3<h1 id="날짜-포맷-변환">날짜 포맷 변환</h1>
 
 <p>현재 서버 만드는 걸 수차례 반복하면서 CRUD를 익히고 있습니다. 그러던 중에 게시물의 시간을 표시하려는데 찾아보니 뭔가 엄청나게 많은 포멧 기호가 있었습니다.</p>
 
@@ -10,13 +10,17 @@
   <p>위 표는 <a href="https://kkn1125.github.io/ganttChart/">ganttChart</a>로 만들어 졌습니다.</p>
 </blockquote>
 
+<p>{%raw%}</p>
+
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 </pre></td><td class="rouge-code"><pre><span class="nt">&lt;span&gt;</span>
-    
+    {{ value|date:"D d M Y" }}
 <span class="nt">&lt;/span&gt;</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>{%endraw%}</p>
 
 <hr />
 

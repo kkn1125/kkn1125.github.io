@@ -465,7 +465,7 @@ function isVisitedUser(){
 }
 
 if(!isVisitedUser()){
-    console.warn('[Alert] create new user!');
+    // console.warn('[Alert] create new user!'); product
     checkVisite(); // update visitor count!
     setUserIdentity({
         sid: navigator.userAgent.replace(/[\s]*/gm, '')+uuidv4(),
@@ -474,7 +474,7 @@ if(!isVisitedUser()){
 } else {
     const userInfo = getUserIdentity();
     if(userInfo['sid'].startsWith(navigator.userAgent.replace(/[\s]*/gm, ''))){
-        console.warn('[Alert] revisit user!');
+        // console.warn('[Alert] revisit user!'); product
         if(new Date().getTime() > new Date(userInfo['maxTime']).getTime()){
             checkVisite(); // update visitor count!
             userInfo['maxTime'] = new Date().getTime() + validTime;
@@ -482,12 +482,12 @@ if(!isVisitedUser()){
                 sid: userInfo['sid'],
                 maxTime: userInfo['maxTime'],
             })
-            console.warn('[Alert] reset user maxTime!');
+            // console.warn('[Alert] reset user maxTime!'); product
         } else {
-            console.warn('[Alert] maxTime is still valid!');
+            // console.warn('[Alert] maxTime is still valid!'); product
         }
     }
-    console.info('hello there! thank you for revisit!');
+    // console.info('hello there! thank you for revisit!'); product
 }
 
 function uuidv4() {
@@ -531,58 +531,6 @@ if(document.querySelector('#tags')) document.querySelector('#tags').innerHTML = 
     },{})).sort().map(tag=>`<a class="text-white tag tag-primary text-capitalize" style="--bg-opacity: 0.7;" href="/tags#${tag.toLowerCase()}">#${tag}</a>`).join(' ')}
 `;
 // kims.js
-
-// // selectView.js
-// const viewWrap = document.querySelector('#viewWrap');
-// const latestBtn = document.querySelector('#latestBtn');
-// const latestPosts = document.querySelector('.latest-posts');
-// const validTime = 1000*60*60*24;
-// let hiddenInfo;
-
-// function isHidden(){
-//     return getHiddenInfo().hidden;
-// }
-
-// function getHiddenInfo(){
-//     if(!localStorage['isHidden']) localStorage['isHidden'] = '{}';
-//     return JSON.parse(localStorage['isHidden']);
-// }
-
-// function setHiddenInfo(data){
-//     localStorage['isHidden'] = JSON.stringify(data);
-// }
-
-// hiddenInfo = getHiddenInfo();
-
-// if(isHidden()){
-//     // 히든일 때
-//     if(getHiddenInfo()['maxTime']<new Date().getTime()){
-//         // 새로 갱신
-//         hiddenInfo['hidden'] = false;
-//         setHiddenInfo(hiddenInfo);
-//         // 다시 최신글 보여줘야함
-//         latestPosts.removeAttribute('hidden');
-//     } else {
-//         // 최신 글 히든
-//         latestPosts.hidden = true;
-//     }
-// }
-
-// window.addEventListener('click', handleView);
-
-// function handleView(ev){
-//     const target = ev.target;
-//     if(target.id != 'latestBtn') return;
-    
-//     if(target.dataset.btn == 'latest' && !isHidden()){
-//         setHiddenInfo({
-//             maxTime: new Date().getTime() + validTime,
-//             hidden: true
-//         });
-//         latestPosts.hidden = true;
-//     }
-// }
-// // selectView.js
 
 // img Lazy Load
 const options = {
@@ -805,7 +753,6 @@ let detectPauseScrolling = setInterval(() => {
 // scrollViewer
 
 // submenu scroll horizontal
-let horizonScroll = 0;
 window.addEventListener('wheel', scrollHorizontal, {passive: false})
 function scrollHorizontal(ev){
     const target = ev.target;
@@ -813,14 +760,10 @@ function scrollHorizontal(ev){
     if(isTargetMenu){
         ev.preventDefault();
         ev.stopPropagation();
-        horizonScroll -= ev.wheelDeltaY;
-        if(horizonScroll<0){
-            horizonScroll = 0;
-        } else if (horizonScroll>isTargetMenu.scrollWidth-120){
-            horizonScroll = isTargetMenu.scrollWidth-120;
-        }
-        isTargetMenu.scrollTo({left: horizonScroll, top: isTargetMenu.scrollHeight, behavior: 'smooth'});
-
+        let max_width = isTargetMenu.scrollWidth - isTargetMenu.clientWidth;
+        if(0<= isTargetMenu.scrollLeft && isTargetMenu.scrollLeft <= max_width) isTargetMenu.scrollLeft -= ev.wheelDeltaY;
+        // isTargetMenu.scrollTo({left: horizonScroll, top: isTargetMenu.scrollHeight, behavior: 'smooth'});
+        
         return false;
     }
 }
@@ -828,19 +771,22 @@ function scrollHorizontal(ev){
 let clickForScroll = false;
 let first = 0;
 let originWidth = 0;
+
 window.addEventListener('mousedown', (ev)=>{
     if(ev.target.closest('.submenu')){
         clickForScroll = true;
         originWidth = document.querySelector('.submenu').scrollLeft;
         first = ev.clientX;
     }
-})
+});
+
 window.addEventListener('mouseup', (ev)=>{
     clickForScroll = false;
-})
+});
+
 window.addEventListener('mousemove', (ev)=>{
     let menu = document.querySelector('.submenu');
     if(clickForScroll){
         menu.scrollTo({left: originWidth-(ev.clientX-first), top: menu.scrollTop, behavior: 'auto'});
     }
-})
+});

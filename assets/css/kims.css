@@ -44,6 +44,10 @@ div.highlight{
 	user-select: none;
 }
 
+pre.highlight code pre{
+	font-family: var(--lm-noto-sans);
+}
+
 pre.highlight::-webkit-scrollbar{
 	width: 8px;
 	height: 8px;

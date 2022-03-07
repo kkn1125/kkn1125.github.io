@@ -221,6 +221,7 @@ if(document.querySelector('#kals')) fetch('/assets/data/jsonTodo.json')
     
         function View() {
             const selectorSyntax = (num)=>`table#kal>thead>tr>th>span>select:nth-child(${num})`;
+            let options;
             let components = null;
             let selectY = null;
             let selectM = null;
@@ -228,9 +229,17 @@ if(document.querySelector('#kals')) fetch('/assets/data/jsonTodo.json')
             let renderTarget = null;
             let listWrap = null;
     
-            this.init = function (component) {
+            this.init = function (component, option) {
+                options = option;
                 let count = 0;
-                Object.keys(data).forEach(_y=>Object.keys(data[_y]).forEach(_m=>Object.keys(data[_y][_m]).forEach(_d=>data[_y][_m][_d].forEach(({tag})=>tag.match(/check/gm)?count++:null))));
+                Object.keys(data)
+                .forEach(_y=>Object.keys(data[_y])
+                    .forEach(_m=>Object.keys(data[_y][_m])
+                        .forEach(_d=>data[_y][_m][_d]
+                            .forEach(({tag})=>tag.match(/check/gm)?count++:null)
+                        )
+                    )
+                );
 
                 components = component;
                 renderTarget = document.querySelector('#kals');
@@ -243,7 +252,7 @@ if(document.querySelector('#kals')) fetch('/assets/data/jsonTodo.json')
                 const parts = components.modules;
     
                 this.clearTarget();
-                parts.render(renderTarget, parts.kalendar(year, month+1, 'ko'));
+                parts.render(renderTarget, parts.kalendar(year, month+1, options.lang));
                 this.markToday(year, month);
                 this.dateSynchronization(year, month);
                 this.clearListView(listWrap);
@@ -264,9 +273,20 @@ if(document.querySelector('#kals')) fetch('/assets/data/jsonTodo.json')
                     [...document.querySelectorAll('tbody td:not(:empty)')].forEach(tag=>{
                         let dateHasList = dataList[tag.textContent];
                         let counting = dateHasList&&dateHasList.filter(({tag})=>tag.match(/check|rest|cancel/gim)).length;
-                        let isBefore = base.getDate()>parseInt(tag.textContent)||base.getMonth()>month||base.getFullYear()>year;
+                        let isBefore;
+
+                        base.getTime()>=new Date(`${year}-${month+1}-${tag.textContent}`).getTime()
+                        ?isBefore = true
+                        :isBefore = false;
+
                         if(Object.keys(dataList).includes(tag.textContent)){
-                            tag.querySelector('span').insertAdjacentHTML('beforeend', `<span class="badge ${counting>dateHasList.length/2&&isBefore?'text-success':counting<=dateHasList.length/2&&isBefore?'text-warning':''}">+${dateHasList.length}</span>`);
+                            tag.querySelector('span').insertAdjacentHTML('beforeend', `<span class="badge ${counting>dateHasList.length/2
+                            && isBefore
+                                ?'text-success'
+                                :counting<=dateHasList.length/2
+                            && isBefore
+                                ?'text-warning'
+                                :''}">+${dateHasList.length}</span>`);
                         }
                     });
                 }
@@ -284,11 +304,6 @@ if(document.querySelector('#kals')) fetch('/assets/data/jsonTodo.json')
                 const now = document.querySelector('tbody td:not(:empty)#now');
                 this.markSelectDate(now);
                 this.renderListInSelectDate(now);
-                // if(year == now.getFullYear() && month == now.getMonth()){
-                //     const date = [...document.querySelectorAll('tbody td:not(:empty)')].filter(day=>day.textContent == now.getDate())[0];
-                //     date.id = 'now';
-                //     this.markSelectDate(date);
-                // }
             }
     
             this.markSelectDate = function(date){
@@ -317,11 +332,11 @@ if(document.querySelector('#kals')) fetch('/assets/data/jsonTodo.json')
             this.markStyleSetting = function(mark, parent){
                 const markWidth = 3;
                 mark.style.cssText = `
+                    position: absolute;
                     top: ${selectedDate.offsetTop}px;
                     left: ${selectedDate.offsetLeft}px;
                     width: ${selectedDate.offsetWidth-0.5}px;
                     height: ${selectedDate.offsetHeight}px;
-                    position: absolute;
                     border-bottom: ${markWidth}px solid coral;
                 `;
             }
@@ -358,22 +373,18 @@ if(document.querySelector('#kals')) fetch('/assets/data/jsonTodo.json')
         }
     
         return {
-            init: function () {
+            init: function (options) {
                 const innerStyle = document.createElement('style');
                 innerStyle.innerHTML = `
                     #kalWrap{
-                        /*display: inline-flex;*/
-                        /*justify-content: start;*/
-                        /*align-items: center;*/
                         width: 100%;
-                        position: relative;
-                        /*flex-direction: column;*/
+                        position: relative;;*/
                     }
 
                     .check-item{
                         text-decoration-line: line-through;
                     }
-    
+
                     .data-wrap {
                         font-size: 90%;
                         user-select: none;
@@ -383,17 +394,17 @@ if(document.querySelector('#kals')) fetch('/assets/data/jsonTodo.json')
                         font-size: 80%;
                         color: gray;
                     }
-    
+
                     #mark{
                         transition: top 500ms cubic-bezier(0.68, -0.55, 0.27, 1.55), left 500ms cubic-bezier(0.68, -0.55, 0.27, 1.55);
                         box-shadow: 0 0 0.5em 0 coral;
                         border-radius: 0.5em;
                     }
-    
+
                     table#kal{
                         border-collapse: collapse;
                         text-align: center;
-                        font-size: 90%;
+                        font-size: 80%;
                         user-select: none;
                         width: 100%;
                         margin-bottom: 32px;
@@ -403,22 +414,20 @@ if(document.querySelector('#kals')) fetch('/assets/data/jsonTodo.json')
                         font-size: 200%;
                         font-weight: bold;
                     }
-    
+
                     table#kal>*>*>td{
                         width: 50px;
                         height: 50px !important;
                     }
-    
+
                     table#kal th[colspan="7"]{
                         padding-bottom: 1em;
                     }
-    
-                    /*table#kal th[colspan="7"]>span{
-                        display: inline-flex;
-                        justify-content: space-between;
-                        width: 100%;
-                    }*/
-    
+
+                    table#kal>thead>tr>th{
+                        text-transform: capitalize;
+                    }
+
                     table#kal>thead>tr:last-child{
                         border-bottom: 2px solid rgba(0,0,0,0.5);
                     }
@@ -430,22 +439,10 @@ if(document.querySelector('#kals')) fetch('/assets/data/jsonTodo.json')
                     table#kal>tbody>tr{
                         border-bottom: 1px solid rgba(0,0,0,0.2);
                     }
-    
-                    /*
-                    table#kal>tbody>tr>td{
-                        border-right: 1px solid rgba(0,0,0,0.2);
-                    }
-                    */
-    
+
                     table#kal>tbody>tr:last-child{
                         border-bottom: none
                     }
-
-                    /*
-                    table#kal>tbody>tr>td:last-child{
-                        border-right: none
-                    }
-                    */
 
                     table#kal>*>tr>*:nth-child(1),
                     table#kal>*>tr>*:nth-child(7){
@@ -497,45 +494,16 @@ if(document.querySelector('#kals')) fetch('/assets/data/jsonTodo.json')
                         color: red;
                         font-size: 70%;
                     }
-    
-                    /*table#kal>tbody>*>td>span>span::before{
-                        width: 5px;
-                        height: 5px;
-                        background-color: red;
-                        display: inline-block;
-                        content: '';
-                    }*/
 
                     table#kal select{
                         font-size: 110%;
                     }
 
-                    /*table#kal select,
-                    table#kal button{*/
                     table#kal>*>*>td:not(:empty){
                         transition: box-shadow 150ms;
                         cursor: pointer;
                     }
-    
-                    /*table#kal select,
-                    table#kal button{
-                        border: none;
-                        background: none;
-                        border-radius: .5rem;
-                        outline: none;
-                        height: 2em;
-                    }*/
-    
-                    /*table#kal button{
-                        background-color: lightgray;
-                        padding: .3rem .5rem;
-                    }*/
-    
-                    /*table#kal button:focus,
-                    table#kal select:focus{
-                        box-shadow: 0 0 0 .3rem rgb(255 92 92 / 54%);
-                    }*/
-    
+
                     #now {
                         font-weight: bold;
                         color: rgb(52 183 141);
@@ -552,10 +520,12 @@ if(document.querySelector('#kals')) fetch('/assets/data/jsonTodo.json')
                 const model = new Model();
                 const controller = new Controller();
     
-                view.init(components);
+                view.init(components, options);
                 model.init(view);
                 controller.init(model);
             }
         }
-    })().init();
+    })().init({
+        lang: 'en',
+    });
 })
