@@ -9,8 +9,21 @@
             </button>
         </div>
         <ul id="gnbMenu" class="gnb-menu gx-2 w-flex hide">
-            {% include menu-header.html %}
-            {% include search-lunr.html %}
+            <li>
+                <span class="tag tag-info">오늘 방문자</span> <span id="today" class="tag text-white"></span>
+            </li>
+            <li>
+                <span class="tag tag-primary">누적 방문자</span>
+                <span id="total" class="tag text-white"></span>
+            </li>
+            <li>
+                <form class="search btn-bundle g-0" onSubmit="return lunr_search(document.getElementById('lunrsearch').value);">
+                    <input type="text" class="form-input col" id="lunrsearch" name="q" value="" placeholder="검색어를 입력해주세요.">
+                    <button class="btn btn-info">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </form>
+            </li>
         </ul>
     </div>
 </nav>
