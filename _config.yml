@@ -12,6 +12,7 @@ email: "chaplet01@gmail.com"
 google_analytics: "UA-179074259-1"
 top: <a href="#" id="gotop"><i class="fas fa-arrow-alt-circle-up fa-2x"></i></a>
 todo: true
+incremental: false # 지킬 빌드 속도
 
 include: ["_pages"]
 permalink: /:title/
@@ -135,8 +136,8 @@ jekyll-spaceship:
     src: https://github.githubassets.com/images/icons/emoji/
 
 # Paginate
-paginate: 10
-paginate_path: /page:num/
+# paginate: 10
+# paginate_path: /page:num/
 
 # Exclude metadata and development time dependencies (like Grunt plugins)
 exclude:

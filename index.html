@@ -19,7 +19,12 @@ description: "나를 표현하는 블로그. 끊임없이 도전하고 공부하
             <div class="border-bottom">
                 {% assign size = site.posts | size %}
                 <span class="h4">Latest Posts</span>
-                <button class="btn btn-danger ms-2 px-3" onclick="location='/author-kimson'">더 보기 + {{size | minus: 5}}</button>
+                {% if size<5 %}
+                {% else %}
+                    <button class="btn btn-danger ms-2 px-3" onclick="location='/author-kimson'">더 보기 + 
+                    {{size | minus: 5}}
+                    </button>
+                {% endif %}
             </div>
             <div class="card-group pt-1 card-pd-0 card-dv-1 card-dv-md-2 card-ghost latestPost" style="gap: 1rem;">
                 <!-- latest post -->

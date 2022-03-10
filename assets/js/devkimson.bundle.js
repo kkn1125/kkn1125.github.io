@@ -490,6 +490,8 @@ if(!isVisitedUser()){
     // console.info('hello there! thank you for revisit!'); product
 }
 
+getVisiteCount();
+
 function uuidv4() {
     return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
       var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
@@ -521,8 +523,6 @@ async function getVisiteCount(){
         if(document.querySelector('#today')) document.querySelector('#today').textContent = today.textContent.replace(/\B(?=(\d{3})+(?!\d))/g, ",")+'명';
     });
 }
-
-getVisiteCount();
 
 if(document.querySelector('#tags')) document.querySelector('#tags').innerHTML = `
     ${Object.keys(documents.filter(({tags})=>tags).reduce((a,b)=>{

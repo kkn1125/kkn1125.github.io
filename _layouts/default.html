@@ -5,7 +5,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <script>
+        <!-- <script>
             let origin = window.location.origin;
             let path = window.location.pathname;
             if (path === "/index.html") {
@@ -22,7 +22,7 @@
             }
 
             preloading(['TIL-batch.png', 'TIL-git.png', 'TIL-java.png', 'TIL-javascript.png', 'TIL-python.jpg', 'TIL-react.png', 'TIL-vue.png', 'TIM-none.png', 'TIL-spring.png', 'TIL-shell.png']);
-        </script>
+        </script> -->
 
         <script src="{{site.baseurl}}/assets/js/lunr.js"></script>
         
@@ -56,6 +56,9 @@
         integrity="sha384-s62GQWchBcBh82YhldUNQK9Cqw6iFB+eBau07ihjICofE7TLkSimbCI4+djd4soo" crossorigin="anonymous"
         as="script">
         <link rel="prefetch" href="{{ site.baseurl }}/assets/data/jsonTodo.json" as="fetch">
+        <link rel="preload" href="{{site.baseurl}}/assets/js/kalendar.js" as="script">
+
+        <script src="{{site.baseurl}}/assets/js/kalendar.js" async></script>
 
         <script>
             document.documentElement.lang = navigator.language.split('-').shift();
