@@ -1,12 +1,12 @@
 ---
 layout: post
-modified: 2022-01-19 15:55:53 +0900
+modified: 2022-03-14 00:09:35 +0900
 date:   2021-10-25 22:27:25 +0900
 title:  "[JAVASCRIPT] 웹 튜토리얼 구현하기"
 author: Kimson
-categories: [ JAVASCRIPT, TIL, TIM ]
+categories: [ javascript ]
 image: assets/images/post/covers/TIL-javascript.png
-tags: [ web, tutorial, helper ]
+tags: [ web, tutorial, helper, til, tim ]
 description: "웹 튜토리얼
 
 이름을 웹 튜토리얼이라 붙이긴 했습니다만, 웹 상에서 UI가 복잡하거나 독특하게 꾸며졌을 때 사용자에게 안내를 해주는 기능을 구현하기로 했습니다.

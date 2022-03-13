@@ -1,11 +1,12 @@
 ---
 layout: post
+modified: 2022-03-14 00:09:35 +0900
 date:   2022-03-03 13:12:53 +0900
 title:  "[TERMINAL] 윈도우에서 Linux Ubuntu 터미널 사용"
 author: Kimson
-categories: [ TERMINAL, TIL ]
+categories: [ terminal ]
 image: assets/images/post/covers/TIL-terminal.png
-tags: [ linux, ubuntu ]
+tags: [ linux, ubuntu, til ]
 description: "C/C++을 사용하기 위해
 
 프로그래밍 언어가 어떻게 만들어지는지, 어떤 동작원리를 가지고 있는지 알기위해 지식을 모으고 있었습니다.

@@ -1,13 +1,15 @@
 ---
 layout: post
-modified: 2021-12-22 13:13:39 +0900
+modified: 2022-03-14 00:09:35 +0900
 date:   2021-07-05 13:17:27 +0900
 title:  "[PORTFOLIO] KAKAO PC버전"
 author: Kimson
-categories: [ portfolio, SPRING ]
-tags: [kakao, spring]
+categories: [ spring ]
+tags: [kakao, portfolio]
 image: assets/images/post/kakao/kakao-1.png
-description: ""
+description: "KAKAO PC ver
+
+kakao pc 버전은 설계 분야 업무를 하던 중에 알게 되어 정말 편리하고 자료 공유로 사용하기도 했는데요, 현재 프로그래밍을 공부하면서 구현해보고자 하는 마음에 열심히 독학 중인 spring으로 만들었습니다."
 featured: false
 hidden: true
 rating: 4.5

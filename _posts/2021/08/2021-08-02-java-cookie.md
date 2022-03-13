@@ -1,10 +1,11 @@
 ---
 layout: post
+modified: 2022-03-14 00:09:35 +0900
 date:   2021-08-02 17:06:27 +0900
 title:  "[JAVA] Cookie에 관한 고찰"
 author: Kimson
-categories: [ TIL, JAVA ]
-tags: [cookie]
+categories: [ java ]
+tags: [cookie, til]
 image: assets/images/post/cookie/cookie.PNG
 description: "Cookie 사용
 쿠키의 특징을 간단하게 알아보면서 내용을 정리하였습니다. 주로 웹 서버에 의해 만들어지고, 서버가 HTTP 응답헤더의 Set-Cookie에 내용을 넣어 전달하면, 이 내용을 브라우저에 저장합니다."

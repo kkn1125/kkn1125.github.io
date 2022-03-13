@@ -1,12 +1,12 @@
 ---
 layout: post
-modified: 2022-01-19 15:55:53 +0900
+modified: 2022-03-14 00:09:35 +0900
 date:   2021-10-27 21:39:53 +0900
 title:  "[JAVASCRIPT] Typer 0.2.0 pre-release 한글 타이핑 효과"
 author: Kimson
-categories: [ JAVASCRIPT, Typer, TIM ]
+categories: [ javascript ]
 image: assets/images/post/covers/TIM-none.png
-tags: [ typer, korean, effect ]
+tags: [ typer, korean, effect, tim ]
 description: "Typer js v0.2.0 pre-release
 
 이번에 `Typer`라는 어플리케이션을 `pre-release`했습니다. 나중에 이름이 변경될 지는 모르겠지만 현재 이름을 `Typer`라고 정했습니다.

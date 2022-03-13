@@ -1,10 +1,11 @@
 ---
 layout: post
+modified: 2022-03-14 00:09:35 +0900
 date:   2021-08-06 16:22:36 +0900
 title:  "[JAVASCRIPT] 공공데이터로 페이징 처리하기"
 author: Kimson
-categories: [ TIL, JAVASCRIPT ]
-tags: [공공데이터, pagination, json]
+categories: [ javascript ]
+tags: [공공데이터, pagination, json, til]
 image: assets/images/post/publicData/public-cover.png
 description: "공공데이터포털은 국가에서 보유하고있는 다양한 데이터와 오픈API를 공개하는 곳 입니다. 법적으로 개방하도록 되어 있는것 같습니다.
 

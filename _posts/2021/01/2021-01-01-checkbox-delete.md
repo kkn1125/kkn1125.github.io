@@ -1,11 +1,12 @@
 ---
 layout: post
+modified: 2022-03-14 00:09:35 +0900
 date:   2021-01-15 21:25:04 +0900
 title:  "[JAVASCRIPT] checkbox로 항목 삭제 기능 구현"
 author: Kimson
-categories: [ JAVASCRIPT, TIL ]
+categories: [ javascript ]
 image: assets/images/post/covers/TIL-javascript.png
-tags: [ delete, checkbox, backup ]
+tags: [ delete, checkbox, backup, til ]
 description: "checkbox로 항목 삭제 기능 구현"
 featured: false
 hidden: false

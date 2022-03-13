@@ -1,11 +1,11 @@
 ---
 layout: post
-modified: 2022-01-19 15:55:53 +0900
+modified: 2022-03-14 00:09:35 +0900
 date:   2021-07-18 12:21:27 +0900
 title:  "[JAVA] Json 기본 익히기"
 author: Kimson
-categories: [ TIL, JAVA ]
-tags: [Jacksondatabind, json]
+categories: [ java ]
+tags: [Jacksondatabind, json, til]
 image: assets/images/post/jacksonbind/jacksonbind01.png
 description: "사용 dependency
 junit : 4.12

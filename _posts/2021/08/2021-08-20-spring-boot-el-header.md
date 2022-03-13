@@ -1,11 +1,11 @@
 ---
 layout: post
-modified: 2022-01-19 15:48:20 +0900
+modified: 2022-03-14 00:09:35 +0900
 date:   2021-08-20 19:55:35 +0900
 title:  "[SPRINGBOOT] header referer EL로 가져오기"
 author: Kimson
-categories: [ TIL, SPRINGBOOT ]
-tags: [el, header, referer]
+categories: [ spring boot ]
+tags: [ el, header, referer, til ]
 image: assets/images/post/covers/TIL-spring.png
 description: "EL(Expression Language)
 

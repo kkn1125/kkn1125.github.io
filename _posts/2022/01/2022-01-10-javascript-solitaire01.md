@@ -1,11 +1,12 @@
 ---
 layout: post
+modified: 2022-03-14 00:09:35 +0900
 date:   2022-01-10 12:30:29 +0900
 title:  "[JAVASCRIPT] Solitaire를 만들어 보자 01"
 author: Kimson
-categories: [ JAVASCRIPT, TIM, GAME ]
+categories: [ javascript ]
 image: assets/images/post/solitaire/solitaire.png
-tags: [ game, solitaire, card ]
+tags: [ game, solitaire, card, tim ]
 description: "솔리테어를 만들어 보자 1편
 
 솔리테어는 대부분 컴퓨터에 설치되어 있는 것으로 알고 있습니다. 구글에서 솔리테어를 검색하면 나오는 게임이기도 하구요.

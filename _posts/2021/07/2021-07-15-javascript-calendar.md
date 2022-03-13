@@ -1,11 +1,11 @@
 ---
 layout: post
-modified: 2022-01-19 15:55:53 +0900
+modified: 2022-03-14 00:09:35 +0900
 date:   2021-07-15 17:40:27 +0900
 title:  "[JAVASCRIPT] 달력만들기"
 author: Kimson
-categories: [ TIL, JAVASCRIPT ]
-tags: [calendar, 달력, js]
+categories: [ javascript ]
+tags: [calendar, 달력, js, til]
 image: assets/images/post/jsdevKal/devkal.png
 description: "Javascript 라이브러리를 끌어 쓰던 중 \" 내가 만들면 어떨까 \" 해서 작업을 하게 되었습니다.
 저번에 중구난방으로 만들어봤지만 뭔가 설정 하나하나 커스터마이징 할 수 있게 하는 것이 라이브러리들의 특징이 아닐까 싶어 열심히 라이브러리 구조를 베끼고 관찰하면서 지금의 초본이 만들어졌습니다."

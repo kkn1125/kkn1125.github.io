@@ -1,12 +1,12 @@
 ---
 layout: post
-modified: 2022-01-19 15:55:53 +0900
+modified: 2022-03-14 00:09:35 +0900
 date:   2021-10-15 15:24:13 +0900
 title:  "[JEKYLL] jekyll theme를 만들자 01"
 author: Kimson
-categories: [ JEKYLL, TIM ]
+categories: [ jekyll ]
 image: assets/images/post/jekyll-theme/jekyll01.png
-tags: [ jekyll, theme ]
+tags: [ jekyll, theme, til ]
 description: "Jekyll Theme를 만들자
 
 jekyll 테마들을 보면서 나도 만들어 보고싶다는 생각에 무턱대고 시작했습니다. ruby는 잘 모르지만 변수나 if, for는 쓰는 방법은 알지만 익숙하지 않고 liquid는 그나마 블로그를 꾸미면서 다큐먼트를 많이 본 적이 있어 도전할만 했습니다."

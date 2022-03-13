@@ -1,11 +1,12 @@
 ---
 layout: post
+modified: 2022-03-14 00:09:35 +0900
 date:   2022-03-08 20:38:22 +0900
 title:  "[SPRING] Spring legacy project error"
 author: Kimson
-categories: [ SPRING, TIL ]
+categories: [ spring ]
 image: assets/images/post/covers/TIL-spring.png
-tags: [ spring, error, legacy ]
+tags: [ spring, error, legacy, til ]
 description: "eclipse update 관련 에러 노트
 
 spring boot와 vue를 혼합해서 사용하려다 보니 codemix라는 앱을 찾았는데요. 알고보니 유료인 것을 알고 빠르게 지웠더랬지요..."

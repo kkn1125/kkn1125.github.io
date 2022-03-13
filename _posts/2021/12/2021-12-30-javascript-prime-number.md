@@ -1,11 +1,12 @@
 ---
 layout: post
+modified: 2022-03-14 00:09:35 +0900
 date:   2021-12-30 16:09:54 +0900
 title:  "[JAVASCRIPT] 소수(Prime Number) 찾기"
 author: Kimson
-categories: [ JAVASCRIPT, TIL, PROGRAMMERS ]
+categories: [ javascript ]
 image: assets/images/post/covers/TIL-javascript.png
-tags: [ prime number, combination ]
+tags: [ prime number, combination, programmers ]
 description: "소수 찾기 문제
 
 요즘 프로그래머스의 문제를 단계별로 하나씩 풀어나가고 있는데요. 소수에 대한 이해도가 부족해서 딜레이 되었던지라 정리하기 위해 기록합니다."

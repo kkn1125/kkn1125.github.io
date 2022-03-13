@@ -1,11 +1,11 @@
 ---
 layout: post
-modified: 2022-01-19 15:55:53 +0900
+modified: 2022-03-14 00:09:35 +0900
 date:   2021-08-10 16:46:41 +0900
 title:  "[JAVASCRIPT] 정적웹에 다크모드 적용하기 02"
 author: Kimson
-categories: [ TIL, JAVASCRIPT ]
-tags: [darkmode]
+categories: [ javascript ]
+tags: [ darkmode, til ]
 image: assets/images/post/covers/TIL-javascript.png
 description: "다크모드의 적용 시기
 

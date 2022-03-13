@@ -1,12 +1,12 @@
 ---
 layout: post
-modified: 2022-01-19 15:55:53 +0900
+modified: 2022-03-14 00:09:35 +0900
 date:   2021-10-01 20:30:32 +0900
 title:  "[JAVASCRIPT] Documentify ( 문서화 ) 구현"
 author: Kimson
-categories: [ TIM, TIL, JAVASCRIPT ]
-tags: [document, generator, documentify]
+categories: [ javascript ]
 image: assets/images/post/covers/TIM-none.png
+tags: [ document, generator, documentify, til, tim ]
 description: "Documentify
 
 현재 Github에 올려두었으니 관심 있으신 분은 사용해보시면 됩니다.

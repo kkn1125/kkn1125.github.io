@@ -1,10 +1,11 @@
 ---
 layout: post
+modified: 2022-03-14 00:09:35 +0900
 date:   2021-09-10 19:07:12 +0900
 title:  "[JAVASCRIPT] 수평 사이즈 조절 바 구현하기"
 author: Kimson
-categories: [ TIL, JAVASCRIPT ]
-tags: [resize, horizental]
+categories: [ javascript ]
+tags: [ resize, horizental, til ]
 image: assets/images/post/covers/TIL-javascript.png
 description: "수평 사이즈 조절
 

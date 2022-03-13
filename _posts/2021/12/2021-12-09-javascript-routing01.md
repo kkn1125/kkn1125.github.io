@@ -1,12 +1,12 @@
 ---
 layout: post
-modified: 2022-01-19 15:55:53 +0900
+modified: 2022-03-14 00:09:35 +0900
 date:   2021-12-09 17:44:58 +0900
 title:  "[JAVASCRIPT] Vanilla JavaScript로 SPA를 구현해보자 01"
 author: Kimson
-categories: [ JAVASCRIPT, TIL ]
+categories: [ javascript ]
 image: assets/images/post/covers/TIL-javascript.png
-tags: [ spa, router, vanilla js ]
+tags: [ spa, router, vanilla js, til ]
 description: "Vanilla JavaScript로 SPA 구현
 
 제목을 어떻게 지을까 하다가 임시로 아는 단어를 적어두었습니다...

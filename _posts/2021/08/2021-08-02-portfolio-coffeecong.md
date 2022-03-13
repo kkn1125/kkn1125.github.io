@@ -1,5 +1,6 @@
 ---
 layout: post
+modified: 2022-03-14 00:09:35 +0900
 date:   2021-08-02 15:32:27 +0900
 title:  "[PORTFOLIO] 커피 온라인 몰"
 author: Kimson
@@ -27,14 +28,16 @@ istop: true
 published: false
 ---
 
-
-## CoffeeCong Site
+# CoffeeCong Site
 
 [coffeecong](https://devkims-on.herokuapp.com/main.me){:target="_blank"} 사이트 보러가기
 
 > 주제 - 커피용품 온라인몰
-### 1. 사이트 구성
-#### 1.1 페이지
+
+## 1. 사이트 구성
+
+### 1.1 페이지
+
 1. 메인페이지
 2. 회원가입/탈퇴/수정
 3. 로그인/계정찾기
@@ -44,7 +47,8 @@ published: false
 7. 주문,배송처리
 8. 상품관리
 
-#### 1.2 사용기술
+### 1.2 사용기술
+
 - Frontend
   - HTML
   - CSS
@@ -59,4 +63,5 @@ published: false
   - commons-fileupload
 
 > 시연영상
+
 <iframe width="896" height="504" src="https://www.youtube.com/embed/-8Zeu9oCVPU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

@@ -1,13 +1,13 @@
 ---
 layout: post
-modified: 2022-03-02 22:30:57 + 0900
+modified: 2022-03-14 00:09:35 +0900
 date:   2022-02-17 13:51:02 +0900
 modified: 2022-02-22 20:14:18 +0900
 title:  "[JAVASCRIPT] 간트차트를 만들어보자"
 author: Kimson
-categories: [ JAVASCRIPT, TIL, TIM ]
+categories: [ javascript ]
 image: assets/images/post/covers/TIL-javascript.png
-tags: [ web tool, gannt chart, table ]
+tags: [ web tool, gannt chart, table, tim, til ]
 description: "Gantt Chart 간트 차트는 프로젝트 일정관리를 위해서 사용이 되는데요. 처음 간트 차트를 접하게 된 때는 설계사무소를 다닐 때 였습니다. 물론 테이블을 다루는 라이브러리를 많이 있고, 아예 엑셀을 만들어 배포하는 것도 많이 봤습니다. 하지만 원리와 구성을 모른 채 라이브러리에 의존하다보니 문득 궁금해졌습니다. 하드코딩이라도 괜찮으니 한 번 만들어 보기로 한거죠."
 featured: true
 hidden: false

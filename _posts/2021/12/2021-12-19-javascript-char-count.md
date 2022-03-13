@@ -1,11 +1,12 @@
 ---
 layout: post
+modified: 2022-03-14 00:09:35 +0900
 date:   2021-12-19 22:36:51 +0900
-title:  "[JAVASCRIPT] 2020 카카오 문자열 압축 풀이"
+title:  "[ALGORITHM] 2020 카카오 문자열 압축 풀이"
 author: Kimson
-categories: [ JAVASCRIPT, TIL, ALGORITHM, PROGRAMMERS ]
+categories: [ algorithm ]
 image: assets/images/post/covers/TIL-javascript.png
-tags: [ algorithm, strToZip ]
+tags: [ algorithm, strToZip, javascript, programmers ]
 description: "2020 카카오 문자열 압축 풀이
 
 풀어봐야하는 차원에서 모든 답을 알려드려도 될지 모르겠습니다. 그저 제가 풀이한 방식을 기록하고자 올립니다."

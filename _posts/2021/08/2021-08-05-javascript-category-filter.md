@@ -1,10 +1,11 @@
 ---
 layout: post
+modified: 2022-03-14 00:09:35 +0900
 date:   2021-08-05 14:46:07 +0900
 title:  "[JAVASCRIPT] 카테고리 필터"
 author: Kimson
-categories: [ TIM, JAVASCRIPT ]
-tags: [filter, category, absolute]
+categories: [ javascript ]
+tags: [filter, category, absolute, til]
 image: assets/images/post/covers/TIM-none.png
 description: "Category Filter
 

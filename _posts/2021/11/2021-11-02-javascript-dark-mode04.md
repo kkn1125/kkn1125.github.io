@@ -1,12 +1,12 @@
 ---
 layout: post
-modified: 2022-01-19 15:55:53 +0900
+modified: 2022-03-14 00:09:35 +0900
 date:   2021-11-02 12:23:29 +0900
 title:  "[JAVASCRIPT] 정적웹에 다크모드 적용하기 04"
 author: Kimson
-categories: [ JAVASCRIPT, TIL ]
+categories: [ javascript ]
 image: assets/images/post/covers/TIL-javascript.png
-tags: [ darkmode, dark, staticweb ]
+tags: [ darkmode, dark, staticweb, til ]
 description: "다크모드 적용
 
 몇 달 전 다크모드에 대해 포스팅으로 기록한 적이 있습니다. 벌써 네번째 포스팅이라 거창한 내용은 아니지만 조금 더 나은 방법을 기록하고자 합니다."

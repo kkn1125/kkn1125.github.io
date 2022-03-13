@@ -1,12 +1,12 @@
 ---
 layout: post
-modified: 2022-02-08 21:38:38 +0900
+modified: 2022-03-14 00:09:35 +0900
 date:   2022-02-07 19:53:39 +0900
 title:  "[JAVASCRIPT] Markdown Parser를 만들어보자 (특히 리스트)"
 author: Kimson
-categories: [ JAVASCRIPT, TIL ]
+categories: [ javascript ]
 image: assets/images/post/covers/TIL-javascript.png
-tags: [ markdown, md, parser ]
+tags: [ markdown, md, parser, til, tim ]
 description: "Markdown Parser를 만들어보자
 
 마크다운을 HTML로 파싱해주는 라이브러리가 여러가지 있지만 한 번 구현해 보면 공부가 되겠다 싶어 기록합니다.

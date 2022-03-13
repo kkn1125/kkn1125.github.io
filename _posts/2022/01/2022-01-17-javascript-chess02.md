@@ -1,11 +1,12 @@
 ---
 layout: post
+modified: 2022-03-14 00:09:35 +0900
 date:   2022-01-17 12:20:44 +0900
 title:  "[JAVASCRIPT] 체스게임 구현 02"
 author: Kimson
-categories: [ JAVASCRIPT, TIM, GAME ]
+categories: [ javascript ]
 image: assets/images/post/chess/chess02.png
-tags: [ game, chess ]
+tags: [ game, chess, tim ]
 description: "체스 게임 구현
 
 이전에 만든 체스가 버그 투성이라 다른 방식으로 접근해서 구현했습니다. 혹시 코드를 보시고 싶은 분은 아래의 저장소 링크에서 확인하시기 바랍니다."

@@ -1,11 +1,11 @@
 ---
 layout: post
-modified: 2022-01-19 15:55:53 +0900
+modified: 2022-03-14 00:09:35 +0900
 date:   2021-09-07 15:37:12 +0900
 title:  "[DATABASE] 정적 웹에서 데이터베이스 사용하기"
 author: Kimson
-categories: [ TIL, DATABASE ]
-tags: [database, external, storage, spring, javascript]
+categories: [ database ]
+tags: [ database, external, storage, spring, javascript, til ]
 image: assets/images/post/database/db01.png
 description: "데이터베이스를 사용해보자
 

@@ -1,12 +1,12 @@
 ---
 layout: post
-modified: 2022-01-25 15:45:28 +0900
+modified: 2022-03-14 00:09:35 +0900
 date:   2022-01-24 11:50:37 +0900
 title:  "[VUE] 비동기 데이터 프로퍼티 null값 처리하기"
 author: Kimson
-categories: [ VUE, TIL ]
+categories: [ vue ]
 image: assets/images/post/covers/TIL-vue.png
-tags: [ async, axios, 'null' ]
+tags: [ async, axios, 'null', til ]
 description: "비동기 데이터
 
 비동기 데이터를 사용하는데 있어서 `promise`의 이해 부족으로 시간을 많이 잡아먹는 일이 종종 있었습니다.

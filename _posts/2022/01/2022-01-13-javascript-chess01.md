@@ -1,11 +1,12 @@
 ---
 layout: post
+modified: 2022-03-14 00:09:35 +0900
 date:   2022-01-13 22:12:28 +0900
 title:  "[JAVASCRIPT] 체스게임 구현 01"
 author: Kimson
-categories: [ JAVASCRIPT, TIM, GAME ]
+categories: [ javascript ]
 image: assets/images/post/chess/chess01.png
-tags: [ game, chess ]
+tags: [ game, chess, tim ]
 description: "체스 게임 구현
 
 저번에 올린 솔리테어처럼 코드를 하나씩 뜯어보며 만들어가는 포스팅이 아닙니다. 추후에 시간 될 때 차근차근 만들어나가는 포스팅을 하려합니다. 아래는 자바스크립트로 체스게임이 구현 되는지 테스트 해서 올리는 결과물입니다."

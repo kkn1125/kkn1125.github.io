@@ -1,12 +1,12 @@
 ---
 layout: post
-modified: 2022-03-02 22:30:57 + 0900
+modified: 2022-03-14 00:09:35 +0900
 date:   2022-02-24 21:22:08 +0900
 title:  "[JAVASCRIPT] Proxy와 Reflect 맛보기 02 - Todo List를 만들어보자"
 author: Kimson
-categories: [ JAVASCRIPT, TIL ]
+categories: [ javascript ]
 image: assets/images/post/covers/TIL-javascript.png
-tags: [ proxy, reflect ]
+tags: [ proxy, reflect, til ]
 description: "Todo List를 만들어 보자 Proxy를 통한 내용 자동 업데이트
 
 `Proxy`를 이용해서 변수 변경을 감지, 즉, 정확히 말해서 객체의 속성 값이 변경되는 것을 감지해서 자동으로 화면을 업데이트 하는 `Todo List`를 만들려고 합니다. 최근에 `Svelte`를 `Vue`와 다른 차이점을 접하기 위해 사용해보고 있는데요. 예전에 `Vue`가 어떻게 자동으로 변수를 업데이트하는지 `class`를 사용해 컴포넌트를 만들고, 컴포넌트가 생성될 때 로직을 짜 넣어 변수 업데이트를 했던 기억이 납니다."

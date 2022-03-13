@@ -1,10 +1,11 @@
 ---
 layout: post
+modified: 2022-03-14 00:09:35 +0900
 date:   2021-08-19 20:01:02 +0900
 title:  "[JAVASCRIPT] Object assign 활용하기"
 author: Kimson
-categories: [ TIL, JAVASCRIPT ]
-tags: [object, assign, multi-set]
+categories: [ javascript ]
+tags: [ object, assign, multi-set, til ]
 image: assets/images/post/covers/TIL-javascript.png
 description: "Object assign 메서드
 

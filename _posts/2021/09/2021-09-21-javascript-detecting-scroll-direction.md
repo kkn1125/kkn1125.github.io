@@ -1,10 +1,11 @@
 ---
 layout: post
+modified: 2022-03-14 00:09:35 +0900
 date:   2021-09-21 20:23:12 +0900
 title:  "[JAVASCRIPT] 스크롤 방향 감지 (Detecting scroll direction)"
 author: Kimson
-categories: [ TIL, JAVASCRIPT ]
-tags: [detect, scroll, direction]
+categories: [ javascript ]
+tags: [ detect, scroll, direction, til ]
 image: assets/images/post/covers/TIL-javascript.png
 description: "스크롤 방향 감지
 

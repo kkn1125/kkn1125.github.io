@@ -1,10 +1,11 @@
 ---
 layout: post
+modified: 2022-03-14 00:09:35 +0900
 date:   2021-08-17 15:02:11 +0900
 title:  "[JAVASCRIPT] 스크롤 애니메이션 구현하기"
 author: Kimson
-categories: [ TIM, JAVASCRIPT ]
-tags: [no-scroll, slide]
+categories: [ javascript ]
+tags: [ no-scroll, slide, tim ]
 image: assets/images/post/covers/TIM-none.png
 description: "스크롤 애니메이션 구현
 

@@ -1,10 +1,11 @@
 ---
 layout: post
+modified: 2022-03-14 00:09:35 +0900
 date:   2021-08-08 14:19:05 +0900
 title:  "[JAVASCRIPT] 복잡한 코드, 규칙을 만들자"
 author: Kimson
-categories: [ TIL, JAVASCRIPT ]
-tags: [array, coding, pattern]
+categories: [ javascript ]
+tags: [array, coding, pattern, til]
 image: assets/images/post/covers/TIL-javascript.png
 description: "깔끔한 코드는 무엇일까
 

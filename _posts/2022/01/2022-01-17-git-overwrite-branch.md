@@ -1,11 +1,12 @@
 ---
 layout: post
+modified: 2022-03-14 00:09:35 +0900
 date:   2022-01-17 12:40:42 +0900
 title:  "[GIT] 깃 브랜치 덮어쓰기"
 author: Kimson
-categories: [ GIT, TIL ]
+categories: [ git ]
 image: assets/images/post/covers/TIL-git.png
-tags: [ git, branch, overwrite ]
+tags: [ git, branch, overwrite, til ]
 description: "깃 브랜치 덮어쓰기
 
 main 브랜치를 새로운 브랜치로 교체할 일이 생겨 시도하다보니 아래와 같은 메세지가 나왔습니다."

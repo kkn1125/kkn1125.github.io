@@ -1,11 +1,12 @@
 ---
 layout: post
+modified: 2022-03-14 00:09:35 +0900
 date:   2022-03-04 19:56:07 +0900
 title:  "[SHELL] Shell Script로 파일 변환을 감지해보자"
 author: Kimson
-categories: [ SHELL, TIL ]
+categories: [ shell ]
 image: assets/images/post/covers/TIL-shell.png
-tags: [ bash, shell, sh ]
+tags: [ bash, shell, sh, til ]
 description: "파일 변환 감지
 
 파이썬을 사용하면서 불편했던 점이 실행할 때마다 입력하는게 번거롭기도 하고 live-server의 저장시 새로고침 되는 기능을 만들 수 있을까 싶었습니다.

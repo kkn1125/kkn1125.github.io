@@ -1,11 +1,11 @@
 ---
 layout: post
-modified: 2021-12-22 13:16:31 +0900
+modified: 2022-03-14 00:09:35 +0900
 date:   2021-07-24 16:21:27 +0900
 title:  "[JAVA] Timestamp 시간 나타내기"
 author: Kimson
-categories: [ TIL, JAVA ]
-tags: [mysql, timestamp, simpledateformat]
+categories: [ java ]
+tags: [mysql, timestamp, simpledateformat, til]
 image: assets/images/post/mysql_cover.png
 description: "MySQL Timestamp타입 웹에서 시간 표기  
 남의 코드를 하나씩 뜯어보며 공부하는 방식을 취하는데 반해 생각없이 관습적으로 따라 쓰는 경우가 종종 있습니다."

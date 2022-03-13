@@ -1,12 +1,12 @@
 ---
 layout: post
-modified: 2022-01-19 15:55:53 +0900
+modified: 2022-03-14 00:09:35 +0900
 date:   2021-10-04 19:55:23 +0900
 title:  "[JAVASCRIPT] Graph Editor JS"
 author: Kimson
-categories: [ TIM, TIL, JAVASCRIPT ]
-tags: [graph, table, generator]
+categories: [ javascript ]
 image: assets/images/post/covers/TIM-none.png
+tags: [ graph, table, generator, til, tim ]
 description: "Graph Editor
 
 단순하게 그래프 이름과 값(%)를 입력하여 그래프 리스트를 만드는 기능입니다."

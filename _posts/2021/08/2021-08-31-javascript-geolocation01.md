@@ -1,10 +1,11 @@
 ---
 layout: post
+modified: 2022-03-14 00:09:35 +0900
 date:   2021-08-26 15:07:42 +0900
 title:  "[JAVASCRIPT] 현재 주소 알아내기"
 author: Kimson
-categories: [ TIL, JAVASCRIPT ]
-tags: [geoplugin, geolocation]
+categories: [ javascript ]
+tags: [ geoplugin, geolocation, til ]
 image: assets/images/post/geolocation/geo01.png
 description: "현재 주소를 알아내보자
 

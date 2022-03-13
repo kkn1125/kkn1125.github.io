@@ -1,10 +1,11 @@
 ---
 layout: post
+modified: 2022-03-14 00:09:35 +0900
 date:   2021-09-02 13:35:47 +0900
 title:  "[JAVASCRIPT] 개미 길 찾기 - 파이썬 문제"
 author: Kimson
-categories: [ TIL, JAVASCRIPT ]
-tags: [python, ant, getdirection]
+categories: [ javascript ]
+tags: [ python, ant, getdirection, til ]
 image: assets/images/post/covers/TIL-javascript.png
 description: "파이썬 문제 자바스크립트 변환
 

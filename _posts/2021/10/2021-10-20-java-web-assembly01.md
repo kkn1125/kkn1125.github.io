@@ -1,12 +1,12 @@
 ---
 layout: post
-modified: 2022-01-19 15:55:53 +0900
+modified: 2022-03-14 00:09:35 +0900
 date:   2021-10-20 11:27:25 +0900
 title:  "[SPRING] JWebAssembly를 사용해보자"
 author: Kimson
-categories: [ SPRING, TIL ]
+categories: [ spring ]
 image: assets/images/post/covers/TIL-spring.png
-tags: [ jdbc, template ]
+tags: [ web assembly, til ]
 description: "WebAssembly란
 
 웹 어셈블리는 최신 웹 브라우저에서 실행할 수 있는 새로운 유형의 코드입니다. C나 C++, Rust, Java와 같은 언어를 웹에서 사용할 수 있게 해준다고 합니다. 아직 공부중인 영역이라 MDN 웹어셈블리를 참고하시면 좋을 것 같습니다. 추가로 참고한 사이트는 맨 하단에 링크를 남기겠습니다."

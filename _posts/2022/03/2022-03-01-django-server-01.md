@@ -1,11 +1,12 @@
 ---
 layout: post
+modified: 2022-03-14 00:09:35 +0900
 date:   2022-03-01 21:45:49 +0900
 title:  "[DJANGO] Django 서버를 만들자 01"
 author: Kimson
-categories: [ DJANGO, TIL ]
+categories: [ django ]
 image: assets/images/post/covers/TIL-django.png
-tags: [ python, django ]
+tags: [ python, django, til ]
 description: "Django 서버 구축
 
 새로운 환경이라 아직 이해는 잘 안 됩니다. 많이 부족한 부분이 있으니 양해바랍니다."

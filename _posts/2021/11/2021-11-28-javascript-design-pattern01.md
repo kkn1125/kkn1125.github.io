@@ -1,12 +1,12 @@
 ---
 layout: post
-modified: 2022-01-19 15:55:53 +0900
+modified: 2022-03-14 00:09:35 +0900
 date:   2021-11-28 14:35:56 +0900
 title:  "[JAVASCRIPT] 자바스크립트 디자인 패턴 - 모듈 패턴"
 author: Kimson
-categories: [ JAVASCRIPT, TIL ]
+categories: [ javascript ]
 image: assets/images/post/covers/TIL-javascript.png
-tags: [ javascript, module, design pattern ]
+tags: [ javascript, module, design pattern, til ]
 description: "Module Pattern
 
 포스팅이 뜸 했습니다. 최근에 `Typer` 한글 분해 타이핑 기능과 `Documentify` 문서화 기능을 마무리 짓느라 포스팅에 소홀했는데요. 이번에는 이제 익숙해져버린 모듈 패턴을 기록해두려합니다.

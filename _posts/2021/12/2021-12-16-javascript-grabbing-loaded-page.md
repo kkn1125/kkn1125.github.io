@@ -1,12 +1,12 @@
 ---
 layout: post
-modified: 2022-01-19 15:55:53 +0900
+modified: 2022-03-14 00:09:35 +0900
 date:   2021-12-16 18:41:37 +0900
 title:  "[JAVASCRIPT] 페이지 내용이 동적으로 로드되는 페이지 자바스크립트로 읽어오기"
 author: Kimson
-categories: [ JAVASCRIPT, TIL ]
+categories: [ javascript ]
 image: assets/images/post/covers/TIL-javascript.png
-tags: [ visitors, counting ]
+tags: [ dynamic, load page, til ]
 description: "동적 로드 페이지 내용을 읽어오자
 
 구글 검색 후 나타나는 결과물을 긁어오는 도중에 문제가 생겼습니다.

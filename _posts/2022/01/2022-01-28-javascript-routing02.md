@@ -1,11 +1,12 @@
 ---
 layout: post
+modified: 2022-03-14 00:09:35 +0900
 date:   2022-01-28 16:52:37 +0900
 title:  "[JAVASCRIPT] Vanilla JavaScript로 SPA를 구현해보자 02"
 author: Kimson
-categories: [ JAVASCRIPT, TIM ]
+categories: [ javascript ]
 image: assets/images/post/covers/TIL-javascript.png
-tags: [ spa, router, vanilla js, import ]
+tags: [ spa, router, vanilla js, import, tim ]
 description: "Router 구현
 
 작년 12월 즈음 spa에 관한 이야기를 했었습니다. 그 당시 구현 방식에 대해 짧게 다루어 보았는데요. 궁금하신 분은 링크를 참조하시기 바랍니다. 지금보니 쓸데없이 메서드가 많은 느낌이 들어서 개편?하고자 새롭게 `rotuer`를 만들게 되었습니다."

@@ -1,11 +1,11 @@
 ---
 layout: post
-modified: 2022-01-19 15:55:53 +0900
+modified: 2022-03-14 00:09:35 +0900
 date:   2021-09-24 20:15:27 +0900
 title:  "[SPRING] 파일 업로드 하기"
 author: Kimson
-categories: [ TIL, SPRINGBOOT ]
-tags: [file, upload]
+categories: [ spring boot ]
+tags: [ file, upload, til ]
 image: assets/images/post/covers/TIL-spring.png
 description: "File Upload
 USED

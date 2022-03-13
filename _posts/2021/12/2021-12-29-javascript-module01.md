@@ -1,11 +1,12 @@
 ---
 layout: post
+modified: 2022-03-14 00:09:35 +0900
 date:   2021-12-29 16:17:41 +0900
 title:  "[JAVASCRIPT] Vanilla JavaScript에서 Module사용하기"
 author: Kimson
-categories: [ JAVASCRIPT, TIL ]
+categories: [ javascript ]
 image: assets/images/post/covers/TIL-javascript.png
-tags: [ module, vanilla javascript ]
+tags: [ module, vanilla javascript, til ]
 description: "Vanilla Javascript에서 Module 사용하기
 
 기능들이 한 파일에 모두 모여있어 제가 짠 코드지만 매우 보기 불편해서 모듈화가 필요하게 되었습니다. 그래서 사용법을 짧게 기록하기 위해 포스팅하게 되었습니다."

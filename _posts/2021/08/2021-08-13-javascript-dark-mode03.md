@@ -1,11 +1,11 @@
 ---
 layout: post
-modified: 2022-01-19 15:48:20 +0900
+modified: 2022-03-14 00:09:35 +0900
 date:   2021-08-13 13:50:20 +0900
 title:  "[JAVASCRIPT] 정적웹에 다크모드 적용하기 03"
 author: Kimson
-categories: [ TIL, JAVASCRIPT ]
-tags: [setTimeout, darkmode]
+categories: [ jvavascript ]
+tags: [setTimeout, darkmode, til]
 image: assets/images/post/covers/TIL-javascript.png
 description: "다크모드 부드러운 전환
 다크모드 1편이 단순하게 다크모드를 구현하는 주제였으면, 다크모드 2편은 \"언제 `body`태그에 `dark`클래스를 넣는가\"였습니다. 런데 문제는 `transition`을 주는 것이었습니다. `transition`을 주게 되면 `dark`클래스로 저장하여 여는 것 아니면 켤때마다 까매지고, 하얘지는 현상이 계속 됐습니다."

@@ -1,10 +1,11 @@
 ---
 layout: post
+modified: 2022-03-14 00:09:35 +0900
 date:   2021-09-06 14:25:12 +0900
 title:  "[JAVASCRIPT] 사천성 게임 만들기"
 author: Kimson
-categories: [ TIL, JAVASCRIPT ]
-tags: [sachunsung, 사천성, 그림맞추기]
+categories: [ javascript ]
+tags: [ sachunsung, 사천성, 그림맞추기, til ]
 image: assets/images/post/sachunsung/sa06.png
 description: "사천성 게임 만들기
 

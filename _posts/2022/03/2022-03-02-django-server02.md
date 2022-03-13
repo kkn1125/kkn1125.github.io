@@ -1,11 +1,12 @@
 ---
 layout: post
+modified: 2022-03-14 00:09:35 +0900
 date:   2022-03-02 15:54:40 +0900
 title:  "[DJANGO] Django 서버를 만들자 02"
 author: Kimson
-categories: [ DJANGO, TIL ]
+categories: [ django ]
 image: assets/images/post/covers/TIL-django.png
-tags: [ python, django, mysql, rest ]
+tags: [ python, django, mysql, rest, til ]
 description: "Django MySQL연결과 Rest framework
 
 이번 포스팅은 데이터베이스 연결과 rest api를 사용하는 것에 대해 기록하려합니다.

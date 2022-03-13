@@ -1,10 +1,11 @@
 ---
 layout: post
+modified: 2022-03-14 00:09:35 +0900
 date:   2021-07-24 16:21:27 +0900
 title:  "[JAVASCRIPT] 달력만들기 - TODO LIST"
 author: Kimson
-categories: [ TIL, JAVASCRIPT ]
-tags: [달력, calendar, todolist]
+categories: [ javascript ]
+tags: [달력, calendar, todolist, til]
 image: assets/images/post/jsdevKal/devkal-3.png
 description: "사용 dependency
 junit : 4.12

@@ -1,10 +1,11 @@
 ---
 layout: post
+modified: 2022-03-14 00:09:35 +0900
 date:   2021-08-07 15:18:43 +0900
 title:  "[SPRING] xml 없이 에러페이지 처리하기"
 author: Kimson
-categories: [ TIL, SPRING ]
-tags: [javaconfiguration, exception, "404"]
+categories: [ spring ]
+tags: [javaconfiguration, exception, "404", til]
 image: assets/images/post/covers/TIL-spring.png
 description: "xml 없는 프로젝트
 

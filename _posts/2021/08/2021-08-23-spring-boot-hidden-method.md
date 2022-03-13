@@ -1,11 +1,11 @@
 ---
 layout: post
-modified: 2022-01-19 15:48:20 +0900
+modified: 2022-03-14 00:09:35 +0900
 date:   2021-08-23 18:38:35 +0900
 title:  "[SPRINGBOOT] Hidden Method 사용"
 author: Kimson
-categories: [ TIL, SPRINGBOOT ]
-tags: [hidden, method]
+categories: [ spring boot ]
+tags: [ hidden, method, til ]
 image: assets/images/post/covers/TIL-spring.png
 description: "Hidden Method
 

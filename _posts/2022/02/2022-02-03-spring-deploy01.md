@@ -1,11 +1,12 @@
 ---
 layout: post
+modified: 2022-03-14 00:09:35 +0900
 date:   2022-02-03 13:05:22 +0900
 title:  "[SPRING] Spring MVC 프로젝트 Heroku 배포 시 404 에러 기록"
 author: Kimson
-categories: [ SPRING, TIL ]
+categories: [ spring ]
 image: assets/images/post/covers/TIL-spring.png
-tags: [ heroku, spring mvc, deploy ]
+tags: [ heroku, spring mvc, deploy, til ]
 description: "Heroku war deploy
 
 `heroku`를 처음 접했을 때 많이 어려움을 겪었습니다. 도대체 에러를 어디서 보여주는지 몰랐고 로그조차 찾기 힘들었기에 감으로 배포하면서 에러도 감으로 고치고는 했습니다. 그런데 최근에 다시 보니 로그를 보는 기능이 이미 있었네요 😥"

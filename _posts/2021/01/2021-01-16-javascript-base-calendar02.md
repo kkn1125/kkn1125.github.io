@@ -1,11 +1,12 @@
 ---
 layout: post
+modified: 2022-03-14 00:09:35 +0900
 date:   2021-01-16 21:25:04 +0900
 title:  "[JAVASCRIPT] 달력 만들기 (글쓰기 기능)"
 author: Kimson
-categories: [ JAVASCRIPT, TIL ]
+categories: [ javascript ]
 image: assets/images/post/back/back02.png
-tags: [ calendar, backup ]
+tags: [ calendar, backup, til ]
 description: "달력 만들기 어떻게 코드를 짤까
 
 크게 하나의 객체로 관리하고자 했습니다. 폴더처럼요!"

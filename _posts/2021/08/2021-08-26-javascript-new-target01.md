@@ -1,10 +1,11 @@
 ---
 layout: post
+modified: 2022-03-14 00:09:35 +0900
 date:   2021-08-26 15:07:42 +0900
 title:  "[JAVASCRIPT] new target 알아보기"
 author: Kimson
-categories: [ TIL, JAVASCRIPT ]
-tags: [new, target]
+categories: [ javascript ]
+tags: [ new, target, til ]
 image: assets/images/post/covers/TIL-javascript.png
 description: "new.target을 써보자
 

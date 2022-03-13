@@ -1,10 +1,11 @@
 ---
 layout: post
+modified: 2022-03-14 00:09:35 +0900
 date:   2021-09-08 18:28:12 +0900
 title:  "[JAVASCRIPT] 한글 타이핑 효과 구현하기"
 author: Kimson
-categories: [ TIL, JAVASCRIPT ]
-tags: [effect, typing, 한글]
+categories: [ javascript ]
+tags: [ effect, typing, 한글, til ]
 image: assets/images/post/covers/TIL-javascript.png
 description: "한글 타이핑 효과 구현
 

@@ -1,10 +1,10 @@
 ---
 layout: post
-modified: 2021-12-24 22:15:34 +0900
+modified: 2022-03-14 00:09:35 +0900
 date:   2021-12-23 21:09:22 +0900
 title:  "[JAVASCRIPT] Jest를 사용해보자"
 author: Kimson
-categories: [ JAVASCRIPT, TIL, DevOps ]
+categories: [ javascript ]
 image: assets/images/post/covers/TIL-javascript.png
 tags: [ unit test, jest, test code ]
 description: "Jest 사용하기

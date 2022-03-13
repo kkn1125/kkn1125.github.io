@@ -1,12 +1,12 @@
 ---
 layout: post
-modified: 2022-01-19 15:55:53 +0900
+modified: 2022-03-14 00:09:35 +0900
 date:   2021-10-19 18:23:12 +0900
 title:  "[SPRING] JDBC Template 사용 기록"
 author: Kimson
-categories: [ SPRING, TIL ]
+categories: [ spring ]
 image: assets/images/post/covers/TIL-spring.png
-tags: [ jdbc, template ]
+tags: [ jdbc, template, til ]
 description: "JDBC Template 사용법
 
 오랜만에 JAVA를 사용했습니다. 요즘 만들고 싶은게 많아서 js를 쭉 쓰다보니 점점 JAVA를 잊어가는 느낌입니다.

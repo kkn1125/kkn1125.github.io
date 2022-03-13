@@ -1,12 +1,12 @@
 ---
 layout: post
-modified: 2022-01-19 15:55:53 +0900
+modified: 2022-03-14 00:09:35 +0900
 date:   2021-10-08 21:18:08 +0900
 title:  "[JAVASCRIPT] 구조 분해 할당"
 author: Kimson
-categories: [ TIL, JAVASCRIPT ]
-tags: [destructuring assignment]
+categories: [ javascript ]
 image: assets/images/post/covers/TIL-javascript.png
+tags: [ destructuring assignment, til ]
 description: "구조 분해 할당
 
 이번에 DocumentifyJS(문서화 js)를 만들면서 자주 사용한 표현식입니다. 구조 분해 할당은 배열이나 객체 속성을 헤체해서 값을 변수마다 담아주는 기특한? 표현입니다."

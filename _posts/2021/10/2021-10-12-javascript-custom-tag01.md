@@ -1,12 +1,12 @@
 ---
 layout: post
-modified: 2022-02-09 12:54:30 +0900
+modified: 2022-03-14 00:09:35 +0900
 date:   2021-10-12 17:23:12 +0900
 title:  "[JAVASCRIPT] HTML 커스텀 태그 만들어 사용하기"
 author: Kimson
-categories: [ TIL, JAVASCRIPT ]
+categories: [ javascript ]
 image: assets/images/post/covers/TIL-javascript.png
-tags: [ custom, tag ]
+tags: [ custom, tag, til ]
 description: "Custom Tag
 
 이름을 뭐라 해야할지 몰라서 커스텀 태그라고 했습니다. 어떤 의미인지는 아래 예를 보면서 설명드리겠습니다.

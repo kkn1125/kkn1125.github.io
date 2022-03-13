@@ -1,12 +1,12 @@
 ---
 layout: post
-modified: 2022-01-25 01:44:12 +0900
+modified: 2022-03-14 00:09:35 +0900
 date:   2022-01-21 20:17:54 +0900
 title:  "[VUE] 컴포넌트, 엘리먼트에 다중 속성 보내기"
 author: Kimson
-categories: [ VUE, TIL ]
+categories: [ vue ]
 image: assets/images/post/covers/TIL-vue.png
-tags: [ attributes, multi, component ]
+tags: [ attributes, multi, component, til ]
 description: "컴포넌트, 엘리먼트에 다중 속성 보내기
 기억하고자 가볍게 올리는 것이니 참고 바랍니다.
 

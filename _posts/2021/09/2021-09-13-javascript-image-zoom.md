@@ -1,10 +1,11 @@
 ---
 layout: post
+modified: 2022-03-14 00:09:35 +0900
 date:   2021-09-10 19:07:12 +0900
 title:  "[JAVASCRIPT] 이미지 줌 구현하기"
 author: Kimson
-categories: [ TIL, JAVASCRIPT ]
-tags: [image, zoom]
+categories: [ javascript ]
+tags: [ image, zoom, til ]
 image: assets/images/post/covers/TIL-javascript.png
 description: "이미지 줌 구현
 사용 할 이미지는 저작권 영향을 받지 않는 픽사베이의 이미지를 사용했는데요. 크기가 다양해서 이미지가 필요할 때 자주 애용합니다.

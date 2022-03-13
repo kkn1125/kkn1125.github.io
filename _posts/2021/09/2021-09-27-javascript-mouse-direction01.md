@@ -1,11 +1,11 @@
 ---
 layout: post
-modified: 2022-01-19 15:55:53 +0900
+modified: 2022-03-14 00:09:35 +0900
 date:   2021-09-24 22:22:32 +0900
 title:  "[JAVASCRIPT] 마우스 이동 방향 감지"
 author: Kimson
-categories: [ TIL, JAVASCRIPT ]
-tags: [detect, direction, mouse]
+categories: [ javascript ]
+tags: [ detect, direction, mouse, til ]
 image: assets/images/post/covers/TIL-javascript.png
 description: "마우스 이동 방향 감지
 

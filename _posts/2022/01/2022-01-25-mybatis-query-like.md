@@ -1,11 +1,12 @@
 ---
 layout: post
+modified: 2022-03-14 00:09:35 +0900
 date:   2022-01-25 15:42:46 +0900
 title:  "[SPRING] MyBatis Like 쿼리 작성"
 author: Kimson
-categories: [ SPRING, TIL ]
+categories: [ spring ]
 image: assets/images/post/covers/TIL-spring.png
-tags: [ like, query ]
+tags: [ like, query, til ]
 description: "MyBatis Like
 
 `api`를 만들면서 카테고리 검색이 필요해졌습니다. 페이징 처리할 때 사용했던 `like`구문이 막상 떠오르지 않아 시간을 버렸네요.

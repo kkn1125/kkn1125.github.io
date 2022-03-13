@@ -1,11 +1,11 @@
 ---
 layout: post
-modified: 2022-01-19 15:48:20 +0900
+modified: 2022-03-14 00:09:35 +0900
 date:   2021-08-19 17:40:02 +0900
 title:  "[SPRINGBOOT] SPRING BOOT Security 01"
 author: Kimson
-categories: [ TIL, SPRINGBOOT ]
-tags: [mybatis]
+categories: [ spring boot ]
+tags: [ mybatis, til ]
 image: assets/images/post/covers/TIL-spring.png
 description: "Spring Boot Security 시작하기
 

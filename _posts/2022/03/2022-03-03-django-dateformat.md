@@ -1,11 +1,12 @@
 ---
 layout: post
+modified: 2022-03-14 00:09:35 +0900
 date:   2022-03-03 22:08:31 +0900
 title:  "[DJANGO] Date Formatting을 해보자"
 author: Kimson
-categories: [ TERMINAL, TIL ]
+categories: [ terminal ]
 image: assets/images/post/covers/TIL-django.png
-tags: [ linux, ubuntu ]
+tags: [ linux, ubuntu, til ]
 description: "날짜 포맷 변환
 
 현재 서버 만드는 걸 수차례 반복하면서 CRUD를 익히고 있습니다. 그러던 중에 게시물의 시간을 표시하려는데 찾아보니 뭔가 엄청나게 많은 포멧 기호가 있었습니다.

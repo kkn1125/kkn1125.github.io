@@ -1,12 +1,12 @@
 ---
 layout: post
-modified: 2022-01-19 15:55:53 +0900
+modified: 2022-03-14 00:09:35 +0900
 date:   2021-12-16 14:31:34 +0900
 title:  "[JAVASCRIPT] 정적 웹에서 방문자 수 나타내기"
 author: Kimson
-categories: [ JAVASCRIPT, TIL ]
+categories: [ javascript ]
 image: assets/images/post/covers/TIL-javascript.png
-tags: [ visitors, counting ]
+tags: [ visitors, counting, til ]
 description: "정적 웹에서 방문자 수 나타내기
 
 사실 오래 전부터 고민하면서 이것저것 시도를 했었는데요. 나름 꼼수를 사용한 방법을 소개해드리려 합니다. 만일 문제 될 시 해당 글은 삭제할 것 입니다.
