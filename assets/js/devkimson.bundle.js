@@ -790,3 +790,59 @@ window.addEventListener('mousemove', (ev)=>{
         menu.scrollTo({left: originWidth-(ev.clientX-first), top: menu.scrollTop, behavior: 'auto'});
     }
 });
+
+// 20220313 main page 분할
+
+const pagination = document.querySelector('#pagination');
+const left = document.querySelector('#leftBtn');
+const right = document.querySelector('#rightBtn');
+const pagesEl = document.querySelectorAll('[page]');
+const pages = [];
+let currentPage = 0;
+
+pagesEl.forEach(e=>{
+    pages.push(e.getAttribute('page'));
+});
+
+updatePage();
+
+function updatePage (){
+    const page = pages[currentPage];
+    document.querySelectorAll('[page]').forEach(e=>e.hidden=true);
+    document.querySelector(`[page="${page}"]`).removeAttribute('hidden');
+    if(currentPage == 0) {
+        left.hidden = true;
+    } else if (currentPage == pages.length-1) {
+        right.hidden = true;
+    } else {
+        left.removeAttribute('hidden');
+        right.removeAttribute('hidden');
+    }
+}
+
+function handlePageLeft(){
+    currentPage--;
+    if(currentPage<0){
+        currentPage = 0;
+    }
+    updatePage();
+}
+
+function handlePageRight(){
+    currentPage++;
+    if(currentPage>pages.length-1){
+        currentPage = pages.length-1;
+    }
+    updatePage();
+}
+
+window.addEventListener('click', e=>{
+    const target = e.target;
+    if(target.id == 'leftBtn') {
+        handlePageLeft()
+    } else if(target.id == 'rightBtn') {
+        handlePageRight();
+    } else {
+        return;
+    }
+});

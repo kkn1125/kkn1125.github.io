@@ -199,9 +199,17 @@ aside#rsb>div {
 	display: none;
 }
 
-.latestPost>.card:first-child {
-	width: 100%;
+[disabled] {
+    box-shadow: inset 0 0 0 9999px rgba(255,255,255,0.5);
 }
+
+[hidden] {
+    display: none !important;
+}
+
+/* .latestPost>.card:first-child {
+	width: 100%;
+} */
 
 .card[style|="background"] {
 	backdrop-filter: blur(10px);

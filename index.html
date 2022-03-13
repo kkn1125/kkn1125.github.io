@@ -6,73 +6,89 @@ enabled: true
 description: "나를 표현하는 블로그. 끊임없이 도전하고 공부하는 예비 개발자입니다."
 ---
 
-<div class="fence-full">
+<div class="fence">
 
     <div class="w-flex gx-4">
 
-        <div class="col-20 col-md-10">
-            {% include sidebar-featured.html %}
-        </div>
-    
-        <div class="col-20 col-md-10">
-            <!-- Begin post excerpts, let's highlight the first 4 posts on top -->
-            <div class="border-bottom">
-                {% assign size = site.posts | size %}
-                <span class="h4">Latest Posts</span>
-                {% if size<5 %}
-                {% else %}
+        <div class="w-100">
+            <div page="first">
+                {% include sidebar-featured.html %}
+            </div>
+            
+            <div page="third">
+                <!-- Begin post excerpts, let's highlight the first 4 posts on top -->
+                <div class="border-bottom">
+                    {% assign size = site.posts | size %}
+                    <span class="h4">Latest Posts</span>
+                    {% if size>5 %}
                     <button class="btn btn-danger ms-2 px-3" onclick="location='/author-kimson'">더 보기 + 
                     {{size | minus: 5}}
                     </button>
-                {% endif %}
-            </div>
-            <div class="card-group pt-1 card-pd-0 card-dv-1 card-dv-md-2 card-ghost latestPost" style="gap: 1rem;">
-                <!-- latest post -->
-                {% for post in site.posts limit:5 %}
-                <div class="card p-0 m-0" style="overflow: hidden;">
-                    {% if post.image %}
-                    <div class="card-img">
-                        <a href="{{site.baseurl}}{{post.url}}" title="{{ post.title }}">
-                            <img class="latestImgs" src="{% if post.image contains "://" %}{{ post.image }}{% else %}{{ post.image | absolute_url }}{% endif %}"
-                                alt="{{ post.title }}">
-                        </a>
-                    </div>
-                    {% endif %}
-                    <div class="card-title"><a href="{{site.baseurl}}{{post.url}}" title="{{ post.title }}">{{ post.title }}</a></div>
-                    <div class="card-content">
-                        <div class="card-body">
-                            {{ post.excerpt  | strip_html | strip_newlines | truncate: 186}}
-                        </div>
-                    </div>
-                    {% if forloop.first == true %}
-                    
-                    In <span class="catlist">
-                        {% for category in post.categories %}
-                        <a class="text-capitalize tag tag-success text-white"
-                            href="{{site.baseurl}}/categories.html#{{ category | downcase }}">{{ category }}</a><span
-                            class="sep"> </span>
-                        {% endfor %}
-                    </span>
-                    <time class="card-time">{{ post.date | date: '%b %d, %Y' }}</time>
-                    
                     {% endif %}
                 </div>
-                {% endfor %}
+
+                <div class="card-group pt-1 card-pd-0 card-dv-1 card-dv-md-2 card-ghost latestPost" style="gap: 1rem;">
+                    <!-- latest post -->
+                    {% for post in site.posts limit:5 %}
+                    <div class="card p-0 m-0" style="overflow: hidden;">
+                        {% if post.image %}
+                        <div class="card-img">
+                            <a href="{{site.baseurl}}{{post.url}}" title="{{ post.title }}">
+                                <img class="latestImgs" src="{% if post.image contains "://" %}{{ post.image }}{% else %}{{ post.image | absolute_url }}{% endif %}"
+                                    alt="{{ post.title }}">
+                            </a>
+                        </div>
+                        {% endif %}
+                        <div class="card-title"><a href="{{site.baseurl}}{{post.url}}" title="{{ post.title }}">{{ post.title }}</a></div>
+                        <div class="card-content">
+                            <div class="card-body">
+                                {{ post.excerpt  | strip_html | strip_newlines | truncate: 186}}
+                            </div>
+                        </div>
+                        {% if forloop.first == true %}
+                        
+                        In <span class="catlist">
+                            {% for category in post.categories %}
+                            <a class="text-capitalize tag tag-success text-white"
+                                href="{{site.baseurl}}/categories.html#{{ category | downcase }}">{{ category }}</a><span
+                                class="sep"> </span>
+                            {% endfor %}
+                        </span>
+                        <time class="card-time">{{ post.date | date: '%Y. %m. %d. ' }}</time>
+                        
+                        {% endif %}
+                    </div>
+                    {% endfor %}
+                </div>
             </div>
 
-            <div class="w-flex flex-column">
-                <!-- todolist -->
-                {% if site.todo %}
-                {% include todolist.html %}
-                {% endif %}
-        
-                <div class="col">
-                    <span class="h5">Tags</span>
-                    <span class="us-none tag tag-danger" data-pop-type="msg" data-msg-dir="end" data-msg="누적된 태그를 모았습니다.">?</span>
-                    <div id="tags" class="w-flex g-1 p-1" style="overflow: auto; resize: vertical; max-height: 430px;"></div>
+            <div page="second">
+                <div class="w-flex flex-column">
+                    <!-- todolist -->
+                    {% if site.todo %}
+                    {% include todolist.html %}
+                    {% endif %}
+            
+                    <div class="col">
+                        <span class="h5">Tags</span>
+                        <span class="us-none tag tag-danger" data-pop-type="msg" data-msg-dir="end" data-msg="누적된 태그를 모았습니다.">?</span>
+                        <div id="tags" class="w-flex g-1 p-1" style="overflow: auto; resize: vertical; max-height: 430px;"></div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
+        <button
+        id="leftBtn"
+        class="tag fs-3 position-fixed"
+        style="left: 30px; top: 50%; transform: translateY(-50%);">
+            <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <button
+        id="rightBtn"
+        class="tag fs-3 position-fixed"
+        style="right: 30px; top: 50%; transform: translateY(-50%);">
+            <i class="fa-solid fa-chevron-right"></i>
+        </button>
+    </div>
 </div>

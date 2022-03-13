@@ -7,16 +7,15 @@
 
     {% if post.featured == true %}
     <div class="card p-0" style="overflow: hidden;">
-        <!-- <a href="{{site.baseurl}}{{ post.url }}" title="{{ post.title }}">
-            <img src="{{post.image}}" alt="post/cover" class="w-100">
-        </a> -->
-        <div class="card-title px-3">
+        <div class="card-title">
             <a href="{{site.baseurl}}{{ post.url }}" title="{{ post.title }}">{{ post.title | truncate: 50}}</a>
         </div>
         <div class="card-content">
-            <!-- <div class="card-body"></div> -->
+            <div class="card-body text-gray">
+                {{post.content | strip_html | | truncate: 100, '...'}}
+            </div>
         </div>
-        <div class="pb-3 px-3">
+        <div class="pb-3">
             In <span class="catlist">
                 {% for category in post.categories %}
                 <a class="text-capitalize text-white tag tag-success"
