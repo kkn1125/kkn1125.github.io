@@ -4,7 +4,7 @@ modified: 2022-03-14 00:09:35 +0900
 date:   2021-08-13 13:50:20 +0900
 title:  "[JAVASCRIPT] 정적웹에 다크모드 적용하기 03"
 author: Kimson
-categories: [ jvavascript ]
+categories: [ javascript ]
 tags: [setTimeout, darkmode, til]
 image: assets/images/post/covers/TIL-javascript.png
 description: "다크모드 부드러운 전환
