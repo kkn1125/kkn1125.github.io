@@ -115,6 +115,12 @@ window.addEventListener('load', function(){
                 case 'sh':
                     color = "dark"
                     break;
+                case 'properties':
+                    color = "dark"
+                    break;
+                case 'python':
+                    color = "primary"
+                    break;
             }
 
             made.innerHTML = `Devkimson`;
@@ -797,52 +803,82 @@ const pagination = document.querySelector('#pagination');
 const left = document.querySelector('#leftBtn');
 const right = document.querySelector('#rightBtn');
 const pagesEl = document.querySelectorAll('[page]');
-const pages = [];
+const pages = {};
 let currentPage = 0;
 
 pagesEl.forEach(e=>{
-    pages.push(e.getAttribute('page'));
+    if(!pages[e.getAttribute('group')]) pages[e.getAttribute('group')] = [];
+    pages[e.getAttribute('group')].push(e.getAttribute('page'));
 });
 
-updatePage();
+if(document.querySelector(`[page]`)) {
+    updatePage();
+}
 
-function updatePage (){
-    const page = pages[currentPage];
-    document.querySelectorAll('[page]').forEach(e=>e.hidden=true);
-    document.querySelector(`[page="${page}"]`).removeAttribute('hidden');
-    if(currentPage == 0) {
-        left.hidden = true;
-    } else if (currentPage == pages.length-1) {
-        right.hidden = true;
+function updatePage (attr, group){
+    if(group && attr){
+        document.querySelectorAll(`[group="${group}"][page]`).forEach(d=>d.hidden=true);
+    
+        document.querySelectorAll(`[group="${group}"][page="${attr}"]`)?.forEach(d=>d.removeAttribute('hidden'));
     } else {
-        left.removeAttribute('hidden');
-        right.removeAttribute('hidden');
+        document.querySelectorAll(`[group][page]`).forEach(x=>x.hidden=true);
+        Object.keys(pages).forEach(t=>{
+            document.querySelectorAll(`[group="${t}"][page="${pages[t][left?currentPage:0]}"]`)?.forEach(d=>d.removeAttribute('hidden'));
+        })
+    }
+
+    if(left && right){
+        console.log(group, attr)
+        if(currentPage == 0) {
+            left.hidden = true;
+        } else if (currentPage == pages[group].length-1) {
+            right.hidden = true;
+        } else {
+            left.removeAttribute('hidden');
+            right.removeAttribute('hidden');
+        }
     }
 }
 
-function handlePageLeft(){
+function handlePageLeft(target){
+    let attr = target.getAttribute('target');
+    let group = target.getAttribute('group');
+
     currentPage--;
     if(currentPage<0){
         currentPage = 0;
     }
-    updatePage();
+    updatePage(attr, group);
 }
 
-function handlePageRight(){
+function handlePageRight(target){
+    let attr = target.getAttribute('target');
+    let group = target.getAttribute('group');
+
     currentPage++;
     if(currentPage>pages.length-1){
         currentPage = pages.length-1;
     }
-    updatePage();
+    updatePage(attr, group);
+}
+
+function handlePages(target){
+    let attr = target.getAttribute('target');
+    let group = target.getAttribute('group');
+    
+    updatePage(attr, group);
 }
 
 window.addEventListener('click', e=>{
     const target = e.target;
     if(target.id == 'leftBtn') {
-        handlePageLeft()
+        handlePageLeft(target)
     } else if(target.id == 'rightBtn') {
-        handlePageRight();
+        handlePageRight(target);
     } else {
+        if(target.hasAttribute('target')) {
+            handlePages(target);
+        }
         return;
     }
 });

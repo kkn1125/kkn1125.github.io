@@ -11,11 +11,11 @@ description: "나를 표현하는 블로그. 끊임없이 도전하고 공부하
     <div class="w-flex gx-4">
 
         <div class="w-100">
-            <div page="first">
+            <div page="first" group="main">
                 {% include sidebar-featured.html %}
             </div>
             
-            <div page="third">
+            <div page="second" group="main">
                 <!-- Begin post excerpts, let's highlight the first 4 posts on top -->
                 <div class="border-bottom">
                     {% assign size = site.posts | size %}
@@ -62,7 +62,7 @@ description: "나를 표현하는 블로그. 끊임없이 도전하고 공부하
                 </div>
             </div>
 
-            <div page="second">
+            <div page="third" group="main">
                 <div class="w-flex flex-column">
                     <!-- todolist -->
                     {% if site.todo %}
@@ -80,12 +80,14 @@ description: "나를 표현하는 블로그. 끊임없이 도전하고 공부하
 
         <button
         id="leftBtn"
+        group="main"
         class="tag fs-3 position-fixed"
         style="left: 30px; top: 50%; transform: translateY(-50%);">
             <i class="fa-solid fa-chevron-left"></i>
         </button>
         <button
         id="rightBtn"
+        group="main"
         class="tag fs-3 position-fixed"
         style="right: 30px; top: 50%; transform: translateY(-50%);">
             <i class="fa-solid fa-chevron-right"></i>
