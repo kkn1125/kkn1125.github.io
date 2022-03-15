@@ -2,7 +2,7 @@
 layout: post
 modified: 2022-03-14 00:09:35 +0900
 date:   2022-03-04 19:56:07 +0900
-title:  "[SHELL] Shell Script로 파일 변환을 감지해보자"
+title:  "[SHELL] Shell Script로 파일 변환을 감지해보자 01"
 author: Kimson
 categories: [ shell ]
 image: assets/images/post/covers/TIL-shell.png
