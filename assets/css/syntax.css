@@ -6,11 +6,21 @@ pre{
   border: none;
   background-color: inherit;
   color: inherit;
+  word-spacing: 0.1em;
+  letter-spacing: 0.08em;
+  line-height: 1.5;
 }
 
 code[class|=language]{
   color: rgba(var(--pl-danger-rgb), 1);
   font-family: inherit;
+  background-color: rgb(240, 240, 240);
+  padding: .2rem .4rem;
+  border-radius: .3rem;
+  -webkit-border-radius: .3rem;
+  -moz-border-radius: .3rem;
+  -ms-border-radius: .3rem;
+  -o-border-radius: .3rem;
 }
 
 pre.highlight{
@@ -23,7 +33,7 @@ td.rouge-gutter {
   border-right: 1px solid gray;
 }
 
-.highlight table td { padding: 5px; }
+.highlight table td { padding: 1rem; }
 .highlight table pre { margin: 0; }
 .highlight, .highlight .w {
   color: #fbf1c7;

@@ -1,0 +1,20 @@
+I"�
+<ul>
+  <li><a href="#기초-cheetsheet">기초 Cheetsheet</a>
+    <ul>
+      <li><a href="#수">수</a></li>
+      <li><a href="#문자열">문자열</a></li>
+      <li><a href="#코멘트">코멘트</a></li>
+      <li><a href="#input과-output">input과 output</a></li>
+      <li><a href="#len-함수">len() 함수</a></li>
+      <li><a href="#형변환">형변환</a></li>
+      <li><a href="#if-elif-else">if elif else</a>
+        <ul>
+          <li><a href="#새롭게-추가된-match--case">새롭게 추가된 match &#8230; case</a></li>
+        </ul>
+      </li>
+      <li><a href="#loop와-range">loop와 range</a></li>
+    </ul>
+  </li>
+</ul>
+:ET

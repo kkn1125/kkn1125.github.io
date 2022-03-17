@@ -140,6 +140,11 @@ aside#rsb>div {
 .article-post p{
     margin-top: 0.5em;
     margin-bottom: 1em;
+    line-height: 2;
+}
+
+.article-post blockquote p {
+    margin: 0;
 }
 
 [data-target="#lsb"]{
@@ -576,7 +581,7 @@ aside#rsb>div {
 
 h1,h2,h3,h4,h5,h6{
     font-weight: bold;
-    padding-top: 60px;
+    /* padding-top: 60px; */
     margin-bottom: 0.5em;
 }
 
@@ -620,4 +625,8 @@ h6{
 
 .brand{
     font-family: var(--lm-lora);
+}
+
+strong {
+    font-weight: 700;
 }
