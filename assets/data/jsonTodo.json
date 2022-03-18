@@ -94,9 +94,21 @@
                     "time": "2022-03-04 14:02:09"
                 }
             ],
+            "18": [
+                {
+                    "todo": "python modelform 포스팅",
+                    "tag": "check",
+                    "time": "2022-03-18 21:27:43"
+                },
+                {
+                    "todo": "django project 이슈 처리",
+                    "tag": "check",
+                    "time": "2022-03-18 21:27:43"
+                }
+            ],
             "17": [
                 {
-                    "todo": "python 기초 포스팅",
+                    "todo": "python 기초 1편 포스팅",
                     "tag": "check",
                     "time": "2022-03-17 19:22:15"
                 }
