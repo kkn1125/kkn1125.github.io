@@ -1,0 +1,98 @@
+I"�<h1 id="mybatis-like">MyBatis Like</h1>
+
+<p><code class="language-plaintext highlighter-rouge">api</code>를 만들면서 카테고리 검색이 필요해졌습니다. 페이징 처리할 때 사용했던 <code class="language-plaintext highlighter-rouge">like</code>구문이 막상 떠오르지 않아 시간을 버렸네요.</p>
+
+<h2 id="기본-사용-형식">기본 사용 형식</h2>
+
+<p>기본적으로 <code class="language-plaintext highlighter-rouge">LIKE</code>는 아래와 같이 3가지 형식을 사용합니다.</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="rouge-code"><pre><span class="c1">-- abc가 들어가는 데이터</span>
+<span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">testboard</span> <span class="k">WHERE</span> <span class="nv">`column`</span> <span class="k">LIKE</span> <span class="s1">'%abc%'</span><span class="p">;</span>
+
+<span class="c1">-- abc로 시작하는 데이터</span>
+<span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">testboard</span> <span class="k">WHERE</span> <span class="nv">`column`</span> <span class="k">LIKE</span> <span class="s1">'abc%'</span><span class="p">;</span>
+
+<span class="c1">-- abc로 끝나는 데이터</span>
+<span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">testboard</span> <span class="k">WHERE</span> <span class="nv">`column`</span> <span class="k">LIKE</span> <span class="s1">'%abc'</span><span class="p">;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h2 id="유의사항">유의사항</h2>
+
+<p><code class="language-plaintext highlighter-rouge">MyBatis</code>에서 사용할 때는 <code class="language-plaintext highlighter-rouge">#</code>과 <code class="language-plaintext highlighter-rouge">$</code>만 주의하면 됩니다. 추가로 공백이 포함될 여지가 있는 값인지도 확인합니다.</p>
+
+<h2 id="과-의-차이">#과 $의 차이</h2>
+
+<p><code class="language-plaintext highlighter-rouge">#</code>은 문자에 자동으로 따옴표를 씌어 쿼리에 담아줍니다. <code class="language-plaintext highlighter-rouge">$</code>는 따옴표 없이 값 그대로를 쿼리에 담습니다. 더 자세한 차이점은 타블로그에 잘 정리된 내용을 참고하시는 것이 빠릅니다.</p>
+
+<h2 id="예제">예제</h2>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+</pre></td><td class="rouge-code"><pre><span class="c1">// restcontroller</span>
+<span class="nd">@RestController</span>
+<span class="nd">@RequestMapping</span><span class="o">(</span><span class="s">"/test"</span><span class="o">)</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">testRestController</span><span class="o">{</span>
+   <span class="nd">@Autowired</span>
+   <span class="kd">private</span> <span class="nc">TestService</span> <span class="n">testService</span><span class="o">;</span>
+
+   <span class="nd">@GetMapping</span><span class="o">(</span><span class="s">"/category/{category}"</span><span class="o">)</span>
+   <span class="kd">public</span> <span class="nc">List</span><span class="o">&lt;</span><span class="nc">Test</span><span class="o">&gt;</span> <span class="nf">findByCategory</span><span class="o">(</span><span class="nd">@PathVariable</span><span class="o">(</span><span class="s">"category"</span><span class="o">)</span> <span class="nc">String</span> <span class="n">category</span><span class="o">){</span>
+      <span class="k">return</span> <span class="n">testService</span><span class="o">.</span><span class="na">findByCategory</span><span class="o">(</span><span class="n">category</span><span class="o">);</span>
+   <span class="o">}</span>
+
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>카테고리 값을 경로에서 받아오고 매퍼에는 아래의 구문으로 처리합니다. (서비스단은 생략하겠습니다.)</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="rouge-code"><pre><span class="c1">// mapper</span>
+<span class="nd">@Mapper</span>
+<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">TestMapper</span> <span class="o">{</span>
+   <span class="nd">@Select</span><span class="o">(</span><span class="s">"SELECT * FROM test WHERE column LIKE '%${category}%'"</span><span class="o">)</span>
+   <span class="kd">public</span> <span class="nc">List</span><span class="o">&lt;</span><span class="nc">Test</span><span class="o">&gt;</span> <span class="nf">findByCategory</span><span class="o">(</span><span class="nd">@Param</span><span class="o">(</span><span class="s">"category"</span><span class="o">)</span> <span class="nc">String</span> <span class="n">category</span><span class="o">);</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>혹은</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="rouge-code"><pre><span class="c1">// mapper</span>
+<span class="nd">@Mapper</span>
+<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">TestMapper</span> <span class="o">{</span>
+   <span class="nd">@Select</span><span class="o">(</span><span class="s">"SELECT * FROM test WHERE column LIKE CONCAT('%', #{category}, '%')"</span><span class="o">)</span>
+   <span class="kd">public</span> <span class="nc">List</span><span class="o">&lt;</span><span class="nc">Test</span><span class="o">&gt;</span> <span class="nf">findByCategory</span><span class="o">(</span><span class="nd">@Param</span><span class="o">(</span><span class="s">"category"</span><span class="o">)</span> <span class="nc">String</span> <span class="n">category</span><span class="o">);</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>두 방법 중 택하여 사용하면 됩니다.</p>
+:ET

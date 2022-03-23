@@ -1,0 +1,95 @@
+I"�<h1 id="색상-무작위-변경">색상 무작위 변경</h1>
+
+<ol>
+  <li>버튼을 하나 만든다.</li>
+</ol>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="rouge-code"><pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"ko"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"UTF-8"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;title&gt;</span>Document<span class="nt">&lt;/title&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">onclick=</span><span class="s">"javascript:colorchange()"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"color.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<ol>
+  <li>변경하는 함수를 만든다.</li>
+</ol>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// RGB값의 R에 해당하는 값을 전역변수로 만든다.</span>
+<span class="kd">var</span> <span class="nx">b</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// RGB값의 G에 해당하는 값을 전역변수로 만든다.</span>
+<span class="kd">var</span> <span class="nx">c</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// RGB값의 B에 해당하는 값을 전역변수로 만든다.</span>
+ 
+<span class="kd">function</span> <span class="nx">colorchange</span><span class="p">()</span> <span class="p">{</span> <span class="c1">// 컬러를 변경하는 함수</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">a</span> <span class="o">&gt;</span> <span class="mi">255</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// RGB값은 255를 넘을 수 없기에 255를 넘어갈때 0으로 만드는 조건을 건다.</span>
+        <span class="nx">a</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">b</span> <span class="o">&gt;</span> <span class="mi">255</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// 상동</span>
+        <span class="nx">b</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">c</span> <span class="o">&gt;</span> <span class="mi">255</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// 상동</span>
+        <span class="nx">c</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="p">}</span>
+    
+    <span class="nx">a</span> <span class="o">+=</span> <span class="mi">50</span><span class="p">;</span> <span class="c1">// R값을 50씩 올린다.</span>
+    <span class="nx">b</span> <span class="o">+=</span> <span class="mi">75</span><span class="p">;</span> <span class="c1">// G값을 75씩 올린다.</span>
+    <span class="nx">c</span> <span class="o">+=</span> <span class="mi">125</span><span class="p">;</span> <span class="c1">// B값을 125씩 올린다.</span>
+    <span class="c1">//이렇게 되면 C가 초기화되고 R,G가 올라가는 식의 반복을 통해 색상이 무작위적으로 변한다.</span>
+    
+    <span class="kd">var</span> <span class="nx">target</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">body</span><span class="dl">'</span><span class="p">);</span> <span class="c1">// 예제로 배경색을 지정</span>
+    <span class="nx">target</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">transition</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">1s</span><span class="dl">'</span><span class="p">;</span> <span class="c1">// 부드럽게 변하는게 좋아서 추가</span>
+    <span class="nx">target</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">backgroundColor</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">rgb(</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">a</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">,</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">b</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">,</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">c</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">)</span><span class="dl">'</span><span class="p">;</span> <span class="c1">// RGB적용</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<ul>
+  <li>backgroundColor가 타입을 string으로 받기때문에 &#8216;rgb(a, b, c)&#8217;를 따옴표로 묶음</li>
+  <li>증가와 초기화를 통해 색상이 바뀜</li>
+</ul>
+
+<hr />
+
+<p>Math.random()과 Math.round()를 통해 더 단순화 및 진정한 의미의 랜덤이 될 수는 있지만 어제 잠들기전 문득 생각이 나서 만들어 봄</p>
+
+<p>되서 뿌듯</p>
+:ET
