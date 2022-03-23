@@ -23,12 +23,12 @@ layout: default
 					</div>
 					<div class="w-flex align-items-center">
 						{% if author.avatar %}
-						<img class="rounded-circle me-3" src="{{site.baseurl}}/{{author.avatar}}" alt="{{author.name}}"
+						<img class="rounded-circle me-3" src="{% if author.avatar contains '://' %}{{ author.avatar }}{% else %}{{site.baseurl}}/{{ author.avatar }}{% endif %}" alt="{{author.name}}"
 							width="90" height="90" />
 						{% endif %}
 						<small class="ms-3"> {{ author.name }} <span><a target="_blank" href="{{ author.github }}"
 									class="btn btn-frame-success btn-sm btn-round ms-1">Follow</a></span>
-							<span class="text-muted w-block mt-1">{{ page.date | date: '%b %d, %Y' }} ·
+							<span class="text-muted w-block mt-1">{{ page.date | date: '%Y. %m. %d' }} ·
 								{% include meta-read-time.html %}</span>
 						</small>
 					</div>
@@ -40,12 +40,6 @@ layout: default
 				</div>
 				{% endif %}
 			</div>
-			{% if page.modified %}
-			<div>
-				<span class="tag tag-danger bg-opacity-75">Modified at</span>
-				<span class="text-muted tag">{{page.modified | date: '%Y. %m. %d %H:%M'}}</span>
-			</div>
-			{% endif %}
 		</div>
 	</div>
 </div>
@@ -88,7 +82,13 @@ layout: default
 				</div>
 			</div>
 		</div>
-
+		{% if page.modified %}
+		<div>
+			<blockquote class="blockquote blockquote-info">
+				<p>부족한 내용이지만 계속해서 점검을 통해 모든 포스팅을 수정해 나갈 예정입니다.<br>현재 내용은 {{page.modified | date: '%Y. %m. %d'}} 에 수정 되었습니다.</p>
+			</blockquote>
+		</div>
+		{% endif %}
 		<div class="col-20 col-lg-16">
 			<!-- Toc -->
 			<!-- Toc if any -->
@@ -110,17 +110,15 @@ layout: default
 			<!-- Article -->
 			<article class="article-post">
 				{{ content }}
-				{%- comment -%}
-				<!-- donaricano -->
-				{% include buymeacoffee.html %}
-				{%- endcomment -%}
 			</article>
+
+			<hr>
 
 			<!-- Tags -->
 			<div class="mb-4">
 				<span class="taglist">
 					{% for tag in page.tags %}
-					<a class="sscroll btn btn-light btn-sm font-weight-bold"
+					<a class="tag tag-info fs-6 text-white"
 						href="{{site.baseurl}}/tags#{{ tag | downcase }}">{{ tag | downcase }}</a>
 					{% endfor %}
 				</span>
@@ -128,20 +126,7 @@ layout: default
 
 			<!-- Author Box -->
 			{% if page.author %}
-			<div class="w-flex mt-5">
-				<div class="col-md-6 align-self-center">
-					{% if author.avatar %}
-					<img class="rounded-circle" src="{{site.baseurl}}/{{author.avatar}}" alt="{{author.name}}"
-						width="90" height="90" />
-					{% endif %}
-				</div>
-				<div class="col-md-18">
-					<div class="fw-bold">Written by {{ author.name }} {% if author.twitter %}<span><a target="_blank" href="{{ author.github }}" class="btn btn-frame-success btn-sm ms-2">Follow</a></span>{% endif %}</div>
-					<span class="text-muted">
-						{{ author.bio }}
-					</span>
-				</div>
-			</div>
+			{% include profile-card.html %}
 			{% endif %}
 
 			<!-- Comments -->

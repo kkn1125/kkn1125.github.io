@@ -1,0 +1,166 @@
+I"�'<h1 id="todo-list">TODO List</h1>
+
+<blockquote>
+  <p>USED</p>
+
+  <ul class="task-list">
+    <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Bootstrap 5.0.2</li>
+    <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />JQuery 3.6.0</li>
+    <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />VSCode</li>
+    <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Chrome, Firefox ( O )</li>
+    <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />IE ( X )</li>
+  </ul>
+</blockquote>
+
+<h2 id="추가된-기능">추가된 기능</h2>
+
+<h3 id="todo-list-1">TODO List</h3>
+
+<p>기존 달력에서 크게 추가된 기능은 아래와 같습니다.</p>
+
+<ul>
+  <li>클릭된 요일의 연월일 표기</li>
+  <li>요일 클릭 안내 및 할일 목록, 빈 목록 안내 - 문구 출력</li>
+  <li>요일 클릭 시 할 일 추가 텍스트박스와 버튼 표시</li>
+  <li>할 일 추가</li>
+</ul>
+
+<h4 id="시작-안내-문구">시작 안내 문구</h4>
+
+<p><img src="{{ site.baseurl }}/assets/images/post/jsdevKal/devkal-3.png" alt="devkal3" /></p>
+
+<h4 id="할-일-여부에-따른-뱃지와-개수-표기">할 일 여부에 따른 뱃지와 개수 표기</h4>
+
+<p><img src="{{ site.baseurl }}/assets/images/post/jsdevKal/devkal-4.png" alt="devkal4" /></p>
+
+<h4 id="할-일-추가">할 일 추가</h4>
+
+<p><img src="{{ site.baseurl }}/assets/images/post/jsdevKal/devkal-5.png" alt="devkal5" /></p>
+
+<p><img src="{{ site.baseurl }}/assets/images/post/jsdevKal/devkal-7.png" alt="devkal7" /></p>
+
+<h4 id="오늘로-이동-버튼-추가">오늘로 이동 버튼 추가</h4>
+
+<p><img src="{{ site.baseurl }}/assets/images/post/jsdevKal/devkal-8.png" alt="devkal8" /></p>
+
+<p><img src="{{ site.baseurl }}/assets/images/post/jsdevKal/devkal-9.png" alt="devkal9" /></p>
+
+<h2 id="수정된-기능">수정된 기능</h2>
+
+<h3 id="비어있는-tr-추가되는-현상-수정">비어있는 tr 추가되는 현상 수정</h3>
+
+<p><img src="{{ site.baseurl }}/assets/images/post/jsdevKal/devkal-10.png" alt="devkal10" /></p>
+
+<p>요일이 토요일에 딱 떨어지는 달이면 빈 tr이 추가되어 들쭉날쭉하지 않도록 수정했습니다.</p>
+
+<h3 id="설정-값">설정 값</h3>
+
+<p>create할 때 설정값 변경되었습니다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="rouge-code"><pre><span class="kd">const</span> <span class="nx">kal</span> <span class="o">=</span> <span class="nx">com</span><span class="p">.</span><span class="nx">devkimson</span><span class="p">.</span><span class="nx">calendar</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">kal</span><span class="dl">"</span><span class="o">||</span><span class="dl">"</span><span class="s2">kal</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span>
+    <span class="na">marker</span><span class="p">:</span> <span class="p">{</span> <span class="p">...</span> <span class="p">},</span>  <span class="cm">/* 그대로 입니다. */</span>
+    <span class="na">table</span><span class="p">:</span> <span class="p">{</span>
+        <span class="o">***</span><span class="p">:</span> <span class="dl">"</span><span class="s2"> ... </span><span class="dl">"</span><span class="p">,</span>  <span class="cm">/* 나머지 그대로 입니다. */</span>
+        <span class="na">width</span><span class="p">:</span> <span class="dl">"</span><span class="s2">100%</span><span class="dl">"</span><span class="p">,</span>  <span class="cm">/* td로 들어가던 것을 table로 변경했습니다. */</span>
+        <span class="na">tr</span><span class="p">:</span> <span class="p">{</span>  <span class="cm">/* tr부분이 새로 추가되었습니다. */</span>
+            <span class="na">height</span><span class="p">:</span> <span class="dl">"</span><span class="s2">50px</span><span class="dl">"</span><span class="p">,</span>  <span class="cm">/* tbody 내의 전체 tr의 높이 */</span>
+            <span class="na">valign</span><span class="p">:</span> <span class="dl">"</span><span class="s2">middle</span><span class="dl">"</span>  <span class="cm">/* valign속성 그대로 들어갑니다. */</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<blockquote>
+  <p>알게된 내용</p>
+</blockquote>
+
+<ol>
+  <li>달력을 만들 때 초기화 해주는 함수가 필요하다.</li>
+  <li>각 기능별 초안을 잡아두지 않고 즉석으로 만들어내면 초기에는 잘 모르지만 이후에는 많이 조잡해진다.</li>
+  <li>기능 추가로 변수가 증가하고, 가급적 불변으로 해야 데이터를 덮어쓰는 일이 없다.</li>
+  <li>this가 어디에 주체를 두고 있는지 익숙해져야 bind, call, apply를 때에 따라 자유자제로 사용할 수 있다.</li>
+  <li>전체 포스팅을 점검하며 수정하는 시점에서 덧붙이면 이때 당시 객체 속성을 변수로 활용하는 것이 맞는 방법인지 불확실했다. 지금은 객체를 이용한 데이터 저장을 적극적으로 사용하고 있는 부분이다.</li>
+  <li>함수 내 다른 this를 가진 함수를 사용할 때 현재 스코프의 this를 전달할 때는 인자로 전달하기보다 bind나 call 등으로 전달하는 것이 좋습니다.</li>
+</ol>
+
+<p>예제 코드</p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+</pre></td><td class="rouge-code"><pre><span class="nx">Obj</span><span class="p">.</span><span class="nx">test</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">prop1</span><span class="p">:</span> <span class="dl">"</span><span class="s2">wow</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">prop2</span><span class="p">:</span> <span class="kd">function</span><span class="p">(){</span>
+        <span class="c1">// 이 함수에서 this는 Obj.test 객체를 가리킵니다.</span>
+
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">prop1</span><span class="p">);</span> <span class="p">(</span> <span class="nx">O</span> <span class="p">)</span>  <span class="cm">/* 함수 내에서 this.prop1하면 wow를 가져옴 */</span>
+        <span class="kd">var</span> <span class="nx">prop1</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">prop1</span><span class="p">;</span>
+        
+        <span class="k">if</span><span class="p">(</span> <span class="p">...</span> <span class="p">)</span> <span class="p">{</span>
+            <span class="c1">// 스코프 변환 시점</span>
+            <span class="cm">/* this.prop1 ( X ) 함수 내 다른 스코프 내에서는 this.prop1을 못 가져옴 */</span>
+
+            <span class="kd">var</span> <span class="nx">prop2Var</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">ABC</span><span class="dl">"</span><span class="p">;</span>
+            <span class="c1">// prop2Var를 Obj.test객체에 tmp라는 속성에 값을 저장한다.</span>
+            <span class="c1">// prop3메서드에서 변수를 사용하기 위함이다.</span>
+            <span class="nx">Obj</span><span class="p">.</span><span class="nx">test</span><span class="p">.</span><span class="nx">tmp</span> <span class="o">=</span> <span class="p">{</span>
+                <span class="na">prop2var</span><span class="p">:</span> <span class="nx">prop2Var</span>
+            <span class="p">}</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">prop1</span><span class="p">);</span> <span class="p">(</span> <span class="nx">O</span> <span class="p">)</span> <span class="cm">/* "wow" */</span>
+        <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="na">prop3</span><span class="p">:</span> <span class="kd">function</span><span class="p">(){</span>
+        <span class="cm">/* prop2의 if문 안에 선언되었던 prop2Var 값 ABC 출력 */</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">Obj</span><span class="p">.</span><span class="nx">test</span><span class="p">.</span><span class="nx">tmp</span><span class="p">.</span><span class="nx">prop2var</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<hr />
+
+<div>
+    <table id="kal" class="table text-center table-hover"></table>
+</div>
+<script src="{{site.baseurl}}/assets/lib/devkalendar.js"></script>
+
+<hr />
+
+<p>수정된 기능은 setting부분의 tr조정과 table의 width조정, 추가된 기능은 TODO List 기능과 오늘로 이동, 할일 여부에 따른 뱃지, 개수 표기 입니다.</p>
+
+<p><a href="{{ site.baseurl }}/javascript-calendar/" target="_blank">이전 달력 포스팅</a>에 초기 세팅값에 대해 자세히 적혀있습니다.</p>
+
+<p><a href="{{site.baseurl}}/assets/download/devkalendarTODO.zip" download="">devKalendarTODO 1.1.0 ver 다운로드</a></p>
+:ET

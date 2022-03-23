@@ -66,7 +66,6 @@ com.devkimson.calendar = { // 기능들
 		this.$second = this.$time.getSeconds();
 		this.$first = new Date(this.$year, this.$month, 1).getDay(); // 이번달 시작 요일
 		this.$last = new Date(this.$year, this.$month + 1, 0).getDate(); // 이번달 말일
-		// console.log("now : " + this.$year + ":" + this.$month);
 		// style settings
 	},
 
@@ -180,9 +179,6 @@ com.devkimson.calendar = { // 기능들
 					"marginRight": "auto"
 				}) : "";
 
-			// $etting.table.height !== undefined ?
-			// 	$(this._id).css("height", $etting.table.height) : $(this._id).css("height", "25rem");
-
 			$etting.table.color !== undefined ?
 				this._id.setAttribute("class", this._id.getAttribute("class") + " " + $etting.table.color) :
 				this._id.setAttribute("class", this._id.getAttribute("class") + " text-muted");
@@ -194,17 +190,14 @@ com.devkimson.calendar = { // 기능들
 			$etting.table.padding !== undefined ?
 				this._id.style.padding = $etting.table.padding :
 				this._id.style.padding = "2rem";
-			// console.log(this._id.style.padding);
 
 			$etting.table.collapse !== undefined ?
 				this._id.style.borderCollapse = $etting.table.collapse :
 				this._id.style.borderCollapse = "collapse";
-			// console.log(this._id.style.collapse);
 
 			$etting.table.spacing !== undefined ?
 				this._id.style.borderSpacing = $etting.table.spacing :
 				this._id.style.borderSpacing = "0px";
-			// console.log(this._id.style.spacing);
 		}
 
 		for (var i = 0; i < 7; i++) {
@@ -546,24 +539,18 @@ com.devkimson.calendar = { // 기능들
 	},
 	
 	AddList: function(year, month, date){ // 추가
-		// console.log('add');
 		// data에 연결해서 추가하는 부분 (json처리)
 		var node = $("#content").val();
 		var div = document.createElement('div');
 		$(div).text(`${node}`);
-		// console.log(this.data.year[year])
 		if(node=="" || node.length==0 || node == " "){
 			alert("내용을 기입하셔야합니다.");
 		} else {
 			if(this.data.year[year]==undefined){ // 연도 없을 시 생성
 				this.data.year[year] = {"month":{month}};
-				console.log('first');
-				console.log(this.data.year)
 			}
 			if(this.data.year[year].month[month]==undefined){ // 월 없을 시 생성
 				this.data.year[year].month[month] = {"date":{date}};
-				console.log('second');
-				console.log(this.data.year[year].month)
 			}
 			if(this.data.year[year].month[month].date[date]==undefined){ // 일자 없을 시 생성
 				this.data.year[year].month[month].date[date] = []; // 배열 추가
@@ -572,7 +559,6 @@ com.devkimson.calendar = { // 기능들
 					time:`${_$.fixed.year}-${_$.fixed.month+1}-${_$.fixed.date} ${now.$$hour}:${now.$$minute}`
 				}; // 첫번째 노드 추가
 				
-				console.log('third');
 			} else {
 				var len = Object.keys(this.data.year[year].month[month].date[date]).length;
 				this.data.year[year].month[month].date[date][len] = {
@@ -581,7 +567,6 @@ com.devkimson.calendar = { // 기능들
 				};
 				// 첫번째 노드 이후부터 차례로 추가
 			}
-			// console.log(this.data.year[year].month[month].date)
 			$("#content").val(""); // 텍스트 박스 초기화
 			$('#list').append(div);
 			// todo marker place
@@ -651,4 +636,32 @@ com.devkimson.calendar = { // 기능들
 		}
 	}
 
+}
+
+if(location.href.match(/javascript-calendar02/g)) {
+	const kal = com.devkimson.calendar.create(document.getElementById('kal')||'kal',{
+		marker:{ // 클릭 위치 마커 관련 설정
+			color: "green", // color name or color code
+			// thick: "6px", // num
+			// style: "dashed", // value
+			speed: ".5s", // value
+			// bezier: "none", // value
+			width: "35px" // num
+		},
+		table:{ // 테이블 속성
+			// bgColor: "table-info",
+			color: "text-muted", // class name
+			width: "80%", // num default auto
+			// padding: "15px", // num
+			// collapse: "separate", // value
+			spacing: ".5rem", // num
+			tr:{ // 1.1.0ver 추가
+				height: "50px", // num default 50px
+				valign: "middle" // num default middle
+			}
+		},
+		today:{
+			color: "coral"
+		}
+	});
 }

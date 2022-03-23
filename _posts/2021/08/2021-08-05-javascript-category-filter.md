@@ -1,6 +1,6 @@
 ---
 layout: post
-modified: 2022-03-14 00:09:35 +0900
+modified: 2022-03-23 20:54:35 +0900
 date:   2021-08-05 14:46:07 +0900
 title:  "[JAVASCRIPT] 카테고리 필터"
 author: Kimson
@@ -22,11 +22,11 @@ profile: false
 istop: true
 keysum: true
 keywords: '
-Array.forEach(func(element,index,list)) : 배열객체에 사용
-_element.dataset.* : 요소의 data-*속성 값을 반환
-_element.client* : 객체의 너비, 높이 등 값 반환
-_element.setAttribute(attrName, attrValue) : 요소의 속성 값 지정
-_node.addEventListener(eventType,func(event)) : 이벤트 추가
+Array.forEach(func(element,index,list)) # 배열객체에 사용
+_element.dataset.* # 요소의 data-*속성 값을 반환
+_element.client* # 객체의 너비, 높이 등 값 반환
+_element.setAttribute(attrName, attrValue) # 요소의 속성 값 지정
+_node.addEventListener(eventType,func(event)) # 이벤트 추가
 '
 ---
 
@@ -36,10 +36,9 @@ _node.addEventListener(eventType,func(event)) : 이벤트 추가
 
 오늘 만들어 본 건 카테고리 필터인데요. 우연히 구직 중에 발견한 회사 홈페이지에 있는 카테고리 필터를 보고 만들어 봐야겠다는 생각이 들었습니다.
 
-요즘 data-*속성에 익숙해져서 왠만하면 모든 기능 구현을 data-*를 사용하고 있습니다. 그래서 오늘 다룰 내용은 주로 data-*와 위 언급한 회사의 카테고리 필터에 적용된 absolute 방식 조정입니다.
+요즘 data-*속성에 익숙해져서 왠만하면 모든 기능 구현을 data-*를 사용하고 있습니다. 그래서 오늘 다룰 내용은 주로 data-\*와 위 언급한 회사의 카테고리 필터에 적용된 absolute 방식 조정입니다.
 
->[투라인코드](https://www.twolinecode.com/){:target="_blank"}
-><footer class="blockquote-footer mb-3">참고한 페이지라 링크를 남깁니다.</footer>
+> 참고한 페이지 : [투라인코드](https://www.twolinecode.com/){:target="_blank"}
 
 ## 리스트 방식
 
@@ -307,11 +306,11 @@ el.addEventListener('click',function(event){
 }
 </style>
 
-<div class="btn-group d-flex">
-    <button class="btn btn-dark" data-value="all">all</button>
-    <button class="btn btn-dark" data-value="a">a</button>
-    <button class="btn btn-dark" data-value="b">b</button>
-    <button class="btn btn-dark" data-value="c">c</button>
+<div class="btn-bundle justify-content-center">
+    <button class="px-3 btn btn-danger" data-value="all">all</button>
+    <button class="px-3 btn btn-info" data-value="a">a</button>
+    <button class="px-3 btn btn-info" data-value="b">b</button>
+    <button class="px-3 btn btn-info" data-value="c">c</button>
 </div>
 
 <div id="wrap1">
@@ -330,7 +329,7 @@ el.addEventListener('click',function(event){
 </div>
 
 <script>
-    'use strict';
+'use strict';
 
 let col = 0;
 let row = -1;
@@ -342,11 +341,11 @@ document.querySelector('#wrap1').style.transition = ".2s ease";
 
 window.addEventListener('resize',function(){
     ww = document.querySelector('#wrap1').clientWidth-16;
-	count11 = Math.floor(ww/116);
-	middle = (ww-(116*count11))/2;
-	row = -1;
-	col = 0;
-    
+    count11 = Math.floor(ww/116);
+    middle = (ww-(116*count11))/2;
+    row = -1;
+    col = 0;
+
     initCard();
 },true);
 
@@ -358,7 +357,7 @@ function initCard(){
         }
         let xw = item.clientWidth+2;
         let xh = item.clientHeight+2;
-        item.style.transform = 
+        item.style.transform =
         `scale3d(1,1,1) translate3d(${middle+(col*(100+16))}px, ${row*(160)}px, 0px)`;
         col++;
     });
@@ -377,7 +376,7 @@ values.forEach((el)=>{
         colid=0;
         let idx = 0;
         let val = event.target.dataset.value;
-        
+
         all.forEach(el=>{
             let arr = el.dataset.group.split(' ');
             for(let a of arr){
@@ -404,4 +403,4 @@ values.forEach((el)=>{
 
 -----
 
-사용된 속성, 함수들은 아래의 키워드 리스트를 참고해주세요.
+사용된 속성, 함수들은 [상단](#keywords)의 키워드 리스트를 참고해주세요.

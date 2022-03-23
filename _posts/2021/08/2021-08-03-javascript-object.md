@@ -21,11 +21,11 @@ toc: true
 profile: false
 istop: true
 keysum: true
-keywords: '.create(protoType [, null]) : 객체 생성
-_.getPrototypeOf(object) : 객체 프로토타입 반환
-_.keys(object) : 객체 열거 가능 프로퍼티 조회
-_.getOwnPropertyNames(object) : 객체 고유 프로퍼티 전체 조회
-_.defineProperty(object, "propName", {opt:optVal}) : 객체에 프로퍼티 추가'
+keywords: '.create(protoType [, null]) # 객체 생성
+_.getPrototypeOf(object) # 객체 프로토타입 반환
+_.keys(object) # 객체 열거 가능 프로퍼티 조회
+_.getOwnPropertyNames(object) # 객체 고유 프로퍼티 전체 조회
+_.defineProperty(object, "propName", {opt:optVal}) # 객체에 프로퍼티 추가'
 ---
 
 # Object (객체)
@@ -37,8 +37,6 @@ _.defineProperty(object, "propName", {opt:optVal}) : 객체에 프로퍼티 추�
 오늘 배운 객체에 대해 정리하고자 합니다.
 
 >자바스크립트의 기본 타입(data type)은 객체(Object)이다.
-
-<br>
 
 ## 객체 기본
 
@@ -59,10 +57,9 @@ let human = {
 person // kimson
 human.name // kimson
 ```
+
 <p class="m-0">person은 일반적 선언된 변수의 하나이고, 객체인 human은 많은 프로퍼티를 가진 변수의 하나입니다.</p>
 <footer class="blockquote-footer mb-3">수, 문자, 불리언, indefined 타입 외 모든 것이 객체</footer>
-
-<br>
 
 ## 객체 사용
 
@@ -91,11 +88,7 @@ obj.[propInt](); // 제 이름은 til이고, 나이는 5살 입니다.
 obj.intro; // function(){ return "제 이름은"+this.name + "이고, 나이는 " + this.age + "살 입니다."; }
 ```
 
-<br>
-
 ## 객체 생성
-
-<br>
 
 ### 객체 생성 방법
 
@@ -166,8 +159,6 @@ Object.getPrototypeOf(obj); // null
 // 객체 프로토 타입 반환
 ```
 
-<br>
-
 ## 프로토 타입
 
 >javascript는 객체를 상속하기 위해 프로토타입이라는 방식을 사용합니다.
@@ -205,36 +196,34 @@ import org.junit.Test;
 public class test2Class extends Person
 // 상속
 {
-	@Test
-	public void testing() {
-		System.out.println(info()); // name is kimson, age is 15, hair is long
+ @Test
+ public void testing() {
+  System.out.println(info()); // name is kimson, age is 15, hair is long
     // info()라는 메소드 new나 static지정 없이 사용가능
-	}
+ }
 }
 
 class Person{
-	protected String name = "kimson";
-	protected int age = 15;
-	protected String hair = "long";
-	
-	Person(){}
+ protected String name = "kimson";
+ protected int age = 15;
+ protected String hair = "long";
+ 
+ Person(){}
 
-	public Person(String name, int age, String hair) {
-		super();
-		this.name = name;
-		this.age = age;
-		this.hair = hair;
-	}
-	
-	public String info() {
-		return "name is "+this.name+", age is "+this.age+", hair is "+this.hair;
-	}
-	
-	// getter, setter...
+ public Person(String name, int age, String hair) {
+  super();
+  this.name = name;
+  this.age = age;
+  this.hair = hair;
+ }
+ 
+ public String info() {
+  return "name is "+this.name+", age is "+this.age+", hair is "+this.hair;
+ }
+ 
+ // getter, setter...
 }
 ```
-
-<br>
 
 ### 프로토타입 체인
 
@@ -359,8 +348,6 @@ delete meow.color; // color prop 삭제
 meow.color; // undefined
 ```
 
-<br>
-
 ### 객체 프로퍼티 열거
 
 #### 프로퍼티 추가
@@ -422,8 +409,6 @@ let Board = function(title, contents, author){
     };
 }
 
-
-
 let nb = new Board("테스트", "컨텐트", "kkn1125");
 
 console.log(nb.title)
@@ -449,4 +434,3 @@ spring이나 동적 웹에 활용한다면 회원설정메뉴 페이지를 만�
 아래에 Object(객체)의 중요 함수를 나열해두었습니다. 참고바랍니다.
 
 [defineProperty - MDN mozilla 설명 참조](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty 'defineProperty 상세'){:target="_blank"}
-

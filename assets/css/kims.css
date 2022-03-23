@@ -99,265 +99,6 @@ figure figcaption{
 	-o-transition: 150ms ease;
 }
 
-/* 
-	dark mode start
- */
-
-[data-switch="mode"] {
-	display: none;
-}
-
-label[for="mode"] {
-	user-select: none;
-	cursor: pointer;
-	position: relative;
-	display: inline-block;
-	width: 4rem;
-	height: 2rem;
-	background-color: rgba(114, 157, 250, 0.5);
-	border-radius: 2rem;
-	-webkit-border-radius: 2rem;
-	-moz-border-radius: 2rem;
-	-ms-border-radius: 2rem;
-	-o-border-radius: 2rem;
-}
-
-label[for="mode"].on>span {
-	left: 0%;
-}
-
-label[for="mode"].off>span {
-	left: 50%;
-}
-
-label[for="mode"]>span {
-	position: absolute;
-	display: inline-flex;
-	justify-content: center;
-	align-items: center;
-	pointer-events: none;
-	width: 2rem;
-	height: 2rem;
-	background-color: rgba(0, 0, 0, .5);
-	color: wheat;
-	border-radius: 2rem;
-	-webkit-border-radius: 2rem;
-	-moz-border-radius: 2rem;
-	-ms-border-radius: 2rem;
-	-o-border-radius: 2rem;
-	transition: 0.3s left cubic-bezier(0.25, 0.46, 0.45, 0.94);
-	-webkit-transition: 0.3s left cubic-bezier(0.25, 0.46, 0.45, 0.94);
-	-moz-transition: 0.3s left cubic-bezier(0.25, 0.46, 0.45, 0.94);
-	-ms-transition: 0.3s left cubic-bezier(0.25, 0.46, 0.45, 0.94);
-	-o-transition: 0.3s left cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
-label[for="mode"]>span::before {
-	position: absolute;
-}
-
-body.dark {
-	background-color: #2a2b31;
-	color: white;
-}
-
-body.dark .table{
-	color: inherit;
-}
-
-body.dark .modal-content{
-	background-color: #555555;
-}
-
-body.dark .modal-content li.lunrsearchresult{
-	margin-bottom: 1rem;
-}
-
-body.dark .modal-content span.title{
-	color: #ffffff !important;
-	font-weight: bold;
-}
-
-body.dark .modal-content span.body{
-	color: #ffba8c !important;
-}
-
-body.dark .modal-content span.url{
-	color: #949494 !important;
-}
-
-body.dark .section-title span {
-	border-bottom: 2px solid rgba(195, 195, 195, 0.856)
-}
-
-body.dark .section-title h2 {
-	border-bottom: 1px solid rgba(93, 93, 93, 0.808);
-}
-
-body.dark div.border.rounded {
-	background-color: inherit !important;
-}
-
-body.dark .card-title>a{
-	color: white;
-}
-body.dark .card-body{
-	color: rgb(211, 211, 211) !important;
-}
-body.dark .card-content{
-	color: rgb(180, 180, 180);
-}
-
-body.dark #kal.table td{
-	color: rgb(155, 155, 155);
-}
-
-body.dark .table>thead>tr>* {
-    --pl-table-bg: none !important;
-}
-
-body.dark .card{
-	color: rgb(175, 175, 175);
-}
-
-footer.footer {
-	margin-top: 50px;
-	z-index: 1022;
-	position: relative;
-	width: 100%;
-	background-color: #ffffff;
-}
-
-body.dark footer.footer {
-	background-color: #222222;
-	color: rgb(133, 133, 133) !important;
-}
-
-body.dark .author-description {
-	color: rgb(197, 197, 197) !important;
-}
-
-body.dark #conversation {
-	color: white;
-}
-
-body.dark div#posts {
-	color: white !important;
-}
-
-body.dark .rating-holder {
-	background-color: inherit;
-}
-
-body.dark [class="smoothscroll"] {
-	color: white !important;
-	background-color: rgb(104, 104, 104) !important;
-}
-
-body.dark .lang-badge {
-	color: white !important;
-}
-
-body.dark footer a.text-dark,
-body.dark h1,
-body.dark h2,
-body.dark h3,
-body.dark h4,
-body.dark h5,
-body.dark h6,
-body.dark h1 a.text-dark,
-body.dark h2 a.text-dark,
-body.dark h3 a.text-dark,
-body.dark h4 a.text-dark,
-body.dark h5 a.text-dark,
-body.dark h6 a.text-dark {
-	color: rgb(230, 230, 230) !important;
-}
-
-body.dark .card{
-	background-color: inherit;
-}
-
-body.dark ol.list-featured li:before {
-	opacity: 1;
-}
-
-body.dark .excerpt{
-	color: inherit;
-}
-
-body.dark hr{
-	border-color: #8b8b8b;
-}
-
-body.dark ul,
-/* body.dark div, */
-body.dark .article-post p {
-	color: rgb(212, 212, 212) !important;
-}
-
-body.dark .page-content p{
-	color: white;
-}
-
-body.dark
-
-body.dark time.post-date {
-	color: rgb(190, 190, 190);
-}
-
-body.dark time.post-date::before{
-	content: "written at ";
-	font-style: italic;
-	font-weight: bold;
-	text-transform: capitalize;
-	text-decoration-line: underline;
-	text-decoration-style: wavy;
-	text-decoration-thickness: 3px;
-	text-decoration-color: lightcoral;
-}
-
-body.dark .navbar .navbar-brand {
-	color: rgb(255, 255, 255);
-}
-
-body.dark .footer .navbar-brand {
-	color: rgb(134, 134, 134);
-}
-
-body.dark button.navbar-toggler {
-	filter: invert();
-}
-
-body.dark .navbar {
-	background-color: #252935 !important;
-	color: white;
-}
-
-body.dark .nav-link {
-	color: #d4d4d4 !important;
-}
-
-body button#modeToggle.btn{
-	transition: 1s ease;
-}
-
-body #mtWrap{
-	perspective: 200px;
-	position: fixed;
-	top: 80px;
-	right: 8%;
-	z-index: 1020;
-}
-
-body.dark label:not([for="mode"]){
-	color: #b9b9b9;
-}
-
-/* 
-	dark mode end
- */
-
 .table td{
 	padding: 0 !important;
 }
@@ -372,9 +113,6 @@ body.dark label:not([for="mode"]){
 
 .table tr td{
 	vertical-align: middle;
-}
-
-@media screen and (max-width: 768px){
 }
 
 .bd-search{
@@ -677,7 +415,7 @@ transition: .5s cubic-bezier(1,0,0,1);
 /* typer attr end */
 
 /* data bar */
-[data-value]{
+[data-value]:not(.btn){
     background-color: rgb(143, 143, 143);
     width: 50vw;
     height: 1em;
@@ -792,3 +530,266 @@ kbd.kbd{
 		flex-wrap: nowrap;
 	}
 }
+
+/* 
+	dark mode start
+ */
+
+ [data-switch="mode"] {
+	display: none;
+}
+
+label[for="mode"] {
+	user-select: none;
+	cursor: pointer;
+	position: relative;
+	display: inline-block;
+	width: 4rem;
+	height: 2rem;
+	background-color: rgba(114, 157, 250, 0.5);
+	border-radius: 2rem;
+	-webkit-border-radius: 2rem;
+	-moz-border-radius: 2rem;
+	-ms-border-radius: 2rem;
+	-o-border-radius: 2rem;
+}
+
+label[for="mode"].on>span {
+	left: 0%;
+}
+
+label[for="mode"].off>span {
+	left: 50%;
+}
+
+label[for="mode"]>span {
+	position: absolute;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	pointer-events: none;
+	width: 2rem;
+	height: 2rem;
+	background-color: rgba(0, 0, 0, .5);
+	color: wheat;
+	border-radius: 2rem;
+	-webkit-border-radius: 2rem;
+	-moz-border-radius: 2rem;
+	-ms-border-radius: 2rem;
+	-o-border-radius: 2rem;
+	transition: 0.3s left cubic-bezier(0.25, 0.46, 0.45, 0.94);
+	-webkit-transition: 0.3s left cubic-bezier(0.25, 0.46, 0.45, 0.94);
+	-moz-transition: 0.3s left cubic-bezier(0.25, 0.46, 0.45, 0.94);
+	-ms-transition: 0.3s left cubic-bezier(0.25, 0.46, 0.45, 0.94);
+	-o-transition: 0.3s left cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+label[for="mode"]>span::before {
+	position: absolute;
+}
+
+body.dark {
+	background-color: #2a2b31;
+	color: white;
+}
+
+body.dark .table{
+	color: inherit;
+}
+
+body.dark .modal-content{
+	background-color: #555555;
+}
+
+body.dark .modal-content li.lunrsearchresult{
+	margin-bottom: 1rem;
+}
+
+body.dark .modal-content span.title{
+	color: #ffffff !important;
+	font-weight: bold;
+}
+
+body.dark .modal-content span.body{
+	color: #ffba8c !important;
+}
+
+body.dark .modal-content span.url{
+	color: #949494 !important;
+}
+
+body.dark .section-title span {
+	border-bottom: 2px solid rgba(195, 195, 195, 0.856)
+}
+
+body.dark .section-title h2 {
+	border-bottom: 1px solid rgba(93, 93, 93, 0.808);
+}
+
+body.dark div.border.rounded {
+	background-color: inherit !important;
+}
+
+body.dark .card-title>a{
+	color: white;
+}
+body.dark .card-body{
+	color: rgb(211, 211, 211) !important;
+}
+body.dark .card-content{
+	color: rgb(180, 180, 180);
+}
+
+body.dark #kal.table td{
+	color: rgb(155, 155, 155);
+}
+
+body.dark .table>thead>tr>* {
+    --pl-table-bg: none !important;
+}
+
+body.dark .card{
+	color: rgb(175, 175, 175);
+}
+
+footer.footer {
+	margin-top: 50px;
+	z-index: 1022;
+	position: relative;
+	width: 100%;
+	background-color: #ffffff;
+}
+
+body.dark footer.footer {
+	background-color: #222222;
+	color: rgb(133, 133, 133) !important;
+}
+
+body.dark .author-description {
+	color: rgb(197, 197, 197) !important;
+}
+
+body.dark #conversation {
+	color: white;
+}
+
+body.dark div#posts {
+	color: white !important;
+}
+
+body.dark .rating-holder {
+	background-color: inherit;
+}
+
+body.dark [class="smoothscroll"] {
+	color: white !important;
+	background-color: rgb(104, 104, 104) !important;
+}
+
+body.dark .lang-badge {
+	color: white !important;
+}
+
+body.dark footer a.text-dark,
+body.dark h1,
+body.dark h2,
+body.dark h3,
+body.dark h4,
+body.dark h5,
+body.dark h6,
+body.dark h1 a.text-dark,
+body.dark h2 a.text-dark,
+body.dark h3 a.text-dark,
+body.dark h4 a.text-dark,
+body.dark h5 a.text-dark,
+body.dark h6 a.text-dark {
+	color: rgb(230, 230, 230) !important;
+}
+
+body.dark .card{
+	background-color: inherit;
+}
+
+body.dark ol.list-featured li:before {
+	opacity: 1;
+}
+
+body.dark .excerpt{
+	color: inherit;
+}
+
+body.dark hr{
+	border-color: #8b8b8b;
+}
+
+body.dark ul,
+/* body.dark div, */
+body.dark .article-post p {
+	color: rgb(212, 212, 212) !important;
+}
+
+body.dark .page-content p{
+	color: white;
+}
+
+body.dark
+
+body.dark time.post-date {
+	color: rgb(190, 190, 190);
+}
+
+body.dark time.post-date::before{
+	content: "written at ";
+	font-style: italic;
+	font-weight: bold;
+	text-transform: capitalize;
+	text-decoration-line: underline;
+	text-decoration-style: wavy;
+	text-decoration-thickness: 3px;
+	text-decoration-color: lightcoral;
+}
+
+body.dark .navbar .navbar-brand {
+	color: rgb(255, 255, 255);
+}
+
+body.dark .footer .brand {
+	color: rgb(224, 224, 224);
+}
+
+body.dark button.navbar-toggler {
+	filter: invert();
+}
+
+body.dark .navbar {
+	background-color: #252935 !important;
+	color: white;
+}
+
+body.dark .nav-link {
+	color: #d4d4d4 !important;
+}
+
+body.dark .footer a[href] {
+	color: white;
+}
+
+body button#modeToggle.btn{
+	transition: 1s ease;
+}
+
+body #mtWrap{
+	perspective: 200px;
+	position: fixed;
+	top: 80px;
+	right: 8%;
+	z-index: 1020;
+}
+
+body.dark label:not([for="mode"]){
+	color: #b9b9b9;
+}
+
+/* 
+	dark mode end
+ */

@@ -8,20 +8,8 @@ permalink: "/author-kimson.html"
 <div class="fence-full">
     <div class="w-flex justify-content-center">
         <div class="col-md-20">
-            <div class="w-flex align-items-center mb-5">
-                <div class="col-md-10">
-                    <div>
-                        <span class="h3 fw-bold">{{author.name}}</span>
-                        <a class="btn btn-frame-success btn-sm" href="{{ author.github }}">Follow</a>
-                    </div>
-                    <p><a href="{{ author.site }}">{{ author.site }}</a></p>
-                    <p class="excerpt">{{ author.bio }}</p>
-                </div>
-                <div class="col-md-5 text-right">
-                    <img alt="{{ author.name }}" src="{{site.baseurl}}/{{ author.avatar }}"
-                        class="rounded-circle" height="100" width="100">
-                </div>
-            </div>
+            {% include profile-card.html %}
+            
             <h4 class="fw-bold"><span>Posts by {{author.name}}</span></h4>
             {% assign posts = site.posts | where:"author","Kimson" %}
             {% for post in posts %}

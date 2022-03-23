@@ -1,7 +1,7 @@
 ---
 layout: post
-modified: 2022-03-14 00:09:35 +0900
-date:   2021-01-15 21:25:04 +0900
+modified: 2022-03-23 16:02:12 +0900
+date:   2021-01-01 21:25:04 +0900
 title:  "[JAVASCRIPT] checkbox로 항목 삭제 기능 구현"
 author: Kimson
 categories: [ javascript ]

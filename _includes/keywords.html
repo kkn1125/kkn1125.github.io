@@ -1,20 +1,19 @@
 {% assign keywords = page.keywords | split:"_" %}
 {% if keywords %}
-<blockquote class="my-5">
-    
+<blockquote id="keywords">
     <div class="text-capitalize" id="mainKeywords">
-        <h3>메인 키워드</h3>
+        <span class="fs-5 fw-bold">Keywords</span>
     </div>
-    <div class="user-select-none">
+    <ul class="list-group">
         {% for keyword in keywords %}
-        <span class="tag tag-danger">
-            {{keyword}}
-        </span>
+        <li class="list-item p-1">
+            {% assign items = keyword | split: '#' %}
+            <span class="tag tag-dark">
+            {{items[0]|strip}}
+            </span>
+            {{items[1]|strip}}
+        </li>
         {% endfor %}
-    </div>
-    <hr>
-    <footer class="blockquote-footer">
-        kimson
-    </footer>
+    </ul>
 </blockquote>
 {% endif %}

@@ -1,6 +1,6 @@
 ---
 layout: post
-modified: 2022-03-14 00:09:35 +0900
+modified: 2022-03-23 20:55:04 +0900
 date:   2021-08-06 16:22:36 +0900
 title:  "[JAVASCRIPT] 공공데이터로 페이징 처리하기"
 author: Kimson
@@ -20,12 +20,12 @@ profile: false
 istop: true
 keysum: true
 keywords: '
-window.location : 페이지의 주소 및 호스트 등을 알수있다.
-_typeof 대상 : 대상의 타입이 무엇인지 반환
-_XMLHttpRequest : 서버와 상호작용하기 위해 사용되며, 페이지 새로고침 없이 지정 URL에서 데이터를 받아옴 (ajax 참고)
-_JSON.parse(string) : key-value형태로 작성된 텍스트를 객체로 변환한다.
-_JSON.stringify(객체) : key-value형태의 객체를 문자열로 변환한다.
-_조건?참:거짓 : 조건식이 true이면 "참"부분 아니면 "거짓"부분을 실행하는 삼항연산자
+window.location # 페이지의 주소 및 호스트 등을 알수있다.
+_typeof 대상 # 대상의 타입이 무엇인지 반환
+_XMLHttpRequest # 서버와 상호작용하기 위해 사용되며, 페이지 새로고침 없이 지정 URL에서 데이터를 받아옴 (ajax 참고)
+_JSON.parse(string) # key-value형태로 작성된 텍스트를 객체로 변환한다.
+_JSON.stringify(객체) # key-value형태의 객체를 문자열로 변환한다.
+_조건?참:거짓 # 조건식이 true이면 "참"부분 아니면 "거짓"부분을 실행하는 삼항연산자
 '
 ---
 
@@ -309,11 +309,6 @@ paging.innerHTML += // 페이지 증가 버튼입니다.
 `
 ```
 
-<br>
-
 ![완성]({{site.baseurl}}/assets/images/post/publicData/public-move.gif)
 
-<br>
-
-페이지 처리를 해보았는데요. 다음에는 객체에 페이지처리하는 메소드를 추가하여 객체로만 처리하는 것을 준비해보도록 하겠습니다.  
-오늘 사용된 함수들은 아래 정리되어 있습니다.
+페이지 처리를 해보았는데요. 다음에는 객체에 페이지처리하는 메소드를 추가하여 객체로만 처리하는 것을 준비해보도록 하겠습니다. 사용된 함수들은 [페이지 상단](#keywords)에 정리되어 있습니다.

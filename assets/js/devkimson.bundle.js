@@ -121,6 +121,9 @@ window.addEventListener('load', function(){
                 case 'python':
                     color = "primary"
                     break;
+                case 'py':
+                    color = "primary"
+                    break;
             }
 
             made.innerHTML = `Devkimson`;

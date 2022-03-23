@@ -1,6 +1,6 @@
 ---
 layout: post
-modified: 2022-03-14 00:09:35 +0900
+modified: 2022-03-23 19:39:06 +0900
 date:   2021-07-15 17:40:27 +0900
 title:  "[JAVASCRIPT] 달력만들기"
 author: Kimson
@@ -12,19 +12,12 @@ description: "Javascript 라이브러리를 끌어 쓰던 중 \" 내가 만들�
 featured: false
 hidden: false
 rating: 3.5
-# beforetoc: "커버이미지"
 toc: true
 ---
 
 # Calendar 만들기
 
-Javascript 라이브러리를 끌어 쓰던 중 " 내가 만들면 어떨까 " 해서 작업을 하게 되었습니다.
-
-저번에 중구난방으로 만들어봤지만 뭔가 설정 하나하나 커스터마이징 할 수 있게 하는 것이 라이브러리들의 특징이 아닐까 싶어 열심히 라이브러리 구조를 베끼고 관찰하면서 지금의 초본이 만들어졌습니다.
-
-이제 막 시작 단계이고 더 공부해서 Todo-List나 예매사이트 등 여러가지 활용방향을 고려해서 부품을 조립하듯이 만들 예정입니다.
-
-사용법은 간단합니다.
+Todo List를 연습삼아 만들면서 캘린더가 필요할 것 같아 만들어 보았습니다.
 
 ```html
 <html>
@@ -78,6 +71,4 @@ namespace ( com.devkimson.calendar )를 작성하고 인자 값으로 html에서
 
 ![cal2]({{ site.baseurl }}/assets/images/post/jsdevKal/devkal-2.png)
 
-> 캘린더 js 파일
-
-<a href="{{ site.baseurl }}/assets/download/kalendarJS.zip" download>다운로드</a>
+<a href="{{ site.baseurl }}/assets/download/kalendarJS.zip" download>캘린더 js 파일 다운로드</a>

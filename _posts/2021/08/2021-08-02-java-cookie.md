@@ -20,10 +20,12 @@ toc: true
 쿠키의 특징을 간단하게 알아보면서 내용을 정리하였습니다.
 
 ## Cookie란
+
 > 주로 웹 서버에 의해 만들어지고, 서버가 HTTP 응답헤더의 Set-Cookie에 내용을 넣어 전달하면, 이 내용을 브라우저에 저장합니다.
 >식별이나 인증 등에 사용되고 브라우저에서도 document.cookie로 접근 가능합니다.
 
 ## Cookie 생성
+
 ```java
 Cookie cookie = newCookie("name", "value"); // 이것만으로 쿠키 생성이 완료된 것이 아닙니다.
 ​
@@ -48,6 +50,7 @@ response.addCookie(cookie);
 ```
 
 ## Cookie 읽기
+
 ```java
 Cookie[] cookies = request.getCookies();
 // 요청된 쿠키들을 불러오기위해 request에서 꺼내옵니다.
@@ -61,6 +64,7 @@ for(Cookie cookie : cookies) {
 ```
 
 ## Cookie 수정/삭제
+
 ```java
 Cookie[] cookies = request.getCookies();
 // 수정하기 위해 쿠키들을 불러옵니다.
@@ -77,6 +81,7 @@ for(Cookie cookie : cookies) {
 ```
 
 # Javascript와 Java에서의 쿠키 읽기 특징
+
 >HttpOnly는 특히 브라우저와 서버측에서 가져올수 있는지의 여부가 쟁정이 되지 않나 싶습니다. 즉, 가져오는 주체의 허용 범위라고 이해하였습니다.
 
 아무리 찾아도 쉽게 설명 된 사이트가 없어 정리하려합니다. 먼저, 자바 코드 입니다.
@@ -107,5 +112,7 @@ f12 개발자도구를 열었을때 application 탭에서 쿠키를 보면 다�
 이때 httponly속성이 없거나 domain이 해당 사이트와 동일 해야지만 자바스크립트에서 document.cookie로 쿠키를 가져올수 있고,
 
 httponly속성이 true이거나 domain이 다르다면 document.cookie로 값을 가져오지 못하는 것을 알게 되었습니다.
+
+-----
 
 [Python2 - HttpOnly 속성 참고](https://www.python2.net/questions-200084.htm){:target="_blank"}
