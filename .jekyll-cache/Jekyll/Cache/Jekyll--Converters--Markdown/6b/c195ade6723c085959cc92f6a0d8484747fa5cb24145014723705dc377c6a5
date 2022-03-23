@@ -1,6 +1,0 @@
-I"f<p>Module Pattern
-포스팅이 뜸 했습니다. 최근에 <code class="language-plaintext highlighter-rouge">Typer</code> 한글 분해 타이핑 기능과 <code class="language-plaintext highlighter-rouge">Documentify</code> 문서화 기능을 마무리 짓느라 포스팅에 소홀했는데요. 이번에는 이제 익숙해져버린 모듈 패턴을 기록해두려합니다.
-구조
-몇 달 전에 참고했던 러시아 분의 <code class="language-plaintext highlighter-rouge">tagEditor</code> 라는 저장소를 방문하여 이슈를 주고 받고, 해당 코드를 공부삼아 클론한 적이 있습니다. 그 당시 이해되지 않던 복잡해보이는 패턴을 사용해보고 변경해보고 활용하다보니 이제는 이렇게 코드를 짜지 않으면 성에 안차는 정도가 되었습니다.
-활용되었던 형태는 이렇습니다.</p>
-:ET
