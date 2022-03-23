@@ -1,0 +1,38 @@
+I"X<h1 id="ajax-전송-한글-깨짐">Ajax 전송 한글 깨짐</h1>
+
+<p>Ajax로 데이터를 전송하다보면 한글이 깨지는 경우가 발생합니다. 작업 중인 상황을 간단하게 설명드리자면, 아래와 같습니다.</p>
+
+<ol>
+  <li>컨트롤러에서 데이터를 화면에 response해줄 때 발생했습니다.</li>
+  <li>데이터의 내용은 한글이 섞여 있습니다.</li>
+</ol>
+
+<p><code class="language-plaintext highlighter-rouge">javascript</code>에서 <code class="language-plaintext highlighter-rouge">data form</code>을 전송할 때 문제가 있나 해서 <code class="language-plaintext highlighter-rouge">javascript</code>의 <code class="language-plaintext highlighter-rouge">decodeURI()</code>로 파싱해도 원하는 결과를 얻을 수 없었습니다. <code class="language-plaintext highlighter-rouge">Cotroller</code>에서 <code class="language-plaintext highlighter-rouge">response</code>할 때 <code class="language-plaintext highlighter-rouge">contentType</code>을 설정해도 결과는 같았습니다.</p>
+
+<h2 id="requestmapping의-produces-사용">RequestMapping의 produces 사용</h2>
+
+<p>찾던 중 <code class="language-plaintext highlighter-rouge">RequestMapping</code>의 produces를 사용하면 해결 할 수 있다고 합니다. 한글이 깨지는 상황은 현재 수정하는 시점에서 경험한 바는 아래와 같은 경우입니다.</p>
+
+<ol>
+  <li>POST요청할 때</li>
+  <li>API서버 구축할 때 @requestBody로 데이터를 응답할 때</li>
+</ol>
+
+<p>GET요청에서는 한글이 깨지는 현상을 경험해보지는 못했지만 POST요청과 json형태로 응답하거나 ResponseBody어노테이션을 사용할 때 발생하는 경우가 더러 있습니다. 그 때 produces설정을 아래와 같이 설정하면 한글 깨짐 현상이 사라지는 것을 볼 수 있습니다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre><span class="nd">@GetMapping</span><span class="o">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">"path/{param}"</span><span class="o">,</span> <span class="n">produces</span> <span class="o">=</span> <span class="s">"application/text; charset=utf8"</span><span class="o">)</span>
+<span class="kd">public</span> <span class="nd">@ResponseBody</span> <span class="nc">String</span> <span class="nf">comment</span><span class="o">(</span><span class="nd">@PathVariable</span><span class="o">(</span><span class="s">"param"</span><span class="o">)</span> <span class="kt">int</span> <span class="n">param1</span><span class="o">,</span> <span class="nc">HttpServletResponse</span> <span class="n">response</span><span class="o">){</span>
+    <span class="o">...</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>벌써 준비한 기간이 8개월이 지나고 있습니다. 게시글 전체 중간점검 중인데 다시 보니 글을 대충 적었던 것도 있고, 레퍼런스나 설명이 많이 부족했던 것을 새삼 느낍니다.</p>
+
+<hr />
+
+<p><a href="https://stratosphere.tistory.com/207" target="_blank">LunaStratos님 :: Spring + ajax 로 데이터 받을때 String이 물음표 ? 가 나오는 현상</a></p>
+:ET

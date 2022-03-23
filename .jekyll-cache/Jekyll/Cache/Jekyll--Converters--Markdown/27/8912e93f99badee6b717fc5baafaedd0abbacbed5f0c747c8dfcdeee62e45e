@@ -1,0 +1,72 @@
+I"�<h1 id="file-upload">File Upload</h1>
+
+<blockquote>
+  <p>USED
+<code class="language-plaintext highlighter-rouge">org.springframework.web.multipart.MultipartFile</code></p>
+</blockquote>
+
+<p>Multipart를 안 쓰다가 사용하니 처음에 조금 버벅거렸습니다.</p>
+
+<h2 id="파일-올리기">파일 올리기</h2>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+</pre></td><td class="rouge-code"><pre><span class="kd">public</span> <span class="nc">String</span> <span class="nf">addProduct</span><span class="o">(</span><span class="nc">HttpServletRequest</span> <span class="n">request</span><span class="o">,</span> <span class="nc">MultipartFile</span> <span class="n">cover</span><span class="o">)</span> <span class="o">{</span>
+	<span class="nc">String</span> <span class="n">fileName</span> <span class="o">=</span> <span class="s">""</span><span class="o">;</span> <span class="c1">// 파일 이름</span>
+	<span class="nc">String</span> <span class="n">web_path</span> <span class="o">=</span> <span class="s">"/resources/img/upload"</span><span class="o">;</span> <span class="c1">// DB 저장될 경로명</span>
+	<span class="nc">String</span> <span class="n">absolutePath</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="na">getServletContext</span><span class="o">().</span><span class="na">getRealPath</span><span class="o">(</span><span class="n">web_path</span><span class="o">);</span> <span class="c1">// 절대경로</span>
+
+	<span class="nc">File</span> <span class="n">file</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">File</span><span class="o">(</span><span class="n">absolutePath</span><span class="o">);</span>
+
+	<span class="k">if</span><span class="o">(!</span><span class="n">file</span><span class="o">.</span><span class="na">exists</span><span class="o">())</span> <span class="o">{</span>
+		<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">file</span><span class="o">.</span><span class="na">mkdirs</span><span class="o">());</span>
+	<span class="o">}</span>
+
+	<span class="c1">// String contentType = cover.getContentType();</span>
+	<span class="c1">// if(!ObjectUtils.isEmpty(contentType)) {</span>
+	<span class="c1">// 	fileName = cover.getOriginalFilename();</span>
+	<span class="c1">// }</span>
+	<span class="n">file</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">File</span><span class="o">(</span><span class="n">absolutePath</span> <span class="o">+</span> <span class="s">"/"</span> <span class="o">+</span> <span class="n">fileName</span><span class="o">);</span>
+
+	<span class="k">try</span> <span class="o">{</span>
+		<span class="n">cover</span><span class="o">.</span><span class="na">transferTo</span><span class="o">(</span><span class="n">file</span><span class="o">);</span>
+	<span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="nc">IllegalStateException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+		<span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+	<span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="nc">IOException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+		<span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">file</code>의 목적 경로에 폴더가 존재하는지 여부를 보고 <code class="language-plaintext highlighter-rouge">mkdirs</code>로 상위 폴더를 전부 생성합니다. 절대경로를 얻는 방법은 많았지만 저는 다른 방법이 안되서 <code class="language-plaintext highlighter-rouge">ServletContext</code>로 받아왔습니다.</p>
+
+<p>파일의 타입을 검증하고 싶으시면 <code class="language-plaintext highlighter-rouge">MultipartFile</code>로 받은 인자의 <code class="language-plaintext highlighter-rouge">getContenType</code>을 사용하면 됩니다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">file</code>의 경로 설정이 다 되면 <code class="language-plaintext highlighter-rouge">transferTo</code>로 생성하면 끝납니다.</p>
+
+<hr />
+
+:ET

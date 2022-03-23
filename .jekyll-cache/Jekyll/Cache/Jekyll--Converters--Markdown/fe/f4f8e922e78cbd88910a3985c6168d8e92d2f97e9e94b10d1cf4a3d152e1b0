@@ -1,0 +1,85 @@
+I"�<h1 id="calendar-만들기">Calendar 만들기</h1>
+
+<p>Todo List를 연습삼아 만들면서 캘린더가 필요할 것 같아 만들어 보았습니다.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;html&gt;</span>
+    <span class="nt">&lt;head&gt;</span>
+         <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"devkalendar.js"</span><span class="nt">&gt;</span>
+             <span class="c1">//head안에 devkalendar.js 를 불러옵니다.</span>
+         <span class="nt">&lt;/script&gt;</span>   
+    <span class="nt">&lt;/head&gt;</span>
+    <span class="nt">&lt;body&gt;</span>
+        <span class="nt">&lt;div&gt;</span>
+            <span class="nt">&lt;table</span> <span class="na">id=</span><span class="s">"example"</span><span class="nt">&gt;&lt;/table&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>body에 div에 감싸여진 채로 table태그를 생성하고 id값을 줍니다.</p>
+
+<p>script를 body종료 전에 생성합니다. ( src로 불러와도 됩니다. 단, devkalendar.js 이후에 아래의 구문을 적어야합니다. )</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+</pre></td><td class="rouge-code"><pre><span class="kd">const</span> <span class="nx">example</span> <span class="o">=</span> <span class="nx">com</span><span class="p">.</span><span class="nx">devkimson</span><span class="p">.</span><span class="nx">calendar</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">example</span><span class="dl">"</span><span class="p">)</span><span class="o">||</span><span class="dl">"</span><span class="s2">example</span><span class="dl">"</span><span class="p">,{</span>
+    <span class="na">marker</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">color</span><span class="p">:</span> <span class="dl">"</span><span class="s2">red</span><span class="dl">"</span><span class="p">,</span> <span class="cm">/* default rgba(255,173,173,0.5) */</span>
+        <span class="na">thick</span><span class="p">:</span> <span class="dl">"</span><span class="s2">3px</span><span class="dl">"</span><span class="p">,</span> <span class="cm">/* default 3px */</span>
+        <span class="na">style</span><span class="p">:</span> <span class="dl">""</span><span class="p">,</span> <span class="cm">/* default none */</span>
+        <span class="na">speed</span><span class="p">:</span> <span class="dl">""</span><span class="p">,</span> <span class="cm">/* default 0.5s */</span>
+        <span class="na">bezier</span><span class="p">:</span> <span class="dl">""</span><span class="p">,</span> <span class="cm">/* default cubic-bezier(1,0,0,1) */</span>
+        <span class="na">width</span><span class="p">:</span> <span class="dl">""</span> <span class="cm">/* cell width */</span>
+     <span class="p">},</span>
+     <span class="na">table</span><span class="p">:</span> <span class="p">{</span>
+         <span class="na">bgColor</span><span class="p">:</span> <span class="dl">"</span><span class="s2">table-info</span><span class="dl">"</span><span class="p">,</span> <span class="cm">/* bootstrap */</span>
+         <span class="na">color</span><span class="p">:</span> <span class="dl">"</span><span class="s2">text-muted</span><span class="dl">"</span><span class="p">,</span> <span class="cm">/* bootstrap */</span>
+         <span class="na">width</span><span class="p">:</span> <span class="dl">"</span><span class="s2">10px</span><span class="dl">"</span><span class="p">,</span> <span class="cm">/* 셀너비 조정 default auto */</span>
+         <span class="na">padding</span><span class="p">:</span> <span class="dl">"</span><span class="s2">1rem</span><span class="dl">"</span> <span class="cm">/* table tag padding default auto */</span>
+         <span class="na">collapse</span><span class="p">:</span> <span class="dl">"</span><span class="s2">separate</span><span class="dl">"</span><span class="p">,</span> <span class="cm">/* default collapse */</span>
+         <span class="na">spacing</span><span class="p">:</span> <span class="dl">"</span><span class="s2">1rem</span><span class="dl">"</span> <span class="cm">/* cell-padding default auto */</span>
+     <span class="p">}</span>   
+<span class="p">});</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>namespace ( com.devkimson.calendar )를 작성하고 인자 값으로 html에서 설정한 table의 id값을 적어줍니다.
+중괄호의 settings는 필요한 부분만 커스터마이징하여 사용하면 됩니다.</p>
+
+<h2 id="기본-설정">기본 설정</h2>
+
+<p><img src="/assets/images/post/jsdevKal/devkal.png" alt="cal1" /></p>
+
+<h2 id="커스터마이징">커스터마이징</h2>
+
+<p><img src="/assets/images/post/jsdevKal/devkal-2.png" alt="cal2" /></p>
+
+<p><a href="/assets/download/kalendarJS.zip" download="">캘린더 js 파일 다운로드</a></p>
+:ET

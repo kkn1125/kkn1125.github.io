@@ -1,0 +1,4 @@
+I"�<p>게시판 구현 Used 1. Lombok 2. SpringFramework 5.3.6 3. MyBatis 4. Tiles 5. jdbc 6. mysql
+Spring 부분
+게시판 구현에 있어서 <code class="language-plaintext highlighter-rouge">MyBatis</code>를 사용했습니다. <code class="language-plaintext highlighter-rouge">MyBatis</code>의 자바 구현과정은 이전 포스팅이 있어 생략할 예정이기 때문에</p>
+:ET
