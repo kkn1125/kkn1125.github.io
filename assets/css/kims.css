@@ -45,7 +45,8 @@ div.highlight{
 }
 
 pre.highlight code pre{
-	font-family: var(--lm-noto-sans);
+	font-family: Menlo,Consolas,Monaco,monospace;
+	/* font-family: var(--lm-noto-sans); */
 }
 
 pre.highlight::-webkit-scrollbar{

@@ -2,14 +2,14 @@
  * @site : https://spsarolkar.github.io/rouge-theme-preview/
  * @desciption : preview site
  */
-pre{
+/* pre{
   border: none;
   background-color: inherit;
   color: inherit;
   word-spacing: 0.1em;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1rem;
   line-height: 1.5;
-}
+} */
 
 code[class|=language]{
   color: rgba(var(--pl-danger-rgb), 1);
@@ -21,6 +21,9 @@ code[class|=language]{
   -moz-border-radius: .3rem;
   -ms-border-radius: .3rem;
   -o-border-radius: .3rem;
+}
+pre.lineno {
+  text-align: right;
 }
 
 pre.highlight{
