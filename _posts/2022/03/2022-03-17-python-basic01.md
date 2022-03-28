@@ -9,7 +9,7 @@ tags: [ basic, til ]
 description: "기초 Cheetsheet
 수
 print > \"+\" 덧셈한다. > \"-\" 뺄셈한다. > \"*\" 곱셈한다. > \"\/\" 나눗셈한다. ex) 4를 3으로 나누면 1.3333333이 나온다. > \"\/\/\" 몫을 구한다. ex) 4를 3으로 나누면 몫이 1이 나온다. > \"%\" 나머지를 구한다. ex) 4를 3으로 나누면 나머지가 1이 나온다. > \"**\"는 제곱을 말한다. ex) 3의 4제곱 === 3 ** 4"
-featured: true
+featured: false
 hidden: false
 rating: 3
 toc: true

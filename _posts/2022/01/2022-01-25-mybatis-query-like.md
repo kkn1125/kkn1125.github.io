@@ -14,7 +14,7 @@ description: "MyBatis Like
 기본 사용 형식
 
 기본적으로 `LIKE`는 아래와 같이 3가지 형식을 사용합니다."
-featured: true
+featured: false
 hidden: false
 rating: 4
 toc: true

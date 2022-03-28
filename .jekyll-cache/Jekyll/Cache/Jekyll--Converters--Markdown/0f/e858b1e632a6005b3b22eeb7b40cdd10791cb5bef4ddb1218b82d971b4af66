@@ -1,0 +1,718 @@
+I"�<h1 id="기본-authentication-사용">기본 Authentication 사용</h1>
+
+<blockquote>
+  <p><strong>Used</strong></p>
+
+  <ol>
+    <li>postgreSQL</li>
+    <li>pgAdmin4</li>
+    <li>rest_framework</li>
+  </ol>
+</blockquote>
+
+<p><code class="language-plaintext highlighter-rouge">UI</code>로 보는 것을 선호해서 <code class="language-plaintext highlighter-rouge">pgadmin</code>을 사용했습니다.</p>
+
+<figure class="text-center">
+<span class="w-inline-block">
+   <img src="/assets/images/post/django/authentication/auth01.png" alt="sample" title="sample" />
+   <figcaption>pgAdmin 속성</figcaption>
+</span>
+</figure>
+
+<p>표로 정리해서 보면 아래와 같습니다.</p>
+
+<table class="table table-hover vertical-dot">
+  <thead>
+    <tr>
+      <th style="text-align: center">name</th>
+      <th style="text-align: right">:data type:</th>
+      <th style="text-align: right">:length:</th>
+      <th style="text-align: right">:null:</th>
+      <th style="text-align: right">:pk:</th>
+      <th style="text-align: right">:default:</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">**id**</td>
+      <td style="text-align: right">integer</td>
+      <td style="text-align: right">-</td>
+      <td style="text-align: right">not null</td>
+      <td style="text-align: right">pk</td>
+      <td style="text-align: right">auth</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">**username**</td>
+      <td style="text-align: right">char</td>
+      <td style="text-align: right">150</td>
+      <td style="text-align: right">not null</td>
+      <td style="text-align: right">-</td>
+      <td style="text-align: right">-</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">**firstname**</td>
+      <td style="text-align: right">char</td>
+      <td style="text-align: right">150</td>
+      <td style="text-align: right">not null</td>
+      <td style="text-align: right">-</td>
+      <td style="text-align: right">-</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">**lastname**</td>
+      <td style="text-align: right">char</td>
+      <td style="text-align: right">150</td>
+      <td style="text-align: right">not null</td>
+      <td style="text-align: right">-</td>
+      <td style="text-align: right">-</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">**email**</td>
+      <td style="text-align: right">char</td>
+      <td style="text-align: right">254</td>
+      <td style="text-align: right">not null</td>
+      <td style="text-align: right">-</td>
+      <td style="text-align: right">-</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">**password**</td>
+      <td style="text-align: right">char</td>
+      <td style="text-align: right">128</td>
+      <td style="text-align: right">not null</td>
+      <td style="text-align: right">-</td>
+      <td style="text-align: right">-</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">**last_login**</td>
+      <td style="text-align: right">timestamp</td>
+      <td style="text-align: right">-</td>
+      <td style="text-align: right">null</td>
+      <td style="text-align: right">-</td>
+      <td style="text-align: right">-</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">**date_joined**</td>
+      <td style="text-align: right">timestamp</td>
+      <td style="text-align: right">-</td>
+      <td style="text-align: right">not null</td>
+      <td style="text-align: right">-</td>
+      <td style="text-align: right">-</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">**is_superuser**</td>
+      <td style="text-align: right">boolean</td>
+      <td style="text-align: right">-</td>
+      <td style="text-align: right">not null</td>
+      <td style="text-align: right">-</td>
+      <td style="text-align: right">-</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">**is_staff**</td>
+      <td style="text-align: right">boolean</td>
+      <td style="text-align: right">-</td>
+      <td style="text-align: right">not null</td>
+      <td style="text-align: right">-</td>
+      <td style="text-align: right">-</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">**is_active**</td>
+      <td style="text-align: right">boolean</td>
+      <td style="text-align: right">-</td>
+      <td style="text-align: right">not null</td>
+      <td style="text-align: right">-</td>
+      <td style="text-align: right">-</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><code class="language-plaintext highlighter-rouge">pgAdmin</code>에서 <code class="language-plaintext highlighter-rouge">query tool</code>로 확인하고 싶으시다면 아래의 구문으로 확인하실 수 있습니다.</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="k">select</span> <span class="k">column_name</span><span class="p">,</span> <span class="n">data_type</span><span class="p">,</span> <span class="n">is_nullable</span><span class="p">,</span> <span class="n">character_maximum_length</span>
+<span class="k">from</span> <span class="n">INFORMATION_SCHEMA</span><span class="p">.</span><span class="n">COLUMNS</span> <span class="k">where</span> <span class="k">table_name</span> <span class="o">=</span> <span class="s1">'&lt;name of table&gt;'</span><span class="p">;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>위 속성처럼 기본적으로 user authentication은 <code class="language-plaintext highlighter-rouge">id(pk)</code>, <code class="language-plaintext highlighter-rouge">username</code>, <code class="language-plaintext highlighter-rouge">email</code>, <code class="language-plaintext highlighter-rouge">password</code>, <code class="language-plaintext highlighter-rouge">firstname</code>, <code class="language-plaintext highlighter-rouge">lastname</code>, <code class="language-plaintext highlighter-rouge">last_login</code>, <code class="language-plaintext highlighter-rouge">date_joined</code>, <code class="language-plaintext highlighter-rouge">is_superuser</code>, <code class="language-plaintext highlighter-rouge">is_staff</code>, <code class="language-plaintext highlighter-rouge">is_active</code> 필드를 제공합니다. 거기에 확장해서 프로필 사진이나, 주소, 상태메세지 등을 설정할 수 있는데요. 확장은 <code class="language-plaintext highlighter-rouge">User</code>를 <code class="language-plaintext highlighter-rouge">proxy</code> 혹은 <code class="language-plaintext highlighter-rouge">AbstractUser</code> 등의 방법이 있습니다. 저는 <code class="language-plaintext highlighter-rouge">AbstractUser</code>를 사용한 내용을 작성하려 합니다.</p>
+
+<blockquote>
+  <p>postgre에서는 mysql의 <code class="language-plaintext highlighter-rouge">desc</code>와 같은 명령어가 없어 위처럼 만들어 비슷하게 결과를 얻기위해 사용한다고 합니다.</p>
+</blockquote>
+
+<h2 id="기본사용-테스트-준비">기본사용 테스트 준비</h2>
+
+<p>설명을 생략하고 테스트를 하는데에 초점을 두기위해 필요한 작업만을 아래에 나열하겠습니다. 테스트할 내용은 <code class="language-plaintext highlighter-rouge">authenticate</code>기본 설정입니다.</p>
+
+<p>auth_test라는 프로젝트를 생성합니다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre><span class="nv">$ </span>django-admin startproject auth_test
+<span class="nv">$ </span><span class="nb">cd </span>auth_test/
+<span class="nv">$ </span>django-admin startapp apps
+<span class="nv">$ </span>django-admin startapp account
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>위처럼 두 개의 앱을 생성합니다. (하나만 생성해도 충분합니다. 두 개를 만드는 것은 단지 구분시켜서 보기위함 입니다.)</p>
+
+<h3 id="urls-설정">urls 설정</h3>
+
+<p>테스트에 필요한 url은 아래와 같습니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre></td><td class="rouge-code"><pre><span class="c1"># auth_test/auth_test/urls.py
+</span>
+<span class="kn">from</span> <span class="nn">django.contrib</span> <span class="kn">import</span> <span class="n">admin</span>
+<span class="kn">from</span> <span class="nn">django.urls</span> <span class="kn">import</span> <span class="n">include</span><span class="p">,</span> <span class="n">path</span>
+
+<span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">path</span><span class="p">(</span><span class="s">''</span><span class="p">,</span> <span class="n">include</span><span class="p">(</span><span class="s">'apps.urls'</span><span class="p">)),</span>             <span class="c1"># 홈
+</span>    <span class="n">path</span><span class="p">(</span><span class="s">'account/'</span><span class="p">,</span> <span class="n">include</span><span class="p">(</span><span class="s">'account.urls'</span><span class="p">)),</span>  <span class="c1"># sign CRUD
+</span>    <span class="n">path</span><span class="p">(</span><span class="s">'admin/'</span><span class="p">,</span> <span class="n">admin</span><span class="p">.</span><span class="n">site</span><span class="p">.</span><span class="n">urls</span><span class="p">),</span>
+<span class="p">]</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">apps</code>와 <code class="language-plaintext highlighter-rouge">account</code> 앱에 필요한 <code class="language-plaintext highlighter-rouge">urls.py</code>를 추가합니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+</pre></td><td class="rouge-code"><pre><span class="c1"># auth_test/apps/urls.py
+</span>
+<span class="kn">from</span> <span class="nn">django.urls</span> <span class="kn">import</span> <span class="n">include</span><span class="p">,</span> <span class="n">path</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">views</span>
+
+<span class="n">app_name</span> <span class="o">=</span> <span class="s">'apps'</span>
+
+<span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">path</span><span class="p">(</span><span class="s">''</span><span class="p">,</span> <span class="n">views</span><span class="p">.</span><span class="n">index</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s">'index'</span><span class="p">),</span>
+<span class="p">]</span>
+
+<span class="c1"># =============================
+</span>
+<span class="c1"># auth_test/account/urls.py
+</span><span class="kn">from</span> <span class="nn">django.urls</span> <span class="kn">import</span> <span class="n">include</span><span class="p">,</span> <span class="n">path</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">views</span>
+
+<span class="n">app_name</span> <span class="o">=</span> <span class="s">'account'</span>
+
+<span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">path</span><span class="p">(</span><span class="s">'signin'</span><span class="p">,</span> <span class="n">views</span><span class="p">.</span><span class="n">signin</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s">'signin'</span><span class="p">),</span>
+    <span class="n">path</span><span class="p">(</span><span class="s">'signout'</span><span class="p">,</span> <span class="n">views</span><span class="p">.</span><span class="n">signout</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s">'signout'</span><span class="p">),</span>
+    <span class="n">path</span><span class="p">(</span><span class="s">'signup'</span><span class="p">,</span> <span class="n">views</span><span class="p">.</span><span class="n">signup</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s">'signup'</span><span class="p">),</span>
+    <span class="n">path</span><span class="p">(</span><span class="s">'unsign'</span><span class="p">,</span> <span class="n">views</span><span class="p">.</span><span class="n">unsign</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s">'unsign'</span><span class="p">),</span>
+<span class="p">]</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="template-설정">template 설정</h3>
+
+<p><code class="language-plaintext highlighter-rouge">url</code> 설정이 끝났다면 <code class="language-plaintext highlighter-rouge">template</code>을 작성합니다. 필요한 페이지인 <code class="language-plaintext highlighter-rouge">index</code>, <code class="language-plaintext highlighter-rouge">signin</code>, <code class="language-plaintext highlighter-rouge">signup</code> 까지만 생성하겠습니다.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+</pre></td><td class="rouge-code"><pre><span class="c">&lt;!-- auth_test/templates/auth_test/layout.html --&gt;</span>
+
+{% load static %}
+{% load customs %}
+{% set request.path as path %}
+<span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"ko"</span><span class="nt">&gt;</span>
+
+    <span class="nt">&lt;head&gt;</span>
+        <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"UTF-8"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;meta</span> <span class="na">http-equiv=</span><span class="s">"X-UA-Compatible"</span> <span class="na">content=</span><span class="s">"IE=edge"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"viewport"</span> <span class="na">content=</span><span class="s">"width=device-width, initial-scale=1.0"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">"https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"</span> <span class="na">rel=</span><span class="s">"stylesheet"</span>
+            <span class="na">integrity=</span><span class="s">"sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"</span> <span class="na">crossorigin=</span><span class="s">"anonymous"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;title&gt;</span>Test Account<span class="nt">&lt;/title&gt;</span>
+    <span class="nt">&lt;/head&gt;</span>
+
+    <span class="nt">&lt;body&gt;</span>
+        <span class="nt">&lt;nav</span> <span class="na">class=</span><span class="s">"navbar navbar-expand-sm navbar-light bg-light"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"container-fluid"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"navbar-brand"</span> <span class="na">href=</span><span class="s">"{% url 'apps:index' %}"</span><span class="nt">&gt;</span>Kimson<span class="nt">&lt;/a&gt;</span>
+                <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"navbar-toggler"</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">data-bs-toggle=</span><span class="s">"collapse"</span>
+                    <span class="na">data-bs-target=</span><span class="s">"#navbarSupportedContent"</span> <span class="na">aria-controls=</span><span class="s">"navbarSupportedContent"</span>
+                    <span class="na">aria-expanded=</span><span class="s">"false"</span> <span class="na">aria-label=</span><span class="s">"Toggle navigation"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"navbar-toggler-icon"</span><span class="nt">&gt;&lt;/span&gt;</span>
+                <span class="nt">&lt;/button&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"collapse navbar-collapse"</span> <span class="na">id=</span><span class="s">"navbarSupportedContent"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"navbar-nav me-auto mb-lg-0"</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"nav-item"</span><span class="nt">&gt;</span>
+                            <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"nav-link{{path|is_active:''}}"</span> <span class="na">aria-current=</span><span class="s">"page"</span> <span class="na">href=</span><span class="s">"{% url 'apps:index' %}"</span><span class="nt">&gt;</span>Home<span class="nt">&lt;/a&gt;</span>
+                        <span class="nt">&lt;/li&gt;</span>
+                        {% if user.is_authenticated %}
+                        <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"nav-item"</span><span class="nt">&gt;</span>
+                            <span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">"{% url 'account:signout' %}"</span> <span class="na">method=</span><span class="s">"post"</span><span class="nt">&gt;</span>
+                                {% csrf_token %}
+                                <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"nav-link border-0 bg-transparent"</span> <span class="na">href=</span><span class="s">""</span><span class="nt">&gt;</span>Sign out<span class="nt">&lt;/button&gt;</span>
+                            <span class="nt">&lt;/form&gt;</span>
+                        <span class="nt">&lt;/li&gt;</span>
+                        <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"nav-item"</span><span class="nt">&gt;</span>
+                            <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"nav-link"</span><span class="nt">&gt;</span>{{user.username}}님<span class="nt">&lt;/span&gt;</span>
+                        <span class="nt">&lt;/li&gt;</span>
+                        {% else %}
+                        <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"nav-item"</span><span class="nt">&gt;</span>
+                            <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"nav-link{{path|is_active:'signin'}}"</span> <span class="na">href=</span><span class="s">"{% url 'account:signin' %}"</span><span class="nt">&gt;</span>Sign in<span class="nt">&lt;/a&gt;</span>
+                        <span class="nt">&lt;/li&gt;</span>
+                        <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"nav-item"</span><span class="nt">&gt;</span>
+                            <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"nav-link{{path|is_active:'signup'}}"</span> <span class="na">href=</span><span class="s">"{% url 'account:signup' %}"</span><span class="nt">&gt;</span>Sign up<span class="nt">&lt;/a&gt;</span>
+                        <span class="nt">&lt;/li&gt;</span>
+                        {% endif %}
+                    <span class="nt">&lt;/ul&gt;</span>
+                    <span class="nt">&lt;form</span> <span class="na">class=</span><span class="s">"d-flex"</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">"form-control me-2"</span> <span class="na">type=</span><span class="s">"search"</span> <span class="na">placeholder=</span><span class="s">"Search"</span> <span class="na">aria-label=</span><span class="s">"Search"</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn btn-outline-success"</span> <span class="na">type=</span><span class="s">"submit"</span><span class="nt">&gt;</span>Search<span class="nt">&lt;/button&gt;</span>
+                    <span class="nt">&lt;/form&gt;</span>
+                <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/nav&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"container"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"my-5"</span><span class="nt">&gt;</span>
+                {% block content %}{% endblock %}
+            <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"</span>
+            <span class="na">integrity=</span><span class="s">"sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"</span> <span class="na">crossorigin=</span><span class="s">"anonymous"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;/script&gt;</span>
+    <span class="nt">&lt;/body&gt;</span>
+
+<span class="nt">&lt;/html&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>위 코드 중 커스텀 태그가 있습니다. 해당 부분은 <code class="language-plaintext highlighter-rouge">html</code>페이지 예시코드 다음에 코드를 올리겠습니다. 이어서 계속 <code class="language-plaintext highlighter-rouge">html</code> 코드입니다.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+</pre></td><td class="rouge-code"><pre><span class="c">&lt;!-- auth_test/teplates/auth_test/index.html --&gt;</span>
+{% extends './layout.html' %}
+
+{% block content %}
+홈입니다.
+{% endblock %}
+
+=============================
+
+<span class="c">&lt;!-- auth_test/teplates/auth_test/signin.html --&gt;</span>
+{% extends './layout.html' %}
+
+{% block content %}
+<span class="nt">&lt;form</span> <span class="na">method=</span><span class="s">"post"</span> <span class="na">action=</span><span class="s">"{% url 'account:signin' %}"</span><span class="nt">&gt;</span>
+    {{form.as_p}}
+    <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn btn-info"</span><span class="nt">&gt;</span>Sign in<span class="nt">&lt;/button&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"btn btn-success"</span> <span class="na">href=</span><span class="s">"{% url 'account:signup' %}"</span><span class="nt">&gt;</span>Sign up<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
+{% endblock %}
+
+=============================
+
+<span class="c">&lt;!-- auth_test/teplates/auth_test/signin.html --&gt;</span>
+{% extends './layout.html' %}
+
+{% block content %}
+<span class="nt">&lt;form</span> <span class="na">method=</span><span class="s">"post"</span> <span class="na">action=</span><span class="s">"{% url 'account:signup' %}"</span><span class="nt">&gt;</span>
+    {{form.as_p}}
+    <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn btn-info"</span><span class="nt">&gt;</span>Sign up<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
+{% endblock %}
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>아까 봤던 <code class="language-plaintext highlighter-rouge">set</code>과 <code class="language-plaintext highlighter-rouge">is_active</code>인데요. <code class="language-plaintext highlighter-rouge">jekyll</code>을 다루신 적이 있다면 <code class="language-plaintext highlighter-rouge">liquid</code> 구문과 비슷하다고 생각하실 겁니다. 모르시는 분을 위해 간단하게 설명드리자면 <code class="language-plaintext highlighter-rouge">template</code>에서 약속되어진 기능이 있습니다. <code class="language-plaintext highlighter-rouge">lower</code>나 <code class="language-plaintext highlighter-rouge">upper</code>, <code class="language-plaintext highlighter-rouge">length</code> 등 입니다. 템플릿구문에서는 연산기호 &#8220;+&#8221; 또한 작동하지 않고 <code class="language-plaintext highlighter-rouge">add</code>라는 <code class="language-plaintext highlighter-rouge">filter</code>를 사용해야 &#8220;+&#8221;의 기능을 구현할 수 있습니다.</p>
+
+<p>이 <code class="language-plaintext highlighter-rouge">filter</code>를 사용하다보면 필요로하는 기능이 없을 때는 만들어야합니다. 사용자 태그를 만드는 방법은 <a href="https://kkn1125.github.io/django-custom-tags/" class="target=&quot;_blank&quot;">이전에 작성한 포스팅</a>포스팅을 참고하시기 바랍니다. 공식문서를 보시려면 <a href="https://docs.djangoproject.com/en/4.0/howto/custom-template-tags/#code-layout">공식문서::code-layout</a>를 참고바랍니다.</p>
+
+<p>아래는 필요한 기능을 작성해놓은 예시로 보시면 되겠습니다. <code class="language-plaintext highlighter-rouge">customs.py</code>라는 파일을 만들어 내용을 작성하고 <code class="language-plaintext highlighter-rouge">template</code>부분의 코드 상단을 보면 <code class="language-plaintext highlighter-rouge">customs</code>를 <code class="language-plaintext highlighter-rouge">load</code>하는 방법으로 사용하는 것을 알 수 있습니다. <code class="language-plaintext highlighter-rouge">customs</code>라는 이름은 자유입니다. 단, <code class="language-plaintext highlighter-rouge">templatetags/</code> 디렉토리명은 가급적 변경안하는 것이 좋습니다. 변경한다면 <code class="language-plaintext highlighter-rouge">settings</code>에 <code class="language-plaintext highlighter-rouge">library</code>설정을 따로해 주셔야하므로 자세한 내용은 <a href="https://docs.djangoproject.com/en/4.0/topics/templates/#module-django.template.backends.django">공식문서::built-in backends</a>의 <code class="language-plaintext highlighter-rouge">libraries</code>를 참조바랍니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+</pre></td><td class="rouge-code"><pre><span class="c1"># auth_test/auth_test/templatetags/customs.py
+</span><span class="kn">from</span> <span class="nn">django</span> <span class="kn">import</span> <span class="n">template</span>
+
+<span class="n">register</span> <span class="o">=</span> <span class="n">template</span><span class="p">.</span><span class="n">Library</span><span class="p">()</span>
+
+<span class="o">@</span><span class="n">register</span><span class="p">.</span><span class="n">simple_tag</span>
+<span class="k">def</span> <span class="nf">set</span> <span class="p">(</span><span class="n">value</span><span class="p">):</span> 
+    <span class="s">"""
+    템플릿에서 전역 변수로 사용하기 위함
+    """</span>
+    <span class="k">return</span> <span class="n">value</span>
+
+<span class="o">@</span><span class="n">register</span><span class="p">.</span><span class="nb">filter</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">"is_active"</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">is_active</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+    <span class="s">"""
+    현재 페이지가 받은 key값과 일치하는지 여부를
+    active 혹은 공백으로 값을 반환
+    """</span>
+    <span class="n">path</span> <span class="o">=</span> <span class="n">value</span><span class="p">.</span><span class="n">split</span><span class="p">(</span><span class="s">'/'</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="n">path</span> <span class="p">:</span>
+        <span class="k">return</span> <span class="s">' active'</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s">''</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">templatetags</code>는 이 포스팅에서 필수가 아닙니다.</p>
+
+<blockquote>
+  <p>여담이지만 <code class="language-plaintext highlighter-rouge">jekyll</code>의 템플릿 엔진은 <code class="language-plaintext highlighter-rouge">liquid</code>이고 <code class="language-plaintext highlighter-rouge">python</code>용의 템플릿 엔진은 <code class="language-plaintext highlighter-rouge">jinja2</code>입니다.</p>
+</blockquote>
+
+<h3 id="views-설정">views 설정</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+</pre></td><td class="rouge-code"><pre><span class="c1"># auth_test/apps/views.py
+</span>
+<span class="kn">from</span> <span class="nn">django.urls</span> <span class="kn">import</span> <span class="n">reverse</span>
+<span class="kn">from</span> <span class="nn">django.shortcuts</span> <span class="kn">import</span> <span class="n">render</span><span class="p">,</span> <span class="n">redirect</span><span class="p">,</span> <span class="n">get_object_or_404</span>
+
+<span class="kn">from</span> <span class="nn">rest_framework.decorators</span> <span class="kn">import</span> <span class="n">api_view</span>
+
+<span class="o">@</span><span class="n">api_view</span><span class="p">([</span><span class="s">'GET'</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">index</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s">'apps/index.html'</span><span class="p">,</span> <span class="p">{})</span>
+
+<span class="c1"># =============================
+</span>
+<span class="c1"># auth_test/account/views.py
+</span><span class="kn">from</span> <span class="nn">django.shortcuts</span> <span class="kn">import</span> <span class="n">redirect</span><span class="p">,</span> <span class="n">render</span>
+<span class="kn">from</span> <span class="nn">django.contrib.auth</span> <span class="kn">import</span> <span class="n">login</span><span class="p">,</span> <span class="n">logout</span><span class="p">,</span> <span class="n">authenticate</span><span class="p">,</span> <span class="n">forms</span>
+<span class="kn">from</span> <span class="nn">django.urls</span> <span class="kn">import</span> <span class="n">reverse</span>
+<span class="kn">from</span> <span class="nn">rest_framework.decorators</span> <span class="kn">import</span> <span class="n">api_view</span>
+
+<span class="o">@</span><span class="n">api_view</span><span class="p">([</span><span class="s">'GET'</span><span class="p">,</span> <span class="s">'POST'</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">signin</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">request</span><span class="p">.</span><span class="n">method</span> <span class="o">==</span> <span class="s">'POST'</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">request</span><span class="p">.</span><span class="n">POST</span><span class="p">[</span><span class="s">'username'</span><span class="p">])</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">request</span><span class="p">.</span><span class="n">POST</span><span class="p">[</span><span class="s">'password'</span><span class="p">])</span>
+        <span class="n">form</span> <span class="o">=</span> <span class="n">forms</span><span class="p">.</span><span class="n">AuthenticationForm</span><span class="p">(</span><span class="n">request</span><span class="o">=</span><span class="n">request</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">request</span><span class="p">.</span><span class="n">POST</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">form</span><span class="p">.</span><span class="n">is_valid</span><span class="p">():</span>
+            <span class="n">username</span> <span class="o">=</span> <span class="n">form</span><span class="p">.</span><span class="n">cleaned_data</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'username'</span><span class="p">)</span>
+            <span class="n">password</span> <span class="o">=</span> <span class="n">form</span><span class="p">.</span><span class="n">cleaned_data</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'password'</span><span class="p">)</span>
+            <span class="n">user</span> <span class="o">=</span> <span class="n">authenticate</span><span class="p">(</span><span class="n">username</span><span class="o">=</span><span class="n">username</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="n">password</span><span class="p">)</span>
+            <span class="k">print</span><span class="p">(</span><span class="n">user</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">user</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+                <span class="n">login</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">form</span><span class="p">.</span><span class="n">get_user</span><span class="p">())</span>
+                <span class="k">return</span> <span class="n">redirect</span><span class="p">(</span><span class="n">reverse</span><span class="p">(</span><span class="s">'apps:index'</span><span class="p">),</span> <span class="s">'?success=1'</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">form</span> <span class="o">=</span> <span class="n">forms</span><span class="p">.</span><span class="n">AuthenticationForm</span><span class="p">()</span>
+    <span class="n">context</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s">'form'</span><span class="p">:</span> <span class="n">form</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s">'apps/signin.html'</span><span class="p">,</span> <span class="n">context</span><span class="p">)</span>
+
+<span class="o">@</span><span class="n">api_view</span><span class="p">([</span><span class="s">'POST'</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">signout</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+    <span class="n">logout</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">redirect</span><span class="p">(</span><span class="s">'apps:index'</span><span class="p">)</span>
+    
+<span class="o">@</span><span class="n">api_view</span><span class="p">([</span><span class="s">'GET'</span><span class="p">,</span> <span class="s">'POST'</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">signup</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">request</span><span class="p">.</span><span class="n">method</span> <span class="o">==</span> <span class="s">'POST'</span><span class="p">:</span>
+        <span class="c1"># username = request.POST.get('username')
+</span>        <span class="c1"># password = request.POST.get('password')
+</span>        <span class="c1"># user = User.objects.create(username=username)
+</span>        <span class="c1"># user.set_password(password)
+</span>        <span class="c1"># user.save() # 비밀번호 저장 방식이 다름
+</span>        
+        <span class="n">form</span> <span class="o">=</span> <span class="n">forms</span><span class="p">.</span><span class="n">UserCreationForm</span><span class="p">(</span><span class="n">request</span><span class="p">.</span><span class="n">POST</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">form</span><span class="p">.</span><span class="n">is_valid</span><span class="p">():</span>
+            <span class="n">form</span><span class="p">.</span><span class="n">save</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">redirect</span><span class="p">(</span><span class="s">'account:signin'</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">form</span> <span class="o">=</span> <span class="n">forms</span><span class="p">.</span><span class="n">UserCreationForm</span><span class="p">()</span>
+    <span class="n">context</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s">'form'</span><span class="p">:</span> <span class="n">form</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s">'apps/signup.html'</span><span class="p">,</span> <span class="n">context</span><span class="p">)</span>
+    
+<span class="o">@</span><span class="n">api_view</span><span class="p">([</span><span class="s">'POST'</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">unsign</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">render</span><span class="p">()</span>
+    
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>위의 <code class="language-plaintext highlighter-rouge">views</code>까지 설정하고나면 기본 설정이 완료됩니다. <code class="language-plaintext highlighter-rouge">signup</code>에 주석처리된 내용은 확실히 아는 내용이 없습니다. 영어를 해석하기 힘듦도 있지만 사용했을 때 데이터를 조회해보면 <code class="language-plaintext highlighter-rouge">create_user</code>라는 메서드가 있다고 하는데 어느 클래스의 메서드인지 몰라 대신에 사용한 것이 <code class="language-plaintext highlighter-rouge">create</code>와 <code class="language-plaintext highlighter-rouge">set_password</code>입니다. 한 유저분은 위의 방식으로 하면 <code class="language-plaintext highlighter-rouge">UserCreationForm</code>으로 저장한 것과 동일하게 암호화되어 <code class="language-plaintext highlighter-rouge">db</code>에 저장된다고 합니다.</p>
+
+<p>하지만 <code class="language-plaintext highlighter-rouge">set_password</code> 후 <code class="language-plaintext highlighter-rouge">save</code>하는 방식은 <code class="language-plaintext highlighter-rouge">db</code>를 조회해보면 암호화된 비밀번호의 길이가 <code class="language-plaintext highlighter-rouge">UserCreationForm</code>으로 저장한 비밀번호 길이와 다르기도 하고, 로그인 시 비밀번호가 매칭이 안됩니다. 자세히 어떤 원리로 저장되고 검증하는지 몰라서 추후 찾아보기 위해 주석으로 메모만 해둔 것 입니다. 그래서 이용하고자 하는 방식은 <code class="language-plaintext highlighter-rouge">UserCreationForm</code>입니다.</p>
+
+<p>작성된 내용으로 서버를 실행시켜 보자면 아래와 같습니다.</p>
+
+<figure class="text-center">
+<span class="w-inline-block">
+   <img src="/assets/images/post/django/authentication/auth02.png" alt="sample" title="sample" />
+   <figcaption>메인</figcaption>
+</span>
+</figure>
+
+<p>로그인과 회원가입이 있습니다. 로그인 되면 로그아웃과 사용자 명이 나타나게 됩니다.</p>
+
+<figure class="text-center">
+<span class="w-inline-block">
+   <img src="/assets/images/post/django/authentication/auth03.png" alt="sample" title="sample" />
+   <figcaption>회원가입 폼</figcaption>
+</span>
+</figure>
+
+<p>지저분하지만 필요에 따라 다듬으면 됩니다. <code class="language-plaintext highlighter-rouge">AbstractUser</code>로 확장할 때 다듬어 보려합니다!</p>
+
+<figure class="text-center">
+<span class="w-inline-block">
+   <img src="/assets/images/post/django/authentication/auth05.png" alt="sample" title="sample" />
+   <figcaption>로그인 폼</figcaption>
+</span>
+</figure>
+
+<p>로그인하게 되면 메인으로 이동하고,</p>
+
+<figure class="text-center">
+<span class="w-inline-block">
+   <img src="/assets/images/post/django/authentication/auth06.png" alt="sample" title="sample" />
+   <figcaption>로그인</figcaption>
+</span>
+</figure>
+
+<p>현재 로그인 한 유저의 이름을 가져와 표시합니다.</p>
+
+<p>내용이 길어져 <code class="language-plaintext highlighter-rouge">User</code>를 확장해서 사용하는 <code class="language-plaintext highlighter-rouge">AbstractUser</code>를 다루는 포스팅은 다음에 올리겠습니다.</p>
+
+<hr />
+
+<p>📚 함께 보면 좋은 내용</p>
+
+<p><a href="https://www.programcreek.com/python/example/64448/django.contrib.auth.forms.AuthenticationForm" target="_blank">programcreek :: Python django.contrib.auth.forms.AuthenticationForm() Examples</a></p>
+
+<p><a href="http://daplus.net/postgresql-postgresqldescribe-table/" target="_blank">리뷰나라 :: [postgresql] PostgreSQL“DESCRIBE TABLE”</a></p>
+
+<p><a href="https://stackoverflow.com/questions/17873855/manager-isnt-available-user-has-been-swapped-for-pet-person" target="_blank">Stackoverflow :: Manager isn&#8217;t available; User has been swapped for &#8216;pet.Person&#8217;</a></p>
+
+<p><a href="https://stackoverflow.com/questions/37332190/django-login-with-email" target="_blank">Stackoverflow :: Django - Login with Email</a></p>
+
+<p><a href="https://rahmanfadhil.com/django-login-with-email/" target="_blank">rahmanfadhil :: Enable Login with Email in Django</a></p>
+
+<p><a href="https://velog.io/@wkdgus7113/Django-UserModel-%ED%99%95%EC%9E%A5-feat.-AbstractUser" target="_blank">wkdgus7113님 :: Django UserModel 확장 (feat. AbstractUser)</a></p>
+
+<p><a href="https://wayhome25.github.io/django/2017/03/01/django-99-my-first-project-2/" target="_blank">초보몽키님 :: django 04. 장고 개인 프로젝트 2 - 인증 (회원가입, 로그인)</a></p>
+
+<p><a href="https://velog.io/@jiffydev/Django-6.-%EA%B8%B0%EB%B3%B8-%EA%B0%9C%EB%85%90-5%ED%9A%8C%EC%9B%90%EA%B0%80%EC%9E%85-%EB%A1%9C%EA%B7%B8%EC%9D%B8-%EC%9D%B8%EC%A6%9D" target="_blank">jiffydev님 :: Django 6. 기본 개념 5(회원가입, 로그인 인증)</a></p>
+
+<p><a href="https://tothefullest08.github.io/django/2019/06/03/Django15_accounts1/" target="_blank">해리님 :: Django 15 - 사용자 인증(회원가입/로그인/로그아웃)</a></p>
+
+<p><a href="https://milooy.wordpress.com/2016/02/18/extend-django-user-model/" target="_blank">Yurim Jin님 :: Django 15 - [Django] User 모델 email을 기본으로 하기&amp; 썸네일 추가하기</a></p>
+
+<p><a href="https://dheldh77.tistory.com/entry/Django-%ED%9A%8C%EC%9B%90%EA%B0%80%EC%9E%85-%EA%B8%B0%EB%8A%A5-%EB%A7%8C%EB%93%A4%EA%B8%B0" target="_blank">테리는당근을좋아해님 :: [Django] 회원가입 기능 만들기</a></p>
+:ET

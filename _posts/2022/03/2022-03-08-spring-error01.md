@@ -10,7 +10,7 @@ tags: [ spring, error, legacy, til ]
 description: "eclipse update 관련 에러 노트
 
 spring boot와 vue를 혼합해서 사용하려다 보니 codemix라는 앱을 찾았는데요. 알고보니 유료인 것을 알고 빠르게 지웠더랬지요..."
-featured: true
+featured: false
 hidden: false
 rating: 4.5
 toc: true

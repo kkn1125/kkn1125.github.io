@@ -10,7 +10,7 @@ tags: [ python, django, til ]
 description: "Django 서버 구축
 
 새로운 환경이라 아직 이해는 잘 안 됩니다. 많이 부족한 부분이 있으니 양해바랍니다."
-featured: true
+featured: false
 hidden: false
 rating: 4.5
 toc: true

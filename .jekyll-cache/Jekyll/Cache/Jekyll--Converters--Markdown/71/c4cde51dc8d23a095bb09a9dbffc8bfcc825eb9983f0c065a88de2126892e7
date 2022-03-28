@@ -1,10 +1,10 @@
-I"t!<h1 id="커스텀-템플릿-사용">커스텀 템플릿 사용</h1>
+I"\"<h1 id="커스텀-템플릿-사용">커스텀 템플릿 사용</h1>
 
-<p>데이터베이스에 태그를 저장할 때 1:n 관계로 테이블을 만들자니 내용 하나에 테이블을 하나 더 만드는게 비효율적인 것 같아 문자열로 콤마를 기준으로 구분했는데요.</p>
+<p>데이터베이스에 태그를 저장할 때 <code class="language-plaintext highlighter-rouge">1:n</code> 관계로 테이블을 만들자니 내용 하나에 테이블을 하나 더 만드는게 비효율적인 것 같아 문자열로 콤마를 기준으로 구분했는데요.</p>
 
-<p>django에서 템플릿 구문으로 뿌려주려고 split을 찾아보니 없더군요.</p>
+<p><code class="language-plaintext highlighter-rouge">django</code>에서 템플릿 구문으로 뿌려주려고 <code class="language-plaintext highlighter-rouge">split</code>을 찾아보니 없더군요.</p>
 
-<p>split등 필요한 함수들은 직접 사용자가 커스텀 템플릿 태그를 만들어야 합니다. 그러기 위해서 초기 세팅만 알아두면 그 뒤로는 필요한 커스텀 태그는 만들어 사용하면 됩니다.</p>
+<p><code class="language-plaintext highlighter-rouge">split</code>등 필요한 함수들은 직접 사용자가 커스텀 템플릿 태그를 만들어야 합니다. 그러기 위해서 초기 세팅만 알아두면 그 뒤로는 필요한 커스텀 태그는 만들어 사용하면 됩니다.</p>
 
 <p>필요한 세팅은 다음과 같습니다.</p>
 

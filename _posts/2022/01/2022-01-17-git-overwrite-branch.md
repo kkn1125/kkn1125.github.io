@@ -10,7 +10,7 @@ tags: [ git, branch, overwrite, til ]
 description: "깃 브랜치 덮어쓰기
 
 main 브랜치를 새로운 브랜치로 교체할 일이 생겨 시도하다보니 아래와 같은 메세지가 나왔습니다."
-featured: true
+featured: false
 hidden: false
 rating: 3
 toc: true

@@ -8,7 +8,7 @@ categories: [ javascript ]
 image: assets/images/post/covers/TIL-javascript.png
 tags: [ proxy, reflect, til ]
 description: "Proxy 와 Reflect Proxy 프록시 객체는 기본적인 동작의 새로운 행동을 정의할 때 사용한다고 MDN에 정리 되어 있습니다. 사용해보고 느낀 것은 동작되는 것을 가로채서 무언가 부수적인 일을 시킬 때 사용하는 것으로 보입니다."
-featured: true
+featured: false
 hidden: false
 rating: 4
 toc: true

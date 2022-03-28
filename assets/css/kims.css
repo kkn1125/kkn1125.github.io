@@ -99,9 +99,9 @@ figure figcaption{
 	-o-transition: 150ms ease;
 }
 
-.table td{
+/* .table td{
 	padding: 0 !important;
-}
+} */
 
 #kal tr td:nth-child(1){
 	color: #dc3545;
