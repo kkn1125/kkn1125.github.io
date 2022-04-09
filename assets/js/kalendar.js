@@ -84,12 +84,14 @@ if(document.querySelector('#kals')) fetch('/assets/data/jsonTodo.json')
                     })();
 
                     return `
-                    <li class="w-flex justify-content-between py-1">
-                        <span${tag.match(/✅|❎|☕/gm)?' class="check-item"':''}>
-                            <span>${todo}</span>
-                            <span>${tag}</span>
-                        </span>
-                        <span class="time">${time}</span>
+                    <li class="py-1">
+                        <div class="w-flex justify-content-between">
+                            <span${tag.match(/✅|❎|☕/gm)?' class="check-item"':''}>
+                                <span>${todo}</span>
+                                <span>${tag}</span>
+                            </span>
+                            <span class="time">${time}</span>
+                        </div>
                     </li>`
                 }
             },
@@ -352,13 +354,13 @@ if(document.querySelector('#kals')) fetch('/assets/data/jsonTodo.json')
                 listWrap.classList.add('data-wrap');
                 listWrap.innerHTML = `
                     <div>
-                        <span class="year">${selectY.value}</span>
-                        <span class="month">${parseInt(selectM.value)+1}</span>
-                        <span class="date">${date}</span>
+                        <span class="year">${selectY.value}.</span>
+                        <span class="month">${parseInt(selectM.value)+1}.</span>
+                        <span class="date text-info">${date}</span>
                     </div>
-                    <ul class="data-list list-group">
-                        ${data[selectY.value][selectM.value]&&data[selectY.value][selectM.value][date]?data[selectY.value][selectM.value][date].map(item=>modules.list.render(item)).join(''):`<li>데이터가 없습니다.</li>`}
-                    </ul>
+                    <ol class="data-list list-group">
+                        ${data[selectY.value][selectM.value]&&data[selectY.value][selectM.value][date]?data[selectY.value][selectM.value][date].map(item=>modules.list.render(item)).join(''):`<li>등록된 일정이 없어요.</li>`}
+                    </ol>
                 `;
                 renderTarget.append(listWrap);
             }
@@ -388,6 +390,10 @@ if(document.querySelector('#kals')) fetch('/assets/data/jsonTodo.json')
                     .data-wrap {
                         font-size: 90%;
                         user-select: none;
+                    }
+
+                    ol.data-list{
+                        list-style: revert;
                     }
 
                     .data-list .time{

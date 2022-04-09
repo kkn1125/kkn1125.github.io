@@ -286,6 +286,16 @@ let NewsAlert = (function () {
     function Model() {
         let moduleView = null;
         let alertList = [];
+        let alert = function({title, content, session}){
+            this.id = 0;
+            this.title = title;
+            this.content = content;
+            this.show = true;
+            this.autoIndex = function(){
+                this.id = alertList.indexOf(this);
+            }
+            this.session = session||'on';
+        }
 
         this.init = function (view) {
             moduleView = view;
@@ -297,18 +307,9 @@ let NewsAlert = (function () {
 
         this.getStorage = function(){
             if(sessionStorage['alertList']) {
-                let alert = function(text, session){
-                    this.id = 0;
-                    this.text = text;
-                    this.show = true;
-                    this.autoIndex = function(){
-                        this.id = alertList.indexOf(this);
-                    }
-                    this.session = session;
-                }
                 let alerts = JSON.parse(sessionStorage['alertList']);
                 alerts.forEach(x=>{
-                    this.addAlertList(new alert(x.text, x.session));
+                    this.addAlertList(new alert(x));
                 });
             } else {
                 this.setStorage();
@@ -316,15 +317,6 @@ let NewsAlert = (function () {
         }
 
         this.makeAlert = function (ev, ui, options) {
-            let alert = function(text){
-                this.id = 0;
-                this.text = text;
-                this.show = true;
-                this.autoIndex = function(){
-                    this.id = alertList.indexOf(this);
-                }
-                this.session = 'on';
-            }
             this.getStorage();
             if(this.changedValid(options)) this.resetStorage();
             if(alertList.length==0 || alertList[0]==null){
@@ -343,10 +335,9 @@ let NewsAlert = (function () {
 
         this.changedValid = function(options){
             for(let valid in options.alertlist){
-                if(alertList[valid] && options.alertlist[valid].trim() != alertList[valid].text.trim()) return true;
+                if(alertList[valid] && (options.alertlist[valid].content.trim() != alertList[valid].content?.trim() || options.alertlist[valid].title.trim() != alertList[valid].title?.trim())) return true;
             }
-            if(options.alertlist.length != alertList.length) return true;
-            return false;
+            return options.alertlist.length != alertList.length?true:false;
         }
 
         this.allClose = function(ev){
@@ -400,10 +391,16 @@ let NewsAlert = (function () {
                 <button id="allClose" class="btn btn-danger btn-sm">전부 닫기</button>
             </div>`;
             alertList.forEach(alert=>{
-                view.innerHTML += `<div data-news-alert-tag="${alert.id}"><span class="alert-text">${alert.text}</span>
-                <span class="news-close">&times;</span>
+                view.innerHTML += `<div data-news-alert-tag="${alert.id}">
+                <div class="news-title">
+                    <span>📌 ${alert.title}</span>
+                    <span class="news-close">&times;</span>
                 </div>
-                    `;
+                <div class="news-body">
+                    <span class="alert-text">${alert.content}</span>
+                </div>
+                </div>
+                `;
             });
         }
 
@@ -433,15 +430,33 @@ let NewsAlert = (function () {
 
 NewsAlert.init({
     alertlist: [
-        'MarkdownParser를 만들고 있습니다. 블로그 포스팅을 쉽게 하기 위해 자동 치환기호, 명령형 기호, 테이블, 리스트, 블록쿼터 등 완성형으로 구현 중 입니다. 많은 관심 바랍니다 :)<a target="_blank" href="https://kkn1125.github.io/router">[샘플보기]</a><a class="d-inline-block" href="https://github.com/kkn1125/markdown-parser" target="_blank">[바로가기]</a>',
-        'Router.js가 이전 버전과 다르게 import 사용하여 새로 작성했습니다. 많은 관심 바랍니다 🙇‍♂️ <a target="_blank" href="https://kkn1125.github.io/router">[샘플보기]</a><a class="d-inline-block" href="https://github.com/kkn1125/router" target="_blank">[바로가기]</a>',
-        'Penli CSS 가 <kbd>v0.2.1-bugfix</kbd>로 업데이트 되었습니다. 많은 관심 바랍니다! <a class="d-inline-block" href="https://github.com/kkn1125/penli" target="_blank">[바로가기]</a>',
-        '<kbd class="kbd">Solitaire</kbd> 게임을 구현 해봤습니다. 해당 링크에서 둘러보실 수 있습니다✨ <a target="_blank" href="https://kkn1125.github.io/solitaire">[게임으로]</a> <a target="_blank" href="https://github.com/kkn1125/solitaire">[저장소 보기]</a>',
-        '웹에서 포토샵처럼 그리고 만들어서 html로 변환하는 <kbd class="kbd">griza</kbd> 프로젝트를 하려합니다. 많은 관심 부탁드립니다 😁',
+        {
+            title: 'Markdown Parser',
+            content: 'MarkdownParser를 만들고 있습니다. 블로그 포스팅을 쉽게 하기 위해 자동 치환기호, 명령형 기호, 테이블, 리스트, 블록쿼터 등 완성형으로 구현 중 입니다. 많은 관심 바랍니다 :)<a target="_blank" href="https://kkn1125.github.io/markdown-parser">[샘플보기]</a><a class="d-inline-block" href="https://github.com/kkn1125/markdown-parser" target="_blank">[바로가기]</a>'
+        },
+        {
+            title: 'Router',
+            content: 'Router.js가 이전 버전과 다르게 import 사용하여 새로 작성했습니다. 많은 관심 바랍니다 🙇‍♂️ <a target="_blank" href="https://kkn1125.github.io/router">[샘플보기]</a><a class="d-inline-block" href="https://github.com/kkn1125/router" target="_blank">[바로가기]</a>'
+        },
+        {
+            title: 'CSS Penli',
+            content: 'Penli CSS 가 <kbd>v0.2.1-bugfix</kbd>로 업데이트 되었습니다. 많은 관심 바랍니다! <a class="d-inline-block" href="https://github.com/kkn1125/penli" target="_blank">[바로가기]</a>'
+        },
+        {
+            title: 'Game - Solitaire',
+            content: '<kbd class="kbd">Solitaire</kbd> 게임을 구현 해봤습니다. 해당 링크에서 둘러보실 수 있습니다✨ <a target="_blank" href="https://kkn1125.github.io/solitaire">[게임으로]</a> <a target="_blank" href="https://github.com/kkn1125/solitaire">[저장소 보기]</a>'
+        },
+        {
+            title: 'Griza web tool',
+            content: '웹에서 포토샵처럼 그리고 만들어서 html로 변환하는 <kbd class="kbd">griza</kbd> 프로젝트를 하려합니다. 많은 관심 부탁드립니다 😁 <a target="_blank" href="https://kkn1125.github.io/griza">[샘플보기]</a>'
+        },
+        {
+            title: 'Jekyll theme',
+            content: 'Jekyll Theme를 만드는 중입니다. <a class="d-inline-block" href="https://github.com/kkn1125/lessmore-jekyll-theme" target="_blank">[바로가기]</a>'
+        },
         // 'DocumentifyJS 업데이트가 있습니다! 현재 v1.0.0 버전 최신입니다. 자세한 내용은 아래 링크 참조바랍니다. <a class="d-inline-block" href="https://github.com/kkn1125/mkDocumentifyJS/tree/main" target="_blank">[바로가기]</a>',
         // 'Typer가 v1.0.0로 릴리즈 되었습니다! 새로운 기능 <kbd class="kbd">realTyping</kbd>이 추가되었습니다. 자세한 사항은 아래 링크를! <a class="d-inline-block" href="https://github.com/kkn1125/typer" target="_blank">[바로가기]</a>',
         // 'Tutorial js 가 <kbd class="kbd">v0.1.1</kbd>로 업데이트 되었습니다. 많은 관심 바랍니다! <a class="d-inline-block" href="https://github.com/kkn1125/tutorial" target="_blank">[바로가기]</a>',
-        'Jekyll Theme를 만드는 중입니다. <a class="d-inline-block" href="https://github.com/kkn1125/lessmore-jekyll-theme" target="_blank">[바로가기]</a>',
     ]
 });
 const validTime = 1000*60*60*24;
@@ -831,7 +846,6 @@ function updatePage (attr, group){
     }
 
     if(left && right){
-        console.log(group, attr)
         if(currentPage == 0) {
             left.hidden = true;
         } else if (currentPage == pages[group].length-1) {
