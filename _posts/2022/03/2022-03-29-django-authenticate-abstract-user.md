@@ -5,7 +5,7 @@ title:  "[DJANGO] User Authentication 사용하기 02"
 author: Kimson
 categories: [ django ]
 image: assets/images/post/covers/TIL-django.png
-tags: [ basic, til ]
+tags: [ authentication, til ]
 description: "Authentication User 확장
 용된 라이브러리나 템플릿 태그 등은 이전 포스팅을 참고하시기 바랍니다.
 이어서 `User Authentication`을 확장해서 사용하는 것을 기록하려합니다. 찾아보니 4가지의 방법이 있습니다.

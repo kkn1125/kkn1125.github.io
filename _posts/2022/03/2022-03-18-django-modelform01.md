@@ -5,7 +5,7 @@ title:  "[DJANGO] form valid를 제어해보자"
 author: Kimson
 categories: [ django ]
 image: assets/images/post/covers/TIL-django.png
-tags: [ basic, til ]
+tags: [ form, valid, til ]
 description: "form valid
 이 포스팅은 참고용으로 만들어졌기 때문에 정확한 내용은 공식 홈페이지의 docs와 reference를 참고하는 것을 적극 권장합니다.
 form valid 제어

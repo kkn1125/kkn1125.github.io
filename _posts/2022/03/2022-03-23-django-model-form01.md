@@ -5,7 +5,7 @@ title:  "[DJANGO] 회원 정보 기존 정보에 덮어 수정하기"
 author: Kimson
 categories: [ django ]
 image: assets/images/post/covers/TIL-django.png
-tags: [ basic, til ]
+tags: [ overwrite, til ]
 description: "기존 정보에 수정된 정보를 덮어쓰기
 
 회원정보를 수정하다보면 초기에는 `request.POST['datatype']`으로 하나씩 받아와 데이터베이스를 조회해서 user를 가져오고 하나 씩 담았습니다.

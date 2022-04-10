@@ -5,7 +5,7 @@ title:  "[DJANGO] 단위테스트 작성"
 author: Kimson
 categories: [ django ]
 image: assets/images/post/covers/TIL-django.png
-tags: [ basic, til ]
+tags: [ unittest, til ]
 description: "단위테스트 작성
 위테스트 작성하는 것에 익숙해지기 위해서 이제 막 시작을 하고 있습니다. 확실하지 않지만 찾아가면서 시도하고 있는 상태라 정확한 이야기라고는 말 못합니다. 대신에 참고한 자료들이 링크되어 있으니 참고바랍니다.
 

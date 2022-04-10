@@ -5,7 +5,7 @@ title:  "[DJANGO] User Authentication 사용하기 01"
 author: Kimson
 categories: [ django ]
 image: assets/images/post/covers/TIL-django.png
-tags: [ basic, til ]
+tags: [ authentication, til ]
 description: "기본 Authentication 사용
 Used
 1. postgreSQL
