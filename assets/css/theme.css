@@ -236,6 +236,10 @@ blockquote {
     }
 }
 
+[group="main"][page="first"] .card-group .card:not(:last-child) {
+    border-bottom: 1px solid gray;
+}
+
 [data-is-mobile="true"] {
     display: none;
 }

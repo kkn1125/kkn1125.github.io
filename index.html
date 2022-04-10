@@ -45,8 +45,13 @@ description: "나를 표현하는 블로그. 끊임없이 도전하고 공부하
                                 {{ post.excerpt  | strip_html | strip_newlines | truncate: 186}}
                             </div>
                         </div>
-                        {% if forloop.first == true %}
-                        
+                        <div>
+                            {% for tag in post.tags %}
+                            <a class="text-capitalize tag tag-primary text-white"
+                                href="{{site.baseurl}}/tags.html#{{ tag | downcase }}">{{ tag }}</a><span
+                                class="sep"> </span>
+                            {% endfor %}
+                        </div>
                         In <span class="catlist">
                             {% for category in post.categories %}
                             <a class="text-capitalize tag tag-success text-white"
@@ -54,9 +59,7 @@ description: "나를 표현하는 블로그. 끊임없이 도전하고 공부하
                                 class="sep"> </span>
                             {% endfor %}
                         </span>
-                        <time class="card-time">{{ post.date | date: '%Y. %m. %d. ' }}</time>
-                        
-                        {% endif %}
+                        <time class="card-time">{{ post.date | date: '%Y. %m. %d. %H:%M' }}</time>
                     </div>
                     {% endfor %}
                 </div>
