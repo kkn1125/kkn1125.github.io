@@ -3,6 +3,10 @@
 	transition: 0.5s cubic-bezier(1,0,0,1);
 } */
 
+.noscroll {
+	overflow: hidden;
+}
+
 body[scroll="disabled"]{
 	overflow: hidden;
 }
