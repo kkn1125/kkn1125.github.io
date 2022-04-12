@@ -9,13 +9,13 @@ tags: [ dropdown, til ]
 image: assets/images/post/covers/TIL-javascript.png
 description: "간단한 드롭다운 메뉴 만들기
 
-css-tricks 사이트의 Philip Walton의 포스트의 내용을 보고 만들어졌습니다.
+css-tricks 사이트의 Philip Walton의 포스트의 내용을 보고 만들어졌습니다. 수정하는 시점에서 불필요한 내용과 횡설수설하는 부분을 재작성했음을 알립니다.
 
-html과 css는 중요하지 않기 때문에 소스코드는 포스팅 맨 아래에 위치시켰습니다.
+먼저 포스팅을 검열하면서 드는 생각입니다만, 확실히 시간이 지나고보면 제가 쓴 글이지만 도대체 무얼 말하는지 모를 때가 많습니다. 이 포스팅 또한 그렇고요. 이런 수준의 포스팅이 검색결과 상위에 있는 것도 참 부끄럽습니다.
 
-자바스크립트의 기능 구현이 목적이라 그 외에 것은 설명 배제하겠습니다.
+드롭다운 메뉴
 
-html과 css를 보시면 bootstrap의 이름과 비슷합니다. bootstrap을 애용해서 그런지 이제 css 설정을 bootstrap처럼 안하면 작업이 안 될정도입니다... 이렇게 의존하면 안 될텐데..."
+포스팅에서 말하고자하는 드롭다운 메뉴는 bootstrap에서 지원하는 드롭다운과 같은 형태를 말합니다. bootstrap에서 지원하는 드롭다운을 모르신다면 boostrap 홈페이지의 컴포넌트를 참고하시길 바랍니다."
 featured: false
 hidden: false
 rating: 4
