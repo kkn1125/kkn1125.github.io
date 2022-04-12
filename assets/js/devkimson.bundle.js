@@ -70,7 +70,7 @@ function toggleBtn(self) {
 window.addEventListener('load', function(){
     let langArr = document.querySelectorAll('.article-post [class|="language"]');
     langArr.forEach(el=>{
-        if(el.getAttribute("class").indexOf("plaintext")==-1){
+        if(el.tagName != 'CODE'){
             let lang = el.classList[0].split("-")[1].toLowerCase();
             let color = "";
             // let br = document.createElement("br");
@@ -84,6 +84,9 @@ window.addEventListener('load', function(){
                     break;
                 case 'java':
                     color = "primary"
+                    break;
+                case 'sh':
+                    color = "dark"
                     break;
                 case 'bash':
                     color = "dark"
@@ -103,17 +106,17 @@ window.addEventListener('load', function(){
                 case 'json':
                     color = "light"
                     break;
+                case 'text':
+                    color = "light"
+                    break;
+                case 'plaintext':
+                    color = "light"
+                    break;
                 case 'sql':
                     color = "secondary"
                     break;
                 case 'xml':
                     color = "success"
-                    break;
-                case 'properties':
-                    color = "dark"
-                    break;
-                case 'sh':
-                    color = "dark"
                     break;
                 case 'properties':
                     color = "dark"
