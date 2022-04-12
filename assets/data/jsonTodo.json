@@ -46,6 +46,11 @@
                     "todo": "javascript - game collision test & monster auto attack test",
                     "tag": "check",
                     "time": "2022-04-12 15:43:55"
+                },
+                {
+                    "todo": "21.8.13 드롭다운 포스팅 내용 전면 수정, 예제 코드 새로 작성",
+                    "tag": "check",
+                    "time": "2022-04-12 18:07:05"
                 }
             ],
             "11": [
