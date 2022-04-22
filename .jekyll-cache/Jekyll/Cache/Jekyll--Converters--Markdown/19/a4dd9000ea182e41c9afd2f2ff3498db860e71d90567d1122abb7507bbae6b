@@ -1,0 +1,25 @@
+I"�
+<ul>
+  <li><a href="#파일-트리-구조">파일 트리 구조</a>
+    <ul>
+      <li><a href="#목적">목적</a></li>
+      <li><a href="#개발-과정">개발 과정</a>
+        <ul>
+          <li><a href="#pipeline-개념-활용">Pipeline 개념 활용</a>
+            <ul>
+              <li><a href="#문자열에서-배열로">문자열에서 배열로</a></li>
+              <li><a href="#라인-파싱">라인 파싱</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><a href="#마무리">마무리</a></li>
+      <li><a href="#개선-사항">개선 사항</a>
+        <ul>
+          <li><a href="#demo-site-result">Demo site result</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+:ET
