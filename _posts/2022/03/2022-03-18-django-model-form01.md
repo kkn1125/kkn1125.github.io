@@ -1,7 +1,7 @@
 ---
 layout: post
 date:   2022-03-15 21:17:09 +0900
-title:  "[DJANGO] form valid를 제어해보자"
+title:  "[DJANGO] ModelForm 01. form valid를 제어 해보자"
 author: Kimson
 categories: [ django ]
 image: assets/images/post/covers/TIL-django.png

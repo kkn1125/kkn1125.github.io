@@ -1,7 +1,7 @@
 ---
 layout: post
 date:   2022-03-23 13:27:18 +0900
-title:  "[DJANGO] 회원 정보 기존 정보에 덮어 수정하기"
+title:  "[DJANGO] ModelForm 02. 회원 기존 정보 덮어쓰기"
 author: Kimson
 categories: [ django ]
 image: assets/images/post/covers/TIL-django.png

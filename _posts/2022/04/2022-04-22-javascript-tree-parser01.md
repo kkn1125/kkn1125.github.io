@@ -1,12 +1,12 @@
 ---
 layout: post
 date:   2022-04-22 14:01:27 +0900
-title:  "[JAVASCRIPT] 파일 트리 구조 그리기 구현"
+title:  "[JAVASCRIPT] 파일 구조 도식화 개발"
 author: Kimson
 categories: [ javascript ]
 image: assets/images/post/covers/TIL-javascript.png
 tags: [ file tree, directory, til, parser ]
-description: "파일 트리 구조
+description: "파일 구조 도식화
 
 블로그에 포스팅을 작성하다 보면 파일 트리를 설명할 때 이미지보다 텍스트로 표현을 해야 할 때가 있습니다.
 
@@ -32,7 +32,7 @@ keywords: ""
 published: true
 ---
 
-# 파일 트리 구조
+# 파일 구조 도식화
 
 블로그에 포스팅을 작성하다 보면 파일 트리를 설명할 때 이미지보다 텍스트로 표현을 해야 할 때가 있습니다.
 
