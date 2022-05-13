@@ -1,0 +1,181 @@
+I"�3<h1 id="jsx와-특징">JSX와 특징</h1>
+
+<blockquote>
+  <p>이 글은 리액트 홈페이지의 내용을 토대로 작성되었습니다.<br />
+<a href="/react-study01" target="_blank">React 시작하기 01</a> 에 이어서 작성 중입니다. 버전이 <code class="language-plaintext highlighter-rouge">v18.x</code>로 업데이트된 시점에서 변경된 부분과 자세한 내용을 적기 위해서 이전 포스팅과 겹치는 이야기가 있지만 양해바랍니다.</p>
+</blockquote>
+
+<p><code class="language-plaintext highlighter-rouge">JSX</code>와 <code class="language-plaintext highlighter-rouge">Root</code>의 지정, <code class="language-plaintext highlighter-rouge">어트리뷰트</code> 사용, <code class="language-plaintext highlighter-rouge">JSX자식 요소</code> 정의에 대해 정리해보려합니다.</p>
+
+<h2 id="jsx-javascript-xml">JSX <code class="language-plaintext highlighter-rouge">(JavaScript XML)</code></h2>
+
+<p><code class="language-plaintext highlighter-rouge">html</code> 도 아니고 문자열도 아닙니다. <code class="language-plaintext highlighter-rouge">javascript</code> 에 <code class="language-plaintext highlighter-rouge">xml</code> 을 확장시킨 것 인데요. <code class="language-plaintext highlighter-rouge">javascript</code> 와 <code class="language-plaintext highlighter-rouge">html</code> 에 대한 이해가 있어야 사용하는데 무리가 없다고 생각합니다.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="kd">const</span> <span class="nx">element</span> <span class="o">=</span> <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>Lorem ipsum dolor sit amet.<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;;</span>
+
+<span class="kd">const</span> <span class="nx">template</span> <span class="o">=</span> <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>hello kimson!, <span class="si">{</span><span class="nx">element</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>이렇게 <code class="language-plaintext highlighter-rouge">html</code> 과 <code class="language-plaintext highlighter-rouge">javascript</code> 가 섞여 사용되는 모습입니다.</p>
+
+<h3 id="root의-지정">root의 지정</h3>
+
+<p>그렇다면 작성된 내용이 <code class="language-plaintext highlighter-rouge">html</code> 어딘가에 사용되어야 하는데, 이때 <code class="language-plaintext highlighter-rouge">root</code> 엘리먼트를 지정해서 <code class="language-plaintext highlighter-rouge">render</code> 시켜야합니다.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+</pre></td><td class="rouge-code"><pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"ko"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;head&gt;</span>
+        <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"UTF-8"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;meta</span> <span class="na">http-equiv=</span><span class="s">"X-UA-Compatible"</span> <span class="na">content=</span><span class="s">"IE=edge"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"viewport"</span> <span class="na">content=</span><span class="s">"width=device-width, initial-scale=1.0"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;title&gt;</span>JSX Test<span class="nt">&lt;/title&gt;</span>
+    <span class="nt">&lt;/head&gt;</span>
+    <span class="nt">&lt;body&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"root"</span><span class="nt">&gt;&lt;/div&gt;</span>
+    <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+</pre></td><td class="rouge-code"><pre><span class="kd">const</span> <span class="nx">element</span> <span class="o">=</span> <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>Lorem ipsum dolor sit amet.<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;;</span>
+
+<span class="kd">const</span> <span class="nx">template</span> <span class="o">=</span> <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+   hello kimson!, <span class="si">{</span><span class="nx">element</span><span class="si">}</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
+<span class="c1">// v17.x</span>
+<span class="nx">ReactDOM</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span>
+   <span class="nx">template</span><span class="p">,</span>
+   <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">root</span><span class="dl">'</span><span class="p">);</span>
+<span class="p">)</span>
+
+<span class="c1">// v18.x - 18버전 이후로는 ReactDOM.render를 사용하지 않는다고 합니다.</span>
+<span class="kd">const</span> <span class="nx">root</span> <span class="o">=</span> <span class="nx">ReactDOM</span><span class="p">.</span><span class="nx">createRoot</span><span class="p">(</span><span class="dl">'</span><span class="s1">root</span><span class="dl">'</span><span class="p">);</span>
+<span class="nx">root</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span>
+   <span class="nx">template</span>
+<span class="p">);</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>엘리먼트를 변수나 함수의 인자로 활용이 가능하고, <code class="language-plaintext highlighter-rouge">for ...</code>나 <code class="language-plaintext highlighter-rouge">if ...</code>문에서 다양하게 사용할 수 있습니다.</p>
+
+<h3 id="엘리먼트의-어트리뷰트">엘리먼트의 어트리뷰트</h3>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+</pre></td><td class="rouge-code"><pre><span class="c1">// 어트리뷰트 문자열 리터럴 정의</span>
+<span class="kd">const</span> <span class="nx">element</span> <span class="o">=</span> <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="p">=</span><span class="s">"https://www.reactjs.org"</span><span class="p">&gt;</span>Lorem ipsum dolor sit amet.<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+
+<span class="c1">// 어트리뷰트 변수 정의 삽입</span>
+<span class="kd">const</span> <span class="nx">reactjs</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">https://www.reactjs.org</span><span class="dl">"</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">elementWithVariable</span> <span class="o">=</span> <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="p">=</span><span class="si">{</span><span class="nx">reactjs</span><span class="si">}</span><span class="p">&gt;</span>Lorem ipsum dolor sit amet.<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;;</span>
+
+<span class="c1">// 많은 어트리뷰트 삽입</span>
+
+<span class="kd">function</span> <span class="nx">myOnClickMethod</span><span class="p">(){</span>
+   <span class="c1">// do something...</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">name</span> <span class="o">=</span> <span class="nx">getDynamicName</span><span class="p">();</span>
+<span class="kd">const</span> <span class="nx">attrs</span> <span class="o">=</span> <span class="p">{</span>
+   <span class="p">[</span><span class="nx">name</span><span class="p">]:</span> <span class="dl">"</span><span class="s2">dynamic_names</span><span class="dl">"</span><span class="p">;</span>
+   <span class="nl">className</span><span class="p">:</span> <span class="dl">"</span><span class="s2">myClass</span><span class="dl">"</span><span class="p">,</span>
+   <span class="na">onClick</span><span class="p">:</span> <span class="nx">myOnClickMethod</span><span class="p">,</span>
+   <span class="c1">// ...</span>
+<span class="p">}</span>
+<span class="kd">const</span> <span class="nx">elementWithAttrs</span> <span class="o">=</span> <span class="p">&lt;</span><span class="nt">div</span> <span class="si">{</span><span class="p">...</span><span class="nx">attrs</span><span class="si">}</span><span class="p">&gt;</span>Lorem ipsum dolor sit amet.<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>굉장히 자유도가 높은 것 같습니다. 만일 어트리뷰트의 명이 동적으로 지정되거나 많은 어트리뷰트가 있을 때 간단하게 <code class="language-plaintext highlighter-rouge">spread</code> 를 사용해서 삽입할 수 있습니다.</p>
+
+<blockquote>
+  <p>엘리먼트의 어트리뷰트 이름은 html에서 사용하던 이름과 달리 camelCase를 사용한 명명규칙을 사용합니다.</p>
+</blockquote>
+
+<h3 id="jsx-자식-정의">JSX 자식 정의</h3>
+
+<p>먼저 태그가 비어있다면 <code class="language-plaintext highlighter-rouge">XML</code> 처럼 바로 태그를 닫아야합니다.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="c1">// 빈 태그는 "/"로 항상 닫습니다.</span>
+<span class="kd">const</span> <span class="nx">element</span> <span class="o">=</span> <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="p">=</span><span class="s">"/path"</span> <span class="na">alt</span><span class="p">=</span><span class="s">"name"</span> <span class="p">/&gt;;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>태그 내 자식요소가 포함되어 있다면 소괄호로 감싸 정의해야합니다.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre><span class="kd">const</span> <span class="nx">element</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span>children 1<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span>children 2<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span>children 3<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">);</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">JSX</code> 는 주입 공격을 방지한다고합니다. 기본적으로 <code class="language-plaintext highlighter-rouge">ReactDOM</code>은 <code class="language-plaintext highlighter-rouge">JSX</code>에 삽입된 모든 값을 렌더링 전에 <code class="language-plaintext highlighter-rouge">escape</code>하기 때문에, 명시적으로 작성되지 않은 내용은 주입되지 않고, 렌더링 되지 전에 문자열로 변환됩니다. 이러한 이유로 <code class="language-plaintext highlighter-rouge">onerror</code>등을 이용한 <code class="language-plaintext highlighter-rouge">XSS</code>공격 등을 방지할 수 있다고 합니다.</p>
+
+<hr />
+
+<p>📚 함께 보면 좋은 내용</p>
+
+<p><a href="/react-study01/" target="_blank">React 시작하기 01:이전 포스팅</a></p>
+
+<p><a href="https://ko.reactjs.org/docs/hello-world.html" target="_blank">React</a></p>
+:ET

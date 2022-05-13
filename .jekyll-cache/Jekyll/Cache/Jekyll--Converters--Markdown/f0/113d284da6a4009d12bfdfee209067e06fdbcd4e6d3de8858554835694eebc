@@ -1,4 +1,4 @@
-I"�*<h1 id="react-시작하기">React 시작하기</h1>
+I"1<h1 id="react-시작하기">React 시작하기</h1>
 
 <p>리액트를 시작할지 말지 고민이 많이 되었습니다. Backend도 중요하지만 요즘 Node와 Python이 대두되는 흐름이라 느껴서 그나마 친숙한 js계열의 Node와 React에 관심이 많아졌습니다.</p>
 
@@ -38,7 +38,12 @@ npm start
 
 <h3 id="파일-구조">파일 구조</h3>
 
-<p class="text-center"><img src="/assets/images/post/react/react01.png" alt="파일구조" /></p>
+<figure class="text-center">
+<span class="w-inline-block">
+   <img src="{{site.baseurl}}/assets/images/post/react/react01.png" alt="파일구조" title="파일구조" />
+   <figcaption>exclude - password</figcaption>
+</span>
+</figure>
 
 <p>처음 생성하면 위 사진과 조금 다릅니다. components는 생성한 것이고, App.css와 App.test.js, logo.svg는 딱히 필요없어서 새로 만드는 것이 중요하기때문에 지웠습니다.</p>
 
@@ -46,7 +51,9 @@ npm start
 
 <h3 id="간단한-출력">간단한 출력</h3>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+<p>{% raw %}</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -64,19 +71,23 @@ npm start
 <span class="kd">class</span> <span class="nx">App</span> <span class="kd">extends</span> <span class="nx">Component</span> <span class="p">{</span>
   <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
     <span class="k">return</span> <span class="p">(</span>
-      <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
-        <span class="nx">App</span>
-      <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
-</span>    <span class="p">);</span>
+      <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+        App
+      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">);</span>
   <span class="p">}</span>
 <span class="p">}</span>
 
 <span class="k">export</span> <span class="k">default</span> <span class="nx">App</span><span class="p">;</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
+<p>{% endraw %}</p>
+
 <p>다 정리되면 이 상태가 됩니다. 아직 이해도가 높지 않기때문에 Hello world를 출력해줍시다. 위의 App.js는 놔 두고 index.js에서 테스트를 해보겠습니다.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+<p>{% raw %}</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -93,7 +104,6 @@ npm start
 15
 16
 17
-18
 </pre></td><td class="rouge-code"><pre><span class="k">import</span> <span class="nx">React</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react</span><span class="dl">'</span><span class="p">;</span>
 <span class="k">import</span> <span class="nx">ReactDOM</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react-dom</span><span class="dl">'</span><span class="p">;</span>
 <span class="k">import</span> <span class="dl">'</span><span class="s1">./index.css</span><span class="dl">'</span><span class="p">;</span>
@@ -101,22 +111,23 @@ npm start
 <span class="k">import</span> <span class="nx">reportWebVitals</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./reportWebVitals</span><span class="dl">'</span><span class="p">;</span>
 
 <span class="nx">ReactDOM</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span>
-  <span class="o">&lt;</span><span class="nx">React</span><span class="p">.</span><span class="nx">StrictMode</span><span class="o">&gt;</span>
-    <span class="o">&lt;</span><span class="nx">App</span> <span class="o">/&gt;</span>
-  <span class="o">&lt;</span><span class="sr">/React.StrictMode&gt;</span><span class="err">,
-</span>  <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">root</span><span class="dl">'</span><span class="p">)</span>
+  <span class="p">&lt;</span><span class="nc">React</span><span class="p">.</span><span class="nc">StrictMode</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nc">App</span> <span class="p">/&gt;</span>
+  <span class="p">&lt;/</span><span class="nc">React</span><span class="p">.</span><span class="nc">StrictMode</span><span class="p">&gt;,</span>
+  <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">root</span><span class="dl">'</span><span class="p">)</span>
 <span class="p">);</span>
 
-<span class="c1">// If you want to start measuring performance in your app, pass a function</span>
-<span class="c1">// to log results (for example: reportWebVitals(console.log))</span>
-<span class="c1">// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals</span>
+<span class="p">{</span><span class="o">%</span> <span class="nx">endraw</span> <span class="o">%</span><span class="p">}</span>
+
 <span class="nx">reportWebVitals</span><span class="p">();</span>
 
 </pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>이 상태일텐데요. 차근차근 한발씩 내딛어봅시다.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+<p>{% raw %}</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -149,8 +160,8 @@ npm start
 <span class="k">import</span> <span class="nx">reportWebVitals</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./reportWebVitals</span><span class="dl">'</span><span class="p">;</span>
 
 <span class="kd">const</span> <span class="nx">el</span> <span class="o">=</span> <span class="p">(</span>
-  <span class="o">&lt;</span><span class="nx">h1</span> <span class="nx">className</span><span class="o">=</span><span class="dl">""</span><span class="o">&gt;</span><span class="nx">Hello</span> <span class="nx">Kimson</span><span class="o">!&lt;</span><span class="sr">/h1</span><span class="err">&gt;
-</span><span class="p">)</span>
+  <span class="p">&lt;</span><span class="nt">h1</span> <span class="na">className</span><span class="p">=</span><span class="s">""</span><span class="p">&gt;</span>Hello Kimson!<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<span class="p">)</span>
 
 <span class="nx">ReactDOM</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span> <span class="c1">// 변수로 요소 전달 방식</span>
   <span class="nx">el</span><span class="p">,</span>
@@ -158,8 +169,8 @@ npm start
 <span class="p">)</span>
 
 <span class="nx">ReactDOM</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span> <span class="c1">// 직접 태그 입력 방식</span>
-  <span class="o">&lt;</span><span class="nx">h1</span> <span class="nx">className</span><span class="o">=</span><span class="dl">""</span><span class="o">&gt;</span><span class="nx">Hello</span> <span class="nx">Kimson</span><span class="o">!!!&lt;</span><span class="sr">/h1&gt;</span><span class="err">,
-</span>  <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">mix</span><span class="dl">'</span><span class="p">)</span>
+  <span class="p">&lt;</span><span class="nt">h1</span> <span class="na">className</span><span class="p">=</span><span class="s">""</span><span class="p">&gt;</span>Hello Kimson!!!<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;,</span>
+  <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">mix</span><span class="dl">'</span><span class="p">)</span>
 <span class="p">)</span>
 
 <span class="nx">ReactDOM</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span> <span class="c1">// React element 생성해서 넣는 방식</span>
@@ -174,15 +185,40 @@ npm start
 <span class="nx">reportWebVitals</span><span class="p">();</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
+<p>{% endraw %}</p>
+
 <blockquote>
-  <p>ReactDOM.render(React요소,타겟)</p>
+  <p>ReactDOM.render(React요소,타겟)<br />
+참고: 현재 수정일자 기준 v18.1.0부터 ReactDOM.render는 더이상 사용되지 않습니다. root를 렌더하는 방식은 아래와 같이 변경되었습니다.</p>
 </blockquote>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre></td><td class="rouge-code"><pre><span class="c1">// 예제 작성 2022-05-13 11:31</span>
+<span class="k">import</span> <span class="nx">App</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./App</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">root</span> <span class="o">=</span> <span class="nx">ReactDOM</span><span class="p">.</span><span class="nx">createRoot</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">root</span><span class="dl">'</span><span class="p">));</span>
+
+<span class="nx">root</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span>
+  <span class="p">&lt;</span><span class="nc">React</span><span class="p">.</span><span class="nc">StrictMode</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nc">App</span> <span class="p">/&gt;</span>
+  <span class="p">&lt;/</span><span class="nc">React</span><span class="p">.</span><span class="nc">StrictMode</span><span class="p">&gt;</span>
+<span class="p">);</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>다른건 아직 필요없으니 주석처리 or 날려버립니다. 먼저 기본적으로 생성하는 방법은 <code class="language-plaintext highlighter-rouge">ReactDOM.render()</code>를 통해 생성됩니다.</p>
 
-<p>기본 렌더방식은 간단했습니다.</p>
-
-<p>다음 시간에는 컴포넌트에 대해 포스팅 하겠습니다.</p>
+<blockquote>
+  <p>react 관련 포스팅은 내용을 추가/누적하는 방식으로 작성할 예정입니다.</p>
+</blockquote>
 
 <hr />
 
@@ -190,7 +226,7 @@ npm start
   <p>참고 사이트</p>
 </blockquote>
 
-<p><a href="https://medium.com/react-native-seoul/react-%EB%A6%AC%EC%95%A1%ED%8A%B8%EB%A5%BC-%EC%B2%98%EC%9D%8C%EB%B6%80%ED%84%B0-%EB%B0%B0%EC%9B%8C%EB%B3%B4%EC%9E%90-01-react-js%EB%9E%80-%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80-ad8ba252ee28">React 기본 이론</a></p>
+<p><a href="https://medium.com/react-native-seoul/react-%EB%A6%AC%EC%95%A1%ED%8A%B8%EB%A5%BC-%EC%B2%98%EC%9D%8C%EB%B6%80%ED%84%B0-%EB%B0%B0%EC%9B%8C%EB%B3%B4%EC%9E%90-01-react-js%EB%9E%80-%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80-ad8ba252ee28" target="_blank">React 기본 이론</a></p>
 
 <p><a href="https://ko.reactjs.org/" title="리액트" target="_blank">React 공식 사이트</a></p>
 
