@@ -20,7 +20,34 @@ if(document.querySelector('#kals')) fetch('/assets/data/jsonTodo.json')
             yearSelector: () => `<select class="form-select form-select-lg col mx-0">${new Array(101).fill(0).map((x,i)=>`<option value="${i+1999}">${i+1999}</option>`).join('')}</select>`,
             monthSelector: () => `<select class="form-select form-select-lg col mx-0">${new Array(12).fill(0).map((x,i)=>`<option value="${i}">${i+1}</option>`)}</select>`,
         };
-    
+
+        const iconMatcher = {
+            undefined: "▷",
+            "": "▷",
+            rest: "☕",
+            study: "📖",
+            alert: "📢",
+            "1": "🥇",
+            "2": "🥈",
+            "3": "🥉",
+            edit: "🔧",
+            idea: "💡",
+            know: "❗",
+            how: "❓",
+            check: "✅",
+            cancel: "❎",
+            prj: `<i class="fas fa-sitemap text-warning"></i>`,
+        }
+
+        function isLastTimeWithDay({__year, __mon, date}) {
+            const today = new Date();
+            const baseTime = new Date(today.getFullYear(), today.getMonth() + 1, today.getDate());
+            const scheduleTime = new Date(__year, __mon, date);
+            const isPassed = baseTime.getTime() > scheduleTime.getTime();
+            // console.log(isPassed);
+            return isPassed;
+        }
+
         const modules = {
             kalendar: (y, m, lang = 'ko') => `<table id="kal">
                 <thead>
@@ -44,51 +71,13 @@ if(document.querySelector('#kals')) fetch('/assets/data/jsonTodo.json')
                 </tfoot>
             </table>`,
             list: {
-                render: ({todo, tag,time})=>{
-                    tag = (()=>{
-                        if(tag != undefined){
-                            tag = tag.replace(/(\s)/gi,"");
-                        }
-                        switch(tag){
-                            case undefined:
-                                return '▷';
-                            case "":
-                                return '▷';
-                            case 'rest':
-                                return '☕';
-                            case 'study':
-                                return '📖';
-                            case 'alert':
-                                return '📢';
-                            case '1':
-                                return '🥇';
-                            case '2':
-                                return '🥈';
-                            case '3':
-                                return '🥉';
-                            case 'edit':
-                                return '🔧';
-                            case 'idea':
-                                return '💡';
-                            case 'know':
-                                return '❗';
-                            case 'how':
-                                return '❓';
-                            case 'check':
-                                return '✅';
-                            case 'cancel':
-                                return '❎';
-                            case 'prj':
-                                return '<i class="fas fa-sitemap text-warning"></i>';
-                        }
-                    })();
-
+                render: ({todo, tag, time}, scheduleTime)=>{
                     return `
                     <li class="py-1">
                         <div class="w-flex justify-content-between">
-                            <span${tag.match(/✅|❎|☕/gm)?' class="check-item"':''}>
+                            <span${iconMatcher[tag].match(/✅/) || (iconMatcher[tag].match(/✅|❎|☕/gm) && isLastTimeWithDay(scheduleTime))?' class="check-item"':''}>
                                 <span>${todo}</span>
-                                <span>${tag}</span>
+                                <span>${iconMatcher[tag]}</span>
                             </span>
                             <span class="time">${time}</span>
                         </div>
@@ -282,9 +271,9 @@ if(document.querySelector('#kals')) fetch('/assets/data/jsonTodo.json')
                         :isBefore = false;
 
                         if(Object.keys(dataList).includes(tag.textContent)){
-                            tag.querySelector('span').insertAdjacentHTML('beforeend', `<span class="badge ${counting>dateHasList.length/2
+                            tag.querySelector('span').insertAdjacentHTML('beforeend', `<span class="badge fw-normal ${counting>dateHasList.length/2
                             && isBefore
-                                ?'text-success'
+                                ?'text-info'
                                 :counting<=dateHasList.length/2
                             && isBefore
                                 ?'text-warning'
@@ -352,14 +341,18 @@ if(document.querySelector('#kals')) fetch('/assets/data/jsonTodo.json')
                 this.clearListView(listWrap);
                 listWrap = document.createElement('div');
                 listWrap.classList.add('data-wrap');
+                const __year = selectY.value;
+                const __mon = parseInt(selectM.value) + 1;
                 listWrap.innerHTML = `
                     <div>
-                        <span class="year">${selectY.value}.</span>
-                        <span class="month">${parseInt(selectM.value)+1}.</span>
+                        <span class="year">${__year}.</span>
+                        <span class="month">${__mon}.</span>
                         <span class="date text-info">${date}</span>
                     </div>
                     <ol class="data-list list-group">
-                        ${data[selectY.value][selectM.value]&&data[selectY.value][selectM.value][date]?data[selectY.value][selectM.value][date].map(item=>modules.list.render(item)).join(''):`<li>등록된 일정이 없어요.</li>`}
+                        ${data[__year][__mon-1] && data[__year][__mon-1][date] ? data[__year][__mon-1][date].map(item =>
+                            modules.list.render(item, {__year,__mon,date})).join(''):`<li>등록된 일정이 없어요.</li>`
+                        }
                     </ol>
                 `;
                 renderTarget.append(listWrap);
