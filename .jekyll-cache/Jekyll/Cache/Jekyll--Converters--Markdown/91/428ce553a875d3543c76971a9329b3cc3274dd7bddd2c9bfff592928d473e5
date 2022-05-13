@@ -1,0 +1,62 @@
+I"�<h1 id="mysql-timestamp-시간-표기">MySQL Timestamp 시간 표기</h1>
+
+<p><code class="language-plaintext highlighter-rouge">MySQL</code>에서 테이블별로 생성일자와 수정일자를 페이지에 표시하는데 시간 단위는 없고 연월일만 표시가 되었습니다.</p>
+
+<p>분명 <code class="language-plaintext highlighter-rouge">timestamp</code>에 시간도 들어있는데 나타나지 않아서 어떻게 데이터를 가져와 뿌려야할지 몰랐습니다.</p>
+
+<p>찾아보니 <code class="language-plaintext highlighter-rouge">mysql</code>의 <code class="language-plaintext highlighter-rouge">timestamp</code>타입에 대응하도록 <code class="language-plaintext highlighter-rouge">java</code>에서도 <code class="language-plaintext highlighter-rouge">Timestamp</code>타입으로 객체 인스턴스를 만들 수 있었습니다.</p>
+
+<h2 id="시간-포멧">시간 포멧</h2>
+
+<p>나아가서 시간에 대한 포멧은 <code class="language-plaintext highlighter-rouge">SimpleDateFormat</code> 클래스로 쉽게 조작가능합니다.</p>
+
+<p>아주 간단하게 <code class="language-plaintext highlighter-rouge">MySQL</code>에서 <code class="language-plaintext highlighter-rouge">timestamp</code>타입을 지정한 것이 <code class="language-plaintext highlighter-rouge">java</code>에도 <code class="language-plaintext highlighter-rouge">timestamp</code>라는 타입이 있어 이것으로 선언하고 <code class="language-plaintext highlighter-rouge">SimpleDateFormat</code>으로 쉽게 표시 가능했습니다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+</pre></td><td class="rouge-code"><pre><span class="kn">import</span> <span class="nn">java.text.SimpleDateFormat</span><span class="o">;</span>
+
+<span class="nd">@RequestMapping</span><span class="o">(</span><span class="s">"/"</span><span class="o">)</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">HomeController</span> <span class="o">{</span>
+
+    <span class="nd">@Autowired</span>
+    <span class="kd">private</span> <span class="nc">HomeService</span> <span class="n">hs</span><span class="o">;</span>
+
+    <span class="nd">@GetMapping</span><span class="o">(</span><span class="s">"board"</span><span class="o">)</span>
+    <span class="kd">public</span> <span class="nc">String</span> <span class="nf">list</span> <span class="o">(</span><span class="nc">HttpRequest</span> <span class="n">request</span><span class="o">,</span> <span class="nc">Model</span> <span class="n">model</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">Board</span> <span class="n">board</span> <span class="o">=</span> <span class="n">hs</span><span class="o">.</span><span class="na">findByNum</span><span class="o">(</span><span class="mi">1</span><span class="o">);</span>
+        <span class="nc">Timestamp</span> <span class="n">ts</span> <span class="o">=</span> <span class="n">board</span><span class="o">.</span><span class="na">getRegdate</span><span class="o">();</span>
+        <span class="nc">SimpleDateFormat</span> <span class="n">form</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">SimpleDateFormat</span><span class="o">(</span><span class="s">"yyyy년 MM월 dd일 hh:mm"</span><span class="o">);</span>
+        <span class="nc">String</span> <span class="n">date</span> <span class="o">=</span> <span class="n">form</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="n">ts</span><span class="o">);</span>
+        <span class="n">model</span><span class="o">.</span><span class="na">addAttribute</span><span class="o">(</span><span class="s">"formedTime"</span><span class="o">,</span> <span class="n">date</span><span class="o">)</span>
+        <span class="k">return</span> <span class="s">"board.list"</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<div class="language-jsp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;%=</span> <span class="n">formedTime</span> <span class="nt">%&gt;</span> 0000년 00월 00일 00:00
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>다시보니 너무 내용이 부실해서 예제를 좀 바꿨습니다. 위에서 누락된 설명은 <code class="language-plaintext highlighter-rouge">service</code>에서 받아온 <code class="language-plaintext highlighter-rouge">board</code>의 <code class="language-plaintext highlighter-rouge">regdate</code>필드인데요. <code class="language-plaintext highlighter-rouge">regdate</code>는 <code class="language-plaintext highlighter-rouge">mysql</code>에서 <code class="language-plaintext highlighter-rouge">timestamp</code>타입으로 작성되어 있습니다.</p>
+
+<p>그래서 <code class="language-plaintext highlighter-rouge">Timestamp</code>타입에 <code class="language-plaintext highlighter-rouge">regdate</code>를 저장하고 <code class="language-plaintext highlighter-rouge">SimpleDateFormat</code>으로 <code class="language-plaintext highlighter-rouge">form</code>을 만들어 포멧시킵니다.</p>
+:ET

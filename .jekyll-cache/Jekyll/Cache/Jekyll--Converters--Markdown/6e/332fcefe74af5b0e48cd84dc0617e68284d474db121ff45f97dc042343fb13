@@ -1,0 +1,5 @@
+I"}<p>Object 이해하기
+최근에 <code class="language-plaintext highlighter-rouge">TDD</code>를 알아가면서 테스트 코드를 작성하는 습관을 들이기 위해 노력 중 입니다.
+<code class="language-plaintext highlighter-rouge">Python</code>과 <code class="language-plaintext highlighter-rouge">JavaScript</code> 둘 다 테스트 코드를 습관들이려다 보니 많이 헷갈리는 것도 있는데요. 이번에 문득 깨달은 점이 있어 기록하려합니다.
+이전에 <code class="language-plaintext highlighter-rouge">object</code>와 <code class="language-plaintext highlighter-rouge">proxy</code>, <code class="language-plaintext highlighter-rouge">defineproperty</code> 등의 내용을 다룬 포스팅이 있습니다. 당시 포스팅과 달리 <code class="language-plaintext highlighter-rouge">Object</code>를 작성하는 것과 프로토타입 기반인 <code class="language-plaintext highlighter-rouge">javascript</code>의 상속문제, 그리고 <code class="language-plaintext highlighter-rouge">this</code>의 정해진 규칙을 정리하는 것을 중점으로 이야기하고자 합니다.</p>
+:ET

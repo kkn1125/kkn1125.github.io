@@ -1,0 +1,64 @@
+I"<h1 id="hidden-method">Hidden Method</h1>
+
+<p>요즘 자바스크립트만 만지다 보니 spring을 점점 잊어가는 느낌이 듭니다. hidden method를 잘 쓰다가 multipart를 쓸 상황이 생겨 같이 쓰다보니 여러가지 오류나는 부분을 체크하는데 많이 미흡해서 기록으로 남깁니다.</p>
+
+<h2 id="오타를-조심하자">오타를 조심하자</h2>
+
+<p>매번 뭘 만들다보면 느끼는게 오타때문에 대부분의 시간을 보내는 느낌이 듭니다.</p>
+
+<ol>
+  <li><code class="language-plaintext highlighter-rouge">enctype="multipart/form-data"</code> 확인하기</li>
+  <li><code class="language-plaintext highlighter-rouge">HiddenHttpMethodFilter</code>설정 했는지 확인하기
+    <ul>
+      <li>Spring Boot에서는 <code class="language-plaintext highlighter-rouge">apllicationwebstart.java</code>에 Bean으로 만들어 줘야하는 것을 알았습니다.</li>
+    </ul>
+  </li>
+</ol>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+</pre></td><td class="rouge-code"><pre><span class="nd">@SpringBootApplication</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">StartwebApplication</span> <span class="o">{</span>
+
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+		<span class="nc">SpringApplication</span><span class="o">.</span><span class="na">run</span><span class="o">(</span><span class="nc">StartwebApplication</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="n">args</span><span class="o">);</span>
+	<span class="o">}</span>
+
+	<span class="nd">@Bean</span>
+	<span class="kd">public</span> <span class="nc">HiddenHttpMethodFilter</span> <span class="nf">hiddenHttpMethodFilter</span><span class="o">()</span> <span class="o">{</span>
+		<span class="k">return</span> <span class="k">new</span> <span class="nf">HiddenHttpMethodFilter</span><span class="o">();</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h2 id="vo프로퍼티와-잘-매칭되었는가">VO프로퍼티와 잘 매칭되었는가</h2>
+
+<ol>
+  <li>VO를 만들어 사용할 때 프로퍼티와의 이름이 다르면 <code class="language-plaintext highlighter-rouge">not allow method</code>가 발생합니다.</li>
+  <li><code class="language-plaintext highlighter-rouge">MultipartFile</code>타입 선언시 VO에서 <code class="language-plaintext highlighter-rouge">String</code>으로 받는데 <code class="language-plaintext highlighter-rouge">MultipartFile</code>타입으로 변수를 받아 사용하게 되면 오류가 발생합니다. <code class="language-plaintext highlighter-rouge">input</code>의 <code class="language-plaintext highlighter-rouge">name</code>을 다르게해서 받아오고 <code class="language-plaintext highlighter-rouge">originalFileName</code>을 <code class="language-plaintext highlighter-rouge">setter</code>로 다시 VO에 집어넣는 방식으로 저는 해결했습니다.</li>
+</ol>
+
+<h2 id="properties파일-설정은-되었는가">properties파일 설정은 되었는가</h2>
+
+<div class="language-properties highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre><span class="c"># multipart 설정
+</span><span class="py">spring.servlet.multipart.max-file-size</span><span class="p">=</span><span class="s">"10MB"</span>
+<span class="py">spring.servlet.multipart.max-request-size</span><span class="p">=</span><span class="s">"50MB"</span>
+<span class="py">spring.servlet.multipart.location</span><span class="p">=</span><span class="s">"c:/temp/upload"</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>제일 많이 봤던 부분이 오타 확인과 타입이 꼬이는 부분이었습니다. 저와 같은 실수를 하지말기를&#8230;</p>
+:ET

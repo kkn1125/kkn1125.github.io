@@ -1,0 +1,3 @@
+I"�<p>Spring Boot말고 Spring에서 JPA를 사용해보자
+이번에는 <code class="language-plaintext highlighter-rouge">JPA</code>를 <code class="language-plaintext highlighter-rouge">Spring</code>에서 사용하는 방법을 기록하려합니다. 대부분의 블로그가 <code class="language-plaintext highlighter-rouge">Spring Boot</code>를 기준으로 설명되어 있어 <code class="language-plaintext highlighter-rouge">Spring Framework</code>로 <code class="language-plaintext highlighter-rouge">JPA</code>를 구현하는데 조금 어려움을 겪다가 결국 <code class="language-plaintext highlighter-rouge">Spring</code>공식 홈페이지 등을 통해 원문을 읽어가며 작동은 시켰습니다.</p>
+:ET

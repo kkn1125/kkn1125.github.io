@@ -1,0 +1,5 @@
+I"&<p>스크롤 애니메이션 구현
+코드가 이상한 부분이 많아서 아예 새로 짰습니다. 정말 엉망인 글인데 검색 결과 상위에 올라있어 부끄럽습니다. 계속해서 글을 정기적으로 검열하고 수정하고 있습니다. 재방문해서 보시는 분에게 감사드립니다 🙇‍♂️
+이전 코드를 대폭 수정했습니다. 이전 내용을 보시고 싶으시면 블로그의 저장소에 있는 커밋내용을 참조바랍니다. 스크롤을 감지해서 애니메이션을 구현하는 것이 목적입니다.
+화면이 슬라이드 방식으로 전환되듯이 스크롤링하는 효과를 기대하고 있습니다. 참고로 기존의 스크롤 바를 가리고자 한다면, <code class="language-plaintext highlighter-rouge">css</code>에서 <code class="language-plaintext highlighter-rouge">body</code>(혹은 대상 요소)의 <code class="language-plaintext highlighter-rouge">overflow</code>를 <code class="language-plaintext highlighter-rouge">hidden</code>값만 주면 사라집니다.</p>
+:ET

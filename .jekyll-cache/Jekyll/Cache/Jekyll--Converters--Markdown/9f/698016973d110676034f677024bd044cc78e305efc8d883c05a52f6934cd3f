@@ -1,0 +1,96 @@
+I"L<h1 id="method-not-allowed-405">Method Not Allowed 405</h1>
+
+<blockquote>
+  <p>블로그에서 가장 인기 있는 글이라서 보시는 분들에게 좀 더 명확하게 알려드리고자 내용을 수정하였습니다.</p>
+</blockquote>
+
+<p>아주 골치 아픈 현상을 겪었습니다. 3시간 정도 이것 저것 수정하다가 드디어 원인을 발견하고 고쳤습니다. 저와 같은 상황인 분에게 도움이 되고자, 그리고 제가 까먹지 않게 포스팅으로 남기려합니다.</p>
+
+<p>로그인 처리 도중에 발생한 문제로 여러 블로그나 커뮤니티를 참고해도 소용이 없어서 포기하려던 찰나에 해결이 됐습니다.</p>
+
+<h2 id="문제-상황">문제 상황</h2>
+
+<ol>
+  <li><code class="language-plaintext highlighter-rouge">Spring Boot Security</code> 설정</li>
+  <li><code class="language-plaintext highlighter-rouge">Ajax</code>로 <code class="language-plaintext highlighter-rouge">post</code>요청으로 로그인 계정 유효성 검사</li>
+  <li>검사 결과에 따른 분기처리</li>
+</ol>
+
+<h2 id="원인">원인</h2>
+
+<p><code class="language-plaintext highlighter-rouge">csrf</code>설정이 잘못되어있었습니다. <code class="language-plaintext highlighter-rouge">Ajax</code>에서와 <code class="language-plaintext highlighter-rouge">form</code>데이터를 다룰 때 <code class="language-plaintext highlighter-rouge">csrf</code>를 조금 다르게 사용합니다. 저 같은 경우는 <code class="language-plaintext highlighter-rouge">Ajax</code>를 사용하면서 <code class="language-plaintext highlighter-rouge">form</code>데이터에서 처리하는 <code class="language-plaintext highlighter-rouge">_csrf.parameterName</code>을 그대로 두었기 때문입니다.</p>
+
+<h3 id="csrf-설정">csrf 설정</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+</pre></td><td class="rouge-code"><pre><span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+    <span class="na">url</span><span class="p">:</span> <span class="dl">"</span><span class="s2">/login</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">method</span><span class="p">:</span><span class="dl">'</span><span class="s1">post</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">data</span><span class="p">:{</span>
+        <span class="na">id</span><span class="p">:</span> <span class="nx">id</span><span class="p">.</span><span class="nx">value</span><span class="p">,</span>
+        <span class="na">pw</span><span class="p">:</span> <span class="nx">pw</span><span class="p">.</span><span class="nx">value</span><span class="p">,</span>
+        <span class="na">role</span><span class="p">:</span> <span class="nx">role</span><span class="p">.</span><span class="nx">value</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="na">beforeSend</span><span class="p">:(</span><span class="nx">xhr</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
+        <span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="dl">'</span><span class="s1">${_csrf.parameterName}</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">${_csrf.token}</span><span class="dl">'</span><span class="p">)</span>
+    <span class="p">},</span>
+    <span class="na">success</span><span class="p">:</span><span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">){</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+    <span class="p">},</span>
+    <span class="na">error</span><span class="p">:</span><span class="kd">function</span><span class="p">(</span><span class="nx">xhr</span><span class="p">,</span><span class="nx">err</span><span class="p">){</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>골머리를 앓던 부분이 바로 앞서 말한 <code class="language-plaintext highlighter-rouge">Ajax</code>였습니다. 해결책을 읽던 중에 <code class="language-plaintext highlighter-rouge">form</code>과 <code class="language-plaintext highlighter-rouge">Ajax</code>요청시 <code class="language-plaintext highlighter-rouge">security</code>는 서로 다른 방법을 적용해야 함을 알게 되었고, 따라해도 안 되었습니다.</p>
+
+<p>문제는 위의 <code class="language-plaintext highlighter-rouge">beforeSend</code>메서드를 잘 보면 <code class="language-plaintext highlighter-rouge">_csrf</code>의 <code class="language-plaintext highlighter-rouge">prarmeterName</code>을 받아오고 있습니다. 이것이 대단히 잘못되었습니다. 그저 <code class="language-plaintext highlighter-rouge">_csrf</code> 프로퍼티명을 <code class="language-plaintext highlighter-rouge">headerName</code>으로 적혔는지 잘 확인을 했으면 됐는데 참 아쉬웠습니다. (사실 극대노)</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="c1">// 코드들</span>
+<span class="nx">beforeSend</span><span class="p">:(</span><span class="nx">xhr</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
+    <span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="dl">'</span><span class="s1">${_csrf.headerName}</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">${_csrf.token}</span><span class="dl">'</span><span class="p">);</span>
+<span class="p">},</span>
+<span class="c1">// 코드들</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>일부만 떼어서 해결한 예로는 위의 코드입니다. 무언가 당연한 얘기이고 잘 알고 있는 내용이라면 틀리지 않을텐데 이제 막 시작한 제 눈에는 이게 보이지 않았습니다&#8230;</p>
+
+<p>직접 찍어보니 이름 자체가 다르게 나왔습니다. 이러한 부분을 조심해서 쭉 공부해나가면 될 것 같습니다&#8230;</p>
+
+<hr />
+
+<h2 id="이상한-문장-수정-후">이상한 문장 수정 후</h2>
+
+<p>현재 포스팅을 수정 중인 시점에서 봤을 때 <code class="language-plaintext highlighter-rouge">Security</code>를 여전히 놓고 있는 게 참 부끄럽습니다. 그동안 포트폴리오다 면접준비다 하는 핑계로 다른 것을 공부했습니다.</p>
+
+<p>이 포스팅에 관심을 가져주신 분들께 감사드리며 도움이 조금이나마 되시기를 :)</p>
+
+<blockquote>
+  <p>참고 사이트</p>
+</blockquote>
+
+<p><a href="https://okky.kr/article/487431" target="_blank">OKKY 질문 답글</a></p>
+:ET

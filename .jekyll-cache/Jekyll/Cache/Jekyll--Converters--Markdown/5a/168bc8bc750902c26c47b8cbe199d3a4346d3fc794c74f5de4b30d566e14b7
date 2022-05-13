@@ -1,0 +1,686 @@
+I"U�<h1 id="object-이해하기">Object 이해하기</h1>
+
+<p>최근에 <code class="language-plaintext highlighter-rouge">TDD</code>를 알아가면서 테스트 코드를 작성하는 습관을 들이기 위해 노력 중 입니다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">Python</code>과 <code class="language-plaintext highlighter-rouge">JavaScript</code> 둘 다 테스트 코드를 습관들이려다 보니 많이 헷갈리는 것도 있는데요. 이번에 문득 깨달은 점이 있어 기록하려합니다.</p>
+
+<p>이전에 <code class="language-plaintext highlighter-rouge">object</code>와 <code class="language-plaintext highlighter-rouge">proxy</code>, <code class="language-plaintext highlighter-rouge">defineproperty</code> 등의 내용을 다룬 포스팅이 있습니다. 당시 포스팅과 달리 <code class="language-plaintext highlighter-rouge">Object</code>를 작성하는 것과 프로토타입 기반인 <code class="language-plaintext highlighter-rouge">javascript</code>의 상속문제, 그리고 <code class="language-plaintext highlighter-rouge">this</code>의 정해진 규칙을 정리하는 것을 중점으로 이야기하고자 합니다.</p>
+
+<h2 id="object를-만드는-3가지-방법">Object를 만드는 3가지 방법</h2>
+
+<p>다른 방법 또한 있지만 자주 사용하는 내용으로 3가지 보자면 아래와 같습니다.</p>
+
+<ol>
+  <li>리터럴</li>
+  <li>함수</li>
+  <li>클래스</li>
+</ol>
+
+<p>객체 리터럴이 가장 간단하면서 쉬운 방법인데요.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+</pre></td><td class="rouge-code"><pre><span class="kd">const</span> <span class="nx">myObj</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">kimson</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">age</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span>
+    <span class="na">behavior</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="c1">// 함수를 정의하는 방식 1</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">움직였다!</span><span class="dl">'</span><span class="p">);</span>
+    <span class="p">},</span>
+    <span class="nx">behavior</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="c1">// 함수를 정의하는 방식 2</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">움직였다!</span><span class="dl">'</span><span class="p">);</span>
+    <span class="p">},</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>프로퍼티를 지정하는 것은 위처럼 한 번에 작성하는 방법도 있고, <code class="language-plaintext highlighter-rouge">defineProperty</code>메서드를 통해 세부적으로 지정하는 방법도 있습니다. 나아가서는 <code class="language-plaintext highlighter-rouge">Proxy API</code>를 사용해서 굉장히 강력한 기능을 가지는 객체를 작성할 수도 있습니다. 예를 들면, 데이터를 객체에 넣고 뺄 때를 감지 가능하게 하는 등의 기능입니다.</p>
+
+<p>그 다음 함수로 객체를 생성하는 방법 또한 있습니다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+</pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nx">Human</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">age</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Human 객체</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">age</span> <span class="o">=</span> <span class="nx">age</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">live</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// or</span>
+
+<span class="kd">const</span> <span class="nx">Human</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">age</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">age</span> <span class="o">=</span> <span class="nx">age</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">live</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// 위의 두 방법은 동일하게 Human 객체를 정의합니다. 차이점은 작성하는 방식이 변수형태인 것과 함수형태인 것의 차이와 호이스팅의 차이입니다.</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>여기서 <code class="language-plaintext highlighter-rouge">Human</code>객체는 함수의 형태를 띄고 있지만 호출하면 아무것도 반환하지 않고, <code class="language-plaintext highlighter-rouge">this</code>를 가지고 있으며, <code class="language-plaintext highlighter-rouge">this</code>에 <code class="language-plaintext highlighter-rouge">dot notation</code>으로 생성자를 작성한 예 입니다.</p>
+
+<p>객체들은 모두 <code class="language-plaintext highlighter-rouge">this</code>를 가집니다. 이 <code class="language-plaintext highlighter-rouge">this</code>는 동작 중인 코드의 소유자인 해당 객체를 가리킵니다. 예를 들면, 위의 <code class="language-plaintext highlighter-rouge">Human</code>과 내부에 사용된 <code class="language-plaintext highlighter-rouge">this</code>는 서로 동일한 것입니다. 서로가 객체인 <code class="language-plaintext highlighter-rouge">Human</code>을 가리키는 것이죠.</p>
+
+<h2 id="this가-도대체-누구를-가리키는가">this가 도대체 누구를 가리키는가</h2>
+
+<p>배우는 시점에서 <code class="language-plaintext highlighter-rouge">this</code>를 사용하다보면 문득 이상한 상황을 마주할 때가 있습니다. 분명 <code class="language-plaintext highlighter-rouge">this</code>가 <code class="language-plaintext highlighter-rouge">A</code>를 가리키다가 나중에는 <code class="language-plaintext highlighter-rouge">B</code>를 가리키는 상황 등 입니다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">this</code>는 가리키는 객체를 결정하는 우선순위 규칙을 가집니다. 기본적으로 전역 객체를 가리키고, 실행되는 위치에 따라 <code class="language-plaintext highlighter-rouge">this</code>가 가리키는 주체가 달라집니다. 아래는 4가지 우선순위 규칙입니다.</p>
+
+<ol>
+  <li>기본 바인딩 (Default Binding)</li>
+  <li>암시적 바인딩 (Implicit Binding)</li>
+  <li>명시적 바인딩 (Explicit Binding)</li>
+  <li>하드 바인딩 (Hard Binding)</li>
+</ol>
+
+<h3 id="기본-바인딩">기본 바인딩</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nx">test</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">var</span> <span class="nx">name</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">kimson</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="nx">test</span><span class="p">();</span> <span class="c1">// 'kimson'</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">var</code>로 변수 정의하면 <code class="language-plaintext highlighter-rouge">window</code>에 속하게 되고, 기본적으로 <code class="language-plaintext highlighter-rouge">this</code>는 전역 객체인 <code class="language-plaintext highlighter-rouge">window</code>를 가리킵니다. 그래서 <code class="language-plaintext highlighter-rouge">window.name</code>이라는 결과를 표시합니다. 단, 위 예시는 <code class="language-plaintext highlighter-rouge">var</code>로 선언할 때의 이야기 입니다. <code class="language-plaintext highlighter-rouge">let</code>과 <code class="language-plaintext highlighter-rouge">const</code>는 위의 결과와 달리 <code class="language-plaintext highlighter-rouge">undefined</code>를 반환합니다.</p>
+
+<h3 id="암시적-바인딩">암시적 바인딩</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nx">calling</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">msg</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">let</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">msg</span><span class="p">:</span> <span class="dl">'</span><span class="s1">kimson</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">test</span><span class="p">:</span> <span class="nx">calling</span>
+<span class="p">};</span>
+
+<span class="nx">obj</span><span class="p">.</span><span class="nx">test</span><span class="p">();</span> <span class="c1">// 'kimson'</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>위 예제에서 <code class="language-plaintext highlighter-rouge">obj</code>객체에서 <code class="language-plaintext highlighter-rouge">test</code>라는 프로퍼티를 호출하면 <code class="language-plaintext highlighter-rouge">calling</code> 함수 안에 있던 <code class="language-plaintext highlighter-rouge">this</code>가 암시적으로 <code class="language-plaintext highlighter-rouge">obj</code>객체의 내부에 할당되어 실행되었기 때문에 <code class="language-plaintext highlighter-rouge">this</code>는 <code class="language-plaintext highlighter-rouge">obj</code>를 가리키게 됩니다.</p>
+
+<h3 id="명시적-바인딩">명시적 바인딩</h3>
+
+<p>명시적 바인딩은 말 그대로 명시적으로 바인딩 시켜 호출하는 것을 이야기합니다. <code class="language-plaintext highlighter-rouge">bind</code>, <code class="language-plaintext highlighter-rouge">call</code>, <code class="language-plaintext highlighter-rouge">apply</code> 가 되겠습니다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nx">calling</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">msg</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">let</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">msg</span><span class="p">:</span> <span class="dl">'</span><span class="s1">kimson</span><span class="dl">'</span><span class="p">,</span>
+<span class="p">};</span>
+
+<span class="nx">calling</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="nx">obj</span><span class="p">)();</span> <span class="c1">// 'kimson'</span>
+<span class="nx">calling</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">obj</span><span class="p">);</span> <span class="c1">// 'kimson'</span>
+<span class="nx">calling</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="nx">obj</span><span class="p">);</span> <span class="c1">// 'kimson'</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>3가지 모두 같은 결과를 줍니다. 다만 <code class="language-plaintext highlighter-rouge">bind</code>와 <code class="language-plaintext highlighter-rouge">call</code>, <code class="language-plaintext highlighter-rouge">apply</code>는 서로 조금씩 다릅니다. 공통적으로 세 가지 모두 <code class="language-plaintext highlighter-rouge">this</code>를 명시적으로 바인딩시켜줍니다. 즉, <code class="language-plaintext highlighter-rouge">this</code>를 지정해줍니다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">bind</code>는 딱 바인딩 까지이고 호출하지는 않습니다. <code class="language-plaintext highlighter-rouge">call</code>과 <code class="language-plaintext highlighter-rouge">apply</code>는 바인딩도 하면서 호출까지 합니다. <code class="language-plaintext highlighter-rouge">call</code>과 <code class="language-plaintext highlighter-rouge">apply</code>는 인자 값을 전달하는데 차이가 있습니다. 그 외에는 동일한 기능을 합니다. <code class="language-plaintext highlighter-rouge">call</code>은 인자를 하나하나 넘기고, <code class="language-plaintext highlighter-rouge">apply</code>는 배열형태로 인자를 넘깁니다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="rouge-code"><pre><span class="kd">let</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[];</span>
+
+<span class="nx">arr</span><span class="p">.</span><span class="nx">push</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="nx">arr</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]);</span> <span class="c1">// ✅</span>
+<span class="c1">// [1, 2, 3]</span>
+<span class="nx">arr</span><span class="p">.</span><span class="nx">push</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">arr</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">);</span> <span class="c1">// ✅</span>
+<span class="c1">// [1, 2, 3, 1, 2, 3]</span>
+<span class="nx">arr</span><span class="p">.</span><span class="nx">push</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">arr</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]);</span> <span class="c1">// ❌</span>
+<span class="c1">// [1, 2, 3, 1, 2, 3, Array(3)]</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>의도에 따라 쓰임이 다르겠지만 쓰는 형태를 설명하기 위함이기 때문에 맞고 틀리고를 표시했습니다.</p>
+
+<h3 id="하드-바인딩">하드 바인딩</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+</pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nx">calling</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">msg</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">let</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">msg</span><span class="p">:</span> <span class="dl">'</span><span class="s1">kimson</span><span class="dl">'</span><span class="p">,</span>
+<span class="p">};</span>
+
+<span class="kd">const</span> <span class="nx">hardBinding</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">calling</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">obj</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nx">hardBinding</span><span class="p">();</span> <span class="c1">// 'kimson'</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>명시적 바인딩과 유사해보이지만 <code class="language-plaintext highlighter-rouge">calling</code> 호출 스택을 호출하는
+<code class="language-plaintext highlighter-rouge">hardBinding</code>을 통해 명시적이면서도 유입되는 값 없이 고정된 객체를 바인딩해서 호출하므로 <code class="language-plaintext highlighter-rouge">hard binding</code>이라고 합니다. <code class="language-plaintext highlighter-rouge">Function</code>의 내장 함수인 <code class="language-plaintext highlighter-rouge">bind</code>가 이와 유사하게 역할을 한다고 합니다.</p>
+
+<p>변경해보면 아래와 같은 예제가 될 것 입니다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nx">calling</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">msg</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">let</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">msg</span><span class="p">:</span> <span class="dl">'</span><span class="s1">kimson</span><span class="dl">'</span><span class="p">,</span>
+<span class="p">};</span>
+
+<span class="kd">const</span> <span class="nx">hardBinding</span> <span class="o">=</span> <span class="nx">calling</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="nx">obj</span><span class="p">);</span>
+
+<span class="nx">hardBinding</span><span class="p">();</span> <span class="c1">// 'kimson'</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h2 id="상속-문제">상속 문제</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="rouge-code"><pre><span class="kd">const</span> <span class="nx">Human</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">age</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">age</span> <span class="o">=</span> <span class="nx">age</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">calling</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">prop</span><span class="p">){</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">[</span><span class="nx">prop</span><span class="p">]);</span>
+    <span class="p">};</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">kimson</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Human</span><span class="p">(</span><span class="dl">'</span><span class="s1">kimson</span><span class="dl">'</span><span class="p">,</span> <span class="mi">30</span><span class="p">);</span>
+<span class="nx">kimson</span><span class="p">.</span><span class="nx">calling</span><span class="p">(</span><span class="dl">'</span><span class="s1">name</span><span class="dl">'</span><span class="p">);</span>
+<span class="c1">// 'kimson'</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>여기서 <code class="language-plaintext highlighter-rouge">calling</code>의 <code class="language-plaintext highlighter-rouge">this</code>는 <code class="language-plaintext highlighter-rouge">Human</code>을 가리킵니다. 위에서 <code class="language-plaintext highlighter-rouge">Human</code>은 <code class="language-plaintext highlighter-rouge">calling</code>메서드를 가지고 <code class="language-plaintext highlighter-rouge">property</code>명칭을 인자로 받아 <code class="language-plaintext highlighter-rouge">this</code>의 프로퍼티를 콘솔에 찍는 행위를 합니다. 점과 대괄호 표현식에 대해 잘 모르신다면 <code class="language-plaintext highlighter-rouge">dot notation</code>과 <code class="language-plaintext highlighter-rouge">bracket notation</code>으로 찾아보시기 바랍니다.</p>
+
+<p>이렇게 단일로 객체를 관리할 때는 별 문제가 없지만 프로토타입 체인 등의 과정을 거치거나 다른 객체의 함수에 인자로 다른 객체 함수가 전달되어 실행되는 경우 <code class="language-plaintext highlighter-rouge">this</code>를 이해하지 못하면 나중에 어려움을 겪을 수 있다고 생각합니다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+</pre></td><td class="rouge-code"><pre><span class="kd">const</span> <span class="nx">Human</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">age</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">age</span> <span class="o">=</span> <span class="nx">age</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">calling</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(){</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+    <span class="p">};</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">Student</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">age</span><span class="p">,</span> <span class="nx">schoolName</span><span class="p">,</span> <span class="nx">classNumber</span><span class="p">,</span> <span class="nx">grade</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">Human</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="nx">name</span><span class="p">,</span> <span class="nx">age</span><span class="p">);</span>
+    <span class="c1">// 실행해보면 프로토타입 Human의 name과 age는 undefined이고</span>
+    <span class="c1">// Student객체의 프로퍼티에 정의되는 것을 볼 수 있습니다.</span>
+
+    <span class="c1">// 만일 프로토타입의 Human의 name, age에 저장하려면 this를 this.__proto__로 변경하면</span>
+    <span class="c1">// Human의 프로퍼티에 적용되는 것을 볼 수 있습니다.</span>
+
+    <span class="k">this</span><span class="p">.</span><span class="nx">schoolName</span> <span class="o">=</span> <span class="nx">schoolName</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">classNumber</span> <span class="o">=</span> <span class="nx">classNumber</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">grade</span> <span class="o">=</span> <span class="nx">grade</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">test</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nx">Student</span><span class="p">.</span><span class="nx">prototype</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">Human</span><span class="p">.</span><span class="nx">prototype</span><span class="p">);</span>
+<span class="c1">// 또는</span>
+<span class="nx">Student</span><span class="p">.</span><span class="nx">prototype</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Human</span><span class="p">;</span>
+
+<span class="nx">Student</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="kd">constructor</span> <span class="o">=</span> <span class="nx">Student</span><span class="p">;</span>
+
+<span class="kd">let</span> <span class="nx">kimson</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Student</span><span class="p">(</span><span class="dl">'</span><span class="s1">kimson</span><span class="dl">'</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="dl">'</span><span class="s1">sch</span><span class="dl">'</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+
+<span class="nb">window</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">click</span><span class="dl">'</span><span class="p">,</span> <span class="nx">e</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">kimson</span><span class="p">.</span><span class="nx">test</span><span class="p">();</span>
+    <span class="nx">kimson</span><span class="p">.</span><span class="nx">calling</span><span class="p">();</span>
+<span class="p">});</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>이제 금방 정의한 <code class="language-plaintext highlighter-rouge">Human</code>을 <code class="language-plaintext highlighter-rouge">Student</code>가 상속 받았습니다. <code class="language-plaintext highlighter-rouge">Student</code>는 이제 <code class="language-plaintext highlighter-rouge">Human</code>의 기본 프로퍼티인 이름과 나이를 기본적으로 가지게 됩니다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">Student</code>의 <code class="language-plaintext highlighter-rouge">prototype</code>을 <code class="language-plaintext highlighter-rouge">Human</code>의 <code class="language-plaintext highlighter-rouge">prototype</code>으로 설정하고 학생을 생성해서 각 객체에 넣어둔 메서드를 실행해보면 콘솔에 찍히는 <code class="language-plaintext highlighter-rouge">this</code>가 모두 학생을 가리키는 것을 볼 수 있습니다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">Human</code> 내에서 정의된 <code class="language-plaintext highlighter-rouge">calling</code>는 왜 <code class="language-plaintext highlighter-rouge">Human</code>이 아니고 <code class="language-plaintext highlighter-rouge">Student</code>일까요? 여기서는 <code class="language-plaintext highlighter-rouge">this</code>가 기본 바인딩 규칙이 아닌 암시적 바인딩 규칙을 따랐습니다. 그 결과 <code class="language-plaintext highlighter-rouge">Student</code>를 가리키게 되었습니다. 그 이유는 <code class="language-plaintext highlighter-rouge">Student</code>의 프로토타입이 <code class="language-plaintext highlighter-rouge">new</code> 연산자를 통해 새로 생성된 <code class="language-plaintext highlighter-rouge">Human</code>프로토타입이 정의가 되고나서 <code class="language-plaintext highlighter-rouge">Student</code>의 인스턴스가 생겨났기 때문입니다. 즉, <code class="language-plaintext highlighter-rouge">Student</code>의 속성으로 <code class="language-plaintext highlighter-rouge">calling</code>메서드가 정의되었기 때문에 <code class="language-plaintext highlighter-rouge">this</code>가 <code class="language-plaintext highlighter-rouge">Student</code>를 가리킵니다.</p>
+
+<h2 id="모듈-패턴으로-보는-예제">모듈 패턴으로 보는 예제</h2>
+
+<p>다른 예제를 가져오겠습니다. 모듈 패턴으로 어떠한 기능을 짠다고 가정할 때 <code class="language-plaintext highlighter-rouge">MVC</code>가 있다고 가정하겠습니다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+</pre></td><td class="rouge-code"><pre>
+<span class="kd">const</span> <span class="nx">Something</span> <span class="o">=</span> <span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    
+    <span class="kd">function</span> <span class="nx">Controller</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="kd">let</span> <span class="nx">models</span><span class="p">;</span>
+
+        <span class="k">this</span><span class="p">.</span><span class="nx">init</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">model</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">models</span> <span class="o">=</span> <span class="nx">model</span><span class="p">;</span>
+
+            <span class="c1">// 예제가 이 부분 입니다.</span>
+            <span class="nb">window</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">click</span><span class="dl">'</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">firstCall</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="k">this</span><span class="p">.</span><span class="nx">firstCall</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">getMyName</span><span class="p">();</span>
+            <span class="nx">models</span><span class="p">.</span><span class="nx">something</span><span class="p">();</span>
+        <span class="p">}</span>
+
+        <span class="k">this</span><span class="p">.</span><span class="nx">getMyName</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">My name is kimson!</span><span class="dl">'</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="kd">function</span> <span class="nx">Model</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="kd">let</span> <span class="nx">views</span><span class="p">;</span>
+
+        <span class="k">this</span><span class="p">.</span><span class="nx">init</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">view</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">views</span> <span class="o">=</span> <span class="nx">view</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="k">this</span><span class="p">.</span><span class="nx">something</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span> <span class="cm">/** ... */</span> <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="kd">function</span> <span class="nx">View</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="kd">let</span> <span class="nx">options</span><span class="p">;</span>
+
+        <span class="k">this</span><span class="p">.</span><span class="nx">init</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">option</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">options</span> <span class="o">=</span> <span class="nx">option</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="nx">init</span><span class="p">(</span><span class="nx">options</span><span class="p">)</span> <span class="p">{</span>
+            <span class="kd">const</span> <span class="nx">view</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">View</span><span class="p">();</span>
+            <span class="kd">const</span> <span class="nx">model</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Model</span><span class="p">();</span>
+            <span class="kd">const</span> <span class="nx">controller</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Controller</span><span class="p">();</span>
+
+            <span class="nx">view</span><span class="p">.</span><span class="nx">init</span><span class="p">(</span><span class="nx">options</span><span class="p">);</span>
+            <span class="nx">model</span><span class="p">.</span><span class="nx">init</span><span class="p">(</span><span class="nx">view</span><span class="p">);</span>
+            <span class="nx">controller</span><span class="p">.</span><span class="nx">init</span><span class="p">(</span><span class="nx">model</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">})();</span>
+
+<span class="nx">Something</span><span class="p">.</span><span class="nx">init</span><span class="p">({});</span>
+
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>제가 실제로 자주 사용하는 방식입니다. 위에 주석이 달린 예제 부분을 볼 때 <code class="language-plaintext highlighter-rouge">firstCall</code>이 이벤트에 걸려 클릭할 때마다 호출하게 되는데, <code class="language-plaintext highlighter-rouge">firstCall</code>내부의 <code class="language-plaintext highlighter-rouge">getMyName</code>은 제대로 작동할까요?</p>
+
+<p>결론은 작동하지 않고 <code class="language-plaintext highlighter-rouge">not defined</code>에러를 냅니다. <code class="language-plaintext highlighter-rouge">Controller</code> 객체 내부의 <code class="language-plaintext highlighter-rouge">this</code>는 <code class="language-plaintext highlighter-rouge">Controller</code>를 가리킵니다.</p>
+
+<p>그렇다면 <code class="language-plaintext highlighter-rouge">window</code>객체는 어떻게 구성되어 있을까요? <code class="language-plaintext highlighter-rouge">javascript</code>로 짰으니 별 다른 구성일 것이라 생각되지 않습니다. 즉, <code class="language-plaintext highlighter-rouge">window</code>객체의 <code class="language-plaintext highlighter-rouge">addEventListener</code>를 <code class="language-plaintext highlighter-rouge">api</code>를 보지 않고도 추측할 수는 있습니다. 인자 값으로 이벤트 타입과 함수를 받고, 필요에 따라 <code class="language-plaintext highlighter-rouge">boolean</code> 값을 받습니다.</p>
+
+<p>추측하는 것이지만 <code class="language-plaintext highlighter-rouge">addEventListener</code> 내부 코드에서 <code class="language-plaintext highlighter-rouge">call</code>을 해서 <code class="language-plaintext highlighter-rouge">this</code>를 바인딩 하는 부분이 있다고 생각합니다. 실제로 찾아보니 누군가 작성한 <code class="language-plaintext highlighter-rouge">addEventListener</code>의 <code class="language-plaintext highlighter-rouge">pollyfill</code> 소스코드를 보니 <code class="language-plaintext highlighter-rouge">call</code>로 <code class="language-plaintext highlighter-rouge">window</code>객체로 덮어쓰도록 하게 되어 있습니다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nx">Window</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">addEventListener</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">type</span><span class="p">,</span> <span class="nx">func</span><span class="p">,</span> <span class="nx">bool</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// ...</span>
+        <span class="nx">func</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+        <span class="c1">// ...</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>이해를 돕고자 대략적인 형태를 작성해보면, 위처럼 함수가 전달되고 실행될 것 입니다. 그렇다면 <code class="language-plaintext highlighter-rouge">func</code>가 아래처럼 정의된 내용이였다고 가정하겠습니다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nx">Window</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">addEventListener</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">type</span><span class="p">,</span> <span class="nx">func</span><span class="p">,</span> <span class="nx">bool</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// ...</span>
+        <span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">getMyName</span><span class="p">();</span>
+            <span class="nx">models</span><span class="p">.</span><span class="nx">something</span><span class="p">();</span>
+        <span class="p">})();</span>
+        <span class="c1">// ...</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>이렇게 놓고보면 <code class="language-plaintext highlighter-rouge">window</code>객체에서 <code class="language-plaintext highlighter-rouge">this</code>를 얘기하게 됩니다. <code class="language-plaintext highlighter-rouge">window</code>객체에 <code class="language-plaintext highlighter-rouge">getMyName</code>이 없으므로(있다면 상관없지만) <code class="language-plaintext highlighter-rouge">not defined</code> 에러가 발생하게 됩니다.</p>
+
+<p>어? 분명히 <code class="language-plaintext highlighter-rouge">Controller</code>객체에서 <code class="language-plaintext highlighter-rouge">this</code>는 <code class="language-plaintext highlighter-rouge">Controller</code>였는데? 이 내용은 <code class="language-plaintext highlighter-rouge">기본 바인딩</code>에 해당되는 이야기입니다. <code class="language-plaintext highlighter-rouge">this</code>는 기본적으로 전역 객체를 가리킵니다. <code class="language-plaintext highlighter-rouge">this</code>를 언급하는 함수를 단일로 호출하게 되면 문제 없습니다.</p>
+
+<p>하지만 <code class="language-plaintext highlighter-rouge">A</code>객체에서 <code class="language-plaintext highlighter-rouge">B</code>객체의 함수를 실행하거나 또는 반대로 실행하는 경우 함수가 이동하면서 실행되기 때문에 <code class="language-plaintext highlighter-rouge">this</code>가 기본 바인딩 규칙을 따르게 됩니다. 단일 함수에서 <code class="language-plaintext highlighter-rouge">this</code>를 지칭하고 객체에서 그 단일 함수를 사용한다면 암시적 바인딩에 의해 잘 적용됩니다. 하지만 객체와 객체 사이에서 메서드끼리의 상호작용에서는 <code class="language-plaintext highlighter-rouge">window</code>가 바인딩 되는 기본 바인딩이 적용된다는 말을 하는 것 입니다.</p>
+
+<p>그런데 조금 바꿔서 <code class="language-plaintext highlighter-rouge">window</code>가 아닌 <code class="language-plaintext highlighter-rouge">document.body.addEventListener</code>로 작성해서 실행하면 어떤 결과가 나올까요?</p>
+
+<p><code class="language-plaintext highlighter-rouge">document.body</code>의 <code class="language-plaintext highlighter-rouge">addEventListener</code> 또한 마찬가지일 것으로 생각되어 테스트 해보니 결과는 <code class="language-plaintext highlighter-rouge">this</code>가 <code class="language-plaintext highlighter-rouge">body</code> 엘레멘트를 가리키는 것을 볼 수 있습니다. 그렇다면 위의 설명과 다르게 암시적 바인딩 되는 것이 아닌가? 하겠지만 잠깐 언급했지만 <code class="language-plaintext highlighter-rouge">addEventListener</code>는 내부 구조적으로 <code class="language-plaintext highlighter-rouge">call</code>을 통해 명시적 바인딩을 하는 것으로 보입니다.</p>
+
+<p>그것에 해당하는 근거는 아래의 예시로 보여드리겠습니다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+</pre></td><td class="rouge-code"><pre><span class="kd">const</span> <span class="nx">store</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">doubleCalling</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">type</span><span class="p">,</span> <span class="nx">func</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">type</span><span class="p">,</span> <span class="k">this</span><span class="p">);</span>
+        <span class="nx">func</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">Controller</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">models</span><span class="p">;</span>
+
+    <span class="k">this</span><span class="p">.</span><span class="nx">init</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">model</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">models</span> <span class="o">=</span> <span class="nx">model</span><span class="p">;</span>
+
+        <span class="c1">// 예제가 이 부분 입니다.</span>
+        <span class="nx">store</span><span class="p">.</span><span class="nx">doubleCalling</span><span class="p">(</span><span class="dl">'</span><span class="s1">click</span><span class="dl">'</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">firstCall</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">this</span><span class="p">.</span><span class="nx">firstCall</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">)</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">getMyName</span><span class="p">();</span>
+    <span class="p">}</span>
+
+    <span class="k">this</span><span class="p">.</span><span class="nx">getMyName</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">My name is kimson!</span><span class="dl">'</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">con</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Controller</span><span class="p">();</span>
+<span class="nx">con</span><span class="p">.</span><span class="nx">init</span><span class="p">();</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>위 코드는 <code class="language-plaintext highlighter-rouge">firstCall</code>함수를 주목해보면 내부의 <code class="language-plaintext highlighter-rouge">this</code>가 암시적 바인딩 될 것이라 기대하고 작성했지만, 결과적으로는 <strong>기본 바인딩 규칙</strong>이 적용됩니다. 그래서 <code class="language-plaintext highlighter-rouge">window</code>객체를 콘솔에 찍어줍니다.</p>
+
+<p>그렇다면 위에서 언급한 <code class="language-plaintext highlighter-rouge">addEventListener</code>처럼 명시적 바인딩을 통해서 원했던 <code class="language-plaintext highlighter-rouge">Controller</code>가 <code class="language-plaintext highlighter-rouge">this</code>에 바인딩되면서 콘솔에 <code class="language-plaintext highlighter-rouge">Controller</code>가 찍히게 될 것 입니다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nx">store</span><span class="p">.</span><span class="nx">doubleCalling</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="dl">'</span><span class="s1">click</span><span class="dl">'</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">firstCall</span><span class="p">);</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>명시적 바인딩으로 해당 함수 내에 작성한 <code class="language-plaintext highlighter-rouge">this</code>를 원하는 객체로 변경할 수 있는 점만 알아도 왜 <code class="language-plaintext highlighter-rouge">this</code>가 여기서는 <code class="language-plaintext highlighter-rouge">window</code>이고, 어디서는 변경이 안되는지 알 수 있을 것 입니다.</p>
+
+<h2 id="개인적인-견해">개인적인 견해</h2>
+
+<p>한 개발자 분이 작성한 글을 보고 <code class="language-plaintext highlighter-rouge">bind</code>, <code class="language-plaintext highlighter-rouge">call</code>, <code class="language-plaintext highlighter-rouge">apply</code>를 많이 쓰지 않는 것이 좋다는 이야기를 본 기억이 납니다.</p>
+
+<p>내용이 자세히 기억이 나지 않지만 현재 사용하면서 느낀바로 의미를 보태어 본다면 이렇습니다.</p>
+
+<p>코드를 작성하다보면 디버그하거나 오류를 찾아낼 때 프로퍼티나 메서드들을 거슬러 올라가 찾아내곤 합니다. 그 와중에 거슬로 올라왔지만 못 찾는 경우가 생깁니다. 물론 제가 이상하게 짠 탓이지만 가령 이러한 예제가 있습니다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+</pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nx">Test</span> <span class="p">(</span><span class="nx">type</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">type</span> <span class="o">=</span> <span class="nx">type</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">active</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">type</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">OtherTest</span><span class="p">(</span><span class="nx">type</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">type</span> <span class="o">=</span> <span class="nx">type</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">mytype</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">active</span><span class="p">());</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">test1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Test</span><span class="p">(</span><span class="dl">'</span><span class="s1">test1</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">otherTest1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">OtherTest</span><span class="p">(</span><span class="dl">'</span><span class="s1">other test1</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="nx">otherTest1</span><span class="p">.</span><span class="nx">mytype</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">test1</span><span class="p">);</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>오류를 찾아내는 상황 등에서는 실행 해보면 금방 어떻게 돌아가는지 알기 쉽지만 여러 줄이고, 많은 파일로 쪼개져 관리된다면, <code class="language-plaintext highlighter-rouge">OtherTest</code>객체의 <code class="language-plaintext highlighter-rouge">mytype</code>이라는 프로퍼티 내부에 정의된 <code class="language-plaintext highlighter-rouge">this.active</code>가 도대체 어떤 객체의 <code class="language-plaintext highlighter-rouge">active</code>인지 알기 쉽지 않습니다.</p>
+
+<p>여러 방법이 있겠지만 특정 경우를 제외하고는 가급적이면 쓰지않고 대안을 사용하는 것이 좋다고 생각을 합니다. <code class="language-plaintext highlighter-rouge">this</code>를 변수에 담아 사용하는 것 또한 방법 중 하나입니다.</p>
+
+<p>어떤 의미로 그 분은 <code class="language-plaintext highlighter-rouge">bind</code>, <code class="language-plaintext highlighter-rouge">call</code>, <code class="language-plaintext highlighter-rouge">apply</code>의 사용을 지양했는지 잘 기억은 나지 않습니다만, 이러한 이유가 아닐까 하는 생각을 보탭니다.</p>
+
+<p>포스팅 전체는 대략 한 달 주기로 내용을 점검하고 수정하려고 노력합니다. 틀린 내용이나 적절하지 않은 표현 등이 있다면 제보 바랍니다.</p>
+
+<hr />
+
+<p>📚 함께 보면 좋은 내용</p>
+
+<p><a href="https://dev.to/trackmystories/javascript-the-four-rules-of-this-42g0" target="_blank">TrackMyStories::Javascript: The four rules of {this}.</a></p>
+
+<p><a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Basics#what_is_this" target="_blank">MDN Web Docs::JavaScript object basics</a></p>
+
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Inheritance_and_the_prototype_chain#performance" target="_blank">MDN Web Docs::Inheritance and the prototype chain</a></p>
+
+<p><a href="https://gist.github.com/Rich-Harris/6010282" target="_blank">Rich-Harris::eventListener.js</a></p>
+
+<p><a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Function/apply" target="_blank">MDN Web Docs::Function.prototype.apply()</a></p>
+
+<p><a href="https://developer.mozilla.org/ko/docs/Glossary/Call_stack" target="_blank">MDN Web Docs::Call stack</a></p>
+:ET

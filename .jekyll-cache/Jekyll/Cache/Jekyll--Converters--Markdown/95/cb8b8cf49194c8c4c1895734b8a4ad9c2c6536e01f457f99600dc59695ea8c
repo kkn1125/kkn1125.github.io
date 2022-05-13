@@ -1,0 +1,5 @@
+I"<p>Markdown Parser를 만들어보자
+마크다운을 HTML로 파싱해주는 라이브러리가 여러가지 있지만 한 번 구현해 보면 공부가 되겠다 싶어 기록합니다.
+이전에 <code class="language-plaintext highlighter-rouge">router</code>를 구현해서 포스팅 한 적이 있는데요. <code class="language-plaintext highlighter-rouge">router</code>를 응용해서 <code class="language-plaintext highlighter-rouge">wiki</code>페이지를 만들어 페이지를 관리하고 있습니다.
+그런데 페이지 내용을 리터럴 템플릿으로 태그를 하나하나 작성하기가 번거롭기도 하고 시간이 많이 들어 마크다운을 파싱하여 내용을 관리하는게 효율적일 것 같아 필요하게 되었습니다.</p>
+:ET

@@ -1,0 +1,2 @@
+I"�<p>form valid 이 포스팅은 참고용으로 만들어졌기 때문에 정확한 내용은 공식 홈페이지의 docs와 reference를 참고하는 것을 적극 권장합니다. form valid 제어 처음 <code class="language-plaintext highlighter-rouge">ModelForm</code>을 접했을 때는 무슨 개념인지조차 몰랐는데 현재는 <code class="language-plaintext highlighter-rouge">ModelForm</code>이 아니면 끔찍하다는 생각이 듭니다. 경우에 따라 form에서 field를 따로 떼어 에러처리 하는 등의 작업이 필요하겠지만 지금은 연습 단계이니 field 별 제어하는 내용은 다음에 다루어 볼 예정입니다.</p>
+:ET
