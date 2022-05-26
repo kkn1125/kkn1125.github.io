@@ -1,0 +1,4 @@
+I"<p>기존 정보에 수정된 정보를 덮어쓰기
+회원정보를 수정하다보면 초기에는 <code class="language-plaintext highlighter-rouge">request.POST['datatype']</code>으로 하나씩 받아와 데이터베이스를 조회해서 user를 가져오고 하나 씩 담았습니다.
+위의 형식이 꽤 번거로웠습니다. 스프링에서는 form data를 전송하면 request를 보낼 때 알아서 객체에 담아줬습니다. 분명 장고에도 있을 거라는 예감은 틀리지 않았습니다.</p>
+:ET

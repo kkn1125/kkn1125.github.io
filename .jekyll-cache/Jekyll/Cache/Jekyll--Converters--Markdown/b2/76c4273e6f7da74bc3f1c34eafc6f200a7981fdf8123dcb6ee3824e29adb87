@@ -1,0 +1,4 @@
+I"�<p>문제를 읽고 보면 이미 <code class="language-plaintext highlighter-rouge">or</code>로 조건을 걸어 더하기를 해주면 되는 쉬운 문제입니다.
+또는 5이기 때문에 인자를 두 개 받고, <code class="language-plaintext highlighter-rouge">limit</code>미만까지 돌아 해당되는 수를 더하여 출력합니다.
+그런데 이러한 문제들을 풀다보니 프로그램 실행 속도와 여러 공식을 보다보니 문득 생각이 들었습니다.</p>
+:ET

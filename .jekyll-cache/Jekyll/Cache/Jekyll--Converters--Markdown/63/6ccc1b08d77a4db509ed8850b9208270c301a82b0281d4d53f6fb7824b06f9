@@ -1,0 +1,4 @@
+I"�<p>JDBC Template 사용법
+오랜만에 JAVA를 사용했습니다. 요즘 만들고 싶은게 많아서 js를 쭉 쓰다보니 점점 JAVA를 잊어가는 느낌입니다.
+MyBatis를 spring-boot에서는 간단하게 사용했었지만 spring에서는 Mybatis를 구현해 본 적이 없어서 이것저것 하던 중 jdbc template도 한 번 써봐야겠다 싶어서 사용법만 기록하려합니다.</p>
+:ET

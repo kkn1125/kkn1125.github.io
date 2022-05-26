@@ -1,0 +1,152 @@
+I"E&<h1 id="vanilla-javascript에서-module-사용하기">Vanilla Javascript에서 Module 사용하기</h1>
+
+<p>기능들이 한 파일에 모두 모여있어 제가 짠 코드지만 매우 보기 불편해서 모듈화가 필요하게 되었습니다. 그래서 사용법을 짧게 기록하기 위해 포스팅하게 되었습니다.</p>
+
+<p>이번 포스팅 주제를 검색하다보니 여러 블로그에서 소개하는 방식을 사용하려 했지만 실패였습니다. 물론 제 이해력이 이만저만해서 좋은 글을 두고도 해결하지 못한 것 같습니다. 😅</p>
+
+<h2 id="사용법">사용법</h2>
+
+<p>예를 들어 계산기 기능을 모듈화 하고 싶다고 가정한다면 아래와 같은 코드가 있다고 생각해봅시다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+</pre></td><td class="rouge-code"><pre><span class="c1">// calculator.js</span>
+<span class="kd">function</span> <span class="nx">Calculator</span><span class="p">(){</span>
+	<span class="k">this</span><span class="p">.</span><span class="nx">plus</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">){</span>
+		<span class="k">return</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span><span class="p">;</span>
+	<span class="p">}</span>
+	<span class="k">this</span><span class="p">.</span><span class="nx">minus</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">){</span>
+		<span class="k">return</span> <span class="nx">a</span> <span class="o">-</span> <span class="nx">b</span><span class="p">;</span>
+	<span class="p">}</span>
+	<span class="c1">// ... 등등</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">myCalc</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Calculator</span><span class="p">();</span>
+
+<span class="nx">myCalc</span><span class="p">.</span><span class="nx">plus</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">);</span> <span class="c1">// 9</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>이때 이런 저런 기능을 끌어와서 쓴다면 <code class="language-plaintext highlighter-rouge">calculator.js</code>는 아주 단순해지겠지요.</p>
+
+<p>그렇다면 모듈화를 진행해봅시다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">html</code>에서는 아래와 같이 <code class="language-plaintext highlighter-rouge">script</code>태그에 <code class="language-plaintext highlighter-rouge">type</code>속성을 달아 <code class="language-plaintext highlighter-rouge">module</code>이라는 값을 줍니다.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"calculator.js"</span> <span class="na">type=</span><span class="s">"module"</span><span class="nt">&gt;&lt;/script&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>이제 모듈화 시킬 기능을 분리합니다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="rouge-code"><pre><span class="c1">// calc-base.js</span>
+<span class="kd">function</span> <span class="nx">plus</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">){</span>
+	<span class="k">return</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">minus</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">){</span>
+	<span class="k">return</span> <span class="nx">a</span> <span class="o">-</span> <span class="nx">b</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="c1">// ... 등등</span>
+
+<span class="k">export</span> <span class="p">{</span><span class="nx">plus</span><span class="p">,</span> <span class="nx">minus</span><span class="p">};</span> <span class="c1">// 내보낼 함수가 많으면 콧수염 괄호에 넣습니다.</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>그럼 이제 모듈화 되었으니 기존에 <code class="language-plaintext highlighter-rouge">calculator.js</code>에서 <code class="language-plaintext highlighter-rouge">import</code>합니다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+</pre></td><td class="rouge-code"><pre><span class="c1">// calculator.js</span>
+
+<span class="c1">// from의 경로에는 확장자 명이 있어야 합니다.</span>
+
+<span class="k">import</span> <span class="o">*</span> <span class="k">as</span> <span class="nx">calcBase</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./calc-base.js</span><span class="dl">'</span>
+<span class="c1">// 1. 모두 불러오려면 아스트릭을 사용하고 as로 명칭을 부여합니다.</span>
+<span class="c1">// ex) calcBase.plus ...</span>
+
+<span class="k">import</span> <span class="p">{</span><span class="nx">plus</span><span class="p">,</span> <span class="nx">minus</span><span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./calc-base.js</span><span class="dl">'</span><span class="p">;</span>
+<span class="c1">// 2. 함수명을 기입해서 특정 함수들만 불러올 수 있습니다.</span>
+<span class="c1">// ex) plus ...</span>
+
+<span class="c1">// 1. 아스트릭을 사용해서 모두 불러올 때 사용 예시</span>
+<span class="kd">function</span> <span class="nx">Calculator</span><span class="p">(){</span>
+	<span class="k">this</span><span class="p">.</span><span class="nx">plus</span> <span class="o">=</span> <span class="nx">calcBase</span><span class="p">.</span><span class="nx">plus</span><span class="p">;</span>
+	<span class="k">this</span><span class="p">.</span><span class="nx">minus</span> <span class="o">=</span> <span class="nx">calcBase</span><span class="p">.</span><span class="nx">minus</span><span class="p">;</span>
+	<span class="c1">// ... 등등</span>
+<span class="p">}</span>
+
+<span class="c1">// 2. 특정 함수만을 불러올 때 사용 예시</span>
+<span class="kd">function</span> <span class="nx">Calculator</span><span class="p">(){</span>
+	<span class="k">this</span><span class="p">.</span><span class="nx">plus</span> <span class="o">=</span> <span class="nx">plus</span><span class="p">;</span>
+	<span class="k">this</span><span class="p">.</span><span class="nx">minus</span> <span class="o">=</span> <span class="nx">minus</span><span class="p">;</span>
+	<span class="c1">// ... 등등</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">myCalc</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Calculator</span><span class="p">();</span>
+
+<span class="nx">myCalc</span><span class="p">.</span><span class="nx">plus</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">);</span> <span class="c1">// 9</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>이렇게 모듈화를 해봤습니다. <code class="language-plaintext highlighter-rouge">from</code>경로와 <code class="language-plaintext highlighter-rouge">html</code>에서 <code class="language-plaintext highlighter-rouge">script</code>의 <code class="language-plaintext highlighter-rouge">type</code>을 제대로 <code class="language-plaintext highlighter-rouge">module</code>값을 주었는지 확인만 한다면 쉽게 사용할 수 있습니다.</p>
+
+<p>복잡하게만 느껴졌는데 막상 사용해보니 매우 단순합니다. 모듈화하면 <code class="language-plaintext highlighter-rouge">script</code>태그에 <code class="language-plaintext highlighter-rouge">defer</code>를 준 것과 같다고 하는 이야기를 봤는데 실제 개발자 도구를 열어 확인해 보니 <code class="language-plaintext highlighter-rouge">module</code>타입을 먹인 <code class="language-plaintext highlighter-rouge">script</code>가 아닌 <code class="language-plaintext highlighter-rouge">export</code>로 내보내져서 <code class="language-plaintext highlighter-rouge">import</code>로 사용되는 모듈들이 나중에 로드 됨을 알 수 있었습니다.</p>
+
+<p>아래는 제가 참고한 사이트입니다.</p>
+
+<hr />
+
+<p>📚 함께 보면 좋은 내용</p>
+
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import" target="_blank">MDNWeb Docs::Import</a></p>
+
+<p><a href="https://rrecoder.tistory.com/166" target="_blank">TAMI님 - [JavaScript] Uncaught SyntaxError: Cannot use import statement outside a module 오류</a></p>
+:ET

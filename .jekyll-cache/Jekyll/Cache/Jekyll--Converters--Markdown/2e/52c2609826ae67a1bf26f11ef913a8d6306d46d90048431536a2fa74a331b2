@@ -1,0 +1,13 @@
+I"M<!-- 
+Bootstrap5로 Form Error를 제어 해보자
+1. bootstrap5와 bootstrap v5
+   1. bootstrap5 기준으로 설명
+2. bootstrap_form과 bootstrap_alert 사용법
+   1. form 속성
+   2. alert 속성
+3. django에서 Form의 속성
+   1. non_field_errors
+   2. error_css_class와 required_css_class
+   3. error_class의 이해
+ -->
+:ET
