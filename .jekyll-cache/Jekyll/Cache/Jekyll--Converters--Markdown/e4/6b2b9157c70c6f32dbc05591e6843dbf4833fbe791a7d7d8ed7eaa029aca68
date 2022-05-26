@@ -1,7 +1,7 @@
-I"�3<h1 id="jsx와-특징">JSX와 특징</h1>
+I"�3<h1 id="jsx와-특징">JSX와 특징</h1>
 
 <blockquote>
-  <p>이 글은 리액트 홈페이지의 내용을 토대로 작성되었습니다.<br />
+  <p>이 글은 리액트 홈페이지의 내용을 토대로 작성되었습니다.
 <a href="/react-study01" target="_blank">React 시작하기 01</a> 에 이어서 작성 중입니다. 버전이 <code class="language-plaintext highlighter-rouge">v18.x</code>로 업데이트된 시점에서 변경된 부분과 자세한 내용을 적기 위해서 이전 포스팅과 겹치는 이야기가 있지만 양해바랍니다.</p>
 </blockquote>
 

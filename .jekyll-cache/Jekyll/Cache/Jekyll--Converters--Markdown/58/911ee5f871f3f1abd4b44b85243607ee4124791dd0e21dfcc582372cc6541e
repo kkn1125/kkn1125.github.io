@@ -1,0 +1,324 @@
+I"IX<h1 id="usestate-hook">useState Hook</h1>
+
+<p><code class="language-plaintext highlighter-rouge">useState</code>훅은 <code class="language-plaintext highlighter-rouge">React</code> 버전 <code class="language-plaintext highlighter-rouge">16.8</code>부터 새로 추가되었다. <code class="language-plaintext highlighter-rouge">Hook</code>을 이용해서 기존에는 <code class="language-plaintext highlighter-rouge">Class</code> 바탕의 코드 작성이었지만, 그럴 필요없이 함수형 컴포넌트에서도 사용할 수 있게 되었다.</p>
+
+<p>그 중에서도 <code class="language-plaintext highlighter-rouge">useState</code>라는 기초되는 기능을 정리하고자 한다.</p>
+
+<h2 id="기능">기능</h2>
+
+<p><code class="language-plaintext highlighter-rouge">useState</code>가 가지는 기능은 단순하게 보면 읽고 쓰는 기능을 지원해준다. <code class="language-plaintext highlighter-rouge">useState</code>는 반환 값으로 튜플형태의 배열을 반환하는데, 배열 첫 번째가 <code class="language-plaintext highlighter-rouge">state</code>라는 읽기전용 <strong>변수</strong>이고, 두 번째가 읽기전용의 state를 갱신해주는 <code class="language-plaintext highlighter-rouge">setState</code><strong>함수</strong>이다.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+</pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nx">Test</span><span class="p">()</span> <span class="p">{</span>
+  <span class="c1">// 관습적으로 이름을 동일하게 지정하고, 함수에는 set*을 붙인다.</span>
+  <span class="kd">const</span> <span class="p">[</span><span class="nx">state</span><span class="p">,</span> <span class="nx">setState</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="cm">/* 초기 값 */</span><span class="p">);</span>
+
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span><span class="si">{</span><span class="nx">state</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span><span class="si">{</span><span class="nx">state</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">Test</span><span class="p">;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>읽기전용 변수가 뿌려진 곳에는 <code class="language-plaintext highlighter-rouge">setState</code>함수가 호출되었을 때 값이 변경되면 <code class="language-plaintext highlighter-rouge">state</code>가 있는 곳 모두 갱신시켜준다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">react</code>를 처음 접할 떄는 <code class="language-plaintext highlighter-rouge">Hook</code>이 도대체 뭐지? 바닐라 자바스크립트로 하드코딩하던 나는 전혀 알지 못했다.</p>
+
+<p>바짝 밤새면서 일주일간 연습해보니 점점 원리가 이해가 가고 굉장히 유용하다는 걸 깨달았다.</p>
+
+<h2 id="빠지지않는-투두리스트">빠지지않는 투두리스트</h2>
+
+<p>나 또한 투두리스트를 예로 들어보고자 한다. 그런데 투두리스트는 식상하니 가계부라고 하겠다.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+</pre></td><td class="rouge-code"><pre><span class="k">import</span> <span class="p">{</span> <span class="nx">Fragment</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">Title</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./Title</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">Inputs</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./Inputs</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">AccountList</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./AccountList</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="kd">function</span> <span class="nx">AccountBook</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="p">&lt;</span><span class="nc">Fragment</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nc">Title</span> <span class="p">/&gt;</span>
+      <span class="p">&lt;</span><span class="nc">Inputs</span> <span class="p">/&gt;</span>
+      <span class="p">&lt;</span><span class="nc">AccountList</span> <span class="p">/&gt;</span>
+    <span class="p">&lt;/</span><span class="nc">Fragment</span><span class="p">&gt;</span>
+  <span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">AccountBook</span><span class="p">;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>이러한 예제가 있다고 가정해보자. 컴포넌트를 만들고, state가 뭔지, props가 뭔지는 알아야 한다. 아직 잘 모른다면 <a href="https://ko.reactjs.org/docs/hello-world.html" target="\_blank">React::주요개념</a>을 보면 된다.</p>
+
+<p>이어서 AccountBook이라는 컴포넌트를 만들었는데 아직 하위요소는 만들지 않았다. 하나씩 구성해보면서 이해해보자.</p>
+
+<h2 id="가계부-작성">가계부 작성</h2>
+
+<p>서버를 켜고 화면을 띄우면 에러가 발생한다. 있지도 않은 컴포넌트를 왜 쓰냐고 한다. 시작한지 일주일 밖에 안되었으니 어떻게 컴포넌트를 설계하고 어떤 방식으로 모듈화하는지 모르지만 결과적으로 썼을때 간단하게 <code class="language-plaintext highlighter-rouge">props</code>를 조정하고 내 입맛에 맞게 재사용이 쉬워야한다는 관점에서 나는 거꾸로 밖에서 안으로 설계한다.</p>
+
+<p>먼저 폴더 구조는 이렇다. 이 내용이 처음에 나왔어야했는데 여기서 같이보자. 드디어 내가 만들었던 트리 파서가 나올때이다.</p>
+
+<pre style="background-color: #88888815; width: 300px; padding-left: 1rem; border-radius: 15px;">
+
+└┬─ account_book(project)
+　├── node_modules
+　├── public
+　└┬─ src
+　　├── components
+　　├── App.css
+　　├── App.js
+　　├── App.test.js
+　　├── index.css
+　　├── index.js
+　　├── logo.svg
+　　├── repotWebVitals.js
+　　├── setupTests.js
+　　├── .gitignore
+　　├── package.json
+　　├── package-lock.json
+　　└── README.md
+
+</pre>
+
+<blockquote>
+  <p>트리파서가 궁금하거나 저런 특수기호 노가다가 싫다면 한 번 써보는걸 추천😎</p>
+</blockquote>
+
+<p>간단하게 내용을 작성하고 데이터를 하나 씩 전달시켜보자.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+</pre></td><td class="rouge-code"><pre><span class="c1">// ./AccountBook.jsx</span>
+
+<span class="k">import</span> <span class="p">{</span> <span class="nx">Fragment</span><span class="p">,</span> <span class="nx">useState</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">Title</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./Title</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">Inputs</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./Inputs</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">AccountList</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./AccountList</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="kd">function</span> <span class="nx">AccountBook</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">TITLE</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Account Book</span><span class="dl">"</span><span class="p">;</span>
+  <span class="kd">const</span> <span class="p">[</span><span class="nx">account</span><span class="p">,</span> <span class="nx">setAccount</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">({});</span>
+  <span class="kd">const</span> <span class="p">[</span><span class="nx">accountList</span><span class="p">,</span> <span class="nx">setAccountList</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">([]);</span>
+
+  <span class="kd">const</span> <span class="nx">handleState</span> <span class="o">=</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">key</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">name</span><span class="p">;</span>
+    <span class="kd">const</span> <span class="nx">value</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span>
+    <span class="nx">setAccount</span><span class="p">({</span> <span class="p">...</span><span class="nx">account</span><span class="p">,</span> <span class="p">[</span><span class="nx">key</span><span class="p">]:</span> <span class="nx">value</span> <span class="p">});</span>
+  <span class="p">};</span>
+
+  <span class="kd">const</span> <span class="nx">handleAddStateList</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">setAccountList</span><span class="p">([...</span><span class="nx">accountList</span><span class="p">,</span> <span class="nx">account</span><span class="p">]);</span>
+  <span class="p">};</span>
+
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="p">&lt;</span><span class="nc">Fragment</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nc">Title</span> <span class="na">title</span><span class="p">=</span><span class="si">{</span><span class="nx">TITLE</span><span class="si">}</span> <span class="p">/&gt;</span>
+      <span class="p">&lt;</span><span class="nc">Inputs</span>
+        <span class="na">account</span><span class="p">=</span><span class="si">{</span><span class="nx">account</span><span class="si">}</span>
+        <span class="na">handleState</span><span class="p">=</span><span class="si">{</span><span class="nx">handleState</span><span class="si">}</span>
+        <span class="na">handleAddStateList</span><span class="p">=</span><span class="si">{</span><span class="nx">handleAddStateList</span><span class="si">}</span>
+      <span class="p">/&gt;</span>
+      <span class="p">&lt;</span><span class="nc">AccountList</span> <span class="na">accountList</span><span class="p">=</span><span class="si">{</span><span class="nx">accountList</span><span class="si">}</span> <span class="p">/&gt;</span>
+    <span class="p">&lt;/</span><span class="nc">Fragment</span><span class="p">&gt;</span>
+  <span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">AccountBook</span><span class="p">;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">TITLE</code>은 고정 값이기에 대문자로 표기했다. <code class="language-plaintext highlighter-rouge">useState</code>를 두 가지 사용하는데, <code class="language-plaintext highlighter-rouge">account</code>는 내가 <code class="language-plaintext highlighter-rouge">비용(cost)</code>과 <code class="language-plaintext highlighter-rouge">목적(purpose)</code>에 따라 내용을 갱신해주기 위해 오브젝트를 초기값으로 줬다.</p>
+
+<p>그리고 각 비용들이 작성되면 추가를 해야하니 <code class="language-plaintext highlighter-rouge">accountList</code>를 만들었다. 말은 투두리스트 식상하다했으나 식상한게 최선인듯하다. 말만 바꿨지 똑같다.</p>
+
+<h3 id="가계부-인풋">가계부 인풋</h3>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+</pre></td><td class="rouge-code"><pre><span class="c1">// ./Inputs.jsx</span>
+
+<span class="kd">function</span> <span class="nx">Inputs</span><span class="p">({</span> <span class="nx">account</span><span class="p">,</span> <span class="nx">handleState</span><span class="p">,</span> <span class="nx">handleAddStateList</span> <span class="p">})</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">select</span>
+        <span class="na">name</span><span class="p">=</span><span class="s">"purpose"</span>
+        <span class="na">type</span><span class="p">=</span><span class="s">"text"</span>
+        <span class="na">value</span><span class="p">=</span><span class="si">{</span><span class="nx">account</span><span class="p">.</span><span class="nx">purpose</span><span class="si">}</span>
+        <span class="na">onChange</span><span class="p">=</span><span class="si">{</span><span class="nx">handleState</span><span class="si">}</span>
+      <span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="p">=</span><span class="s">"life"</span><span class="p">&gt;</span>생활<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="p">=</span><span class="s">"food"</span><span class="p">&gt;</span>음식<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="p">=</span><span class="s">"hospital"</span><span class="p">&gt;</span>병원<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="p">=</span><span class="s">"health"</span><span class="p">&gt;</span>운동<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="p">=</span><span class="s">"play"</span><span class="p">&gt;</span>놀이<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">select</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">input</span>
+        <span class="na">name</span><span class="p">=</span><span class="s">"cost"</span>
+        <span class="na">type</span><span class="p">=</span><span class="s">"number"</span>
+        <span class="na">min</span><span class="p">=</span><span class="s">"0"</span>
+        <span class="na">step</span><span class="p">=</span><span class="s">"1000"</span>
+        <span class="na">value</span><span class="p">=</span><span class="si">{</span><span class="nx">account</span><span class="p">.</span><span class="nx">cost</span><span class="si">}</span>
+        <span class="na">onChange</span><span class="p">=</span><span class="si">{</span><span class="nx">handleState</span><span class="si">}</span>
+      <span class="p">/&gt;</span> <span class="p">&lt;</span><span class="err">-</span> <span class="err">항시</span> <span class="err">단일</span> <span class="err">태그는</span> <span class="err">닫아줘야한다!</span>
+      <span class="err">&lt;</span><span class="na">button</span> <span class="na">onClick</span><span class="p">=</span><span class="si">{</span><span class="nx">handleAddStateList</span><span class="si">}</span><span class="p">&gt;</span>추가<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">Inputs</span><span class="p">;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>전달 받을 것은 이미 정해뒀으니 그냥 받아서 연결하기만 하면 끝난다. <code class="language-plaintext highlighter-rouge">onChange</code>는 입력 값이 변경될때(지우거나 입력하거나) <code class="language-plaintext highlighter-rouge">handleState</code>에서 <code class="language-plaintext highlighter-rouge">account</code>의 상태를 갱신한다. 그러면 뿌려진 <code class="language-plaintext highlighter-rouge">value</code>에 값이 갱신되어 <code class="language-plaintext highlighter-rouge">input</code>의 내용이 변경된다. 제대로 연결안되면 <code class="language-plaintext highlighter-rouge">input</code>이 제 기능을 못하고 먹통이 된다.</p>
+
+<h3 id="가계부-리스트">가계부 리스트</h3>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+</pre></td><td class="rouge-code"><pre><span class="c1">// ./AccountList.jsx</span>
+
+<span class="kd">function</span> <span class="nx">AccountList</span><span class="p">({</span> <span class="nx">accountList</span> <span class="p">})</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">ol</span><span class="p">&gt;</span>
+        <span class="si">{</span><span class="nx">accountList</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="p">?</span>
+          <span class="nx">accountList</span><span class="p">.</span><span class="nx">map</span><span class="p">(({</span> <span class="nx">purpose</span><span class="p">,</span> <span class="nx">cost</span> <span class="p">},</span> <span class="nx">id</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">(</span>
+            <span class="p">&lt;</span><span class="nt">li</span> <span class="na">key</span><span class="p">=</span><span class="si">{</span><span class="nx">id</span><span class="si">}</span><span class="p">&gt;</span>
+              <span class="p">&lt;</span><span class="nt">b</span><span class="p">&gt;</span><span class="si">{</span><span class="nx">purpose</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">b</span><span class="p">&gt;</span>
+              <span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span><span class="si">{</span><span class="nx">cost</span><span class="si">}</span> 원<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+            <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+          <span class="p">)):</span>
+          <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+            가계부 목록이 비었습니다.
+          <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span><span class="si">}</span>
+      <span class="p">&lt;/</span><span class="nt">ol</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">AccountList</span><span class="p">;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>대략 써보고 돌려봤더니 잘 된다. 삭제 기능과 추가 클릭 시 인풋을 클리어하는 기능은 한 번씩 만들어보시길.</p>
+
+<p><img src="https://user-images.githubusercontent.com/71887242/170496520-0333dcb2-9553-4152-a459-08d39ca1d2f4.png" alt="가계부 테스트" /></p>
+
+<hr />
+
+<p>📚 함께 보면 좋은 내용</p>
+
+<p><a href="https://ko.reactjs.org/docs/hooks-intro.html" target="\_blank">React::Hook의 개요</a></p>
+:ET

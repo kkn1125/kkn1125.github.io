@@ -1,0 +1,4 @@
+I"�<p>useState Hook
+<code class="language-plaintext highlighter-rouge">useState</code>훅은 <code class="language-plaintext highlighter-rouge">React</code> 버전 <code class="language-plaintext highlighter-rouge">16.8</code>부터 새로 추가되었다. <code class="language-plaintext highlighter-rouge">Hook</code>을 이용해서 기존에는 <code class="language-plaintext highlighter-rouge">Class</code> 바탕의 코드 작성이었지만, 그럴 필요없이 함수형 컴포넌트에서도 사용할 수 있게 되었다.
+그 중에서도 <code class="language-plaintext highlighter-rouge">useState</code>라는 기초되는 기능을 정리하고자 한다.</p>
+:ET
