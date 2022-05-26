@@ -1,5 +1,0 @@
-I"�<p>MyBatis Like
-<code class="language-plaintext highlighter-rouge">api</code>를 만들면서 카테고리 검색이 필요해졌습니다. 페이징 처리할 때 사용했던 <code class="language-plaintext highlighter-rouge">like</code>구문이 막상 떠오르지 않아 시간을 버렸네요.
-기본 사용 형식
-기본적으로 <code class="language-plaintext highlighter-rouge">LIKE</code>는 아래와 같이 3가지 형식을 사용합니다.</p>
-:ET

@@ -8,7 +8,7 @@ image: assets/images/post/covers/TIL-react.png
 tags: [react, basic, til]
 description: "useState Hook
 
-`useState`훅은 `React` 버전 `16.8`부터 새로 추가되었다. `Hook`을 이용해서 기존에는 `Class` 바탕의 코드 작성이었지만, 그럴 필요없이 함수형 컴포넌트에서도 사용할 수 있게 되었다.
+`useState`훅은 `React` 버전 `16.8`부터 새로2022-05-26 22:29:01추가되었다. `Hook`을 이용해서 기존에는 `Class` 바탕의 코드 작성이었지만, 그럴 필요없이 함수형 컴포넌트에서도 사용할 수 있게 되었다.
 
 그 중에서도 `useState`라는 기초되는 기능을 정리하고자 한다."
 featured: true

@@ -1,5 +1,0 @@
-I"�<p>Tiles 파일 못 찾을 때
-저와 같은 상황이시라면 도움이 되시기를 바랍니다&#8230; 상황은 이렇습니다.
-분명 <code class="language-plaintext highlighter-rouge">inc</code>라는 폴더에 <code class="language-plaintext highlighter-rouge">layout.jsp</code>를 <code class="language-plaintext highlighter-rouge">template</code>으로 불러오고 <code class="language-plaintext highlighter-rouge">body</code>라는 이름으로 <code class="language-plaintext highlighter-rouge">Controller</code>에서 <code class="language-plaintext highlighter-rouge">root.*</code>로 요청되는 페이지를 <code class="language-plaintext highlighter-rouge">{1}</code>에 매핑하여 불러올 때
-분명히 <code class="language-plaintext highlighter-rouge">inc</code>폴더에 헤더나 푸터 파일을 생성하고 불러오면 안되는 현상이 발생했습니다.</p>
-:ET
