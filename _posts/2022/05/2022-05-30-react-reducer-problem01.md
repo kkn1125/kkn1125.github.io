@@ -1,11 +1,11 @@
 ---
 layout: post
-date: 2022-05-13 10:34:26 +0900
+date: 2022-05-30 01:56:12 +0900
 title: "[REACT] reducer 두 번 실행 문제"
 author: Kimson
 categories: [react]
 image: assets/images/post/covers/TIL-react.png
-tags: [react, basic, til]
+tags: [react, basic, til, error]
 description: "
 문제 상황
 
