@@ -1,0 +1,373 @@
+I"�`<h1 id="문제-상황">문제 상황</h1>
+
+<p>문제상황은 이렇다.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+</pre></td><td class="rouge-code"><pre><span class="c1">// ProblemContext.js</span>
+
+<span class="c1">// ...</span>
+
+<span class="c1">// state의 형태</span>
+<span class="kd">const</span> <span class="nx">stateList</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="p">{</span>
+    <span class="c1">// task</span>
+    <span class="na">id</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="na">tasks</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+        <span class="na">content</span><span class="p">:</span> <span class="dl">"</span><span class="s2">test</span><span class="dl">"</span><span class="p">,</span>
+        <span class="na">done</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+        <span class="na">content</span><span class="p">:</span> <span class="dl">"</span><span class="s2">test</span><span class="dl">"</span><span class="p">,</span>
+        <span class="na">done</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="p">},</span>
+    <span class="p">],</span>
+    <span class="na">date</span><span class="p">:</span> <span class="nx">format</span><span class="p">(</span><span class="k">new</span> <span class="nb">Date</span><span class="p">(),</span> <span class="dl">"</span><span class="s2">yyyy-MM-dd</span><span class="dl">"</span><span class="p">,</span> <span class="kc">true</span><span class="p">),</span>
+  <span class="p">},</span>
+  <span class="c1">// ...other tasks</span>
+<span class="p">];</span>
+
+<span class="c1">// reducer 형태</span>
+<span class="kd">const</span> <span class="nx">GraphReducer</span> <span class="o">=</span> <span class="p">(</span><span class="nx">state</span><span class="p">,</span> <span class="nx">action</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">switch</span> <span class="p">(</span><span class="nx">action</span><span class="p">.</span><span class="nx">type</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">case</span> <span class="dl">"</span><span class="s2">CREATE</span><span class="dl">"</span><span class="p">:</span>
+      <span class="c1">// action. date/task</span>
+      <span class="k">return</span> <span class="nx">state</span><span class="p">.</span><span class="nx">concat</span><span class="p">({</span>
+        <span class="na">id</span><span class="p">:</span> <span class="nx">action</span><span class="p">.</span><span class="nx">id</span><span class="p">,</span>
+        <span class="na">tasks</span><span class="p">:</span> <span class="p">[</span><span class="nx">action</span><span class="p">.</span><span class="nx">task</span><span class="p">],</span>
+        <span class="na">date</span><span class="p">:</span> <span class="nx">action</span><span class="p">.</span><span class="nx">date</span><span class="p">,</span>
+      <span class="p">});</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="c1">// ...</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>위 코드와 같이 <code class="language-plaintext highlighter-rouge">state</code>의 형태가 배열 내에 객체가 있고, 객체 내에 배열이 있다. 문제는 깊이 있는 배열은 최초 생성 시 배열에 담겨 새로운 <code class="language-plaintext highlighter-rouge">task</code>가 생성되어야 하고, 같은 날짜에 내용을 등록한다면 해당 날짜의 <code class="language-plaintext highlighter-rouge">tasks</code>에 <code class="language-plaintext highlighter-rouge">task</code>가 배열에 추가되어 업데이트 되야하는 상황이다.</p>
+
+<ol>
+  <li><code class="language-plaintext highlighter-rouge">state</code>는 각 <code class="language-plaintext highlighter-rouge">task</code>를 담는다.</li>
+  <li><code class="language-plaintext highlighter-rouge">task</code>의 객체 구조는 <code class="language-plaintext highlighter-rouge">id</code>, <code class="language-plaintext highlighter-rouge">tasks</code>, <code class="language-plaintext highlighter-rouge">date</code> 속성을 갖는다.</li>
+  <li><code class="language-plaintext highlighter-rouge">tasks</code>의 배열은 <code class="language-plaintext highlighter-rouge">content</code>, <code class="language-plaintext highlighter-rouge">done</code> 속성을 갖는 객체를 담는다.</li>
+  <li><code class="language-plaintext highlighter-rouge">tasks</code>는 해당 날짜 최초 등록 시 [task]이고, 그 뒤로 같은 날짜는 <code class="language-plaintext highlighter-rouge">tasks</code>에 [객체, 객체, 객체 [, &#8230;]] 형식으로 내부 배열에서 추가되어야 한다.</li>
+</ol>
+
+<p>새로운 날짜에 <code class="language-plaintext highlighter-rouge">tasks</code>를 추가하는 것은 쉽지만, 내부 배열에 <code class="language-plaintext highlighter-rouge">tasks</code>를 추가하는 작업에서 갑자기 <code class="language-plaintext highlighter-rouge">reducer</code>가 <strong>두 번 실행</strong>되어 값이 두 개씩 들어가는 현상이 발생했다.</p>
+
+<h2 id="문제-원인">문제 원인</h2>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+</pre></td><td class="rouge-code"><pre><span class="kd">const</span> <span class="nx">GraphReducer</span> <span class="o">=</span> <span class="p">(</span><span class="nx">state</span><span class="p">,</span> <span class="nx">action</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">switch</span> <span class="p">(</span><span class="nx">action</span><span class="p">.</span><span class="nx">type</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">case</span> <span class="dl">"</span><span class="s2">CREATE</span><span class="dl">"</span><span class="p">:</span>
+      <span class="c1">// action. date/task</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">state</span><span class="p">.</span><span class="nx">some</span><span class="p">((</span><span class="nx">item</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">item</span><span class="p">.</span><span class="nx">date</span> <span class="o">===</span> <span class="nx">action</span><span class="p">.</span><span class="nx">date</span><span class="p">))</span> <span class="p">{</span>
+        <span class="c1">// 두 번 실행</span>
+        <span class="k">return</span> <span class="nx">state</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">item</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+          <span class="k">if</span> <span class="p">(</span><span class="nx">item</span><span class="p">.</span><span class="nx">date</span> <span class="o">===</span> <span class="nx">action</span><span class="p">.</span><span class="nx">date</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">item</span><span class="p">.</span><span class="nx">tasks</span> <span class="o">=</span> <span class="nx">item</span><span class="p">.</span><span class="nx">tasks</span><span class="p">.</span><span class="nx">concat</span><span class="p">({</span>
+              <span class="na">content</span><span class="p">:</span> <span class="nx">action</span><span class="p">.</span><span class="nx">content</span><span class="p">,</span>
+              <span class="na">done</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="p">});</span>
+            <span class="k">return</span> <span class="nx">item</span><span class="p">;</span>
+          <span class="p">}</span>
+          <span class="k">return</span> <span class="nx">item</span><span class="p">;</span>
+        <span class="p">});</span>
+      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">state</span><span class="p">.</span><span class="nx">concat</span><span class="p">({</span>
+          <span class="na">id</span><span class="p">:</span> <span class="nx">action</span><span class="p">.</span><span class="nx">id</span><span class="p">,</span>
+          <span class="na">tasks</span><span class="p">:</span> <span class="p">[</span><span class="nx">action</span><span class="p">.</span><span class="nx">task</span><span class="p">],</span>
+          <span class="na">date</span><span class="p">:</span> <span class="nx">action</span><span class="p">.</span><span class="nx">date</span><span class="p">,</span>
+        <span class="p">});</span>
+      <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>초기에 짰던 코드이다. 분명 이벤트에서 <code class="language-plaintext highlighter-rouge">dispatch</code>를 실행 할 때는 한 번 호출되는데 왜 값이 두 번이 들어갈까?</p>
+
+<p>디버깅을 해보니 <code class="language-plaintext highlighter-rouge">GraphReducer</code>가 호출되고 <code class="language-plaintext highlighter-rouge">return</code>을 거치는데, <code class="language-plaintext highlighter-rouge">state</code>가 중간에 업데이트가 되면서 <code class="language-plaintext highlighter-rouge">reducer</code>를 한 번 더 호출하게 되고 있었다.</p>
+
+<p>자세한 원인은 아래 코드 부분이다.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+</pre></td><td class="rouge-code"><pre><span class="kd">const</span> <span class="nx">GraphReducer</span> <span class="o">=</span> <span class="p">(</span><span class="nx">state</span><span class="p">,</span> <span class="nx">action</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">switch</span> <span class="p">(</span><span class="nx">action</span><span class="p">.</span><span class="nx">type</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">case</span> <span class="dl">"</span><span class="s2">CREATE</span><span class="dl">"</span><span class="p">:</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">state</span><span class="p">.</span><span class="nx">some</span><span class="p">((</span><span class="nx">item</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">item</span><span class="p">.</span><span class="nx">date</span> <span class="o">===</span> <span class="nx">action</span><span class="p">.</span><span class="nx">date</span><span class="p">))</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">state</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">item</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+          <span class="k">if</span> <span class="p">(</span><span class="nx">item</span><span class="p">.</span><span class="nx">date</span> <span class="o">===</span> <span class="nx">action</span><span class="p">.</span><span class="nx">date</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">item</span><span class="p">.</span><span class="nx">tasks</span> <span class="o">=</span> <span class="nx">item</span><span class="p">.</span><span class="nx">tasks</span><span class="p">.</span><span class="nx">concat</span><span class="p">({</span>
+              <span class="c1">// 여기!!!</span>
+              <span class="na">content</span><span class="p">:</span> <span class="nx">action</span><span class="p">.</span><span class="nx">content</span><span class="p">,</span>
+              <span class="na">done</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="p">});</span>
+            <span class="k">return</span> <span class="nx">item</span><span class="p">;</span>
+          <span class="p">}</span>
+          <span class="k">return</span> <span class="nx">item</span><span class="p">;</span>
+        <span class="p">});</span>
+      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">state</span><span class="p">.</span><span class="nx">concat</span><span class="p">({</span>
+          <span class="na">id</span><span class="p">:</span> <span class="nx">action</span><span class="p">.</span><span class="nx">id</span><span class="p">,</span>
+          <span class="na">tasks</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+              <span class="na">content</span><span class="p">:</span> <span class="nx">action</span><span class="p">.</span><span class="nx">content</span><span class="p">,</span>
+              <span class="na">done</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="p">},</span>
+          <span class="p">],</span>
+          <span class="na">date</span><span class="p">:</span> <span class="nx">action</span><span class="p">.</span><span class="nx">date</span><span class="p">,</span>
+        <span class="p">});</span>
+      <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">concat</code> 또한 새로운 배열일텐데 왜 업데이트 되었다고 인식을 할까? 정확한 원리는 아직 모르지만 값일 직접 할당하고 있는 부분이 문제의 부분이었다.</p>
+
+<p>속성에 직접 값을 지정하고 있기 때문에 <code class="language-plaintext highlighter-rouge">reducer</code>가 변화를 감지하고 다시 실행되는 것으로 판단된다. 다른 사람들은 <code class="language-plaintext highlighter-rouge">react.strictmode</code> 때문이라고 하는 사람들이 있지만 내 코드에서의 문제는 <code class="language-plaintext highlighter-rouge">concat</code>한 데이터를 직접 정하는 부분의 문제라고 확신한다.</p>
+
+<p>그래서 코드를 조금 변경해봤다.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+</pre></td><td class="rouge-code"><pre><span class="kd">const</span> <span class="nx">GraphReducer</span> <span class="o">=</span> <span class="p">(</span><span class="nx">state</span><span class="p">,</span> <span class="nx">action</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">switch</span> <span class="p">(</span><span class="nx">action</span><span class="p">.</span><span class="nx">type</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">case</span> <span class="dl">"</span><span class="s2">CREATE</span><span class="dl">"</span><span class="p">:</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">state</span><span class="p">.</span><span class="nx">some</span><span class="p">((</span><span class="nx">item</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">item</span><span class="p">.</span><span class="nx">date</span> <span class="o">===</span> <span class="nx">action</span><span class="p">.</span><span class="nx">date</span><span class="p">))</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">state</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">item</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+          <span class="k">if</span> <span class="p">(</span><span class="nx">item</span><span class="p">.</span><span class="nx">date</span> <span class="o">===</span> <span class="nx">action</span><span class="p">.</span><span class="nx">date</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="p">{</span>
+              <span class="c1">// 변경</span>
+              <span class="p">...</span><span class="nx">item</span><span class="p">,</span>
+              <span class="na">tasks</span><span class="p">:</span> <span class="nx">item</span><span class="p">.</span><span class="nx">tasks</span><span class="p">.</span><span class="nx">concat</span><span class="p">({</span>
+                <span class="na">content</span><span class="p">:</span> <span class="nx">action</span><span class="p">.</span><span class="nx">content</span><span class="p">,</span>
+                <span class="na">done</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+              <span class="p">}),</span>
+            <span class="p">};</span>
+          <span class="p">}</span>
+          <span class="k">return</span> <span class="nx">item</span><span class="p">;</span>
+        <span class="p">});</span>
+      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">state</span><span class="p">.</span><span class="nx">concat</span><span class="p">({</span>
+          <span class="na">id</span><span class="p">:</span> <span class="nx">action</span><span class="p">.</span><span class="nx">id</span><span class="p">,</span>
+          <span class="na">tasks</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+              <span class="na">content</span><span class="p">:</span> <span class="nx">action</span><span class="p">.</span><span class="nx">content</span><span class="p">,</span>
+              <span class="na">done</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="p">},</span>
+          <span class="p">],</span>
+          <span class="na">date</span><span class="p">:</span> <span class="nx">action</span><span class="p">.</span><span class="nx">date</span><span class="p">,</span>
+        <span class="p">});</span>
+      <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="c1">// 더 다듬으면 아래와 같다.</span>
+<span class="kd">const</span> <span class="nx">GraphReducer</span> <span class="o">=</span> <span class="p">(</span><span class="nx">state</span><span class="p">,</span> <span class="nx">action</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">switch</span> <span class="p">(</span><span class="nx">action</span><span class="p">.</span><span class="nx">type</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">case</span> <span class="dl">"</span><span class="s2">CREATE</span><span class="dl">"</span><span class="p">:</span>
+      <span class="k">return</span> <span class="nx">date</span> <span class="o">===</span> <span class="o">-</span><span class="mi">1</span>
+        <span class="p">?</span> <span class="nx">state</span><span class="p">.</span><span class="nx">concat</span><span class="p">({</span>
+            <span class="na">id</span><span class="p">:</span> <span class="nx">action</span><span class="p">.</span><span class="nx">id</span><span class="p">,</span>
+            <span class="na">tasks</span><span class="p">:</span> <span class="p">[</span>
+              <span class="p">{</span>
+                <span class="na">content</span><span class="p">:</span> <span class="nx">action</span><span class="p">.</span><span class="nx">content</span><span class="p">,</span>
+                <span class="na">done</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+              <span class="p">},</span>
+            <span class="p">],</span>
+            <span class="na">date</span><span class="p">:</span> <span class="nx">action</span><span class="p">.</span><span class="nx">date</span><span class="p">,</span>
+          <span class="p">})</span>
+        <span class="p">:</span> <span class="nx">state</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">item</span><span class="p">)</span> <span class="o">=&gt;</span>
+            <span class="nx">item</span><span class="p">.</span><span class="nx">date</span> <span class="o">===</span> <span class="nx">action</span><span class="p">.</span><span class="nx">date</span>
+              <span class="p">?</span> <span class="p">{</span>
+                  <span class="p">...</span><span class="nx">item</span><span class="p">,</span>
+                  <span class="na">tasks</span><span class="p">:</span> <span class="nx">item</span><span class="p">.</span><span class="nx">tasks</span><span class="p">.</span><span class="nx">concat</span><span class="p">({</span>
+                    <span class="na">content</span><span class="p">:</span> <span class="nx">action</span><span class="p">.</span><span class="nx">content</span><span class="p">,</span>
+                    <span class="na">done</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                  <span class="p">}),</span>
+                  <span class="c1">// or</span>
+                  <span class="na">tasks</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="p">...</span><span class="nx">item</span><span class="p">.</span><span class="nx">tasks</span><span class="p">,</span>
+                    <span class="p">{</span>
+                      <span class="na">content</span><span class="p">:</span> <span class="nx">action</span><span class="p">.</span><span class="nx">content</span><span class="p">,</span>
+                      <span class="na">done</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                    <span class="p">},</span>
+                  <span class="p">],</span>
+                <span class="p">}</span>
+              <span class="p">:</span> <span class="nx">item</span>
+          <span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h2 id="정리">정리</h2>
+
+<p>이 문제로 알 수 있는 점은 불변성을 지켜지 않은데서 오는 사이드이펙트라 생각한다. <code class="language-plaintext highlighter-rouge">dot notation</code>을 이미 한 번 탄 속성을 직접 수정하는 것 또한 사이드이펙트가 발생할 수 있다는 것이다.</p>
+
+<p>객체나 배열의 데이터를 추가, 수정, 삭제 할 때는 항상 새로운 객체/배열을 반환 시켜줘야한다. <code class="language-plaintext highlighter-rouge">=(equal)</code> 기호를 써서 직접 값을 지정하는 경우는 사이드이펙트가 발생한다. 불변성을 지켜가면서 작성해야 상태관리가 용이하고, 사이드이펙트를 방지할 수 있다.</p>
+
+<hr />
+
+<p>📚 함께 보면 좋은 내용</p>
+
+<p><a href="https://github.com/facebook/react/blob/42f15b324f50d0fd98322c21646ac3013e30344a/packages/react-dom/src/server/ReactPartialRendererHooks.js#L269" target="\_blank">React::Github repository</a></p>
+
+<p><a href="https://stackoverflow.com/questions/54892403/usereducer-action-dispatched-twice" target="\_blank">Stackoverflow::useReducer Action dispatched twice</a></p>
+
+<p><a href="https://hsp0418.tistory.com/171" target="\_blank">꿀로그님 블로그::리액트 불변성이란 무엇이고, 왜 지켜야 할까?</a></p>
+:ET
