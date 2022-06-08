@@ -59,7 +59,7 @@ pre.highlight::-webkit-scrollbar-thumb{
 }
 
 img{
-	object-fit: cover;
+	object-fit: fill;
 }
 
 .latestImgs{
