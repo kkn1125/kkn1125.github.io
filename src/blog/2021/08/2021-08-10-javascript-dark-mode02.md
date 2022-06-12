@@ -7,7 +7,7 @@ title:  "[JAVASCRIPT] 정적웹에 다크모드 적용하기 02"
 author: Kimson
 categories: [ javascript ]
 tags: [ darkmode, til ]
-image: assets/images/post/covers/TIL-javascript.png
+image: /images/post/covers/TIL-javascript.png
 description: "다크모드의 적용 시기
 
 다크모드를 구현하고 쓰다가 느낀 점이 있습니다. 페이지가 리로드되거나 redirect할 때마다 .dark클래스가 늦게 적용되어 하얀 화면이 나왔다가 다크모드로 전환되는 현상이 발생한 것입니다.
@@ -87,12 +87,12 @@ load를 쓰게 되면 찰나의 간극이 다시 생기게 되었습니다. 조�
 
 > 참고 사이트
 
-[Detect document ready in pure JS](https://www.jstips.co/en/javascript/detect-document-ready-in-pure-js/){:target="_blank"}
+[Detect document ready in pure JS](https://www.jstips.co/en/javascript/detect-document-ready-in-pure-js/)
 
-[자바스크립트 실행 순서](https://doitnow-man.tistory.com/128){:target="_blank"}
+[자바스크립트 실행 순서](https://doitnow-man.tistory.com/128)
 
-[브라우저 렌더링](https://12bme.tistory.com/140){:target="_blank"}
+[브라우저 렌더링](https://12bme.tistory.com/140)
 
-[Rendering time in a browser](https://stackoverflow.com/questions/2516665/how-can-i-monitor-the-rendering-time-in-a-browser){:target="_blank"}
+[Rendering time in a browser](https://stackoverflow.com/questions/2516665/how-can-i-monitor-the-rendering-time-in-a-browser)
 
-[quickest way to add a css class to the body of the DOM](https://stackoverflow.com/questions/17457583/safe-and-quickest-way-to-add-a-css-class-to-the-body-of-the-dom){:target="_blank"}
+[quickest way to add a css class to the body of the DOM](https://stackoverflow.com/questions/17457583/safe-and-quickest-way-to-add-a-css-class-to-the-body-of-the-dom)

@@ -5,7 +5,7 @@ date:   2022-03-28 17:07:32 +0900
 title:  "[DJANGO] User Authentication 사용하기 01"
 author: Kimson
 categories: [ django ]
-image: assets/images/post/covers/TIL-django.png
+image: /images/post/covers/TIL-django.png
 tags: [ authentication, til ]
 description: "기본 Authentication 사용
 Used
@@ -406,24 +406,24 @@ def unsign(request):
 
 📚 함께 보면 좋은 내용
 
-[programcreek :: Python django.contrib.auth.forms.AuthenticationForm() Examples](https://www.programcreek.com/python/example/64448/django.contrib.auth.forms.AuthenticationForm){:target="_blank"}
+[programcreek :: Python django.contrib.auth.forms.AuthenticationForm() Examples](https://www.programcreek.com/python/example/64448/django.contrib.auth.forms.AuthenticationForm)
 
-[리뷰나라 :: [postgresql] PostgreSQL“DESCRIBE TABLE”](http://daplus.net/postgresql-postgresqldescribe-table/){:target="_blank"}
+[리뷰나라 :: [postgresql] PostgreSQL“DESCRIBE TABLE”](http://daplus.net/postgresql-postgresqldescribe-table/)
 
-[Stackoverflow :: Manager isn't available; User has been swapped for 'pet.Person'](https://stackoverflow.com/questions/17873855/manager-isnt-available-user-has-been-swapped-for-pet-person){:target="_blank"}
+[Stackoverflow :: Manager isn't available; User has been swapped for 'pet.Person'](https://stackoverflow.com/questions/17873855/manager-isnt-available-user-has-been-swapped-for-pet-person)
 
-[Stackoverflow :: Django - Login with Email](https://stackoverflow.com/questions/37332190/django-login-with-email){:target="_blank"}
+[Stackoverflow :: Django - Login with Email](https://stackoverflow.com/questions/37332190/django-login-with-email)
 
-[rahmanfadhil :: Enable Login with Email in Django](https://rahmanfadhil.com/django-login-with-email/){:target="_blank"}
+[rahmanfadhil :: Enable Login with Email in Django](https://rahmanfadhil.com/django-login-with-email/)
 
-[wkdgus7113님 :: Django UserModel 확장 (feat. AbstractUser)](https://velog.io/@wkdgus7113/Django-UserModel-%ED%99%95%EC%9E%A5-feat.-AbstractUser){:target="_blank"}
+[wkdgus7113님 :: Django UserModel 확장 (feat. AbstractUser)](https://velog.io/@wkdgus7113/Django-UserModel-%ED%99%95%EC%9E%A5-feat.-AbstractUser)
 
-[초보몽키님 :: django 04. 장고 개인 프로젝트 2 - 인증 (회원가입, 로그인)](https://wayhome25.github.io/django/2017/03/01/django-99-my-first-project-2/){:target="_blank"}
+[초보몽키님 :: django 04. 장고 개인 프로젝트 2 - 인증 (회원가입, 로그인)](https://wayhome25.github.io/django/2017/03/01/django-99-my-first-project-2/)
 
-[jiffydev님 :: Django 6. 기본 개념 5(회원가입, 로그인 인증)](https://velog.io/@jiffydev/Django-6.-%EA%B8%B0%EB%B3%B8-%EA%B0%9C%EB%85%90-5%ED%9A%8C%EC%9B%90%EA%B0%80%EC%9E%85-%EB%A1%9C%EA%B7%B8%EC%9D%B8-%EC%9D%B8%EC%A6%9D){:target="_blank"}
+[jiffydev님 :: Django 6. 기본 개념 5(회원가입, 로그인 인증)](https://velog.io/@jiffydev/Django-6.-%EA%B8%B0%EB%B3%B8-%EA%B0%9C%EB%85%90-5%ED%9A%8C%EC%9B%90%EA%B0%80%EC%9E%85-%EB%A1%9C%EA%B7%B8%EC%9D%B8-%EC%9D%B8%EC%A6%9D)
 
-[해리님 :: Django 15 - 사용자 인증(회원가입/로그인/로그아웃)](https://tothefullest08.github.io/django/2019/06/03/Django15_accounts1/){:target="_blank"}
+[해리님 :: Django 15 - 사용자 인증(회원가입/로그인/로그아웃)](https://tothefullest08.github.io/django/2019/06/03/Django15_accounts1/)
 
-[Yurim Jin님 :: Django 15 - [Django] User 모델 email을 기본으로 하기& 썸네일 추가하기](https://milooy.wordpress.com/2016/02/18/extend-django-user-model/){:target="_blank"}
+[Yurim Jin님 :: Django 15 - [Django] User 모델 email을 기본으로 하기& 썸네일 추가하기](https://milooy.wordpress.com/2016/02/18/extend-django-user-model/)
 
-[테리는당근을좋아해님 :: [Django] 회원가입 기능 만들기](https://dheldh77.tistory.com/entry/Django-%ED%9A%8C%EC%9B%90%EA%B0%80%EC%9E%85-%EA%B8%B0%EB%8A%A5-%EB%A7%8C%EB%93%A4%EA%B8%B0){:target="_blank"}
+[테리는당근을좋아해님 :: [Django] 회원가입 기능 만들기](https://dheldh77.tistory.com/entry/Django-%ED%9A%8C%EC%9B%90%EA%B0%80%EC%9E%85-%EA%B8%B0%EB%8A%A5-%EB%A7%8C%EB%93%A4%EA%B8%B0)

@@ -7,7 +7,7 @@ title:  "[SPRINGBOOT] 에러노트 - mybatis syntax error"
 author: Kimson
 categories: [ spring boot ]
 tags: [ mybatis, error, note, til ]
-image: assets/images/post/covers/TIL-spring.png
+image: /images/post/covers/TIL-spring.png
 description: "에러노트 - MyBatis Syntax Error
 
 폰트 사이즈를 작게 해서 넓게 보려는 습관 때문에 자주 에러와 만납니다.

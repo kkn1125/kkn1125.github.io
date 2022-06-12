@@ -6,7 +6,7 @@ date:   2021-10-01 20:30:32 +0900
 title:  "[JAVASCRIPT] Documentify ( 문서화 ) 구현"
 author: Kimson
 categories: [ javascript ]
-image: assets/images/post/covers/TIM-none.png
+image: /images/post/covers/TIM-none.png
 tags: [ document, generator, documentify, til, tim ]
 description: "Documentify
 
@@ -113,4 +113,4 @@ const DataNode = function (n, v, i) {
 
 -----
 
-[mkDocumentifyJS :: devkimson](https://github.com/kkn1125/mkDocumentifyJS){:target="_blank"}
+[mkDocumentifyJS :: devkimson](https://github.com/kkn1125/mkDocumentifyJS)

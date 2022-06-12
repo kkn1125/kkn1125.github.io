@@ -6,7 +6,7 @@ date:   2021-12-30 16:09:54 +0900
 title:  "[JAVASCRIPT] 소수(Prime Number) 찾기"
 author: Kimson
 categories: [ javascript ]
-image: assets/images/post/covers/TIL-javascript.png
+image: /images/post/covers/TIL-javascript.png
 tags: [ prime number, combination, programmers ]
 description: "소수 찾기 문제
 
@@ -101,8 +101,8 @@ function combination(nums){
 
 📚 함께 보면 좋은 내용
 
-[Wikipedia::소수 (수론)](https://ko.wikipedia.org/wiki/%EC%86%8C%EC%88%98_(%EC%88%98%EB%A1%A0)){:target="_blank"}
+[Wikipedia::소수 (수론)](https://ko.wikipedia.org/wiki/%EC%86%8C%EC%88%98_(%EC%88%98%EB%A1%A0))
 
-[programiz::JavaScript Program to Check Prime Number](https://www.programiz.com/javascript/examples/prime-number){:target="_blank"}
+[programiz::JavaScript Program to Check Prime Number](https://www.programiz.com/javascript/examples/prime-number)
 
-[mathbang::소수와 합성수, 소수의 뜻, 합성수의 뜻](https://mathbang.net/199){:target="_blank"}
+[mathbang::소수와 합성수, 소수의 뜻, 합성수의 뜻](https://mathbang.net/199)

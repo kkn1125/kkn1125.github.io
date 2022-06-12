@@ -6,7 +6,7 @@ date:   2022-01-24 11:50:37 +0900
 title:  "[VUE] 비동기 데이터 프로퍼티 null값 처리하기"
 author: Kimson
 categories: [ vue ]
-image: assets/images/post/covers/TIL-vue.png
+image: /images/post/covers/TIL-vue.png
 tags: [ async, axios, 'null', til ]
 description: "비동기 데이터
 

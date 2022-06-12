@@ -1,13 +1,17 @@
+import { Container, Typography } from "@mui/material";
+import { Link } from "gatsby";
 import React from "react";
 
 function About() {
   return (
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur
-      repellendus optio incidunt quasi aperiam! Praesentium minus assumenda
-      fugiat illo natus, laboriosam autem, eos aperiam libero architecto
-      molestias. Similique, omnis at?
-    </p>
+    <Container>
+      <Typography variant='h3'>About</Typography>
+      <Typography variant='body1'>
+        Gatsby로 만든 블로그입니다. 2일동안 mui로 개발해서 많이 조잡하고, 블로그
+        이전 작업이 아직 미비하므로 양해바랍니다 🙇‍♂️
+      </Typography>
+      <Link to='https://github.com/kkn1125'>Github</Link>
+    </Container>
   );
 }
 

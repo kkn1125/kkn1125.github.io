@@ -1,4 +1,5 @@
 import { Avatar, Divider, Stack, Typography } from "@mui/material";
+import { Link } from "gatsby";
 import React from "react";
 
 function BlogCardInfo({ data, noavatar }) {
@@ -6,7 +7,7 @@ function BlogCardInfo({ data, noavatar }) {
     <Stack direction='row' alignItems='center'>
       {!noavatar && (
         <Avatar
-          alt='Cindy Baker'
+          alt='avatar'
           src='https://avatars.githubusercontent.com/u/71887242?v=4'
           sx={{
             width: 32,
@@ -15,7 +16,14 @@ function BlogCardInfo({ data, noavatar }) {
           }}
         />
       )}
-      <Typography component='div' color='GrayText' variant='caption'>
+      <Typography
+        component={Link}
+        to='https://github.com/kkn1125'
+        color='GrayText'
+        variant='caption'
+        sx={{
+          textDecoration: "none",
+        }}>
         {data.author}
       </Typography>
       <Divider

@@ -7,7 +7,7 @@ title:  "[SPRINGBOOT] header referer EL로 가져오기"
 author: Kimson
 categories: [ spring boot ]
 tags: [ el, header, referer, til ]
-image: assets/images/post/covers/TIL-spring.png
+image: /images/post/covers/TIL-spring.png
 description: "EL(Expression Language)
 
 EL에 대해서 사용하면서 header의 referer가 필요한 상황이 생겼습니다. 물론 getHeader메서드로 불러오는 방법도 있지만 굳이 변수에 담아서 하기에 번거로워질 것 같아 EL을 요즘 자주 쓰고 있습니다."
@@ -60,4 +60,4 @@ EL에 대해서 사용하면서 header의 referer가 필요한 상황이 생겼�
 
 아래에 참고한 사이트를 링크하였습니다. 참고 바랍니다.
 
-[JSP EL에 관한 참고 자료](https://www.tutorialspoint.com/jsp/jsp_expression_language.htm){:target="_blank"}
+[JSP EL에 관한 참고 자료](https://www.tutorialspoint.com/jsp/jsp_expression_language.htm)

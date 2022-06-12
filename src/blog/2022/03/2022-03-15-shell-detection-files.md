@@ -5,7 +5,7 @@ date:   2022-03-15 21:17:09 +0900
 title:  "[SHELL] Shell Script로 파일 변환을 감지해보자 02"
 author: Kimson
 categories: [ shell ]
-image: assets/images/post/covers/TIL-shell.png
+image: /images/post/covers/TIL-shell.png
 tags: [ detection file, til ]
 description: "경로 내 파일 변경 감지
 문자 개행, 문자열 split, 배열 인덱스 번호, 특정 문자 포함 여부 등의 자료는 포스팅 하단에 링크로 첨부해두었습니다.
@@ -31,7 +31,7 @@ published: true
 
 조금 더 변하게 알아서 변경된 파일에 대해서만 다시 실행해주는 편이 더 편하고 효율적이겠다 싶어 수정을 했습니다.
 
-해당 코드는 [여기](https://github.com/kkn1125/file-detection){:target="_blank"}를 참조하시면 되겠습니다.
+해당 코드는 [여기](https://github.com/kkn1125/file-detection)를 참조하시면 되겠습니다.
 
 ## 변경된 파일 이름 가져오기
 
@@ -84,12 +84,12 @@ done
 
 📚 함께 보면 좋은 내용
 
-[devhints.io :: Bash scripting cheetsheet](https://devhints.io/bash){:target="_blank"}
+[devhints.io :: Bash scripting cheetsheet](https://devhints.io/bash)
 
-[Stackoverflow :: How to check if a string contains a substring in Bash](https://stackoverflow.com/questions/229551/how-to-check-if-a-string-contains-a-substring-in-bash){:target="_blank"}
+[Stackoverflow :: How to check if a string contains a substring in Bash](https://stackoverflow.com/questions/229551/how-to-check-if-a-string-contains-a-substring-in-bash)
 
-[Stackoverflow :: Get the index of a value in a Bash array](https://stackoverflow.com/questions/15028567/get-the-index-of-a-value-in-a-bash-array){:target="_blank"}
+[Stackoverflow :: Get the index of a value in a Bash array](https://stackoverflow.com/questions/15028567/get-the-index-of-a-value-in-a-bash-array)
 
-[WEBTERROR님 :: BASH에서 SPLIT 활용하는 방법](https://stackoverflow.com/questions/15028567/get-the-index-of-a-value-in-a-bash-array){:target="_blank"}
+[WEBTERROR님 :: BASH에서 SPLIT 활용하는 방법](https://stackoverflow.com/questions/15028567/get-the-index-of-a-value-in-a-bash-array)
 
-[lesstif님 :: echo 명령어로 줄바꿈(개행) 문자 입력](https://www.lesstif.com/lpt/echo-19857474.html){:target="_blank"}
+[lesstif님 :: echo 명령어로 줄바꿈(개행) 문자 입력](https://www.lesstif.com/lpt/echo-19857474.html)

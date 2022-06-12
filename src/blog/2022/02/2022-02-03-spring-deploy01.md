@@ -6,7 +6,7 @@ date:   2022-02-03 13:05:22 +0900
 title:  "[SPRING] Spring MVC 프로젝트 Heroku 배포 시 404 에러 기록"
 author: Kimson
 categories: [ spring ]
-image: assets/images/post/covers/TIL-spring.png
+image: /images/post/covers/TIL-spring.png
 tags: [ heroku, spring mvc, deploy, til ]
 description: "Heroku war deploy
 

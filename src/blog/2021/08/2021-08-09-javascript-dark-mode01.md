@@ -7,7 +7,7 @@ title:  "[JAVASCRIPT] 정적웹에 다크모드 적용하기 01"
 author: Kimson
 categories: [ javascript ]
 tags: [ darkmode, til ]
-image: assets/images/post/covers/TIL-javascript.png
+image: /images/post/covers/TIL-javascript.png
 description: "다크모드
 
 사용자 인터페이스에서 밝고 검은 글자 대신 어둡고 흰 글자를 나타내는 테마
@@ -44,7 +44,7 @@ published: true
 
 여러 사이트 둘러볼 것 없이 네이버에서 찾을 수 있었습니다. 쿠키를 설정하는 방법과 localStorage를 설정하는 방법이었는데요, 여러 문서를 보다가 아주 잘 정리한 글을 덤으로 찾기도 했습니다.
 
-쿠키에 대해 잘 모르시는 분들은 [[JAVA] Cookie에 관한 고찰](https://kkn1125.github.io/java-cookie/){:target="_blank"}을 읽어보시면 소정의 도움이 될 것 같습니다.
+쿠키에 대해 잘 모르시는 분들은 [[JAVA] Cookie에 관한 고찰](https://kkn1125.github.io/java-cookie/)을 읽어보시면 소정의 도움이 될 것 같습니다.
 
 ### 네이버의 쿠키 방식
 
@@ -81,7 +81,7 @@ published: true
 
 여기서 깃허브는 System.register라는 것을 사용해서 다크모드를 조정하는 듯 합니다. 이것이 무엇인지는 아직 잘 모르는 상황이라 간단하게 구현만 해보겠습니다.
 
-localStorage에 대한 지식이 아직 많이 없어 [MDN](https://developer.mozilla.org/ko/docs/Web/API/Window/localStorage){:target="_blank"}의 자료 설명을 빌리겠습니다.
+localStorage에 대한 지식이 아직 많이 없어 [MDN](https://developer.mozilla.org/ko/docs/Web/API/Window/localStorage)의 자료 설명을 빌리겠습니다.
 
 > Window.localStorage
 >
@@ -254,7 +254,7 @@ MDN의 정보대로면 페이지가 꺼지고도 값에 따라 모드가 유지�
 
 -----
 
-[localStorage 사용법 - DaleSeo님의 블로그](https://www.daleseo.com/js-web-storage/ 'localStorage 참고 사이트'){:target="_blank"}
+[localStorage 사용법 - DaleSeo님의 블로그](https://www.daleseo.com/js-web-storage/ 'localStorage 참고 사이트')
 
-[정적웹 Dark 모드 - josephk님의 블로그](https://www.josephk.io/review-dark-mode/ '정적웹 Dark 모드 참고 사이트'){:target="_blank"}
+[정적웹 Dark 모드 - josephk님의 블로그](https://www.josephk.io/review-dark-mode/ '정적웹 Dark 모드 참고 사이트')
 

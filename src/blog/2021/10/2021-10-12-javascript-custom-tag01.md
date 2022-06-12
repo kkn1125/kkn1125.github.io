@@ -6,7 +6,7 @@ date:   2021-10-12 17:23:12 +0900
 title:  "[JAVASCRIPT] HTML 커스텀 태그 만들어 사용하기"
 author: Kimson
 categories: [ javascript ]
-image: assets/images/post/covers/TIL-javascript.png
+image: /images/post/covers/TIL-javascript.png
 tags: [ custom, tag, til ]
 description: "Custom Tag
 

@@ -6,7 +6,7 @@ date:   2022-03-01 21:45:49 +0900
 title:  "[DJANGO] Django 서버를 만들자 01"
 author: Kimson
 categories: [ django ]
-image: assets/images/post/covers/TIL-django.png
+image: /images/post/covers/TIL-django.png
 tags: [ python, django, til ]
 description: "Django 서버 구축
 
@@ -220,10 +220,10 @@ def post_list(request):
 
 📚 함께 보면 좋은 내용
 
-[Django :: Documentation](https://docs.djangoproject.com/en/4.0/ref/templates/language/){:target="_blank"}
+[Django :: Documentation](https://docs.djangoproject.com/en/4.0/ref/templates/language/)
 
-[Django tutorial :: 장고 템플릿](https://tutorial.djangogirls.org/ko/django_templates/){:target="_blank"}
+[Django tutorial :: 장고 템플릿](https://tutorial.djangogirls.org/ko/django_templates/)
 
-[천사진수님 :: Django Template Does Not Exist](https://angel-jinsu.tistory.com/5){:target="_blank"}
+[천사진수님 :: Django Template Does Not Exist](https://angel-jinsu.tistory.com/5)
 
-[Tigercow.Door님 :: 장고(django) #3_ django에서 postgreSQL 사용하기](https://doorbw.tistory.com/183){:target="_blank"}
+[Tigercow.Door님 :: 장고(django) #3_ django에서 postgreSQL 사용하기](https://doorbw.tistory.com/183)

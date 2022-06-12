@@ -6,7 +6,7 @@ date:   2022-01-10 15:42:05 +0900
 title:  "[JAVASCRIPT] Solitaire를 만들어 보자 02"
 author: Kimson
 categories: [ javascript ]
-image: assets/images/post/solitaire/solitaire03.png
+image: /images/post/solitaire/solitaire03.png
 tags: [ game, solitaire, card, tim ]
 description: "솔리테어를 만들어 보자 2편
 
@@ -427,6 +427,6 @@ function View() {
 
 📚 함께 보면 좋은 내용
 
-[DevKimson::[JAVASCRIPT] Solitaire를 만들어 보자 01]({{site.baseurl}}/javascript-solitaire01){:target="_blank"}
+[DevKimson::[JAVASCRIPT] Solitaire를 만들어 보자 01]({{site.baseurl}}/javascript-solitaire01)
 
-[DevKimson::[JAVASCRIPT] Solitaire를 만들어 보자 03]({{site.baseurl}}/javascript-solitaire03){:target="_blank"}
+[DevKimson::[JAVASCRIPT] Solitaire를 만들어 보자 03]({{site.baseurl}}/javascript-solitaire03)

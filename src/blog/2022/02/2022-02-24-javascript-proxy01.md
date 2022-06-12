@@ -6,7 +6,7 @@ date:   2022-02-24 21:22:08 +0900
 title:  "[JAVASCRIPT] Proxy와 Reflect 맛보기 02 - Todo List를 만들어보자"
 author: Kimson
 categories: [ javascript ]
-image: assets/images/post/covers/TIL-javascript.png
+image: /images/post/covers/TIL-javascript.png
 tags: [ proxy, reflect, til ]
 description: "Todo List를 만들어 보자 Proxy를 통한 내용 자동 업데이트
 
@@ -217,4 +217,4 @@ input.addEventListener('keyup', (ev) => {
 
 📚 함께 보면 좋은 내용
 
-[MDN Web Docs :: proxy](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Proxy){:target="_blank"}
+[MDN Web Docs :: proxy](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Proxy)

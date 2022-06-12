@@ -5,7 +5,7 @@ date:   2022-03-15 21:17:09 +0900
 title:  "[DJANGO] ModelForm 01. form valid를 제어 해보자"
 author: Kimson
 categories: [ django ]
-image: assets/images/post/covers/TIL-django.png
+image: /images/post/covers/TIL-django.png
 tags: [ form, valid, til ]
 description: "form valid
 이 포스팅은 참고용으로 만들어졌기 때문에 정확한 내용은 공식 홈페이지의 docs와 reference를 참고하는 것을 적극 권장합니다.
@@ -221,7 +221,7 @@ def signin(request):
 
 `boostrap`은 `pip`로 먼저 `install`하고 `installed_apps`에 추가해주고 사용해야합니다. 사용법은 구글 검색으로 방대한 양의 내용이 있으니 참고하시기를.
 
-설치는 [여기](https://pypi.org/project/django-bootstrap-v5/){:target="_blank"}를 참고하세요.
+설치는 [여기](https://pypi.org/project/django-bootstrap-v5/)를 참고하세요.
 
 {%raw%}
 
@@ -266,20 +266,20 @@ if sign_form.is_valid():
 
 📚 함께 보면 좋은 내용
 
-[Django Documentation :: form](https://docs.djangoproject.com/en/4.0/topics/forms/#more-about-django-form-classes){:target="_blank"}
+[Django Documentation :: form](https://docs.djangoproject.com/en/4.0/topics/forms/#more-about-django-form-classes)
 
-[Django Documentation :: Form fields v2.1](https://docs.djangoproject.com/es/2.1/ref/forms/fields/#required){:target="_blank"}
+[Django Documentation :: Form fields v2.1](https://docs.djangoproject.com/es/2.1/ref/forms/fields/#required)
 
-[Django Documentation :: form v2.0](https://docs.djangoproject.com/en/2.0/ref/forms/validation/){:target="_blank"}
+[Django Documentation :: form v2.0](https://docs.djangoproject.com/en/2.0/ref/forms/validation/)
 
-[Stackoverflow :: What is the use of cleaned_data in Django](https://stackoverflow.com/questions/53594745/what-is-the-use-of-cleaned-data-in-django){:target="_blank"}
+[Stackoverflow :: What is the use of cleaned_data in Django](https://stackoverflow.com/questions/53594745/what-is-the-use-of-cleaned-data-in-django)
 
-[Stackoverflow :: Django modelform NOT required field](https://stackoverflow.com/questions/16205908/django-modelform-not-required-field){:target="_blank"}
+[Stackoverflow :: Django modelform NOT required field](https://stackoverflow.com/questions/16205908/django-modelform-not-required-field)
 
-[swhan9404님 :: Django Form](https://velog.io/@swhan9404/Django-Form){:target="_blank"}
+[swhan9404님 :: Django Form](https://velog.io/@swhan9404/Django-Form)
 
-[Junlab님 :: 폼 활용이 편한 django 폼 사용법 (form이란 무엇인가요?)](https://junlab.tistory.com/193){:target="_blank"}
+[Junlab님 :: 폼 활용이 편한 django 폼 사용법 (form이란 무엇인가요?)](https://junlab.tistory.com/193)
 
-[Jinmay님 :: [Form]의식의 흐름대로 정리하는 장고 Form](https://jinmay.github.io/2019/11/13/django/django-form-is-valid-mechanism-brief/){:target="_blank"}
+[Jinmay님 :: [Form]의식의 흐름대로 정리하는 장고 Form](https://jinmay.github.io/2019/11/13/django/django-form-is-valid-mechanism-brief/)
 
-[낭만온달님 :: [Django] HTML 템플릿내에서 Form Class의 is_valid호출시 오류를 받아 처리하기](https://niceit.tistory.com/395){:target="_blank"}
+[낭만온달님 :: [Django] HTML 템플릿내에서 Form Class의 is_valid호출시 오류를 받아 처리하기](https://niceit.tistory.com/395)

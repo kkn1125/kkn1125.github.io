@@ -7,7 +7,7 @@ title:  "[PORTFOLIO] KAKAO PC버전"
 author: Kimson
 categories: [ spring ]
 tags: [kakao, portfolio]
-image: assets/images/post/kakao/kakao-1.png
+image: /images/post/kakao/kakao-1.png
 description: "KAKAO PC ver
 
 kakao pc 버전은 설계 분야 업무를 하던 중에 알게 되어 정말 편리하고 자료 공유로 사용하기도 했는데요, 현재 프로그래밍을 공부하면서 구현해보고자 하는 마음에 열심히 독학 중인 spring으로 만들었습니다."

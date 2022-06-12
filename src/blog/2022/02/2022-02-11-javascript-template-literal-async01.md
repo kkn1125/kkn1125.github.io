@@ -6,7 +6,7 @@ date:   2022-02-11 15:17:59 +0900
 title:  "[JAVASCRIPT] 템플릿 리터럴에서 비동기로 내용을 넣어보자"
 author: Kimson
 categories: [ javascript ]
-image: assets/images/post/covers/TIL-javascript.png
+image: /images/post/covers/TIL-javascript.png
 tags: [ async, template literal, injection, til ]
 description: "템플릿 리터럴
 
@@ -264,4 +264,4 @@ templateInsertAsync({
 
 📚 함께 보면 좋은 내용
 
-[MDN Web Docs::Template Literals](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Template_literals 'MDN Web Docs::Template Literal'){:target="_blank"}
+[MDN Web Docs::Template Literals](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Template_literals 'MDN Web Docs::Template Literal')

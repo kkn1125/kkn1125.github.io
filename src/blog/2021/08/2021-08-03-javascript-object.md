@@ -7,7 +7,7 @@ title:  "[JAVASCRIPT] 객체와 프로토타입"
 author: Kimson
 categories: [ javascript ]
 tags: [object, property, prototype, til]
-image: assets/images/post/covers/TIL-javascript.png
+image: /images/post/covers/TIL-javascript.png
 description: "Object (객체)
 
 자바스크립트가 객체기반의 스크립트 언어인 만큼 중요하다 생각이 됩니다.
@@ -435,4 +435,4 @@ spring이나 동적 웹에 활용한다면 회원설정메뉴 페이지를 만�
 
 아래에 Object(객체)의 중요 함수를 나열해두었습니다. 참고바랍니다.
 
-[defineProperty - MDN mozilla 설명 참조](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty 'defineProperty 상세'){:target="_blank"}
+[defineProperty - MDN mozilla 설명 참조](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty 'defineProperty 상세')

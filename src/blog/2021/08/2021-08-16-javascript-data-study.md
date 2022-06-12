@@ -7,7 +7,7 @@ title:  "[JAVASCRIPT] LinkedList 만들기"
 author: Kimson
 categories: [ javascript ]
 tags: [ linkedlist, datastructure, til ]
-image: assets/images/post/covers/TIL-javascript.png
+image: /images/post/covers/TIL-javascript.png
 description: "LinkedList 구현
 이해한대로 만든 것이기 때문에 정확하지 않을 수 있습니다.
 
@@ -34,7 +34,7 @@ LinkedList는 `node`의 연결로 이루어져있습니다. `node`는 데이터 
 ## LinkedList의 모양
 
 ![LinkedList]({{site.baseurl}}/assets/images/post/datastudy/linkedlist/linkedlist01.png '도식')
-[이미지 출처](https://habr.com/en/post/506660/){:target="_blank"}
+[이미지 출처](https://habr.com/en/post/506660/)
 
 모양은 이렇습니다. 각 `node`는 `data`, `next` 프로퍼티를 가지고, 첫 요소는 `head`에 그 다음 추가되는 요소는 이전 요소의 `next`에도 저장이 되면서 쌓여갑니다.
 

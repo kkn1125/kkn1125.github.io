@@ -7,7 +7,7 @@ title:  "[JAVASCRIPT] new target 알아보기"
 author: Kimson
 categories: [ javascript ]
 tags: [ new, target, til ]
-image: assets/images/post/covers/TIL-javascript.png
+image: /images/post/covers/TIL-javascript.png
 description: "new.target을 써보자
 
 인스턴스를 만들 때나 보던 new에 점을 찍고 target이라는 것을 사용하는게 굉장히 생소했습니다. 아직 배울게 많은가 봅니다.

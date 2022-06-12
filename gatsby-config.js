@@ -1,5 +1,5 @@
 module.exports = {
-  pathPrefix: "/kkn1125.github.io",
+  pathPrefix: "/",
   siteMetadata: {
     title: `blog`,
     siteUrl: `https://kkn1125.github.io`,
@@ -17,6 +17,7 @@ module.exports = {
     },
     "gatsby-plugin-image",
     "gatsby-plugin-sharp",
+    "gatsby-plugin-advanced-sitemap",
     // {
     //   resolve: `gatsby-plugin-typegen`,
     //   options: {

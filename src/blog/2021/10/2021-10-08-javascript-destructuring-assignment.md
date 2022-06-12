@@ -6,7 +6,7 @@ date:   2021-10-08 21:18:08 +0900
 title:  "[JAVASCRIPT] 구조 분해 할당"
 author: Kimson
 categories: [ javascript ]
-image: assets/images/post/covers/TIL-javascript.png
+image: /images/post/covers/TIL-javascript.png
 tags: [ destructuring assignment, til ]
 description: "구조 분해 할당
 

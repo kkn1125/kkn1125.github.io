@@ -6,7 +6,7 @@ date:   2022-03-08 20:38:22 +0900
 title:  "[SPRING] Spring legacy project error"
 author: Kimson
 categories: [ spring ]
-image: assets/images/post/covers/TIL-spring.png
+image: /images/post/covers/TIL-spring.png
 tags: [ spring, error, legacy, til ]
 description: "eclipse update 관련 에러 노트
 
@@ -82,7 +82,7 @@ C:\Program Files\Java\jdk-11.0.13\bin\javaw.exe
 
 📚 함께 보면 좋은 내용
 
-[OPENLUNCH님 :: [스프링 퀵스타트] DAY 01 CLASS 1.2c 실습 프로젝트 생성 그리고 오류 해결...완료!](https://openlunch.tistory.com/112){:target="_blank"}
+[OPENLUNCH님 :: [스프링 퀵스타트] DAY 01 CLASS 1.2c 실습 프로젝트 생성 그리고 오류 해결...완료!](https://openlunch.tistory.com/112)
 
 [Haenny :: \[Error\] Spring 웹 프로젝트 META-INF\MANIFEST.MF \(지정된 경로를 찾을 수 없습니다\) 에러 해결](https://haenny.tistory.com/52)
 

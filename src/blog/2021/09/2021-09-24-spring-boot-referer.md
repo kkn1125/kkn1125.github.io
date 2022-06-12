@@ -7,7 +7,7 @@ title:  "[SPRINGBOOT] 헤더 리퍼러(referer) 사용하기"
 author: Kimson
 categories: [ spring boot ]
 tags: [ referer, policy, header, til ]
-image: assets/images/post/covers/TIL-spring.png
+image: /images/post/covers/TIL-spring.png
 description: "referer란
 
 Referer 요청 헤더는 어디에서 사용자가 유입되었는지 알 수 있습니다. `#blah`나 `username`, `password`는 포함 할 수 없다고 합니다. `origin`, `path`, `query문`등이 포함된다고 하니 잘 사용하면 유용할 것 같습니다."
@@ -25,7 +25,7 @@ published: true
 
 Referer 요청 헤더는 어디에서 사용자가 유입되었는지 알 수 있습니다. `#blah`나 `username`, `password`는 포함 할 수 없다고 합니다. `origin`, `path`, `query문`등이 포함된다고 하니 잘 사용하면 유용할 것 같습니다.
 
-[MDN Referer 참고](https://developer.mozilla.org/ko/docs/Web/HTTP/Headers/Referer){:target="_blank"}
+[MDN Referer 참고](https://developer.mozilla.org/ko/docs/Web/HTTP/Headers/Referer)
 
 ## referer Policy 알아두기
 
@@ -38,7 +38,7 @@ Referer 요청 헤더는 어디에서 사용자가 유입되었는지 알 수 �
 7. Referrer-Policy: strict-origin-when-cross-origin
 8. Referrer-Policy: unsafe-url
 
-[MDN Referrer-Policy 참고](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy){:target="_blank"}
+[MDN Referrer-Policy 참고](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy)
 
 자세한 내용은 다음에 보충해서 올릴 예정입니다. 다만 이 중에서 `strict-origin-when-cross-origin`은 오늘 겪었던 내용을 알려드리자면, 같은 페이지에서 `referer`를 받을 때 `null`값을 뱉어 내는 점입니다.
 

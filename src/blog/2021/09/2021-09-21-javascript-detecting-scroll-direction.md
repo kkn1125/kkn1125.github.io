@@ -7,7 +7,7 @@ title:  "[JAVASCRIPT] 스크롤 방향 감지 (Detecting scroll direction)"
 author: Kimson
 categories: [ javascript ]
 tags: [ detect, scroll, direction, til ]
-image: assets/images/post/covers/TIL-javascript.png
+image: /images/post/covers/TIL-javascript.png
 description: "스크롤 방향 감지
 
 `wheel` 이벤트를 쓰면 간단합니다만 저는 `wheel` 이벤트 말고 `scroll`로 감지를 하려합니다.

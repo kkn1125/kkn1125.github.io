@@ -7,7 +7,7 @@ title:  "[JAVASCRIPT] 스크롤 애니메이션 구현하기"
 author: Kimson
 categories: [ javascript ]
 tags: [ no-scroll, slide, tim ]
-image: assets/images/post/covers/TIM-none.png
+image: /images/post/covers/TIM-none.png
 description: "스크롤 애니메이션 구현
 
 코드가 이상한 부분이 많아서 아예 새로 짰습니다. 정말 엉망인 글인데 검색 결과 상위에 올라있어 부끄럽습니다. 계속해서 글을 정기적으로 검열하고 수정하고 있습니다. 재방문해서 보시는 분에게 감사드립니다 🙇‍♂️

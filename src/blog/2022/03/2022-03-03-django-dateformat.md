@@ -6,7 +6,7 @@ date:   2022-03-03 22:08:31 +0900
 title:  "[DJANGO] Date Formatting을 해보자"
 author: Kimson
 categories: [ terminal ]
-image: assets/images/post/covers/TIL-django.png
+image: /images/post/covers/TIL-django.png
 tags: [ linux, ubuntu, til ]
 description: "날짜 포맷 변환
 
@@ -48,4 +48,4 @@ published: true
 
 📚 함께 보면 좋은 내용
 
-[Django :: date 표기법](https://docs.djangoproject.com/en/dev/ref/templates/builtins/#std:templatefilter-date){:target="_blank"}
+[Django :: date 표기법](https://docs.djangoproject.com/en/dev/ref/templates/builtins/#std:templatefilter-date)

@@ -5,7 +5,7 @@ date:   2022-03-23 13:27:18 +0900
 title:  "[DJANGO] ModelForm 02. 회원 기존 정보 덮어쓰기"
 author: Kimson
 categories: [ django ]
-image: assets/images/post/covers/TIL-django.png
+image: /images/post/covers/TIL-django.png
 tags: [ overwrite, til ]
 description: "기존 정보에 수정된 정보를 덮어쓰기
 
@@ -82,7 +82,7 @@ class Post(models.Model):
 
 이렇게 이미지 필드가 추가된 경우에는 `html input`태그의 `file`타입 특성상 `value`값 설정이 안 됩니다.
 
-태그에 `value`를 지정해도 `form`데이터에 넘겨도 [보안상 이유](https://jkorpela.fi/forms/file.html#value){:target="_blank"}로 값이 넘어가지 않습니다.
+태그에 `value`를 지정해도 `form`데이터에 넘겨도 [보안상 이유](https://jkorpela.fi/forms/file.html#value)로 값이 넘어가지 않습니다.
 
 그리고 `cover` 필드 추가와 함께 저는 `forms.py`에 작성된 패스워드 필드와 커버 필드에 속성을 변경했습니다.
 
@@ -193,10 +193,10 @@ def update(request):
 
 📚 함께 보면 좋은 내용
 
-[해리님 :: Django 24 - 유저 정보 수정 & 삭제](https://tothefullest08.github.io/django/2019/06/19/Django24_accounts4_update_delete_password/){:target="_blank"}
+[해리님 :: Django 24 - 유저 정보 수정 & 삭제](https://tothefullest08.github.io/django/2019/06/19/Django24_accounts4_update_delete_password/)
 
-[sosin님 :: Django Validator / 장고 유효성 검증 / Form에서 유효성 검증하기](https://programmers-sosin.tistory.com/entry/Django-Validator-%EC%9E%A5%EA%B3%A0-%EC%9C%A0%ED%9A%A8%EC%84%B1-%EA%B2%80%EC%A6%9D-Form%EC%97%90%EC%84%9C-%EC%9C%A0%ED%9A%A8%EC%84%B1-%EA%B2%80%EC%A6%9D%ED%95%98%EA%B8%B0){:target="_blank"}
+[sosin님 :: Django Validator / 장고 유효성 검증 / Form에서 유효성 검증하기](https://programmers-sosin.tistory.com/entry/Django-Validator-%EC%9E%A5%EA%B3%A0-%EC%9C%A0%ED%9A%A8%EC%84%B1-%EA%B2%80%EC%A6%9D-Form%EC%97%90%EC%84%9C-%EC%9C%A0%ED%9A%A8%EC%84%B1-%EA%B2%80%EC%A6%9D%ED%95%98%EA%B8%B0)
 
-[반원_SemiCircle님 :: django - 로그인 처리 (세션 이용)](https://gosmcom.tistory.com/143){:target="_blank"}
+[반원_SemiCircle님 :: django - 로그인 처리 (세션 이용)](https://gosmcom.tistory.com/143)
 
-[Stackoverflow :: django - Show initial value for FileField in django-template](https://stackoverflow.com/questions/37475302/show-initial-value-for-filefield-in-django-template){:target="_blank"}
+[Stackoverflow :: django - Show initial value for FileField in django-template](https://stackoverflow.com/questions/37475302/show-initial-value-for-filefield-in-django-template)

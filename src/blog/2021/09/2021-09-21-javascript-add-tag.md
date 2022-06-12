@@ -7,7 +7,7 @@ title:  "[JAVASCRIPT] 태그 입력 구현하기"
 author: Kimson
 categories: [ javascript ]
 tags: [ tag, input, badge, til ]
-image: assets/images/post/covers/TIL-javascript.png
+image: /images/post/covers/TIL-javascript.png
 description: "태그 입력 구현하기
 
 최근 기억하기 힘든 내용이나 블로그 내용을 부분 발췌하거나 급하게 기록할 때 노션을 자주 애용하는데요. 그 중에서 태그를 이쁘게 만들어서 뱃지모양으로 띄우는 기능을 구현하려합니다."

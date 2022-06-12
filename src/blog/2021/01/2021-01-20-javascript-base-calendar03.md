@@ -6,7 +6,7 @@ date:   2021-01-20 21:25:04 +0900
 title:  "[JAVASCRIPT] 달력 만들기 (달력 기본 틀)"
 author: Kimson
 categories: [ javascript ]
-image: assets/images/post/covers/TIL-javascript.png
+image: /images/post/covers/TIL-javascript.png
 tags: [ calendar, backup, til ]
 description: "달력 만들기 날짜 관련 변수 선언 저번 글에서 var today = new Date();로 현재 날짜를 전역변수로 저장했었습니다."
 featured: false

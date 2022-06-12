@@ -6,7 +6,7 @@ date:   2021-10-25 22:27:25 +0900
 title:  "[JAVASCRIPT] 웹 튜토리얼 구현하기"
 author: Kimson
 categories: [ javascript ]
-image: assets/images/post/covers/TIL-javascript.png
+image: /images/post/covers/TIL-javascript.png
 tags: [ web, tutorial, helper, til, tim ]
 description: "웹 튜토리얼
 
@@ -124,6 +124,6 @@ const tutorial = Tutorial.init({
 
 > Github Repo :: devkimson
 
-[깃허브 저장소 :: tutorial](https://github.com/kkn1125/tutorial){:target="_blank"}
+[깃허브 저장소 :: tutorial](https://github.com/kkn1125/tutorial)
 
-[깃페이지 :: tutorial sample](https://kkn1125.github.io/tutorial/){:target="_blank"}
+[깃페이지 :: tutorial sample](https://kkn1125.github.io/tutorial/)

@@ -7,7 +7,7 @@ title:  "[SPRINGBOOT] SPRING BOOT MyBatis 시작하기"
 author: Kimson
 categories: [ spring boot ]
 tags: [ mybatis, til ]
-image: assets/images/post/covers/TIL-spring.png
+image: /images/post/covers/TIL-spring.png
 description: "MyBatis
 
 ToDoList에도 올려두었던 녀석을 이제야 합니다. 여지껏 수동으로 작성하는 방법에 길들여져서 새로운 방법을 저도 모르게 멀리하려고 핑계댔는지도 모르겠습니다.
@@ -30,7 +30,7 @@ published: true
 ToDoList에도 올려두었던 녀석을 이제야 합니다. 여지껏 수동으로 작성하는 방법에 길들여져서 새로운 방법을 저도 모르게 멀리하려고 핑계댔는지도 모르겠습니다.
 
 최근에 롬복을 설치하고 사용해보니 굉장히 편리함을 느꼈습니다. 이제는 편리한 기능들을 계속 찾게 되는 것 같습니다.  
-아직 lombok을 안 써보신 분은 [Spring Boot 시작하기 02](https://kkn1125.github.io/spring-boot-start02/){:target="_blank"}를 참고해주세요.
+아직 lombok을 안 써보신 분은 [Spring Boot 시작하기 02](https://kkn1125.github.io/spring-boot-start02/)를 참고해주세요.
 
 ## 설정
 
@@ -170,4 +170,4 @@ public String AllUsers(Model model) {
 
 -----
 
-[DI에 관한 이해 - HeeJeong Kwon님의 블로그](https://gmlwjd9405.github.io/2018/11/09/dependency-injection.html){:target="_blank"}
+[DI에 관한 이해 - HeeJeong Kwon님의 블로그](https://gmlwjd9405.github.io/2018/11/09/dependency-injection.html)

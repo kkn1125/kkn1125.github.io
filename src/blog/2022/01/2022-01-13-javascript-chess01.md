@@ -6,7 +6,7 @@ date:   2022-01-13 22:12:28 +0900
 title:  "[JAVASCRIPT] 체스게임 구현 01"
 author: Kimson
 categories: [ javascript ]
-image: assets/images/post/chess/chess01.png
+image: /images/post/chess/chess01.png
 tags: [ game, chess, tim ]
 description: "체스 게임 구현
 
@@ -62,6 +62,6 @@ published: true
 
 📚 함께 보면 좋은 내용
 
-[Chess 테스트 페이지](https://kkn1125.github.io/chess/){:target="_blank"}
+[Chess 테스트 페이지](https://kkn1125.github.io/chess/)
 
-[Chess 깃허브 저장소](https://github.com/kkn1125/chess/){:target="_blank"}
+[Chess 깃허브 저장소](https://github.com/kkn1125/chess/)

@@ -7,7 +7,7 @@ title:  "[JAVASCRIPT] 현재 주소 알아내기"
 author: Kimson
 categories: [ javascript ]
 tags: [ geoplugin, geolocation, til ]
-image: assets/images/post/geolocation/geo01.png
+image: /images/post/geolocation/geo01.png
 description: "현재 주소를 알아내보자
 
 이번 포스팅은 api를 이용해서 현재 주소를 출력하는 것을 해볼텐데요. 방법은 여러가지가 있습니다. 네이버, 구글 등의 API를 이용한다던가 `geoplugin`을 사용한다던가 `geolocation` API를 사용하는 등의 방법이 있습니다.
@@ -88,10 +88,10 @@ $.getJSON('http://www.geoplugin.net/json.gp?ip='+ip, function(data){
 
 > 참고 사이트
 
-[MDN - Geolocation](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API/Using_the_Geolocation_API){:target="_blank"}
+[MDN - Geolocation](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API/Using_the_Geolocation_API)
 
-[GeoPlugin](http://www.geoplugin.com/quickstart#how_to_geo-localize_your_visitors){:target="_blank"}
+[GeoPlugin](http://www.geoplugin.com/quickstart#how_to_geo-localize_your_visitors)
 
-[Ip 알아내기](https://stackoverflow.com/questions/4937517/ip-to-location-using-javascript){:target="_blank"}
+[Ip 알아내기](https://stackoverflow.com/questions/4937517/ip-to-location-using-javascript)
 
-[늦깍이 공대생의 좌충우돌이야기님의 블로그](https://elecs.tistory.com/201){:target="_blank"}
+[늦깍이 공대생의 좌충우돌이야기님의 블로그](https://elecs.tistory.com/201)

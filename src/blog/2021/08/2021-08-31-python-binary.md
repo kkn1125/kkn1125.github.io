@@ -7,7 +7,7 @@ title:  "[PYTHON] 파이썬 기초 - 진수 변환"
 author: Kimson
 categories: [ python ]
 tags: [ basic, til ]
-image: assets/images/post/covers/TIL-python.jpg
+image: /images/post/covers/TIL-python.jpg
 description: "기초 다지기
 10진수를 16진수로 변환
 16진수를 8진수로 변환

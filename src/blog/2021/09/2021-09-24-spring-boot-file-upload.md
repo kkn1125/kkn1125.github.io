@@ -7,7 +7,7 @@ title:  "[SPRING] 파일 업로드 하기"
 author: Kimson
 categories: [ spring boot ]
 tags: [ file, upload, til ]
-image: assets/images/post/covers/TIL-spring.png
+image: /images/post/covers/TIL-spring.png
 description: "File Upload
 USED
 `org.springframework.web.multipart.MultipartFile`

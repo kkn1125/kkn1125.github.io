@@ -6,7 +6,7 @@ date:   2022-03-04 19:56:07 +0900
 title:  "[SHELL] Shell Script로 파일 변환을 감지해보자 01"
 author: Kimson
 categories: [ shell ]
-image: assets/images/post/covers/TIL-shell.png
+image: /images/post/covers/TIL-shell.png
 tags: [ bash, shell, sh, til ]
 description: "파일 변환 감지
 
@@ -86,6 +86,6 @@ done
 
 📚 함께 보면 좋은 내용
 
-[DAVE MCKAY :: How to Use the stat Command on Linux](https://www.howtogeek.com/451022/how-to-use-the-stat-command-on-linux/){:target="_blank"}
+[DAVE MCKAY :: How to Use the stat Command on Linux](https://www.howtogeek.com/451022/how-to-use-the-stat-command-on-linux/)
 
-[StackOverflow :: How to execute a shell script when a file changes?](https://stackoverflow.com/questions/66857291/how-to-execute-a-shell-script-when-a-file-changes#answers-header){:target="_blank"}
+[StackOverflow :: How to execute a shell script when a file changes?](https://stackoverflow.com/questions/66857291/how-to-execute-a-shell-script-when-a-file-changes#answers-header)

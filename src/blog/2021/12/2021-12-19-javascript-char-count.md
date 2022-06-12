@@ -6,7 +6,7 @@ date:   2021-12-19 22:36:51 +0900
 title:  "[ALGORITHM] 2020 카카오 문자열 압축 풀이"
 author: Kimson
 categories: [ algorithm ]
-image: assets/images/post/covers/TIL-javascript.png
+image: /images/post/covers/TIL-javascript.png
 tags: [ algorithm, strToZip, javascript, programmers ]
 description: "2020 카카오 문자열 압축 풀이
 

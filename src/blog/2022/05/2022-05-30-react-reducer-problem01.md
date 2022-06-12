@@ -5,7 +5,7 @@ date: 2022-05-30 01:56:12 +0900
 title: "[REACT] reducer 두 번 실행 문제"
 author: Kimson
 categories: [react]
-image: assets/images/post/covers/TIL-react.png
+image: /images/post/covers/TIL-react.png
 tags: [react, basic, til, error]
 description: "
 문제 상황
@@ -233,8 +233,8 @@ const GraphReducer = (state, action) => {
 
 📚 함께 보면 좋은 내용
 
-[React::Github repository](https://github.com/facebook/react/blob/42f15b324f50d0fd98322c21646ac3013e30344a/packages/react-dom/src/server/ReactPartialRendererHooks.js#L269){:target="\_blank"}
+[React::Github repository](https://github.com/facebook/react/blob/42f15b324f50d0fd98322c21646ac3013e30344a/packages/react-dom/src/server/ReactPartialRendererHooks.js#L269)
 
-[Stackoverflow::useReducer Action dispatched twice](https://stackoverflow.com/questions/54892403/usereducer-action-dispatched-twice){:target="\_blank"}
+[Stackoverflow::useReducer Action dispatched twice](https://stackoverflow.com/questions/54892403/usereducer-action-dispatched-twice)
 
-[꿀로그님 블로그::리액트 불변성이란 무엇이고, 왜 지켜야 할까?](https://hsp0418.tistory.com/171){:target="\_blank"}
+[꿀로그님 블로그::리액트 불변성이란 무엇이고, 왜 지켜야 할까?](https://hsp0418.tistory.com/171)

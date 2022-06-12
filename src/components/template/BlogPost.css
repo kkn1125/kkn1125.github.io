@@ -21,16 +21,29 @@
   padding-left: 10px;
 }
 
-kbd {
+.blog-post img {
+  width: 100%;
+}
+
+.blog-post blockquote {
+  background: rgb(239, 239, 239);
+  margin: 0;
+  padding: 0.5rem 1rem 0.5rem 1.5rem;
+  border-left: 5px solid grey;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.blog-post code:not([class]) {
   background-color: rgb(238, 238, 238);
   color: rgb(255, 0, 89);
   font-weight: 500;
-  padding: .2rem .4rem;
-  margin-left: .1rem;
-  margin-right: .1rem;
-  border-radius: .3rem;
-  -webkit-border-radius: .3rem;
-  -moz-border-radius: .3rem;
-  -ms-border-radius: .3rem;
-  -o-border-radius: .3rem;
+  padding: 0.2rem 0.4rem;
+  margin-left: 0.1rem;
+  margin-right: 0.1rem;
+  border-radius: 0.3rem;
+  -webkit-border-radius: 0.3rem;
+  -moz-border-radius: 0.3rem;
+  -ms-border-radius: 0.3rem;
+  -o-border-radius: 0.3rem;
 }

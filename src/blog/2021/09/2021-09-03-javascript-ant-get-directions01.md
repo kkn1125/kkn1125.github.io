@@ -7,7 +7,7 @@ title:  "[JAVASCRIPT] 개미 길 찾기 - 파이썬 문제"
 author: Kimson
 categories: [ javascript ]
 tags: [ python, ant, getdirection, til ]
-image: assets/images/post/covers/TIL-javascript.png
+image: /images/post/covers/TIL-javascript.png
 description: "파이썬 문제 자바스크립트 변환
 
 코드업의 Python 기초 100제 중 6098번 문제를 풀던 중에 html에서 보이도록 만들어보고자 하는 생각에 코드를 다시 곱씹어 볼 겸 자바스크립트로 옮겨서 만들기 시작했습니다."

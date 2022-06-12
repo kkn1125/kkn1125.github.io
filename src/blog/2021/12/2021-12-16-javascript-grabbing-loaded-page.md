@@ -6,7 +6,7 @@ date:   2021-12-16 18:41:37 +0900
 title:  "[JAVASCRIPT] 페이지 내용이 동적으로 로드되는 페이지 자바스크립트로 읽어오기"
 author: Kimson
 categories: [ javascript ]
-image: assets/images/post/covers/TIL-javascript.png
+image: /images/post/covers/TIL-javascript.png
 tags: [ dynamic, load page, til ]
 description: "동적 로드 페이지 내용을 읽어오자
 

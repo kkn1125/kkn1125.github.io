@@ -6,7 +6,7 @@ date:   2022-01-28 16:52:37 +0900
 title:  "[JAVASCRIPT] Vanilla JavaScript로 SPA를 구현해보자 02"
 author: Kimson
 categories: [ javascript ]
-image: assets/images/post/covers/TIL-javascript.png
+image: /images/post/covers/TIL-javascript.png
 tags: [ spa, router, vanilla js, import, tim ]
 description: "Router 구현
 
@@ -164,6 +164,6 @@ export default {
 
 📚 함께 보면 좋은 내용
 
-[devkimson::[JAVASCRIPT] Vanilla JavaScript로 SPA를 구현해보자 01]({{site.baseurl}}/javascript-routing01){:target="_blank"}
+[devkimson::[JAVASCRIPT] Vanilla JavaScript로 SPA를 구현해보자 01]({{site.baseurl}}/javascript-routing01)
 
-[devkimson::router js repository](https://github.com/kkn1125/router){:target="_blank"}
+[devkimson::router js repository](https://github.com/kkn1125/router)

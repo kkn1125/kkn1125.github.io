@@ -7,7 +7,7 @@ title:  "[JAVA] Cookie에 관한 고찰"
 author: Kimson
 categories: [ java ]
 tags: [cookie, til]
-image: assets/images/post/cookie/cookie.PNG
+image: /images/post/cookie/cookie.PNG
 description: "Cookie 사용
 쿠키의 특징을 간단하게 알아보면서 내용을 정리하였습니다. 주로 웹 서버에 의해 만들어지고, 서버가 HTTP 응답헤더의 Set-Cookie에 내용을 넣어 전달하면, 이 내용을 브라우저에 저장합니다."
 featured: false
@@ -117,4 +117,4 @@ httponly속성이 true이거나 domain이 다르다면 document.cookie로 값을
 
 -----
 
-[Python2 - HttpOnly 속성 참고](https://www.python2.net/questions-200084.htm){:target="_blank"}
+[Python2 - HttpOnly 속성 참고](https://www.python2.net/questions-200084.htm)

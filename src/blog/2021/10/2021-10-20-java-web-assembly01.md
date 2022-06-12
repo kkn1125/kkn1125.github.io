@@ -6,7 +6,7 @@ date:   2021-10-20 11:27:25 +0900
 title:  "[SPRING] JWebAssembly를 사용해보자"
 author: Kimson
 categories: [ spring ]
-image: assets/images/post/covers/TIL-spring.png
+image: /images/post/covers/TIL-spring.png
 tags: [ web assembly, til ]
 description: "WebAssembly란
 
@@ -23,7 +23,7 @@ published: true
 
 # WebAssembly란
 
-웹 어셈블리는 최신 웹 브라우저에서 실행할 수 있는 새로운 유형의 코드입니다. C나 C++, Rust, Java와 같은 언어를 웹에서 사용할 수 있게 해준다고 합니다. 아직 공부중인 영역이라 [MDN 웹어셈블리](https://developer.mozilla.org/ko/docs/WebAssembly){:target="_blank"}를 참고하시면 좋을 것 같습니다. 추가로 참고한 사이트는 맨 하단에 링크를 남기겠습니다.
+웹 어셈블리는 최신 웹 브라우저에서 실행할 수 있는 새로운 유형의 코드입니다. C나 C++, Rust, Java와 같은 언어를 웹에서 사용할 수 있게 해준다고 합니다. 아직 공부중인 영역이라 [MDN 웹어셈블리](https://developer.mozilla.org/ko/docs/WebAssembly)를 참고하시면 좋을 것 같습니다. 추가로 참고한 사이트는 맨 하단에 링크를 남기겠습니다.
 
 웹어셈블리를 어제 막 알게 되었습니다. 유튜브의 신기한 알고리즘 덕에 `코딩애플`님의 영상을 보고 조금이나마 머리속에 남게 되었는데요.
 
@@ -93,4 +93,3 @@ canRead로 확인해보고 `compileToText`로 변환 내용을 받아 출력해�
 > 참고사이트
 
 [WebAssembly from the Java Perspective](https://speakerdeck.com/dalexandrov/webassembly-from-the-java-perspective?slide=108)
-{:target="_blank"}

@@ -6,7 +6,7 @@ date:   2021-12-29 16:17:41 +0900
 title:  "[JAVASCRIPT] Vanilla JavaScript에서 Module사용하기"
 author: Kimson
 categories: [ javascript ]
-image: assets/images/post/covers/TIL-javascript.png
+image: /images/post/covers/TIL-javascript.png
 tags: [ module, vanilla javascript, til ]
 description: "Vanilla Javascript에서 Module 사용하기
 
@@ -119,6 +119,6 @@ myCalc.plus(4, 5); // 9
 
 📚 함께 보면 좋은 내용
 
-[MDNWeb Docs::Import](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import){:target="_blank"}
+[MDNWeb Docs::Import](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import)
 
-[TAMI님 - [JavaScript] Uncaught SyntaxError: Cannot use import statement outside a module 오류](https://rrecoder.tistory.com/166){:target="_blank"}
+[TAMI님 - [JavaScript] Uncaught SyntaxError: Cannot use import statement outside a module 오류](https://rrecoder.tistory.com/166)

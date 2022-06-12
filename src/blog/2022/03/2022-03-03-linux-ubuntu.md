@@ -6,7 +6,7 @@ date:   2022-03-03 13:12:53 +0900
 title:  "[TERMINAL] 윈도우에서 Linux Ubuntu 터미널 사용"
 author: Kimson
 categories: [ terminal ]
-image: assets/images/post/covers/TIL-terminal.png
+image: /images/post/covers/TIL-terminal.png
 tags: [ linux, ubuntu, til ]
 description: "C/C++을 사용하기 위해
 
@@ -57,10 +57,10 @@ $ wsl --install
 
 📚 함께 보면 좋은 내용
 
-[hashnode :: Creating your own scripting language? Where should one start?](https://hashnode.com/post/creating-your-own-scripting-language-where-should-one-start-ciudleyz70jksvy532q1y4uk7){:target="_blank"}
+[hashnode :: Creating your own scripting language? Where should one start?](https://hashnode.com/post/creating-your-own-scripting-language-where-should-one-start-ciudleyz70jksvy532q1y4uk7)
 
-[Jay님 :: visual code 로 C++ 작업환경 만들기 ( Win10 기준, WSL 사용 )](https://tiny-jay.tistory.com/5){:target="_blank"}
+[Jay님 :: visual code 로 C++ 작업환경 만들기 ( Win10 기준, WSL 사용 )](https://tiny-jay.tistory.com/5)
 
-[webnautes님 :: Visual Studio Code에서 C/C++ 프로그래밍( Windows / Ubuntu)](https://webnautes.tistory.com/1158){:target="_blank"}
+[webnautes님 :: Visual Studio Code에서 C/C++ 프로그래밍( Windows / Ubuntu)](https://webnautes.tistory.com/1158)
 
-[Microsoft :: WSL 설치](https://docs.microsoft.com/ko-kr/windows/wsl/install){:target="_blank"}
+[Microsoft :: WSL 설치](https://docs.microsoft.com/ko-kr/windows/wsl/install)

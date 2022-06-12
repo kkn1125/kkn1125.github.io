@@ -6,7 +6,7 @@ date:   2021-01-15 21:25:04 +0900
 title:  "[JAVASCRIPT] 달력 만들기"
 author: Kimson
 categories: [ javascript ]
-image: assets/images/post/covers/TIL-javascript.png
+image: /images/post/covers/TIL-javascript.png
 tags: [ calendar, backup, til ]
 description: "달력 만들기
 

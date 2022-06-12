@@ -7,7 +7,7 @@ title:  "[SPRINGBOOT] SPRING BOOT 시작하기 02"
 author: Kimson
 categories: [ spring boot ]
 tags: [spring, lombok, thymeleaf, til]
-image: assets/images/post/covers/TIL-spring.png
+image: /images/post/covers/TIL-spring.png
 description: "lombok 설정
 
 spring boot 시작하기 01에서 설치, 구동이 주제였다면 setter와 getter등의 <del>자질구레한</del> 것들을 간소화해주는 lombok을 설정하는 방법을 소개합니다.
@@ -37,7 +37,7 @@ lombok은 의존성 추가로 끝나는게 아니고 lombok.jar를 설치해야 
 ![롬복 설치]({{site.baseurl}}/assets/images/post/springboot/lombok/lombok01.png)
 {:.text-center}
 
-1. [lombok 다운로드](https://projectlombok.org/download){:target="_blank"}를 해줍니다.
+1. [lombok 다운로드](https://projectlombok.org/download)를 해줍니다.
 2. jar파일이 받아지면 해당 디렉토리에 가서 bash 또는 cmd를 켭니다.
 3. `java -jar fileName.jar`라고 입력하면 jar파일이 실행됩니다.
 4. 자동으로 IDE를 찾아 냅니다.
@@ -66,7 +66,7 @@ tiles는 의존성 추가 먼저 해줍니다. 이때 tiles는 mdnrepository에�
 {:.text-center}
 
 tiles.xml을 위 이미지와 같이 경로에 생성합니다.
-xml의 내부코드는 아래와 같습니다. tiles.xml의 기본 설정은 [tiles 홈페이지](https://tiles.apache.org/){:target="_blank"}에도 나와있습니다.
+xml의 내부코드는 아래와 같습니다. tiles.xml의 기본 설정은 [tiles 홈페이지](https://tiles.apache.org/)에도 나와있습니다.
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -201,13 +201,13 @@ tiles는 3.0.8버전까지 있고, 2016년부터 retired된 상황입니다. 하
 
 > lombok 설정참고 사이트
 
-[효기미나님의 블로그](https://lee1535.tistory.com/27){:target="_blank"}
+[효기미나님의 블로그](https://lee1535.tistory.com/27)
 
-[코드힐러님의 블로그](https://binit.tistory.com/21){:target="_blank"}
+[코드힐러님의 블로그](https://binit.tistory.com/21)
 
-[ojava님의 블로그](https://ojava.tistory.com/131){:target="_blank"}
+[ojava님의 블로그](https://ojava.tistory.com/131)
 
-[중년개발자님의 블로그](https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=sharplee7&logNo=221674229726){:target="_blank"}
+[중년개발자님의 블로그](https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=sharplee7&logNo=221674229726)
 
 [VSCode에서 롬복 사용하기 - glshlee님의 블로그](https://planbsw.tistory.com/109)
 

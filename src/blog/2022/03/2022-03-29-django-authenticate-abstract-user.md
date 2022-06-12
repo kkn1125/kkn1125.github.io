@@ -5,7 +5,7 @@ date:   2022-03-29 15:15:09 +0900
 title:  "[DJANGO] User Authentication 사용하기 02"
 author: Kimson
 categories: [ django ]
-image: assets/images/post/covers/TIL-django.png
+image: /images/post/covers/TIL-django.png
 tags: [ authentication, til ]
 description: "Authentication User 확장
 용된 라이브러리나 템플릿 태그 등은 이전 포스팅을 참고하시기 바랍니다.
@@ -30,7 +30,7 @@ published: true
 
 # Authentication User 확장
 
-> 사용된 라이브러리나 템플릿 태그 등은 [이전 포스팅](https://kkn1125.github.io/django-authenticate/){:target="_blank"}을 참고하시기 바랍니다.
+> 사용된 라이브러리나 템플릿 태그 등은 [이전 포스팅](https://kkn1125.github.io/django-authenticate/)을 참고하시기 바랍니다.
 
 이어서 `User Authentication`을 확장해서 사용하는 것을 기록하려합니다. 찾아보니 4가지의 방법이 있습니다.
 
@@ -142,8 +142,8 @@ admin.site.register(MyUser, UserAdmin)
 
 📚 함께 보면 좋은 내용
 
-[Django::Customizing authentication in Django](https://docs.djangoproject.com/en/dev/topics/auth/customizing/#auth-custom-user){:target="_blank"}
+[Django::Customizing authentication in Django](https://docs.djangoproject.com/en/dev/topics/auth/customizing/#auth-custom-user)
 
-[Yuda110님::[Django] Django 마이그레이션 초기화하기](https://yuda.dev/216){:target="_blank"}
+[Yuda110님::[Django] Django 마이그레이션 초기화하기](https://yuda.dev/216)
 
-[programcreek :: Python django.contrib.auth.forms.AuthenticationForm() Examples](https://www.programcreek.com/python/example/64448/django.contrib.auth.forms.AuthenticationForm){:target="_blank"}
+[programcreek :: Python django.contrib.auth.forms.AuthenticationForm() Examples](https://www.programcreek.com/python/example/64448/django.contrib.auth.forms.AuthenticationForm)

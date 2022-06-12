@@ -7,7 +7,7 @@ title:  "[JAVASCRIPT] 수평 사이즈 조절 바 구현하기"
 author: Kimson
 categories: [ javascript ]
 tags: [ resize, horizental, til ]
-image: assets/images/post/covers/TIL-javascript.png
+image: /images/post/covers/TIL-javascript.png
 description: "수평 사이즈 조절
 
 오늘 리트코드를 시작하다가 수평으로 왔다갔다 할 수 있는 조절바가 눈에 들어왔습니다.

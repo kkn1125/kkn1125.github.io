@@ -6,7 +6,7 @@ date:   2021-12-15 17:44:57 +0900
 title:  "[ALGORITHM] Kakao 인턴"
 author: Kimson
 categories: [ algorithm ]
-image: assets/images/post/covers/TIL-java.png
+image: /images/post/covers/TIL-java.png
 tags: [ kakao, programmers, java, algorithm ]
 description: "2020 kakao 인턴 키패드 문제
 

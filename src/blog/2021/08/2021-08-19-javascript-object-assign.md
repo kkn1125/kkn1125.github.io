@@ -7,7 +7,7 @@ title:  "[JAVASCRIPT] Object assign 활용하기"
 author: Kimson
 categories: [ javascript ]
 tags: [ object, assign, multi-set, til ]
-image: assets/images/post/covers/TIL-javascript.png
+image: /images/post/covers/TIL-javascript.png
 description: "Object assign 메서드
 
 `assign`이라는 메서드는 이렇습니다. 대상 객체로부터 열거 가능한 하나 이상의 속성들을 목표 객체로 복사합니다. 수정된 객체를 반환하는 특징이있습니다.
@@ -92,6 +92,6 @@ document.body.style.cssText = `
 
 > 참고 사이트
 
-[stack overflow 다중 속성 설정](https://stackoverflow.com/questions/12274748/setting-multiple-attributes-for-an-element-at-once-with-javascript){:target="_blank"}
+[stack overflow 다중 속성 설정](https://stackoverflow.com/questions/12274748/setting-multiple-attributes-for-an-element-at-once-with-javascript)
 
-[stack overflow 다중 스타일 설정](https://stackoverflow.com/questions/3968593/how-can-i-set-multiple-css-styles-in-javascript){:target="_blank"}
+[stack overflow 다중 스타일 설정](https://stackoverflow.com/questions/3968593/how-can-i-set-multiple-css-styles-in-javascript)

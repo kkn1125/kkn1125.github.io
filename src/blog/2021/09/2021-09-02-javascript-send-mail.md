@@ -7,7 +7,7 @@ title:  "[JAVASCRIPT] 자바스크립트 메일 보내기"
 author: Kimson
 categories: [ javascript ]
 tags: [ send, mail, til ]
-image: assets/images/post/covers/TIL-javascript.png
+image: /images/post/covers/TIL-javascript.png
 description: "메일 보내기
 
 이메일을 보내는데 서버 측에서 보내자니 자바 밖에 모르고, 배포해서 서버를 돌리자니 여기저기 제약이 많아 정적 사이트에서 메일을 보내는 방법을 찾고 있었습니다.
@@ -103,6 +103,6 @@ success시 데이터 자체는 JSON이지만 data의 형태는 아래의 이미�
 
 > 참고 사이트
 
-[zzinise 님의 블로그 - 이메일 보내기](https://zzinise.tistory.com/12){:target="_blank"}
+[zzinise 님의 블로그 - 이메일 보내기](https://zzinise.tistory.com/12)
 
-[털 업님의 저장소](https://kutar37.tistory.com/entry/%EC%A0%95%EC%A0%81-HTML-form%ED%83%9C%EA%B7%B8%EC%97%90%EC%84%9C-%EB%A9%94%EC%9D%BC%EB%B3%B4%EB%82%B4%EA%B8%B0-Google-Apps-Mail){:target="_blank"}
+[털 업님의 저장소](https://kutar37.tistory.com/entry/%EC%A0%95%EC%A0%81-HTML-form%ED%83%9C%EA%B7%B8%EC%97%90%EC%84%9C-%EB%A9%94%EC%9D%BC%EB%B3%B4%EB%82%B4%EA%B8%B0-Google-Apps-Mail)

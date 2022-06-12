@@ -7,7 +7,7 @@ title:  "[JAVASCRIPT] 공공데이터로 페이징 처리하기"
 author: Kimson
 categories: [ javascript ]
 tags: [공공데이터, pagination, json, til]
-image: assets/images/post/publicData/public-cover.png
+image: /images/post/publicData/public-cover.png
 description: "공공데이터포털은 국가에서 보유하고있는 다양한 데이터와 오픈API를 공개하는 곳 입니다. 법적으로 개방하도록 되어 있는것 같습니다.
 
 공부 중에 꼭 필요하면서도 만들기 귀찮은게 샘플데이터인데요. 이 데이터를 샘플데이터로 이용하면 참 편리해질 것 같습니다.
@@ -35,7 +35,7 @@ published: true
 
 ## 공공데이터포털
 
-> [공공데이터포털](https://www.data.go.kr/tcs/dss/selectDataSetList.do?dType=API&keyword=&detailKeyword=&publicDataPk=&recmSe=N&detailText=&relatedKeyword=&commaNotInData=&commaAndData=&commaOrData=&must_not=&tabId=&dataSetCoreTf=&coreDataNm=&sort=&relRadio=&orgFullName=&orgFilter=&org=&orgSearch=&currentPage=1&perPage=10&brm=%EB%AC%B8%ED%99%94%EA%B4%80%EA%B4%91&instt=&svcType=&kwrdArray=&extsn=&coreDataNmArray=&pblonsipScopeCode=){:target="_blank"}
+> [공공데이터포털](https://www.data.go.kr/tcs/dss/selectDataSetList.do?dType=API&keyword=&detailKeyword=&publicDataPk=&recmSe=N&detailText=&relatedKeyword=&commaNotInData=&commaAndData=&commaOrData=&must_not=&tabId=&dataSetCoreTf=&coreDataNm=&sort=&relRadio=&orgFullName=&orgFilter=&org=&orgSearch=&currentPage=1&perPage=10&brm=%EB%AC%B8%ED%99%94%EA%B4%80%EA%B4%91&instt=&svcType=&kwrdArray=&extsn=&coreDataNmArray=&pblonsipScopeCode=)
 > 은 국가에서 보유하고있는 다양한 데이터와 오픈API를 공개하는 곳 입니다. 법적으로 개방하도록 되어 있는것 같습니다.
 
 공부 중에 꼭 필요하면서도 만들기 귀찮은게 샘플데이터인데요. 이 데이터를 샘플데이터로 이용하면 참 편리해질 것 같습니다.

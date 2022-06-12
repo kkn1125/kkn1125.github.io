@@ -7,7 +7,7 @@ title:  "[JAVASCRIPT] Map 객체 사용"
 author: Kimson
 categories: [ javascript ]
 tags: [map, key, value, til]
-image: assets/images/post/covers/TIL-javascript.png
+image: /images/post/covers/TIL-javascript.png
 description: "키 기반의 컬렉션
 
 Set과 비슷하지만 Set은 중복값을 허용하지 않는다는 차이점이 있습니다.  
@@ -30,7 +30,7 @@ Set은 이번 주제가 아니니 다음에 다루도록 하고, Map 객체의 �
 
 ## Map 객체
 
-> [Map][MDN]{:target="_blank"}은 ECMAScript 6에서 소개하는 새로운 데이터 구조 중 하나입니다. key-value쌍으로 저장하며, 저장 순서대로 접근가능합니다. 
+> [Map][MDN]은 ECMAScript 6에서 소개하는 새로운 데이터 구조 중 하나입니다. key-value쌍으로 저장하며, 저장 순서대로 접근가능합니다. 
 
 [MDN]: https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Keyed_collections 'MDN 참조'
 
@@ -133,6 +133,6 @@ keys, values, entries가 있으며 for of로 순회가능 합니다. 여기서 f
 
 마치 사람들이 줄을 서있을 때 몇번째에 누가 있는가를 찾는 것 보다 이름(key)으로 식별하여 대상(value)를 찾는 것이 효율적인 것처럼 `key-value`기반 컬렉션을 다루는 것은 중요하다고 생각합니다.
 
-[복잡한 코드, 규칙을 만들자](https://kkn1125.github.io/javascript-code-style/){:target="_blank"}편에서 다룬 내용에서는 Array를 주로 사용했습니다.
+[복잡한 코드, 규칙을 만들자](https://kkn1125.github.io/javascript-code-style/)편에서 다룬 내용에서는 Array를 주로 사용했습니다.
 
 기능을 구현하는데 있어서 내가 자신있는 방식보다는 데이터를 효율적으로 다룰 수 있는 방식을 채택해서 깊게 공부해볼 필요가 있다고 생각됩니다.

@@ -5,7 +5,7 @@ date:   2022-03-14 18:54:26 +0900
 title:  "[DJANGO] 커스텀 템플릿 태그를 사용하려면?"
 author: Kimson
 categories: [ django ]
-image: assets/images/post/covers/TIL-django.png
+image: /images/post/covers/TIL-django.png
 tags: [ custom template, error note, til ]
 description: "커스텀 템플릿 사용
 
@@ -125,7 +125,7 @@ TEMPLATES = [
 
 {%endraw%}
 
-`with`에 관한 자세한 사항은 [여기](https://docs.djangoproject.com/en/4.0/ref/templates/builtins/){:target="_blank"}를 참고하세요.
+`with`에 관한 자세한 사항은 [여기](https://docs.djangoproject.com/en/4.0/ref/templates/builtins/)를 참고하세요.
 
 이렇게 세팅하고나면 필요한 함수를 작성해서 사용하시면 됩니다. templatetags에 대해 더 알고 싶으시다면 django 공식 홈페이지의 docs를 읽어보시면 됩니다. 링크는 아래에 있습니다.
 
@@ -133,14 +133,14 @@ TEMPLATES = [
 
 📚 함께 보면 좋은 내용
 
-[Djangoproject docs :: Code layout](https://docs.djangoproject.com/en/4.0/howto/custom-template-tags/#code-layout){:target="_blank"}
+[Djangoproject docs :: Code layout](https://docs.djangoproject.com/en/4.0/howto/custom-template-tags/#code-layout)
 
-[SOUMITRA :: Creating custom template tags and filter in Django](https://roytuts.com/creating-custom-template-tags-and-filter-in-django/){:target="_blank"}
+[SOUMITRA :: Creating custom template tags and filter in Django](https://roytuts.com/creating-custom-template-tags-and-filter-in-django/)
 
-[Daidalos :: How to create a list of items from a string in a Django template ?](https://moonbooks.org/Articles/How-to-create-a-list-of-items-from-a-string-in-a-Django-template-/){:target="_blank"}
+[Daidalos :: How to create a list of items from a string in a Django template ?](https://moonbooks.org/Articles/How-to-create-a-list-of-items-from-a-string-in-a-Django-template-/)
 
-[Ozzie Liu :: Writing Liquid Template in Markdown Code Blocks with Jekyll](https://ozzieliu.com/2016/04/26/writing-liquid-template-in-markdown-with-jekyll/){:target="_blank"}
+[Ozzie Liu :: Writing Liquid Template in Markdown Code Blocks with Jekyll](https://ozzieliu.com/2016/04/26/writing-liquid-template-in-markdown-with-jekyll/)
 
-[linuxkathirvel :: split-filter-in-django-template.md - split string to array](https://gist.github.com/linuxkathirvel/8127c40fdad028bbb79bec24f36eee1c){:target="_blank"}
+[linuxkathirvel :: split-filter-in-django-template.md - split string to array](https://gist.github.com/linuxkathirvel/8127c40fdad028bbb79bec24f36eee1c)
 
-[Stackoverflow :: Django templates - split string to array](https://stackoverflow.com/questions/8317537/django-templates-split-string-to-array){:target="_blank"}
+[Stackoverflow :: Django templates - split string to array](https://stackoverflow.com/questions/8317537/django-templates-split-string-to-array)

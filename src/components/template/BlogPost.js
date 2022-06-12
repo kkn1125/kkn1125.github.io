@@ -1,6 +1,6 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { graphql } from "gatsby";
-import { Markdown } from "../../util/mdParser";
+// import { Markdown } from "../../util/mdParser";
 import hljs from "highlight.js";
 import "./BlogPost.css";
 import "highlight.js/styles/monokai.css";
@@ -15,7 +15,7 @@ import {
   Divider,
   Box,
 } from "@mui/material";
-import { AnchorLink } from "gatsby-plugin-anchor-links";
+// import { AnchorLink } from "gatsby-plugin-anchor-links";
 import BlogCardInfo from "../common/BlogCardInfo";
 
 export default function Template({ data }) {
@@ -33,27 +33,30 @@ export default function Template({ data }) {
 
   const handleListItemClick = (event, index, value, depth) => {
     setSelectedIndex(index);
-    const titles = [...document.querySelectorAll(`h${depth}`)];
-    for (let i = 0; i < titles.length; i++) {
-      if (titles[i].textContent === value) {
-        titles[i].scrollIntoView(true);
-        break;
+    if (typeof window !== "undefined") {
+      // code here
+      const titles = [...document.querySelectorAll(`h${depth}`)];
+      for (let i = 0; i < titles.length; i++) {
+        if (titles[i].textContent === value) {
+          titles[i].scrollIntoView(true);
+          break;
+        }
       }
     }
   };
 
-  const memoMarkdown = useMemo(
-    () =>
-      Markdown.parse(rawMarkdownBody, {
-        ol: "list-group reset",
-        ul: "list-group reset",
-        li: "list-item",
-        blockquote: "blockquote blockquote-info",
-        h: false,
-        indent: 4,
-      }),
-    []
-  );
+  // const memoMarkdown = useMemo(
+  //   () =>
+  //     Markdown.parse(rawMarkdownBody, {
+  //       ol: "list-group reset",
+  //       ul: "list-group reset",
+  //       li: "list-item",
+  //       blockquote: "blockquote blockquote-info",
+  //       h: false,
+  //       indent: 4,
+  //     }),
+  //   []
+  // );
 
   useEffect(() => {
     hljs.configure({});
@@ -95,7 +98,7 @@ export default function Template({ data }) {
         <Paper elevation={10}>
           <CardMedia
             component='img'
-            image={frontmatter.image.replace(/assets/g, "")}
+            image={frontmatter.image}
             alt={frontmatter.image}
             sx={{
               maxHeight: 450,
@@ -127,10 +130,17 @@ export default function Template({ data }) {
             my: 5,
           }}>
           <div
-            // dangerouslySetInnerHTML={{ __html: html }}
-            dangerouslySetInnerHTML={{
-              __html: memoMarkdown,
+            className='blog-post'
+            style={{
+              letterSpacing: 0.9,
+              wordSpacing: 2.5,
             }}
+            dangerouslySetInnerHTML={{
+              __html: html,
+            }}
+            // dangerouslySetInnerHTML={{
+            //   __html: memoMarkdown,
+            // }}
             // children={html}
           />
         </Box>
@@ -141,7 +151,9 @@ export default function Template({ data }) {
 
 export const pageQuery = graphql`
   query ($path: String!) {
-    markdownRemark(frontmatter: { slug: { eq: $path } }) {
+    markdownRemark(
+      frontmatter: { slug: { eq: $path }, published: { eq: true } }
+    ) {
       frontmatter {
         image
         slug

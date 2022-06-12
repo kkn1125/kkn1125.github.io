@@ -5,7 +5,7 @@ date:   2022-01-14 23:00:45 +0900
 title:  "[VUE] Vue Event Bus"
 author: Kimson
 categories: [ VUE, TIL ]
-image: assets/images/post/covers/TIL-vue.png
+image: /images/post/covers/TIL-vue.png
 tags: [ event bus, 전달 ]
 description: ""
 featured: true
@@ -27,6 +27,6 @@ published: false
 
 📚 함께 보면 좋은 내용
 
-[Chess 테스트 페이지](https://kkn1125.github.io/chess/){:target="_blank"}
+[Chess 테스트 페이지](https://kkn1125.github.io/chess/)
 
-[Chess 깃허브 저장소](https://github.com/kkn1125/chess/){:target="_blank"}
+[Chess 깃허브 저장소](https://github.com/kkn1125/chess/)

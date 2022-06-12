@@ -6,7 +6,7 @@ date:   2022-02-07 19:53:39 +0900
 title:  "[JAVASCRIPT] Markdown Parser를 만들어보자 (특히 리스트)"
 author: Kimson
 categories: [ javascript ]
-image: assets/images/post/covers/TIL-javascript.png
+image: /images/post/covers/TIL-javascript.png
 tags: [ markdown, md, parser, til, tim ]
 description: "Markdown Parser를 만들어보자
 
@@ -230,4 +230,3 @@ this.listify = function (){
 📚 함께 보면 좋은 내용
 
 [위키백과::스택](https://ko.wikipedia.org/wiki/%EC%8A%A4%ED%83%9D '위키::스택')
-{:target="_blank"}

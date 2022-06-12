@@ -7,7 +7,7 @@ title:  "[JAVASCRIPT] 카테고리 필터"
 author: Kimson
 categories: [ javascript ]
 tags: [filter, category, absolute, til]
-image: assets/images/post/covers/TIM-none.png
+image: /images/post/covers/TIM-none.png
 description: "Category Filter
 
 만들어 보고싶은게 한둘이 아니어서 가끔 몸이 모자라다는 생각도 듭니다.  
@@ -40,7 +40,7 @@ published: true
 
 요즘 data-*속성에 익숙해져서 왠만하면 모든 기능 구현을 data-*를 사용하고 있습니다. 그래서 오늘 다룰 내용은 주로 data-\*와 위 언급한 회사의 카테고리 필터에 적용된 absolute 방식 조정입니다.
 
-> 참고한 페이지 : [투라인코드](https://www.twolinecode.com/){:target="_blank"}
+> 참고한 페이지 : [투라인코드](https://www.twolinecode.com/)
 
 ## 리스트 방식
 

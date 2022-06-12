@@ -7,7 +7,7 @@ title:  "[SPRINGBOOT] SPRING BOOT 시작하기 01"
 author: Kimson
 categories: [ spring boot ]
 tags: [spring, lombok, thymeleaf, til]
-image: assets/images/post/covers/TIL-spring.png
+image: /images/post/covers/TIL-spring.png
 description: "Spring boot 시드 프로젝트
 
 spring을 처음 시작했을 때 굉장히 당황스러웠던 기억이 납니다. 기본적인 컨트롤러 만드는 것과 연결하는 것조차 작동이 안되서 많이 좌절했습니다.
@@ -69,7 +69,7 @@ spring을 처음 시작했을 때 굉장히 당황스러웠던 기억이 납니�
 
 lombok과 thymeleaf는 이후 자세히 다루고, 간단한 사용법만 같이 언급하겠습니다.
 
-> eclipse에서 말고도 웹에서 스타터를 만들어 불러올수도 있습니다. [spring initializr](https://start.spring.io/){:target="_blank"}를 참고하시면 됩니다. 설정은 설명하는 내용과 차이가 거의 없습니다.
+> eclipse에서 말고도 웹에서 스타터를 만들어 불러올수도 있습니다. [spring initializr](https://start.spring.io/)를 참고하시면 됩니다. 설정은 설명하는 내용과 차이가 거의 없습니다.
 
 ## Project File Tree
 

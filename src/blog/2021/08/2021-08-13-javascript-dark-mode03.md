@@ -7,7 +7,7 @@ title:  "[JAVASCRIPT] 정적웹에 다크모드 적용하기 03"
 author: Kimson
 categories: [ javascript ]
 tags: [setTimeout, darkmode, til]
-image: assets/images/post/covers/TIL-javascript.png
+image: /images/post/covers/TIL-javascript.png
 description: "다크모드 부드러운 전환
 다크모드 1편이 단순하게 다크모드를 구현하는 주제였으면, 다크모드 2편은 \"언제 `body`태그에 `dark`클래스를 넣는가\"였습니다. 런데 문제는 `transition`을 주는 것이었습니다. `transition`을 주게 되면 `dark`클래스로 저장하여 여는 것 아니면 켤때마다 까매지고, 하얘지는 현상이 계속 됐습니다."
 featured: false
@@ -23,7 +23,7 @@ published: true
 
 # 다크모드 부드러운 전환
 
-[다크모드 1편](https://kkn1125.github.io/javascript-dark-mode01/){:target="_blank"}이 단순하게 다크모드를 구현하는 주제였으면, [다크모드 2편](https://kkn1125.github.io/javascript-dark-mode02/){:target="_blank"}은 "**언제 `body`태그에 `dark`클래스를 넣는가**"였습니다.
+[다크모드 1편](https://kkn1125.github.io/javascript-dark-mode01/)이 단순하게 다크모드를 구현하는 주제였으면, [다크모드 2편](https://kkn1125.github.io/javascript-dark-mode02/)은 "**언제 `body`태그에 `dark`클래스를 넣는가**"였습니다.
 
 그런데 문제는 `transition`을 주는 것이었습니다. `transition`을 주게 되면 `dark`클래스로 저장하여 여는 것 아니면 켤때마다 까매지고, 하얘지는 현상이 계속 됐습니다.
 
@@ -193,6 +193,6 @@ setTimeout(()=>{
 
 > 참고 사이트
 
-[웹 렌더링 - jay님의 블로그](https://velog.io/@jay/html-101-rendering){:target="_blank"}
+[웹 렌더링 - jay님의 블로그](https://velog.io/@jay/html-101-rendering)
 
-[DOM Tree](https://www.html5rocks.com/en/tutorials/internals/howbrowserswork/#Main_flow_examples){:target="_blank"}
+[DOM Tree](https://www.html5rocks.com/en/tutorials/internals/howbrowserswork/#Main_flow_examples)

@@ -7,7 +7,7 @@ title:  "[SPRING] xml 없이 에러페이지 처리하기"
 author: Kimson
 categories: [ spring ]
 tags: [javaconfiguration, exception, "404", til]
-image: assets/images/post/covers/TIL-spring.png
+image: /images/post/covers/TIL-spring.png
 description: "xml 없는 프로젝트
 
 꽤 오랫동안 묵혀뒀던 주제였습니다. Spring 책을 보면서 최근 web.xml(context-*.xml 등) 파일 없이 자바화 한다는 추세라는 문구를 보고 무작정 따라했던 기억이 납니다.  
@@ -56,7 +56,7 @@ published: true
 
 아래는 현재 테스트용 프로젝트의 파일구조입니다.
 
-![작업환경]({{site.baseurl}}/assets/images/post/exception/exception01.png)
+![작업환경](/images/post/exception/exception01.png)
 
 exception 처리 하기위해 test폴더에 파일을 두개 만듭니다.  
 
@@ -67,12 +67,12 @@ exception 처리 하기위해 test폴더에 파일을 두개 만듭니다.
 
 아무런 처리를 하지 않으면 흔히 보는 친절?하게 에러를 표시하는 페이지가 나옵니다.
 
-![친절한 에러페이지]({{site.baseurl}}/assets/images/post/exception/exception02.png)
+![친절한 에러페이지](/images/post/exception/exception02.png)
 
 웹페이지 보안상 너무 친절하게 정보를 알려주면 위험하니 얼른 바꾸어 봅시다.
 
 우선 에러 코드가 담기는 Json파일을 만들겠습니다.
-자바에서 Jackson databind로 Json처리가 어려우신 분은 [[JAVA] Json 기본 익히기](https://kkn1125.github.io/java-jackson-databind/){:target="_blank"}를 보고오시면 도움이 됩니다.
+자바에서 Jackson databind로 Json처리가 어려우신 분은 [[JAVA] Json 기본 익히기](https://kkn1125.github.io/java-jackson-databind/)를 보고오시면 도움이 됩니다.
 
 ```json
 // 원래 json파일은 주석이 없습니다.
@@ -196,11 +196,11 @@ public class ControllerAdvisor
 
 ModelAndView를 사용하여 응답페이지 경로와 json에서 얻은 에러 객체를 함께 보냅니다. 데이터를 페이지에 뿌리기 전 404가 잘 연결되는지 테스트해봅시다.
 
-![에러테스트페이지]({{site.baseurl}}/assets/images/post/exception/exception03.png)
+![에러테스트페이지](/images/post/exception/exception03.png)
 
 빨간 링크는 `/toast`라는 존재하지 않는 경로로 연결됩니다.
 
-![에러테스트페이지]({{site.baseurl}}/assets/images/post/exception/exception04.png)
+![에러테스트페이지](/images/post/exception/exception04.png)
 
 잘 연결이 됩니다! 에러코드, 상태, 메세지, 이유가 나오게 됩니다. 이 부분은 방금 모델뷰에 담은 내용을 EL표현식으로 뽑아서 보겠습니다.
 
@@ -218,9 +218,9 @@ ModelAndView를 사용하여 응답페이지 경로와 json에서 얻은 에러 
 </div>
 ```
 
-![404페이지]({{site.baseurl}}/assets/images/post/exception/exception05.png)
+![404페이지](/images/post/exception/exception05.png)
 
 헤로쿠로 블로그를 만들때에도 방법을 몰라서 그냥 두고 썼는데 속이 뻥 뚫리는 기분입니다. 아직 알아야 할 부분이 많고, 자세히 모르는 부분을 설명없이 방법만 설명해서 글을 써놓고도 부끄럽습니다. httpstatus 코드는 많은 도큐먼트에서 알려주고 있어서 검색하기 쉽습니다.
-혹시 찾기 어려우신 분은 [마이크로소프트 Docs HttpStatusCode](https://docs.microsoft.com/ko-kr/dotnet/api/system.net.httpstatuscode?view=net-5.0 'microsoft HttpStatusCode'){:target="_blank"}를 참고하시면 되겠습니다.
+혹시 찾기 어려우신 분은 [마이크로소프트 Docs HttpStatusCode](https://docs.microsoft.com/ko-kr/dotnet/api/system.net.httpstatuscode?view=net-5.0 'microsoft HttpStatusCode')를 참고하시면 되겠습니다.
 
 자주 사용되는 403, 404, 500에 대한 status와 exception class는 [키워드](#keywords)에 같이 남겨두겠습니다.

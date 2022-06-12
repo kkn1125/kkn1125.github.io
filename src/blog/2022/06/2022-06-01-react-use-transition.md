@@ -5,7 +5,7 @@ date: 2022-06-07 23:51:29 +0900
 title: "[REACT] useTransition 사용"
 author: Kimson
 categories: [react]
-image: assets/images/post/covers/TIL-react.png
+image: /images/post/covers/TIL-react.png
 tags: [react, basic, til]
 description: "Slow Render를 위한 startTransition
 
@@ -129,6 +129,6 @@ useCallback을 사용했을 때는 큰 차이를 보이지는 못한다.
 
 📚 함께 보면 좋은 내용
 
-[React::Real world example](https://github.com/reactwg/react-18/discussions/65#){:target="\_blank"}
+[React::Real world example](https://github.com/reactwg/react-18/discussions/65#)
 
-[React::Github repository](https://github.com/facebook/react/blob/42f15b324f50d0fd98322c21646ac3013e30344a/packages/react-dom/src/server/ReactPartialRendererHooks.js#L269){:target="\_blank"}
+[React::Github repository](https://github.com/facebook/react/blob/42f15b324f50d0fd98322c21646ac3013e30344a/packages/react-dom/src/server/ReactPartialRendererHooks.js#L269)

@@ -6,7 +6,7 @@ date:   2021-12-13 17:16:37 +0900
 title:  "[SPRING] Tiles 설정 시 경로에 있는 파일을 못 찾을 때"
 author: Kimson
 categories: [ spring ]
-image: assets/images/post/covers/TIL-spring.png
+image: /images/post/covers/TIL-spring.png
 tags: [ tiles, not found, til ]
 description: "Tiles 파일 못 찾을 때
 

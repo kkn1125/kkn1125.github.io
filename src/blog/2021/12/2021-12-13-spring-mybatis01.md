@@ -6,7 +6,7 @@ date:   2021-12-13 17:16:37 +0900
 title:  "[SPRING] MyBatis 사용하기 01"
 author: Kimson
 categories: [ spring ]
-image: assets/images/post/springboot/mybatis/batis03.png
+image: /images/post/springboot/mybatis/batis03.png
 tags: [ java configuration, mybatis, SqlSessionFactory, til ]
 description: "Spring에서 MyBatis를 빠르게 사용해보자
 
@@ -81,7 +81,7 @@ published: true
 
 ## MapperScan과 SqlSessionFactory
 
-> mapper를 설정하는 방법을 모르신다면 블로그에 있는 [SPRING BOOT MyBatis 시작하기](https://kkn1125.github.io/spring-boot-mybatis01){:target="_blank"}를 참고해주세요!
+> mapper를 설정하는 방법을 모르신다면 블로그에 있는 [SPRING BOOT MyBatis 시작하기](https://kkn1125.github.io/spring-boot-mybatis01)를 참고해주세요!
 
 두 가지가 필요합니다. `MapperScan`과 `SqlSessionFactory`인데요.
 
@@ -130,18 +130,18 @@ public class RootConfig {
 
 📚 함께 보면 좋은 내용
 
-[MySQL 페이지 - Connecting to MySQL Using the JDBC DriverManager Interface](https://dev.mysql.com/doc/connector-j/8.0/en/connector-j-usagenotes-connect-drivermanager.html){:target="_blank"}
+[MySQL 페이지 - Connecting to MySQL Using the JDBC DriverManager Interface](https://dev.mysql.com/doc/connector-j/8.0/en/connector-j-usagenotes-connect-drivermanager.html)
 
-[쥬니님 개발블로그](https://juntcom.tistory.com/44){:target="_blank"}
+[쥬니님 개발블로그](https://juntcom.tistory.com/44)
 
-[Choi님 블로그 - 맵퍼 설정방식](https://cho1-w0n-san9.tistory.com/32){:target="_blank"}
+[Choi님 블로그 - 맵퍼 설정방식](https://cho1-w0n-san9.tistory.com/32)
 
-[honinbo님 블로그 - @MapperScan이란?](https://cho1-w0n-san9.tistory.com/32){:target="_blank"}
+[honinbo님 블로그 - @MapperScan이란?](https://cho1-w0n-san9.tistory.com/32)
 
-[linked2ev님 블로그 - MapperScan를 통한 Mapper 주입 방식](https://cho1-w0n-san9.tistory.com/32){:target="_blank"}
+[linked2ev님 블로그 - MapperScan를 통한 Mapper 주입 방식](https://cho1-w0n-san9.tistory.com/32)
 
-[매운코딩님 블로그 - Mybatis 연동 시 오류 해결방법](https://cho1-w0n-san9.tistory.com/32){:target="_blank"}
+[매운코딩님 블로그 - Mybatis 연동 시 오류 해결방법](https://cho1-w0n-san9.tistory.com/32)
 
-[코딩노잼님 블로그 - @Mapper는 언제 사용하는걸까?](https://cho1-w0n-san9.tistory.com/32){:target="_blank"}
+[코딩노잼님 블로그 - @Mapper는 언제 사용하는걸까?](https://cho1-w0n-san9.tistory.com/32)
 
-[mumuni님 velog - MyBatis를 Springboot에서 사용해보자](https://cho1-w0n-san9.tistory.com/32){:target="_blank"}
+[mumuni님 velog - MyBatis를 Springboot에서 사용해보자](https://cho1-w0n-san9.tistory.com/32)

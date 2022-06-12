@@ -6,7 +6,7 @@ date:   2021-10-19 18:23:12 +0900
 title:  "[SPRING] JDBC Template 사용 기록"
 author: Kimson
 categories: [ spring ]
-image: assets/images/post/covers/TIL-spring.png
+image: /images/post/covers/TIL-spring.png
 tags: [ jdbc, template, til ]
 description: "JDBC Template 사용법
 

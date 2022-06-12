@@ -7,7 +7,7 @@ title:  "[JAVASCRIPT] AJAX 전송 한글 깨짐 문제"
 author: Kimson
 categories: [ javascript ]
 tags: [ajax, jquery, utf8, til]
-image: assets/images/post/what.jpg
+image: /images/post/what.jpg
 description: "사용법은 간단하면서도 복잡하다.
 자주사용될 featured와 hidden을 잘 사용해야겠다. 커버 이미지는 image 경로를 주면 되고, hidden이지만 featured에 띄울 수도 있다."
 featured: false
@@ -46,4 +46,4 @@ public @ResponseBody String comment(@PathVariable("param") int param1, HttpServl
 
 -----
 
-[LunaStratos님 :: Spring + ajax 로 데이터 받을때 String이 물음표 ? 가 나오는 현상](https://stratosphere.tistory.com/207){:target="_blank"}
+[LunaStratos님 :: Spring + ajax 로 데이터 받을때 String이 물음표 ? 가 나오는 현상](https://stratosphere.tistory.com/207)

@@ -6,7 +6,7 @@ date:   2021-10-04 19:55:23 +0900
 title:  "[JAVASCRIPT] Graph Editor JS"
 author: Kimson
 categories: [ javascript ]
-image: assets/images/post/covers/TIM-none.png
+image: /images/post/covers/TIM-none.png
 tags: [ graph, table, generator, til, tim ]
 description: "Graph Editor
 
@@ -39,6 +39,6 @@ published: true
 
 > 참조 경로
 
-[GraphEdit :: devkimson](https://github.com/kkn1125/GraphEdit){:target="_blank"}
+[GraphEdit :: devkimson](https://github.com/kkn1125/GraphEdit)
 
-[GraphEdit Preview :: devkimson](https://kkn1125.github.io/GraphEdit/){:target="_blank"}
+[GraphEdit Preview :: devkimson](https://kkn1125.github.io/GraphEdit/)

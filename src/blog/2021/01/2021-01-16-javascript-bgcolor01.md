@@ -6,7 +6,7 @@ date:   2021-01-16 21:25:04 +0900
 title:  "[JAVASCRIPT] 배경색 무작위 변경 버튼"
 author: Kimson
 categories: [ javascript ]
-image: assets/images/post/covers/TIL-javascript.png
+image: /images/post/covers/TIL-javascript.png
 tags: [ bgcolor, backup, til ]
 description: "색상 무작위 변경 버튼을 하나 만든다. 변경하는 함수를 만든다."
 featured: false

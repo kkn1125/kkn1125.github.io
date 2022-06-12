@@ -6,7 +6,7 @@ date:   2022-01-25 15:42:46 +0900
 title:  "[SPRING] MyBatis Like 쿼리 작성"
 author: Kimson
 categories: [ spring ]
-image: assets/images/post/covers/TIL-spring.png
+image: /images/post/covers/TIL-spring.png
 tags: [ like, query, til ]
 description: "MyBatis Like
 

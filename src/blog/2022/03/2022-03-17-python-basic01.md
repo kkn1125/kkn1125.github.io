@@ -5,7 +5,7 @@ date:   2022-03-15 21:17:09 +0900
 title:  "[Python] 기초부터 다시 보자 01"
 author: Kimson
 categories: [ python ]
-image: assets/images/post/covers/TIL-python.jpg
+image: /images/post/covers/TIL-python.jpg
 tags: [ basic, til ]
 description: "기초 Cheetsheet
 수
@@ -283,6 +283,6 @@ print(found)
 
 📚 함께 보면 좋은 내용
 
-[Python Cheatsheet](https://www.pythoncheatsheet.org/){:target="_blank"}
+[Python Cheatsheet](https://www.pythoncheatsheet.org/)
 
-[Python Pool :: Match Case Python: New Addition to the Language](https://www.pythonpool.com/match-case-python/){:target="_blank"}
+[Python Pool :: Match Case Python: New Addition to the Language](https://www.pythonpool.com/match-case-python/)

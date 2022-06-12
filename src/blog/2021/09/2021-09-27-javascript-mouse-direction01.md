@@ -7,7 +7,7 @@ title:  "[JAVASCRIPT] 마우스 이동 방향 감지"
 author: Kimson
 categories: [ javascript ]
 tags: [ detect, direction, mouse, til ]
-image: assets/images/post/covers/TIL-javascript.png
+image: /images/post/covers/TIL-javascript.png
 description: "마우스 이동 방향 감지
 
 얼마 전 취업활동 중 모 회사의 포트폴리오 페이지에서 신기한 효과를 보고 따라해보려 합니다.
@@ -47,7 +47,7 @@ published: true
 
 ## 이동 방향을 감지해보자
 
-예전에 스크롤로 위아래를 감지하는 방법을 포스팅 했었는데요. 그것과 같은 식으로 잡아내려합니다. 스크롤 방향이 궁금하시면 [스크롤 방향 감지](https://kkn1125.github.io/javascript-detecting-scroll-direction/){:target="_blank"}를 참고하시기 바랍니다.
+예전에 스크롤로 위아래를 감지하는 방법을 포스팅 했었는데요. 그것과 같은 식으로 잡아내려합니다. 스크롤 방향이 궁금하시면 [스크롤 방향 감지](https://kkn1125.github.io/javascript-detecting-scroll-direction/)를 참고하시기 바랍니다.
 
 ```html
 <div class="card mx-3" style="width: 15rem;">
@@ -385,7 +385,7 @@ function getAverageRGB(imgEl) {
 
 -----
 
-> [stackoverflow :: Get average color of image via Javascript](https://stackoverflow.com/questions/2541481/get-average-color-of-image-via-javascript){:target="_blank"}
+> [stackoverflow :: Get average color of image via Javascript](https://stackoverflow.com/questions/2541481/get-average-color-of-image-via-javascript)
 
 ```javascript
 function getAverageRGB(imgEl) {

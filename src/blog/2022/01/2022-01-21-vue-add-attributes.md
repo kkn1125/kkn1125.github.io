@@ -6,7 +6,7 @@ date:   2022-01-21 20:17:54 +0900
 title:  "[VUE] 컴포넌트, 엘리먼트에 다중 속성 보내기"
 author: Kimson
 categories: [ vue ]
-image: assets/images/post/covers/TIL-vue.png
+image: /images/post/covers/TIL-vue.png
 tags: [ attributes, multi, component, til ]
 description: "컴포넌트, 엘리먼트에 다중 속성 보내기
 기억하고자 가볍게 올리는 것이니 참고 바랍니다.
@@ -202,4 +202,4 @@ data() {
 
 📚 함께 보면 좋은 내용
 
-[stackoverflow::How to add multiple attribute - vue.js](https://stackoverflow.com/questions/46741537/how-to-add-multiple-attribute-vue-js){:target="_blank"}
+[stackoverflow::How to add multiple attribute - vue.js](https://stackoverflow.com/questions/46741537/how-to-add-multiple-attribute-vue-js)

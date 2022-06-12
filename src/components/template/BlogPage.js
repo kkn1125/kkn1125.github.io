@@ -39,12 +39,9 @@ const BlogPage = ({ data, pageContext }) => {
       {data.allMarkdownRemark.edges.map((edge, idx, o) => (
         <Fragment key={edge.node.id}>
           <ListItem alignItems='flex-start'>
-            <ListItemAvatar>
-              <Avatar
-                alt={edge.node.frontmatter.title.match(/[\w]+/g)[0]}
-                src='/static/images/avatar/1.jpg'
-              />
-            </ListItemAvatar>
+            {/* <ListItemAvatar>
+              <Avatar>{edge.node.frontmatter.title.match(/[\w]+/g)[0]}</Avatar>
+            </ListItemAvatar> */}
             <ListItemText>
               <Typography
                 variant='h5'
@@ -67,7 +64,7 @@ const BlogPage = ({ data, pageContext }) => {
                 variant='body2'>
                 {cutText(edge.node.frontmatter.description, 30, "─ ")}
               </Typography>
-              <BlogCardInfo data={edge.node.frontmatter} noavatar />
+              <BlogCardInfo data={edge.node.frontmatter} />
               <Box
                 component='div'
                 sx={{
@@ -115,6 +112,7 @@ export const query = graphql`
       sort: { fields: [frontmatter___date], order: DESC }
       limit: $limit
       skip: $skip
+      filter: { frontmatter: { published: { eq: true } } }
     ) {
       edges {
         node {

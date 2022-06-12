@@ -7,7 +7,7 @@ title:  "[JAVASCRIPT] 달력만들기 - TODO LIST"
 author: Kimson
 categories: [ javascript ]
 tags: [달력, calendar, todolist, til]
-image: assets/images/post/jsdevKal/devkal-3.png
+image: /images/post/jsdevKal/devkal-3.png
 description: "사용 dependency
 junit : 4.12
 spring-test : 5.3.6
@@ -142,6 +142,6 @@ Obj.test = {
 
 수정된 기능은 setting부분의 tr조정과 table의 width조정, 추가된 기능은 TODO List 기능과 오늘로 이동, 할일 여부에 따른 뱃지, 개수 표기 입니다.
 
-[이전 달력 포스팅]({{ site.baseurl }}/javascript-calendar/){:target="_blank"}에 초기 세팅값에 대해 자세히 적혀있습니다.
+[이전 달력 포스팅]({{ site.baseurl }}/javascript-calendar/)에 초기 세팅값에 대해 자세히 적혀있습니다.
 
 <a href="{{site.baseurl}}/assets/download/devkalendarTODO.zip" download>devKalendarTODO 1.1.0 ver 다운로드</a>

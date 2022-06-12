@@ -7,7 +7,7 @@ title:  "[PORTFOLIO] 커피 온라인 몰"
 author: Kimson
 categories: [ portfolio ]
 tags: [coffeecong, jsp]
-image: assets/images/post/coffeecong/prj-1.png
+image: /images/post/coffeecong/prj-1.png
 description: "주제 - 커피용품 온라인몰
 ### 1. 사이트 구성
 #### 1.1 페이지
@@ -31,7 +31,7 @@ published: false
 
 # CoffeeCong Site
 
-[coffeecong](https://devkims-on.herokuapp.com/main.me){:target="_blank"} 사이트 보러가기
+[coffeecong](https://devkims-on.herokuapp.com/main.me) 사이트 보러가기
 
 > 주제 - 커피용품 온라인몰
 

@@ -6,7 +6,7 @@ date:   2021-12-16 14:31:34 +0900
 title:  "[JAVASCRIPT] 정적 웹에서 방문자 수 나타내기"
 author: Kimson
 categories: [ javascript ]
-image: assets/images/post/covers/TIL-javascript.png
+image: /images/post/covers/TIL-javascript.png
 tags: [ visitors, counting, til ]
 description: "정적 웹에서 방문자 수 나타내기
 
@@ -34,7 +34,7 @@ published: true
 
 > 여담이 필요없으신 분은 아래로 스크롤하셔서 방법부터 보시기 바랍니다.
 
-예전에 정적 웹에서 데이터베이스를 사용할 수 없을까 해서 올린 [[DATABASE] 정적 웹에서 데이터베이스 사용하기](https://kkn1125.github.io/database-use-db){:target="_blank"} 에서 이야기를 다룬 적 있습니다. 그런 생각들이 점점 꼬꼬무해서 방문자 표시를 하고 싶다는 생각이 들어 정말 여러가지를 해봤습니다.
+예전에 정적 웹에서 데이터베이스를 사용할 수 없을까 해서 올린 [[DATABASE] 정적 웹에서 데이터베이스 사용하기](https://kkn1125.github.io/database-use-db) 에서 이야기를 다룬 적 있습니다. 그런 생각들이 점점 꼬꼬무해서 방문자 표시를 하고 싶다는 생각이 들어 정말 여러가지를 해봤습니다.
 
 1. IndexedDB
    1. 쓰기가 너무 번거롭습니다. 초반에 이해하는데 조금 시간이 걸렸고, 막상 써보니 제가 기대한 `데이터 공유`가 되지 않아 포기했습니다.
@@ -49,7 +49,7 @@ published: true
 
 ## 방문자 수를 불러오자
 
-우연히 [url.kr](https://url.kr/){:target="_blank"} 라는 사이트를 알았고, 주로 긴 `url`을 줄여주는 역할을 하는 것 같습니다. 호기심에 어떻게 줄여지고, 줄여진 주소가 작동하는지 테스트하던 중 방문자 수를 조회하는 페이지가 있었습니다.
+우연히 [url.kr](https://url.kr/) 라는 사이트를 알았고, 주로 긴 `url`을 줄여주는 역할을 하는 것 같습니다. 호기심에 어떻게 줄여지고, 줄여진 주소가 작동하는지 테스트하던 중 방문자 수를 조회하는 페이지가 있었습니다.
 
 그래서 이거다..!
 

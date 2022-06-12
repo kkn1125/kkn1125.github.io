@@ -7,7 +7,7 @@ title:  "[JAVASCRIPT] 드롭다운 메뉴 구현"
 author: Kimson
 categories: [ javascript ]
 tags: [ dropdown, til ]
-image: assets/images/post/covers/TIL-javascript.png
+image: /images/post/covers/TIL-javascript.png
 description: "간단한 드롭다운 메뉴 만들기
 
 css-tricks 사이트의 Philip Walton의 포스트의 내용을 보고 만들어졌습니다. 수정하는 시점에서 불필요한 내용과 횡설수설하는 부분을 재작성했음을 알립니다.
@@ -57,7 +57,7 @@ published: true
 
 토글방식으로 메뉴를 열고 닫기는 간단합니다. 하지만 메뉴가 열린 상태에서 리스트나 외부를 클릭 할 때 동작을 조작하려면 좀 더 작업해야합니다.
 
-해당 포스팅에서 참고했던 [stackoverflow](https://stackoverflow.com/questions/152975/how-do-i-detect-a-click-outside-an-element){:target="_blank"}의 글은 열린 메뉴를 어떻게 조작하는 지에 대한 팁을 다룹니다.
+해당 포스팅에서 참고했던 [stackoverflow](https://stackoverflow.com/questions/152975/how-do-i-detect-a-click-outside-an-element)의 글은 열린 메뉴를 어떻게 조작하는 지에 대한 팁을 다룹니다.
 
 참고한 글에 있는 팁을 설명하기 위해 예제를 작성해봅시다.
 
@@ -147,7 +147,7 @@ toggle.addEventListener('click', handleDropdownToggle);
 </span>
 </figure>
 
-이제 버블링에 대한 이야기도 했으니 전파되는 것을 막기만 하면 해결이 됩니다. 이 내용을 [stackoverflow](https://stackoverflow.com/questions/152975/how-do-i-detect-a-click-outside-an-element){:target="_blank"}에서 하고 있습니다.
+이제 버블링에 대한 이야기도 했으니 전파되는 것을 막기만 하면 해결이 됩니다. 이 내용을 [stackoverflow](https://stackoverflow.com/questions/152975/how-do-i-detect-a-click-outside-an-element)에서 하고 있습니다.
 
 ```javascript
 const /* ... */,
@@ -172,4 +172,4 @@ const /* ... */,
 
 📚 함께 보면 좋은 내용
 
-[Stackoverflow::How do I detect a click outside an element?](https://stackoverflow.com/questions/152975/how-do-i-detect-a-click-outside-an-element){:target="_blank"}
+[Stackoverflow::How do I detect a click outside an element?](https://stackoverflow.com/questions/152975/how-do-i-detect-a-click-outside-an-element)

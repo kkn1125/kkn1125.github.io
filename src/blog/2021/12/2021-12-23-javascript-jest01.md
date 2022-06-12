@@ -6,7 +6,7 @@ date:   2021-12-23 21:09:22 +0900
 title:  "[JAVASCRIPT] Jest를 사용해보자"
 author: Kimson
 categories: [ javascript ]
-image: assets/images/post/covers/TIL-javascript.png
+image: /images/post/covers/TIL-javascript.png
 tags: [ unit test, jest, test code ]
 description: "Jest 사용하기
 
@@ -24,7 +24,7 @@ published: true
 
 # Jest 사용하기
 
-오늘 올렸던 [[JAVA] TDD를 알아보자]({{site.baseurl}}/java-tdd01){:target="_blank"} 포스팅과 관련한 툴의 하나인데요. `node`가 설치되어 있어야 사용할 수 있습니다.
+오늘 올렸던 [[JAVA] TDD를 알아보자]({{site.baseurl}}/java-tdd01) 포스팅과 관련한 툴의 하나인데요. `node`가 설치되어 있어야 사용할 수 있습니다.
 
 자주 보던 유튜브 채널에 `TDD`와 어떻게 테스트 코드를 구현하는지에 대한 내용을 보고 따라하면서 기록으로 남기게 되었습니다.
 
@@ -148,4 +148,4 @@ test('[계산기 기능] 더하기 테스트, 숫자와 숫자가 주어질 때'
 
 📚 함께 보면 좋은 내용
 
-[jest.js 홈페이지](https://jestjs.io/){:target="_blank"}
+[jest.js 홈페이지](https://jestjs.io/)

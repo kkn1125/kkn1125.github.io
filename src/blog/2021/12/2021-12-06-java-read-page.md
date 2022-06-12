@@ -6,7 +6,7 @@ date:   2021-12-06 21:27:46 +0900
 title:  "[JAVA] URL 경로의 내용 읽어오기"
 author: Kimson
 categories: [ java ]
-image: assets/images/post/covers/TIL-java.png
+image: /images/post/covers/TIL-java.png
 tags: [ read, url, til ]
 description: "URL 경로 내용 읽어오기
 

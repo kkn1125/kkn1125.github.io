@@ -24,7 +24,7 @@ import {
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import AdbIcon from "@mui/icons-material/Adb";
 import MenuIcon from "@mui/icons-material/Menu";
-import { Link } from "gatsby";
+import { Link, navigate } from "gatsby";
 import SearchIcon from "@mui/icons-material/Search";
 import Brightness4Icon from "@mui/icons-material/Brightness4";
 import Brightness7Icon from "@mui/icons-material/Brightness7";
@@ -57,15 +57,8 @@ function ScrollTop(props) {
   });
 
   const handleClick = (event) => {
-    const anchor = (event.target.ownerDocument || document).querySelector(
-      "#back-to-top-anchor"
-    );
-
-    if (anchor) {
-      anchor.scrollIntoView({
-        block: "center",
-      });
-    }
+    navigate("#");
+    navigate("");
   };
 
   return (
@@ -82,18 +75,11 @@ function ScrollTop(props) {
 
 ScrollTop.propTypes = {
   children: PropTypes.element.isRequired,
-  /**
-   * Injected by the documentation to work in an iframe.
-   * You won't need it on your project.
-   */
   window: PropTypes.func,
 };
 
 function HideOnScroll(props) {
   const { children, window } = props;
-  // Note that you normally won't need to set the window ref as useScrollTrigger
-  // will default to window.
-  // This is only being set here because the demo is in an iframe.
   const trigger = useScrollTrigger({
     target: window ? window() : undefined,
   });
@@ -107,10 +93,6 @@ function HideOnScroll(props) {
 
 HideOnScroll.propTypes = {
   children: PropTypes.element.isRequired,
-  /**
-   * Injected by the documentation to work in an iframe.
-   * You won't need it on your project.
-   */
   window: PropTypes.func,
 };
 
@@ -247,6 +229,7 @@ export default function HideAppBar(props) {
                           display: "block",
                           color: (theme) => theme.palette.text.primary,
                           textDecoration: "none",
+                          textAlign: "center",
                         }}>
                         {page.name}
                       </Typography>
@@ -292,6 +275,7 @@ export default function HideAppBar(props) {
                       display: "block",
                       color: (theme) => theme.palette.text.secondary,
                       textDecoration: "none",
+                      textAlign: "center",
                     }}>
                     {page.name}
                   </Button>

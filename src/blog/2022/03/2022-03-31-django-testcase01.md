@@ -5,7 +5,7 @@ date:   2022-03-31 15:53:36 +0900
 title:  "[DJANGO] 단위테스트 작성"
 author: Kimson
 categories: [ django ]
-image: assets/images/post/covers/TIL-django.png
+image: /images/post/covers/TIL-django.png
 tags: [ unittest, til ]
 description: "단위테스트 작성
 위테스트 작성하는 것에 익숙해지기 위해서 이제 막 시작을 하고 있습니다. 확실하지 않지만 찾아가면서 시도하고 있는 상태라 정확한 이야기라고는 말 못합니다. 대신에 참고한 자료들이 링크되어 있으니 참고바랍니다.
@@ -236,20 +236,20 @@ $ coverage html # 커버리지를 html 파일 생성
 
 📚 함께 보면 좋은 내용
 
-[nuung님::Django Test - unit test, user test, coverage](https://velog.io/@qlgks1/Django-Test-unit-test-user-test-coverage){:target="_blank"}
+[nuung님::Django Test - unit test, user test, coverage](https://velog.io/@qlgks1/Django-Test-unit-test-user-test-coverage)
 
-[Stackoverflow::Django: test failing on a view with @login_required](https://stackoverflow.com/questions/2705235/django-test-failing-on-a-view-with-login-required){:target="_blank"}
+[Stackoverflow::Django: test failing on a view with @login_required](https://stackoverflow.com/questions/2705235/django-test-failing-on-a-view-with-login-required)
 
-[Django::Making queries-Updating multiple objects at once](https://docs.djangoproject.com/en/4.0/topics/db/queries/#updating-multiple-objects-at-once){:target="_blank"}
+[Django::Making queries-Updating multiple objects at once](https://docs.djangoproject.com/en/4.0/topics/db/queries/#updating-multiple-objects-at-once)
 
-[Django::Testing tools-Overview and a quick example](https://docs.djangoproject.com/en/4.0/topics/testing/tools/#overview-and-a-quick-example){:target="_blank"}
+[Django::Testing tools-Overview and a quick example](https://docs.djangoproject.com/en/4.0/topics/testing/tools/#overview-and-a-quick-example)
 
-[schoolofweb::파이썬 – 데코레이터 (Decorator)](https://schoolofweb.net/blog/posts/%ED%8C%8C%EC%9D%B4%EC%8D%AC-%EB%8D%B0%EC%BD%94%EB%A0%88%EC%9D%B4%ED%84%B0-decorator/){:target="_blank"}
+[schoolofweb::파이썬 – 데코레이터 (Decorator)](https://schoolofweb.net/blog/posts/%ED%8C%8C%EC%9D%B4%EC%8D%AC-%EB%8D%B0%EC%BD%94%EB%A0%88%EC%9D%B4%ED%84%B0-decorator/)
 
-[Stackoverflow::How to prevent user to access login page in django when already logged in?](https://stackoverflow.com/questions/55062157/how-to-prevent-user-to-access-login-page-in-django-when-already-logged-in){:target="_blank"}
+[Stackoverflow::How to prevent user to access login page in django when already logged in?](https://stackoverflow.com/questions/55062157/how-to-prevent-user-to-access-login-page-in-django-when-already-logged-in)
 
-[swhan9404님::django의 단위테스트(tests.py)](https://velog.io/@swhan9404/django%EC%9D%98-%EB%8B%A8%EC%9C%84%ED%85%8C%EC%8A%A4%ED%8A%B8tests.py){:target="_blank"}
+[swhan9404님::django의 단위테스트(tests.py)](https://velog.io/@swhan9404/django%EC%9D%98-%EB%8B%A8%EC%9C%84%ED%85%8C%EC%8A%A4%ED%8A%B8tests.py)
 
-[codechacha.com::bytes를 String으로 변환하는 방법](https://codechacha.com/ko/python-convert-bytes-to-string/){:target="_blank"}
+[codechacha.com::bytes를 String으로 변환하는 방법](https://codechacha.com/ko/python-convert-bytes-to-string/)
 
-[Django::Settings-LOGIN_URL](https://docs.djangoproject.com/en/4.0/ref/settings/#login-url){:target="_blank"}
+[Django::Settings-LOGIN_URL](https://docs.djangoproject.com/en/4.0/ref/settings/#login-url)

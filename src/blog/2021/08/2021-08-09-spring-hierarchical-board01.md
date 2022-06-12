@@ -7,7 +7,7 @@ title:  "[SPRING] 계층형 게시판 만들기"
 author: Kimson
 categories: [ spring ]
 tags: [ board, layer, hierarchical, til ]
-image: assets/images/post/hierarchical/hierarchical13.png
+image: /images/post/hierarchical/hierarchical13.png
 description: "계층형 게시판
 
 Layer의 개념
@@ -195,4 +195,4 @@ SELECT * FROM board ORDER BY bid DESC, ordered;
 
 참고한 사이트를 아래 링크 남기겠습니다.
 
-[Dev.GA님의 블로그](https://gangnam-americano.tistory.com/25){:target="_blank"}
+[Dev.GA님의 블로그](https://gangnam-americano.tistory.com/25)

@@ -7,7 +7,7 @@ title:  "[DATABASE] 정적 웹에서 데이터베이스 사용하기"
 author: Kimson
 categories: [ database ]
 tags: [ database, external, storage, spring, javascript, til ]
-image: assets/images/post/database/db01.png
+image: /images/post/database/db01.png
 description: "데이터베이스를 사용해보자
 
 `ToDo List`에서 가장 묵혀두었던 주제인데요. 안 될 것 같으면서도 될 것 같아서 흐지부지하고만 있었습니다.

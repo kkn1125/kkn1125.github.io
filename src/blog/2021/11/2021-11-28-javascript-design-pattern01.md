@@ -6,7 +6,7 @@ date:   2021-11-28 14:35:56 +0900
 title:  "[JAVASCRIPT] 자바스크립트 디자인 패턴 - 모듈 패턴"
 author: Kimson
 categories: [ javascript ]
-image: assets/images/post/covers/TIL-javascript.png
+image: /images/post/covers/TIL-javascript.png
 tags: [ javascript, module, design pattern, til ]
 description: "Module Pattern
 

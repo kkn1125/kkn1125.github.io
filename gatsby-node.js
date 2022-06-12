@@ -16,6 +16,7 @@ exports.createPages = async ({ graphql, actions, ...props }) => {
     {
       blog: allMarkdownRemark(
         sort: { fields: [frontmatter___date], order: DESC }
+        filter: { frontmatter: { published: { eq: true } } }
       ) {
         edges {
           node {
@@ -48,7 +49,7 @@ exports.createPages = async ({ graphql, actions, ...props }) => {
       }
     }
   `);
-  
+
   const blogCount = result.data.blog.edges.length;
   const perBlogPage = 10;
   const pageNum = Math.ceil(blogCount / perBlogPage);

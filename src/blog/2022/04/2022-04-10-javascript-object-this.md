@@ -5,7 +5,7 @@ date:   2022-04-10 17:43:00 +0900
 title:  "[JAVASCRIPT] Object와 This"
 author: Kimson
 categories: [ javascript ]
-image: assets/images/post/covers/TIL-javascript.png
+image: /images/post/covers/TIL-javascript.png
 tags: [ object, this, til ]
 description: "Object 이해하기
 
@@ -455,14 +455,14 @@ otherTest1.mytype.call(test1);
 
 📚 함께 보면 좋은 내용
 
-[TrackMyStories::Javascript: The four rules of \{this\}.](https://dev.to/trackmystories/javascript-the-four-rules-of-this-42g0){:target="_blank"}
+[TrackMyStories::Javascript: The four rules of \{this\}.](https://dev.to/trackmystories/javascript-the-four-rules-of-this-42g0)
 
-[MDN Web Docs::JavaScript object basics](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Basics#what_is_this){:target="_blank"}
+[MDN Web Docs::JavaScript object basics](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Basics#what_is_this)
 
-[MDN Web Docs::Inheritance and the prototype chain](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Inheritance_and_the_prototype_chain#performance){:target="_blank"}
+[MDN Web Docs::Inheritance and the prototype chain](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Inheritance_and_the_prototype_chain#performance)
 
-[Rich-Harris::eventListener.js](https://gist.github.com/Rich-Harris/6010282){:target="_blank"}
+[Rich-Harris::eventListener.js](https://gist.github.com/Rich-Harris/6010282)
 
-[MDN Web Docs::Function.prototype.apply()](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Function/apply){:target="_blank"}
+[MDN Web Docs::Function.prototype.apply()](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Function/apply)
 
-[MDN Web Docs::Call stack](https://developer.mozilla.org/ko/docs/Glossary/Call_stack){:target="_blank"}
+[MDN Web Docs::Call stack](https://developer.mozilla.org/ko/docs/Glossary/Call_stack)

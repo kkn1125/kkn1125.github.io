@@ -7,7 +7,7 @@ title:  "[JAVASCRIPT] 내 코드는 왜 이렇게 난잡할까"
 author: Kimson
 categories: [ javascript ]
 tags: [array, coding, pattern, til]
-image: assets/images/post/covers/TIL-javascript.png
+image: /images/post/covers/TIL-javascript.png
 description: "깔끔한 코드는 무엇일까
 
 설계사무소에 다닐 때 자주 하던 말이 있었습니다. 도면을 정말 군더더기 없이 잘 그렸을 때 도면에서 빛이 난다고 자주 표현합니다.

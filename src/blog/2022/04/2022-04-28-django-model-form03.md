@@ -5,7 +5,7 @@ date:   2022-04-28 15:42:45 +0900
 title:  "[DJANGO] ModelForm 03. Bootstrap5 Library와 Form Error 제어"
 author: Kimson
 categories: [ django ]
-image: assets/images/post/covers/TIL-django.png
+image: /images/post/covers/TIL-django.png
 tags: [ error, css, til ]
 description: ""
 featured: true
@@ -247,6 +247,6 @@ def signin(request):
 
 📚 함께 보면 좋은 내용
 
-[Django Docs::Styling required or erroneous form rows](https://docs.djangoproject.com/en/4.0/ref/forms/api/#django.forms.ErrorList.error_class){:target="_blank"}
+[Django Docs::Styling required or erroneous form rows](https://docs.djangoproject.com/en/4.0/ref/forms/api/#django.forms.ErrorList.error_class)
 
-[django-bootstrap5::Docs](https://django-bootstrap5.readthedocs.io/en/latest/templatetags.html#bootstrap-form){:target="_blank"}
+[django-bootstrap5::Docs](https://django-bootstrap5.readthedocs.io/en/latest/templatetags.html#bootstrap-form)

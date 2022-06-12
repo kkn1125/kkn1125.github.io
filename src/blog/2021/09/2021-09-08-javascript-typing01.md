@@ -7,7 +7,7 @@ title:  "[JAVASCRIPT] 한글 타이핑 효과 구현하기"
 author: Kimson
 categories: [ javascript ]
 tags: [ effect, typing, 한글, til ]
-image: assets/images/post/covers/TIL-javascript.png
+image: /images/post/covers/TIL-javascript.png
 description: "한글 타이핑 효과 구현
 
 오늘은 한글 타이핑 효과를 구현해보려 합니다. 많은 노가다를 하다보니 알게 된 점이 몇 개 있고, 잘 작동 되는 모습에 굉장히 뿌듯함을 느꼈습니다.
@@ -50,7 +50,7 @@ ToDo List에도 이미 올려버렸고, 구상해둔 방법이 있어서 일단 
 
 종성은 ['ㄱ', 'ㄲ', 'ㄳ', 'ㄴ', 'ㄵ', 'ㄶ', 'ㄷ', 'ㄹ', 'ㄺ', 'ㄻ', 'ㄼ', 'ㄽ', 'ㄾ', 'ㄿ', 'ㅀ', 'ㅁ', 'ㅂ', 'ㅄ', 'ㅅ', 'ㅆ', 'ㅇ', 'ㅈ', 'ㅊ', 'ㅋ', 'ㅌ', 'ㅍ', 'ㅎ'] 로 총 27개 입니다.
 
-위키백과의 [한글음절](https://ko.wikipedia.org/wiki/%ED%95%9C%EA%B8%80_%EC%9D%8C%EC%A0%88){:target="_blank"}를 보시면 자세하게 나와있습니다.
+위키백과의 [한글음절](https://ko.wikipedia.org/wiki/%ED%95%9C%EA%B8%80_%EC%9D%8C%EC%A0%88)를 보시면 자세하게 나와있습니다.
 
 위키백과의 일부를 발췌하여 예를 들겠습니다.
 

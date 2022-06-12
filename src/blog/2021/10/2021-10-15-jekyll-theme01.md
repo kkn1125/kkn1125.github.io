@@ -6,7 +6,7 @@ date:   2021-10-15 15:24:13 +0900
 title:  "[JEKYLL] jekyll theme를 만들자 01"
 author: Kimson
 categories: [ jekyll ]
-image: assets/images/post/jekyll-theme/jekyll01.png
+image: /images/post/jekyll-theme/jekyll01.png
 tags: [ jekyll, theme, til ]
 description: "Jekyll Theme를 만들자
 
@@ -61,6 +61,6 @@ less, more라고 정했습니다. 건축하시는 분들을 아시겠지만 현�
 
 아래의 링크는 샘플 사이트와 깃허브입니다.
 
-[lessmore-jekyll-theme :: sample site](https://kkn1125.github.io/lessmore-jekyll-theme/ 'less, more jekyll theme - 샘플 사이트'){:target="_blank"}
+[lessmore-jekyll-theme :: sample site](https://kkn1125.github.io/lessmore-jekyll-theme/ 'less, more jekyll theme - 샘플 사이트')
 
-[lessmore-jekyll-theme :: github](https://github.com/kkn1125/lessmore-jekyll-theme 'less, more jekyll theme - 깃허브'){:target="_blank"}
+[lessmore-jekyll-theme :: github](https://github.com/kkn1125/lessmore-jekyll-theme 'less, more jekyll theme - 깃허브')

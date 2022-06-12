@@ -5,7 +5,7 @@ date:   2022-04-22 14:01:27 +0900
 title:  "[JAVASCRIPT] 파일 구조 도식화 개발"
 author: Kimson
 categories: [ javascript ]
-image: assets/images/post/covers/TIL-javascript.png
+image: /images/post/covers/TIL-javascript.png
 tags: [ file tree, directory, til, parser ]
 description: "파일 구조 도식화
 
@@ -179,6 +179,6 @@ this.parseLines = function (lines) {
 
 📚 함께 보면 좋은 내용
 
-[devkimson - tree parser::Demo Site](https://kkn1125.github.io/treeparser/){:target="_blank"}
+[devkimson - tree parser::Demo Site](https://kkn1125.github.io/treeparser/)
 
-[devkimson - tree parser::Repository](https://github.com/kkn1125/treeparser/){:target="_blank"}
+[devkimson - tree parser::Repository](https://github.com/kkn1125/treeparser/)

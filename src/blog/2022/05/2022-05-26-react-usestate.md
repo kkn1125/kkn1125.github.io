@@ -5,7 +5,7 @@ date: 2022-05-26 22:29:01 +0900
 title: "[REACT] React 시작하기 03 [useState]"
 author: Kimson
 categories: [react]
-image: assets/images/post/covers/TIL-react.png
+image: /images/post/covers/TIL-react.png
 tags: [react, basic, til]
 description: "useState Hook
 
@@ -78,7 +78,7 @@ function AccountBook() {
 export default AccountBook;
 ```
 
-이러한 예제가 있다고 가정해보자. 컴포넌트를 만들고, state가 뭔지, props가 뭔지는 알아야 한다. 아직 잘 모른다면 [React::주요개념](https://ko.reactjs.org/docs/hello-world.html){:target="\_blank"}을 보면 된다.
+이러한 예제가 있다고 가정해보자. 컴포넌트를 만들고, state가 뭔지, props가 뭔지는 알아야 한다. 아직 잘 모른다면 [React::주요개념](https://ko.reactjs.org/docs/hello-world.html)을 보면 된다.
 
 이어서 AccountBook이라는 컴포넌트를 만들었는데 아직 하위요소는 만들지 않았다. 하나씩 구성해보면서 이해해보자.
 
@@ -230,4 +230,4 @@ export default AccountList;
 
 📚 함께 보면 좋은 내용
 
-[React::Hook의 개요](https://ko.reactjs.org/docs/hooks-intro.html){:target="\_blank"}
+[React::Hook의 개요](https://ko.reactjs.org/docs/hooks-intro.html)

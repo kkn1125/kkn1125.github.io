@@ -7,7 +7,7 @@ title:  "[JAVA] Json 기본 익히기"
 author: Kimson
 categories: [ java ]
 tags: [Jacksondatabind, json, til]
-image: assets/images/post/jacksonbind/jacksonbind01.png
+image: /images/post/jacksonbind/jacksonbind01.png
 description: "사용 dependency
 junit : 4.12
 spring-test : 5.3.6
@@ -111,6 +111,6 @@ public String post(User user) {
 
 ### 참고 사이트
 
-[Json파일 List타입으로 받아오기](https://becko.tistory.com/47){:target="_blank"}
+[Json파일 List타입으로 받아오기](https://becko.tistory.com/47)
 
-[jackson databind의 기본 활용](https://tychejin.tistory.com/134){:target="_blank"}
+[jackson databind의 기본 활용](https://tychejin.tistory.com/134)
