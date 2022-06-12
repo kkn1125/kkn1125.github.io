@@ -8,3 +8,6 @@ _mockup
 
 deploy
 rakefile
+.cache/
+public
+src/gatsby-types.d.ts

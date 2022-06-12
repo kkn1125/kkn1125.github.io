@@ -1,4 +1,0 @@
-I"#<p>forEach, forToken
-스크립틀릿 태그에 익숙해서 한동안 <code class="language-plaintext highlighter-rouge">jstl</code>을 사용하지 않다가 최근에 <code class="language-plaintext highlighter-rouge">EL</code>의 편리함에 빠져서 <code class="language-plaintext highlighter-rouge">jstl</code>을 뒤늦게 적응해 나가는 중입니다.
-<code class="language-plaintext highlighter-rouge">forToken</code>과 속성인 <code class="language-plaintext highlighter-rouge">varStatus</code>를 정리해보려합니다.</p>
-:ET

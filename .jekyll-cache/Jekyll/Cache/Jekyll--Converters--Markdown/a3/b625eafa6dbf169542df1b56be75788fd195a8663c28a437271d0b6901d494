@@ -1,7 +1,0 @@
-I"l<p>Slow Render를 위한 startTransition
-이제 막 입사하고 <code class="language-plaintext highlighter-rouge">react</code>와 <code class="language-plaintext highlighter-rouge">next</code>를 공부한지 3주째가 된다. 아직 방대한 데이터를 처리하고 최적하한 경험은 없지만, <code class="language-plaintext highlighter-rouge">hooks</code>를 자유자재로 다루기 위해 여러 강의를 보던 중 <code class="language-plaintext highlighter-rouge">useTransition</code>을 알게 되었다.
-useTransition은 왜 나왔나
-대게 사람들은 0.2초에 화면이 반응하지 않으면 페이지가 느리다고 생각한다고 한다. 즉각적인 변화를 기대하는 반면에 화면에 나타나는 변화를 지연해야 할 때도 있다.
-<code class="language-plaintext highlighter-rouge">useTransition</code>으로 인해 해결되는 문제들이 있는데, 예로는 많은 데이터를 리스트로 출력한다고 가정한다면, 데이터 필터링이나 필드 값 제어를 할 경우 화면에서 수많은 일들이 발생할 수 있다.
-사용방법은 아래와 같다.</p>
-:ET

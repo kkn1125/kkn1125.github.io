@@ -1,4 +1,0 @@
-I"{<p>문제 상황
-문제상황은 이렇다.
-위 코드와 같이 <code class="language-plaintext highlighter-rouge">state</code>의 형태가 배열 내에 객체가 있고, 객체 내에 배열이 있다. 문제는 깊이 있는 배열은 최초 생성 시 배열에 담겨 새로운 <code class="language-plaintext highlighter-rouge">task</code>가 생성되어야 하고, 같은 날짜에 내용을 등록한다면 해당 날짜의 <code class="language-plaintext highlighter-rouge">tasks</code>에 <code class="language-plaintext highlighter-rouge">task</code>가 배열에 추가되어 업데이트 되야하는 상황이다.</p>
-:ET
