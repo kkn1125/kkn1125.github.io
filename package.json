@@ -10,7 +10,7 @@
   "scripts": {
     "dev": "gatsby develop",
     "start": "gatsby develop",
-    "build": "gatsby build --prefix-paths && gh-pages -d public",
+    "build": "gatsby build --prefix-paths",
     "totalbuild": "npm run clean && npm run build && cd public/ && git init && git add -A && git commit -m \"update image path and fixbugs\" && git push -f https://github.com/kkn1125/kkn1125.github.io.git master:gh-pages && cd -",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
