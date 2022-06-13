@@ -1,4 +1,11 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, {
+  lazy,
+  Suspense,
+  useContext,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 import { graphql } from "gatsby";
 // import { Markdown } from "../../util/mdParser";
 import hljs from "highlight.js";
@@ -14,6 +21,9 @@ import {
   Paper,
   Divider,
   Box,
+  useTheme,
+  CircularProgress,
+  Stack,
 } from "@mui/material";
 import BlogCardInfo from "../common/BlogCardInfo";
 import Seo from "../common/Seo";
@@ -28,6 +38,30 @@ export default function Template({ data }) {
       wordCount: { words },
     },
   } = data;
+  const commentEl = useRef();
+  const theme = useTheme();
+  const [mode, setMode] = useState(false);
+
+  useEffect(() => {
+    const scriptEl = document.createElement("script");
+    scriptEl.setAttribute("src", "https://utteranc.es/client.js");
+    scriptEl.setAttribute("repo", "kkn1125/blog-comments");
+    scriptEl.setAttribute("issue-term", "pathname");
+    scriptEl.setAttribute(
+      "theme",
+      theme.palette.mode === "light" ? "github-light" : "gruvbox-dark"
+    );
+    scriptEl.setAttribute("crossorigin", "anonymous");
+    scriptEl.async = true;
+    commentEl.current.innerHTML = "";
+    if (commentEl.current.innerHTML === "") {
+      setMode(true);
+    }
+    commentEl.current.appendChild(scriptEl);
+    setTimeout(() => {
+      setMode(false);
+    }, 500);
+  }, [theme.palette.mode]);
 
   useEffect(() => {
     hljs.configure({});
@@ -133,6 +167,27 @@ export default function Template({ data }) {
               // children={html}
             />
           </Box>
+          <div>
+            {mode && (
+              <Stack
+                direction='row'
+                justifyContent='center'
+                sx={{
+                  my: 5,
+                }}>
+                <CircularProgress color='success' />
+              </Stack>
+            )}
+            <Box
+              sx={{
+                display: mode ? "hidden" : "block",
+                "& .utterances": {
+                  maxWidth: "90%",
+                },
+              }}
+              ref={commentEl}
+            />
+          </div>
         </Grid>
       </Grid>
     </>
