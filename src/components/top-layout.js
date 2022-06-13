@@ -1,12 +1,13 @@
 import React, { createContext, useMemo, useState } from "react";
 import CssBaseline from "@mui/material/CssBaseline";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
-import { responsiveFontSizes } from '@mui/material/styles';
+import { responsiveFontSizes } from "@mui/material/styles";
 
 import Viewport from "./viewport";
 import Layout from "./layout/Layout";
 import lightTheme from "../lightTheme";
 import darkTheme from "../darkTheme";
+import BlogProvider from "./core/BlogProvider";
 
 export const ColorModeContext = createContext({ toggleColorMode: () => {} });
 
@@ -35,13 +36,15 @@ export default function TopLayout({ children }) {
   return (
     <>
       <Viewport />
-      <ColorModeContext.Provider value={colorMode}>
-        <ThemeProvider theme={theme}>
-          {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
-          <CssBaseline />
-          <Layout>{children}</Layout>
-        </ThemeProvider>
-      </ColorModeContext.Provider>
+      <BlogProvider>
+        <ColorModeContext.Provider value={colorMode}>
+          <ThemeProvider theme={theme}>
+            {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
+            <CssBaseline />
+            <Layout>{children}</Layout>
+          </ThemeProvider>
+        </ColorModeContext.Provider>
+      </BlogProvider>
     </>
   );
 }

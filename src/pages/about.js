@@ -10,7 +10,9 @@ function About() {
         Gatsby로 만든 블로그입니다. 2일동안 mui로 개발해서 많이 조잡하고, 블로그
         이전 작업이 아직 미비하므로 양해바랍니다 🙇‍♂️
       </Typography>
-      <Link to='https://github.com/kkn1125'>Github</Link>
+      <a href='https://github.com/kkn1125' taget='_blank'>
+        Github
+      </a>
     </Container>
   );
 }

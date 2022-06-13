@@ -26,6 +26,7 @@
     "@graphql-codegen/typescript-react-query": "^3.5.13",
     "@mui/icons-material": "^5.8.3",
     "@mui/material": "^5.8.3",
+    "axios": "^0.27.2",
     "gatsby": "^4.16.0",
     "gatsby-plugin-advanced-sitemap": "^2.1.0",
     "gatsby-plugin-anchor-links": "^1.2.1",
@@ -46,7 +47,8 @@
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-helmet": "^6.1.0",
-    "react-router-dom": "^6.3.0"
+    "react-router-dom": "^6.3.0",
+    "react-syntax-highlighter": "^15.5.0"
   },
   "devDependencies": {
     "@types/node": "^17.0.41",

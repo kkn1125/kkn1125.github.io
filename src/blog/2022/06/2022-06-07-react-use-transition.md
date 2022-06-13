@@ -98,7 +98,7 @@ useCallback을 사용했을 때는 큰 차이를 보이지는 못한다.
 
 <figure class="text-center">
 <span class="w-inline-block">
-   <img src="image" src="https://user-images.githubusercontent.com/71887242/172616260-4ebc668a-02d6-4515-b5f8-b261e6b9fd80.png" alt="sample" title="sample">
+   <img src="https://user-images.githubusercontent.com/71887242/172616260-4ebc668a-02d6-4515-b5f8-b261e6b9fd80.png" alt="sample" title="sample">
    <figcaption>성능 샘플 - useTransition의 startTransition</figcaption>
 </span>
 </figure>
@@ -112,7 +112,7 @@ useCallback을 사용했을 때는 큰 차이를 보이지는 못한다.
 
 <figure class="text-center">
 <span class="w-inline-block">
-   <img src="image" src="https://user-images.githubusercontent.com/71887242/172617675-4becbe76-add9-428a-9048-5962fec027c2.png" alt="sample" title="sample">
+   <img src="https://user-images.githubusercontent.com/71887242/172617675-4becbe76-add9-428a-9048-5962fec027c2.png" alt="sample" title="sample">
    <figcaption>성능 샘플 - startTransition</figcaption>
 </span>
 </figure>
