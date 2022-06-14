@@ -118,7 +118,7 @@ console.log(user2 instanceof Object, user instanceof Object); // true true
 
 `UserForm1`, `UserForm2`는 객체입니다. `User1`, `User2`가 생성자 함수입니다. 콘솔 상에서도 다른 점을 바로 볼 수가 있는데요.
 
-![예]({{site.baseurl}}/assets/images/post/destructure/dest01.png)
+![예](/images/post/destructure/dest01.png)
 
 위 이미지처럼 객체 앞에 네임의 여부부터 차이가 납니다.
 

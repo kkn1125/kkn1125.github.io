@@ -48,7 +48,7 @@ Could not initialize class com.thoughtworks.xstream.converters.collections.Prope
 
 <figure class="text-center">
 <span class="w-inline-block">
-   <img src="{{site.baseurl}}/assets/images/post/error/spring-update-error01.png" alt="sample" title="sample">
+   <img src="/images/post/error/spring-update-error01.png" alt="sample" title="sample">
    <figcaption>kimson</figcaption>
 </span>
 </figure>
@@ -71,7 +71,7 @@ C:\Program Files\Java\jdk-11.0.13\bin\javaw.exe
 
 <figure class="text-center">
 <span class="w-inline-block">
-   <img src="{{site.baseurl}}/assets/images/post/error/spring-update-error02.png" alt="sample" title="sample">
+   <img src="/images/post/error/spring-update-error02.png" alt="sample" title="sample">
    <figcaption>kimson</figcaption>
 </span>
 </figure>

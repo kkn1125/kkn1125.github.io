@@ -48,30 +48,30 @@ published: true
 
 ### Stage 1
 
-![사천성]({{site.baseurl}}/assets/images/post/sachunsung/sa01.png)
+![사천성](/images/post/sachunsung/sa01.png)
 
-![사천성]({{site.baseurl}}/assets/images/post/sachunsung/sa02.png)
+![사천성](/images/post/sachunsung/sa02.png)
 
-![사천성]({{site.baseurl}}/assets/images/post/sachunsung/sa03.png)
+![사천성](/images/post/sachunsung/sa03.png)
 
-![사천성]({{site.baseurl}}/assets/images/post/sachunsung/sa04.png)
+![사천성](/images/post/sachunsung/sa04.png)
 
 ### Stage 2
 
 x, y의 개수가 1 씩 증가합니다.
 
-![사천성]({{site.baseurl}}/assets/images/post/sachunsung/sa05.png)
+![사천성](/images/post/sachunsung/sa05.png)
 
 ### Stage 3
 
 마지막 스테이지에서 모두 맞추면 게임을 종료하고 랭킹에 등재합니다.
 
-![사천성]({{site.baseurl}}/assets/images/post/sachunsung/sa06.png)
+![사천성](/images/post/sachunsung/sa06.png)
 
-![사천성]({{site.baseurl}}/assets/images/post/sachunsung/sa07.png)
+![사천성](/images/post/sachunsung/sa07.png)
 
-![사천성]({{site.baseurl}}/assets/images/post/sachunsung/sa08.png)
+![사천성](/images/post/sachunsung/sa08.png)
 
 -----
 
-<a href="{{site.baseurl}}/assets/download/sachunsung.zip" download>사천성 소스코드 다운로드</a>
+<a href="/download/sachunsung.zip" download>사천성 소스코드 다운로드</a>

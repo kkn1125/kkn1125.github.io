@@ -136,7 +136,7 @@ Obj.test = {
 <div>
     <table id="kal" class="table text-center table-hover"></table>
 </div>
-<script src="{{site.baseurl}}/assets/lib/devkalendar.js"></script>
+<script src="/lib/devkalendar.js"></script>
 
 -----
 
@@ -144,4 +144,4 @@ Obj.test = {
 
 [이전 달력 포스팅]({{ site.baseurl }}/javascript-calendar/)에 초기 세팅값에 대해 자세히 적혀있습니다.
 
-<a href="{{site.baseurl}}/assets/download/devkalendarTODO.zip" download>devKalendarTODO 1.1.0 ver 다운로드</a>
+<a href="/download/devkalendarTODO.zip" download>devKalendarTODO 1.1.0 ver 다운로드</a>

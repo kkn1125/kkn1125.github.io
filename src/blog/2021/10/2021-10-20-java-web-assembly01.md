@@ -84,7 +84,7 @@ class파일은 java에서는 bin에 들어있고, spring이나 jsp는 target/cla
 
 canRead로 확인해보고 `compileToText`로 변환 내용을 받아 출력해서  아래와 같이 나오면 성공입니다.
 
-![wasm]({{site.baseurl}}/assets/images/post/wasm/wasm01.png)
+![wasm](/images/post/wasm/wasm01.png)
 
 이후로 어떻게 사용하고 하는지는 더 공부해서 기록에 남기려합니다.
 

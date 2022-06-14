@@ -194,7 +194,7 @@ def signin(request):
 
 <figure class="text-center">
 <span class="w-inline-block">
-   <img src="{{site.baseurl}}/assets/images/post/django/modelform01.png" alt="sample" title="sample">
+   <img src="/images/post/django/modelform01.png" alt="sample" title="sample">
    <figcaption>유효성 검사</figcaption>
 </span>
 </figure>
@@ -203,7 +203,7 @@ def signin(request):
 
 <figure class="text-center">
 <span class="w-inline-block">
-   <img src="{{site.baseurl}}/assets/images/post/django/modelform03.png" alt="sample" title="sample">
+   <img src="/images/post/django/modelform03.png" alt="sample" title="sample">
    <figcaption>빈 필드</figcaption>
 </span>
 </figure>
@@ -212,7 +212,7 @@ def signin(request):
 
 <figure class="text-center">
 <span class="w-inline-block">
-   <img src="{{site.baseurl}}/assets/images/post/django/modelform02.png" alt="sample" title="sample">
+   <img src="/images/post/django/modelform02.png" alt="sample" title="sample">
    <figcaption>미스매치</figcaption>
 </span>
 </figure>

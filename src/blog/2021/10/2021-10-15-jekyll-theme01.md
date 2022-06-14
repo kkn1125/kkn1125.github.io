@@ -57,7 +57,7 @@ less, more라고 정했습니다. 건축하시는 분들을 아시겠지만 현�
 
 이제 만들기 시작한 상태입니다. 완성이 되는데로 이 글은 수정이 될 예정입니다.  
 
-![exImg]({{site.baseurl}}/assets/images/post/jekyll-theme/jekyll01.png '샘플 이미지')
+![exImg](/images/post/jekyll-theme/jekyll01.png '샘플 이미지')
 
 아래의 링크는 샘플 사이트와 깃허브입니다.
 

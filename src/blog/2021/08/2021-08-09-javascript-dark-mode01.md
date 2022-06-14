@@ -48,25 +48,25 @@ published: true
 
 ### 네이버의 쿠키 방식
 
-![네이버]({{site.baseurl}}/assets/images/post/darkMode/dark01.png '네이버')
+![네이버](/images/post/darkMode/dark01.png '네이버')
 
 네이버에는 언제부터인가 다크모드 버튼이 우측하단에 나타나기 시작했습니다. 먼저 버튼을 클릭했을 때 localStorage의 변화인지 cookie의 변화인지 살펴봐야했습니다.
 
-![네이버]({{site.baseurl}}/assets/images/post/darkMode/dark02.png '네이버')
+![네이버](/images/post/darkMode/dark02.png '네이버')
 
 라이트 모드일때 localStorage 모습입니다.
 
-![네이버]({{site.baseurl}}/assets/images/post/darkMode/dark03.png '네이버')
+![네이버](/images/post/darkMode/dark03.png '네이버')
 
 다크 모드일때 localStorage 모습입니다.
 
 네이버는 localStorage에서 설정한 타입이 아닌 것 같습니다. 다음은 쿠키의 변화를 보겠습니다.
 
-![네이버]({{site.baseurl}}/assets/images/post/darkMode/dark04.png '네이버')
+![네이버](/images/post/darkMode/dark04.png '네이버')
 
 벌써부터 "나 다크모드 설정이야!"라고 외치는 녀석이 보입니다. 라이트모드를 켜서 명확히 보겠습니다.
 
-![네이버]({{site.baseurl}}/assets/images/post/darkMode/dark05.png '네이버')
+![네이버](/images/post/darkMode/dark05.png '네이버')
 
 네, 맞네요.  
 네이버는 현재 라이트모드면 N, 다크모드면 Y값을 NDARK라는 키에 저장하고 있습니다.
@@ -183,10 +183,10 @@ body .navbar-toggler{
 }
 ```
 
-![급조]({{site.baseurl}}/assets/images/post/darkMode/dark06.png '급조')
+![급조](/images/post/darkMode/dark06.png '급조')
 *\- Light Mode입니다.*{:.text-muted}
 
-![급조]({{site.baseurl}}/assets/images/post/darkMode/dark07.png '급조')
+![급조](/images/post/darkMode/dark07.png '급조')
 *\- Dark Mode입니다.*{:.text-muted}
 
 대충 만들어봅니다. 카드, 네비게이션의 컬러를 폭넓게 바꿔야하기에 예제로 몇가지만 넣었습니다.
@@ -229,22 +229,22 @@ MDN의 정보대로면 페이지가 꺼지고도 값에 따라 모드가 유지�
 
 테스트 해보겠습니다.
 
-![테스트]({{site.baseurl}}/assets/images/post/darkMode/dark08.png '테스트')
+![테스트](/images/post/darkMode/dark08.png '테스트')
 *\- 먼저 라이트모드로 두고 끕니다.*{:.text-muted}
 
-![테스트]({{site.baseurl}}/assets/images/post/darkMode/dark09.png '테스트')
+![테스트](/images/post/darkMode/dark09.png '테스트')
 *\- 완전 끄고 다시 접속하겠습니다.*{:.text-muted}
 
-![테스트]({{site.baseurl}}/assets/images/post/darkMode/dark10.png '테스트')
+![테스트](/images/post/darkMode/dark10.png '테스트')
 *\- 라이트 모드네요. 하지만 저는 저를 안 믿습니다. 다크모드로 해보겠습니다.*{:.text-muted}
 
-![테스트]({{site.baseurl}}/assets/images/post/darkMode/dark11.png '테스트')
+![테스트](/images/post/darkMode/dark11.png '테스트')
 *\- 다크모드해 주시구요. `value`는 Y가 됩니다.*{:.text-muted}
 
-![테스트]({{site.baseurl}}/assets/images/post/darkMode/dark12.png '테스트')
+![테스트](/images/post/darkMode/dark12.png '테스트')
 *\- 다시 켜보겠습니다. 다크로 유지가 되면 곧 바로 이 블로그에 적용해두겠습니다. 헤헤*{:.text-muted}
 
-![테스트]({{site.baseurl}}/assets/images/post/darkMode/dark13.png '테스트')
+![테스트](/images/post/darkMode/dark13.png '테스트')
 *\- 와... 왜 되는거지... 됩니다.*{:.text-muted}
 
 여기까지 정적웹에 다크모드를 알아보고 직접 적용해봤습니다.  

@@ -136,7 +136,7 @@ document.getElementById('output').innerHTML = tmp;
 ```
 {:id="han01"}
 
-![한글]({{site.baseurl}}/assets/images/post/hangul/han02.png)
+![한글](/images/post/hangul/han02.png)
 
 "가"와 "힣" 까지 나오는 것을 보니 잘 작동합니다.
 
@@ -173,7 +173,7 @@ data.forEach(x=>{
 
 위의 코드로 테스트를 해보면 아래 이미지처럼 나와야 성공입니다.
 
-![한글]({{site.baseurl}}/assets/images/post/hangul/han03.png)
+![한글](/images/post/hangul/han03.png)
 
 이제 조합에 성공했으니 낱자 배열`( ['ㅂ', 'ㅏ', 'ㅂ'] )`을 3단계로 조합하여 다시 배열에 담습니다.
 
@@ -203,13 +203,13 @@ console.log(ref);
 
 이것을 배열로 한번 더 감싸서 2차 배열로 만들어 `ref`에 담습니다. 이제 3차 배열이 된 ref를 재조합한 로직으로 다시 보냅니다.
 
-![한글]({{site.baseurl}}/assets/images/post/hangul/han04.png)
+![한글](/images/post/hangul/han04.png)
 
 이때 아까 만들었던 재조합 로직은 배열 하나를 대상으로 하기 때문에 for문을 하나 더 감싸서 3차 배열에 대한 작동을 고려해야합니다. 이 부분은 그저 한번 더 감싸면 되기 때문에 코드는 생략하겠습니다.
 
 순차로 합쳐진 문자 배열을 재조합 로직에 넣고 돌리면 아래와 같습니다.
 
-![한글]({{site.baseurl}}/assets/images/post/hangul/han05.png)
+![한글](/images/post/hangul/han05.png)
 
 드디어 생각만 했던 로직이 정상 작동되어 매우 뿌듯합니다. 이제 이 데이터를 타이핑처럼 하나씩 쌓이는 출력 효과만 남았습니다.
 
@@ -245,7 +245,7 @@ let tps = setInterval(()=>{
 
 마지막으로 타이핑 되는 효과는 gif로 담아봤습니다.
 
-![한글]({{site.baseurl}}/assets/images/post/hangul/han06.gif)
+![한글](/images/post/hangul/han06.gif)
 
 스페이스 바 등의 공백과 특수문자는 로직 중간에 거르거나 공백란으로 변환시키면 될 것 같습니다.
 

@@ -85,7 +85,7 @@ dropdown.addEventListener('click', e => {
 
 <figure class="text-center">
 <span class="w-inline-block">
-   <img src="{{site.baseurl}}/assets/images/post/dropdown/dropdown01.png" alt="sample" title="sample">
+   <img src="/images/post/dropdown/dropdown01.png" alt="sample" title="sample">
    <figcaption>kimson</figcaption>
 </span>
 </figure>
@@ -142,7 +142,7 @@ toggle.addEventListener('click', handleDropdownToggle);
 
 <figure class="text-center">
 <span class="w-inline-block">
-   <img src="{{site.baseurl}}/assets/images/post/dropdown/dropdown02.png" alt="sample" title="sample">
+   <img src="/images/post/dropdown/dropdown02.png" alt="sample" title="sample">
    <figcaption>kimson</figcaption>
 </span>
 </figure>
@@ -159,7 +159,7 @@ const /* ... */,
 
 <figure class="text-center">
 <span class="w-inline-block">
-   <img src="{{site.baseurl}}/assets/images/post/dropdown/dropdown03.png" alt="sample" title="sample">
+   <img src="/images/post/dropdown/dropdown03.png" alt="sample" title="sample">
    <figcaption>kimson</figcaption>
 </span>
 </figure>

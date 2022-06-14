@@ -92,7 +92,10 @@ export default function Template({ data }) {
           <List
             sx={{
               width: "100%",
-              maxWidth: 360,
+              maxWidth: {
+                md: 360,
+                xs: "100%",
+              },
               position: "sticky",
               top: (theme) => theme.spacing(70 * 0.125),
               overflow: "auto",

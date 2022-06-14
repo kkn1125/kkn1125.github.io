@@ -150,7 +150,7 @@ function SearchDialog({ children, data }) {
                           {node.title}
                         </Link>
                       </Typography>
-                      <BlogCardHashList data={node} />
+                      <BlogCardHashList data={node} setOpen={setOpen} />
                     </Stack>
                   </ListItem>
                 ))}

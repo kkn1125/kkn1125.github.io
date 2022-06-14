@@ -36,7 +36,7 @@ published: true
 
 <figure class="text-center">
 <span class="w-inline-block">
-   <img src="{{site.baseurl}}/assets/images/post/ubuntu/ubuntu01.png" alt="우분투" title="우분투">
+   <img src="/images/post/ubuntu/ubuntu01.png" alt="우분투" title="우분투">
    <figcaption>kimson</figcaption>
 </span>
 </figure>

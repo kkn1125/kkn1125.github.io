@@ -182,7 +182,7 @@ function ksRegex(ev){
 
 예를 들어 `site.author.name`가 `commend`에 담기면 리터럴 표현식과 `eval`을 합쳐서 `json`파일을 객체로 만든 `site`변수의 `author`, `name`을 가져와 리턴하게 됩니다.
 
-![custom]({{site.baseurl}}/assets/images/post/customTag/custom01.png)
+![custom](/images/post/customTag/custom01.png)
 
 위의 이미지처럼 실행하면 따로 `nav.html`파일에 `bootstrap` 네비게이션을 두면 예약어를 통해 가져올 수 있고, `console`에 나오는 `site`변수에 있는 프로퍼티들을 커스텀 태그를 통해 가져와서 href나 클래스 등에서 사용할 수 있습니다.
 

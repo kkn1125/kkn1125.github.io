@@ -29,17 +29,17 @@ published: true
 
 너무 작다보니 오타를 놓치고 지나가기 마련인데요. 저와 같은 이유로 찾는 분이라면 해결 되시기를...
 
-![error]({{site.baseurl}}/assets/images/post/error/error02.png){:draggable="false"}
+![error](/images/post/error/error02.png){:draggable="false"}
 {:.text-center}
 
 코드의 일부 모습은 이랬습니다.
 
-![error]({{site.baseurl}}/assets/images/post/error/error03.png){:draggable="false"}
+![error](/images/post/error/error03.png){:draggable="false"}
 {:.text-center}
 
 `select`로 `email`을 검색해서 `member`테이블의 정보를 가져오는데 도대체 무슨 문법 오류인지 이해하지 못 했습니다. 이틀 전 접종 맞고 이상해진건가 했지만 그냥 제가 오타 낸거였습니다...
 
-![error]({{site.baseurl}}/assets/images/post/error/error04.png){:draggable="false"}
+![error](/images/post/error/error04.png){:draggable="false"}
 
 <del class="badge">악마의 실체</del>
 <span class="badge">오타 발견</span>

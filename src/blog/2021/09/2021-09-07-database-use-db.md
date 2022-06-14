@@ -60,7 +60,7 @@ published: true
 
 ### 헤로쿠 앱 생성
 
-![헤로쿠]({{site.baseurl}}/assets/images/post/database/db02.png)
+![헤로쿠](/images/post/database/db02.png)
 
 먼저 헤로쿠 앱 하나를 생성합니다. 그리고 Spring Boot로 프로젝트 하나를 만듭니다.
 
@@ -219,7 +219,7 @@ public class HomeController {
 
 service와 entity부분은 생략하겠습니다. 컨트롤러는 RestController를 사용하여 나중에 정적웹에서 JSON으로 받을 준비를 합니다.
 
-![스프링]({{site.baseurl}}/assets/images/post/database/db03.png)
+![스프링](/images/post/database/db03.png)
 
 그러고나서 스프링 부트를 실행하고 확인해봅니다. 위와 같이 나오면 성공입니다.
 
@@ -248,11 +248,11 @@ git push heroku master
 
 완료가 되면 https://appname.herokuapp.com으로 접속해서 확인합니다.
 
-![스프링]({{site.baseurl}}/assets/images/post/database/db03.png)
+![스프링](/images/post/database/db03.png)
 
 위와 같이 이클립스에서 로컬호스트로 접속했을 때와 같다면 성공입니다. 그리고 `member`경로를 테스트 해봅니다.
 
-![스프링]({{site.baseurl}}/assets/images/post/database/db04.png)
+![스프링](/images/post/database/db04.png)
 
 잘 뜹니다. 이제 저장소로 쓸 서버를 만들었으니 본인의 깃허브 페이지나 http 서버를 하나 엽니다.
 
@@ -377,11 +377,11 @@ window.addEventListener('load',()=>{
 
 postman으로 데이터를 조금 더 추가한 후 테스트를 해봤습니다.
 
-![스프링]({{site.baseurl}}/assets/images/post/database/db05.png)
+![스프링](/images/post/database/db05.png)
 
 1페이지 일때 db에 있는 내용이 잘 출력 됩니다.
 
-![스프링]({{site.baseurl}}/assets/images/post/database/db06.png)
+![스프링](/images/post/database/db06.png)
 
 2페이지 일때도 나머지 내용이 잘 출력 됩니다.
 

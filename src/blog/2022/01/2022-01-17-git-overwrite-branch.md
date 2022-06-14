@@ -34,7 +34,7 @@ $ git merge newBranch
 
 <figure class="text-center">
 <span class="w-inline-block">
-   <img class="w-100" src="{{site.baseurl}}/assets/images/post/git/git01.png" alt="에러" title="에러">
+   <img class="w-100" src="/images/post/git/git01.png" alt="에러" title="에러">
    <figcaption>에러 메세지</figcaption>
 </span>
 </figure>

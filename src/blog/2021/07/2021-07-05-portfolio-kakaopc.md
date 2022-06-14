@@ -50,14 +50,14 @@ spring에서 web.xml 및 context-*.xml대신 webconfig.java를 만들어 configu
 
 ### 로그인
 
-![로그인]({{site.baseurl}}/assets/images/post/kakao/kakao-6.png '로그인')
+![로그인](/images/post/kakao/kakao-6.png '로그인')
 
 >java config 방식을 사용하면서 불편했던 점이 security와 exception 처리였습니다.  
 로그인페이지로 redirect하는 부분에서 번거롭지만 url을 받고, sessionId 여부를 통해 redirect하는 방식을 취했습니다.
 
 ### 메인
 
-![메인]({{site.baseurl}}/assets/images/post/kakao/kakao-5.png '메인 친구목록')
+![메인](/images/post/kakao/kakao-5.png '메인 친구목록')
 
 >친구목록은 db에 user테이블로 구성하였고, 친구카드 클릭 시 옵션 popup에 있는 버튼은 restful 방식으로 처리되도록 하였습니다.  
 채팅하기를 누르면 본인이 마스터가되어 채팅룸이 열립니다. (자세한 내용은 [채팅룸][chat] 단락 참조)
@@ -66,19 +66,19 @@ spring에서 web.xml 및 context-*.xml대신 webconfig.java를 만들어 configu
 
 ### 채팅목록
 
-![채팅목록]({{site.baseurl}}/assets/images/post/kakao/kakao-2.png '채팅 목록')
+![채팅목록](/images/post/kakao/kakao-2.png '채팅 목록')
 
 >생성된 채팅룸은 '채팅하기'를 누른 사람에게 생성되며, 상대방 또한 '채팅하기'를 누르면 같은 UUID를 확인하고 동일한 채팅룸에 접속됩니다.  
 
 ### 채팅룸
 
-![채팅룸]({{site.baseurl}}/assets/images/post/kakao/kakao-3.png '채팅룸')
+![채팅룸](/images/post/kakao/kakao-3.png '채팅룸')
 
 >채팅룸은 UUID를 룸의 ID로 사용하고 본인 입력 시 연속되면 노란 박스로, 상대 입력 시 회색 박스로 연속되게 됩니다.
 
 ### 더보기
 
-![더보기]({{site.baseurl}}/assets/images/post/kakao/kakao-1.png '더보기')
+![더보기](/images/post/kakao/kakao-1.png '더보기')
 
 >websoket 기능구현 이외 미구현되어 있습니다. 원래의 계획은 메일이 카카오메일로 넘어가도록 하고, 캘린더는 이후 따로 [캘린더 api][kal]를 만들어 적용할 계획이었습니다. 현재 블로그에 포스팅된
 

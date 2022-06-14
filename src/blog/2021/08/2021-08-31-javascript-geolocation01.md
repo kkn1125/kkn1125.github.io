@@ -68,7 +68,7 @@ $.getJSON('http://www.geoplugin.net/json.gp?ip='+ip, function(data){
 })
 ```
 
-![주소받은모습]({{site.baseurl}}/assets/images/post/geolocation/geo01.png '주소받은모습')
+![주소받은모습](/images/post/geolocation/geo01.png '주소받은모습')
 {:.text-center}
 
 이미지의 맨아래 두 줄은 getJson을 사용하여 받은 내용입니다.
@@ -80,7 +80,7 @@ $.getJSON('http://www.geoplugin.net/json.gp?ip='+ip, function(data){
 
 ## 사용 예
 
-![작업중인프로젝트]({{site.baseurl}}/assets/images/post/geolocation/geo02.png)
+![작업중인프로젝트](/images/post/geolocation/geo02.png)
 
 한글로 되어있는 것은 정규식으로 변환한 것 뿐입니다.
 

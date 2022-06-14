@@ -25,6 +25,22 @@
   width: 100%;
 }
 
+.blog-post figcaption {
+  background: rgb(230, 230, 230);
+  text-align: center;
+  padding: 0.3rem;
+}
+
+.blog-post figure {
+  border: 1px solid rgb(224, 224, 224);
+  overflow: hidden;
+  border-radius: .5rem;
+  -webkit-border-radius: .5rem;
+  -moz-border-radius: .5rem;
+  -ms-border-radius: .5rem;
+  -o-border-radius: .5rem;
+}
+
 .blog-post blockquote {
   background: rgb(239, 239, 239);
   margin: 0;
@@ -46,4 +62,12 @@
   -moz-border-radius: 0.3rem;
   -ms-border-radius: 0.3rem;
   -o-border-radius: 0.3rem;
+}
+
+.blog-post code {
+  font-size: calc(.5rem + .5vw);
+}
+
+.blog-post a{
+  text-decoration: none;
 }

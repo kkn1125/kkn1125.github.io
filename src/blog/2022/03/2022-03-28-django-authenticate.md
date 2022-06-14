@@ -38,7 +38,7 @@ published: true
 
 <figure class="text-center">
 <span class="w-inline-block">
-   <img src="{{site.baseurl}}/assets/images/post/django/authentication/auth01.png" alt="sample" title="sample">
+   <img src="/images/post/django/authentication/auth01.png" alt="sample" title="sample">
    <figcaption>pgAdmin 속성</figcaption>
 </span>
 </figure>
@@ -366,7 +366,7 @@ def unsign(request):
 
 <figure class="text-center">
 <span class="w-inline-block">
-   <img src="{{site.baseurl}}/assets/images/post/django/authentication/auth02.png" alt="sample" title="sample">
+   <img src="/images/post/django/authentication/auth02.png" alt="sample" title="sample">
    <figcaption>메인</figcaption>
 </span>
 </figure>
@@ -375,7 +375,7 @@ def unsign(request):
 
 <figure class="text-center">
 <span class="w-inline-block">
-   <img src="{{site.baseurl}}/assets/images/post/django/authentication/auth03.png" alt="sample" title="sample">
+   <img src="/images/post/django/authentication/auth03.png" alt="sample" title="sample">
    <figcaption>회원가입 폼</figcaption>
 </span>
 </figure>
@@ -384,7 +384,7 @@ def unsign(request):
 
 <figure class="text-center">
 <span class="w-inline-block">
-   <img src="{{site.baseurl}}/assets/images/post/django/authentication/auth05.png" alt="sample" title="sample">
+   <img src="/images/post/django/authentication/auth05.png" alt="sample" title="sample">
    <figcaption>로그인 폼</figcaption>
 </span>
 </figure>
@@ -393,7 +393,7 @@ def unsign(request):
 
 <figure class="text-center">
 <span class="w-inline-block">
-   <img src="{{site.baseurl}}/assets/images/post/django/authentication/auth06.png" alt="sample" title="sample">
+   <img src="/images/post/django/authentication/auth06.png" alt="sample" title="sample">
    <figcaption>로그인</figcaption>
 </span>
 </figure>

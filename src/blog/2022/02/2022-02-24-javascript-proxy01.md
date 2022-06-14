@@ -199,7 +199,7 @@ input.addEventListener('keyup', (ev) => {
 
 <figure class="text-center">
 <span class="w-inline-block">
-   <img src="{{site.baseurl}}/assets/images/post/proxy/proxy01.png" alt="결과" title="결과">
+   <img src="/images/post/proxy/proxy01.png" alt="결과" title="결과">
    <figcaption>결과</figcaption>
 </span>
 </figure>
@@ -208,7 +208,7 @@ input.addEventListener('keyup', (ev) => {
 
 <figure class="text-center">
 <span class="w-inline-block">
-   <img src="{{site.baseurl}}/assets/images/post/proxy/proxy02.png" alt="꾸민 후" title="꾸민 후">
+   <img src="/images/post/proxy/proxy02.png" alt="꾸민 후" title="꾸민 후">
    <figcaption>꾸민 후</figcaption>
 </span>
 </figure>

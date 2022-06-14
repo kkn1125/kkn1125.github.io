@@ -124,7 +124,7 @@ Vue.component('module-test', {
 
 <figure class="text-center">
 <span class="w-inline-block">
-   <img class="w-100" src="{{site.baseurl}}/assets/images/post/vue/async/async01.png" alt="async01" title="async01">
+   <img class="w-100" src="/images/post/vue/async/async01.png" alt="async01" title="async01">
    <figcaption>오류 트레이스1</figcaption>
 </span>
 </figure>

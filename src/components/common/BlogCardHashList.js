@@ -5,7 +5,7 @@ import TagIcon from "@mui/icons-material/Tag";
 import FolderIcon from "@mui/icons-material/FolderOpenOutlined";
 import { navigate } from "gatsby";
 
-function BlogCardHashList({ data }) {
+function BlogCardHashList({ data, setOpen }) {
   const { categories, tags } = data;
 
   const handleClickForCategories = (e, slug) => {
@@ -28,7 +28,10 @@ function BlogCardHashList({ data }) {
               variant='outlined'
               size='small'
               icon={<FolderIcon />}
-              onClick={(e) => handleClickForCategories(e, category)}
+              onClick={(e) => {
+                handleClickForCategories(e, category);
+                setOpen && setOpen(false);
+              }}
               sx={{
                 px: 0.5,
               }}
@@ -44,7 +47,10 @@ function BlogCardHashList({ data }) {
               variant='outlined'
               size='small'
               icon={<TagIcon />}
-              onClick={(e) => handleClickForTags(e, tag)}
+              onClick={(e) => {
+                handleClickForTags(e, tag);
+                setOpen && setOpen(false);
+              }}
               sx={{
                 px: 0.5,
               }}

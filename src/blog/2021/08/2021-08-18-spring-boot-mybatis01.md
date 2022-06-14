@@ -62,7 +62,7 @@ mybatis.type-aliases-package=com.bootstart.startweb.entity
 
 기존에 RootConfig.java에서 설정해두었던 데이터베이스 연결 구문이 대체되어 필요가 없게 되었습니다.
 
-![mybatis backup]({{site.baseurl}}/assets/images/post/springboot/mybatis/batis01.png)
+![mybatis backup](/images/post/springboot/mybatis/batis01.png)
 {:.text-center}
 <span class="text-muted">- 불쌍한 config</span>
 
@@ -161,7 +161,7 @@ public String AllUsers(Model model) {
 
 `list`에 받아서 보기 좋게 `pretty`먹이고, 뿌려보겠습니다. 결과는 `Postman`을 참고하겠습니다.
 
-![mybatis backup]({{site.baseurl}}/assets/images/post/springboot/mybatis/batis02.png)
+![mybatis backup](/images/post/springboot/mybatis/batis02.png)
 {:.text-center}
 
 `Postman`은 `Json`이 깔끔하게 나와서 `json`출력 보기용으로 자주 사용하고 있습니다. (원래 이 용도가 아닐텐데...)

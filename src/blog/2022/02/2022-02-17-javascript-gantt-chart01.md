@@ -193,28 +193,28 @@ window.addEventListener('change', (ev)=>{
 
 <figure class="text-center">
 <span class="w-inline-block">
-   <img src="{{site.baseurl}}/assets/images/post/gantt/gantt01.png" alt="sample" title="sample">
+   <img src="/images/post/gantt/gantt01.png" alt="sample" title="sample">
    <figcaption>현재 작업된 내용</figcaption>
 </span>
 </figure>
 
 <figure class="text-center">
 <span class="w-inline-block">
-   <img src="{{site.baseurl}}/assets/images/post/gantt/gantt02.png" alt="sample" title="sample">
+   <img src="/images/post/gantt/gantt02.png" alt="sample" title="sample">
    <figcaption>현재 작업된 내용</figcaption>
 </span>
 </figure>
 
 <figure class="text-center">
 <span class="w-inline-block">
-   <img src="{{site.baseurl}}/assets/images/post/gantt/gantt03.png" alt="sample" title="sample">
+   <img src="/images/post/gantt/gantt03.png" alt="sample" title="sample">
    <figcaption>현재 작업된 내용</figcaption>
 </span>
 </figure>
 
 <figure class="text-center">
 <span class="w-inline-block">
-   <img src="{{site.baseurl}}/assets/images/post/gantt/gantt04.png" alt="sample" title="sample">
+   <img src="/images/post/gantt/gantt04.png" alt="sample" title="sample">
    <figcaption>현재 작업된 내용</figcaption>
 </span>
 </figure>

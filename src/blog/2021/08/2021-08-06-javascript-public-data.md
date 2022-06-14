@@ -46,7 +46,7 @@ published: true
 
 이번에 참고한 자료는 대구광역시의 공연정보를 가져왔습니다.  
 
-![대구 공연 정보]({{site.baseurl}}/assets/images/post/publicData/public01.png)
+![대구 공연 정보](/images/post/publicData/public01.png)
 
 제가 열람한 데이터는 JSON포맷이라 JSON과 객체, Array를 써서 페이지 처리를 해보겠습니다.
 
@@ -95,7 +95,7 @@ html부터 작성해줍니다.
 
 덜 밋밋하게 부트스트랩을 가져왔습니다. <del>적어도 뭐라도 치장되야 열심히 한 티가 나서..</del>
 
-![JSON내용]({{site.baseurl}}/assets/images/post/publicData/public02.png)
+![JSON내용](/images/post/publicData/public02.png)
 
 이렇게 나열되어 있는 정보를 파싱하여 봅시다.
 
@@ -166,7 +166,7 @@ xhr.open("GET","list.json",false);
 xhr.send();
 ```
 
-![파싱후]({{site.baseurl}}/assets/images/post/publicData/public03.png)
+![파싱후](/images/post/publicData/public03.png)
 
 그나마 보기 좋게 객체형태로 나왔습니다. 여기서 이 객체를 필요한 정보만 골라내어 따로 Festv라는 객체를 만들어 리스트를 만들어 뿌리도록 하겠습니다.
 
@@ -260,7 +260,7 @@ let start = (page-1) * LIMIT;
 
 이제 공연 객체를 차곡차곡 쌓았으니 wrap노드에 뿌리면 카드가 쭉 나옵니다.
 
-![리스트]({{site.baseurl}}/assets/images/post/publicData/public04.png)
+![리스트](/images/post/publicData/public04.png)
 
 리미트 개수를 3개로 지정하였기 때문에 총 93개 항목을 나누어 31개의 페이지가 생성되게 구현하겠습니다.
 
@@ -311,6 +311,6 @@ paging.innerHTML += // 페이지 증가 버튼입니다.
 `
 ```
 
-![완성]({{site.baseurl}}/assets/images/post/publicData/public-move.gif)
+![완성](/images/post/publicData/public-move.gif)
 
 페이지 처리를 해보았는데요. 다음에는 객체에 페이지처리하는 메소드를 추가하여 객체로만 처리하는 것을 준비해보도록 하겠습니다. 사용된 함수들은 [페이지 상단](#keywords)에 정리되어 있습니다.

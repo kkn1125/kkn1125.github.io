@@ -77,7 +77,7 @@ published: true
 
 보통 보면 에러 중에서 제일 윗 녀석이 원초적인 문제인 경우가 많더라구요.
 
-![에러 이미지]({{site.baseurl}}/assets/images/post/springboot/mybatis/batis04.png)
+![에러 이미지](/images/post/springboot/mybatis/batis04.png)
 
 ## MapperScan과 SqlSessionFactory
 

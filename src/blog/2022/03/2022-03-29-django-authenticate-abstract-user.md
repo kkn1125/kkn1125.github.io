@@ -89,7 +89,7 @@ admin.site.register(MyUser, UserAdmin)
 
 <figure class="text-center">
 <span class="w-inline-block">
-   <img src="{{site.baseurl}}/assets/images/post/django/authentication/auth08.png" alt="sample" title="sample">
+   <img src="/images/post/django/authentication/auth08.png" alt="sample" title="sample">
    <figcaption>pgAdmin user</figcaption>
 </span>
 </figure>
@@ -100,7 +100,7 @@ admin.site.register(MyUser, UserAdmin)
 
 <figure class="text-center">
 <span class="w-inline-block">
-   <img src="{{site.baseurl}}/assets/images/post/django/authentication/auth09.png" alt="sample" title="sample">
+   <img src="/images/post/django/authentication/auth09.png" alt="sample" title="sample">
    <figcaption>makemigrations</figcaption>
 </span>
 </figure>
@@ -109,7 +109,7 @@ admin.site.register(MyUser, UserAdmin)
 
 <figure class="text-center">
 <span class="w-inline-block">
-   <img src="{{site.baseurl}}/assets/images/post/django/authentication/auth10.png" alt="sample" title="sample">
+   <img src="/images/post/django/authentication/auth10.png" alt="sample" title="sample">
    <figcaption>migrate</figcaption>
 </span>
 </figure>
@@ -118,7 +118,7 @@ admin.site.register(MyUser, UserAdmin)
 
 <figure class="text-center">
 <span class="w-inline-block">
-   <img src="{{site.baseurl}}/assets/images/post/django/authentication/auth11.png" alt="sample" title="sample">
+   <img src="/images/post/django/authentication/auth11.png" alt="sample" title="sample">
    <figcaption>pgAdmin user</figcaption>
 </span>
 </figure>
@@ -129,7 +129,7 @@ admin.site.register(MyUser, UserAdmin)
 
 <figure class="text-center">
 <span class="w-inline-block">
-   <img src="{{site.baseurl}}/assets/images/post/django/authentication/auth12.png" alt="sample" title="sample">
+   <img src="/images/post/django/authentication/auth12.png" alt="sample" title="sample">
    <figcaption>pgAdmin user</figcaption>
 </span>
 </figure>

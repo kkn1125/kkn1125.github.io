@@ -48,7 +48,7 @@ published: true
 
 -----
 
-![예전 필터 형태]({{site.baseurl}}/assets/images/post/filter/filter01.png)
+![예전 필터 형태](/images/post/filter/filter01.png)
 
 -----
 

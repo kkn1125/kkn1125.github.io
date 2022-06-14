@@ -34,7 +34,7 @@ published: true
 
 <figure class="text-center">
 <span class="w-inline-block">
-   <img class="w-100" src="{{site.baseurl}}/assets/images/post/chess/chess02.png" alt="결과물" title="결과물">
+   <img class="w-100" src="/images/post/chess/chess02.png" alt="결과물" title="결과물">
    <figcaption>현재까지 결과물</figcaption>
 </span>
 </figure>

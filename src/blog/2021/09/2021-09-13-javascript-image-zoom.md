@@ -115,7 +115,7 @@ img{ /* 이미지 배율 증가 시 부드럽게 */
 }
 ```
 
-![view]({{site.baseurl}}/assets/images/post/zoom/zoom01.png)
+![view](/images/post/zoom/zoom01.png)
 
 ```javascript
 const imgs = document.querySelectorAll('img');
@@ -242,14 +242,14 @@ imgs.forEach(img=>{ // 이미지 마다 설정하기
 
 아직 이미지 드래그를 구현하는 것을 다 이해하지는 못 했지만 `stackoverflow`의 은혜로운 글을 보고 만들었습니다...
 
-![view]({{site.baseurl}}/assets/images/post/zoom/zoom02.png)
+![view](/images/post/zoom/zoom02.png)
 
 이미지를 클릭하니 검은 배경에 닫기 버튼이 생겼습니다.
 
-![view]({{site.baseurl}}/assets/images/post/zoom/zoom03.png)
+![view](/images/post/zoom/zoom03.png)
 
 여러 번 클릭하니 확대가 잘 됩니다. 지금은 스크롤 바가 있는 상태이지만 드래그까지 구현했기 때문에 필요없다 하시면 스크롤 비활성화 해도 됩니다.
 
 아래는 `gif`입니다.
 
-![view]({{site.baseurl}}/assets/images/post/zoom/zoom04.gif)
+![view](/images/post/zoom/zoom04.gif)

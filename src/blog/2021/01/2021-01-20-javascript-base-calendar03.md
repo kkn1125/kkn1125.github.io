@@ -124,7 +124,7 @@ for문으로 줄바꿈한 곳에서 insertCell로 시작요일까지의 빈칸�
 
 <figure class="text-center">
 <span class="w-inline-block">
-   <img src="{{site.baseurl}}/assets/images/post/back/back03.png" alt="sample" title="sample">
+   <img src="/images/post/back/back03.png" alt="sample" title="sample">
    <figcaption>kimson</figcaption>
 </span>
 </figure>

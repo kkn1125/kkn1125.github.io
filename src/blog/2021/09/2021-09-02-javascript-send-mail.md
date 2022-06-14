@@ -88,7 +88,7 @@ $.ajax({
 
 success시 데이터 자체는 JSON이지만 data의 형태는 아래의 이미지와 같습니다.
 
-![메일]({{site.baseurl}}/assets/images/post/sendMail/mail01.png)
+![메일](/images/post/sendMail/mail01.png)
 
 1. `data`, `result` 속성이 반환된다.
 2. `result`는 성공하면 `success`, 아니면 `error`를 반환한다.
@@ -96,7 +96,7 @@ success시 데이터 자체는 JSON이지만 data의 형태는 아래의 이미�
 
 ## 전송 결과
 
-![메일]({{site.baseurl}}/assets/images/post/sendMail/mail02.png)
+![메일](/images/post/sendMail/mail02.png)
 
 
 -----

@@ -51,7 +51,7 @@ published: true
 
 <figure class="text-center">
 <span class="w-inline-block">
-   <img class="w-100" src="{{site.baseurl}}/assets/images/post/solitaire/solitaire01.png" alt="Solitaire 형태" title="Solitaire 형태">
+   <img class="w-100" src="/images/post/solitaire/solitaire01.png" alt="Solitaire 형태" title="Solitaire 형태">
    <figcaption>나중에 만들게 될 결과물</figcaption>
 </span>
 </figure>
@@ -342,7 +342,7 @@ return {
 
 <figure class="text-center">
 <span class="w-inline-block">
-   <img class="w-100" src="{{site.baseurl}}/assets/images/post/solitaire/solitaire02.png" alt="틀" title="틀">
+   <img class="w-100" src="/images/post/solitaire/solitaire02.png" alt="틀" title="틀">
    <figcaption>구현된 틀</figcaption>
 </span>
 </figure>

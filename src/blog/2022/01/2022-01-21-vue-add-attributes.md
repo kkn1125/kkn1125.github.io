@@ -126,14 +126,14 @@ export default {
 
 <figure class="text-center">
 <span class="w-inline-block">
-   <img class="w-100" src="{{site.baseurl}}/assets/images/post/vue/attributes/attrs01.png" alt="attr01" title="attr01">
+   <img class="w-100" src="/images/post/vue/attributes/attrs01.png" alt="attr01" title="attr01">
    <figcaption>오류 트레이스1</figcaption>
 </span>
 </figure>
 
 <figure class="text-center">
 <span class="w-inline-block">
-   <img class="w-100" src="{{site.baseurl}}/assets/images/post/vue/attributes/attrs02.png" alt="attr02" title="attr02">
+   <img class="w-100" src="/images/post/vue/attributes/attrs02.png" alt="attr02" title="attr02">
    <figcaption>오류 발생 메서드</figcaption>
 </span>
 </figure>

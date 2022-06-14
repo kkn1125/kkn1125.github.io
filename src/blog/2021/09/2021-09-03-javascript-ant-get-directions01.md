@@ -140,7 +140,7 @@ for(let q=0; q<limit; q++){
 }
 ```
 
-![ant]({{site.baseurl}}/assets/images/post/getDirection/ant01.png)
+![ant](/images/post/getDirection/ant01.png)
 <span class="text-muted badge">- <em>CSS 코드는 맨 아래 올려두겠습니다.</em></span>
 
 분홍색 칸이 먹이이고, 갈색이 벽, 초록이 갈 수 있는 곳, 동그란 녀석이 개미입니다.
@@ -243,7 +243,7 @@ td:hover::after{
 
 .ant:before{
     content: "";
-    background-image: url({{site.baseurl}}/assets/images/post/getDirection/ant00.png);
+    background-image: url(/images/post/getDirection/ant00.png);
     background-size: contain;
     background-repeat: no-repeat;
     font-size: 10px;
@@ -365,7 +365,7 @@ function draw(d){
             if(d[q+1][j+1]==1){
                 // rgba(31, 19, 12, 0.925);
                 td.style = `
-                background-image: url({{site.baseurl}}/assets/images/post/getDirection/stone.png);
+                background-image: url(/images/post/getDirection/stone.png);
                 background-size: cover;
                 background-repeat: no-repeat;
                 width: 50px;`;
@@ -374,7 +374,7 @@ function draw(d){
             } else if (d[q+1][j+1]==2){
                 // #DE9B1B;
                 td.style = `
-                background-image: url({{site.baseurl}}/assets/images/post/getDirection/sa00.png);
+                background-image: url(/images/post/getDirection/sa00.png);
                 background-size: cover;
                 background-repeat: no-repeat;
                 width: 50px`;

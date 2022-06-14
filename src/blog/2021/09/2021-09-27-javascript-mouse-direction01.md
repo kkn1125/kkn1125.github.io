@@ -268,7 +268,7 @@ h6 {
 <div class="d-flex justify-content-center">
 	<div class="card mx-3" style="width: 15rem; overflow: hidden">
 		<div class="position-absolute top-0 start-0 h-100">
-			<img class="img-fluid h-100" style="object-fit: cover" src="{{site.baseurl}}/assets/images/post/mouseDirection/direction01.png" alt="test">
+			<img class="img-fluid h-100" style="object-fit: cover" src="/images/post/mouseDirection/direction01.png" alt="test">
 		</div>
 		<div class="d-flex justify-content-between card-title px-3 pt-3" style="z-index: 1;">
 			<div class="h3">Title Of Card</div>

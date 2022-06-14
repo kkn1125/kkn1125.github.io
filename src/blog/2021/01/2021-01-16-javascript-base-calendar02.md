@@ -173,7 +173,7 @@ function addwords() { // 혼동을 줄이기 위해 이전에 썼던 주석우�
 
 <figure class="text-center">
 <span class="w-inline-block">
-   <img src="{{site.baseurl}}/assets/images/post/back/back01.png" alt="sample" title="sample">
+   <img src="/images/post/back/back01.png" alt="sample" title="sample">
    <figcaption>kimson</figcaption>
 </span>
 </figure>
