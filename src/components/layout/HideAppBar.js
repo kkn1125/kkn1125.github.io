@@ -21,19 +21,22 @@ import {
   MenuItem,
   Stack,
   styled,
+  useMediaQuery,
   useTheme,
 } from "@mui/material";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import AdbIcon from "@mui/icons-material/Adb";
 import MenuIcon from "@mui/icons-material/Menu";
-import { Link, navigate } from "gatsby";
-import SearchIcon from "@mui/icons-material/Search";
+import { graphql, Link, navigate } from "gatsby";
 import Brightness4Icon from "@mui/icons-material/Brightness4";
 import Brightness7Icon from "@mui/icons-material/Brightness7";
 import { ColorModeContext } from "../top-layout";
 import axios from "axios";
 import { grey } from "@mui/material/colors";
 import { uuidv4 } from "../../util/tools";
+import GroupIcon from "@mui/icons-material/People";
+import PersonIcon from "@mui/icons-material/Person";
+import SearchDialog from "../common/SearchDialog";
 
 const pages = [
   {
@@ -103,49 +106,7 @@ HideOnScroll.propTypes = {
   window: PropTypes.func,
 };
 
-const Search = styled("div")(({ theme }) => ({
-  position: "relative",
-  borderRadius: theme.shape.borderRadius,
-  backgroundColor: alpha(theme.palette.common.white, 0.15),
-  "&:hover": {
-    backgroundColor: alpha(theme.palette.common.white, 0.25),
-  },
-  marginLeft: 0,
-  width: "100%",
-  [theme.breakpoints.up("sm")]: {
-    marginLeft: theme.spacing(1),
-    width: "auto",
-  },
-}));
-
-const SearchIconWrapper = styled("div")(({ theme }) => ({
-  padding: theme.spacing(0, 2),
-  height: "100%",
-  position: "absolute",
-  pointerEvents: "none",
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-}));
-
-const StyledInputBase = styled(InputBase)(({ theme }) => ({
-  color: "inherit",
-  "& .MuiInputBase-input": {
-    padding: theme.spacing(1, 1, 1, 0),
-    // vertical padding + font size from searchIcon
-    paddingLeft: `calc(1em + ${theme.spacing(4)})`,
-    transition: theme.transitions.create("width"),
-    width: "100%",
-    [theme.breakpoints.up("sm")]: {
-      width: "12ch",
-      "&:focus": {
-        width: "20ch",
-      },
-    },
-  },
-}));
-
-export default function HideAppBar(props) {
+function HideAppBar(props) {
   const theme = useTheme();
   const colorMode = useContext(ColorModeContext);
   const [anchorElNav, setAnchorElNav] = useState(null);
@@ -271,6 +232,10 @@ export default function HideAppBar(props) {
     setAnchorElNav(null);
   };
 
+  // const handleSearch = (e) => {
+  //   openSearch(!searchToggle);
+  // };
+
   // const handleCloseUserMenu = () => {
   //   setAnchorElUser(null);
   // };
@@ -371,7 +336,10 @@ export default function HideAppBar(props) {
                   fontSize: (theme) => theme.typography.pxToRem(TITLE_SIZE),
                   display: { xs: "flex", md: "none" },
                   flexGrow: 1,
-                  letterSpacing: ".3rem",
+                  letterSpacing: {
+                    md: ".3rem",
+                    xs: 0,
+                  },
                   color: "inherit",
                   textDecoration: "none",
                 }}>
@@ -397,25 +365,84 @@ export default function HideAppBar(props) {
                   </Button>
                 ))}
               </Box>
-              <Stack direction='row' gap={1} sx={{ mr: 3 }}>
+              <Stack
+                direction='row'
+                gap={1}
+                sx={{
+                  mr: 3,
+                  display: {
+                    xs: "none",
+                    md: "block",
+                  },
+                }}
+                alignItems='center'>
                 <Chip
                   color='primary'
-                  label={"오늘 방문자 " + visitor.today + " 명"}
+                  label={
+                    <Stack
+                      direction='row'
+                      alignItems='center'
+                      gap={1}
+                      sx={{
+                        "& svg": {
+                          display: {
+                            md: "block",
+                            xs: "none",
+                          },
+                        },
+                      }}>
+                      <PersonIcon />
+                      {visitor.today}
+                    </Stack>
+                  }
                 />
+                <Typography
+                  sx={{
+                    fontSize: (theme) => theme.typography.pxToRem(16),
+                    display: {
+                      sm: "inline-block",
+                      md: "none",
+                    },
+                  }}>
+                  /
+                </Typography>
                 <Chip
                   color='primary'
-                  label={"누적 방문자 " + visitor.stack + " 명"}
+                  label={
+                    <Stack
+                      direction='row'
+                      alignItems='center'
+                      gap={1}
+                      sx={{
+                        "& svg": {
+                          display: {
+                            md: "block",
+                            xs: "none",
+                          },
+                        },
+                      }}>
+                      <GroupIcon />
+                      {visitor.stack}
+                    </Stack>
+                  }
                 />
               </Stack>
-              <Search>
-                <SearchIconWrapper>
-                  <SearchIcon />
-                </SearchIconWrapper>
-                <StyledInputBase
+              <SearchDialog />
+              {/* <Search>
+                  <SearchIconWrapper>
+                    <SearchIcon />
+                  </SearchIconWrapper>
+                  <StyledInputBase
+                    placeholder='Search…'
+                    inputProps={{ "aria-label": "search" }}
+                  />
+                </Search> */}
+
+              {/* </SearchDialog> */}
+              {/* <StyledInputBase
                   placeholder='Search…'
                   inputProps={{ "aria-label": "search" }}
-                />
-              </Search>
+                /> */}
               {/* save */}
               <Box sx={{ flexGrow: 0 }}>
                 <IconButton
@@ -474,3 +501,5 @@ export default function HideAppBar(props) {
     </Fragment>
   );
 }
+
+export default HideAppBar;

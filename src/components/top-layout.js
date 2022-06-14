@@ -8,6 +8,7 @@ import Layout from "./layout/Layout";
 import lightTheme from "../lightTheme";
 import darkTheme from "../darkTheme";
 import BlogProvider from "./core/BlogProvider";
+import { graphql } from "gatsby";
 
 export const ColorModeContext = createContext({ toggleColorMode: () => {} });
 

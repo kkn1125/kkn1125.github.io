@@ -24,7 +24,6 @@ function Tags(props) {
   const {
     allMarkdownRemark: { edges },
   } = data;
-  console.log(props);
   return (
     <Box>
       <Typography className='font-main' variant='h2' component='span'>
@@ -49,7 +48,7 @@ function Tags(props) {
       <Grid container gap={5}>
         {edges.map(({ node: { frontmatter: info, id } }) => (
           <PaperBlock
-            key={id}
+            key={info.slug + id}
             elevation={2}
             sx={{
               display: {

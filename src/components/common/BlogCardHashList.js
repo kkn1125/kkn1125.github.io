@@ -20,9 +20,9 @@ function BlogCardHashList({ data }) {
     <Stack>
       <Stack direction='row' justifyContent='space-between'>
         <Stack direction='row' gap={1}>
-          {categories?.map((category) => (
+          {categories?.map((category, id) => (
             <Chip
-              key={category}
+              key={"category" + category + id}
               color='info'
               label={category}
               variant='outlined'
@@ -38,7 +38,7 @@ function BlogCardHashList({ data }) {
         <Stack direction='row' gap={1}>
           {tags?.map((tag, idx) => (
             <Chip
-              key={idx}
+              key={"tag" + tag + idx}
               color='warning'
               label={tag}
               variant='outlined'
