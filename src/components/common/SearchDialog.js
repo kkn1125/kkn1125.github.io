@@ -21,7 +21,7 @@ import {
 } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import { graphql, Link, StaticQuery } from "gatsby";
-import BlogCardHashList from "./BlogCardHashList";
+import BlogCardHashList from "../blog/BlogCardHashList";
 
 function SearchDialog({ children, data }) {
   const theme = useTheme();

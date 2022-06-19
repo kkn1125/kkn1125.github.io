@@ -13,9 +13,9 @@ import {
 import { graphql, Link } from "gatsby";
 import React, { Fragment, useState } from "react";
 import BlogLayout from "../layout/BlogLayout";
-import BlogCardInfo from "../common/BlogCardInfo";
 import { cutText } from "../../util/tools";
-import BlogCardHashList from "../common/BlogCardHashList";
+import BlogCardInfo from "../blog/BlogCardInfo";
+import BlogCardHashList from "../blog/BlogCardHashList";
 
 const BlogPage = ({ data, pageContext }) => {
   const { limit, skip, pageNum, currentPage } = pageContext;

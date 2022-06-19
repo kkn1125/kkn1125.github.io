@@ -3,7 +3,7 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { Box, CardActionArea, Stack } from "@mui/material";
-import BlogCardInfo from "../common/BlogCardInfo";
+import BlogCardInfo from "./BlogCardInfo";
 import BlogCardHashList from "./BlogCardHashList";
 import { Link, navigate } from "gatsby";
 import { cutText } from "../../util/tools";

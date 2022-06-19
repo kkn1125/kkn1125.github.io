@@ -1,13 +1,9 @@
 import React, {
-  lazy,
-  Suspense,
-  useContext,
   useEffect,
   useRef,
   useState,
 } from "react";
 import { graphql } from "gatsby";
-// import { Markdown } from "../../util/mdParser";
 import hljs from "highlight.js";
 import "./BlogPost.css";
 import "highlight.js/styles/monokai.css";
@@ -25,8 +21,8 @@ import {
   CircularProgress,
   Stack,
 } from "@mui/material";
-import BlogCardInfo from "../common/BlogCardInfo";
 import Seo from "../common/Seo";
+import BlogCardInfo from "../blog/BlogCardInfo";
 
 export default function Template({ data }) {
   const {
@@ -129,6 +125,7 @@ export default function Template({ data }) {
               sx={{
                 maxHeight: 450,
                 objectFit: "cover",
+                objectPosition: "0% 65%",
                 mb: 5,
               }}
             />

@@ -9,7 +9,7 @@ import {
 } from "@mui/material";
 import { graphql, Link } from "gatsby";
 import React from "react";
-import BlogCard from "../common/BlogCard";
+import BlogCard from "../blog/BlogCard";
 
 const PaperBlock = styled(Paper)(({ theme }) => ({
   borderRadius: 15,
