@@ -1,12 +1,9 @@
-import React, {
-  useEffect,
-  useRef,
-  useState,
-} from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { graphql } from "gatsby";
 import hljs from "highlight.js";
 import "./BlogPost.css";
 import "highlight.js/styles/monokai.css";
+import parse from "html-react-parser";
 import {
   Grid,
   Typography,
@@ -23,6 +20,8 @@ import {
 } from "@mui/material";
 import Seo from "../common/Seo";
 import BlogCardInfo from "../blog/BlogCardInfo";
+import SyntaxHighlighter from "react-syntax-highlighter";
+import { gruvboxDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 export default function Template({ data }) {
   const {
@@ -59,10 +58,10 @@ export default function Template({ data }) {
     }, 500);
   }, [theme.palette.mode]);
 
-  useEffect(() => {
-    hljs.configure({});
-    hljs.highlightAll();
-  }, []);
+  // useEffect(() => {
+  //   hljs.configure({});
+  //   hljs.highlightAll();
+  // }, []);
 
   const [selectedIndex, setSelectedIndex] = useState(0);
 
@@ -157,15 +156,37 @@ export default function Template({ data }) {
               style={{
                 letterSpacing: 0.9,
                 wordSpacing: 2.5,
-              }}
-              dangerouslySetInnerHTML={{
-                __html: html,
-              }}
-              // dangerouslySetInnerHTML={{
-              //   __html: memoMarkdown,
-              // }}
-              // children={html}
-            />
+              }}>
+              {parse(html, {
+                replace: (domNode) => {
+                  if (domNode.name && domNode.name.match(/h[1-6]/g)) {
+                    domNode.attribs["class"] = "title";
+                  }
+                  if (domNode.name && domNode.name === "a") {
+                    domNode.attribs["target"] = "_blank";
+                  }
+                  if (domNode.name === "pre") {
+                    const children = domNode.children[0];
+                    if (children.type === "tag" && children.name === "code") {
+                      return (
+                        <SyntaxHighlighter
+                          showLineNumbers
+                          language={
+                            domNode.children[0].attribs?.class
+                              ?.split("-")
+                              ?.pop() || "plaintext"
+                          }
+                          style={gruvboxDark}>
+                          {domNode.children
+                            ? domNode.children[0].children[0].data
+                            : ""}
+                        </SyntaxHighlighter>
+                      );
+                    }
+                  }
+                },
+              })}
+            </div>
           </Box>
           <div>
             {mode && (

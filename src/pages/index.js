@@ -2,7 +2,7 @@ import { graphql } from "gatsby";
 import * as React from "react";
 import Grid from "@mui/material/Grid";
 import { Paper, styled } from "@mui/material";
-import BlogCard from "../components/common/BlogCard";
+import BlogCard from "../components/blog/BlogCard";
 
 const PaperBlock = styled(Paper)(({ theme }) => ({
   borderRadius: 15,
