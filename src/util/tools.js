@@ -13,3 +13,12 @@ export function uuidv4() {
     return v.toString(16);
   });
 }
+
+export function readStorage() {
+  return JSON.parse(localStorage["userpick"] || "[]");
+}
+
+export function saveStorage(data) {
+  localStorage["userpick"] = JSON.stringify(data);
+  return true;
+}

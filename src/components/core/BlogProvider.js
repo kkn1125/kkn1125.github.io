@@ -47,9 +47,3 @@ function BlogProvider({ children }) {
 }
 
 export default BlogProvider;
-
-{
-  /* <meta property="og:title" content="devkimson blog" />
-      <meta property="og:description" content="devkimson blog" />
-      <meta property="og:image" content="/images/logo-k-color.png" /> */
-}

@@ -4,11 +4,6 @@ import Grid from "@mui/material/Grid";
 import { Paper, styled } from "@mui/material";
 import BlogCard from "../components/blog/BlogCard";
 
-const PaperBlock = styled(Paper)(({ theme }) => ({
-  borderRadius: 15,
-  overflow: "hidden",
-}));
-
 // markup
 const IndexPage = ({ data }) => {
   const {
@@ -25,23 +20,12 @@ const IndexPage = ({ data }) => {
     <Grid container spacing={10}>
       {/* main */}
       <Grid item xs={12}>
-        <PaperBlock
-          elevation={2}
-          sx={{
-            display: {
-              xs: "block",
-              md: "flex",
-            },
-          }}>
-          <BlogCard data={firstPost} height={"calc(20vw + 100px)"} />
-        </PaperBlock>
+        <BlogCard main data={firstPost} height={"calc(20vw + 100px)"} />
       </Grid>
       {/* card */}
       {otherPost.map(({ node: { frontmatter: post } }) => (
         <Grid key={post.title} item xs={12} md={6}>
-          <PaperBlock elevation={2}>
-            <BlogCard data={post} height={300} />
-          </PaperBlock>
+          <BlogCard data={post} height={300} />
         </Grid>
       ))}
     </Grid>

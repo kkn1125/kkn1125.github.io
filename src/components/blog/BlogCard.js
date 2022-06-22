@@ -1,16 +1,69 @@
-import React from "react";
+import React, { useContext } from "react";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import { Box, CardActionArea, Stack } from "@mui/material";
+import {
+  Box,
+  CardActionArea,
+  IconButton,
+  Paper,
+  Stack,
+  styled,
+  Tooltip,
+} from "@mui/material";
 import BlogCardInfo from "./BlogCardInfo";
 import BlogCardHashList from "./BlogCardHashList";
 import { Link, navigate } from "gatsby";
 import { cutText } from "../../util/tools";
+import { PickContext } from "../core/pickContext";
+import FavoriteIcon from "@mui/icons-material/Favorite";
+import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 
-function BlogCard({ data, height }) {
+const PaperBlock = styled(Paper)(({ theme }) => ({
+  borderRadius: 15,
+  overflow: "hidden",
+}));
+
+function BlogCard({ data, height, main = false }) {
+  const pick = useContext(PickContext);
+  const handleClick = (e, data) => {
+    e.preventDefault();
+    if (pick.find(data)) {
+      pick.deletes(data.slug);
+    } else {
+      pick.add(data);
+    }
+    pick.save();
+    pick.read();
+  };
   return (
-    <>
+    <PaperBlock
+      elevation={2}
+      sx={{
+        ...(main && {
+          display: {
+            xs: "block",
+            md: "flex",
+          },
+        }),
+        position: "relative",
+      }}>
+      <Tooltip title='Favorites!' placement="top">
+        <IconButton
+          onClick={(e) => handleClick(e, data)}
+          sx={{
+            position: "absolute",
+            top: (theme) => theme.typography.pxToRem(20),
+            right: (theme) => theme.typography.pxToRem(20),
+            zIndex: 5,
+          }}>
+          {pick.find(data) ? (
+            <FavoriteIcon color='danger' />
+          ) : (
+            <FavoriteBorderIcon color='danger' />
+          )}
+        </IconButton>
+      </Tooltip>
       <CardActionArea
         onClick={(e) => navigate(data.slug)}
         sx={{
@@ -66,7 +119,7 @@ function BlogCard({ data, height }) {
           </Box>
         </Stack>
       </CardContent>
-    </>
+    </PaperBlock>
   );
 }
 

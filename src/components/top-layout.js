@@ -1,4 +1,10 @@
-import React, { createContext, useMemo, useState } from "react";
+import React, {
+  createContext,
+  useContext,
+  useEffect,
+  useMemo,
+  useState,
+} from "react";
 import CssBaseline from "@mui/material/CssBaseline";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { responsiveFontSizes } from "@mui/material/styles";
@@ -9,6 +15,8 @@ import lightTheme from "../lightTheme";
 import darkTheme from "../darkTheme";
 import BlogProvider from "./core/BlogProvider";
 import { graphql } from "gatsby";
+import { readStorage, saveStorage } from "../util/tools";
+import PickProvider from "./core/PickProvider";
 
 export const ColorModeContext = createContext({ toggleColorMode: () => {} });
 
@@ -37,15 +45,17 @@ export default function TopLayout({ children }) {
   return (
     <>
       <Viewport />
-      <BlogProvider>
-        <ColorModeContext.Provider value={colorMode}>
-          <ThemeProvider theme={theme}>
-            {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
-            <CssBaseline />
-            <Layout>{children}</Layout>
-          </ThemeProvider>
-        </ColorModeContext.Provider>
-      </BlogProvider>
+      <PickProvider>
+        <BlogProvider>
+          <ColorModeContext.Provider value={colorMode}>
+            <ThemeProvider theme={theme}>
+              {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
+              <CssBaseline />
+              <Layout>{children}</Layout>
+            </ThemeProvider>
+          </ColorModeContext.Provider>
+        </BlogProvider>
+      </PickProvider>
     </>
   );
 }

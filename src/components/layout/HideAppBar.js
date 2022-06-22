@@ -9,6 +9,7 @@ import Slide from "@mui/material/Slide";
 import {
   alpha,
   Avatar,
+  Badge,
   Box,
   Button,
   Chip,
@@ -21,6 +22,7 @@ import {
   MenuItem,
   Stack,
   styled,
+  Tooltip,
   useMediaQuery,
   useTheme,
 } from "@mui/material";
@@ -37,6 +39,8 @@ import { uuidv4 } from "../../util/tools";
 import GroupIcon from "@mui/icons-material/People";
 import PersonIcon from "@mui/icons-material/Person";
 import SearchDialog from "../common/SearchDialog";
+import { PickContext } from "../core/pickContext";
+import TemporaryDrawer from "../common/TemporaryDrawer";
 
 const pages = [
   {
@@ -74,7 +78,7 @@ function ScrollTop(props) {
       <Box
         onClick={handleClick}
         role='presentation'
-        sx={{ position: "fixed", bottom: 16, right: 16 }}>
+        sx={{ position: "fixed", bottom: 16, right: 16, zIndex: 1000 }}>
         {children}
       </Box>
     </Fade>
@@ -110,7 +114,7 @@ function HideAppBar(props) {
   const theme = useTheme();
   const colorMode = useContext(ColorModeContext);
   const [anchorElNav, setAnchorElNav] = useState(null);
-  // const [anchorElUser, setAnchorElUser] = useState(null);
+  const pick = useContext(PickContext);
 
   const [visitor, setVisitor] = useState({
     today: 0,
@@ -316,6 +320,15 @@ function HideAppBar(props) {
                       </Typography>
                     </MenuItem>
                   ))}
+                  {pick.storage.length > 0 && (
+                    <MenuItem>
+                      <Badge variant='dot' color='warning'>
+                        <Typography sx={{ fontWeight: "bold" }}>
+                          FAVORITES
+                        </Typography>
+                      </Badge>
+                    </MenuItem>
+                  )}
                 </Menu>
               </Box>
               {/* small size */}
@@ -364,38 +377,61 @@ function HideAppBar(props) {
                     {page.name}
                   </Button>
                 ))}
+                {pick.storage.length > 0 && (
+                  <TemporaryDrawer
+                    sx={{
+                      my: 2,
+                      display: "block",
+                      color: (theme) => theme.palette.text.secondary,
+                      textDecoration: "none",
+                      textAlign: "center",
+                    }}
+                    storage={pick.storage}>
+                    <Tooltip title='Hidden Menu!'>
+                      <Badge
+                        badgeContent={pick.storage.length}
+                        color='warning'
+                        invisible={false}
+                        sx={{ fontWeight: "bold" }}>
+                        FAVORITES
+                      </Badge>
+                    </Tooltip>
+                  </TemporaryDrawer>
+                )}
               </Box>
               <Stack
                 direction='row'
-                gap={1}
+                gap={3}
                 sx={{
                   mr: 3,
                   display: {
                     xs: "none",
-                    md: "block",
+                    md: "flex",
                   },
                 }}
                 alignItems='center'>
-                <Chip
-                  color='primary'
-                  label={
-                    <Stack
-                      direction='row'
-                      alignItems='center'
-                      gap={1}
-                      sx={{
-                        "& svg": {
-                          display: {
-                            md: "block",
-                            xs: "none",
+                <Tooltip title='Today visitant'>
+                  <Chip
+                    color='primary'
+                    label={
+                      <Stack
+                        direction='row'
+                        alignItems='center'
+                        gap={1}
+                        sx={{
+                          "& svg": {
+                            display: {
+                              md: "block",
+                              xs: "none",
+                            },
                           },
-                        },
-                      }}>
-                      <PersonIcon />
-                      {visitor.today}
-                    </Stack>
-                  }
-                />
+                        }}>
+                        <PersonIcon />
+                        {visitor.today}
+                      </Stack>
+                    }
+                  />
+                </Tooltip>
                 <Typography
                   sx={{
                     fontSize: (theme) => theme.typography.pxToRem(16),
@@ -406,26 +442,28 @@ function HideAppBar(props) {
                   }}>
                   /
                 </Typography>
-                <Chip
-                  color='primary'
-                  label={
-                    <Stack
-                      direction='row'
-                      alignItems='center'
-                      gap={1}
-                      sx={{
-                        "& svg": {
-                          display: {
-                            md: "block",
-                            xs: "none",
+                <Tooltip title='Total visitant'>
+                  <Chip
+                    color='primary'
+                    label={
+                      <Stack
+                        direction='row'
+                        alignItems='center'
+                        gap={1}
+                        sx={{
+                          "& svg": {
+                            display: {
+                              md: "block",
+                              xs: "none",
+                            },
                           },
-                        },
-                      }}>
-                      <GroupIcon />
-                      {visitor.stack}
-                    </Stack>
-                  }
-                />
+                        }}>
+                        <GroupIcon />
+                        {visitor.stack}
+                      </Stack>
+                    }
+                  />
+                </Tooltip>
               </Stack>
               <SearchDialog />
               {/* <Search>
