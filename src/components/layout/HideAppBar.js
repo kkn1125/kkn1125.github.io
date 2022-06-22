@@ -321,12 +321,23 @@ function HideAppBar(props) {
                     </MenuItem>
                   ))}
                   {pick.storage.length > 0 && (
-                    <MenuItem>
-                      <Badge variant='dot' color='warning'>
-                        <Typography sx={{ fontWeight: "bold" }}>
-                          FAVORITES
-                        </Typography>
-                      </Badge>
+                    <MenuItem onClick={handleCloseNavMenu}>
+                      <TemporaryDrawer
+                        sx={{
+                          display: "block",
+                          color: (theme) => theme.palette.text.primary,
+                          textDecoration: "none",
+                          textAlign: "center",
+                        }}
+                        storage={pick.storage}>
+                        <Tooltip title='Hidden Menu!'>
+                          <Badge variant='dot' color='warning'>
+                            <Typography sx={{ fontWeight: "bold" }}>
+                              FAVORITES
+                            </Typography>
+                          </Badge>
+                        </Tooltip>
+                      </TemporaryDrawer>
                     </MenuItem>
                   )}
                 </Menu>
