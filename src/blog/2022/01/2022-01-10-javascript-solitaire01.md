@@ -660,9 +660,9 @@ body {
 
 📚 함께 보면 좋은 내용
 
-[DevKimson::[JAVASCRIPT] Solitaire를 만들어 보자 02]({{site.baseurl}}/javascript-solitaire02)
+[DevKimson::[JAVASCRIPT] Solitaire를 만들어 보자 02](/javascript-solitaire02)
 
-[DevKimson::[JAVASCRIPT] Solitaire를 만들어 보자 03]({{site.baseurl}}/javascript-solitaire03)
+[DevKimson::[JAVASCRIPT] Solitaire를 만들어 보자 03](/javascript-solitaire03)
 
 [위키백과::플레잉카드](https://ko.wikipedia.org/wiki/%ED%94%8C%EB%A0%88%EC%9E%89_%EC%B9%B4%EB%93%9C)
 

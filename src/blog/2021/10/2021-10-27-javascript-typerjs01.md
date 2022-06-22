@@ -39,7 +39,7 @@ published: true
 
 초기화 옵션의 모든 설정은 `data-typer-*`나 `custom`으로 지정된 대상으로 전역으로 설정 적용됩니다.
 
-Docs를 보시려면 [Typer Docs](https://kkn1125.github.io/type/){:.target="_blank"}를 여시면 됩니다.
+Docs를 보시려면 [Typer Docs](https://kkn1125.github.io/type/)를 여시면 됩니다.
 
 ### 현재 포스팅에 적용된 Typer
 
@@ -63,8 +63,8 @@ Docs를 보시려면 [Typer Docs](https://kkn1125.github.io/type/){:.target="_bl
 
 현재 포스팅 날짜 기준 v0.2.0이 최신입니다.
 
-[Typer Docs](https://kkn1125.github.io/typer/){:.target="_blank"}
+[Typer Docs](https://kkn1125.github.io/typer/)
 
-[Typer Github](https://github.com/kkn1125/typer){:.target="_blank"}
+[Typer Github](https://github.com/kkn1125/typer)
 
 -----

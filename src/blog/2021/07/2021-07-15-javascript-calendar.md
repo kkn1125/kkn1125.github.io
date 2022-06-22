@@ -67,10 +67,10 @@ namespace ( com.devkimson.calendar )를 작성하고 인자 값으로 html에서
 
 ## 기본 설정
 
-![cal1]({{ site.baseurl }}/assets/images/post/jsdevKal/devkal.png)
+![cal1](/images/post/jsdevKal/devkal.png)
 
 ## 커스터마이징
 
-![cal2]({{ site.baseurl }}/assets/images/post/jsdevKal/devkal-2.png)
+![cal2](/images/post/jsdevKal/devkal-2.png)
 
-<a href="{{ site.baseurl }}/assets/download/kalendarJS.zip" download>캘린더 js 파일 다운로드</a>
+<a href="/download/kalendarJS.zip" download>캘린더 js 파일 다운로드</a>

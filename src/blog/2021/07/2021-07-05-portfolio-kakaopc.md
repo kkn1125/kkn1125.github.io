@@ -86,4 +86,4 @@ spring에서 web.xml 및 context-*.xml대신 webconfig.java를 만들어 configu
 
 가 추후 프로젝트 재개 시 사용될 것입니다.
 
-[kal]:{{site.baseurl}}/javascript-calendar02/ '캘린더'
+[kal]:/javascript-calendar02/ '캘린더'

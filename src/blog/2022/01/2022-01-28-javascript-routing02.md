@@ -24,7 +24,7 @@ published: true
 
 # Router 구현
 
-작년 12월 즈음 spa에 관한 이야기를 했었습니다. 그 당시 구현 방식에 대해 짧게 다루어 보았는데요. 궁금하신 분은 <a class="text-danger" href="{{site.baseurl}}/javascript-routing01">[링크]</a>를 참조하시기 바랍니다. 지금보니 쓸데없이 메서드가 많은 느낌이 들어서 개편?하고자 새롭게 `rotuer`를 만들게 되었습니다.
+작년 12월 즈음 spa에 관한 이야기를 했었습니다. 그 당시 구현 방식에 대해 짧게 다루어 보았는데요. 궁금하신 분은 <a class="text-danger" href="/javascript-routing01">[링크]</a>를 참조하시기 바랍니다. 지금보니 쓸데없이 메서드가 많은 느낌이 들어서 개편?하고자 새롭게 `rotuer`를 만들게 되었습니다.
 
 처음에는 테스트로 시작했지만 만들고보니 뿌듯하면서도 아직 손 볼 곳이 많습니다.
 
@@ -164,6 +164,6 @@ export default {
 
 📚 함께 보면 좋은 내용
 
-[devkimson::[JAVASCRIPT] Vanilla JavaScript로 SPA를 구현해보자 01]({{site.baseurl}}/javascript-routing01)
+[devkimson::[JAVASCRIPT] Vanilla JavaScript로 SPA를 구현해보자 01](/javascript-routing01)
 
 [devkimson::router js repository](https://github.com/kkn1125/router)

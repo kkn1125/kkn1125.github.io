@@ -47,30 +47,30 @@ published: true
 
 #### 시작 안내 문구
 
-![devkal3]({{ site.baseurl }}/assets/images/post/jsdevKal/devkal-3.png)
+![devkal3](/images/post/jsdevKal/devkal-3.png)
 
 #### 할 일 여부에 따른 뱃지와 개수 표기
 
-![devkal4]({{ site.baseurl }}/assets/images/post/jsdevKal/devkal-4.png)
+![devkal4](/images/post/jsdevKal/devkal-4.png)
 
 #### 할 일 추가
 
-![devkal5]({{ site.baseurl }}/assets/images/post/jsdevKal/devkal-5.png)
+![devkal5](/images/post/jsdevKal/devkal-5.png)
 
-![devkal7]({{ site.baseurl }}/assets/images/post/jsdevKal/devkal-7.png)
+![devkal7](/images/post/jsdevKal/devkal-7.png)
 
 
 #### 오늘로 이동 버튼 추가
 
-![devkal8]({{ site.baseurl }}/assets/images/post/jsdevKal/devkal-8.png)
+![devkal8](/images/post/jsdevKal/devkal-8.png)
 
-![devkal9]({{ site.baseurl }}/assets/images/post/jsdevKal/devkal-9.png)
+![devkal9](/images/post/jsdevKal/devkal-9.png)
 
 ## 수정된 기능
 
 ### 비어있는 tr 추가되는 현상 수정
 
-![devkal10]({{ site.baseurl }}/assets/images/post/jsdevKal/devkal-10.png)
+![devkal10](/images/post/jsdevKal/devkal-10.png)
 
 요일이 토요일에 딱 떨어지는 달이면 빈 tr이 추가되어 들쭉날쭉하지 않도록 수정했습니다.
 
@@ -142,6 +142,6 @@ Obj.test = {
 
 수정된 기능은 setting부분의 tr조정과 table의 width조정, 추가된 기능은 TODO List 기능과 오늘로 이동, 할일 여부에 따른 뱃지, 개수 표기 입니다.
 
-[이전 달력 포스팅]({{ site.baseurl }}/javascript-calendar/)에 초기 세팅값에 대해 자세히 적혀있습니다.
+[이전 달력 포스팅](/javascript-calendar/)에 초기 세팅값에 대해 자세히 적혀있습니다.
 
 <a href="/download/devkalendarTODO.zip" download>devKalendarTODO 1.1.0 ver 다운로드</a>

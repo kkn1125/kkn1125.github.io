@@ -370,6 +370,6 @@ function Model() {
 
 📚 함께 보면 좋은 내용
 
-[DevKimson::[JAVASCRIPT] Solitaire를 만들어 보자 01]({{site.baseurl}}/javascript-solitaire01)
+[DevKimson::[JAVASCRIPT] Solitaire를 만들어 보자 01](/javascript-solitaire01)
 
-[DevKimson::[JAVASCRIPT] Solitaire를 만들어 보자 02]({{site.baseurl}}/javascript-solitaire02)
+[DevKimson::[JAVASCRIPT] Solitaire를 만들어 보자 02](/javascript-solitaire02)

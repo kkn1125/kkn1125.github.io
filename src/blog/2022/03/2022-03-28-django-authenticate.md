@@ -248,7 +248,7 @@ urlpatterns = [
 
 아까 봤던 `set`과 `is_active`인데요. `jekyll`을 다루신 적이 있다면 `liquid` 구문과 비슷하다고 생각하실 겁니다. 모르시는 분을 위해 간단하게 설명드리자면 `template`에서 약속되어진 기능이 있습니다. `lower`나 `upper`, `length` 등 입니다. 템플릿구문에서는 연산기호 "+" 또한 작동하지 않고 `add`라는 `filter`를 사용해야 "+"의 기능을 구현할 수 있습니다.
 
-이 `filter`를 사용하다보면 필요로하는 기능이 없을 때는 만들어야합니다. 사용자 태그를 만드는 방법은 [이전에 작성한 포스팅](https://kkn1125.github.io/django-custom-tags/){:.target="_blank"}포스팅을 참고하시기 바랍니다. 공식문서를 보시려면 [공식문서::code-layout](https://docs.djangoproject.com/en/4.0/howto/custom-template-tags/#code-layout)를 참고바랍니다.
+이 `filter`를 사용하다보면 필요로하는 기능이 없을 때는 만들어야합니다. 사용자 태그를 만드는 방법은 [이전에 작성한 포스팅](https://kkn1125.github.io/django-custom-tags/)포스팅을 참고하시기 바랍니다. 공식문서를 보시려면 [공식문서::code-layout](https://docs.djangoproject.com/en/4.0/howto/custom-template-tags/#code-layout)를 참고바랍니다.
 
 아래는 필요한 기능을 작성해놓은 예시로 보시면 되겠습니다. `customs.py`라는 파일을 만들어 내용을 작성하고 `template`부분의 코드 상단을 보면 `customs`를 `load`하는 방법으로 사용하는 것을 알 수 있습니다. `customs`라는 이름은 자유입니다. 단, `templatetags/` 디렉토리명은 가급적 변경안하는 것이 좋습니다. 변경한다면 `settings`에 `library`설정을 따로해 주셔야하므로 자세한 내용은 [공식문서::built-in backends](https://docs.djangoproject.com/en/4.0/topics/templates/#module-django.template.backends.django)의 `libraries`를 참조바랍니다.
 
