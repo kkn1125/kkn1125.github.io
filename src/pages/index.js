@@ -3,6 +3,7 @@ import * as React from "react";
 import Grid from "@mui/material/Grid";
 import { Paper, styled } from "@mui/material";
 import BlogCard from "../components/blog/BlogCard";
+import Calendar from "../components/common/Calendar";
 
 // markup
 const IndexPage = ({ data }) => {
@@ -28,6 +29,11 @@ const IndexPage = ({ data }) => {
           <BlogCard data={post} height={300} />
         </Grid>
       ))}
+      <Grid item xs>
+        <Paper elevation={3} sx={{ p: 5, display: 'flex' }}>
+          <Calendar />
+        </Paper>
+      </Grid>
     </Grid>
   );
 };
