@@ -34,6 +34,7 @@ const lightTheme = {
     primary: "#000",
     secondary: "#fff",
   },
+  GrayText: '#b1b1b1',
   divider: grey[700],
   contrastThreshold: 3,
   tonalOffset: 0.2,

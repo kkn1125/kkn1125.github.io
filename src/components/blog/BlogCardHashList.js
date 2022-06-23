@@ -1,9 +1,9 @@
-import { Chip, Stack } from "@mui/material";
+import { Chip, Stack, Tooltip, Typography } from "@mui/material";
 import React from "react";
 import PropTypes from "prop-types";
 import TagIcon from "@mui/icons-material/Tag";
 import FolderIcon from "@mui/icons-material/FolderOpenOutlined";
-import { navigate } from "gatsby";
+import { Link, navigate } from "gatsby";
 
 function BlogCardHashList({ data, setOpen }) {
   const { categories, tags } = data;
@@ -18,8 +18,8 @@ function BlogCardHashList({ data, setOpen }) {
 
   return (
     <Stack>
-      <Stack direction='row' justifyContent='space-between'>
-        <Stack direction='row' gap={1}>
+      <Stack direction='row' justifyContent='space-between' gap={1}>
+        <Stack direction='row' gap={0.5}>
           {categories?.map((category, id) => (
             <Chip
               key={"category" + category + id}
@@ -38,8 +38,12 @@ function BlogCardHashList({ data, setOpen }) {
             />
           ))}
         </Stack>
-        <Stack direction='row' gap={1}>
-          {tags?.map((tag, idx) => (
+        <Stack
+          direction='row'
+          justifyContent='flex-end'
+          gap={0.5}
+          sx={{ flexWrap: "wrap" }}>
+          {tags?.slice(0, 3)?.map((tag, idx) => (
             <Chip
               key={"tag" + tag + idx}
               color='warning'
@@ -56,6 +60,30 @@ function BlogCardHashList({ data, setOpen }) {
               }}
             />
           ))}
+          {tags.length > 3 && (
+            <Tooltip
+              title={tags?.slice(3).map((tag) => (
+                <Chip
+                  key={tag}
+                  size='small'
+                  color='warning'
+                  label={tag}
+                  onClick={(e) => {
+                    handleClickForTags(e, tag);
+                    setOpen && setOpen(false);
+                  }}
+                />
+              ))}>
+              <Typography
+                sx={{
+                  color: (theme) => theme.palette.GrayText,
+                  fontSize: (theme) => theme.typography.pxToRem(12),
+                  lineHeight: (theme) => theme.typography.pxToRem(24),
+                }}>
+                +{tags.length - 3}
+              </Typography>
+            </Tooltip>
+          )}
         </Stack>
       </Stack>
     </Stack>

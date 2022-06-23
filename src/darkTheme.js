@@ -33,6 +33,7 @@ const darkTheme = {
     primary: "#fff",
     secondary: grey[500],
   },
+  GrayText: "#b1b1b1",
   divider: deepOrange[700],
   contrastThreshold: 3,
   tonalOffset: 0.2,

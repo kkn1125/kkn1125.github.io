@@ -69,7 +69,7 @@ $.getJSON('http://www.geoplugin.net/json.gp?ip='+ip, function(data){
 ```
 
 ![주소받은모습](/images/post/geolocation/geo01.png '주소받은모습')
-{:.text-center}
+
 
 이미지의 맨아래 두 줄은 getJson을 사용하여 받은 내용입니다.
 

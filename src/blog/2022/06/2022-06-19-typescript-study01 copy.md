@@ -7,7 +7,11 @@ author: Kimson
 categories: [react]
 image: /images/post/covers/TIL.png
 tags: [typescript, basic, til]
-description: ""
+description: "Typescript Study
+
+이번 프로젝트에 사용하지는 않지만 추후 어떻게 될지 모르기도 하고, 타입스크립트를 배워둬야 하는 상황이라 이번 스터티를 타입스크립트로 정했습니다.
+내용이 많이 부실할 수 있습니다. 참조한 링크를 포스팅 하단에 정리해두고 있으니 자세한 내용을 꼭 참조하시기 바랍니다.
+"
 featured: true
 hidden: false
 rating: 3

@@ -218,7 +218,7 @@ function HideAppBar(props) {
         ][2].querySelector("td:last-child");
         setVisitor({
           ...visitor,
-          today: today.textContent,
+          today: today.textContent.split(' ').shift(),
           stack: stack.textContent,
         });
       });

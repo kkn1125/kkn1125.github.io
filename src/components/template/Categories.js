@@ -10,6 +10,7 @@ import {
 import { graphql, Link } from "gatsby";
 import React from "react";
 import BlogCard from "../blog/BlogCard";
+import Seo from "../common/Seo";
 
 const PaperBlock = styled(Paper)(({ theme }) => ({
   borderRadius: 15,
@@ -27,6 +28,7 @@ function Categories(props) {
 
   return (
     <Box>
+      <Seo frontmatter={{ title: "Categories" }} />
       <Typography className='font-main' variant='h2' component='span'>
         Category
       </Typography>
@@ -48,18 +50,7 @@ function Categories(props) {
       />
       <Grid container gap={5}>
         {edges.map(({ node: { frontmatter: info } }) => (
-          <PaperBlock
-            key={info.title}
-            elevation={2}
-            sx={{
-              display: {
-                xs: "block",
-                md: "flex",
-              },
-              width: "100%",
-            }}>
-            <BlogCard data={info} height={400} />
-          </PaperBlock>
+          <BlogCard key={info.title} main data={info} height={400} />
         ))}
       </Grid>
     </Box>

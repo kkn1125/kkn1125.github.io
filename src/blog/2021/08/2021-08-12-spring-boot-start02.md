@@ -35,7 +35,7 @@ spring boot 시작하기 01에서 설치, 구동이 주제였다면 setter와 ge
 lombok은 의존성 추가로 끝나는게 아니고 lombok.jar를 설치해야 사용가능합니다. 처음에 의존성만 추가하고 자꾸 안된다고 헤메이다가 고마운 분들의 정보로 2시간 만에 해결할 수 있었습니다.
 
 ![롬복 설치](/images/post/springboot/lombok/lombok01.png)
-{:.text-center}
+
 
 1. [lombok 다운로드](https://projectlombok.org/download)를 해줍니다.
 2. jar파일이 받아지면 해당 디렉토리에 가서 bash 또는 cmd를 켭니다.
@@ -63,7 +63,7 @@ tiles는 의존성 추가 먼저 해줍니다. 이때 tiles는 mdnrepository에�
 ```
 
 ![tiles 폴더구조](/images/post/springboot/tiles/tiles01.png)
-{:.text-center}
+
 
 tiles.xml을 위 이미지와 같이 경로에 생성합니다.
 xml의 내부코드는 아래와 같습니다. tiles.xml의 기본 설정은 [tiles 홈페이지](https://tiles.apache.org/)에도 나와있습니다.
@@ -88,7 +88,7 @@ xml의 내부코드는 아래와 같습니다. tiles.xml의 기본 설정은 [ti
 ServletConfig라는 java파일을 만들어 tiles.xml의 위치를 알려주면서 tiles에서 definition이 가리키는 경로로 매핑되게 하는 작업입니다.
 
 ![tiles 폴더구조](/images/post/springboot/tiles/tiles02.png)
-{:.text-center}
+
 
 ```java
 @Configuration
@@ -214,4 +214,4 @@ tiles는 3.0.8버전까지 있고, 2016년부터 retired된 상황입니다. 하
 <!-- <span class="text-muted">*- 구동준비된 상태의 폴더구조입니다.*</span>
 
 ![스프링부트 구동](/images/post/springboot/springboot11.png)
-{:.text-center} -->
+ -->

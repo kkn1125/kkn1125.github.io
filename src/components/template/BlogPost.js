@@ -178,7 +178,7 @@ export default function Template({ data }) {
                           }
                           style={gruvboxDark}>
                           {domNode.children
-                            ? domNode.children[0].children[0].data
+                            ? domNode.children[0].children[0].data.trim()
                             : ""}
                         </SyntaxHighlighter>
                       );
@@ -228,7 +228,7 @@ export const pageQuery = graphql`
         author
         categories
         tags
-        date(formatString: "YYYY-MM-DD")
+        date(formatString: "YYYY-MM-DD | HH:mm")
       }
       html
       rawMarkdownBody

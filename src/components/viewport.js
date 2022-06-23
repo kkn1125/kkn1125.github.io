@@ -10,7 +10,6 @@ export default function Viewport({ children }) {
       <meta property='og:type' content='website' />
       <meta property='og:url' content='https://kkn1125.github.io' />
       <meta name='viewport' content='initial-scale=1, width=device-width' />
-
       {children}
     </Helmet>
   );

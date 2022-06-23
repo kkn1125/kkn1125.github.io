@@ -1,7 +1,5 @@
-export const cutText = (desc, limit, addFrontText) =>
-  (desc?.length || 0) < limit
-    ? desc && addFrontText + desc
-    : addFrontText + desc.slice(0, limit) + " ...";
+export const cutText = (desc, limit, ellipsis = " ...") =>
+  (desc?.length || 0) < limit ? desc && desc : desc.slice(0, limit) + ellipsis;
 
 export const objFilter = (obj) =>
   Object.fromEntries(Object.entries(obj).filter(([k, v]) => v));

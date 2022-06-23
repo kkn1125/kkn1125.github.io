@@ -20,7 +20,7 @@ function BlogCardInfo({ data, noavatar }) {
         component='a'
         href='https://github.com/kkn1125'
         target='_blank'
-        color='GrayText'
+        color='text.primary'
         variant='caption'
         sx={{
           textDecoration: "none",
@@ -32,7 +32,7 @@ function BlogCardInfo({ data, noavatar }) {
         flexItem
         sx={{
           mx: 2,
-          my: 0.5,
+          my: 0.9,
         }}
       />
       <Typography

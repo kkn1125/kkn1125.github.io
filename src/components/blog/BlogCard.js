@@ -46,9 +46,10 @@ function BlogCard({ data, height, main = false }) {
             md: "flex",
           },
         }),
+        width: "100%",
         position: "relative",
       }}>
-      <Tooltip title='Favorites!' placement="top">
+      <Tooltip title='Favorites!' placement='top'>
         <IconButton
           onClick={(e) => handleClick(e, data)}
           sx={{
@@ -111,7 +112,7 @@ function BlogCard({ data, height, main = false }) {
               sx={{
                 my: 5,
               }}>
-              {cutText(data.description, 150)}
+              {cutText(data.description, 80)}
             </Typography>
           </Box>
           <Box>
