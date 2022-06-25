@@ -15,6 +15,24 @@ import {
 import { PickersDay } from "@mui/x-date-pickers";
 // import PickersDay from "@mui/x-date-pickers-pro/PickersDay";
 
+const tagIcon = {
+  undefined: "▷",
+  "": "▷",
+  rest: "☕",
+  study: "📖",
+  alert: "📢",
+  1: "🥇",
+  2: "🥈",
+  3: "🥉",
+  edit: "🔧",
+  idea: "💡",
+  know: "❗",
+  how: "❓",
+  check: "✅",
+  cancel: "❎",
+  prj: "🔮",
+};
+
 function Calendar() {
   const [date, setDate] = useState(new Date());
   const [todo, setTodo] = useState([]);
@@ -93,7 +111,7 @@ function Calendar() {
                   <Typography component='span'>{item.todo}</Typography>
                   <Chip
                     component='span'
-                    label={item.tag}
+                    label={tagIcon[item.tag]}
                     variant='outlined'
                     sx={{
                       fontSize: (theme) => theme.typography.pxToRem(12),

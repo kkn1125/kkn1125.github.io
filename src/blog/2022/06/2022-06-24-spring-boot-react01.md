@@ -406,9 +406,9 @@ $ java -jar projectname-0.0.1-SNAPSHOT.jar
 
 [u-nij님 블로그::Spring Boot + React.js 개발환경 연동하기](https://velog.io/@u-nij/Spring-Boot-React.js-%EA%B0%9C%EB%B0%9C%ED%99%98%EA%B2%BD-%EC%84%B8%ED%8C%85)
 
-[u-nij님 블로그::Spring Boot + React.js 개발환경 연동하기](https://velog.io/@s_keyyy/Spring-boot-React-build-process)
+[s_keyyy님 블로그::Spring boot + React build process](https://velog.io/@s_keyyy/Spring-boot-React-build-process)
 
-[s_keyyy님 블로그::Spring boot + React build process](https://create-react-app.dev/docs/proxying-api-requests-in-development)
+[create-react-app docs::Proxying API Requests in Development](https://create-react-app.dev/docs/proxying-api-requests-in-development)
 
 [javaTpoint::No Main Manifest Attribute](https://www.javatpoint.com/no-main-manifest-attribute)
 
