@@ -7,7 +7,9 @@ author: Kimson
 categories: [mui]
 image: /images/post/covers/TIL.png
 tags: [react, error, til]
-description: ""
+description: "작업하다보면 많은 에러를 발생시켜보기도 하는데요, 위의 에러 내용은 `MUI`에서 제공하는 `Select` 컴포넌트를 사용할 때 발생하는 에러입니다.
+
+여러가지 블로그 포스팅이나 스택오버플로우를 찾아봐도 도무지 같은 상황에 놓인 분이 없어서 이것저것 만져보면서 문제를 해결했습니다."
 featured: true
 hidden: false
 rating: 4.5
