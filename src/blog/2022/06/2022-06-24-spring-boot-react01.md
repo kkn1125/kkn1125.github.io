@@ -31,6 +31,8 @@ published: true
 
 물론 여러 블로그에서 소개하고 있지만 어딘가는 파일구조가 빠지거나 어디서는 gradle 혹은 maven으로 build를 작성하는 등 변수가 많이 있었습니다. 그래서 저는 maven이면 maven, gradle이면 gradle 등 사용하는 환경에 따라 나워서 포스팅으로 정리하려 합니다. 먼저, 개발환경부터 정하겠습니다.
 
+> 포스팅 하단에 gradle 로 빌드하는 seed project 저장소 올려두었습니다. 참고 바랍니다.
+
 ## 개발 환경
 
 먼저 간추려 말씀드리자면 필수 요소는 spring boot, react, node, yarn 입니다. build시 `"node + yarn"` 환경임을 미리 알려드립니다.
@@ -125,7 +127,7 @@ $ npx create-react-app . # .은 현재 위치에 파일을 뿌려줍니다.
 그리고 추가로 api 테스트도 같이 진행하기 위해서 react에서 axios 패키지를 설치하고 데이터를 요청해봅시다.
 
 ```jsx
-// App.jsx
+/* App.jsx */
 
 import React, { useState, useEffect } from "react";
 
@@ -399,6 +401,28 @@ $ java -jar projectname-0.0.1-SNAPSHOT.jar
 ### 도대체 앱 루트에 index.html은 어떻게 매핑하나?
 
 빌드 성공하셨다면 jar 내용물을 보면 힌트를 얻을 수 있습니다. spring boot 폴더 구조에서 resources의 static안에 index.html을 만들면 루트 경로로 매핑되어 정상 출력됩니다.
+
+## Seed Project 받기
+
+이것저것 세팅하면서 두고두고 쓰기 위해 딱 기본 세팅만 되어 있는 프로젝트입니다. maven과 gradle로 나누어 저장소를 만들어 두었습니다.
+
+해당 저장소에 사용방법을 적어두고 개발환경에 대해 적어두었습니다. curl을 이용하거나 git clone하거나 둘 중 하나 택하여 사용하면 됩니다.
+
+물론 커멘드보다 직접 받으시는게 좋으시다면 해당 back단 저장소를 받으시고, frontend를 submodule로 저장했기때문에 frontend 디렉토리를 클릭하시면 front단 저장소로 넘어갑니다.
+
+> 주의  
+> node와 yarn의 버전, java, jdk 버전은 꼭 확인하시기 바랍니다.
+
+- yarn 1.22.19
+- node 16.15.0
+- java8
+- jdk 1.8
+
+[Github Repo : Backend Spring Boot + React + Maven](https://github.com/kkn1125/springboot-react-mvn-seed#%EC%82%AC%EC%9A%A9%EB%B0%A9%EB%B2%95)
+
+[Github Repo : Backend Spring Boot + React + Gradle](https://github.com/kkn1125/springboot-react-gradle-seed#%EC%82%AC%EC%9A%A9%EB%B0%A9%EB%B2%95)
+
+[Github Repo : Backend Spring Boot + React + Frontend](https://github.com/kkn1125/springboot-react-front-seed)
 
 ---
 

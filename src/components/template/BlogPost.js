@@ -21,7 +21,7 @@ import {
 import Seo from "../common/Seo";
 import BlogCardInfo from "../blog/BlogCardInfo";
 import SyntaxHighlighter from "react-syntax-highlighter";
-import { gruvboxDark } from "react-syntax-highlighter/dist/esm/styles/prism";
+import { atelierPlateauDark } from "react-syntax-highlighter/src/styles/hljs";
 
 export default function Template({ data }) {
   const {
@@ -176,7 +176,7 @@ export default function Template({ data }) {
                               ?.split("-")
                               ?.pop() || "plaintext"
                           }
-                          style={gruvboxDark}>
+                          style={atelierPlateauDark}>
                           {domNode.children
                             ? domNode.children[0].children[0].data.trim()
                             : ""}
