@@ -47,7 +47,7 @@ function Calendar() {
 
   return (
     <LocalizationProvider dateAdapter={AdapterDateFns}>
-      <Grid container gap={3} justifyContent='center' alignItems='center'>
+      <Grid container gap={3} justifyContent='center' alignItems='flex-start'>
         <Grid
           item
           sx={{
@@ -104,19 +104,30 @@ function Calendar() {
               todo.map((item, idx) => (
                 <Stack
                   key={item.todo + idx}
-                  direction='row'
-                  alignItems='center'
-                  gap={3}>
-                  <Chip component='span' label={idx + 1} color='info' />
-                  <Typography component='span'>{item.todo}</Typography>
-                  <Chip
-                    component='span'
-                    label={tagIcon[item.tag]}
-                    variant='outlined'
-                    sx={{
-                      fontSize: (theme) => theme.typography.pxToRem(12),
-                    }}
-                  />
+                  direction={{
+                    xs: "column",
+                    md: "row",
+                  }}
+                  alignItems={{
+                    xs: "flex-start",
+                    md: "center",
+                  }}
+                  gap={{
+                    xs: 1,
+                    md: 3,
+                  }}>
+                  {/* <Chip component='span' label={idx + 1} color='info' /> */}
+                  <Stack direction='row' gap={1} alignItems="center">
+                    <Chip
+                      component='span'
+                      label={tagIcon[item.tag]}
+                      variant='outlined'
+                      sx={{
+                        fontSize: (theme) => theme.typography.pxToRem(12),
+                      }}
+                    />
+                    <Typography component='span'>{item.todo}</Typography>
+                  </Stack>
                   <Typography
                     component='span'
                     sx={{

@@ -5,7 +5,7 @@ date: 2022-06-19 19:27:36 +0900
 title: "[TYPESCRIPT] TypeScript Study 01"
 author: Kimson
 categories: [react]
-image: /images/post/covers/TIL.png
+image: /images/post/covers/TIL-center.png
 tags: [typescript, basic, til]
 description: "Typescript Study
 

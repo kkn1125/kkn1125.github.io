@@ -124,7 +124,7 @@ export default function Template({ data }) {
               sx={{
                 maxHeight: 450,
                 objectFit: "cover",
-                objectPosition: "0% 65%",
+                objectPosition: "0% 50%",
                 mb: 5,
               }}
             />

@@ -5,7 +5,7 @@ date: 2022-06-23 22:41:02 +0900
 title: "[MUI] Select Component 설정 시 out-of-range 에러 문제"
 author: Kimson
 categories: [mui]
-image: /images/post/covers/TIL.png
+image: /images/post/covers/TIL-center.png
 tags: [react, error, til]
 description: "작업하다보면 많은 에러를 발생시켜보기도 하는데요, 위의 에러 내용은 `MUI`에서 제공하는 `Select` 컴포넌트를 사용할 때 발생하는 에러입니다.
 

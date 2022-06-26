@@ -79,6 +79,7 @@ function BlogCard({ data, height, main = false }) {
             height: height,
             minHeight: 300,
             backgroundColor: "#fff",
+            objectFit: 'cover',
           }}
         />
       </CardActionArea>

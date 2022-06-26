@@ -1,6 +1,7 @@
 import React, {
   createContext,
-  useContext,
+  lazy,
+  Suspense,
   useEffect,
   useMemo,
   useState,
@@ -14,14 +15,14 @@ import Layout from "./layout/Layout";
 import lightTheme from "../lightTheme";
 import darkTheme from "../darkTheme";
 import BlogProvider from "./core/BlogProvider";
-import { graphql } from "gatsby";
-import { readStorage, saveStorage } from "../util/tools";
 import PickProvider from "./core/PickProvider";
+import { Backdrop, CircularProgress } from "@mui/material";
 
 export const ColorModeContext = createContext({ toggleColorMode: () => {} });
 
 export default function TopLayout({ children }) {
   const [mode, setMode] = useState("light");
+
   const colorMode = useMemo(
     () => ({
       toggleColorMode: () => {
