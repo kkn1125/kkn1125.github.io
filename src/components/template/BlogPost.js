@@ -82,7 +82,7 @@ export default function Template({ data }) {
   return (
     <>
       <Seo frontmatter={frontmatter} />
-      <Grid container justifyContent='center' gap={5}>
+      <Grid container justifyContent='center' spacing={5}>
         <Grid item xs={12} md={2}>
           <List
             sx={{
@@ -115,7 +115,7 @@ export default function Template({ data }) {
           </List>
         </Grid>
 
-        <Grid item xs={12} md={8}>
+        <Grid item xs={12} md={10}>
           <Paper elevation={10}>
             <CardMedia
               component='img'

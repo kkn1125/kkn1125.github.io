@@ -22,7 +22,7 @@ const IndexPage = ({ data }) => {
   return (
     <>
       <Seo frontmatter={{ title: "" }} />
-      <Grid container spacing={10}>
+      <Grid container spacing={12}>
         {/* main */}
         <Grid item xs={12}>
           <BlogCard main data={firstPost} height={"calc(20vw + 100px)"} />
