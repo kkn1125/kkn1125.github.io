@@ -210,16 +210,19 @@ function HideAppBar(props) {
         const table = body.querySelector(
           "#main > div > form > div:nth-child(5) > table"
         );
-        const stack = [
-          ...table.querySelector("tbody").children,
-        ][1].querySelector("td:last-child");
-        const today = [
-          ...table.querySelector("tbody").children,
-        ][2].querySelector("td:last-child");
+
+        const tableEntries = [...table.querySelector("tbody").children].map(
+          (tr) => {
+            const [key, value] = tr.children;
+            return [key.textContent, value.textContent];
+          }
+        );
+        const tableObj = Object.fromEntries(tableEntries);
+
         setVisitor({
           ...visitor,
-          today: today.textContent.split(' ').shift(),
-          stack: stack.textContent,
+          today: tableObj["오늘 방문자수"].split(" ").shift(),
+          stack: tableObj["누적 방문자수"],
         });
       });
     }, 100);
