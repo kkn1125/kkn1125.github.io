@@ -76,7 +76,7 @@ export default App;
 
 간단하게 테스트를 하기 위해 rangeBar를 제어해서 많은 일을 하고 화면에 많은 데이터를 보여주도록 일부러 부하가 걸리는 모델을 생성합니다.
 
-rangeBar는 한도가 10000입니다. 이떄 10000은 useState 변수를 사용한 태그를 10000개 생성해서 텍스트를 변경하거나 rangeBar를 이동할 때 성능을 체크합니다.
+rangeBar는 한도가 10000입니다. 이때 10000은 useState 변수를 사용한 태그를 10000개 생성해서 텍스트를 변경하거나 rangeBar를 이동할 때 성능을 체크합니다.
 
 <figure class="text-center">
 <span class="w-inline-block">

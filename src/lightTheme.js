@@ -28,18 +28,18 @@ const lightTheme = {
     main: deepOrange[500],
   },
   white: {
-    main: "#fff",
+    main: "#ffffff",
   },
   text: {
-    primary: "#000",
-    secondary: "#fff",
+    primary: "#000000",
+    secondary: "#ffffff",
   },
   GrayText: '#b1b1b1',
   divider: grey[700],
   contrastThreshold: 3,
   tonalOffset: 0.2,
   background: {
-    default: "#fff",
+    default: "#ffffff",
   },
 };
 

@@ -1,19 +1,10 @@
-import React, { Fragment, useState } from "react";
+import React, { useState } from "react";
 import { CalendarPicker } from "@mui/x-date-pickers/CalendarPicker";
 import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
-import todoStorage from "../../data/todo.json";
-import {
-  Badge,
-  Box,
-  Chip,
-  Divider,
-  Grid,
-  Stack,
-  Typography,
-} from "@mui/material";
+import todoStorage from "../../../data/todo.json";
+import { Badge, Box, Chip, Grid, Stack, Typography } from "@mui/material";
 import { PickersDay } from "@mui/x-date-pickers";
-// import PickersDay from "@mui/x-date-pickers-pro/PickersDay";
 
 const tagIcon = {
   undefined: "▷",
@@ -54,15 +45,19 @@ function Calendar() {
             "& .PrivatePickersSlideTransition-root [role='grid']": {
               pt: 2,
             },
+            "& .MuiTypography-root.MuiTypography-caption": {
+              color: (theme) => theme.palette.text.primary,
+              "&:last-child": {
+                color: (theme) => theme.palette.primary.main,
+              },
+              "&:first-child": {
+                color: (theme) => theme.palette.danger.main,
+              },
+            },
           }}>
           <CalendarPicker
             date={date}
             onChange={handleDate}
-            componentsProps={{
-              sx: {
-                color: "red",
-              },
-            }}
             renderDay={(date, selectedDates, pickersDayProps) => {
               const _year = pickersDayProps.day.getFullYear();
               const _month = pickersDayProps.day.getMonth();
@@ -71,8 +66,8 @@ function Calendar() {
               const today = new Date();
               const year = today.getFullYear();
               const month = today.getMonth();
-              const isSameYear = _year === year;
-              const isSameMonth = _month === month;
+              const isSameYear = _year >= year;
+              const isSameMonth = _month >= month;
               return (
                 <Box component='div' role='row' key={date}>
                   <Badge
@@ -83,7 +78,10 @@ function Calendar() {
                     <PickersDay
                       {...pickersDayProps}
                       sx={{
-                        color: isSameYear && isSameMonth ? "black" : "#ccc",
+                        color: (theme) =>
+                          isSameYear && isSameMonth
+                            ? theme.palette.text.primary
+                            : theme.palette.text.primary + 66,
                       }}
                       outsideCurrentMonth={
                         false
@@ -117,7 +115,7 @@ function Calendar() {
                     md: 3,
                   }}>
                   {/* <Chip component='span' label={idx + 1} color='info' /> */}
-                  <Stack direction='row' gap={1} alignItems="center">
+                  <Stack direction='row' gap={1} alignItems='center'>
                     <Chip
                       component='span'
                       label={tagIcon[item.tag]}

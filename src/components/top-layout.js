@@ -1,8 +1,5 @@
 import React, {
   createContext,
-  lazy,
-  Suspense,
-  useEffect,
   useMemo,
   useState,
 } from "react";
@@ -11,12 +8,11 @@ import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { responsiveFontSizes } from "@mui/material/styles";
 
 import Viewport from "./viewport";
-import Layout from "./layout/Layout";
+import Layout from "./template/Layout";
 import lightTheme from "../lightTheme";
 import darkTheme from "../darkTheme";
-import BlogProvider from "./core/BlogProvider";
-import PickProvider from "./core/PickProvider";
-import { Backdrop, CircularProgress } from "@mui/material";
+import BlogProvider from "../context/BlogProvider";
+import PickProvider from "../context/PickProvider";
 
 export const ColorModeContext = createContext({ toggleColorMode: () => {} });
 

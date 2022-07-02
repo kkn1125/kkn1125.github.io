@@ -1,11 +1,10 @@
 import { graphql } from "gatsby";
 import * as React from "react";
 import Grid from "@mui/material/Grid";
-import { Paper, styled } from "@mui/material";
-import BlogCard from "../components/blog/BlogCard";
-import Calendar from "../components/common/Calendar";
-import { Helmet } from "react-helmet";
-import Seo from "../components/common/Seo";
+import { Paper } from "@mui/material";
+import Seo from "../components/modules/seo/Seo";
+import BlogCard from "../components/organisms/blog/BlogCard";
+import Calendar from "../components/organisms/calendar/Calendar";
 
 // markup
 const IndexPage = ({ data }) => {

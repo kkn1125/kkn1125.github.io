@@ -11,3 +11,4 @@ rakefile
 .cache/
 public
 src/gatsby-types.d.ts
+\[x\]*

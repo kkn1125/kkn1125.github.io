@@ -21,7 +21,7 @@ import {
 } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import { graphql, Link, StaticQuery } from "gatsby";
-import BlogCardHashList from "../blog/BlogCardHashList";
+import HashList from "../../modules/common/HashList";
 
 function SearchDialog({ children, data }) {
   const theme = useTheme();
@@ -126,7 +126,8 @@ function SearchDialog({ children, data }) {
                 {result.length === 0 && searchRef.current?.value && (
                   <Alert severity='warning'>
                     <AlertTitle>Not found 🥲</AlertTitle>
-                    <strong>"{searchRef.current.value}"</strong> 관련된 내용이 없습니다.
+                    <strong>"{searchRef.current.value}"</strong> 관련된 내용이
+                    없습니다.
                   </Alert>
                 )}
                 {result.map((node) => (
@@ -150,7 +151,13 @@ function SearchDialog({ children, data }) {
                           {node.title}
                         </Link>
                       </Typography>
-                      <BlogCardHashList data={node} setOpen={setOpen} />
+                      <Stack
+                        direction='row'
+                        justifyContent='space-between'
+                        gap={1}>
+                        <HashList hash={node.categories} types='categories' />
+                        <HashList hash={node.tags} types='tags' />
+                      </Stack>
                     </Stack>
                   </ListItem>
                 ))}

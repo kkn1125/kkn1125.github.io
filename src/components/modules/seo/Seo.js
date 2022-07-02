@@ -1,6 +1,6 @@
 import React from "react";
 import { Helmet } from "react-helmet";
-import { BlogFormat } from "../../util/formatter";
+import { BlogFormat } from "../../../util/formatter";
 
 function Seo({ frontmatter }) {
   const form = BlogFormat(frontmatter);

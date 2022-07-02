@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { graphql } from "gatsby";
-import hljs from "highlight.js";
+import { graphql, Link } from "gatsby";
 import "./BlogPost.css";
 import "highlight.js/styles/monokai.css";
 import parse from "html-react-parser";
@@ -18,12 +17,19 @@ import {
   CircularProgress,
   Stack,
 } from "@mui/material";
-import Seo from "../common/Seo";
-import BlogCardInfo from "../blog/BlogCardInfo";
+import BlogCardInfo from "../modules/blog/BlogCardInfo";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { atelierPlateauDark } from "react-syntax-highlighter/src/styles/hljs";
+import HashList from "../modules/common/HashList";
+import Seo from "../modules/seo/Seo";
+import Favorite from "../modules/common/Favorite";
+import { cutText } from "../../util/tools";
+import ControlButton from "../modules/blog/ControlButton";
 
-export default function Template({ data }) {
+export default function Template({ data, pageContext }) {
+  const { previous, next } = pageContext;
+  const { frontmatter: prevPost } = previous || { frontmatter: undefined };
+  const { frontmatter: nextPost } = next || { frontmatter: undefined };
   const {
     markdownRemark: {
       frontmatter,
@@ -57,11 +63,6 @@ export default function Template({ data }) {
       setMode(false);
     }, 500);
   }, [theme.palette.mode]);
-
-  // useEffect(() => {
-  //   hljs.configure({});
-  //   hljs.highlightAll();
-  // }, []);
 
   const [selectedIndex, setSelectedIndex] = useState(0);
 
@@ -139,10 +140,12 @@ export default function Template({ data }) {
               wordSpacing: 1,
             }}>
             {frontmatter.title}
+            <Favorite data={frontmatter} fixed={false} />
           </Typography>
           <Divider
             sx={{
               my: 2,
+              borderColor: "#e1e1e1",
             }}
           />
           <BlogCardInfo data={frontmatter} />
@@ -188,6 +191,37 @@ export default function Template({ data }) {
               })}
             </div>
           </Box>
+          <Divider
+            sx={{
+              my: 2,
+              borderColor: "#e1e1e1",
+            }}
+          />
+          <Stack
+            direction='row'
+            justifyContent='space-between'
+            gap={1}
+            sx={{ mt: 3 }}>
+            <HashList hash={frontmatter.categories} types='categories' />
+            <HashList hash={frontmatter.tags} types='tags' />
+          </Stack>
+          <Stack
+            direction={{
+              xs: "column",
+              md: "row",
+            }}
+            justifyContent='space-between'
+            sx={{
+              my: 4.5,
+              gap: 3,
+            }}>
+            <Box sx={{ flex: 1 }}>
+              {<ControlButton controlPost={nextPost} side={"prev"}/>}
+            </Box>
+            <Box sx={{ flex: 1 }}>
+              {<ControlButton controlPost={prevPost} side={"next"}/>}
+            </Box>
+          </Stack>
           <div>
             {mode && (
               <Stack

@@ -25,6 +25,32 @@ exports.createPages = async ({ graphql, actions, ...props }) => {
               slug
             }
           }
+
+          next {
+            frontmatter {
+              author
+              categories
+              tags
+              title
+              date(formatString: "YYYY-MM-DD HH:mm")
+              slug
+              modified(formatString: "YYYY-MM-DD HH:mm")
+              published
+            }
+          }
+          previous {
+            frontmatter {
+              author
+              title
+              tags
+              slug
+              date(formatString: "YYYY-MM-DD HH:mm")
+              description
+              modified(formatString: "YYYY-MM-DD HH:mm")
+              published
+              categories
+            }
+          }
         }
       }
 
@@ -72,7 +98,8 @@ exports.createPages = async ({ graphql, actions, ...props }) => {
       path: `${edge.node.frontmatter.slug}`,
       component: blogPostTemplate,
       context: {
-        title: edge.node.frontmatter.title,
+        previous: edge.previous,
+        next: edge.next,
       },
     });
   });

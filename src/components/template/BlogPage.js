@@ -1,8 +1,6 @@
 import {
   ListItem,
   ListItemText,
-  ListItemAvatar,
-  Avatar,
   Typography,
   Divider,
   Box,
@@ -12,10 +10,11 @@ import {
 } from "@mui/material";
 import { graphql, Link } from "gatsby";
 import React, { Fragment, useState } from "react";
-import BlogLayout from "../layout/BlogLayout";
+import BlogLayout from "./BlogLayout";
 import { cutText } from "../../util/tools";
-import BlogCardInfo from "../blog/BlogCardInfo";
-import BlogCardHashList from "../blog/BlogCardHashList";
+import BlogCardInfo from "../modules/blog/BlogCardInfo";
+import HashList from "../modules/common/HashList";
+import Favorite from "../modules/common/Favorite";
 
 const BlogPage = ({ data, pageContext }) => {
   const { limit, skip, pageNum, currentPage } = pageContext;
@@ -54,6 +53,7 @@ const BlogPage = ({ data, pageContext }) => {
                   textDecoration: "none",
                 }}>
                 {edge.node.frontmatter.title}
+                <Favorite data={edge.node.frontmatter} fixed={false} />
               </Typography>
               <Typography
                 sx={{
@@ -70,7 +70,13 @@ const BlogPage = ({ data, pageContext }) => {
                 sx={{
                   mt: 2,
                 }}>
-                <BlogCardHashList data={edge.node.frontmatter} />
+                <Stack direction='row' justifyContent='space-between' gap={1}>
+                  <HashList
+                    hash={edge.node.frontmatter.categories}
+                    types='categories'
+                  />
+                  <HashList hash={edge.node.frontmatter.tags} types='tags' />
+                </Stack>
               </Box>
             </ListItemText>
           </ListItem>

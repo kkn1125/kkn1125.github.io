@@ -1,9 +1,7 @@
-import React, { useContext, useEffect } from "react";
+import React from "react";
 import { Helmet } from "react-helmet";
-import { BlogInfoContext } from "./core/blogInfoContext";
 
 export default function Viewport({ children }) {
-  const context = useContext(BlogInfoContext);
   return (
     <Helmet>
       {/* To ensure proper rendering and touch zooming for all devices, add the responsive viewport meta tag to your <head> element. */}

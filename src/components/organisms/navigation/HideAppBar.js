@@ -1,13 +1,4 @@
-import React, { Fragment, useContext, useEffect, useState } from "react";
-import PropTypes from "prop-types";
-import AppBar from "@mui/material/AppBar";
-import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
-import CssBaseline from "@mui/material/CssBaseline";
-import useScrollTrigger from "@mui/material/useScrollTrigger";
-import Slide from "@mui/material/Slide";
 import {
-  alpha,
   Avatar,
   Badge,
   Box,
@@ -17,30 +8,35 @@ import {
   Fab,
   Fade,
   IconButton,
-  InputBase,
   Menu,
   MenuItem,
   Stack,
-  styled,
   Tooltip,
-  useMediaQuery,
   useTheme,
 } from "@mui/material";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
-import AdbIcon from "@mui/icons-material/Adb";
-import MenuIcon from "@mui/icons-material/Menu";
-import { graphql, Link, navigate } from "gatsby";
+import useScrollTrigger from "@mui/material/useScrollTrigger";
 import Brightness4Icon from "@mui/icons-material/Brightness4";
 import Brightness7Icon from "@mui/icons-material/Brightness7";
-import { ColorModeContext } from "../top-layout";
-import axios from "axios";
-import { grey } from "@mui/material/colors";
-import { uuidv4 } from "../../util/tools";
-import GroupIcon from "@mui/icons-material/People";
 import PersonIcon from "@mui/icons-material/Person";
-import SearchDialog from "../common/SearchDialog";
-import { PickContext } from "../core/pickContext";
-import TemporaryDrawer from "../common/TemporaryDrawer";
+import CssBaseline from "@mui/material/CssBaseline";
+import GroupIcon from "@mui/icons-material/People";
+import Typography from "@mui/material/Typography";
+import MenuIcon from "@mui/icons-material/Menu";
+import Toolbar from "@mui/material/Toolbar";
+import AppBar from "@mui/material/AppBar";
+import Slide from "@mui/material/Slide";
+
+import React, { Fragment, useContext, useEffect, useState } from "react";
+import { Link, navigate } from "gatsby";
+import PropTypes from "prop-types";
+import axios from "axios";
+
+import { uuidv4 } from "../../../util/tools";
+import SearchDialog from "../search/SearchDialog";
+import { ColorModeContext } from "../../top-layout";
+import TemporaryDrawer from "../drawer/TemporaryDrawer";
+import { PickContext } from "../../../context/pickContext";
 
 const pages = [
   {
@@ -52,7 +48,6 @@ const pages = [
     path: "/about",
   },
 ];
-// const settings = ["Profile", "Account", "Dashboard", "Logout"];
 const resConvertData = (res) => {
   const body = new DOMParser().parseFromString(
     res.data.contents,
