@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://kkn1125.github.io/sitemap.xml
+Host: https://kkn1125.github.io
