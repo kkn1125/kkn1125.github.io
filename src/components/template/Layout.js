@@ -10,7 +10,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <HideAppBar />
-      <Container maxWidth='lg'>
+      <Container maxWidth="xl">
         <Box component='main' my={10}>
           {children}
         </Box>

@@ -9,7 +9,7 @@ import {
   PaginationItem,
 } from "@mui/material";
 import { graphql, Link } from "gatsby";
-import React, { Fragment, useState } from "react";
+import React, { Fragment, memo, useState } from "react";
 import BlogLayout from "./BlogLayout";
 import { cutText } from "../../util/tools";
 import BlogCardInfo from "../modules/blog/BlogCardInfo";
@@ -141,4 +141,4 @@ export const query = graphql`
   }
 `;
 
-export default BlogPage;
+export default memo(BlogPage);

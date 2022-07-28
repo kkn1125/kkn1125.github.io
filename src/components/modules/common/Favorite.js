@@ -1,5 +1,5 @@
 import { IconButton, Tooltip } from "@mui/material";
-import React, { useContext } from "react";
+import React, { memo, useContext } from "react";
 
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
@@ -40,4 +40,4 @@ function Favorite({ data, fixed = true }) {
   );
 }
 
-export default Favorite;
+export default memo(Favorite);

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { memo, useEffect, useRef, useState } from "react";
 import { graphql, Link } from "gatsby";
 import "./BlogPost.css";
 import "highlight.js/styles/monokai.css";
@@ -26,7 +26,7 @@ import Favorite from "../modules/common/Favorite";
 import { cutText } from "../../util/tools";
 import ControlButton from "../modules/blog/ControlButton";
 
-export default function Template({ data, pageContext }) {
+function Template({ data, pageContext }) {
   const { previous, next } = pageContext;
   const { frontmatter: prevPost } = previous || { frontmatter: undefined };
   const { frontmatter: nextPost } = next || { frontmatter: undefined };
@@ -83,8 +83,14 @@ export default function Template({ data, pageContext }) {
   return (
     <>
       <Seo frontmatter={frontmatter} />
-      <Grid container justifyContent='center' spacing={5}>
-        <Grid item xs={12} md={2}>
+      <Grid
+        container
+        justifyContent='center'
+        sx={{
+          flexWrap: { xs: "wrap", md: "nowrap" },
+          gap: 5,
+        }}>
+        <Grid item xs={12} md={3}>
           <List
             sx={{
               width: "100%",
@@ -116,7 +122,7 @@ export default function Template({ data, pageContext }) {
           </List>
         </Grid>
 
-        <Grid item xs={12} md={10}>
+        <Grid item xs={12} md={9}>
           <Paper elevation={10}>
             <CardMedia
               component='img'
@@ -216,10 +222,10 @@ export default function Template({ data, pageContext }) {
               gap: 3,
             }}>
             <Box sx={{ flex: 1 }}>
-              {<ControlButton controlPost={nextPost} side={"prev"}/>}
+              {<ControlButton controlPost={nextPost} side={"prev"} />}
             </Box>
             <Box sx={{ flex: 1 }}>
-              {<ControlButton controlPost={prevPost} side={"next"}/>}
+              {<ControlButton controlPost={prevPost} side={"next"} />}
             </Box>
           </Stack>
           <div>
@@ -276,3 +282,5 @@ export const pageQuery = graphql`
     }
   }
 `;
+
+export default memo(Template);

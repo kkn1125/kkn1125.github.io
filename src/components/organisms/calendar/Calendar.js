@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { memo, useState } from "react";
 import { CalendarPicker } from "@mui/x-date-pickers/CalendarPicker";
 import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
@@ -146,4 +146,4 @@ function Calendar() {
   );
 }
 
-export default Calendar;
+export default memo(Calendar);

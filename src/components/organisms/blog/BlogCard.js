@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { memo, useContext } from "react";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
@@ -79,4 +79,4 @@ function BlogCard({ data, height, main = false }) {
   );
 }
 
-export default BlogCard;
+export default memo(BlogCard);

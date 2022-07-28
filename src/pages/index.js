@@ -1,5 +1,5 @@
 import { graphql } from "gatsby";
-import * as React from "react";
+import React from "react";
 import Grid from "@mui/material/Grid";
 import { Paper } from "@mui/material";
 import Seo from "../components/modules/seo/Seo";
