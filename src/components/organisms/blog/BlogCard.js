@@ -2,14 +2,8 @@ import React, { memo, useContext } from "react";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import {
-  Box,
-  CardActionArea,
-  Paper,
-  Stack,
-  styled,
-} from "@mui/material";
-import {  navigate } from "gatsby";
+import { Box, CardActionArea, Paper, Stack, styled } from "@mui/material";
+import { navigate } from "gatsby";
 import HashList from "../../modules/common/HashList";
 import BlogCardInfo from "../../modules/blog/BlogCardInfo";
 import BlogCardDesc from "../../modules/blog/BlogCardDesc";
@@ -48,7 +42,7 @@ function BlogCard({ data, height, main = false }) {
           alt='cover'
           sx={{
             height: height,
-            minHeight: 300,
+            minHeight: main ? 350 : 300,
             backgroundColor: "#fff",
             objectFit: "cover",
           }}

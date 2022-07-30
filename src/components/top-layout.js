@@ -9,8 +9,6 @@ import lightTheme from "../lightTheme";
 import darkTheme from "../darkTheme";
 import BlogProvider from "../context/BlogProvider";
 import PickProvider from "../context/PickProvider";
-import Google050e6145d059bcf0 from "../pages/google050e6145d059bcf0";
-import Naverab361a1a39575334bea9d573640c9e21 from "../pages/naverab361a1a39575334bea9d573640c9e21";
 
 export const ColorModeContext = createContext({ toggleColorMode: () => {} });
 
@@ -36,16 +34,6 @@ export default function TopLayout({ children }) {
   const theme = useMemo(() =>
     responsiveFontSizes(createTheme(getDesignTokens(mode)), [mode])
   );
-
-  useEffect(() => {
-    if (location.pathname.match("google050e6145d059bcf0")) {
-      return <Google050e6145d059bcf0 />;
-    }
-
-    if (location.pathname.match("naverab361a1a39575334bea9d573640c9e21")) {
-      return <Naverab361a1a39575334bea9d573640c9e21 />;
-    }
-  }, []);
 
   return (
     <>

@@ -5,6 +5,7 @@ import { Paper } from "@mui/material";
 import Seo from "../components/modules/seo/Seo";
 import BlogCard from "../components/organisms/blog/BlogCard";
 import Calendar from "../components/organisms/calendar/Calendar";
+import { Helmet } from "react-helmet";
 
 // markup
 const IndexPage = ({ data }) => {
@@ -20,6 +21,15 @@ const IndexPage = ({ data }) => {
 
   return (
     <>
+      <Helmet>
+        <meta property='og:title' content='devkimson blog' />
+        <meta
+          property='og:description'
+          content='기능 설계와 편리한 서비스에 관심이 많은 웹 개발자의 gatsby 블로그 입니다.'
+        />
+        <meta property='og:author' content='kkn1125' />
+        <meta property='og:image' content='/images/logo-k-color.png' />
+      </Helmet>
       <Seo frontmatter={{ title: "" }} />
       <Grid container spacing={12}>
         {/* main */}
