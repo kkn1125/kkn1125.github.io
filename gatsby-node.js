@@ -79,18 +79,20 @@ exports.createPages = async ({ graphql, actions, ...props }) => {
   const blogCount = result.data.blog.edges.length;
   const perBlogPage = 10;
   const pageNum = Math.ceil(blogCount / perBlogPage);
-  result.data.blog.edges.forEach((edge, i) => {
-    createPage({
-      path: i === 0 ? `/blog` : `/blog/${i + 1}`,
-      component: blogListTemplate,
-      context: {
-        title: edge.node.frontmatter.title,
-        limit: perBlogPage,
-        skip: i * perBlogPage,
-        pageNum,
-        currentPage: i + 1,
-      },
-    });
+  result.data.blog.edges.forEach((edge, i, o) => {
+    if (Math.ceil(o.length / perBlogPage) >= i + 1) {
+      createPage({
+        path: i === 0 ? `/blog` : `/blog/${i + 1}`,
+        component: blogListTemplate,
+        context: {
+          title: edge.node.frontmatter.title,
+          limit: perBlogPage,
+          skip: i * perBlogPage,
+          pageNum,
+          currentPage: i + 1,
+        },
+      });
+    }
   });
 
   result.data.blog.edges.forEach((edge) => {

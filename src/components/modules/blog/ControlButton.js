@@ -24,7 +24,7 @@ function ControlButton({ controlPost, side }) {
         "&:hover": {
           backgroundColor: (theme) => theme.palette.success.main,
           borderColor: (theme) => theme.palette.success.main,
-          "& p:first-child": {
+          "& p:first-of-type": {
             color: (theme) => theme.palette.white.main,
           },
           "& p:last-child": {

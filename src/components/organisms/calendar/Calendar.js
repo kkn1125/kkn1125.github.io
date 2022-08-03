@@ -3,7 +3,15 @@ import { CalendarPicker } from "@mui/x-date-pickers/CalendarPicker";
 import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import todoStorage from "../../../data/todo.json";
-import { Badge, Box, Chip, Grid, Stack, Typography } from "@mui/material";
+import {
+  Badge,
+  Box,
+  Button,
+  Chip,
+  Grid,
+  Stack,
+  Typography,
+} from "@mui/material";
 import { PickersDay } from "@mui/x-date-pickers";
 
 const tagIcon = {
@@ -36,6 +44,10 @@ function Calendar() {
     setDate(newDate);
   };
 
+  const handleToday = () => {
+    setDate(new Date());
+  };
+
   return (
     <LocalizationProvider dateAdapter={AdapterDateFns}>
       <Grid container gap={3} justifyContent='center' alignItems='flex-start'>
@@ -50,11 +62,12 @@ function Calendar() {
               "&:last-child": {
                 color: (theme) => theme.palette.primary.main,
               },
-              "&:first-child": {
+              "&:first-of-type": {
                 color: (theme) => theme.palette.danger.main,
               },
             },
           }}>
+          <Button onClick={handleToday}>Today</Button>
           <CalendarPicker
             date={date}
             onChange={handleDate}
@@ -68,13 +81,24 @@ function Calendar() {
               const month = today.getMonth();
               const isSameYear = _year >= year;
               const isSameMonth = _month >= month;
+              const isSameDay = _date === new Date().getDate();
               return (
                 <Box component='div' role='row' key={date}>
                   <Badge
                     component='div'
                     color='warning'
                     variant='dot'
-                    invisible={!isTodo}>
+                    invisible={!isTodo}
+                    sx={{
+                      ...(_year === year &&
+                        _month === month &&
+                        isSameDay && {
+                          ".MuiTouchRipple-root": {
+                            borderRadius: "50%",
+                            border: "1px solid #2196f3",
+                          },
+                        }),
+                    }}>
                     <PickersDay
                       {...pickersDayProps}
                       sx={{
