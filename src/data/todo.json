@@ -1,31 +1,63 @@
 {
   "2022": {
     "7": {
-      "21": {
-        "todo": "project Narang aws 배포 예정",
-        "tag": "1",
-        "time": "2022-08-03 15:36:20"
-      },
-      "17": {
-        "todo": "project Narang 마감 예정일",
-        "tag": "1",
-        "time": "2022-08-03 15:36:20"
-      },
-      "13": {
-        "todo": "project Narang back-end 마감 예정일",
-        "tag": "1",
-        "time": "2022-08-03 15:36:20"
-      },
-      "6": {
-        "todo": "project Narang front-end 마감 예정일",
-        "tag": "1",
-        "time": "2022-08-03 15:36:20"
-      },
-      "3": {
-        "todo": "검색 기능 정확도 높이는 방안 조사",
-        "tag": "1",
-        "time": "2022-08-03 15:36:20"
-      }
+      "21": [
+        {
+          "todo": "project Narang aws 배포 예정",
+          "tag": "1",
+          "time": "2022-08-03 15:36:20"
+        }
+      ],
+      "17": [
+        {
+          "todo": "project Narang 마감 예정일",
+          "tag": "1",
+          "time": "2022-08-03 15:36:20"
+        }
+      ],
+      "13": [
+        {
+          "todo": "project Narang back-end 마감 예정일",
+          "tag": "1",
+          "time": "2022-08-03 15:36:20"
+        }
+      ],
+      "12": [
+        {
+          "todo": "project Narang front-end 마감 예정일",
+          "tag": "1",
+          "time": "2022-08-03 15:36:20"
+        }
+      ],
+      "10": [
+        {
+          "todo": "검색 기능 강화",
+          "tag": "check",
+          "time": "2022-08-10 17:17:22"
+        },
+        {
+          "todo": "달력 완료 뱃지 색상 변경",
+          "tag": "check",
+          "time": "2022-08-10 17:17:22"
+        },
+        {
+          "todo": "sentiment 라이브러리 후기",
+          "tag": "check",
+          "time": "2022-08-10 17:28:24"
+        },
+        {
+          "todo": "설문조사 api 서비스 개발 준비",
+          "tag": "idea",
+          "time": "2022-08-10 17:28:28"
+        }
+      ],
+      "3": [
+        {
+          "todo": "검색 기능 정확도 높이는 방안 조사",
+          "tag": "check",
+          "time": "2022-08-03 15:36:20"
+        }
+      ]
     },
     "6": {
       "28": [
@@ -33,16 +65,6 @@
           "todo": "face-api 사용 정리",
           "tag": "check",
           "time": "2022-07-28 13:38:22"
-        },
-        {
-          "todo": "sentiment 라이브러리 후기",
-          "tag": "1",
-          "time": "2022-07-28 13:38:22"
-        },
-        {
-          "todo": "설문조사 api 서비스 개발 준비",
-          "tag": "idea",
-          "time": "2022-07-28 13:41:15"
         }
       ],
       "16": [
@@ -76,34 +98,34 @@
       "3": [
         {
           "todo": "TypeScript + React + Redux",
-          "tag": "study",
+          "tag": "check",
           "time": "2022-07-02 15:21:49"
         },
         {
           "todo": "Janus Server 조사",
-          "tag": "study",
+          "tag": "check",
           "time": "2022-07-02 15:21:49"
         },
         {
-          "todo": "scoket.io",
-          "tag": "study",
+          "todo": "socket.io",
+          "tag": "check",
           "time": "2022-07-02 15:21:49"
         }
       ],
       "2": [
         {
           "todo": "블로그 UI수정",
-          "tag": "1",
+          "tag": "check",
           "time": "2022-07-02 11:59:21"
         },
         {
           "todo": "WebRTC PeerConnection API",
-          "tag": "2",
+          "tag": "check",
           "time": "2022-07-02 11:59:21"
         },
         {
           "todo": "TypeScript 깊게",
-          "tag": "3",
+          "tag": "check",
           "time": "2022-07-02 11:59:21"
         }
       ]

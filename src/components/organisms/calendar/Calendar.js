@@ -82,11 +82,23 @@ function Calendar() {
               const isSameYear = _year >= year;
               const isSameMonth = _month >= month;
               const isSameDay = _date === new Date().getDate();
+              const isHalfDone = () => {
+                if (isTodo) {
+                  const percent = parseInt(
+                    (isTodo.filter(
+                      (todo) => todo.tag === "check" || todo.tag === "rest"
+                    ).length /
+                      isTodo.length) *
+                      100
+                  );
+                  return percent > 50;
+                }
+              };
               return (
                 <Box component='div' role='row' key={date}>
                   <Badge
                     component='div'
-                    color='warning'
+                    color={isHalfDone() ? "success" : "warning"}
                     variant='dot'
                     invisible={!isTodo}
                     sx={{

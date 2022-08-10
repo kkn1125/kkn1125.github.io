@@ -61,6 +61,8 @@ function SearchDialog({ children, data }) {
                   categories
                   tags
                 }
+                html
+                rawMarkdownBody
               }
             }
           }
@@ -79,9 +81,9 @@ function SearchDialog({ children, data }) {
             if (value === "") return;
             const dataResult = edges
               .filter(
-                ({ node: { frontmatter } }) =>
+                ({ node: { frontmatter, html, rawMarkdownBody } }) =>
                   frontmatter.title.indexOf(value) > -1 ||
-                  frontmatter.description.indexOf(value) > -1 ||
+                  html.indexOf(value) > -1 ||
                   frontmatter.slug.indexOf(value) > -1 ||
                   frontmatter.categories.find((it) => it === value) !==
                     undefined ||

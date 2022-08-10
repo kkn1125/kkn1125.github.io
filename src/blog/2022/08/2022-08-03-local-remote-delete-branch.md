@@ -7,7 +7,11 @@ author: Kimson
 categories: [git]
 image: /images/post/covers/TIL-git.png
 tags: [branch, locally, remotely, til]
-description: ""
+description: "브랜치 삭제
+
+브랜치 삭제는 쉽습니다. 하지만 쉬워서 살 떨리는 것 같습니다 😮
+
+잘못 삭제하면 후시하지 않은 브랜치를 커밋만 해놓고 지워버리는 경우도 발생하겠지요 🥲 하지만 되살리는 방법이 있더라구요."
 featured: true
 hidden: false
 rating: 4
