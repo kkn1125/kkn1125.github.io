@@ -3,29 +3,61 @@
     "7": {
       "21": [
         {
-          "todo": "project Narang aws 배포 예정",
-          "tag": "1",
+          "todo": "[narang] project aws 배포 예정",
+          "tag": "cancel",
           "time": "2022-08-03 15:36:20"
         }
       ],
       "17": [
         {
-          "todo": "project Narang 마감 예정일",
+          "todo": "[narang] project 마감 예정일",
           "tag": "1",
           "time": "2022-08-03 15:36:20"
+        }
+      ],
+      "16": [
+        {
+          "todo": "[narang] AWS EC2 인스턴스 생성",
+          "tag": "check",
+          "time": "2022-08-15 21:44:32"
+        },
+        {
+          "todo": "[narang] NGINX 조사",
+          "tag": "check",
+          "time": "2022-08-15 21:44:32"
+        },
+        {
+          "todo": "[narang] NGINX reverse_proxy 설정",
+          "tag": "check",
+          "time": "2022-08-15 21:44:32"
+        },
+        {
+          "todo": "[narang] 80포트 활성화 테스트",
+          "tag": "check",
+          "time": "2022-08-15 21:44:32"
+        },
+        {
+          "todo": "[narang] 도메인 네임스페이스 변경",
+          "tag": "check",
+          "time": "2022-08-15 21:44:32"
+        },
+        {
+          "todo": "AWS EC2 + NGINX 환경 포스팅 시작",
+          "tag": "check",
+          "time": "2022-08-15 21:44:32"
         }
       ],
       "13": [
         {
           "todo": "project Narang back-end 마감 예정일",
-          "tag": "1",
+          "tag": "cancel",
           "time": "2022-08-03 15:36:20"
         }
       ],
       "12": [
         {
           "todo": "project Narang front-end 마감 예정일",
-          "tag": "1",
+          "tag": "cancel",
           "time": "2022-08-03 15:36:20"
         }
       ],
