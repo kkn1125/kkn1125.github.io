@@ -149,3 +149,4 @@ test('[계산기 기능] 더하기 테스트, 숫자와 숫자가 주어질 때'
 📚 함께 보면 좋은 내용
 
 [jest.js 홈페이지](https://jestjs.io/)
+[노드 js 설치](https://www.scaler.com/topics/javascript/install-node-js/)
