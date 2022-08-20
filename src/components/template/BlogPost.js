@@ -25,8 +25,10 @@ import Seo from "../modules/seo/Seo";
 import Favorite from "../modules/common/Favorite";
 import { cutText } from "../../util/tools";
 import ControlButton from "../modules/blog/ControlButton";
+import ImageViewer from "../organisms/blog/ImageViewer";
 
 function Template({ data, pageContext }) {
+  const [image, setImage] = useState(null);
   const { previous, next } = pageContext;
   const { frontmatter: prevPost } = previous || { frontmatter: undefined };
   const { frontmatter: nextPost } = next || { frontmatter: undefined };
@@ -62,6 +64,30 @@ function Template({ data, pageContext }) {
     setTimeout(() => {
       setMode(false);
     }, 500);
+
+    function imageViewer(e) {
+      if (e.type === "keydown") {
+        if (e.key === "Escape") {
+          setImage(null);
+          document.body.removeAttribute("style");
+        }
+      } else {
+        if (e.target.tagName === "IMG") {
+          setImage(e.target.src);
+          document.body.style = "overflow: hidden";
+        } else {
+          setImage(null);
+          document.body.removeAttribute("style");
+          return;
+        }
+      }
+    }
+    window.addEventListener("click", imageViewer);
+    window.addEventListener("keydown", imageViewer);
+    return () => {
+      window.removeEventListener("click", imageViewer);
+      window.removeEventListener("keydown", imageViewer);
+    };
   }, [theme.palette.mode]);
 
   const [selectedIndex, setSelectedIndex] = useState(0);
@@ -159,6 +185,9 @@ function Template({ data, pageContext }) {
           <Box
             sx={{
               my: 5,
+              "& img": {
+                cursor: "pointer",
+              },
             }}>
             <div
               className='blog-post'
@@ -251,6 +280,7 @@ function Template({ data, pageContext }) {
           </div>
         </Grid>
       </Grid>
+      {image && <ImageViewer image={image} />}
     </>
   );
 }
