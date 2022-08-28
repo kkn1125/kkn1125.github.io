@@ -130,6 +130,16 @@ function Template({ data, pageContext }) {
               maxHeight: 300,
               "& ul": { padding: 0 },
             }}>
+            <Typography
+              gutterBottom
+              sx={{
+                pl: 0,
+                fontSize: (theme) => theme.typography.pxToRem(24),
+                fontWeight: 700,
+                textDecoration: "underline",
+              }}>
+              INDEX
+            </Typography>
             {headings.map(({ value, depth }, idx) => (
               <ListItemButton
                 key={value + idx}
@@ -149,6 +159,24 @@ function Template({ data, pageContext }) {
         </Grid>
 
         <Grid item xs={12} md={9}>
+          <Stack
+            direction={{
+              xs: "column",
+              md: "row",
+            }}
+            justifyContent='space-between'
+            sx={{
+              my: 4.5,
+              gap: 3,
+            }}>
+            <Box sx={{ flex: 1 }}>
+              {<ControlButton controlPost={nextPost} side={"prev"} />}
+            </Box>
+            <Box sx={{ flex: 1 }}>
+              {<ControlButton controlPost={prevPost} side={"next"} />}
+            </Box>
+          </Stack>
+
           <Paper elevation={10}>
             <CardMedia
               component='img'

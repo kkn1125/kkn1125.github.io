@@ -86,7 +86,7 @@ function Calendar() {
                 if (isTodo) {
                   const percent = parseInt(
                     (isTodo.filter(
-                      (todo) => todo.tag === "check" || todo.tag === "rest"
+                      (todo) => todo.tag === "check" || todo.tag === "rest"|| todo.tag === "cancel"
                     ).length /
                       isTodo.length) *
                       100

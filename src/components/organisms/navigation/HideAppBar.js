@@ -1,3 +1,9 @@
+import Brightness4Icon from "@mui/icons-material/Brightness4";
+import Brightness7Icon from "@mui/icons-material/Brightness7";
+import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
+import MenuIcon from "@mui/icons-material/Menu";
+import GroupIcon from "@mui/icons-material/People";
+import PersonIcon from "@mui/icons-material/Person";
 import {
   Avatar,
   Badge,
@@ -14,29 +20,24 @@ import {
   Tooltip,
   useTheme,
 } from "@mui/material";
-import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
-import useScrollTrigger from "@mui/material/useScrollTrigger";
-import Brightness4Icon from "@mui/icons-material/Brightness4";
-import Brightness7Icon from "@mui/icons-material/Brightness7";
-import PersonIcon from "@mui/icons-material/Person";
-import CssBaseline from "@mui/material/CssBaseline";
-import GroupIcon from "@mui/icons-material/People";
-import Typography from "@mui/material/Typography";
-import MenuIcon from "@mui/icons-material/Menu";
-import Toolbar from "@mui/material/Toolbar";
 import AppBar from "@mui/material/AppBar";
+import CssBaseline from "@mui/material/CssBaseline";
 import Slide from "@mui/material/Slide";
+import Toolbar from "@mui/material/Toolbar";
+import Typography from "@mui/material/Typography";
+import useScrollTrigger from "@mui/material/useScrollTrigger";
 
-import React, { Fragment, useContext, useEffect, useState } from "react";
+import axios from "axios";
 import { Link, navigate } from "gatsby";
 import PropTypes from "prop-types";
-import axios from "axios";
+import React, { Fragment, useContext, useEffect, useState } from "react";
 
+import { PickContext } from "../../../context/pickContext";
+import BlogHook from "../../../hooks/blogHook";
 import { uuidv4 } from "../../../util/tools";
-import SearchDialog from "../search/SearchDialog";
 import { ColorModeContext } from "../../top-layout";
 import TemporaryDrawer from "../drawer/TemporaryDrawer";
-import { PickContext } from "../../../context/pickContext";
+import SearchDialog from "../search/SearchDialog";
 
 const pages = [
   {
@@ -129,6 +130,8 @@ function HideAppBar(props) {
   const colorMode = useContext(ColorModeContext);
   const [anchorElNav, setAnchorElNav] = useState(null);
   const pick = useContext(PickContext);
+  const [blogCount, setBlogCount] = useState(0);
+  const blogs = BlogHook();
 
   const [visitor, setVisitor] = useState({
     today: 0,
@@ -136,6 +139,7 @@ function HideAppBar(props) {
   });
 
   useEffect(() => {
+    setBlogCount(blogs.length);
     // visite check
     const userInfo = getUserIdentity();
 
@@ -349,7 +353,13 @@ function HideAppBar(props) {
                           textDecoration: "none",
                           textAlign: "center",
                         }}>
-                        {page.name}
+                        {page.name === "blog" ? (
+                          <>
+                            {page.name} <Chip label={"+" + blogCount} />
+                          </>
+                        ) : (
+                          page.name
+                        )}
                       </Typography>
                     </MenuItem>
                   ))}
@@ -418,7 +428,13 @@ function HideAppBar(props) {
                       textDecoration: "none",
                       textAlign: "center",
                     }}>
-                    {page.name}
+                    {page.name === "blog" ? (
+                      <>
+                        {page.name} <Chip label={"+" + blogCount} />
+                      </>
+                    ) : (
+                      page.name
+                    )}
                   </Button>
                 ))}
                 {pick.storage.length > 0 && (
