@@ -16,6 +16,7 @@ import {
   useTheme,
   CircularProgress,
   Stack,
+  Container,
 } from "@mui/material";
 import BlogCardInfo from "../modules/blog/BlogCardInfo";
 import SyntaxHighlighter from "react-syntax-highlighter";
@@ -159,153 +160,155 @@ function Template({ data, pageContext }) {
         </Grid>
 
         <Grid item xs={12} md={9}>
-          <Stack
-            direction={{
-              xs: "column",
-              md: "row",
-            }}
-            justifyContent='space-between'
-            sx={{
-              my: 4.5,
-              gap: 3,
-            }}>
-            <Box sx={{ flex: 1 }}>
-              {<ControlButton controlPost={nextPost} side={"prev"} />}
-            </Box>
-            <Box sx={{ flex: 1 }}>
-              {<ControlButton controlPost={prevPost} side={"next"} />}
-            </Box>
-          </Stack>
-
-          <Paper elevation={10}>
-            <CardMedia
-              component='img'
-              image={frontmatter.image}
-              alt={frontmatter.image}
+          <Container maxWidth={"md"}>
+            <Stack
+              direction={{
+                xs: "column",
+                md: "row",
+              }}
+              justifyContent='space-between'
               sx={{
-                maxHeight: 450,
-                objectFit: "cover",
-                objectPosition: "0% 50%",
-                mb: 5,
+                my: 4.5,
+                gap: 3,
+              }}>
+              <Box sx={{ flex: 1 }}>
+                {<ControlButton controlPost={nextPost} side={"prev"} />}
+              </Box>
+              <Box sx={{ flex: 1 }}>
+                {<ControlButton controlPost={prevPost} side={"next"} />}
+              </Box>
+            </Stack>
+
+            <Paper elevation={10}>
+              <CardMedia
+                component='img'
+                image={frontmatter.image}
+                alt={frontmatter.image}
+                sx={{
+                  maxHeight: 450,
+                  objectFit: "cover",
+                  objectPosition: "0% 50%",
+                  mb: 5,
+                }}
+              />
+            </Paper>
+
+            <Typography
+              gutterBottom
+              sx={{
+                fontWeight: "bold",
+                letterSpacing: 1.5,
+                wordSpacing: 1,
+                fontSize: (theme) => theme.typography.pxToRem(32),
+              }}>
+              {frontmatter.title}
+              <Favorite data={frontmatter} fixed={false} />
+            </Typography>
+            <Divider
+              sx={{
+                my: 2,
+                borderColor: "#e1e1e1",
               }}
             />
-          </Paper>
-
-          <Typography
-            gutterBottom
-            variant='h3'
-            sx={{
-              fontWeight: "bold",
-              letterSpacing: 1.5,
-              wordSpacing: 1,
-            }}>
-            {frontmatter.title}
-            <Favorite data={frontmatter} fixed={false} />
-          </Typography>
-          <Divider
-            sx={{
-              my: 2,
-              borderColor: "#e1e1e1",
-            }}
-          />
-          <BlogCardInfo data={frontmatter} />
-          {/* 본문 */}
-          <Box
-            sx={{
-              my: 5,
-              "& img": {
-                cursor: "pointer",
-              },
-            }}>
-            <div
-              className='blog-post'
-              style={{
-                letterSpacing: 0.9,
-                wordSpacing: 2.5,
-              }}>
-              {parse(html, {
-                replace: (domNode) => {
-                  if (domNode.name && domNode.name.match(/h[1-6]/g)) {
-                    domNode.attribs["class"] = "title";
-                  }
-                  if (domNode.name && domNode.name === "a") {
-                    domNode.attribs["target"] = "_blank";
-                  }
-                  if (domNode.name === "pre") {
-                    const children = domNode.children[0];
-                    if (children.type === "tag" && children.name === "code") {
-                      return (
-                        <SyntaxHighlighter
-                          showLineNumbers
-                          language={
-                            domNode.children[0].attribs?.class
-                              ?.split("-")
-                              ?.pop() || "plaintext"
-                          }
-                          style={atelierPlateauDark}>
-                          {domNode.children
-                            ? domNode.children[0].children[0].data.trim()
-                            : ""}
-                        </SyntaxHighlighter>
-                      );
-                    }
-                  }
-                },
-              })}
-            </div>
-          </Box>
-          <Divider
-            sx={{
-              my: 2,
-              borderColor: "#e1e1e1",
-            }}
-          />
-          <Stack
-            direction='row'
-            justifyContent='space-between'
-            gap={1}
-            sx={{ mt: 3 }}>
-            <HashList hash={frontmatter.categories} types='categories' />
-            <HashList hash={frontmatter.tags} types='tags' />
-          </Stack>
-          <Stack
-            direction={{
-              xs: "column",
-              md: "row",
-            }}
-            justifyContent='space-between'
-            sx={{
-              my: 4.5,
-              gap: 3,
-            }}>
-            <Box sx={{ flex: 1 }}>
-              {<ControlButton controlPost={nextPost} side={"prev"} />}
-            </Box>
-            <Box sx={{ flex: 1 }}>
-              {<ControlButton controlPost={prevPost} side={"next"} />}
-            </Box>
-          </Stack>
-          <div>
-            {mode && (
-              <Stack
-                direction='row'
-                justifyContent='center'
-                sx={{
-                  my: 5,
-                }}>
-                <CircularProgress color='success' />
-              </Stack>
-            )}
+            <BlogCardInfo data={frontmatter} />
+            {/* 본문 */}
             <Box
               sx={{
-                display: mode ? "hidden" : "block",
-                "& .utterances": {
-                  maxWidth: "90%",
+                my: 5,
+                "& img": {
+                  cursor: "pointer",
                 },
+              }}>
+              <div
+                className='blog-post'
+                style={{
+                  letterSpacing: 0.9,
+                  wordSpacing: 2.5,
+                }}>
+                {parse(html, {
+                  replace: (domNode) => {
+                    if (domNode.name && domNode.name.match(/h[1-6]/g)) {
+                      domNode.attribs["class"] = "title";
+                    }
+                    if (domNode.name && domNode.name === "a") {
+                      domNode.attribs["target"] = "_blank";
+                    }
+                    if (domNode.name === "pre") {
+                      const children = domNode.children[0];
+                      if (children.type === "tag" && children.name === "code") {
+                        return (
+                          <SyntaxHighlighter
+                            showLineNumbers
+                            language={
+                              domNode.children[0].attribs?.class
+                                ?.split("-")
+                                ?.pop() || "plaintext"
+                            }
+                            style={atelierPlateauDark}>
+                            {domNode.children
+                              ? domNode.children[0].children[0].data.trim()
+                              : ""}
+                          </SyntaxHighlighter>
+                        );
+                      }
+                    }
+                  },
+                })}
+              </div>
+            </Box>
+            <Divider
+              sx={{
+                my: 2,
+                borderColor: "#e1e1e1",
               }}
-              ref={commentEl}
             />
-          </div>
+            <Stack
+              direction='row'
+              justifyContent='space-between'
+              gap={1}
+              sx={{ mt: 3 }}>
+              <HashList hash={frontmatter.categories} types='categories' />
+              <HashList hash={frontmatter.tags} types='tags' />
+            </Stack>
+            <Stack
+              direction={{
+                xs: "column",
+                md: "row",
+              }}
+              justifyContent='space-between'
+              sx={{
+                my: 4.5,
+                gap: 3,
+              }}>
+              <Box sx={{ flex: 1 }}>
+                {<ControlButton controlPost={nextPost} side={"prev"} />}
+              </Box>
+              <Box sx={{ flex: 1 }}>
+                {<ControlButton controlPost={prevPost} side={"next"} />}
+              </Box>
+            </Stack>
+            <div>
+              {mode && (
+                <Stack
+                  direction='row'
+                  justifyContent='center'
+                  sx={{
+                    my: 5,
+                  }}>
+                  <CircularProgress color='success' />
+                </Stack>
+              )}
+              <Box
+                sx={{
+                  display: mode ? "hidden" : "block",
+                  "& .utterances": {
+                    maxWidth: "90%",
+                  },
+                }}
+                ref={commentEl}
+              />
+            </div>
+          </Container>
         </Grid>
       </Grid>
       {image && <ImageViewer image={image} />}

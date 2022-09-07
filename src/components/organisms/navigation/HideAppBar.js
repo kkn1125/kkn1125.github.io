@@ -39,6 +39,8 @@ import { ColorModeContext } from "../../top-layout";
 import TemporaryDrawer from "../drawer/TemporaryDrawer";
 import SearchDialog from "../search/SearchDialog";
 
+const BRAND = "devkimson";
+
 const pages = [
   {
     name: "blog",
@@ -49,6 +51,7 @@ const pages = [
     path: "/about",
   },
 ];
+
 const resConvertData = (res) => {
   console.log(res);
   const body = new DOMParser().parseFromString(
@@ -312,7 +315,7 @@ function HideAppBar(props) {
                   color: "inherit",
                   textDecoration: "none",
                 }}>
-                devkimson
+                {BRAND}
               </Typography>
 
               <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
@@ -402,7 +405,10 @@ function HideAppBar(props) {
                   pr: 2,
                   fontWeight: 700,
                   textTransform: "uppercase",
-                  fontSize: (theme) => theme.typography.pxToRem(TITLE_SIZE),
+                  fontSize: (theme) => ({
+                    md: theme.typography.pxToRem(TITLE_SIZE),
+                    xs: theme.typography.pxToRem(20),
+                  }),
                   display: { xs: "flex", md: "none" },
                   flexGrow: 1,
                   letterSpacing: {
@@ -412,7 +418,7 @@ function HideAppBar(props) {
                   color: "inherit",
                   textDecoration: "none",
                 }}>
-                devkimson
+                {BRAND}
               </Typography>
 
               {/* big size */}

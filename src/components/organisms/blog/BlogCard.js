@@ -30,24 +30,20 @@ function BlogCard({ data, height, main = false }) {
         position: "relative",
       }}>
       <Favorite data={data} />
-      <CardActionArea
+      <Box
+        component='img'
         onClick={(e) => navigate(data.slug)}
+        src={data.image.replace(/assets/g, "")}
+        alt='cover'
         sx={{
+          width: "100%",
           height: height,
-          minHeight: 300,
-        }}>
-        <CardMedia
-          component='img'
-          image={data.image.replace(/assets/g, "")}
-          alt='cover'
-          sx={{
-            height: height,
-            minHeight: main ? 350 : 300,
-            backgroundColor: "#fff",
-            objectFit: "cover",
-          }}
-        />
-      </CardActionArea>
+          minHeight: main ? 450 : 400,
+          backgroundColor: "#fff",
+          objectFit: "cover",
+          cursor: "pointer",
+        }}
+      />
       <CardContent
         sx={{
           p: 5,
