@@ -1,32 +1,31 @@
-import React, { memo, useEffect, useRef, useState } from "react";
-import { graphql, Link } from "gatsby";
-import "./BlogPost.css";
-import "highlight.js/styles/monokai.css";
-import parse from "html-react-parser";
 import {
+  Box,
+  CardMedia,
+  CircularProgress,
+  Container,
+  Divider,
   Grid,
-  Typography,
   List,
   ListItemButton,
   ListItemText,
-  CardMedia,
   Paper,
-  Divider,
-  Box,
-  useTheme,
-  CircularProgress,
   Stack,
-  Container,
+  Typography,
+  useTheme,
 } from "@mui/material";
-import BlogCardInfo from "../modules/blog/BlogCardInfo";
+import { graphql } from "gatsby";
+import "highlight.js/styles/monokai.css";
+import parse from "html-react-parser";
+import React, { memo, useEffect, useRef, useState } from "react";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { atelierPlateauDark } from "react-syntax-highlighter/src/styles/hljs";
+import BlogCardInfo from "../modules/blog/BlogCardInfo";
+import ControlButton from "../modules/blog/ControlButton";
+import Favorite from "../modules/common/Favorite";
 import HashList from "../modules/common/HashList";
 import Seo from "../modules/seo/Seo";
-import Favorite from "../modules/common/Favorite";
-import { cutText } from "../../util/tools";
-import ControlButton from "../modules/blog/ControlButton";
 import ImageViewer from "../organisms/blog/ImageViewer";
+import "./BlogPost.css";
 
 function Template({ data, pageContext }) {
   const [image, setImage] = useState(null);
@@ -219,11 +218,12 @@ function Template({ data, pageContext }) {
                   cursor: "pointer",
                 },
               }}>
-              <div
+              <Box
                 className='blog-post'
-                style={{
+                sx={{
                   letterSpacing: 0.9,
                   wordSpacing: 2.5,
+                  fontSize: "0.95rem",
                 }}>
                 {parse(html, {
                   replace: (domNode) => {
@@ -237,24 +237,102 @@ function Template({ data, pageContext }) {
                       const children = domNode.children[0];
                       if (children.type === "tag" && children.name === "code") {
                         return (
-                          <SyntaxHighlighter
-                            showLineNumbers
-                            language={
-                              domNode.children[0].attribs?.class
-                                ?.split("-")
-                                ?.pop() || "plaintext"
-                            }
-                            style={atelierPlateauDark}>
-                            {domNode.children
-                              ? domNode.children[0].children[0].data.trim()
-                              : ""}
-                          </SyntaxHighlighter>
+                          <Box
+                            sx={{
+                              my: 3,
+                              position: "relative",
+                              [`&::before`]: {
+                                content: '""',
+                                width: "100%",
+                                height: "2rem",
+                                backgroundColor: "#555",
+                                display: "block",
+                                borderTopLeftRadius: 15,
+                                borderTopRightRadius: 15,
+                              },
+                              borderBottomLeftRadius: 15,
+                              borderBottomRightRadius: 15,
+                              overflow: "hidden",
+                            }}>
+                            <Typography
+                              sx={{
+                                position: "absolute",
+                                top: 16 * 1,
+                                left: 20,
+                                transform: "translateY(-50%)",
+                                textTransform: "uppercase",
+                                fontWeight: 700,
+                                color: "#ffffff",
+                              }}>
+                              {children.attribs.class.split("-").pop()}
+                            </Typography>
+                            <Box
+                              sx={{
+                                width: 15,
+                                height: 15,
+                                backgroundColor: "#f56767",
+                                borderRadius: "50%",
+                                position: "absolute",
+                                top: 16 * 1,
+                                right: 80,
+                                transform: "translateY(-50%)",
+                                transition: "150ms ease",
+                                [`&:hover`]: {
+                                  transform: "translateY(-50%) scale(1.1)",
+                                },
+                              }}
+                            />
+                            <Box
+                              sx={{
+                                width: 15,
+                                height: 15,
+                                backgroundColor: "#e9ce63",
+                                borderRadius: "50%",
+                                position: "absolute",
+                                top: 16 * 1,
+                                right: 50,
+                                transform: "translateY(-50%)",
+                                transition: "150ms ease",
+                                [`&:hover`]: {
+                                  transform: "translateY(-50%) scale(1.1)",
+                                },
+                              }}
+                            />
+                            <Box
+                              sx={{
+                                width: 15,
+                                height: 15,
+                                backgroundColor: "#68ee85",
+                                borderRadius: "50%",
+                                position: "absolute",
+                                top: 16 * 1,
+                                right: 20,
+                                transform: "translateY(-50%)",
+                                transition: "150ms ease",
+                                [`&:hover`]: {
+                                  transform: "translateY(-50%) scale(1.1)",
+                                },
+                              }}
+                            />
+                            <SyntaxHighlighter
+                              showLineNumbers
+                              language={
+                                domNode.children[0].attribs?.class
+                                  ?.split("-")
+                                  ?.pop() || "plaintext"
+                              }
+                              style={atelierPlateauDark}>
+                              {domNode.children
+                                ? domNode.children[0].children[0].data.trim()
+                                : ""}
+                            </SyntaxHighlighter>
+                          </Box>
                         );
                       }
                     }
                   },
                 })}
-              </div>
+              </Box>
             </Box>
             <Divider
               sx={{

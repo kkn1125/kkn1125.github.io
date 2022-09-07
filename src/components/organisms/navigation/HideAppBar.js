@@ -422,7 +422,14 @@ function HideAppBar(props) {
               </Typography>
 
               {/* big size */}
-              <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+              <Box
+                sx={{
+                  flexGrow: 1,
+                  display: {
+                    xs: "none",
+                    md: "flex",
+                  },
+                }}>
                 {pages.map((page) => (
                   <Button
                     key={page.name}
@@ -438,7 +445,8 @@ function HideAppBar(props) {
                     }}>
                     {page.name === "blog" ? (
                       <>
-                        {page.name} <Chip label={"+" + blogCount} />
+                        {page.name}{" "}
+                        <Chip size='small' label={"+" + blogCount} />
                       </>
                     ) : (
                       page.name

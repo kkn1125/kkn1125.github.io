@@ -30,6 +30,7 @@ function BlogCard({ data, height, main = false }) {
         position: "relative",
       }}>
       <Favorite data={data} />
+
       <Box
         component='img'
         onClick={(e) => navigate(data.slug)}
@@ -37,6 +38,7 @@ function BlogCard({ data, height, main = false }) {
         alt='cover'
         sx={{
           width: "100%",
+          maxWidth: 700,
           height: height,
           minHeight: main ? 450 : 400,
           backgroundColor: "#fff",
@@ -46,7 +48,10 @@ function BlogCard({ data, height, main = false }) {
       />
       <CardContent
         sx={{
-          p: 5,
+          p: {
+            md: 5,
+            xs: 2,
+          },
           width: "100%",
         }}>
         <Stack

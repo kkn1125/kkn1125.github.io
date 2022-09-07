@@ -280,15 +280,13 @@ app.listen(PORT, () => {
 
 [woongbeee님 블로그::Typescript를 Node.js 에서 실행할 때, ts-node 오류](https://velog.io/@woongbeee/Typescript%EB%A5%BC-Node.js-%EC%97%90%EC%84%9C-%EC%8B%A4%ED%96%89%ED%95%A0-%EB%95%8C-ts-node-%EC%98%A4%EB%A5%98)
 
-[woongbeee님 블로그::Typescript를 Node.js 에서 실행할 때, ts-node 오류](https://devblog.kakaostyle.com/ko/2022-04-09-1-esm-problem/)
-
-[Simon님 블로그::ESM 삽질기](https://velog.io/@woongbeee/Typescript%EB%A5%BC-Node.js-%EC%97%90%EC%84%9C-%EC%8B%A4%ED%96%89%ED%95%A0-%EB%95%8C-ts-node-%EC%98%A4%EB%A5%98)
+[Simon님 블로그::ESM 삽질기](https://devblog.kakaostyle.com/ko/2022-04-09-1-esm-problem/)
 
 [ts-node github repository::ts-node fails when ES Modules are in the dependency graph in Node.js 13+ \#935](https://github.com/TypeStrong/ts-node/issues/935)
 
 [Stackoverflow::Webpack "Cannot find module" for "module"\:"esnext"](https://stackoverflow.com/questions/53803534/webpack-cannot-find-module-for-module-esnext)
 
-# d.ts 글로벌 설정 에러
+<!-- d.ts 글로벌 설정 에러 -->
 
 [khalilstemmler::How to Import Modules using Absolute File Paths with TypeScript](https://khalilstemmler.com/blogs/typescript/absolute-file-path/)
 
@@ -298,8 +296,8 @@ app.listen(PORT, () => {
 
 [Stackoverflow::Extend Express Request object using Typescript](https://stackoverflow.com/questions/37377731/extend-express-request-object-using-typescript)
 
-# functional object this type 문제
+<!-- functional object this type 문제 -->
 
 [Stackoverflow::Typescript "this" inside a class method](https://stackoverflow.com/questions/16157839/typescript-this-inside-a-class-method)
 
-# 내용 보충 필요
+<!-- 내용 보충 필요 -->
