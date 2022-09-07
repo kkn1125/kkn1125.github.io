@@ -1,10 +1,34 @@
 {
   "2022": {
     "8": {
+      "18": [
+        {
+          "todo": "mentees 프로젝트 express + react(typescript) 환경 재구성 마감 예정!",
+          "tag": "1",
+          "time": "2022-09-04 16:48:38"
+        }
+      ],
+      "7": [
+        {
+          "todo": "express error handling 포스팅 준비",
+          "tag": "check",
+          "time": "2022-09-07 19:44:19"
+        },
+        {
+          "todo": "webgl & three.js 스터디",
+          "tag": "check",
+          "time": "2022-09-07 19:44:19"
+        },
+        {
+          "todo": "방문자 수 오류 수정",
+          "tag": "check",
+          "time": "2022-09-07 19:44:19"
+        }
+      ],
       "1": [
         {
-          "todo": "mentees 프로젝트 express + react(typescript) 환경 재구성",
-          "tag": "1",
+          "todo": "mentees 프로젝트 express + react(typescript) 환경 재구성 시작!",
+          "tag": "check",
           "time": "2022-09-01 19:33:11"
         }
       ]

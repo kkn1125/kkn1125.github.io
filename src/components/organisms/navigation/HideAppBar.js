@@ -50,15 +50,17 @@ const pages = [
   },
 ];
 const resConvertData = (res) => {
+  console.log(res);
   const body = new DOMParser().parseFromString(
     res.data.contents,
     "text/html"
   ).body;
-  const table = body.querySelector(
-    "#main > div > form > div:nth-child(5) > table"
-  );
+  const table = body.querySelectorAll("#main form table.table tbody tr");
 
-  const tableEntries = [...table.querySelector("tbody").children].map((tr) => {
+  const filtered = [...table].filter((el) => el.textContent.match(/방문자/g));
+
+  const tableEntries = filtered.map((tr) => {
+    console.log(tr.children);
     const [key, value] = tr.children;
     return [key.textContent, value.textContent];
   });
