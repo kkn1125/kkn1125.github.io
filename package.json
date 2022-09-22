@@ -8,14 +8,15 @@
     "gatsby"
   ],
   "scripts": {
-    "dev": "gatsby develop",
+    "dev": "gatsby -h",
     "start": "gatsby develop",
     "build": "gatsby build --prefix-paths",
     "totalbuild": "npm run clean && npm run build && cd public/ && echo google-site-verification: google050e6145d059bcf0.html > google050e6145d059bcf0.html && echo naver-site-verification: naverab361a1a39575334bea9d573640c9e21.html > naverab361a1a39575334bea9d573640c9e21.html && git init && git add -A && git commit -m \"add post and fixbugs\" && git push -f https://github.com/kkn1125/kkn1125.github.io.git master:gh-pages && cd -",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "generate": "graphql-codegen",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "test": "echo test"
   },
   "dependencies": {
     "@emotion/react": "^11.9.0",
@@ -46,11 +47,13 @@
     "highlight.js": "^11.3.1",
     "highlightjs-line-numbers.js": "^2.8.0",
     "html-react-parser": "^2.0.0",
+    "node-gyp-build-optional-packages": "^4.3.5",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-helmet": "^6.1.0",
     "react-router-dom": "^6.3.0",
-    "react-syntax-highlighter": "^15.5.0"
+    "react-syntax-highlighter": "^15.5.0",
+    "sharp": "^0.31.0"
   },
   "devDependencies": {
     "@types/node": "^17.0.41",

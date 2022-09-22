@@ -53,7 +53,6 @@ const pages = [
 ];
 
 const resConvertData = (res) => {
-  console.log(res);
   const body = new DOMParser().parseFromString(
     res.data.contents,
     "text/html"
@@ -63,7 +62,6 @@ const resConvertData = (res) => {
   const filtered = [...table].filter((el) => el.textContent.match(/방문자/g));
 
   const tableEntries = filtered.map((tr) => {
-    console.log(tr.children);
     const [key, value] = tr.children;
     return [key.textContent, value.textContent];
   });

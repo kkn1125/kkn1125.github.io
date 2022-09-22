@@ -1,0 +1,100 @@
+Arguments: 
+  C:\Users\김경남-pc\AppData\Roaming\nvm\v18.9.0\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js install
+
+PATH: 
+  C:\Users\김경남-pc\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\김경남-pc\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Users\김경남-pc\AppData\Local\Programs\Python\Python310;C:\Users\김경남-pc\AppData\Local\Programs\Python\Python310\Scripts;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\WINDOWS\System32\OpenSSH;C:\Program Files\Git\cmd;C:\Program Files (x86)\GnuWin32\bin;C:\Program Files\mingw64\bin;C:\ProgramData\chocolatey\bin;C:\Python27;C:\Python27\Scripts;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\Program Files (x86)\Yarn\bin;C:\ProgramData\chocolatey\lib\maven\apache-maven-3.8.6\bin;C:\Program Files\Java\jdk-11.0.12\bin;C:\Program Files\Java\scripts;C:\Program Files\PostgreSQL\14\bin;C:\Users\김경남-pc\AppData\Roaming\nvm;C:\nodejs;C:\Ruby27-x64\bin;C:\Users\김경남-pc\AppData\Local\Programs\Python\Python310\Scripts;C:\Users\김경남-pc\AppData\Local\Programs\Python\Python310;C:\Users\김경남-pc\AppData\Local\Microsoft\WindowsApps;C:\Users\김경남-pc\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\김경남-pc\AppData\Roaming\npm;C:\Users\김경남-pc\AppData\Local\Programs\oh-my-posh\bin;C:\Program Files\MongoDB\Server\5.3\bin;C:\Users\김경남-pc\AppData\Local\Yarn\bin;C:\tools\mysql\current\bin;C:\Program Files\JetBrains\IntelliJ IDEA Educational Edition 2022.1.1\bin;C:\cvs-1-11-14;C:\Program Files\CMake\bin;C:\wget;C:\Program Files\heroku\bin;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  18.9.0
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/rxjs/-/rxjs-7.5.6.tgz: ESOCKETTIMEDOUT
+      at ClientRequest.<anonymous> (C:\Program Files (x86)\Yarn\lib\cli.js:141517:19)
+      at Object.onceWrapper (node:events:627:28)
+      at ClientRequest.emit (node:events:513:28)
+      at TLSSocket.emitRequestTimeout (node:_http_client:838:9)
+      at Object.onceWrapper (node:events:627:28)
+      at TLSSocket.emit (node:events:525:35)
+      at Socket._onTimeout (node:net:562:8)
+      at listOnTimeout (node:internal/timers:564:17)
+      at process.processTimers (node:internal/timers:507:7)
+
+npm manifest: 
+  {
+    "name": "blog",
+    "version": "1.0.0",
+    "private": true,
+    "description": "blog",
+    "author": "kimson",
+    "keywords": [
+      "gatsby"
+    ],
+    "scripts": {
+      "dev": "gatsby -h",
+      "start": "gatsby develop",
+      "build": "gatsby build --prefix-paths",
+      "totalbuild": "npm run clean && npm run build && cd public/ && echo google-site-verification: google050e6145d059bcf0.html > google050e6145d059bcf0.html && echo naver-site-verification: naverab361a1a39575334bea9d573640c9e21.html > naverab361a1a39575334bea9d573640c9e21.html && git init && git add -A && git commit -m \"add post and fixbugs\" && git push -f https://github.com/kkn1125/kkn1125.github.io.git master:gh-pages && cd -",
+      "serve": "gatsby serve",
+      "clean": "gatsby clean",
+      "generate": "graphql-codegen",
+      "typecheck": "tsc --noEmit",
+      "test": "echo test"
+    },
+    "dependencies": {
+      "@emotion/react": "^11.9.0",
+      "@emotion/styled": "^11.8.1",
+      "@graphql-codegen/cli": "^2.6.2",
+      "@graphql-codegen/typescript": "^2.5.0",
+      "@graphql-codegen/typescript-operations": "^2.4.1",
+      "@graphql-codegen/typescript-react-query": "^3.5.13",
+      "@mui/icons-material": "^5.8.3",
+      "@mui/material": "^5.8.3",
+      "@mui/x-date-pickers": "^5.0.0-alpha.6",
+      "axios": "^0.27.2",
+      "gatsby": "^4.16.0",
+      "gatsby-plugin-advanced-sitemap": "^2.1.0",
+      "gatsby-plugin-anchor-links": "^1.2.1",
+      "gatsby-plugin-generate-typings": "^0.9.9",
+      "gatsby-plugin-google-analytics": "^4.16.0",
+      "gatsby-plugin-image": "^2.16.1",
+      "gatsby-plugin-manifest": "^4.16.0",
+      "gatsby-plugin-material-ui": "^4.1.0",
+      "gatsby-plugin-react-helmet": "^5.16.0",
+      "gatsby-plugin-robots-txt": "^1.7.1",
+      "gatsby-plugin-sharp": "^4.16.1",
+      "gatsby-source-filesystem": "^4.16.0",
+      "gatsby-theme-material-ui": "^5.2.0",
+      "gatsby-transformer-remark": "^5.16.0",
+      "graphql": "^15.8.0",
+      "highlight.js": "^11.3.1",
+      "highlightjs-line-numbers.js": "^2.8.0",
+      "html-react-parser": "^2.0.0",
+      "node-gyp-build-optional-packages": "^4.3.5",
+      "react": "^18.1.0",
+      "react-dom": "^18.1.0",
+      "react-helmet": "^6.1.0",
+      "react-router-dom": "^6.3.0",
+      "react-syntax-highlighter": "^15.5.0",
+      "sharp": "^0.31.0"
+    },
+    "devDependencies": {
+      "@types/node": "^17.0.41",
+      "@types/react": "^18.0.12",
+      "@types/react-dom": "^18.0.5",
+      "eslint": "^8.17.0",
+      "eslint-plugin-react": "^7.30.0",
+      "typescript": "^4.7.3"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
