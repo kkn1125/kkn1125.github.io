@@ -7,7 +7,13 @@ author: Kimson
 categories: [express]
 image: /images/post/covers/TIL-express.png
 tags: [express, typescript, esm, react, til]
-description: ""
+description: "express에서 파일업로드 하기
+
+express를 사용하다보면 자주 들어보기는 했지만 사용할 기회가 없어서, 혹은 내용 파악이 어려워서 등등의 이유로 다양한 라이브러리를 마주하게 되는 순간이 오게 되는데요. 자바나 장고를 사용하면서 파일 업로드를 해 본 경험은 많지만 express로 구현해 본 적이 없어서 기록을 남기려합니다.
+
+포스팅 해야지 하면서 그렇게 일주일이 지나서야 쓰게 됩니다. express에서 파일을 업로드하기 위해 multer를 쓰기로 했습니다. 단순히 파일 업로드를 위함은 아니고 express에서 받던 formdata 형식을 x-www-formurlencoded에서 form-data형식으로 변경해서 만들기 위함 입니다.
+
+방법이야 정해진 것은 없으니 자신에게 맞는 라이브러리를 쓰시고 고심하여 쓰시기 바랍니다. 물론 저처럼 개인 프로젝트에 쓰는 것이라면 굳이 상관은 없습니다."
 featured: true
 hidden: false
 rating: 4.5
