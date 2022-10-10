@@ -43,7 +43,17 @@ function HashList({ hash, types }) {
                 handleClickForHash(e, type);
               }}
             />
-          ))}>
+          ))}
+          PopperProps={{
+            sx: {
+              [`& .MuiTooltip-tooltip.MuiTooltip-tooltipPlacementBottom`]: {
+                display: "flex",
+                gap: "0.5rem",
+                py: "0.7rem",
+                px: "1rem",
+              },
+            },
+          }}>
           <Typography
             sx={{
               color: (theme) => theme.palette.GrayText,

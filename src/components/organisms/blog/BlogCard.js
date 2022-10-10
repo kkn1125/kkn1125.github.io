@@ -32,10 +32,10 @@ function BlogCard({ data, height, main = false }) {
       <Favorite data={data} />
 
       <Box
-        component='img'
+        component='div'
         onClick={(e) => navigate(data.slug)}
-        src={data.image.replace(/assets/g, "")}
-        alt='cover'
+        // src={}
+        // alt='cover'
         sx={{
           width: "100%",
           maxWidth: 700,
@@ -44,6 +44,14 @@ function BlogCard({ data, height, main = false }) {
           backgroundColor: "#fff",
           objectFit: "cover",
           cursor: "pointer",
+          transition: "background-size 150ms",
+          backgroundImage: `url(${data.image.replace(/assets/g, "")})`,
+          backgroundSize: "100%",
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "center center",
+          [`&:hover`]: {
+            backgroundSize: "110%",
+          },
         }}
       />
       <CardContent

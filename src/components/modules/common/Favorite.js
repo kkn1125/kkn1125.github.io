@@ -17,6 +17,19 @@ function Favorite({ data, fixed = true }) {
     pick.save();
     pick.read();
   };
+  const vibrateAnimation = {
+    animation: `vibrate 1000ms ease-in-out infinite`,
+    "@keyframes vibrate": {
+      "0%": { transform: "rotate(0deg)" },
+      "5%": { transform: "rotate(10deg)" },
+      "10%": { transform: "rotate(20deg)" },
+      "15%": { transform: "rotate(10deg)" },
+      "20%": { transform: "rotate(-20deg)" },
+      "25%": { transform: "rotate(-10deg)" },
+      "30%": { transform: "rotate(0deg)" },
+      "100%": { transform: "rotate(0deg)" },
+    },
+  };
 
   return (
     <Tooltip title='Favorites!' placement='top'>
@@ -31,9 +44,19 @@ function Favorite({ data, fixed = true }) {
           }),
         }}>
         {pick.find(data) ? (
-          <FavoriteIcon color='danger' />
+          <FavoriteIcon
+            color='danger'
+            sx={{
+              ...vibrateAnimation,
+            }}
+          />
         ) : (
-          <FavoriteBorderIcon color='danger' />
+          <FavoriteBorderIcon
+            color='danger'
+            sx={{
+              ...vibrateAnimation,
+            }}
+          />
         )}
       </IconButton>
     </Tooltip>
