@@ -1,5 +1,5 @@
 ---
-slug: "/javascript-category-filter"
+slug: "/javascript-category-filter/"
 layout: post
 modified: 2022-03-23 20:54:35 +0900
 date:   2021-08-05 14:46:07 +0900

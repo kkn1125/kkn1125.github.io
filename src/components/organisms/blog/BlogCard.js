@@ -1,14 +1,12 @@
-import React, { memo, useContext } from "react";
+import { Box, Paper, Stack, styled } from "@mui/material";
 import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
-import Typography from "@mui/material/Typography";
-import { Box, CardActionArea, Paper, Stack, styled } from "@mui/material";
 import { navigate } from "gatsby";
-import HashList from "../../modules/common/HashList";
-import BlogCardInfo from "../../modules/blog/BlogCardInfo";
+import React, { memo } from "react";
 import BlogCardDesc from "../../modules/blog/BlogCardDesc";
+import BlogCardInfo from "../../modules/blog/BlogCardInfo";
 import BlogCardTitle from "../../modules/blog/BlogCardTitle";
 import Favorite from "../../modules/common/Favorite";
+import HashList from "../../modules/common/HashList";
 
 const PaperBlock = styled(Paper)(({ theme }) => ({
   borderRadius: 15,

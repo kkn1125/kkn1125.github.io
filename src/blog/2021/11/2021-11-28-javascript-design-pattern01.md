@@ -1,5 +1,5 @@
 ---
-slug: "/javascript-design-pattern01"
+slug: "/javascript-design-pattern01/"
 layout: post
 modified: 2022-03-14 00:09:35 +0900
 date:   2021-11-28 14:35:56 +0900

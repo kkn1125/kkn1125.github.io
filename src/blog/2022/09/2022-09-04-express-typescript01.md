@@ -1,5 +1,5 @@
 ---
-slug: "/express-typescript01"
+slug: "/express-typescript01/"
 layout: post
 date: 2022-09-04 16:50:12 +0900
 title: "[EXPRESS] Express + Typescript 환경 구축 01"

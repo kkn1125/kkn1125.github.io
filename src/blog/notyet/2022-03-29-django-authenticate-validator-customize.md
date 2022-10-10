@@ -1,5 +1,5 @@
 ---
-slug: "/django-authenticate-validator-customize"
+slug: "/django-authenticate-validator-customize/"
 layout: post
 date:   2022-03-29 18:11:32 +0900
 title:  "[DJANGO] User Authentication 사용하기 03"

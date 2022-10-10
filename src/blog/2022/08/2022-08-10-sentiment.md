@@ -1,5 +1,5 @@
 ---
-slug: "/sentiment01"
+slug: "/sentiment01/"
 layout: post
 date: 2022-08-10 17:29:31 +0900
 title: "[JAVASCRIPT] sentiment 감정 분석"

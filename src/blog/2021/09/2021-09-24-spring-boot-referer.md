@@ -1,5 +1,5 @@
 ---
-slug: "/spring-boot-referer"
+slug: "/spring-boot-referer/"
 layout: post
 modified: 2022-03-14 00:09:35 +0900
 date:   2021-09-24 22:22:32 +0900

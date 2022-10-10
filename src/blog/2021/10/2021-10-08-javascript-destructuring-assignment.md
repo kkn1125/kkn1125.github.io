@@ -1,5 +1,5 @@
 ---
-slug: "/javascript-destructuring-assignment"
+slug: "/javascript-destructuring-assignment/"
 layout: post
 modified: 2022-03-14 00:09:35 +0900
 date:   2021-10-08 21:18:08 +0900

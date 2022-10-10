@@ -1,5 +1,5 @@
 ---
-slug: "/react-reducer-problem01"
+slug: "/react-reducer-problem01/"
 layout: post
 date: 2022-05-30 01:56:12 +0900
 title: "[REACT] reducer 두 번 실행 문제"

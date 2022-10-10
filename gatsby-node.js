@@ -97,7 +97,7 @@ exports.createPages = async ({ graphql, actions, ...props }) => {
 
   result.data.blog.edges.forEach((edge) => {
     createPage({
-      path: `${edge.node.frontmatter.slug}/`,
+      path: `${edge.node.frontmatter.slug}`,
       component: blogPostTemplate,
       context: {
         previous: edge.previous,

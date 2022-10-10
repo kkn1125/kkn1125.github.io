@@ -1,5 +1,5 @@
 ---
-slug: "/shell-detection-files"
+slug: "/shell-detection-files/"
 layout: post
 date:   2022-03-15 21:17:09 +0900
 title:  "[SHELL] Shell Script로 파일 변환을 감지해보자 02"

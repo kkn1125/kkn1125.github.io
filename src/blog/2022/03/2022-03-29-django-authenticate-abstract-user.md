@@ -1,5 +1,5 @@
 ---
-slug: "/django-authenticate-abstract-user"
+slug: "/django-authenticate-abstract-user/"
 layout: post
 date:   2022-03-29 15:15:09 +0900
 title:  "[DJANGO] User Authentication 사용하기 02"

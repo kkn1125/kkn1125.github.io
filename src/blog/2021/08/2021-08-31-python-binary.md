@@ -1,5 +1,5 @@
 ---
-slug: "/python-binary"
+slug: "/python-binary/"
 layout: post
 modified: 2022-03-14 00:09:35 +0900
 date:   2021-08-31 21:45:32 +0900

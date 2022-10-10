@@ -1,5 +1,5 @@
 ---
-slug: "/django-custom-tags"
+slug: "/django-custom-tags/"
 layout: post
 date:   2022-03-14 18:54:26 +0900
 title:  "[DJANGO] 커스텀 템플릿 태그를 사용하려면?"

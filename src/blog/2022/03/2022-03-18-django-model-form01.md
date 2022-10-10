@@ -1,5 +1,5 @@
 ---
-slug: "/django-model-form01"
+slug: "/django-model-form01/"
 layout: post
 date:   2022-03-15 21:17:09 +0900
 title:  "[DJANGO] ModelForm 01. form valid를 제어 해보자"

@@ -1,5 +1,5 @@
 ---
-slug: "/express-error-handling01"
+slug: "/express-error-handling01/"
 layout: post
 date: 2022-09-14 17:51:43 +0900
 title: "[EXPRESS] express axios 에러 핸들링"

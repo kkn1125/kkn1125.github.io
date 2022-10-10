@@ -1,5 +1,5 @@
 ---
-slug: "/react-router-middleware"
+slug: "/react-router-middleware/"
 layout: post
 date: 2022-09-07 19:25:29 +0900
 title: "[REACT] react-router-dom에 middleware를 설정해보자"

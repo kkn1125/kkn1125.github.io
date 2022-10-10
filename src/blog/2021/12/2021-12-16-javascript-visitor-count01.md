@@ -1,5 +1,5 @@
 ---
-slug: "/javascript-visitor-count01"
+slug: "/javascript-visitor-count01/"
 layout: post
 modified: 2022-03-14 00:09:35 +0900
 date:   2021-12-16 14:31:34 +0900

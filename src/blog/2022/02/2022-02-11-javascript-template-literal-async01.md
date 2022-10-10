@@ -1,5 +1,5 @@
 ---
-slug: "/javascript-template-literal-async01"
+slug: "/javascript-template-literal-async01/"
 layout: post
 modified: 2022-03-14 00:09:35 +0900
 date:   2022-02-11 15:17:59 +0900

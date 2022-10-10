@@ -1,5 +1,5 @@
 ---
-slug: "/javascript-object-this"
+slug: "/javascript-object-this/"
 layout: post
 date:   2022-04-10 17:43:00 +0900
 title:  "[JAVASCRIPT] Object와 This"

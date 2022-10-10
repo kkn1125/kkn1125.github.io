@@ -1,5 +1,5 @@
 ---
-slug: "/javascript-image-zoom"
+slug: "/javascript-image-zoom/"
 layout: post
 modified: 2022-03-14 00:09:35 +0900
 date:   2021-09-10 19:07:12 +0900

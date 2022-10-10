@@ -1,5 +1,5 @@
 ---
-slug: "/express-fileupload01"
+slug: "/express-fileupload01/"
 layout: post
 date: 2022-09-15 19:25:29 +0900
 title: "[EXPRESS] fileupload 구현"

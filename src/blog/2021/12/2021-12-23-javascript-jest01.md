@@ -1,5 +1,5 @@
 ---
-slug: "/javascript-jest01"
+slug: "/javascript-jest01/"
 layout: post
 modified: 2022-03-14 00:09:35 +0900
 date:   2021-12-23 21:09:22 +0900

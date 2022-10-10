@@ -1,5 +1,5 @@
 ---
-slug: "/typescript-study01"
+slug: "/typescript-study01/"
 layout: post
 date: 2022-06-19 19:27:36 +0900
 title: "[TYPESCRIPT] TypeScript Study 01"

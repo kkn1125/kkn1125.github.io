@@ -1,5 +1,5 @@
 ---
-slug: "/javascript-calendar"
+slug: "/javascript-calendar/"
 layout: post
 modified: 2022-03-23 19:39:06 +0900
 date:   2021-07-15 17:40:27 +0900

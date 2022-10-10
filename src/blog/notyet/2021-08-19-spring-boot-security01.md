@@ -1,5 +1,5 @@
 ---
-slug: "/spring-boot-security01"
+slug: "/spring-boot-security01/"
 layout: post
 modified: 2022-03-14 00:09:35 +0900
 date:   2021-08-19 17:40:02 +0900

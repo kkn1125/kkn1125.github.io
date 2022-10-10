@@ -1,5 +1,5 @@
 ---
-slug: "/vue-add-attributes"
+slug: "/vue-add-attributes/"
 layout: post
 modified: 2022-03-14 00:09:35 +0900
 date:   2022-01-21 20:17:54 +0900

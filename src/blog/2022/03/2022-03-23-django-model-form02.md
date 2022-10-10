@@ -1,5 +1,5 @@
 ---
-slug: "/django-model-form02"
+slug: "/django-model-form02/"
 layout: post
 date:   2022-03-23 13:27:18 +0900
 title:  "[DJANGO] ModelForm 02. 회원 기존 정보 덮어쓰기"

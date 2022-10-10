@@ -1,5 +1,5 @@
 ---
-slug: "/linux-ubuntu"
+slug: "/linux-ubuntu/"
 layout: post
 modified: 2022-03-14 00:09:35 +0900
 date:   2022-03-03 13:12:53 +0900

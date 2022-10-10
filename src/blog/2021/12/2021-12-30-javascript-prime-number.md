@@ -1,5 +1,5 @@
 ---
-slug: "/javascript-prime-number"
+slug: "/javascript-prime-number/"
 layout: post
 modified: 2022-03-14 00:09:35 +0900
 date:   2021-12-30 16:09:54 +0900

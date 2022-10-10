@@ -1,5 +1,5 @@
 ---
-slug: "/checkbox-delete"
+slug: "/checkbox-delete/"
 layout: post
 modified: 2022-03-23 16:02:12 +0900
 date:   2021-01-01 21:25:04 +0900

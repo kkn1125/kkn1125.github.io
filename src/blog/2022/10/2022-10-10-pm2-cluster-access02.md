@@ -1,5 +1,5 @@
 ---
-slug: "/pm2-cluster-access02"
+slug: "/pm2-cluster-access02/"
 layout: post
 date: 2022-10-10 02:23:05 +0900
 title: "[NODE] PM2 Cluster간 통신을 해보자 02"

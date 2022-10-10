@@ -1,5 +1,5 @@
 ---
-slug: "/java-cookie"
+slug: "/java-cookie/"
 layout: post
 modified: 2022-03-14 00:09:35 +0900
 date:   2021-08-02 17:06:27 +0900

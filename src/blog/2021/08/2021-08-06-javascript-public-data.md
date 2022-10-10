@@ -1,5 +1,5 @@
 ---
-slug: "/javascript-public-data"
+slug: "/javascript-public-data/"
 layout: post
 modified: 2022-03-23 20:55:04 +0900
 date:   2021-08-06 16:22:36 +0900
