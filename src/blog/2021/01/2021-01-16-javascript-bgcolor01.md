@@ -1,5 +1,5 @@
 ---
-slug: "/javascript-bgcolor01"
+slug: "/javascript-bgcolor01/"
 layout: post
 modified: 2022-03-23 16:02:26 +0900
 date:   2021-01-16 21:25:04 +0900

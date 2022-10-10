@@ -1,5 +1,5 @@
 ---
-slug: "/javascript-scroll-control"
+slug: "/javascript-scroll-control/"
 layout: post
 modified: 2022-04-11 11:01:41 +0900
 date:   2021-08-17 15:02:11 +0900

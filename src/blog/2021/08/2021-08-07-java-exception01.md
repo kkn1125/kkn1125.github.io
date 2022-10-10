@@ -1,5 +1,5 @@
 ---
-slug: "/java-exception01"
+slug: "/java-exception01/"
 layout: post
 modified: 2022-03-23 21:13:07 +0900
 date:   2021-08-07 15:18:43 +0900

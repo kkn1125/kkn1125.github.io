@@ -1,5 +1,5 @@
 ---
-slug: "/javascript-ajax01"
+slug: "/javascript-ajax01/"
 layout: post
 modified: 2022-03-23 15:57:33 +0900
 date:   2021-07-13 15:35:27 +0900

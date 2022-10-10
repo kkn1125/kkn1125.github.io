@@ -1,5 +1,5 @@
 ---
-slug: "/javascript-typerjs01"
+slug: "/javascript-typerjs01/"
 layout: post
 modified: 2022-03-14 00:09:35 +0900
 date:   2021-10-27 21:39:53 +0900

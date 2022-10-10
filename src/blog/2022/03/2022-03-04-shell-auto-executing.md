@@ -1,5 +1,5 @@
 ---
-slug: "/shell-auto-executing"
+slug: "/shell-auto-executing/"
 layout: post
 modified: 2022-03-14 00:09:35 +0900
 date:   2022-03-04 19:56:07 +0900

@@ -1,14 +1,12 @@
-import React, { memo, useContext } from "react";
+import { Box, Paper, Stack, styled } from "@mui/material";
 import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
-import Typography from "@mui/material/Typography";
-import { Box, CardActionArea, Paper, Stack, styled } from "@mui/material";
 import { navigate } from "gatsby";
-import HashList from "../../modules/common/HashList";
-import BlogCardInfo from "../../modules/blog/BlogCardInfo";
+import React, { memo } from "react";
 import BlogCardDesc from "../../modules/blog/BlogCardDesc";
+import BlogCardInfo from "../../modules/blog/BlogCardInfo";
 import BlogCardTitle from "../../modules/blog/BlogCardTitle";
 import Favorite from "../../modules/common/Favorite";
+import HashList from "../../modules/common/HashList";
 
 const PaperBlock = styled(Paper)(({ theme }) => ({
   borderRadius: 15,
@@ -30,27 +28,36 @@ function BlogCard({ data, height, main = false }) {
         position: "relative",
       }}>
       <Favorite data={data} />
-      <CardActionArea
+
+      <Box
+        component='div'
         onClick={(e) => navigate(data.slug)}
+        // src={}
+        // alt='cover'
         sx={{
+          width: "100%",
+          maxWidth: 700,
           height: height,
-          minHeight: 300,
-        }}>
-        <CardMedia
-          component='img'
-          image={data.image.replace(/assets/g, "")}
-          alt='cover'
-          sx={{
-            height: height,
-            minHeight: main ? 350 : 300,
-            backgroundColor: "#fff",
-            objectFit: "cover",
-          }}
-        />
-      </CardActionArea>
+          minHeight: main ? 450 : 400,
+          backgroundColor: "#fff",
+          objectFit: "cover",
+          cursor: "pointer",
+          transition: "background-size 150ms",
+          backgroundImage: `url(${data.image.replace(/assets/g, "")})`,
+          backgroundSize: "100%",
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "center center",
+          [`&:hover`]: {
+            backgroundSize: "110%",
+          },
+        }}
+      />
       <CardContent
         sx={{
-          p: 5,
+          p: {
+            md: 5,
+            xs: 2,
+          },
           width: "100%",
         }}>
         <Stack

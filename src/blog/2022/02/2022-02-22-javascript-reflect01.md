@@ -1,5 +1,5 @@
 ---
-slug: "/javascript-reflect01"
+slug: "/javascript-reflect01/"
 layout: post
 modified: 2022-03-14 00:09:35 +0900
 date:   2022-02-22 21:22:08 +0900

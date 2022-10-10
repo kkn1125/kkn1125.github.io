@@ -1,5 +1,5 @@
 ---
-slug: "/javascript-jest01"
+slug: "/javascript-jest01/"
 layout: post
 modified: 2022-03-14 00:09:35 +0900
 date:   2021-12-23 21:09:22 +0900
@@ -94,7 +94,7 @@ published: true
 
 ```javascript
 // sum.js
-function sum (a, b){
+function sum(a, b) {
   return a + b;
 }
 
@@ -105,7 +105,7 @@ module.exports = sum;
 
 ```javascript
 // sum.test.js
-const sum = require('./sum');
+const sum = require("./sum");
 ```
 
 이제 테스트 코드를 작성할텐데요. `sum.test.js`라는 이름으로 파일명을 주면 `jest`가 테스트를 실행할 때 파일을 인지하고 내용의 결과를 나타내주게 됩니다.
@@ -114,9 +114,9 @@ const sum = require('./sum');
 
 ```javascript
 // sum.test.js
-const sum = require('./sum');
+const sum = require("./sum");
 
-test('[계산기 기능] 더하기 테스트, 숫자와 숫자가 주어질 때', ()=>{
+test("[계산기 기능] 더하기 테스트, 숫자와 숫자가 주어질 때", () => {
   expect(sum(1, 2)).toEqual(3);
 });
 ```
@@ -125,9 +125,9 @@ test('[계산기 기능] 더하기 테스트, 숫자와 숫자가 주어질 때'
 
 ```javascript
 // sum.test.js
-const sum = require('./sum');
+const sum = require("./sum");
 
-test('[계산기 기능] 더하기 테스트, 숫자와 숫자가 주어질 때', ()=>{
+test("[계산기 기능] 더하기 테스트, 숫자와 숫자가 주어질 때", () => {
   expect(sum(1, 2)).toEqual(3);
 });
 ```
@@ -144,7 +144,10 @@ test('[계산기 기능] 더하기 테스트, 숫자와 숫자가 주어질 때'
 
 `TDD`가 생각나서 `Jest`를 사용하는 김에 기록을 했습니다.
 
------
+> 최근 어떤 외국인 분께서 node js 설치 관련 내용을 pr 주셨습니다. 적어도 본인에 대한 소개와 내용을 추가한 후의 효과에 대한 내용을 적어서 올려주시면 감사하겠습니다 🙇‍♂️  
+> 요청하신 링크를 함께 첨부했습니다 😀
+
+---
 
 📚 함께 보면 좋은 내용
 

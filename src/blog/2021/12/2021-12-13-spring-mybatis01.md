@@ -1,5 +1,5 @@
 ---
-slug: "/spring-mybatis01"
+slug: "/spring-mybatis01/"
 layout: post
 modified: 2022-03-14 00:09:35 +0900
 date:   2021-12-13 17:16:37 +0900

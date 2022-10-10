@@ -1,5 +1,5 @@
 ---
-slug: "/django-testcase01"
+slug: "/django-testcase01/"
 layout: post
 date:   2022-03-31 15:53:36 +0900
 title:  "[DJANGO] 단위테스트 작성"

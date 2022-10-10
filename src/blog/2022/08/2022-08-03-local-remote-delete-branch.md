@@ -1,5 +1,5 @@
 ---
-slug: "/branch-delete-way01"
+slug: "/branch-delete-way01/"
 layout: post
 date: 2022-08-03 14:12:45 +0900
 title: "[GIT] 로컬 및 원격에서 브랜치 삭제"

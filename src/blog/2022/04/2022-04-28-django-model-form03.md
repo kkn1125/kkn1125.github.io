@@ -1,5 +1,5 @@
 ---
-slug: "/django-model-form03"
+slug: "/django-model-form03/"
 layout: post
 date:   2022-04-28 15:42:45 +0900
 title:  "[DJANGO] ModelForm 03. Bootstrap5 Library와 Form Error 제어"

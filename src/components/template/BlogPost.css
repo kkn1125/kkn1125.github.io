@@ -21,6 +21,14 @@
   padding-left: 10px;
 }
 
+.blog-post h2,
+.blog-post h3,
+.blog-post h4,
+.blog-post h5,
+.blog-post h6 {
+  margin-top: 2rem;
+}
+
 .blog-post img {
   max-width: 100%;
   height: auto;
@@ -80,10 +88,27 @@
   font-size: calc(0.5rem + 0.5vw);
 }
 
+.blog-post pre {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.blog-post pre::-webkit-scrollbar {
+  background-color: inherit;
+  height: 0.5rem;
+  width: 0.5rem;
+}
+
+.blog-post pre::-webkit-scrollbar-thumb {
+  background: grey;
+  height: 0.5rem;
+  width: 0.5rem;
+}
+
 .blog-post a {
   text-decoration: none;
 }
 
-.blog-post #app .parsed-data span.badge{
+.blog-post #app .parsed-data span.badge {
   font-size: 11px;
 }

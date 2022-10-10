@@ -1,5 +1,5 @@
 ---
-slug: "/git-overwrite-branch"
+slug: "/git-overwrite-branch/"
 layout: post
 modified: 2022-03-14 00:09:35 +0900
 date:   2022-01-17 12:40:42 +0900

@@ -1,5 +1,5 @@
 ---
-slug: "/javascript-mouse-direction01"
+slug: "/javascript-mouse-direction01/"
 layout: post
 modified: 2022-03-14 00:09:35 +0900
 date:   2021-09-24 22:22:32 +0900

@@ -1,5 +1,5 @@
 ---
-slug: "/javascript-tree-parser01"
+slug: "/javascript-tree-parser01/"
 layout: post
 date:   2022-04-22 14:01:27 +0900
 title:  "[JAVASCRIPT] 파일 구조 도식화 개발"

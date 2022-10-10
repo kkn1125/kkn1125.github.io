@@ -1,5 +1,5 @@
 ---
-slug: "/javascript-code-style"
+slug: "/javascript-code-style/"
 layout: post
 modified: 2022-03-23 22:47:05 +0900
 date:   2021-08-08 14:19:05 +0900

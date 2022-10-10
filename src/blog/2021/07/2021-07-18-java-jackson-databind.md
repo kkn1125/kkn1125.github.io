@@ -1,5 +1,5 @@
 ---
-slug: "/java-jackson-databind"
+slug: "/java-jackson-databind/"
 layout: post
 modified: 2022-03-23 19:47:55 +0900
 date:   2021-07-18 12:21:27 +0900

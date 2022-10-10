@@ -1,5 +1,5 @@
 ---
-slug: "/django-server01"
+slug: "/django-server01/"
 layout: post
 modified: 2022-03-14 00:09:35 +0900
 date:   2022-03-01 21:45:49 +0900

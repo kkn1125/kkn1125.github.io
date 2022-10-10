@@ -1,5 +1,5 @@
 ---
-slug: "/django-dateformat"
+slug: "/django-dateformat/"
 layout: post
 modified: 2022-03-14 00:09:35 +0900
 date:   2022-03-03 22:08:31 +0900

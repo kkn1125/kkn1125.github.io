@@ -1,5 +1,5 @@
 ---
-slug: "/javascript-grabbing-loaded-page"
+slug: "/javascript-grabbing-loaded-page/"
 layout: post
 modified: 2022-03-14 00:09:35 +0900
 date:   2021-12-16 18:41:37 +0900

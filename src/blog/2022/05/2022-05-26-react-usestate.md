@@ -1,5 +1,5 @@
 ---
-slug: "/react-usestate"
+slug: "/react-usestate/"
 layout: post
 date: 2022-05-26 22:29:01 +0900
 title: "[REACT] React 시작하기 03 [useState]"

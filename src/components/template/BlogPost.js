@@ -1,32 +1,34 @@
-import React, { memo, useEffect, useRef, useState } from "react";
-import { graphql, Link } from "gatsby";
-import "./BlogPost.css";
-import "highlight.js/styles/monokai.css";
-import parse from "html-react-parser";
 import {
+  Box,
+  CardMedia,
+  CircularProgress,
+  Container,
+  Divider,
   Grid,
-  Typography,
   List,
   ListItemButton,
   ListItemText,
-  CardMedia,
   Paper,
-  Divider,
-  Box,
-  useTheme,
-  CircularProgress,
   Stack,
+  Typography,
+  useTheme,
 } from "@mui/material";
-import BlogCardInfo from "../modules/blog/BlogCardInfo";
+import { graphql } from "gatsby";
+import "highlight.js/styles/monokai.css";
+import parse from "html-react-parser";
+import React, { memo, useEffect, useRef, useState } from "react";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { atelierPlateauDark } from "react-syntax-highlighter/src/styles/hljs";
+import BlogCardInfo from "../modules/blog/BlogCardInfo";
+import ControlButton from "../modules/blog/ControlButton";
+import Favorite from "../modules/common/Favorite";
 import HashList from "../modules/common/HashList";
 import Seo from "../modules/seo/Seo";
-import Favorite from "../modules/common/Favorite";
-import { cutText } from "../../util/tools";
-import ControlButton from "../modules/blog/ControlButton";
+import ImageViewer from "../organisms/blog/ImageViewer";
+import "./BlogPost.css";
 
 function Template({ data, pageContext }) {
+  const [image, setImage] = useState(null);
   const { previous, next } = pageContext;
   const { frontmatter: prevPost } = previous || { frontmatter: undefined };
   const { frontmatter: nextPost } = next || { frontmatter: undefined };
@@ -62,6 +64,30 @@ function Template({ data, pageContext }) {
     setTimeout(() => {
       setMode(false);
     }, 500);
+
+    function imageViewer(e) {
+      if (e.type === "keydown") {
+        if (e.key === "Escape") {
+          setImage(null);
+          document.body.removeAttribute("style");
+        }
+      } else {
+        if (e.target.tagName === "IMG") {
+          setImage(e.target.src);
+          document.body.style = "overflow: hidden";
+        } else {
+          setImage(null);
+          document.body.removeAttribute("style");
+          return;
+        }
+      }
+    }
+    window.addEventListener("click", imageViewer);
+    window.addEventListener("keydown", imageViewer);
+    return () => {
+      window.removeEventListener("click", imageViewer);
+      window.removeEventListener("keydown", imageViewer);
+    };
   }, [theme.palette.mode]);
 
   const [selectedIndex, setSelectedIndex] = useState(0);
@@ -104,6 +130,16 @@ function Template({ data, pageContext }) {
               maxHeight: 300,
               "& ul": { padding: 0 },
             }}>
+            <Typography
+              gutterBottom
+              sx={{
+                pl: 0,
+                fontSize: (theme) => theme.typography.pxToRem(24),
+                fontWeight: 700,
+                textDecoration: "underline",
+              }}>
+              INDEX
+            </Typography>
             {headings.map(({ value, depth }, idx) => (
               <ListItemButton
                 key={value + idx}
@@ -123,134 +159,237 @@ function Template({ data, pageContext }) {
         </Grid>
 
         <Grid item xs={12} md={9}>
-          <Paper elevation={10}>
-            <CardMedia
-              component='img'
-              image={frontmatter.image}
-              alt={frontmatter.image}
+          <Container maxWidth={"md"}>
+            <Stack
+              direction={{
+                xs: "column",
+                md: "row",
+              }}
+              justifyContent='space-between'
               sx={{
-                maxHeight: 450,
-                objectFit: "cover",
-                objectPosition: "0% 50%",
-                mb: 5,
+                my: 4.5,
+                gap: 3,
+              }}>
+              <Box sx={{ flex: 1 }}>
+                {<ControlButton controlPost={nextPost} side={"prev"} />}
+              </Box>
+              <Box sx={{ flex: 1 }}>
+                {<ControlButton controlPost={prevPost} side={"next"} />}
+              </Box>
+            </Stack>
+
+            <Paper elevation={10}>
+              <CardMedia
+                component='img'
+                image={frontmatter.image}
+                alt={frontmatter.image}
+                sx={{
+                  maxHeight: 450,
+                  objectFit: "cover",
+                  objectPosition: "0% 50%",
+                  mb: 5,
+                }}
+              />
+            </Paper>
+
+            <Typography
+              gutterBottom
+              sx={{
+                fontWeight: "bold",
+                letterSpacing: 1.5,
+                wordSpacing: 1,
+                fontSize: (theme) => theme.typography.pxToRem(32),
+              }}>
+              {frontmatter.title}
+              <Favorite data={frontmatter} fixed={false} />
+            </Typography>
+            <Divider
+              sx={{
+                my: 2,
+                borderColor: "#e1e1e1",
               }}
             />
-          </Paper>
-
-          <Typography
-            gutterBottom
-            variant='h3'
-            sx={{
-              fontWeight: "bold",
-              letterSpacing: 1.5,
-              wordSpacing: 1,
-            }}>
-            {frontmatter.title}
-            <Favorite data={frontmatter} fixed={false} />
-          </Typography>
-          <Divider
-            sx={{
-              my: 2,
-              borderColor: "#e1e1e1",
-            }}
-          />
-          <BlogCardInfo data={frontmatter} />
-          {/* 본문 */}
-          <Box
-            sx={{
-              my: 5,
-            }}>
-            <div
-              className='blog-post'
-              style={{
-                letterSpacing: 0.9,
-                wordSpacing: 2.5,
-              }}>
-              {parse(html, {
-                replace: (domNode) => {
-                  if (domNode.name && domNode.name.match(/h[1-6]/g)) {
-                    domNode.attribs["class"] = "title";
-                  }
-                  if (domNode.name && domNode.name === "a") {
-                    domNode.attribs["target"] = "_blank";
-                  }
-                  if (domNode.name === "pre") {
-                    const children = domNode.children[0];
-                    if (children.type === "tag" && children.name === "code") {
-                      return (
-                        <SyntaxHighlighter
-                          showLineNumbers
-                          language={
-                            domNode.children[0].attribs?.class
-                              ?.split("-")
-                              ?.pop() || "plaintext"
-                          }
-                          style={atelierPlateauDark}>
-                          {domNode.children
-                            ? domNode.children[0].children[0].data.trim()
-                            : ""}
-                        </SyntaxHighlighter>
-                      );
-                    }
-                  }
-                },
-              })}
-            </div>
-          </Box>
-          <Divider
-            sx={{
-              my: 2,
-              borderColor: "#e1e1e1",
-            }}
-          />
-          <Stack
-            direction='row'
-            justifyContent='space-between'
-            gap={1}
-            sx={{ mt: 3 }}>
-            <HashList hash={frontmatter.categories} types='categories' />
-            <HashList hash={frontmatter.tags} types='tags' />
-          </Stack>
-          <Stack
-            direction={{
-              xs: "column",
-              md: "row",
-            }}
-            justifyContent='space-between'
-            sx={{
-              my: 4.5,
-              gap: 3,
-            }}>
-            <Box sx={{ flex: 1 }}>
-              {<ControlButton controlPost={nextPost} side={"prev"} />}
-            </Box>
-            <Box sx={{ flex: 1 }}>
-              {<ControlButton controlPost={prevPost} side={"next"} />}
-            </Box>
-          </Stack>
-          <div>
-            {mode && (
-              <Stack
-                direction='row'
-                justifyContent='center'
-                sx={{
-                  my: 5,
-                }}>
-                <CircularProgress color='success' />
-              </Stack>
-            )}
+            <BlogCardInfo data={frontmatter} />
+            {/* 본문 */}
             <Box
               sx={{
-                display: mode ? "hidden" : "block",
-                "& .utterances": {
-                  maxWidth: "90%",
+                my: 5,
+                "& img": {
+                  cursor: "pointer",
                 },
+              }}>
+              <Box
+                className='blog-post'
+                sx={{
+                  letterSpacing: 0.9,
+                  wordSpacing: 2.5,
+                  fontSize: "0.95rem",
+                }}>
+                {parse(html, {
+                  replace: (domNode) => {
+                    if (domNode.name && domNode.name.match(/h[1-6]/g)) {
+                      domNode.attribs["class"] = "title";
+                    }
+                    if (domNode.name && domNode.name === "a") {
+                      domNode.attribs["target"] = "_blank";
+                    }
+                    if (domNode.name === "pre") {
+                      const children = domNode.children[0];
+                      if (children.type === "tag" && children.name === "code") {
+                        return (
+                          <Box
+                            sx={{
+                              my: 3,
+                              position: "relative",
+                              [`&::before`]: {
+                                content: '""',
+                                width: "100%",
+                                height: "2rem",
+                                backgroundColor: "#555",
+                                display: "block",
+                                borderTopLeftRadius: 15,
+                                borderTopRightRadius: 15,
+                              },
+                              borderBottomLeftRadius: 15,
+                              borderBottomRightRadius: 15,
+                              overflow: "hidden",
+                            }}>
+                            <Typography
+                              sx={{
+                                position: "absolute",
+                                top: 16 * 1,
+                                left: 20,
+                                transform: "translateY(-50%)",
+                                textTransform: "uppercase",
+                                fontWeight: 700,
+                                color: "#ffffff",
+                              }}>
+                              {children.attribs.class.split("-").pop()}
+                            </Typography>
+                            <Box
+                              sx={{
+                                width: 15,
+                                height: 15,
+                                backgroundColor: "#f56767",
+                                borderRadius: "50%",
+                                position: "absolute",
+                                top: 16 * 1,
+                                right: 80,
+                                transform: "translateY(-50%)",
+                                transition: "150ms ease",
+                                [`&:hover`]: {
+                                  transform: "translateY(-50%) scale(1.1)",
+                                },
+                              }}
+                            />
+                            <Box
+                              sx={{
+                                width: 15,
+                                height: 15,
+                                backgroundColor: "#e9ce63",
+                                borderRadius: "50%",
+                                position: "absolute",
+                                top: 16 * 1,
+                                right: 50,
+                                transform: "translateY(-50%)",
+                                transition: "150ms ease",
+                                [`&:hover`]: {
+                                  transform: "translateY(-50%) scale(1.1)",
+                                },
+                              }}
+                            />
+                            <Box
+                              sx={{
+                                width: 15,
+                                height: 15,
+                                backgroundColor: "#68ee85",
+                                borderRadius: "50%",
+                                position: "absolute",
+                                top: 16 * 1,
+                                right: 20,
+                                transform: "translateY(-50%)",
+                                transition: "150ms ease",
+                                [`&:hover`]: {
+                                  transform: "translateY(-50%) scale(1.1)",
+                                },
+                              }}
+                            />
+                            <SyntaxHighlighter
+                              showLineNumbers
+                              language={
+                                domNode.children[0].attribs?.class
+                                  ?.split("-")
+                                  ?.pop() || "plaintext"
+                              }
+                              style={atelierPlateauDark}>
+                              {domNode.children
+                                ? domNode.children[0].children[0].data.trim()
+                                : ""}
+                            </SyntaxHighlighter>
+                          </Box>
+                        );
+                      }
+                    }
+                  },
+                })}
+              </Box>
+            </Box>
+            <Divider
+              sx={{
+                my: 2,
+                borderColor: "#e1e1e1",
               }}
-              ref={commentEl}
             />
-          </div>
+            <Stack
+              direction='row'
+              justifyContent='space-between'
+              gap={1}
+              sx={{ mt: 3 }}>
+              <HashList hash={frontmatter.categories} types='categories' />
+              <HashList hash={frontmatter.tags} types='tags' />
+            </Stack>
+            <Stack
+              direction={{
+                xs: "column",
+                md: "row",
+              }}
+              justifyContent='space-between'
+              sx={{
+                my: 4.5,
+                gap: 3,
+              }}>
+              <Box sx={{ flex: 1 }}>
+                {<ControlButton controlPost={nextPost} side={"prev"} />}
+              </Box>
+              <Box sx={{ flex: 1 }}>
+                {<ControlButton controlPost={prevPost} side={"next"} />}
+              </Box>
+            </Stack>
+            <div>
+              {mode && (
+                <Stack
+                  direction='row'
+                  justifyContent='center'
+                  sx={{
+                    my: 5,
+                  }}>
+                  <CircularProgress color='success' />
+                </Stack>
+              )}
+              <Box
+                sx={{
+                  display: mode ? "hidden" : "block",
+                  "& .utterances": {
+                    maxWidth: "90%",
+                  },
+                }}
+                ref={commentEl}
+              />
+            </div>
+          </Container>
         </Grid>
       </Grid>
+      {image && <ImageViewer image={image} />}
     </>
   );
 }

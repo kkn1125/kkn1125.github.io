@@ -1,5 +1,5 @@
 ---
-slug: "/javascript-chess02"
+slug: "/javascript-chess02/"
 layout: post
 modified: 2022-03-14 00:09:35 +0900
 date:   2022-01-17 12:20:44 +0900

@@ -1,5 +1,5 @@
 ---
-slug: "/react-use-transition"
+slug: "/react-use-transition/"
 layout: post
 date: 2022-06-07 23:51:29 +0900
 title: "[REACT] useTransition 사용"

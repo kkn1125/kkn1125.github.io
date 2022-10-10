@@ -1,5 +1,5 @@
 ---
-slug: "/javascript-dropdown01"
+slug: "/javascript-dropdown01/"
 layout: post
 modified: 2022-04-12 15:49:25 +0900
 date:   2021-08-13 13:50:20 +0900

@@ -1,5 +1,5 @@
 ---
-slug: "/javascript-detecting-scroll-direction"
+slug: "/javascript-detecting-scroll-direction/"
 layout: post
 modified: 2022-03-14 00:09:35 +0900
 date:   2021-09-21 20:23:12 +0900

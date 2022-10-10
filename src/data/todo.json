@@ -1,18 +1,91 @@
 {
   "2022": {
+    "9": {
+      "10": [
+        {
+          "todo": "EventEmitter 사용 특징 포스팅",
+          "tag": "check",
+          "time": "2022-10-10 02:01:14"
+        }
+      ]
+    },
+    "8": {
+      "25": [
+        {
+          "todo": "PM2 Cluster 통신 포스팅",
+          "tag": "check",
+          "time": "2022-09-25 18:50:13"
+        }
+      ],
+      "18": [
+        {
+          "todo": "mentees 프로젝트 express + react(typescript) 환경 재구성 마감 예정!",
+          "tag": "check",
+          "time": "2022-09-04 16:48:38"
+        }
+      ],
+      "7": [
+        {
+          "todo": "express error handling 포스팅 준비",
+          "tag": "check",
+          "time": "2022-09-07 19:44:19"
+        },
+        {
+          "todo": "webgl & three.js 스터디",
+          "tag": "check",
+          "time": "2022-09-07 19:44:19"
+        },
+        {
+          "todo": "방문자 수 오류 수정",
+          "tag": "check",
+          "time": "2022-09-07 19:44:19"
+        }
+      ],
+      "1": [
+        {
+          "todo": "mentees 프로젝트 express + react(typescript) 환경 재구성 시작!",
+          "tag": "check",
+          "time": "2022-09-01 19:33:11"
+        }
+      ]
+    },
     "7": {
+      "28": [
+        {
+          "todo": "[narang] 프로젝트 배포 및 점검 마무리",
+          "tag": "check",
+          "time": "2022-09-01 19:33:07"
+        },
+        {
+          "todo": "[narang] NGINX 마무리 포스팅(3편)",
+          "tag": "check",
+          "time": "2022-08-28 21:46:43"
+        },
+        {
+          "todo": "설문조사 기능 추가",
+          "tag": "cancel",
+          "time": "2022-08-28 21:46:43"
+        }
+      ],
       "21": [
         {
           "todo": "[narang] project aws 배포 예정",
-          "tag": "cancel",
-          "time": "2022-08-03 15:36:20"
+          "tag": "check",
+          "time": "2022-08-28 21:46:16"
+        }
+      ],
+      "20": [
+        {
+          "todo": "이미지 확대 기능 추가",
+          "tag": "check",
+          "time": "2022-08-20 20:36:20"
         }
       ],
       "17": [
         {
           "todo": "[narang] project 마감 예정일",
-          "tag": "1",
-          "time": "2022-08-03 15:36:20"
+          "tag": "check",
+          "time": "2022-08-28 21:46:21"
         }
       ],
       "16": [
@@ -50,15 +123,15 @@
       "13": [
         {
           "todo": "project Narang back-end 마감 예정일",
-          "tag": "cancel",
-          "time": "2022-08-03 15:36:20"
+          "tag": "check",
+          "time": "2022-08-28 21:45:45"
         }
       ],
       "12": [
         {
           "todo": "project Narang front-end 마감 예정일",
-          "tag": "cancel",
-          "time": "2022-08-03 15:36:20"
+          "tag": "check",
+          "time": "2022-08-28 21:45:39"
         }
       ],
       "10": [
@@ -79,8 +152,8 @@
         },
         {
           "todo": "설문조사 api 서비스 개발 준비",
-          "tag": "idea",
-          "time": "2022-08-10 17:28:28"
+          "tag": "check",
+          "time": "2022-08-28 21:47:13"
         }
       ],
       "3": [
@@ -234,7 +307,7 @@
         },
         {
           "todo": "react documentify test",
-          "tag": "2",
+          "tag": "check",
           "time": "2022-05-13 15:18:25"
         }
       ],
@@ -400,7 +473,7 @@
       "28": [
         {
           "todo": "포스팅에 사용할 directory tree 자동 완성 제작하기",
-          "tag": "cancel",
+          "tag": "check",
           "time": "2022-03-28 18:28:34"
         },
         {
@@ -674,12 +747,12 @@
       "24": [
         {
           "todo": "Spring JPA 테스트",
-          "tag": "cancel",
+          "tag": "check",
           "time": "2022-02-24 17:18:38"
         },
         {
           "todo": "도메인 패턴 연습",
-          "tag": "cancel",
+          "tag": "check",
           "time": "2022-02-24 17:18:38"
         },
         {

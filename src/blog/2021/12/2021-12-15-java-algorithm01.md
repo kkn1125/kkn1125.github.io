@@ -1,5 +1,5 @@
 ---
-slug: "/java-algorithm01"
+slug: "/java-algorithm01/"
 layout: post
 modified: 2022-03-14 00:09:35 +0900
 date:   2021-12-15 17:44:57 +0900

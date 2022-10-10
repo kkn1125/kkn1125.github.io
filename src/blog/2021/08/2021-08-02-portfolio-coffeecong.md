@@ -1,5 +1,5 @@
 ---
-slug: "/portfolio-coffeecong"
+slug: "/portfolio-coffeecong/"
 layout: post
 modified: 2022-03-14 00:09:35 +0900
 date:   2021-08-02 15:32:27 +0900

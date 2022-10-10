@@ -1,11 +1,11 @@
 ---
-slug: "/python-basic01"
+slug: "/python-basic01/"
 layout: post
 date:   2022-03-15 21:17:09 +0900
 title:  "[Python] 기초부터 다시 보자 01"
 author: Kimson
 categories: [ python ]
-image: /images/post/covers/TIL-python.jpg
+image: /images/post/covers/TIL-python.png
 tags: [ basic, til ]
 description: "기초 Cheetsheet
 수
