@@ -213,7 +213,7 @@ function Template({ data, pageContext }) {
             {/* 본문 */}
             <Box
               sx={{
-                my: 5,
+                my: 7,
                 "& img": {
                   cursor: "pointer",
                 },

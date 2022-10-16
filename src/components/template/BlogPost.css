@@ -59,11 +59,6 @@
   border-left: 5px solid rgb(180, 180, 180);
   margin-top: 1rem;
   margin-bottom: 1rem;
-  border-radius: 0.5rem;
-  -webkit-border-radius: 0.5rem;
-  -moz-border-radius: 0.5rem;
-  -ms-border-radius: 0.5rem;
-  -o-border-radius: 0.5rem;
 }
 
 .blog-post blockquote p {
@@ -71,7 +66,8 @@
 }
 
 .blog-post code:not([class]) {
-  background-color: rgb(238, 238, 238);
+  background-color: rgb(245, 245, 245);
+  font-size: 0.75rem;
   color: rgb(255, 0, 89);
   font-weight: 500;
   padding: 0.2rem 0.4rem;
@@ -111,4 +107,11 @@
 
 .blog-post #app .parsed-data span.badge {
   font-size: 11px;
+}
+
+.blog-post p {
+  font-weight: 300;
+  text-rendering: optimizeSpeed;
+  letter-spacing: 0rem;
+  word-spacing: 0.3rem;
 }

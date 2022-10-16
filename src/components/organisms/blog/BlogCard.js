@@ -1,4 +1,4 @@
-import { Box, Paper, Stack, styled } from "@mui/material";
+import { Box, Paper, Stack, styled, useMediaQuery, useTheme } from "@mui/material";
 import CardContent from "@mui/material/CardContent";
 import { navigate } from "gatsby";
 import React, { memo } from "react";
@@ -14,6 +14,7 @@ const PaperBlock = styled(Paper)(({ theme }) => ({
 }));
 
 function BlogCard({ data, height, main = false }) {
+  const theme = useTheme();
   return (
     <PaperBlock
       elevation={2}
@@ -38,7 +39,7 @@ function BlogCard({ data, height, main = false }) {
           width: "100%",
           maxWidth: 700,
           height: height,
-          minHeight: main ? 450 : 400,
+          minHeight: useMediaQuery(theme.breakpoints.up('md')) && main ? (height + 100) * 1.5 : height + 100,
           backgroundColor: "#fff",
           objectFit: "cover",
           cursor: "pointer",

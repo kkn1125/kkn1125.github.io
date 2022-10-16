@@ -1,7 +1,7 @@
 import { graphql } from "gatsby";
 import React from "react";
 import Grid from "@mui/material/Grid";
-import { Paper } from "@mui/material";
+import { Paper, useMediaQuery, useTheme } from "@mui/material";
 import Seo from "../components/modules/seo/Seo";
 import BlogCard from "../components/organisms/blog/BlogCard";
 import Calendar from "../components/organisms/calendar/Calendar";
@@ -9,6 +9,7 @@ import { Helmet } from "react-helmet";
 
 // markup
 const IndexPage = ({ data }) => {
+  const theme = useTheme();
   const {
     allMarkdownRemark: { edges },
   } = data;
@@ -34,12 +35,23 @@ const IndexPage = ({ data }) => {
       <Grid container spacing={12}>
         {/* main */}
         <Grid item xs={12}>
-          <BlogCard main data={firstPost} height={"calc(20vw + 100px)"} />
+          <BlogCard
+            main
+            data={firstPost}
+            height={
+              useMediaQuery(theme.breakpoints.up("md"))
+                ? "calc(20vw + 100px)"
+                : 200
+            }
+          />
         </Grid>
         {/* card */}
         {otherPost.map(({ node: { frontmatter: post } }) => (
           <Grid key={post.title} item xs={12} md={6}>
-            <BlogCard data={post} height={300} />
+            <BlogCard
+              data={post}
+              height={useMediaQuery(theme.breakpoints.up("md")) ? 300 : 200}
+            />
           </Grid>
         ))}
         <Grid item xs>

@@ -1,9 +1,11 @@
-import { Typography } from "@mui/material";
+import { Typography, useMediaQuery, useTheme } from "@mui/material";
 import { Link } from "gatsby";
-import React from "react";
+import React, { useState } from "react";
+import { useEffect } from "react";
 import { cutText } from "../../../util/tools";
 
 function BlogCardTitle({ title, slug }) {
+  const theme = useTheme();
   return (
     <Typography
       gutterBottom
@@ -17,13 +19,13 @@ function BlogCardTitle({ title, slug }) {
           color: (theme) => theme.palette.text.primary,
           textDecoration: "none",
           backgroundImage: "linear-gradient(to right, #000, #000)",
-          ["-webkit-background-clip"]: "text",
-          ["-webkit-text-fill-color"]: "transparent",
+          WebkitBackgroundClip: "text",
+          WebkitTextFillColor: "transparent",
         },
         ["& a::before "]: {
           userSelect: "none",
           pointerEvents: "none",
-          content: `"${cutText(title, 45)}"`,
+          content: `"${cutText(title, 35)}"`,
           position: "absolute",
           top: 0,
           right: 0,
@@ -34,8 +36,12 @@ function BlogCardTitle({ title, slug }) {
           width: 0,
           backgroundImage:
             "-webkit-linear-gradient(45deg, #09009f, #00ff95 80%)",
-          ["-webkit-background-clip"]: "text",
-          ["-webkit-text-fill-color"]: "transparent",
+          WebkitBackgroundClip: "text",
+          WebkitTextFillColor: "transparent",
+          ...(useMediaQuery(theme.breakpoints.down("sm")) && {
+            width: "100%",
+            opacity: 1,
+          }),
         },
         ["& a:hover::before "]: {
           width: "100%",
@@ -43,7 +49,7 @@ function BlogCardTitle({ title, slug }) {
         },
       }}>
       <Link to={slug} title={title}>
-        {cutText(title, 45)}
+        {cutText(title, 35)}
       </Link>
     </Typography>
   );
