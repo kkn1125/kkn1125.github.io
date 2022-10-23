@@ -10,7 +10,7 @@ import darkTheme from "../darkTheme";
 import BlogProvider from "../context/BlogProvider";
 import PickProvider from "../context/PickProvider";
 
-export const ColorModeContext = createContext({ toggleColorMode: () => {} });
+const ColorModeContext = createContext({ toggleColorMode: () => {} });
 
 export default function TopLayout({ children }) {
   const [mode, setMode] = useState("light");
@@ -52,5 +52,7 @@ export default function TopLayout({ children }) {
     </>
   );
 }
+
+export { ColorModeContext };
 
 // https://github.com/hupe1980/gatsby-theme-material-ui/tree/master/packages/gatsby-theme-material-ui-top-layout/src/components
