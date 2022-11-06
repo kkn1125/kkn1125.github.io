@@ -7,7 +7,15 @@ author: Kimson
 categories: [mysql]
 image: /images/post/covers/TIL-mysql.png
 tags: [sql, rdbms, replication, local, wsl]
-description: ""
+description: "Replication 이란
+
+mysql에서 지원하는 replication이란 복제를 의미합니다. 2대 이상의 DBMS를 나눠서 데이터를 저장하는데요, Master와 Slave라는 개념으로 구성됩니다.
+
+Master는 write기능을 가진 DBMS이고, Slave는 only read의 기능을 가지는 DBMS입니다. 양방향으로 Master-Slave 관계를 가지게 해서 서로 저장하는 백업 서버로 구성할 수 도 있습니다.
+
+사용의 목적은 실시간 Dat 백업과 여러 대의 DB서버의 부하를 분산시킬 수 있다는 것에 있습니다. Insert, Update, Delete와 같은 수정 쿼리를 Master Server에서 처리하고, 처리된 Data를 Slave Server에 전달합니다. 만일 Select 쿼리까지 감당한다면 부하가 심할 때 무리가 있으니 필요에 따라 여러 대의 Slave Server로 복제하여 부하를 분산 할 수 있습니다.
+
+Replication을 설정하는데 몇가지 주의점과 자주보는 에러상황이 있는데요, 설정 방법과 함께 알아보겠습니다."
 featured: true
 hidden: false
 rating: 4.5
