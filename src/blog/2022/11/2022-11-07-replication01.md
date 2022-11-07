@@ -175,40 +175,40 @@ SHOW SLAVE STATUS;
          Relay_Master_Log_File: mysql-bin.000001
               Slave_IO_Running: Yes # 여기
              Slave_SQL_Running: Yes # 여기
-               Replicate_Do_DB: 
-           Replicate_Ignore_DB: 
-            Replicate_Do_Table: 
-        Replicate_Ignore_Table: 
-       Replicate_Wild_Do_Table: 
-   Replicate_Wild_Ignore_Table: 
+               Replicate_Do_DB:
+           Replicate_Ignore_DB:
+            Replicate_Do_Table:
+        Replicate_Ignore_Table:
+       Replicate_Wild_Do_Table:
+   Replicate_Wild_Ignore_Table:
                     Last_Errno: 0
-                    Last_Error: 
+                    Last_Error:
                   Skip_Counter: 0
            Exec_Master_Log_Pos: 966
                Relay_Log_Space: 865
                Until_Condition: None
-                Until_Log_File: 
+                Until_Log_File:
                  Until_Log_Pos: 0
             Master_SSL_Allowed: No
-            Master_SSL_CA_File: 
-            Master_SSL_CA_Path: 
-               Master_SSL_Cert: 
-             Master_SSL_Cipher: 
-                Master_SSL_Key: 
+            Master_SSL_CA_File:
+            Master_SSL_CA_Path:
+               Master_SSL_Cert:
+             Master_SSL_Cipher:
+                Master_SSL_Key:
          Seconds_Behind_Master: 0
  Master_SSL_Verify_Server_Cert: No
                  Last_IO_Errno: 0
-                 Last_IO_Error: 
+                 Last_IO_Error:
                 Last_SQL_Errno: 0
-                Last_SQL_Error: 
-   Replicate_Ignore_Server_Ids: 
+                Last_SQL_Error:
+   Replicate_Ignore_Server_Ids:
               Master_Server_Id: 1
-                Master_SSL_Crl: 
-            Master_SSL_Crlpath: 
+                Master_SSL_Crl:
+            Master_SSL_Crlpath:
                     Using_Gtid: No
-                   Gtid_IO_Pos: 
-       Replicate_Do_Domain_Ids: 
-   Replicate_Ignore_Domain_Ids: 
+                   Gtid_IO_Pos:
+       Replicate_Do_Domain_Ids:
+   Replicate_Ignore_Domain_Ids:
                  Parallel_Mode: optimistic
                      SQL_Delay: 0
            SQL_Remaining_Delay: NULL
@@ -234,40 +234,40 @@ Slave_Non_Transactional_Groups: 0
          Relay_Master_Log_File: mysql-bin.000001
               Slave_IO_Running: Connecting # 이게 문제
              Slave_SQL_Running: Yes
-               Replicate_Do_DB: 
-           Replicate_Ignore_DB: 
-            Replicate_Do_Table: 
-        Replicate_Ignore_Table: 
-       Replicate_Wild_Do_Table: 
-   Replicate_Wild_Ignore_Table: 
+               Replicate_Do_DB:
+           Replicate_Ignore_DB:
+            Replicate_Do_Table:
+        Replicate_Ignore_Table:
+       Replicate_Wild_Do_Table:
+   Replicate_Wild_Ignore_Table:
                     Last_Errno: 0
-                    Last_Error: 
+                    Last_Error:
                   Skip_Counter: 0
            Exec_Master_Log_Pos: 328
                Relay_Log_Space: 256
                Until_Condition: None
-                Until_Log_File: 
+                Until_Log_File:
                  Until_Log_Pos: 0
             Master_SSL_Allowed: No
-            Master_SSL_CA_File: 
-            Master_SSL_CA_Path: 
-               Master_SSL_Cert: 
-             Master_SSL_Cipher: 
-                Master_SSL_Key: 
+            Master_SSL_CA_File:
+            Master_SSL_CA_Path:
+               Master_SSL_Cert:
+             Master_SSL_Cipher:
+                Master_SSL_Key:
          Seconds_Behind_Master: NULL
  Master_SSL_Verify_Server_Cert: No
                  Last_IO_Errno: 2003
                  Last_IO_Error: error connecting to master 'slave@localhost:3306' - retry-time: 60  maximum-retries: 100000  message: Can't connect to server on 'localhost' (111 "Connection refused")
                 Last_SQL_Errno: 0
-                Last_SQL_Error: 
-   Replicate_Ignore_Server_Ids: 
+                Last_SQL_Error:
+   Replicate_Ignore_Server_Ids:
               Master_Server_Id: 0
-                Master_SSL_Crl: 
-            Master_SSL_Crlpath: 
+                Master_SSL_Crl:
+            Master_SSL_Crlpath:
                     Using_Gtid: No
-                   Gtid_IO_Pos: 
-       Replicate_Do_Domain_Ids: 
-   Replicate_Ignore_Domain_Ids: 
+                   Gtid_IO_Pos:
+       Replicate_Do_Domain_Ids:
+   Replicate_Ignore_Domain_Ids:
                  Parallel_Mode: optimistic
                      SQL_Delay: 0
            SQL_Remaining_Delay: NULL
@@ -287,4 +287,107 @@ Slave에서 로그를 보면 마스터 서버의 업데이트 정보를 기다�
 
 해당 결과를 미리 말씀드리자면, 어느 한 쪽의 DB의 서비스가 종료시점에 다른 DB가 데이터를 수정, 변경한다면 종료된 DB를 재시작했을 때 확인하여도 동일한 데이터가 동기화되는 것을 확인 할 수 있습니다.
 
-> WSL에 로컬 및 외부 접근 허용하는 방법은 다음 포스팅에 정리하겠습니다. 시간이 늦은 관계로...
+## WSL에 접근 가능하도록 설정하기
+
+로컬에서 WLS로 접근하게 하는 방법은 간단합니다. 우선 어떠한 문제가 있고 왜 그냥 사용하지 못하는지 알고 시작하는게 좋겠지요.
+
+WSL은 고정 IP가 아닌 유동 IP로 동작됩니다. 재부팅하게 되면 어제 두드리던 내 집 문이 남의 집 문이 되어버리는 느낌입니다.
+
+먼저 IP를 고정해줘야하는 이슈가 발생합니다. 일회성으로 Command Line을 통해 설정 할 수 있고, 배치파일을 생성해서 작업 스케줄러에 등록하고 컴퓨터가 시작 될 때마다 실행되도록 할 수 있습니다. 필자는 후자를 택했습니다. 일회성으로 일일히 하기 번거롭기 때문이죠.
+
+### IP 추가
+
+고정 IP를 할당해야하는데요, 앞서 해야할 것은 wsl의 버전 명을 알아내는 것 입니다.
+
+```bash
+# window
+$ wsl -l
+# wsl
+$ wsl.exe -l
+
+
+C:\Users\pc-name>wsl -l
+Linux용 Windows 하위 시스템 배포:
+docker-desktop
+Ubuntu-22.04
+docker-desktop-data
+```
+
+위 커멘드를 실행하면 명칭이 나오는데 저는 Ubunt-22.04입니다. 실행하기 편하도록 루트 경로에 배치파일을 작성합니다.
+
+```bash
+$ touch ~/static-ip.bat
+
+wsl.exe -d Ubuntu-22.04 -u root ip addr add 192.168.254.17/24 broadcast 192.168.50.255 dev eth0 label eth0:1
+```
+
+위 명령줄로 ip를 추가합니다. add 옆에오는 ip가 고정 ip로 사용할 주소입니다. 저는 사용하는 컴퓨터에서 사용하지 않는 네트워크 대역과 호스트를 주었습니다. 앞의 xxx.xxx.xxx가 네트워크, 그 뒤에 xxx가 호스트입니다.
+
+그리고 broadcast에 다른 네트워크 대역을 주고 호스트를 255로 줍니다. 자세한 내용은 잘 모르지만 255로 설정하면 해당 네트워크 대역을 리슨하는 것으로 알고 있습니다. 그리고 eth0에 eth0:1를 만들어 추가한다는 의미로 해석하고 있습니다.
+
+다음으로 wsl에 로컬의 IP주소를 추가합니다.
+
+```bash
+$ netsh interface ip add address "vEthernet (WSL)" 192.168.254.100 255.255.255.0
+```
+
+이 부분 또한 자세한 내용은 모르지만 이해하기로는 같은 네트워크 대역으로 리슨하는 설정으로 알고 있습니다.
+
+> 잘못된 내용을 지적바랍니다. 즉시 수정하겠습니다.
+
+### 작업 스케줄러 등록
+
+배치파일이 완료되면 아래와 같습니다. 저장된 경로는 루트입니다.
+
+```bat
+wsl.exe -d Ubuntu-22.04 -u root ip addr add 192.168.254.17/24 broadcast 192.168.50.255 dev eth0 label eth0:1
+netsh interface ip add address "vEthernet (WSL)" 192.168.254.100 255.255.255.0
+```
+
+작업 스케줄러를 실행하고 `작업 스케줄러 라이브러리` 디렉토리를 우클릭하여 폴더를 생성합니다. 이름은 알기 편한 것으로 하면 됩니다. 저는 `ws-static-ip`로 했습니다.
+
+그리고 만들어진 폴더를 우클릭하고 `작업 만들기`를 클릭합니다. 이름은 `wsl static ip boot`이라고 했습니다.
+
+그리고 `사용자가 로그온할 때만 실행`과 `가장 높은 수준의 권한으로 실행`에 체크합니다. 트리거 탭으로 이동해서 `새로 만들기`를 클릭합니다.
+
+작업 시작은 `로그온할 때`로 하고 사용자 설정을 합니다. 그 외는 손대지 않습니다. 동작 탭으로 넘어가 `새로 만들기`를 클릭합니다.
+
+설정의 `프로그램/스크립트`에 찾아보기를 클릭해서 위에서 만든 bat파일을 선택해서 등록합니다. 마지막으로 컴퓨터를 재부팅합니다.
+
+그리고 잘 설정이 되었는지 확인하고자 한다면 간단하게 ping 테스트를 합니다.
+
+```bash
+# local
+$ ping -i 1 -c 1 192.168.254.17 # 아까 설정한 고정 IP
+# wsl
+$ ping -i 1 -c 1 192.168.xxx.xxx # 본인의 이더넷 ipv4
+```
+
+로컬에서 아까 설정한 고정 IP로 ping을 보내고 receive가 100%로 출력되면 성공입니다. 마찬가지로 wsl로 접근해서 자신의 이더넷 ipv4주소로 ping을 보냈을 때 receive가 100%라면 정상 연결된 것 입니다.
+
+mysql을 설치해서 연결하고자 한다면 호스트와 포트번호 등을 기입해서 액세스해야합니다.
+
+```bash
+# local
+$ mysql -u username -p -D test_db --host 192.168.254.17 --port 3306
+
+# wsl
+$ mysql -u username -p -D test_db --host 192.168.xxx.xxx --port 3306
+```
+
+한 가지 더 기록하자면 wsl에서 db를 개방하려면 설정이 몇 개 필요합니다.
+
+1. UFW 방화벽 설정
+2. my.conf의 bind-address를 주석처리 또는 0.0.0.0으로 처리 했는가
+3. 외부에서 wsl db의 root계정에 접근하고자 할 때 계정 권한이 localhost인가
+   1. localhost라면 '%' 또는 특정 ip를 지정해야합니다.
+
+```bash
+# 방화벽 설정
+ufw enable
+ufw allow 3306/tcp
+```
+
+여기까지 WSL에 고정 IP를 설정하고 DB서버를 개방하여 접근하는 방법과 Replication 기능을 사용하는 내용이었습니다.
+
+> 잘못된 내용이 있다면 피드백 바랍니다.
