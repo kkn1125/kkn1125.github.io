@@ -1,8 +1,3 @@
-import React, { memo, useState } from "react";
-import { CalendarPicker } from "@mui/x-date-pickers/CalendarPicker";
-import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
-import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
-import todoStorage from "../../../data/todo.json";
 import {
   Badge,
   Box,
@@ -13,6 +8,11 @@ import {
   Typography,
 } from "@mui/material";
 import { PickersDay } from "@mui/x-date-pickers";
+import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
+import { CalendarPicker } from "@mui/x-date-pickers/CalendarPicker";
+import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
+import React, { memo, useEffect, useState } from "react";
+import todoStorage from "../../../data/todo.json";
 
 const tagIcon = {
   undefined: "▷",
@@ -35,6 +35,9 @@ const tagIcon = {
 function Calendar() {
   const [date, setDate] = useState(new Date());
   const [todo, setTodo] = useState([]);
+  let doneCount = 0;
+  let cancelCount = 0;
+  let totalCount = 0;
 
   const handleDate = (newDate) => {
     const year = newDate.getFullYear();
@@ -44,8 +47,29 @@ function Calendar() {
     setDate(newDate);
   };
 
+  useEffect(() => {
+    handleDate(new Date());
+  }, []);
+
+  Object.values(todoStorage).forEach((year) =>
+    Object.values(year).forEach((month) =>
+      Object.values(month).forEach((date) => {
+        date.forEach((date) => {
+          if (date.tag === "check") {
+            doneCount += 1;
+          } else {
+            if (date.tag === "cancel" || date.tag === "rest") {
+              cancelCount += 1;
+            }
+          }
+        });
+        totalCount += date.length;
+      })
+    )
+  );
+
   const handleToday = () => {
-    setDate(new Date());
+    handleDate(new Date());
   };
 
   return (
@@ -67,7 +91,22 @@ function Calendar() {
               },
             },
           }}>
-          <Button onClick={handleToday}>Today</Button>
+          <Stack
+            direction='row'
+            justifyContent='space-between'
+            alignItems='center'
+            sx={{
+              px: 3,
+            }}>
+            <Button onClick={handleToday}>Today</Button>
+            <Stack direction='row'>
+              <Typography>✅{doneCount}</Typography>
+              <Typography>/</Typography>
+              <Typography>❌{cancelCount}</Typography>
+              <Typography>/</Typography>
+              <Typography>🧾{totalCount}</Typography>
+            </Stack>
+          </Stack>
           <CalendarPicker
             date={date}
             onChange={handleDate}
@@ -86,7 +125,10 @@ function Calendar() {
                 if (isTodo) {
                   const percent = parseInt(
                     (isTodo.filter(
-                      (todo) => todo.tag === "check" || todo.tag === "rest"|| todo.tag === "cancel"
+                      (todo) =>
+                        todo.tag === "check" ||
+                        todo.tag === "rest" ||
+                        todo.tag === "cancel"
                     ).length /
                       isTodo.length) *
                       100
