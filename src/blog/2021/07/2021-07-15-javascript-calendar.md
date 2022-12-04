@@ -3,7 +3,7 @@ slug: "/javascript-calendar/"
 layout: post
 modified: 2022-03-23 19:39:06 +0900
 date:   2021-07-15 17:40:27 +0900
-title:  "[JAVASCRIPT] 달력만들기"
+title:  "[JAVASCRIPT] 달력만들기 01"
 author: Kimson
 categories: [ javascript ]
 tags: [calendar, 달력, js, til]

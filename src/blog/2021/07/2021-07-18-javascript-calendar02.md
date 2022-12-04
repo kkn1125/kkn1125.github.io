@@ -3,7 +3,7 @@ slug: "/javascript-calendar02/"
 layout: post
 modified: 2022-03-23 20:30:47 +0900
 date:   2021-07-18 16:21:27 +0900
-title:  "[JAVASCRIPT] 달력만들기 - TODO LIST"
+title:  "[JAVASCRIPT] 달력만들기 02 - TODO LIST"
 author: Kimson
 categories: [ javascript ]
 tags: [달력, calendar, todolist, til]
@@ -138,10 +138,12 @@ Obj.test = {
 </div>
 <script src="/lib/devkalendar.js"></script>
 
+> 2022-12-04 일자로 링크 작동하지 않는 버그 수정, 업데이트 되었습니다. 원인: 기존 jekyll에서 gatsby로 마이그레이션 하면서 누락된 디렉토리 때문
+
 -----
 
 수정된 기능은 setting부분의 tr조정과 table의 width조정, 추가된 기능은 TODO List 기능과 오늘로 이동, 할일 여부에 따른 뱃지, 개수 표기 입니다.
 
 [이전 달력 포스팅](/javascript-calendar/)에 초기 세팅값에 대해 자세히 적혀있습니다.
 
-<a href="/download/devkalendarTODO.zip" download>devKalendarTODO 1.1.0 ver 다운로드</a>
+[devKalendarTODO 1.1.0 ver 다운로드](https://github.com/kkn1125/blog-comments/files/10148672/kalendarJS.zip)
