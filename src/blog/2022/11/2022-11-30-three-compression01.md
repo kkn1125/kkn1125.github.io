@@ -7,7 +7,11 @@ author: Kimson
 categories: [three]
 image: /images/post/covers/TIL-three.png
 tags: [javascript, 3d, draco, encoder, decoder, gltfpack, compress]
-description: ""
+description: "3D Model Files
+
+우선 3D Model 파일을 왜 압축하는지 말하려합니다. 사내에서 업무보는 주요 과제가 3D를 기반으로 돌아가기 때문에 늘 그래픽과 리소스 로드에 드는 비용이 문제라 생각합니다. 그 중에서도 모델 파일들은 텍스쳐와 수많은 버텍스, 애니메이션 등의 정보를 담는 파일이기에 많은 용량을 차지하면서도 꼭 필요한 리소스이기도 합니다.
+
+건축업무를 할 때에 3DMax나 오토데스크에서 제공하는 3d(개인적으로 별로..) 툴, 스케치업, 마야 등으로 인테리어나 외장에 대한 모델링을 한 경험이 있었는데요, 그때 사용했던 범프나 uv등의 지식들이 여기서 도움이 될 줄은 몰랐습니다."
 featured: true
 hidden: false
 rating: 4.5
