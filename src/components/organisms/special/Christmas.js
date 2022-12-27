@@ -109,7 +109,11 @@ function Christmas() {
   }, [toggle]);
 
   return (
-    <Box>
+    <Box
+      sx={{
+        pointerEvents: "none",
+        userSelect: "none",
+      }}>
       <Box
         component={"canvas"}
         sx={{
@@ -120,7 +124,7 @@ function Christmas() {
         }}
         ref={canvasRef}
       />
-			<Typography
+      <Typography
         sx={{
           position: "fixed",
           bottom: "3rem",
