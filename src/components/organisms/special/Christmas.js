@@ -109,14 +109,12 @@ function Christmas() {
   }, [toggle]);
 
   return (
-    <Box
-      sx={{
-        pointerEvents: "none",
-        userSelect: "none",
-      }}>
+    <Box>
       <Box
         component={"canvas"}
         sx={{
+        pointerEvents: "none",
+        userSelect: "none",
           position: "fixed",
           top: 0,
           left: 0,
