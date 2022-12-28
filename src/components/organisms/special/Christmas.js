@@ -113,8 +113,8 @@ function Christmas() {
       <Box
         component={"canvas"}
         sx={{
-        pointerEvents: "none",
-        userSelect: "none",
+          pointerEvents: "none",
+          userSelect: "none",
           position: "fixed",
           top: 0,
           left: 0,
@@ -129,6 +129,7 @@ function Christmas() {
           left: "2rem",
           color: "red",
           fontStyle: "italic",
+          userSelect: "none",
         }}>
         Merry Christmas
       </Typography>
@@ -137,6 +138,7 @@ function Christmas() {
           position: "fixed",
           bottom: "1rem",
           left: "2rem",
+          userSelect: "none",
         }}
         onClick={() => {
           // if (toggle) {
