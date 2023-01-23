@@ -1,5 +1,5 @@
 import { Box, Button, Typography } from "@mui/material";
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, memo } from "react";
 import { useEffect } from "react";
 
 function Christmas() {
@@ -154,4 +154,4 @@ function Christmas() {
   );
 }
 
-export default Christmas;
+export default memo(Christmas);

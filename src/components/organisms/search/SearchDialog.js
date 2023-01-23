@@ -1,4 +1,11 @@
-import React, { Fragment, useCallback, useRef, useState } from "react";
+import React, {
+  Fragment,
+  memo,
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 import Button from "@mui/material/Button";
 import Dialog from "@mui/material/Dialog";
 import DialogActions from "@mui/material/DialogActions";
@@ -23,7 +30,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import { graphql, Link, StaticQuery } from "gatsby";
 import HashList from "../../modules/common/HashList";
 
-function SearchDialog({ children, data }) {
+function SearchDialog({ children, data, keywords }) {
   const theme = useTheme();
   const [open, setOpen] = useState(false);
   const [result, setResult] = useState([]);
@@ -35,12 +42,39 @@ function SearchDialog({ children, data }) {
   const handleClickOpen = useCallback(() => {
     setResult([]);
     setOpen(true);
+    setTimeout(() => {
+      searchRef.current.value = getRandomKey();
+    }, 100);
   });
 
   const handleClose = useCallback(() => {
     setOpen(false);
     searchRef.current.value = "";
   });
+
+  function getRandomKey() {
+    // console.log(keywords);
+    if (keywords) {
+      const filtered = keywords.filter(
+        (blog) => blog.node.frontmatter.slug === location.pathname
+      );
+      if (filtered.length > 0) {
+        const { categories, tags } = filtered.node.frontmatter;
+        console.log(tags);
+        const concats = categories.concat(...tags);
+        // console.log(parseInt((Math.random() * 2).toString()));
+        return concats[parseInt((concats.length * Math.random()).toString())];
+      } else {
+        const index = parseInt(Math.random() * keywords.length);
+        const [rand] = keywords.slice(index, index + 1);
+        const { tags, categories } = rand.node.frontmatter;
+        const concats = categories.concat(...tags);
+        return concats[parseInt(Math.random() * concats.length)];
+      }
+    } else {
+      return "";
+    }
+  }
 
   return (
     <StaticQuery
@@ -175,4 +209,4 @@ function SearchDialog({ children, data }) {
   );
 }
 
-export default SearchDialog;
+export default memo(SearchDialog);

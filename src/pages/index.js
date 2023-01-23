@@ -8,6 +8,7 @@ import {
   ListItemText,
   Paper,
   Typography,
+  useMediaQuery,
   useTheme,
 } from "@mui/material";
 import Grid from "@mui/material/Grid";
@@ -104,7 +105,14 @@ const IndexPage = ({ data }) => {
         </Grid>
         <Divider
           flexItem
-          sx={{ width: "inherit", mt: 7, borderColor: "#ccc" }}
+          sx={{
+            width: "inherit",
+            mt: 7,
+            borderColor: "#ccc",
+            display: useMediaQuery(theme.breakpoints.up("md"))
+              ? "block"
+              : "none",
+          }}
         />
         {/* main */}
         {/* <Grid item xs={12}>

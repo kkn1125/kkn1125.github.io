@@ -539,7 +539,8 @@ function HideAppBar(props) {
                   />
                 </Tooltip>
               </Stack>
-              <SearchDialog />
+
+              <SearchDialog keywords={blogs} />
               {/* <Search>
                   <SearchIconWrapper>
                     <SearchIcon />

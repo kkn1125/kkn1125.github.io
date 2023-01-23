@@ -11,11 +11,11 @@ const Layout = ({ children }) => {
   return (
     <>
       <HideAppBar />
-      <Container maxWidth="xl">
+      <Container maxWidth="md">
         <Box component='main' my={10}>
           {children}
         </Box>
-        <Christmas />
+        {/* <Christmas /> */}
       </Container>
     </>
   );
