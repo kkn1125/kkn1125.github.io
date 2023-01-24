@@ -1,3 +1,29 @@
+function format(/** @type {Date} */ date, form) {
+  return form.replace(/YYYY|MM|dd|HH|mm|ss|SSS|AP/g, ($1) => {
+    const hour = date.getHours();
+    switch ($1) {
+      case "YYYY":
+        return date.getFullYear().toString().padStart(2, "0");
+      case "MM":
+        return (date.getMonth() + 1).toString().padStart(2, "0");
+      case "dd":
+        return date.getDate().toString().padStart(2, "0");
+      case "HH":
+        return hour.toString().padStart(2, "0");
+      case "mm":
+        return date.getMinutes().toString().padStart(2, "0");
+      case "ss":
+        return date.getSeconds().toString().padStart(2, "0");
+      case "SSS":
+        return date.getMilliseconds().toString().padStart(3, "0");
+      case "AP":
+        return hour > 12 ? "PM" : "AM";
+      default:
+        return $1;
+    }
+  });
+}
+
 module.exports = {
   pathPrefix: "/",
   siteMetadata: {
@@ -85,51 +111,51 @@ module.exports = {
         ],
       },
     },
-    {
-      resolve: "gatsby-plugin-sitemap",
-      options: {
-        query: `
-        {
-          tags: allMarkdownRemark(
-            sort: {fields: frontmatter___date, order: DESC}
-            filter: {frontmatter: {published: {eq: true}}}
-          ) {
-            edges {
-              node {
-                frontmatter {
-                  slug
-                  date
-                  modified
-                }
-              }
-            }
-          }
-        }
-      `,
-        resolvePages: ({
-          tags: {
-            edges: { node: allPages },
-          },
-        }) => {
-          console.log(allPages);
-          const wpNodeMap = allPages.reduce((acc, node) => {
-            const uri = node.path;
-            acc[uri] = node;
+    // {
+    //   resolve: "gatsby-plugin-sitemap",
+    //   options: {
+    //     query: `
+    //     {
+    //       tags: allMarkdownRemark(
+    //         sort: {fields: frontmatter___date, order: DESC}
+    //         filter: {frontmatter: {published: {eq: true}}}
+    //       ) {
+    //         edges {
+    //           node {
+    //             frontmatter {
+    //               slug
+    //               date
+    //               modified
+    //             }
+    //           }
+    //         }
+    //       }
+    //     }
+    //   `,
+    //     resolveSiteUrl: () => "https://kkn1125.github.io/",
+    //     resolvePages: ({
+    //       tags: {
+    //         edges: { node: allPages },
+    //       },
+    //     }) => {
+    //       const wpNodeMap = allPages.reduce((acc, node) => {
+    //         const uri = node.path;
+    //         acc[uri] = node;
 
-            return acc;
-          }, {});
+    //         return acc;
+    //       }, {});
 
-          return allPages.map((page) => {
-            return { ...page, ...wpNodeMap[page.path] };
-          });
-        },
-        serialize: ({ path, date }) => {
-          return {
-            url: path,
-            lastmod: modifiedGmt,
-          };
-        },
-      },
-    },
+    //       return allPages.map((page) => {
+    //         return { ...page, ...wpNodeMap[page.path] };
+    //       });
+    //     },
+    //     serialize: ({ path, date }) => {
+    //       return {
+    //         url: path.match(/\/$/g) ? path : path + "/",
+    //         lastmod: format(new Date(), "YYYY-MM-ddTHH:mm:ss.SSSZ"),
+    //       };
+    //     },
+    //   },
+    // },
   ],
 };
