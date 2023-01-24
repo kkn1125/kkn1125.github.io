@@ -85,5 +85,51 @@ module.exports = {
         ],
       },
     },
+    {
+      resolve: "gatsby-plugin-sitemap",
+      options: {
+        query: `
+        {
+          tags: allMarkdownRemark(
+            sort: {fields: frontmatter___date, order: DESC}
+            filter: {frontmatter: {published: {eq: true}}}
+          ) {
+            edges {
+              node {
+                frontmatter {
+                  slug
+                  date
+                  modified
+                }
+              }
+            }
+          }
+        }
+      `,
+        resolvePages: ({
+          tags: {
+            edges: { node: allPages },
+          },
+        }) => {
+          console.log(allPages);
+          const wpNodeMap = allPages.reduce((acc, node) => {
+            const uri = node.path;
+            acc[uri] = node;
+
+            return acc;
+          }, {});
+
+          return allPages.map((page) => {
+            return { ...page, ...wpNodeMap[page.path] };
+          });
+        },
+        serialize: ({ path, date }) => {
+          return {
+            url: path,
+            lastmod: modifiedGmt,
+          };
+        },
+      },
+    },
   ],
 };
