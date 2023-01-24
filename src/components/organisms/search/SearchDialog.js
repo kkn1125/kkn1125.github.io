@@ -53,16 +53,13 @@ function SearchDialog({ children, data, keywords }) {
   });
 
   function getRandomKey() {
-    // console.log(keywords);
     if (keywords) {
       const filtered = keywords.filter(
         (blog) => blog.node.frontmatter.slug === location.pathname
       );
       if (filtered.length > 0) {
-        const { categories, tags } = filtered.node.frontmatter;
-        console.log(tags);
+        const { categories, tags } = filtered[0].node.frontmatter;
         const concats = categories.concat(...tags);
-        // console.log(parseInt((Math.random() * 2).toString()));
         return concats[parseInt((concats.length * Math.random()).toString())];
       } else {
         const index = parseInt(Math.random() * keywords.length);
