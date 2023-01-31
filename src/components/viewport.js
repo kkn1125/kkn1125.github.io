@@ -10,6 +10,8 @@ export default function Viewport({ children }) {
       <meta name='viewport' content='initial-scale=1, width=device-width' />
       <meta name="google-site-verification" content="pPnTHKfNmML6i8GiyBMZNoyhbvX7i0SmgjNmj8r4Aos" />
       <meta name="naver-site-verification" content="6cebf2441529d02294b07c32ba2cd5ce09ba2c71" />
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7028508433313066"
+        crossorigin="anonymous"></script>
       {children}
     </Helmet>
   );
