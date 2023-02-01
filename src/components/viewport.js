@@ -5,7 +5,10 @@ const scripts = `window.dataLayer = window.dataLayer || [];
 function gtag() { dataLayer.push(arguments); }
 gtag('js', new Date());
 gtag('config', 'UA-179074259-1');`;
-
+const ga4script = `window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-XXKQGQJWVT');`
 
 
 export default function Viewport({ children }) {
@@ -24,6 +27,11 @@ export default function Viewport({ children }) {
       <script async src="https://www.googletagmanager.com/gtag/js?id=UA-179074259-1"></script>
       <script type="text/javascript">
         {scripts}
+      </script>
+      {/* <!-- Google tag (gtag.js) --> */}
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXKQGQJWVT"></script>
+      <script>
+        {ga4script}
       </script>
       {children}
     </Helmet>
