@@ -43,6 +43,13 @@
           "time": "2023-01-24 12:21:43"
         }
       ],
+      "6": [
+        {
+          "todo": "MeCab posting",
+          "tag": "check",
+          "time": "2023-02-04 12:21:43"
+        }
+      ],
       "5": [
         {
           "todo": "쉼",
@@ -60,19 +67,19 @@
       "2": [
         {
           "todo": "speechRecognizer API 딥다이브",
-          "tag": "1",
+          "tag": "check",
           "time": "2023-02-01 02:02:55"
         }
       ],
       "1": [
         {
           "todo": "HS256 token login 사용 테스트",
-          "tag": "1",
+          "tag": "check",
           "time": "2023-02-01 02:03:00"
         },
         {
           "todo": "speechRecognizer API 딥다이브",
-          "tag": "2",
+          "tag": "check",
           "time": "2023-02-01 02:02:49"
         },
         {
