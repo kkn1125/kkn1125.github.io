@@ -115,3 +115,30 @@
   letter-spacing: 0rem;
   word-spacing: 0.3rem;
 }
+
+.divider {
+  /* border-width: 2px;
+  border-style: dashed;
+  border-color: #ccc; */
+  border: none;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.divider::before {
+  color: inherit;
+  display: inline-block;
+  /* 텍스트 가리기 위함 */
+  content: "^";
+  color: transparent;
+  user-select: none;
+  letter-spacing: 100vw;
+  width: 100%;
+  font-size: 2.5rem;
+  text-decoration-color: #ccc;
+  text-decoration-line: line-through;
+  text-decoration-style: wavy;
+  -moz-text-decoration-style: wavy;
+  -moz-text-decoration-line: line-through;
+  -moz-text-decoration-color: #ccc;
+}

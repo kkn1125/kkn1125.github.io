@@ -28,14 +28,18 @@ function ControlButton({ controlPost, side }) {
             color: (theme) => theme.palette.white.main,
           },
           "& p:last-child": {
-            color: (theme) => theme.palette.white.main + "a5",
+            color: (theme) => theme.palette.white.main,
           },
         },
       }}>
       <Typography color='grey'>
         {controlPost ? side.toUpperCase() : "No Post"}
       </Typography>
-      <Typography color='GrayText'>
+      <Typography
+        color='GrayText'
+        sx={{
+          transition: "color 150ms ease-in-out",
+        }}>
         {controlPost
           ? cutText(controlPost.title, 70, "...")
           : side === "next"

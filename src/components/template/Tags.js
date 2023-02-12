@@ -49,7 +49,7 @@ function Tags(props) {
       />
       <Grid container gap={5}>
         {edges.map(({ node: { frontmatter: info, id } }) => (
-          <BlogCard key={info.slug + id} main data={info} height={400} />
+          <BlogCard key={info.slug + id} main data={info} height={'100%'} />
         ))}
       </Grid>
     </Box>

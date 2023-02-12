@@ -7,7 +7,13 @@ author: Kimson
 categories: [ django ]
 image: /images/post/covers/TIL-django.png
 tags: [ error, css, til ]
-description: ""
+description: "Bootstrap5로 Form Error 제어
+
+> `bootstrap5`로 생성된 `alert`에 클래스를 추가하는 내용에 대한 글이 1도 없어서 악착같이 찾았습니다 😥
+
+3월에 `ModelForm`관련 포스팅을 한 기억이 있습니다. 이번에는 `ValidationError`를 통해 생성되는 `Error message`를 제어하는 이야기를 하려 합니다.
+
+사용된 라이브러리는 `django-bootstrap5`이고, 이야기할 상황은 \"로그인 처리\"입니다."
 featured: true
 hidden: false
 rating: 3.5
@@ -71,24 +77,21 @@ def clean(self):
 
 `github`저장소를 보면 `ZOSTERA B.V`에서 만든 `django-bootstrap5`가 원본이고, `django-bootstrap-v5`라는 문서는 한 개발자가 `fork`하고 수정한 복사본 입니다.
 
-{%raw%}
-
 ```html
 {% load django_bootstrap5 %} ⇐ django-bootstrap5   ✅
 {% load bootstrap5 %}        ⇐ django-bootstrap-v5 ❌
 ```
 
-{%endraw%}
-
 `django-bootstrap5`를 사용해서 이야기를 이어나가겠습니다.
 
 > `bootstrap5`를 사용하지 말라는 뜻이 아닙니다!
+>
+
+---
 
 ## bootstrap_form 사용법
 
 `bootstrap_form`에는 3가지 인자가 있고 `layout`인자를 사용할 수 있습니다.
-
-{%raw%}
 
 ```html
 {% load django-bootstrap5 %}
@@ -101,8 +104,6 @@ def clean(self):
 
 {% bootstrap_form form exclude="" alert_error_type="" layout="inline" %}
 ```
-
-{%endraw%}
 
 사용예시는 위와 같습니다. `form`은 `modelForm`객체를 말합니다. `exclude`는 필드 중에서 제외하고자 하는 필드의 이름을 적습니다. `username`과 `password`를 모두 제외하고 싶다면, "username,password"라고 적으면 됩니다. `password`하나만 쓰면 아래와 같이 `email`만 표시됩니다.
 
@@ -142,8 +143,6 @@ def clean(self):
 
 `bootstrap_alert`에는 4가지 인자가 있고, 사용예시는 아래와 같습니다.
 
-{%raw%}
-
 ```html
 {% load django-bootstrap5 %}
 
@@ -159,8 +158,6 @@ def clean(self):
 
 {% bootstrap_alert form.non_field_errors.as_text alert_type="danger" dismissible=False extra_classes="pt-5" %}
 ```
-
-{%endraw%}
 
 `content`영역에는 텍스트를 받습니다. `alert`으로 받은 내용을 표시해줍니다. `alert_type`은 `bootstrap`이 지정한 색상이름 모두 사용가능합니다. info, success, primary, warning, danger 등등
 

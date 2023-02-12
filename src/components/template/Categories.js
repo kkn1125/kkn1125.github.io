@@ -50,7 +50,7 @@ function Categories(props) {
       />
       <Grid container gap={5}>
         {edges.map(({ node: { frontmatter: info } }) => (
-          <BlogCard key={info.title} main data={info} height={400} />
+          <BlogCard key={info.title} main data={info} height={'100%'} />
         ))}
       </Grid>
     </Box>

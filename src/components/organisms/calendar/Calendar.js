@@ -78,8 +78,12 @@ function Calendar() {
         <Grid
           item
           sx={{
-            "& .PrivatePickersSlideTransition-root [role='grid']": {
-              pt: 2,
+            "& .PrivatePickersSlideTransition-root.MuiDayPicker-slideTransition":
+              {
+                overflowX: "inherit",
+              },
+            "& .MuiDayPicker-monthContainer": {
+              overflow: "inherit",
             },
             "& .MuiTypography-root.MuiTypography-caption": {
               color: (theme) => theme.palette.text.primary,
@@ -149,7 +153,7 @@ function Calendar() {
                         isSameDay && {
                           ".MuiTouchRipple-root": {
                             borderRadius: "50%",
-                            border: "1px solid #2196f3",
+                            border: "2px solid #2196f3",
                           },
                         }),
                     }}>

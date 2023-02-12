@@ -85,14 +85,20 @@ const IndexPage = ({ data }) => {
                   </Avatar>
                 </ListItemAvatar>
                 <ListItemText
-                  primary={post.title}
+                  primary={cutText(
+                    post.title,
+                    useMediaQuery(theme.breakpoints.up("md")) ? 50 : 15
+                  )}
                   primaryTypographyProps={{
                     sx: (theme) => ({
                       fontSize: theme.typography.pxToRem(28),
                       fontWeight: 700,
                     }),
                   }}
-                  secondary={cutText(post.description, 150)}
+                  secondary={cutText(
+                    post.description,
+                    useMediaQuery(theme.breakpoints.up("md")) ? 150 : 35
+                  )}
                   secondaryTypographyProps={{
                     sx: {
                       color: "#888",

@@ -9,13 +9,13 @@ import {
 
 const darkTheme = {
   primary: {
-    main: deepOrange[500],
+    main: '#234841',
   },
   secondary: {
-    main: lightGreen[500],
+    main: '#537871',
   },
   info: {
-    main: lightBlue[500],
+    main: '#B0A8B9',
   },
   success: {
     main: green[500],
@@ -24,7 +24,7 @@ const darkTheme = {
     main: red[500],
   },
   warning: {
-    main: deepOrange[500],
+    main: '#FFFADE',
   },
   white: {
     main: "#fff",
@@ -34,7 +34,7 @@ const darkTheme = {
     secondary: grey[500],
   },
   GrayText: "#b1b1b1",
-  divider: deepOrange[700],
+  divider: '#537871',
   contrastThreshold: 3,
   tonalOffset: 0.2,
   background: {

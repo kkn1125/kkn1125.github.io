@@ -1,4 +1,6 @@
 import {
+  Alert,
+  AlertTitle,
   Box,
   CardMedia,
   CircularProgress,
@@ -41,6 +43,8 @@ function Template({ data, pageContext }) {
       wordCount: { words },
     },
   } = data;
+  const isOverThreeMonth =
+    Date.now() > new Date(frontmatter.date.replace("|", "")).setMonth(3);
   const commentEl = useRef();
   const theme = useTheme();
   const [mode, setMode] = useState(false);
@@ -105,6 +109,19 @@ function Template({ data, pageContext }) {
       }
     }
   };
+
+  const ThreeMonthOverPosting = () => (
+    <Alert
+      variant='standard'
+      severity='warning'
+      sx={{
+        mt: 2,
+      }}>
+      <AlertTitle>3개월 이상 지난 포스팅입니다!</AlertTitle>
+      포스팅에 소개된 라이브러리나 프레임워크의 버전이 변경되었을 수 있으니 해당
+      공식 홈페이지에서 버전 체크를 하시기 바랍니다 🙇‍♂️
+    </Alert>
+  );
 
   return (
     <>
@@ -211,6 +228,9 @@ function Template({ data, pageContext }) {
             />
             <BlogCardInfo data={frontmatter} />
             {/* 본문 */}
+            {isOverThreeMonth && (
+              <ThreeMonthOverPosting></ThreeMonthOverPosting>
+            )}
             <Box
               sx={{
                 my: 7,
@@ -232,6 +252,9 @@ function Template({ data, pageContext }) {
                     }
                     if (domNode.name && domNode.name === "a") {
                       domNode.attribs["target"] = "_blank";
+                    }
+                    if (domNode.name === "hr") {
+                      domNode.attribs["class"] = "divider";
                     }
                     if (domNode.name === "pre") {
                       const children = domNode.children[0];
@@ -334,6 +357,9 @@ function Template({ data, pageContext }) {
                 })}
               </Box>
             </Box>
+            {isOverThreeMonth && (
+              <ThreeMonthOverPosting></ThreeMonthOverPosting>
+            )}
             <Divider
               sx={{
                 my: 2,

@@ -1,4 +1,4 @@
-import { Box, Paper, Stack, styled, useMediaQuery, useTheme } from "@mui/material";
+import { Box, Paper, Stack, styled, useTheme } from "@mui/material";
 import CardContent from "@mui/material/CardContent";
 import { navigate } from "gatsby";
 import React, { memo } from "react";
@@ -38,18 +38,24 @@ function BlogCard({ data, height, main = false }) {
         sx={{
           width: "100%",
           maxWidth: 700,
-          height: height,
-          minHeight: useMediaQuery(theme.breakpoints.up('md')) && main ? (height + 100) * 1.5 : height + 100,
+          overflow: "hidden",
           backgroundColor: "#fff",
-          objectFit: "cover",
           cursor: "pointer",
-          transition: "background-size 150ms",
-          backgroundImage: `url(${data.image.replace(/assets/g, "")})`,
-          backgroundSize: "100%",
-          backgroundRepeat: "no-repeat",
-          backgroundPosition: "center center",
-          [`&:hover`]: {
-            backgroundSize: "110%",
+          [`&:hover::before`]: {
+            transform: "scale(1.1)",
+            // backgroundSize: "contain",
+          },
+          [`&::before`]: {
+            display: "inline-block",
+            content: '""',
+            height: height,
+            width: "100%",
+            objectFit: "cover",
+            transition: "100ms ease-in-out",
+            backgroundImage: `url(${data.image.replace(/assets/g, "")})`,
+            backgroundSize: "cover",
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: "center center",
           },
         }}
       />
