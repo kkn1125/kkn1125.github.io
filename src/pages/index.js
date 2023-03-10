@@ -1,6 +1,7 @@
 import FolderIcon from "@mui/icons-material/Folder";
 import {
   Avatar,
+  Box,
   Divider,
   List,
   ListItem,
@@ -52,13 +53,13 @@ const IndexPage = ({ data }) => {
             variant='h3'
             gutterBottom
             sx={{
-              borderBottomColor: "#ccc",
-              borderBottomWidth: 1,
+              borderBottomColor: "#777777",
+              borderBottomWidth: 5,
               borderBottomStyle: "solid",
               fontWeight: 700,
               pb: 2,
             }}>
-            Features
+            Features 📌
           </Typography>
           <List
             dense={true}
@@ -80,9 +81,7 @@ const IndexPage = ({ data }) => {
                   sx={{
                     pt: 1,
                   }}>
-                  <Avatar>
-                    <FolderIcon />
-                  </Avatar>
+                  <Avatar src={post.image}>{/* <FolderIcon /> */}</Avatar>
                 </ListItemAvatar>
                 <ListItemText
                   primary={cutText(

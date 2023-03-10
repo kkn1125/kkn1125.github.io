@@ -6,7 +6,7 @@ import { Link, navigate } from "gatsby";
 
 function HashList({ hash, types }) {
   const handleClickForHash = (e, slug) => {
-    navigate(`/${types}/` + slug);
+    navigate(`/${types}/` + slug + "/");
   };
 
   return (

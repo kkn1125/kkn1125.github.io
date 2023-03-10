@@ -349,7 +349,7 @@ function HideAppBar(props) {
                         key={page.name}
                         onClick={handleCloseNavMenu}
                         component={Link}
-                        to={page.path}
+                        to={page.path + "/"}
                         sx={{
                           display: "block",
                           color: (theme) => theme.palette.text.primary,
@@ -427,13 +427,14 @@ function HideAppBar(props) {
                     xs: "none",
                     md: "flex",
                   },
+                  gap: 1,
                 }}>
                 {pages.map((page) => (
                   <Button
                     key={page.name}
                     onClick={handleCloseNavMenu}
                     component={Link}
-                    to={page.path}
+                    to={page.path + "/"}
                     sx={{
                       my: 2,
                       display: "block",

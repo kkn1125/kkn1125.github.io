@@ -103,12 +103,12 @@ function Calendar() {
               px: 3,
             }}>
             <Button onClick={handleToday}>Today</Button>
-            <Stack direction='row'>
-              <Typography>✅{doneCount}</Typography>
-              <Typography>/</Typography>
-              <Typography>❌{cancelCount}</Typography>
-              <Typography>/</Typography>
-              <Typography>🧾{totalCount}</Typography>
+            <Stack direction='row' sx={{fontSize: 12}}>
+              <Typography fontSize="inherit">✅{doneCount}</Typography>
+              <Typography fontSize="inherit">/</Typography>
+              <Typography fontSize="inherit">❌{cancelCount}</Typography>
+              <Typography fontSize="inherit">/</Typography>
+              <Typography fontSize="inherit">🧾{totalCount}</Typography>
             </Stack>
           </Stack>
           <CalendarPicker

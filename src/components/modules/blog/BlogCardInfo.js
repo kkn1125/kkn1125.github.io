@@ -18,7 +18,7 @@ function BlogCardInfo({ data, noavatar }) {
       )}
       <Typography
         component='a'
-        href='https://github.com/kkn1125'
+        href='https://github.com/kkn1125/'
         target='_blank'
         color='text.primary'
         variant='caption'

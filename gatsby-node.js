@@ -82,7 +82,7 @@ exports.createPages = async ({ graphql, actions, ...props }) => {
   result.data.blog.edges.forEach((edge, i, o) => {
     if (Math.ceil(o.length / perBlogPage) >= i + 1) {
       createPage({
-        path: i === 0 ? `/blog` : `/blog/${i + 1}`,
+        path: i === 0 ? `/blog` : `/blog/${i + 1}/`,
         component: blogListTemplate,
         context: {
           title: edge.node.frontmatter.title,
@@ -96,6 +96,7 @@ exports.createPages = async ({ graphql, actions, ...props }) => {
   });
 
   result.data.blog.edges.forEach((edge) => {
+    // console.log(edge.node.frontmatter.slug)
     createPage({
       path: `${edge.node.frontmatter.slug}`,
       component: blogPostTemplate,
@@ -106,8 +107,9 @@ exports.createPages = async ({ graphql, actions, ...props }) => {
     });
   });
   result.data.categories.group.forEach((group) => {
+    // console.log(group.fieldValue)
     createPage({
-      path: `categories/${group.fieldValue}`,
+      path: `categories/${group.fieldValue}/`,
       component: categoriesTemplate,
       context: {
         count: group.totalCount,
@@ -117,7 +119,7 @@ exports.createPages = async ({ graphql, actions, ...props }) => {
   });
   result.data.tags.group.forEach((group) => {
     createPage({
-      path: `tags/${group.fieldValue}`,
+      path: `tags/${group.fieldValue}/`,
       component: tagsTemplate,
       context: {
         count: group.totalCount,

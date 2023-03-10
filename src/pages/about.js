@@ -22,19 +22,19 @@ const rows = [
   {
     icon: <GitHubIcon fontSize='small' />,
     name: "Github",
-    url: "https://github.com/kkn1125",
+    url: "https://github.com/kkn1125/",
     target: "_blank",
   },
   {
     icon: <InventoryIcon fontSize='small' />,
     name: "Portfolio",
-    url: "https://kkn1125.github.io/portfolio",
+    url: "https://kkn1125.github.io/portfolio/",
     target: "_blank",
   },
   {
     icon: <MenuBookIcon fontSize='small' />,
     name: "Wiki",
-    url: "https://kkn1125.github.io/wikimson",
+    url: "https://kkn1125.github.io/wikimson/",
     target: "_blank",
   },
 ];
@@ -52,7 +52,7 @@ function About() {
         }}
       />
       <Alert severity='success' sx={{ mb: 3 }}>
-        2022-10-17일자 기준으로 점검된 개인 블로그 입니다. 버그나 포스팅 중 잘못된 사항이 있다면 언제든지 이슈로 알려주시면 감사하겠습니다.
+        2023-03-11 일자 기준으로 점검된 개인 블로그 입니다. 버그나 포스팅 중 잘못된 사항이 있다면 언제든지 이슈로 알려주시면 감사하겠습니다.
       </Alert>
       <Typography variant='body1'>
         Gatsby로 만든 블로그입니다.
