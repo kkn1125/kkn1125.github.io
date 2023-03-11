@@ -21,6 +21,9 @@ const lightTheme = {
   success: {
     main: '#006E60',
   },
+  danger: {
+    main: '#BC5B40',
+  },
   error: {
     main: '#BC5B40',
   },

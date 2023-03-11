@@ -20,6 +20,9 @@ const darkTheme = {
   success: {
     main: green[500],
   },
+  danger: {
+    main: red[500],
+  },
   error: {
     main: red[500],
   },
