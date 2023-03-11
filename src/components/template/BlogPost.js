@@ -20,7 +20,7 @@ import "highlight.js/styles/monokai.css";
 import parse from "html-react-parser";
 import React, { memo, useEffect, useRef, useState } from "react";
 import SyntaxHighlighter from "react-syntax-highlighter";
-import { atelierPlateauDark } from "react-syntax-highlighter/src/styles/hljs";
+import { atelierHeathDark } from "react-syntax-highlighter/src/styles/hljs";
 import BlogCardInfo from "../modules/blog/BlogCardInfo";
 import ControlButton from "../modules/blog/ControlButton";
 import Favorite from "../modules/common/Favorite";
@@ -144,7 +144,7 @@ function Template({ data, pageContext }) {
               position: "sticky",
               top: (theme) => theme.spacing(70 * 0.125),
               overflow: "auto",
-              maxHeight: 300,
+              // height: '100%',
               "& ul": { padding: 0 },
             }}>
             <Typography
@@ -228,9 +228,7 @@ function Template({ data, pageContext }) {
             />
             <BlogCardInfo data={frontmatter} />
             {/* 본문 */}
-            {isOverThreeMonth && (
-              <ThreeMonthOverPosting></ThreeMonthOverPosting>
-            )}
+            {isOverThreeMonth && <ThreeMonthOverPosting />}
             <Box
               sx={{
                 my: 7,
@@ -244,6 +242,10 @@ function Template({ data, pageContext }) {
                   letterSpacing: 0.9,
                   wordSpacing: 2.5,
                   fontSize: "0.95rem",
+                  "& blockquote": {
+                    backgroundColor: (theme) =>
+                      theme.palette.mode === "dark" ? "#555555" : "#eeeeee",
+                  },
                 }}>
                 {parse(html, {
                   replace: (domNode) => {
@@ -344,7 +346,7 @@ function Template({ data, pageContext }) {
                                   ?.split("-")
                                   ?.pop() || "plaintext"
                               }
-                              style={atelierPlateauDark}>
+                              style={atelierHeathDark}>
                               {domNode.children
                                 ? domNode.children[0].children[0].data.trim()
                                 : ""}
@@ -357,9 +359,7 @@ function Template({ data, pageContext }) {
                 })}
               </Box>
             </Box>
-            {isOverThreeMonth && (
-              <ThreeMonthOverPosting></ThreeMonthOverPosting>
-            )}
+            {isOverThreeMonth && <ThreeMonthOverPosting />}
             <Divider
               sx={{
                 my: 2,

@@ -10,22 +10,22 @@ import {
 
 const lightTheme = {
   primary: {
-    main: blue[500],
+    main: '#373C00',
   },
   secondary: {
-    main: lightGreen[500],
+    main: '#005248',
   },
   info: {
-    main: lightBlue[500],
+    main: '#B8B27A',
   },
   success: {
-    main: green[500],
+    main: '#006E60',
   },
-  danger: {
-    main: red[500],
+  error: {
+    main: '#BC5B40',
   },
   warning: {
-    main: deepOrange[500],
+    main: '#FFD84B',
   },
   white: {
     main: "#ffffff",

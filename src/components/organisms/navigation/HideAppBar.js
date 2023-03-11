@@ -287,7 +287,12 @@ function HideAppBar(props) {
     <Fragment>
       <CssBaseline />
       <HideOnScroll {...props}>
-        <AppBar>
+        <AppBar
+          sx={{
+            [`&.MuiPaper-root.MuiAppBar-root`]: {
+              // backgroundImage: 'linear-gradient(to right, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.5))'
+            },
+          }}>
           <Container maxWidth='xl'>
             <Toolbar disableGutters>
               <Avatar
@@ -358,7 +363,8 @@ function HideAppBar(props) {
                         }}>
                         {page.name === "blog" ? (
                           <>
-                            {page.name} <Chip label={"+" + blogCount} />
+                            {page.name}{" "}
+                            <Chip label={"+" + blogCount} color='error' />
                           </>
                         ) : (
                           page.name

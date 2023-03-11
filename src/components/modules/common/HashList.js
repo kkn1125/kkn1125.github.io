@@ -18,7 +18,7 @@ function HashList({ hash, types }) {
       {hash?.slice(0, 3)?.map((type, idx) => (
         <Chip
           key={"type" + type + idx}
-          color={types === "categories" ? "info" : "warning"}
+          color={types === "categories" ? "secondary" : "info"}
           label={type}
           variant='outlined'
           size='small'
@@ -37,7 +37,7 @@ function HashList({ hash, types }) {
             <Chip
               key={type}
               size='small'
-              color={types === "categories" ? "info" : "warning"}
+              color={types === "categories" ? "secondary" : "info"}
               label={type}
               onClick={(e) => {
                 handleClickForHash(e, type);

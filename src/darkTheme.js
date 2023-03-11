@@ -15,12 +15,12 @@ const darkTheme = {
     main: '#537871',
   },
   info: {
-    main: '#B0A8B9',
+    main: '#AEAC99',
   },
   success: {
     main: green[500],
   },
-  danger: {
+  error: {
     main: red[500],
   },
   warning: {
