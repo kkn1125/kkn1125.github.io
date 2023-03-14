@@ -202,7 +202,7 @@ function HideAppBar(props) {
               localStorage["userInfo"] = "{}";
             }
           } else {
-            console.warn("[Matches] data is valid.");
+            // console.warn("[Matches] data is valid.");
           }
         }
         return JSON.parse(localStorage["userInfo"]);

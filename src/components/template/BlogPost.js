@@ -48,6 +48,7 @@ function Template({ data, pageContext }) {
   const commentEl = useRef();
   const theme = useTheme();
   const [mode, setMode] = useState(false);
+  console.log("paging");
 
   useEffect(() => {
     const scriptEl = document.createElement("script");

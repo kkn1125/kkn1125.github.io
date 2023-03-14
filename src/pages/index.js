@@ -8,16 +8,19 @@ import {
   ListItemAvatar,
   ListItemText,
   Paper,
+  Stack,
   Typography,
   useMediaQuery,
   useTheme,
 } from "@mui/material";
 import Grid from "@mui/material/Grid";
 import { graphql, navigate } from "gatsby";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import Seo from "../components/modules/seo/Seo";
 import Calendar from "../components/organisms/calendar/Calendar";
+import BlogHook from "../hooks/blogHook";
+import { API_BASE_PATH, API_PATH } from "../util/globals";
 import { cutText } from "../util/tools";
 
 // markup
@@ -32,6 +35,25 @@ const IndexPage = ({ data }) => {
     },
     ...otherPost
   ] = edges;
+  const blogs = BlogHook();
+  const [blogInfos, setBlogInfos] = useState([]);
+
+  useEffect(() => {
+    console.log("paging");
+    (async function () {
+      const res = await fetch(API_PATH + API_BASE_PATH + "/posts/bulk", {
+        method: "post",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          posts: blogs.map((bg) => bg.node.frontmatter),
+        }),
+      });
+      const list = await res.json();
+      setBlogInfos(list.payload || []);
+    })();
+  }, []);
 
   return (
     <>
@@ -104,6 +126,12 @@ const IndexPage = ({ data }) => {
                     },
                   }}
                 />
+                <Stack direction='row'>
+                  <Typography sx={{ flex: 1 }}>👓</Typography>
+                  <Typography sx={{ flex: 1 }}>
+                    {blogInfos.find((bi) => bi.slug === post.slug)?.likes || 0}
+                  </Typography>
+                </Stack>
               </ListItem>
             ))}
           </List>

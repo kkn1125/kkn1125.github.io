@@ -24,11 +24,22 @@ function format(/** @type {Date} */ date, form) {
   });
 }
 
+const dotenv = require("dotenv");
+const path = require("path");
+const mode = process.env.NODE_ENV;
+console.log(mode);
+dotenv.config({
+  path: path.join(path.resolve(), `.env`),
+});
+dotenv.config({
+  path: path.join(path.resolve(), `.env.${mode}`),
+});
+
 module.exports = {
   pathPrefix: "/",
   siteMetadata: {
     title: `blog`,
-    siteUrl: `https://kkn1125.github.io`,
+    siteUrl: process.env.GATSBY_BLOG_PATH,
   },
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
   // If you use VSCode you can also use the GraphQL plugin
@@ -99,14 +110,14 @@ module.exports = {
     {
       resolve: "gatsby-plugin-robots-txt",
       options: {
-        host: "https://kkn1125.github.io/",
-        sitemap: "https://kkn1125.github.io/sitemap.xml",
+        host: `${process.env.GATSBY_BLOG_PATH}/`,
+        sitemap: `${process.env.GATSBY_BLOG_PATH}/sitemap.xml`,
         policy: [
           {
             userAgent: "*",
             allow: "/",
             disAllow: "/assets/images/kim.jpg",
-            sitemap: "https://kkn1125.github.io/sitemap.xml",
+            sitemap: `${process.env.GATSBY_BLOG_PATH}/sitemap.xml`,
           },
         ],
       },

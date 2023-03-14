@@ -8,8 +8,7 @@ import Footer from "../organisms/Footer";
 
 const Layout = ({ children }) => {
   const theme = useTheme();
-
-  return (
+    return (
     <>
       <HideAppBar />
       <Container maxWidth='lg'>

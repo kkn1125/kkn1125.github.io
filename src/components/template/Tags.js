@@ -25,6 +25,7 @@ function Tags(props) {
   const {
     allMarkdownRemark: { edges },
   } = data;
+  console.log("paging");
   return (
     <Box>
       <Seo frontmatter={{ title: "Tags" }} />
@@ -49,7 +50,7 @@ function Tags(props) {
       />
       <Grid container gap={5}>
         {edges.map(({ node: { frontmatter: info, id } }) => (
-          <BlogCard key={info.slug + id} main data={info} height={'100%'} />
+          <BlogCard key={info.slug + id} main data={info} height={"100%"} />
         ))}
       </Grid>
     </Box>

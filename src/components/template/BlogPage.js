@@ -24,6 +24,7 @@ const BlogPage = ({ data, pageContext }) => {
     setPage(value);
   };
 
+  console.log("paging");
   return (
     <BlogLayout>
       <Typography className='font-main' variant='h3'>

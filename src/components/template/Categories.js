@@ -26,7 +26,8 @@ function Categories(props) {
     allMarkdownRemark: { edges },
   } = data;
 
-  return (
+    console.log("paging");
+    return (
     <Box>
       <Seo frontmatter={{ title: "Categories" }} />
       <Typography className='font-main' variant='h2' component='span'>

@@ -40,7 +40,8 @@ const rows = [
 ];
 
 function About() {
-  return (
+    console.log("paging");
+    return (
     <Container maxWidth="md">
       <Typography variant='h3' gutterBottom className='font-main'>
         About

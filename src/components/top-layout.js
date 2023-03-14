@@ -9,6 +9,7 @@ import lightTheme from "../lightTheme";
 import darkTheme from "../darkTheme";
 import BlogProvider from "../context/BlogProvider";
 import PickProvider from "../context/PickProvider";
+import { API_BASE_PATH, API_PATH } from "../util/globals";
 
 const ColorModeContext = createContext({ toggleColorMode: () => {} });
 
@@ -34,6 +35,32 @@ export default function TopLayout({ children }) {
   const theme = useMemo(() =>
     responsiveFontSizes(createTheme(getDesignTokens(mode)), [mode])
   );
+
+  async function initializeUser() {
+    // console.log(API_PATH);
+    const res = await fetch(API_PATH + API_BASE_PATH + "/users/initialize", {
+      method: "post",
+    });
+    try {
+      const json = await res.json();
+      console.log("json", json);
+      if (json?.ok) {
+        if (!localStorage.getItem("users")) {
+          localStorage.setItem("users", JSON.stringify({}));
+        }
+        const userStorage = JSON.parse(localStorage.getItem("users"));
+        // const { token, ip, hash, expiredIn } = json.payload;
+        Object.assign(userStorage, json.payload);
+        localStorage.setItem("users", JSON.stringify(userStorage));
+      }
+    } catch (error) {
+      console.log(error);
+      const text = await res.text();
+      console.log("text", text);
+    }
+  }
+  initializeUser();
+  console.log("[TEST]", "반복 실행되는가");
 
   return (
     <>

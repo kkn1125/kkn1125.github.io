@@ -12,3 +12,5 @@ rakefile
 public
 src/gatsby-types.d.ts
 \[x\]*
+
+.env*
