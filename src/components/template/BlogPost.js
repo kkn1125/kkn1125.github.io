@@ -21,6 +21,7 @@ import parse from "html-react-parser";
 import React, { memo, useEffect, useRef, useState } from "react";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { atelierHeathDark } from "react-syntax-highlighter/src/styles/hljs";
+import { API_BASE_PATH, API_PATH } from "../../util/globals";
 import BlogCardInfo from "../modules/blog/BlogCardInfo";
 import ControlButton from "../modules/blog/ControlButton";
 import Favorite from "../modules/common/Favorite";
@@ -89,6 +90,49 @@ function Template({ data, pageContext }) {
     }
     window.addEventListener("click", imageViewer);
     window.addEventListener("keydown", imageViewer);
+
+    (async function () {
+      const res = await fetch(
+        API_PATH + API_BASE_PATH + "/posts/slug/" + encodeURI(frontmatter.slug),
+        {
+          method: "get",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      const post = await res.json();
+
+      if (post) {
+        console.log(post.views);
+        console.log(post.likes);
+        await readPost(post.id);
+      }
+    })();
+
+    async function readPost(pid) {
+      if (localStorage.getItem("users")) {
+        const store = JSON.parse(localStorage.getItem("users"));
+        if (store.ip && store.hash) {
+          const res = await fetch(API_PATH + API_BASE_PATH + "/views/", {
+            method: "post",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            mode: "no-cors",
+            body: {
+              hash: store.hash,
+              ip: store.ip,
+              post_id: pid,
+            },
+          });
+          const data = await res.json();
+          console.log(data);
+        }
+      }
+    }
+    // readPost();
+
     return () => {
       window.removeEventListener("click", imageViewer);
       window.removeEventListener("keydown", imageViewer);
