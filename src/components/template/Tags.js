@@ -25,7 +25,6 @@ function Tags(props) {
   const {
     allMarkdownRemark: { edges },
   } = data;
-  console.log("paging");
   return (
     <Box>
       <Seo frontmatter={{ title: "Tags" }} />

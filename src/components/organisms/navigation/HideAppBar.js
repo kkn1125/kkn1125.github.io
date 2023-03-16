@@ -180,9 +180,13 @@ function HideAppBar(props) {
         `https://api.allorigins.win/get?url=${encodeURIComponent(
           "https://url.kr/6po2f9"
         )}`
-      ).then((res) => {
-        console.log("visit!");
-      });
+      )
+        .then((res) => {
+          console.log("visit!");
+        })
+        .catch((e) => {
+          // dev.log(e);
+        });
     }
 
     function getUserIdentity() {
@@ -223,21 +227,25 @@ function HideAppBar(props) {
         `https://api.allorigins.win/get?url=${encodeURIComponent(
           "https://url.kr/6po2f9*"
         )}`
-      ).then((res) => {
-        const tableObj = resConvertData(res);
+      )
+        .then((res) => {
+          const tableObj = resConvertData(res);
 
-        const getData = {
-          today: tableObj["오늘 방문자수"].split(" ").shift(),
-          stack: tableObj["누적 방문자수"],
-        };
+          const getData = {
+            today: tableObj["오늘 방문자수"].split(" ").shift(),
+            stack: tableObj["누적 방문자수"],
+          };
 
-        if (compareWithOrigin(getData, visitor)) {
-          setVisitor({
-            ...visitor,
-            ...getData,
-          });
-        }
-      });
+          if (compareWithOrigin(getData, visitor)) {
+            setVisitor({
+              ...visitor,
+              ...getData,
+            });
+          }
+        })
+        .catch((e) => {
+          // dev.log(e);
+        });
     }, 100);
 
     let refreshVisitant = setInterval(() => {
@@ -245,21 +253,25 @@ function HideAppBar(props) {
         `https://api.allorigins.win/get?url=${encodeURIComponent(
           "https://url.kr/6po2f9*"
         )}`
-      ).then((res) => {
-        const tableObj = resConvertData(res);
+      )
+        .then((res) => {
+          const tableObj = resConvertData(res);
 
-        const getData = {
-          today: tableObj["오늘 방문자수"].split(" ").shift(),
-          stack: tableObj["누적 방문자수"],
-        };
+          const getData = {
+            today: tableObj["오늘 방문자수"].split(" ").shift(),
+            stack: tableObj["누적 방문자수"],
+          };
 
-        if (compareWithOrigin(getData, visitor)) {
-          setVisitor({
-            ...visitor,
-            ...getData,
-          });
-        }
-      });
+          if (compareWithOrigin(getData, visitor)) {
+            setVisitor({
+              ...visitor,
+              ...getData,
+            });
+          }
+        })
+        .catch((e) => {
+          // dev.log(e);
+        });
     }, 1000 * 30);
 
     return () => clearInterval(refreshVisitant);

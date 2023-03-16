@@ -15,6 +15,7 @@ import {
   Typography,
   useTheme,
 } from "@mui/material";
+import axios from "axios";
 import { graphql } from "gatsby";
 import "highlight.js/styles/monokai.css";
 import parse from "html-react-parser";
@@ -49,7 +50,6 @@ function Template({ data, pageContext }) {
   const commentEl = useRef();
   const theme = useTheme();
   const [mode, setMode] = useState(false);
-  console.log("paging");
 
   useEffect(() => {
     const scriptEl = document.createElement("script");
@@ -92,10 +92,9 @@ function Template({ data, pageContext }) {
     window.addEventListener("keydown", imageViewer);
 
     (async function () {
-      const res = await fetch(
+      const res = await axios.get(
         API_PATH + API_BASE_PATH + "/posts/slug/" + encodeURI(frontmatter.slug),
         {
-          method: "get",
           headers: {
             "Content-Type": "application/json",
           },

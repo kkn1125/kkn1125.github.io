@@ -52,6 +52,7 @@
     "html-react-parser": "^2.0.0",
     "live-server": "^1.2.2",
     "node-gyp-build-optional-packages": "^4.3.5",
+    "openai": "^3.2.1",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-helmet": "^6.1.0",

@@ -10,6 +10,8 @@ import darkTheme from "../darkTheme";
 import BlogProvider from "../context/BlogProvider";
 import PickProvider from "../context/PickProvider";
 import { API_BASE_PATH, API_PATH } from "../util/globals";
+import { Modal } from "./organisms/dev/Modal";
+import axios from "axios";
 
 const ColorModeContext = createContext({ toggleColorMode: () => {} });
 
@@ -38,9 +40,9 @@ export default function TopLayout({ children }) {
 
   async function initializeUser() {
     // console.log(API_PATH);
-    const res = await fetch(API_PATH + API_BASE_PATH + "/users/initialize", {
-      method: "post",
-    });
+    const res = await axios.post(
+      API_PATH + API_BASE_PATH + "/users/initialize"
+    );
     try {
       const json = await res.json();
       console.log("json", json);
@@ -59,8 +61,8 @@ export default function TopLayout({ children }) {
       console.log("text", text);
     }
   }
-  initializeUser();
-  console.log("[TEST]", "반복 실행되는가");
+  // initializeUser();
+  // console.log("[TEST]", "반복 실행되는가");
 
   return (
     <>
@@ -72,6 +74,7 @@ export default function TopLayout({ children }) {
               {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
               <CssBaseline />
               <Layout>{children}</Layout>
+              <Modal />
             </ThemeProvider>
           </ColorModeContext.Provider>
         </BlogProvider>

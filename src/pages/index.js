@@ -14,6 +14,7 @@ import {
   useTheme,
 } from "@mui/material";
 import Grid from "@mui/material/Grid";
+import axios from "axios";
 import { graphql, navigate } from "gatsby";
 import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
@@ -39,20 +40,21 @@ const IndexPage = ({ data }) => {
   const [blogInfos, setBlogInfos] = useState([]);
 
   useEffect(() => {
-    console.log("paging");
-    (async function () {
-      const res = await fetch(API_PATH + API_BASE_PATH + "/posts/bulk", {
-        method: "post",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          posts: blogs.map((bg) => bg.node.frontmatter),
-        }),
-      });
-      const list = await res.json();
-      setBlogInfos(list.payload || []);
-    })();
+    // (async function () {
+    //   const res = await axios.post(
+    //     API_PATH + API_BASE_PATH + "/posts/bulk",
+    //     {
+    //       headers: {
+    //         "Content-Type": "application/json",
+    //       },
+    //     },
+    //     {
+    //       posts: blogs.map((bg) => bg.node.frontmatter),
+    //     }
+    //   );
+    //   const list = await res.json();
+    //   setBlogInfos(list.payload || []);
+    // })();
   }, []);
 
   return (
