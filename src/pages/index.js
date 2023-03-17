@@ -128,12 +128,12 @@ const IndexPage = ({ data }) => {
                     },
                   }}
                 />
-                <Stack direction='row'>
+                {/* <Stack direction='row'>
                   <Typography sx={{ flex: 1 }}>👓</Typography>
                   <Typography sx={{ flex: 1 }}>
                     {blogInfos.find((bi) => bi.slug === post.slug)?.likes || 0}
                   </Typography>
-                </Stack>
+                </Stack> */}
               </ListItem>
             ))}
           </List>

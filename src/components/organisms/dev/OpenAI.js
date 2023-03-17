@@ -20,6 +20,7 @@ import FaceIcon from "@mui/icons-material/Face";
 import SmartToyIcon from "@mui/icons-material/SmartToy";
 import CircularProgress from "@mui/material/CircularProgress";
 import { SECRET_KEY } from "../../../util/globals";
+import { Base64 } from "../../../util/tools";
 
 const initialMessages = [
   // { role: "system", content: "안녕 친구?" },
@@ -32,7 +33,7 @@ function OpenAI({ open, onClose }) {
   const [flag, setFlag] = useState(false);
   const [messages, setMessages] = useState(initialMessages);
   const config = new Configuration({
-    apiKey: SECRET_KEY,
+    apiKey: Base64.decode(SECRET_KEY),
   });
   const api = new OpenAIApi(config);
 

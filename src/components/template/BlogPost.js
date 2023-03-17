@@ -92,21 +92,21 @@ function Template({ data, pageContext }) {
     window.addEventListener("keydown", imageViewer);
 
     (async function () {
-      const res = await axios.get(
-        API_PATH + API_BASE_PATH + "/posts/slug/" + encodeURI(frontmatter.slug),
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      );
-      const post = await res.json();
+      // const res = await axios.get(
+      //   API_PATH + API_BASE_PATH + "/posts/slug/" + encodeURI(frontmatter.slug),
+      //   {
+      //     headers: {
+      //       "Content-Type": "application/json",
+      //     },
+      //   }
+      // );
+      // const post = await res.json();
 
-      if (post) {
-        console.log(post.views);
-        console.log(post.likes);
-        await readPost(post.id);
-      }
+      // if (post) {
+      //   console.log(post.views);
+      //   console.log(post.likes);
+      //   await readPost(post.id);
+      // }
     })();
 
     async function readPost(pid) {

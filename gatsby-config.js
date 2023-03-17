@@ -34,7 +34,7 @@ dotenv.config({
 dotenv.config({
   path: path.join(path.resolve(), `.env.${mode}`),
 });
-
+const KEY = process.env.GATSBY_SECRET_KEY;
 module.exports = {
   pathPrefix: "/",
   siteMetadata: {

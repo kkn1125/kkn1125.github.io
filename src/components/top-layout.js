@@ -40,26 +40,26 @@ export default function TopLayout({ children }) {
 
   async function initializeUser() {
     // console.log(API_PATH);
-    const res = await axios.post(
-      API_PATH + API_BASE_PATH + "/users/initialize"
-    );
-    try {
-      const json = await res.json();
-      console.log("json", json);
-      if (json?.ok) {
-        if (!localStorage.getItem("users")) {
-          localStorage.setItem("users", JSON.stringify({}));
-        }
-        const userStorage = JSON.parse(localStorage.getItem("users"));
-        // const { token, ip, hash, expiredIn } = json.payload;
-        Object.assign(userStorage, json.payload);
-        localStorage.setItem("users", JSON.stringify(userStorage));
-      }
-    } catch (error) {
-      console.log(error);
-      const text = await res.text();
-      console.log("text", text);
-    }
+    // const res = await axios.post(
+    //   API_PATH + API_BASE_PATH + "/users/initialize"
+    // );
+    // try {
+    //   const json = await res.json();
+    //   console.log("json", json);
+    //   if (json?.ok) {
+    //     if (!localStorage.getItem("users")) {
+    //       localStorage.setItem("users", JSON.stringify({}));
+    //     }
+    //     const userStorage = JSON.parse(localStorage.getItem("users"));
+    //     // const { token, ip, hash, expiredIn } = json.payload;
+    //     Object.assign(userStorage, json.payload);
+    //     localStorage.setItem("users", JSON.stringify(userStorage));
+    //   }
+    // } catch (error) {
+    //   console.log(error);
+    //   const text = await res.text();
+    //   console.log("text", text);
+    // }
   }
   // initializeUser();
   // console.log("[TEST]", "반복 실행되는가");
