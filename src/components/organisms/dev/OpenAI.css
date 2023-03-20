@@ -1,0 +1,45 @@
+.MuiAlert-message p table {
+  margin-top: 0.7rem;
+  margin-bottom: 0.7rem;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.MuiAlert-message p table th {
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.MuiAlert-message p table th {
+  border: 1px solid #d3d3d3;
+  padding: 0.3rem;
+  border-bottom-width: 2px;
+  border-bottom-color: #54572c;
+  background-color: #6a6d3c;
+  color: #ffffff;
+}
+.MuiAlert-message p table td {
+  border: 1px solid #555555;
+  padding: 0.3rem;
+  background-color: #ffffffa5;
+  font-size: 0.8rem;
+}
+
+.MuiAlert-message p table th {
+  border-top: none;
+}
+
+.MuiAlert-message p table tbody > tr:last-child td {
+  border-bottom: none;
+}
+
+.MuiAlert-message p table th:first-child,
+.MuiAlert-message p table td:first-child {
+  border-left: none;
+}
+
+.MuiAlert-message p table th:last-child,
+.MuiAlert-message p table td:last-child {
+  border-right: none;
+}
