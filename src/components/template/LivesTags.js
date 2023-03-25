@@ -17,20 +17,19 @@ const PaperBlock = styled(Paper)(({ theme }) => ({
   overflow: "hidden",
 }));
 
-function Categories(props) {
+function Tags(props) {
   const {
-    pageContext: { count, category },
+    pageContext: { count, tag },
     data,
   } = props;
   const {
     allMarkdownRemark: { edges },
   } = data;
-
-    return (
+  return (
     <Box>
-      <Seo frontmatter={{ title: "Categories" }} />
+      <Seo frontmatter={{ title: "Tags" }} />
       <Typography className='font-main' variant='h2' component='span'>
-        Category
+        Tag
       </Typography>
       <Typography
         className='font-main'
@@ -40,7 +39,7 @@ function Categories(props) {
         sx={{
           ml: 2,
         }}>
-        {category.toUpperCase()} [{count}]
+        {tag.toUpperCase()} [{count}]
       </Typography>
       <Divider
         sx={{
@@ -49,23 +48,21 @@ function Categories(props) {
         }}
       />
       <Grid container gap={5}>
-        {edges.map(({ node: { frontmatter: info } }) => (
-          <BlogCard key={info.title} main data={info} height={'100%'} />
+        {edges.map(({ node: { frontmatter: info, id } }) => (
+          <BlogCard key={info.slug + id} main data={info} height={"100%"} />
         ))}
       </Grid>
     </Box>
   );
 }
 
-export default Categories;
+export default Tags;
 
 export const query = graphql`
-  query ($category: String) {
+  query ($tag: String) {
     allMarkdownRemark(
       sort: { fields: frontmatter___date, order: DESC }
-      filter: {
-        frontmatter: { layout: { eq: "post" }, published: { eq: true }, categories: { eq: $category } }
-      }
+      filter: { frontmatter: { layout: { eq: "lives" }, published: { eq: true }, tags: { eq: $tag } } }
     ) {
       edges {
         node {

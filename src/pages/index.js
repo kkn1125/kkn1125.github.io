@@ -2,6 +2,7 @@ import FolderIcon from "@mui/icons-material/Folder";
 import {
   Avatar,
   Box,
+  Button,
   Divider,
   List,
   ListItem,
@@ -21,23 +22,45 @@ import { Helmet } from "react-helmet";
 import Seo from "../components/modules/seo/Seo";
 import Calendar from "../components/organisms/calendar/Calendar";
 import BlogHook from "../hooks/blogHook";
+import LivesHook from "../hooks/livesHook";
 import { API_BASE_PATH, API_PATH } from "../util/globals";
 import { cutText } from "../util/tools";
 
 // markup
-const IndexPage = ({ data }) => {
+const IndexPage = (
+  {
+    /* data */
+  }
+) => {
+  const viewCount = 5;
   const theme = useTheme();
-  const {
-    allMarkdownRemark: { edges },
-  } = data;
-  const [
-    {
-      node: { frontmatter: firstPost },
-    },
-    ...otherPost
-  ] = edges;
   const blogs = BlogHook();
+  const lives = LivesHook();
+
+  // const [ blogDone, setBlogDone ] = useState(false);
+  const [blogViewMore, setBlogViewMore] = useState(viewCount);
+  const [livesViewMore, setLivesViewMore] = useState(viewCount);
+
   const [blogInfos, setBlogInfos] = useState([]);
+  // console.log(blogs)
+  // const {
+  //   allMarkdownRemark: { edges },
+  // } = data;
+  // const [
+  //   {
+  //     node: { frontmatter: firstPost },
+  //   },
+  //   ...otherPost
+  // ] = edges;
+  // const blogs = BlogHook();
+
+  const checkBlogLimit = () => {
+    setBlogViewMore(blogViewMore + viewCount);
+  };
+
+  const checkLivesLimit = () => {
+    setLivesViewMore(livesViewMore + viewCount);
+  };
 
   useEffect(() => {
     // (async function () {
@@ -74,14 +97,15 @@ const IndexPage = ({ data }) => {
         <Grid item xs={12}>
           <Typography
             component='div'
-            variant='h3'
+            variant='h1'
             gutterBottom
             sx={{
-              borderBottomColor: "#777777",
-              borderBottomWidth: 5,
-              borderBottomStyle: "solid",
+              fontSize: (theme) => theme.typography.pxToRem(32) + " !important",
+              // borderBottomColor: "#777777",
+              // borderBottomWidth: 5,
+              // borderBottomStyle: "solid",
               fontWeight: 700,
-              pb: 2,
+              // pb: 2,
             }}>
             Features 📌
           </Typography>
@@ -93,50 +117,66 @@ const IndexPage = ({ data }) => {
               alignItems: "flex-start",
               gap: 2,
             }}>
-            {edges.map(({ node: { frontmatter: post } }) => (
-              <ListItem
-                key={post.title}
-                onClick={(e) => navigate(post.slug)}
-                sx={{
-                  cursor: "pointer",
-                  alignItems: "flex-start",
-                }}>
-                <ListItemAvatar
+            {blogs
+              .slice(0, blogViewMore)
+              .map(({ node: { frontmatter: post } }) => (
+                <ListItem
+                  key={post.layout + post.slug + post.title}
+                  onClick={(e) => navigate(post.slug)}
                   sx={{
-                    pt: 1,
+                    cursor: "pointer",
+                    alignItems: "flex-start",
                   }}>
-                  <Avatar src={post.image}>{/* <FolderIcon /> */}</Avatar>
-                </ListItemAvatar>
-                <ListItemText
-                  primary={cutText(
-                    post.title,
-                    useMediaQuery(theme.breakpoints.up("md")) ? 50 : 15
-                  )}
-                  primaryTypographyProps={{
-                    sx: (theme) => ({
-                      fontSize: theme.typography.pxToRem(28),
-                      fontWeight: 700,
-                    }),
-                  }}
-                  secondary={cutText(
-                    post.description,
-                    useMediaQuery(theme.breakpoints.up("md")) ? 150 : 35
-                  )}
-                  secondaryTypographyProps={{
-                    sx: {
-                      color: "#888",
-                    },
-                  }}
-                />
-                {/* <Stack direction='row'>
+                  <ListItemAvatar
+                    sx={{
+                      pt: 1,
+                    }}>
+                    <Avatar src={post.image}>{/* <FolderIcon /> */}</Avatar>
+                  </ListItemAvatar>
+                  <ListItemText
+                    primary={cutText(
+                      post.title,
+                      useMediaQuery(theme.breakpoints.up("md")) ? 50 : 15
+                    )}
+                    primaryTypographyProps={{
+                      sx: (theme) => ({
+                        fontSize: theme.typography.pxToRem(24),
+                        fontWeight: 700,
+                      }),
+                    }}
+                    secondary={cutText(
+                      post.description,
+                      useMediaQuery(theme.breakpoints.up("md")) ? 150 : 35
+                    )}
+                    secondaryTypographyProps={{
+                      sx: {
+                        color: "#888",
+                      },
+                    }}
+                  />
+                  {/* <Stack direction='row'>
                   <Typography sx={{ flex: 1 }}>👓</Typography>
                   <Typography sx={{ flex: 1 }}>
                     {blogInfos.find((bi) => bi.slug === post.slug)?.likes || 0}
                   </Typography>
                 </Stack> */}
-              </ListItem>
-            ))}
+                </ListItem>
+              ))}
           </List>
+          <Box
+            sx={{
+              textAlign: "center",
+            }}>
+            <Button
+              color='info'
+              variant='contained'
+              onClick={() => {
+                navigate("/blog/");
+                // checkBlogLimit();
+              }}>
+              더 보기 📂
+            </Button>
+          </Box>
         </Grid>
         <Divider
           flexItem
@@ -149,6 +189,90 @@ const IndexPage = ({ data }) => {
               : "none",
           }}
         />
+        <Grid item xs={12}>
+          <Typography
+            component='div'
+            variant='h1'
+            gutterBottom
+            sx={{
+              fontSize: (theme) => theme.typography.pxToRem(32) + " !important",
+              // borderBottomColor: "#777777",
+              // borderBottomWidth: 5,
+              // borderBottomStyle: "solid",
+              fontWeight: 700,
+              // pb: 2,
+            }}>
+            Lives 👨‍💻
+          </Typography>
+          <List
+            dense={true}
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "flex-start",
+              gap: 2,
+            }}>
+            {lives
+              .slice(0, blogViewMore)
+              .map(({ node: { frontmatter: post } }) => (
+                <ListItem
+                  key={post.layout + post.slug + post.title}
+                  onClick={(e) => navigate(post.slug)}
+                  sx={{
+                    cursor: "pointer",
+                    alignItems: "flex-start",
+                  }}>
+                  <ListItemAvatar
+                    sx={{
+                      pt: 1,
+                    }}>
+                    <Avatar src={post.image}>{/* <FolderIcon /> */}</Avatar>
+                  </ListItemAvatar>
+                  <ListItemText
+                    primary={cutText(
+                      post.title,
+                      useMediaQuery(theme.breakpoints.up("md")) ? 50 : 15
+                    )}
+                    primaryTypographyProps={{
+                      sx: (theme) => ({
+                        fontSize: theme.typography.pxToRem(24),
+                        fontWeight: 700,
+                      }),
+                    }}
+                    secondary={cutText(
+                      post.description,
+                      useMediaQuery(theme.breakpoints.up("md")) ? 150 : 35
+                    )}
+                    secondaryTypographyProps={{
+                      sx: {
+                        color: "#888",
+                      },
+                    }}
+                  />
+                  {/* <Stack direction='row'>
+                  <Typography sx={{ flex: 1 }}>👓</Typography>
+                  <Typography sx={{ flex: 1 }}>
+                    {blogInfos.find((bi) => bi.slug === post.slug)?.likes || 0}
+                  </Typography>
+                </Stack> */}
+                </ListItem>
+              ))}
+          </List>
+          <Box
+            sx={{
+              textAlign: "center",
+            }}>
+            <Button
+              color='info'
+              variant='contained'
+              onClick={() => {
+                navigate("/lives/");
+                // checkBlogLimit();
+              }}>
+              더 보기 📂
+            </Button>
+          </Box>
+        </Grid>
         {/* main */}
         {/* <Grid item xs={12}>
           <BlogCard
@@ -180,29 +304,31 @@ const IndexPage = ({ data }) => {
   );
 };
 
-export const query = graphql`
-  {
-    allMarkdownRemark(
-      sort: { fields: frontmatter___date, order: DESC }
-      limit: 5
-      filter: { frontmatter: { published: { eq: true } } }
-    ) {
-      edges {
-        node {
-          frontmatter {
-            slug
-            title
-            description
-            author
-            date(fromNow: false, formatString: "YYYY-MM-DD HH:mm")
-            categories
-            tags
-            image
-          }
-        }
-      }
-    }
-  }
-`;
+// export const query = graphql`
+//   {
+//     allMarkdownRemark(
+//       sort: { fields: frontmatter___date, order: DESC }
+//       limit: 5
+//       filter: {
+//         frontmatter: { layout: { eq: "post" }, published: { eq: true } }
+//       }
+//     ) {
+//       edges {
+//         node {
+//           frontmatter {
+//             slug
+//             title
+//             description
+//             author
+//             date(fromNow: false, formatString: "YYYY-MM-DD HH:mm")
+//             categories
+//             tags
+//             image
+//           }
+//         }
+//       }
+//     }
+//   }
+// `;
 
 export default IndexPage;

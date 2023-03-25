@@ -62,7 +62,7 @@ export const query = graphql`
   query ($tag: String) {
     allMarkdownRemark(
       sort: { fields: frontmatter___date, order: DESC }
-      filter: { frontmatter: { published: { eq: true }, tags: { eq: $tag } } }
+      filter: { frontmatter: { layout: { eq: "post" }, published: { eq: true }, tags: { eq: $tag } } }
     ) {
       edges {
         node {

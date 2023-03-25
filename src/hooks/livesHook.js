@@ -1,6 +1,6 @@
 import { graphql, useStaticQuery } from "gatsby";
 
-function BlogHook(props) {
+function LivesHook(props) {
   const {
     allMarkdownRemark: { edges },
   } = useStaticQuery(graphql`
@@ -8,7 +8,7 @@ function BlogHook(props) {
       allMarkdownRemark(
         sort: { fields: frontmatter___date, order: DESC }
         filter: {
-          frontmatter: { layout: { eq: "post" }, published: { eq: true } }
+          frontmatter: { layout: { eq: "lives" }, published: { eq: true } }
         }
       ) {
         edges {
@@ -31,4 +31,4 @@ function BlogHook(props) {
   return edges;
 }
 
-export default BlogHook;
+export default LivesHook;

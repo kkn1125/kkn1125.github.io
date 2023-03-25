@@ -34,6 +34,7 @@ import React, { Fragment, useContext, useEffect, useState } from "react";
 
 import { PickContext } from "../../../context/pickContext";
 import BlogHook from "../../../hooks/blogHook";
+import LivesHook from "../../../hooks/livesHook";
 import { uuidv4 } from "../../../util/tools";
 import { ColorModeContext } from "../../top-layout";
 import TemporaryDrawer from "../drawer/TemporaryDrawer";
@@ -43,7 +44,11 @@ const BRAND = "devkimson";
 
 const pages = [
   {
-    name: "blog",
+    name: "lives",
+    path: "/lives",
+  },
+  {
+    name: "tech blog",
     path: "/blog",
   },
   {
@@ -134,7 +139,9 @@ function HideAppBar(props) {
   const [anchorElNav, setAnchorElNav] = useState(null);
   const pick = useContext(PickContext);
   const [blogCount, setBlogCount] = useState(0);
+  const [livesCount, setLivesCount] = useState(0);
   const blogs = BlogHook();
+  const lives = LivesHook();
 
   const [visitor, setVisitor] = useState({
     today: 0,
@@ -143,6 +150,7 @@ function HideAppBar(props) {
 
   useEffect(() => {
     setBlogCount(blogs.length);
+    setLivesCount(lives.length);
     // visite check
     const userInfo = getUserIdentity();
 
@@ -307,16 +315,21 @@ function HideAppBar(props) {
           }}>
           <Container maxWidth='xl'>
             <Toolbar disableGutters>
-              <Avatar
-                variant='rounded'
-                alt='logo'
-                src='/images/logo-k-color.png'
-                sx={{
-                  display: { xs: "none", md: "flex" },
-                  mr: 1,
-                }}
-              />
-              <Typography
+              <Box>
+                <Avatar
+                  component={Link}
+                  to='/'
+                  variant='rounded'
+                  alt='logo'
+                  src='/images/logo-k-color.png'
+                  sx={{
+                    display: { xs: "none", md: "flex" },
+                    mr: 1,
+                  }}
+                  title={BRAND}
+                />
+              </Box>
+              {/* <Typography
                 className='font-main'
                 component={Link}
                 to='/'
@@ -331,7 +344,7 @@ function HideAppBar(props) {
                   textDecoration: "none",
                 }}>
                 {BRAND}
-              </Typography>
+              </Typography> */}
 
               <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
                 <IconButton
@@ -372,14 +385,24 @@ function HideAppBar(props) {
                           color: (theme) => theme.palette.text.primary,
                           textDecoration: "none",
                           textAlign: "center",
+                          textTransform: "uppercase",
                         }}>
-                        {page.name === "blog" ? (
+                        {page.name}
+                        {page.name.match(/tech blog|lives/) ? (
                           <>
-                            {page.name}{" "}
-                            <Chip label={"+" + blogCount} color='error' />
+                            {" "}
+                            <Chip
+                              size='small'
+                              label={
+                                page.name === "tech blog"
+                                  ? blogCount
+                                  : livesCount
+                              }
+                              color='error'
+                            />
                           </>
                         ) : (
-                          page.name
+                          ""
                         )}
                       </Typography>
                     </MenuItem>
@@ -407,13 +430,21 @@ function HideAppBar(props) {
                 </Menu>
               </Box>
               {/* small size */}
-              <Avatar
-                variant='rounded'
-                alt='logo'
-                src='/images/logo-k-color.png'
-                sx={{ display: { xs: "flex", md: "none" }, mr: 1 }}
-              />
-              <Typography
+              <Box
+                sx={{
+                  flex: { xs: 1, md: 0 },
+                }}>
+                <Avatar
+                  component={Link}
+                  to='/'
+                  variant='rounded'
+                  alt='logo'
+                  src='/images/logo-k-color.png'
+                  sx={{ display: { xs: "flex", md: "none" }, mr: 1 }}
+                  title={BRAND}
+                />
+              </Box>
+              {/* <Typography
                 className='font-main'
                 component={Link}
                 to='/'
@@ -435,7 +466,7 @@ function HideAppBar(props) {
                   textDecoration: "none",
                 }}>
                 {BRAND}
-              </Typography>
+              </Typography> */}
 
               {/* big size */}
               <Box
@@ -460,13 +491,20 @@ function HideAppBar(props) {
                       textDecoration: "none",
                       textAlign: "center",
                     }}>
-                    {page.name === "blog" ? (
+                    {page.name}
+                    {page.name.match(/tech blog|lives/) ? (
                       <>
-                        {page.name}{" "}
-                        <Chip size='small' label={"+" + blogCount} />
+                        {" "}
+                        <Chip
+                          size='small'
+                          label={
+                            page.name === "tech blog" ? blogCount : livesCount
+                          }
+                          color='error'
+                        />
                       </>
                     ) : (
-                      page.name
+                      ""
                     )}
                   </Button>
                 ))}

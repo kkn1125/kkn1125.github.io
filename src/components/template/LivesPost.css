@@ -1,0 +1,144 @@
+/* for block of numbers */
+.hljs-ln-numbers {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  text-align: center;
+  color: #ccc;
+  border-right: 1px solid #ccc;
+  vertical-align: top;
+  padding-right: 5px;
+
+  /* your custom style here */
+}
+
+/* for block of code */
+.hljs-ln-code {
+  padding-left: 10px;
+}
+
+.lives-post h2,
+.lives-post h3,
+.lives-post h4,
+.lives-post h5,
+.lives-post h6 {
+  margin-top: 2rem;
+}
+
+.lives-post img {
+  max-width: 100%;
+  height: auto;
+  margin: auto;
+  display: block;
+}
+
+.lives-post figcaption {
+  background: rgb(230, 230, 230);
+  text-align: center;
+  padding: 0.3rem;
+}
+
+.lives-post figure {
+  border: 1px solid rgb(224, 224, 224);
+  overflow: hidden;
+  border-radius: 0.5rem;
+  -webkit-border-radius: 0.5rem;
+  -moz-border-radius: 0.5rem;
+  -ms-border-radius: 0.5rem;
+  -o-border-radius: 0.5rem;
+}
+
+.lives-post blockquote {
+  /* background: rgb(239, 239, 239); */
+  margin: 0;
+  padding: 0.5rem 1rem 0.5rem 1.5rem;
+  border-left: 5px solid rgb(180, 180, 180);
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.lives-post blockquote p {
+  margin: 0.5rem 0;
+}
+
+.lives-post code:not([class]) {
+  background-color: rgb(222, 222, 222);
+  font-size: 0.75rem;
+  color: rgb(255, 61, 129);
+  font-weight: 500;
+  padding: 0.2rem 0.4rem;
+  margin-left: 0.1rem;
+  margin-right: 0.1rem;
+  border-radius: 0.3rem;
+  -webkit-border-radius: 0.3rem;
+  -moz-border-radius: 0.3rem;
+  -ms-border-radius: 0.3rem;
+  -o-border-radius: 0.3rem;
+}
+
+.lives-post code {
+  font-size: calc(0.5rem + 0.5vw);
+}
+
+.lives-post pre {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.lives-post pre::-webkit-scrollbar {
+  background-color: inherit;
+  height: 0.5rem;
+  width: 0.5rem;
+}
+
+.lives-post pre::-webkit-scrollbar-thumb {
+  background: grey;
+  height: 0.5rem;
+  width: 0.5rem;
+}
+
+.lives-post a {
+  text-decoration: none;
+}
+
+.lives-post #app .parsed-data span.badge {
+  font-size: 11px;
+}
+
+.lives-post p {
+  font-weight: 300;
+  text-rendering: optimizeSpeed;
+  letter-spacing: 0rem;
+  word-spacing: 0.3rem;
+}
+
+.divider {
+  /* border-width: 2px;
+  border-style: dashed;
+  border-color: #ccc; */
+  border: none;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.divider::before {
+  color: inherit;
+  display: inline-block;
+  /* 텍스트 가리기 위함 */
+  content: "^";
+  color: transparent;
+  user-select: none;
+  letter-spacing: 100vw;
+  width: 100%;
+  font-size: 2.5rem;
+  text-decoration-color: #ccc;
+  text-decoration-line: line-through;
+  text-decoration-style: wavy;
+  -moz-text-decoration-style: wavy;
+  -moz-text-decoration-line: line-through;
+  -moz-text-decoration-color: #ccc;
+}

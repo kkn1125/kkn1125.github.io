@@ -29,7 +29,7 @@ import Favorite from "../modules/common/Favorite";
 import HashList from "../modules/common/HashList";
 import Seo from "../modules/seo/Seo";
 import ImageViewer from "../organisms/blog/ImageViewer";
-import "./BlogPost.css";
+import "./LivesPost.css";
 
 function Template({ data, pageContext }) {
   const [image, setImage] = useState(null);
@@ -467,7 +467,7 @@ export const pageQuery = graphql`
   query ($path: String!) {
     markdownRemark(
       frontmatter: {
-        layout: { eq: "post" }
+        layout: { eq: "lives" }
         slug: { eq: $path }
         published: { eq: true }
       }

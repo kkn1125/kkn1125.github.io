@@ -12,11 +12,27 @@ exports.createPages = async ({ graphql, actions, ...props }) => {
     `src/components/template/Categories.js`
   );
   const tagsTemplate = path.resolve(`src/components/template/Tags.js`);
+  /* lives */
+  const livesListTemplate = path.resolve(
+    `src/components/template/LivesPage.js`
+  );
+  const livesPostTemplate = path.resolve(
+    `src/components/template/LivesPost.js`
+  );
+  const livesCategoriesTemplate = path.resolve(
+    `src/components/template/LivesCategories.js`
+  );
+  const livesTagsTemplate = path.resolve(
+    `src/components/template/LivesTags.js`
+  );
+
   const result = await graphql(`
     {
       blog: allMarkdownRemark(
         sort: { fields: [frontmatter___date], order: DESC }
-        filter: { frontmatter: { published: { eq: true } } }
+        filter: {
+          frontmatter: { layout: { eq: "post" }, published: { eq: true } }
+        }
       ) {
         edges {
           node {
@@ -56,7 +72,9 @@ exports.createPages = async ({ graphql, actions, ...props }) => {
 
       categories: allMarkdownRemark(
         sort: { fields: frontmatter___date, order: DESC }
-        filter: { frontmatter: { published: { eq: true } } }
+        filter: {
+          frontmatter: { layout: { eq: "post" }, published: { eq: true } }
+        }
       ) {
         group(field: frontmatter___categories) {
           totalCount
@@ -66,7 +84,75 @@ exports.createPages = async ({ graphql, actions, ...props }) => {
 
       tags: allMarkdownRemark(
         sort: { fields: frontmatter___date, order: DESC }
-        filter: { frontmatter: { published: { eq: true } } }
+        filter: {
+          frontmatter: { layout: { eq: "post" }, published: { eq: true } }
+        }
+      ) {
+        group(field: frontmatter___tags) {
+          totalCount
+          fieldValue
+        }
+      }
+
+      lives: allMarkdownRemark(
+        sort: { fields: [frontmatter___date], order: DESC }
+        filter: {
+          frontmatter: { layout: { eq: "lives" }, published: { eq: true } }
+        }
+      ) {
+        edges {
+          node {
+            frontmatter {
+              title
+              slug
+            }
+          }
+
+          next {
+            frontmatter {
+              author
+              categories
+              tags
+              title
+              date(formatString: "YYYY-MM-DD HH:mm")
+              slug
+              modified(formatString: "YYYY-MM-DD HH:mm")
+              published
+            }
+          }
+          previous {
+            frontmatter {
+              author
+              title
+              tags
+              slug
+              date(formatString: "YYYY-MM-DD HH:mm")
+              description
+              modified(formatString: "YYYY-MM-DD HH:mm")
+              published
+              categories
+            }
+          }
+        }
+      }
+
+      livesCategories: allMarkdownRemark(
+        sort: { fields: frontmatter___date, order: DESC }
+        filter: {
+          frontmatter: { layout: { eq: "lives" }, published: { eq: true } }
+        }
+      ) {
+        group(field: frontmatter___categories) {
+          totalCount
+          fieldValue
+        }
+      }
+
+      livesTags: allMarkdownRemark(
+        sort: { fields: frontmatter___date, order: DESC }
+        filter: {
+          frontmatter: { layout: { eq: "lives" }, published: { eq: true } }
+        }
       ) {
         group(field: frontmatter___tags) {
           totalCount
@@ -82,7 +168,7 @@ exports.createPages = async ({ graphql, actions, ...props }) => {
   result.data.blog.edges.forEach((edge, i, o) => {
     if (Math.ceil(o.length / perBlogPage) >= i + 1) {
       createPage({
-        path: i === 0 ? `/blog` : `/blog/${i + 1}/`,
+        path: i === 0 ? `/blog/` : `/blog/${i + 1}/`,
         component: blogListTemplate,
         context: {
           title: edge.node.frontmatter.title,
@@ -121,6 +207,59 @@ exports.createPages = async ({ graphql, actions, ...props }) => {
     createPage({
       path: `tags/${group.fieldValue}/`,
       component: tagsTemplate,
+      context: {
+        count: group.totalCount,
+        tag: group.fieldValue,
+      },
+    });
+  });
+
+  /* lives */
+  const livesCount = result.data.lives.edges.length;
+  const perLivesPage = 10;
+  const livesPageNum = Math.ceil(livesCount / perLivesPage);
+  result.data.lives.edges.forEach((edge, i, o) => {
+    if (Math.ceil(o.length / perLivesPage) >= i + 1) {
+      createPage({
+        path: i === 0 ? `/lives/` : `/lives/${i + 1}/`,
+        component: livesListTemplate,
+        context: {
+          title: edge.node.frontmatter.title,
+          limit: perLivesPage,
+          skip: i * perLivesPage,
+          livesPageNum,
+          currentPage: i + 1,
+        },
+      });
+    }
+  });
+
+  result.data.lives.edges.forEach((edge) => {
+    // console.log(edge.node.frontmatter.slug)
+    createPage({
+      path: `${edge.node.frontmatter.slug}`,
+      component: livesPostTemplate,
+      context: {
+        previous: edge.previous,
+        next: edge.next,
+      },
+    });
+  });
+  result.data.livesCategories.group.forEach((group) => {
+    // console.log(group.fieldValue)
+    createPage({
+      path: `lives/categories/${group.fieldValue}/`,
+      component: livesCategoriesTemplate,
+      context: {
+        count: group.totalCount,
+        category: group.fieldValue,
+      },
+    });
+  });
+  result.data.livesTags.group.forEach((group) => {
+    createPage({
+      path: `lives/tags/${group.fieldValue}/`,
+      component: livesTagsTemplate,
       context: {
         count: group.totalCount,
         tag: group.fieldValue,

@@ -27,7 +27,7 @@ const BlogPage = ({ data, pageContext }) => {
   return (
     <BlogLayout>
       <Typography className='font-main' variant='h3'>
-        Blog
+        Lives
       </Typography>
       <Divider
         sx={{
@@ -102,7 +102,7 @@ const BlogPage = ({ data, pageContext }) => {
           renderItem={(item) => (
             <PaginationItem
               component={Link}
-              to={`/blog${item.page === 1 ? "" : `/${item.page}`}`}
+              to={`/lives${item.page === 1 ? "" : `/${item.page}`}`}
               {...item}
             />
           )}
@@ -119,7 +119,7 @@ export const query = graphql`
       limit: $limit
       skip: $skip
       filter: {
-        frontmatter: { layout: { eq: "post" }, published: { eq: true } }
+        frontmatter: { layout: { eq: "lives" }, published: { eq: true } }
       }
     ) {
       edges {
