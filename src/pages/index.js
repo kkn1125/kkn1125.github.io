@@ -142,6 +142,12 @@ const IndexPage = (
                       sx: (theme) => ({
                         fontSize: theme.typography.pxToRem(24),
                         fontWeight: 700,
+                        ["&::after"]: {
+                          content: `"✏️ ${post.date}"`,
+                          fontSize: theme.typography.pxToRem(12),
+                          marginLeft: 3,
+                          color: "#999999",
+                        },
                       }),
                     }}
                     secondary={cutText(
@@ -168,7 +174,7 @@ const IndexPage = (
               textAlign: "center",
             }}>
             <Button
-              color='info'
+              color='secondary'
               variant='contained'
               onClick={() => {
                 navigate("/blog/");
@@ -237,6 +243,12 @@ const IndexPage = (
                       sx: (theme) => ({
                         fontSize: theme.typography.pxToRem(24),
                         fontWeight: 700,
+                        ["&::after"]: {
+                          content: `"✏️ ${post.date}"`,
+                          fontSize: theme.typography.pxToRem(12),
+                          marginLeft: 3,
+                          color: "#999999",
+                        },
                       }),
                     }}
                     secondary={cutText(
@@ -263,7 +275,7 @@ const IndexPage = (
               textAlign: "center",
             }}>
             <Button
-              color='info'
+              color='secondary'
               variant='contained'
               onClick={() => {
                 navigate("/lives/");

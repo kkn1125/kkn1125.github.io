@@ -31,13 +31,13 @@ export function Modal() {
             position: "fixed",
             bottom: (theme) =>
               useMediaQuery(theme.breakpoints.down("md")) ? 75 : 75,
-            right: 16,
+            right: 20,
             color: "#ffffff",
             userSelect: "initial",
             pointerEvents: "initial",
-            backgroundColor: (theme) => theme.palette.primary.light,
+            backgroundColor: (theme) => theme.palette.error.light,
             ["&:hover"]: {
-              backgroundColor: (theme) => theme.palette.primary.dark,
+              backgroundColor: (theme) => theme.palette.error.dark,
             },
           }}>
           <TryIcon />

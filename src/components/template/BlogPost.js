@@ -78,7 +78,7 @@ function Template({ data, pageContext }) {
           document.body.removeAttribute("style");
         }
       } else {
-        if (e.target.tagName === "IMG") {
+        if (e.target.tagName === "IMG" && e.target.alt !== "logo") {
           setImage(e.target.src);
           document.body.style = "overflow: hidden";
         } else {
@@ -163,6 +163,20 @@ function Template({ data, pageContext }) {
       <AlertTitle>3개월 이상 지난 포스팅입니다!</AlertTitle>
       포스팅에 소개된 라이브러리나 프레임워크의 버전이 변경되었을 수 있으니 해당
       공식 홈페이지에서 버전 체크를 하시기 바랍니다 🙇‍♂️
+    </Alert>
+  );
+
+  const PleaseComment = () => (
+    <Alert
+      variant='standard'
+      severity='success'
+      sx={{
+        mt: 2,
+      }}>
+      <AlertTitle>자유로운 소통을 원해요 📌</AlertTitle>
+      보시는 분들의 댓글 하나하나에 힘을 얻습니다. 😁
+      <br />
+      해당 포스팅이 유용하지 않다면 피드백과 의견을 공유해주셔도 됩니다! 🙇‍♂️
     </Alert>
   );
 
@@ -403,6 +417,7 @@ function Template({ data, pageContext }) {
               </Box>
             </Box>
             {isOverThreeMonth && <ThreeMonthOverPosting />}
+            <PleaseComment />
             <Divider
               sx={{
                 my: 2,
