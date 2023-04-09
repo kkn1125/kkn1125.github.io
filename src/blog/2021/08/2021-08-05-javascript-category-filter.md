@@ -1,8 +1,8 @@
 ---
 slug: "/javascript-category-filter/"
 layout: post
-modified: 2022-03-23 20:54:35 +0900
-date:   2021-08-05 14:46:07 +0900
+modified: 2023-04-08 16:31:38 +0000
+date:   2021-08-05 14:46:07 +0000
 title:  "[JAVASCRIPT] 카테고리 필터"
 author: Kimson
 categories: [ javascript ]
@@ -199,17 +199,18 @@ let row = -1;
 // 원래 시작자리로 하기위해 -1부터합니다.
 
 // 초기 정렬
-all.forEach((item, index, list)=>{
-    if(index%4==0) {
-        // 달력에서 주단위로 줄바꿈과 같은 원리
-        // 카드를 4열로 설정
-        row++; // 열을 바꿀때 행 추가
-        col=0; // 열 0으로 초기화
-    }
-    item.style.transform = 
-    `scale3d(1,1,1) translate3d(${col*(item.clientWidth+10)}px, ${row*(item.clientHeight+10)}px, 0px)`;
-    col++;
-    // item(카드)의 너비와 높이값에 여백으로 10만큼 더 함
+all.forEach((item, index, list) => {
+  if (index % 4 == 0) {
+    // 달력에서 주단위로 줄바꿈과 같은 원리
+    // 카드를 4열로 설정
+    row++; // 열을 바꿀때 행 추가
+    col = 0; // 열 0으로 초기화
+  }
+  item.style.transform = `scale3d(1,1,1) translate3d(${
+    col * (item.clientWidth + 10)
+  }px, ${row * (item.clientHeight + 10)}px, 0px)`;
+  col++;
+  // item(카드)의 너비와 높이값에 여백으로 10만큼 더 함
 });
 ```
 
@@ -220,47 +221,48 @@ index의 값에 따라 줄바꿈과 시작부분 초기화 기능을 만들고, 
 초기 정렬과 원리는 같습니다. 버튼 이벤트 코드를 가져와 보기 쉽게 있던 주석을 지우고 코드를 추가하겠습니다.
 
 ```javascript
-let all = document.querySelectorAll('[data-group]');
+let all = document.querySelectorAll("[data-group]");
 let values = document.querySelectorAll("[data-value]");
 let rowid = 0;
 let colid = 0;
 
-el.addEventListener('click',function(event){
-    values.forEach((el)=>{
+el.addEventListener("click", function (event) {
+  values.forEach((el) => {
+    rowid = -1; // 동일하게 row값 -1
+    colid = 0; // 마찬가지로 col값 0
+    let idx = 0; // show 되는 요소들의 인덱스 값
 
-        rowid=-1; // 동일하게 row값 -1
-        colid=0; // 마찬가지로 col값 0
-        let idx = 0; // show 되는 요소들의 인덱스 값
+    let val = event.target.dataset.value;
+    all.forEach((el) => {
+      let arr = el.dataset.group.split(" ");
+      for (let a of arr) {
+        if (a == val) {
+          el.setAttribute("class", "show");
+          /* 클릭시 정렬 기능 자리 */
 
-        let val = event.target.dataset.value;
-        all.forEach(el=>{
-            let arr = el.dataset.group.split(' ');
-            for(let a of arr){
-                if(a==val){
-                    el.setAttribute("class","show");
-                    /* 클릭시 정렬 기능 자리 */
+          if (idx % 4 == 0) {
+            // 초기 정렬과 동일함
+            rowid++;
+            colid = 0;
+          }
 
-                    if(idx%4==0){
-                        // 초기 정렬과 동일함
-                        rowid++;
-                        colid=0;
-                    }
+          el.style.transform = `scale3d(1,1,1) translate3d(${110 * colid}px, ${
+            160 * rowid
+          }px,0px)`;
+          // 보기 쉽게 item.clientHeight+10을 축약함 (초기정렬과 동일함)
+          colid++;
+          idx++; // 초기와 달리 show일때 수동으로 카운트해야하므로 1씩 증가
 
-                    el.style.transform = `scale3d(1,1,1) translate3d(${110*colid}px, ${160*rowid}px,0px)`;
-                    // 보기 쉽게 item.clientHeight+10을 축약함 (초기정렬과 동일함)
-                    colid++;
-                    idx++; // 초기와 달리 show일때 수동으로 카운트해야하므로 1씩 증가
-
-                    break;
-                } else {
-                    el.setAttribute("class","hide");
-                        /* 클릭시 정렬 기능 자리 */
-                    el.style.transform = `scale3d(0,0,1) translate3d(0px,0px,-1px)`;
-                    // hide일때 시작점으로 모이게 함
-                }
-            }
-        });
+          break;
+        } else {
+          el.setAttribute("class", "hide");
+          /* 클릭시 정렬 기능 자리 */
+          el.style.transform = `scale3d(0,0,1) translate3d(0px,0px,-1px)`;
+          // hide일때 시작점으로 모이게 함
+        }
+      }
     });
+  });
 });
 
 /**
@@ -274,134 +276,11 @@ el.addEventListener('click',function(event){
 
 -----
 
-<style>
-#wrap1{
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: start;
-    position: relative;
-    height: 500px;
-}
-
-[data-group]{
-    transition: .3s ease;
-    position: absolute;
-    width: 100px;
-    height: 150px;
-    display: block;
-    background-color: lightgray;
-    border: 1px solid gray;
-    border-radius: 15px;
-    margin: 1rem;
-    text-align: center;
-    box-sizing: border-box;
-}
-
-.show{
-    transition: .3s ease;
-    opacity: 1;
-}
-
-.hide{
-    transition: .2s ease;
-    opacity: 0;
-}
-</style>
-
-<div class="btn-bundle justify-content-center">
-    <button class="px-3 btn btn-danger" data-value="all">all</button>
-    <button class="px-3 btn btn-info" data-value="a">a</button>
-    <button class="px-3 btn btn-info" data-value="b">b</button>
-    <button class="px-3 btn btn-info" data-value="c">c</button>
-</div>
-
-<div id="wrap1">
-    <span data-group="all a">Card<br><br>a</span>
-    <span data-group="all b a">Card<br><br>a b</span>
-    <span data-group="all a">Card<br><br>a</span>
-    <span data-group="all a">Card<br><br>a</span>
-    <span data-group="all a b c">Card<br><br>a b c</span>
-    <span data-group="all b">Card<br><br>b</span>
-    <span data-group="all c">Card<br><br>c</span>
-    <span data-group="all c">Card<br><br>c</span>
-    <span data-group="all b">Card<br><br>b</span>
-    <span data-group="all c">Card<br><br> c</span>
-    <span data-group="all a">Card<br><br>a</span>
-    <span data-group="all b">Card<br><br>b</span>
-</div>
-
-<script>
-'use strict';
-
-let col = 0;
-let row = -1;
-let ww = document.querySelector('#wrap1').clientWidth-16;
-let count11 = Math.floor((ww)/116);
-let middle = (ww-(116*count11))/2;
-let all = document.querySelectorAll('[data-group]');
-document.querySelector('#wrap1').style.transition = ".2s ease";
-
-window.addEventListener('resize',function(){
-    ww = document.querySelector('#wrap1').clientWidth-16;
-    count11 = Math.floor(ww/116);
-    middle = (ww-(116*count11))/2;
-    row = -1;
-    col = 0;
-
-    initCard();
-},true);
-
-function initCard(){
-    all.forEach((item, index, list)=>{ // 초기화
-        if(index%count11==0) {
-            row++;
-            col=0;
-        }
-        let xw = item.clientWidth+2;
-        let xh = item.clientHeight+2;
-        item.style.transform =
-        `scale3d(1,1,1) translate3d(${middle+(col*(100+16))}px, ${row*(160)}px, 0px)`;
-        col++;
-    });
-    document.querySelector('#wrap1').style.height = `${(row+1)*160}px`;
-}
-
-initCard();
-
-let values = document.querySelectorAll("[data-value]");
-
-let rowid = 0;
-let colid = 0;
-values.forEach((el)=>{
-    el.addEventListener('click',function(event){
-        rowid=-1;
-        colid=0;
-        let idx = 0;
-        let val = event.target.dataset.value;
-
-        all.forEach(el=>{
-            let arr = el.dataset.group.split(' ');
-            for(let a of arr){
-                if(a==val){
-                    el.setAttribute("class","show");
-                    if(idx%count11==0){
-                        colid=0;
-                        rowid++;
-                    }
-                    el.style.transform = `scale3d(1,1,1) translate3d(${middle+(colid*(100+16))}px, ${rowid*(160)}px,0px)`;
-                    colid++;
-                    idx++;
-                    document.querySelector('#wrap1').style.height = `${(rowid+1)*160}px`;
-                    break;
-                } else {
-                    el.setAttribute("class","hide");
-                    el.style.transform = `scale3d(0,0,1) translate3d(0px,0px,-1px)`;
-                }
-            }
-        });
-    });
-});
-</script>
+<iframe height="300" style="width: 100%;" scrolling="no" title="javascript-filter-category-example" src="https://codepen.io/kkn1125/embed/yLVpvLK?default-tab=js%2Cresult&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/kkn1125/pen/yLVpvLK">
+  javascript-filter-category-example</a> by kkn1125 (<a href="https://codepen.io/kkn1125">@kkn1125</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>
 
 -----
 

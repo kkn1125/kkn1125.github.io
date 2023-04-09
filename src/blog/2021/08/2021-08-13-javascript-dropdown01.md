@@ -1,8 +1,8 @@
 ---
 slug: "/javascript-dropdown01/"
 layout: post
-modified: 2022-04-12 15:49:25 +0900
-date:   2021-08-13 13:50:20 +0900
+modified: 2022-04-12 15:49:25 +0000
+date:   2021-08-13 13:50:20 +0000
 title:  "[JAVASCRIPT] 드롭다운 메뉴 구현"
 author: Kimson
 categories: [ javascript ]

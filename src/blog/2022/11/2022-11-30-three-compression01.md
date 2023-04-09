@@ -1,7 +1,8 @@
 ---
 slug: "/three-compression01/"
 layout: post
-date: 2022-11-29 23:04:27 +0900
+modified: 2023-04-08 16:57:33 +0000
+date: 2022-11-29 23:04:27 +0000
 title: "[THREE] 모델 리소스 파일을 압축해보자"
 author: Kimson
 categories: [three]

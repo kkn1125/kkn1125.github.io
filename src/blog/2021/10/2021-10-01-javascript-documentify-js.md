@@ -1,8 +1,8 @@
 ---
 slug: "/javascript-documentify-js/"
 layout: post
-modified: 2022-03-14 00:09:35 +0900
-date:   2021-10-01 20:30:32 +0900
+modified: 2022-03-14 00:09:35 +0000
+date:   2021-10-01 20:30:32 +0000
 title:  "[JAVASCRIPT] Documentify ( 문서화 ) 구현"
 author: Kimson
 categories: [ javascript ]

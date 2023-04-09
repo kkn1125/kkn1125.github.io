@@ -1,7 +1,8 @@
 ---
 slug: "/mui-out-of-range-error/"
 layout: post
-date: 2022-06-23 22:41:02 +0900
+modified: 2023-04-08 16:57:33 +0000
+date: 2022-06-23 22:41:02 +0000
 title: "[MUI] Select Component 설정 시 out-of-range 에러 문제"
 author: Kimson
 categories: [mui]

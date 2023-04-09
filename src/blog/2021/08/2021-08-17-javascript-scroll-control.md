@@ -1,8 +1,8 @@
 ---
 slug: "/javascript-scroll-control/"
 layout: post
-modified: 2022-04-11 11:01:41 +0900
-date:   2021-08-17 15:02:11 +0900
+modified: 2022-04-11 11:01:41 +0000
+date:   2021-08-17 15:02:11 +0000
 title:  "[JAVASCRIPT] 스크롤 애니메이션 구현하기"
 author: Kimson
 categories: [ javascript ]

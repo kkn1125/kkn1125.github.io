@@ -1,8 +1,8 @@
 ---
 slug: "/javascript-chess01/"
 layout: post
-modified: 2022-03-14 00:09:35 +0900
-date:   2022-01-13 22:12:28 +0900
+modified: 2022-03-14 00:09:35 +0000
+date:   2022-01-13 22:12:28 +0000
 title:  "[JAVASCRIPT] 체스게임 구현 01"
 author: Kimson
 categories: [ javascript ]

@@ -1,8 +1,8 @@
 ---
 slug: "/spring-jdbc-template01/"
 layout: post
-modified: 2022-03-14 00:09:35 +0900
-date:   2021-10-19 18:23:12 +0900
+modified: 2022-03-14 00:09:35 +0000
+date:   2021-10-19 18:23:12 +0000
 title:  "[SPRING] JDBC Template 사용 기록"
 author: Kimson
 categories: [ spring ]

@@ -1,8 +1,8 @@
 ---
 slug: "/javascript-markdown-parser01/"
 layout: post
-modified: 2022-03-14 00:09:35 +0900
-date:   2022-02-07 19:53:39 +0900
+modified: 2022-03-14 00:09:35 +0000
+date:   2022-02-07 19:53:39 +0000
 title:  "[JAVASCRIPT] Markdown Parser를 만들어보자 (특히 리스트)"
 author: Kimson
 categories: [ javascript ]

@@ -1,8 +1,8 @@
 ---
 slug: "/vue-add-attributes/"
 layout: post
-modified: 2022-03-14 00:09:35 +0900
-date:   2022-01-21 20:17:54 +0900
+modified: 2022-03-14 00:09:35 +0000
+date:   2022-01-21 20:17:54 +0000
 title:  "[VUE] 컴포넌트, 엘리먼트에 다중 속성 보내기"
 author: Kimson
 categories: [ vue ]

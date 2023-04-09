@@ -1,7 +1,8 @@
 ---
 slug: "/replication01/"
 layout: post
-date: 2022-11-06 17:52:32 +0900
+modified: 2023-04-08 16:57:33 +0000
+date: 2022-11-06 17:52:32 +0000
 title: "[MYSQL] 로컬에서 Replication 설정하기"
 author: Kimson
 categories: [mysql]

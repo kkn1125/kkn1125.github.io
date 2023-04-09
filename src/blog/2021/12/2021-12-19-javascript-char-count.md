@@ -1,8 +1,8 @@
 ---
 slug: "/javascript-char-count/"
 layout: post
-modified: 2022-03-14 00:09:35 +0900
-date:   2021-12-19 22:36:51 +0900
+modified: 2022-03-14 00:09:35 +0000
+date:   2021-12-19 22:36:51 +0000
 title:  "[ALGORITHM] 2020 카카오 문자열 압축 풀이"
 author: Kimson
 categories: [ algorithm ]

@@ -1,8 +1,8 @@
 ---
 slug: "/javascript-object/"
 layout: post
-modified: 2022-03-14 00:09:35 +0900
-date:   2021-08-03 20:32:27 +0900
+modified: 2022-03-14 00:09:35 +0000
+date:   2021-08-03 20:32:27 +0000
 title:  "[JAVASCRIPT] 객체와 프로토타입"
 author: Kimson
 categories: [ javascript ]

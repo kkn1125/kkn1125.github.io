@@ -1,8 +1,8 @@
 ---
 slug: "/javascript-grabbing-loaded-page/"
 layout: post
-modified: 2022-03-14 00:09:35 +0900
-date:   2021-12-16 18:41:37 +0900
+modified: 2022-03-14 00:09:35 +0000
+date:   2021-12-16 18:41:37 +0000
 title:  "[JAVASCRIPT] 페이지 내용이 동적으로 로드되는 페이지 자바스크립트로 읽어오기"
 author: Kimson
 categories: [ javascript ]

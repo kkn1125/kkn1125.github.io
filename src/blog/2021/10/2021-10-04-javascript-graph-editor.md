@@ -1,8 +1,8 @@
 ---
 slug: "/javascript-graph-editor/"
 layout: post
-modified: 2022-03-14 00:09:35 +0900
-date:   2021-10-04 19:55:23 +0900
+modified: 2022-03-14 00:09:35 +0000
+date:   2021-10-04 19:55:23 +0000
 title:  "[JAVASCRIPT] Graph Editor JS"
 author: Kimson
 categories: [ javascript ]

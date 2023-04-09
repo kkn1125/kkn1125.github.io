@@ -1,8 +1,8 @@
 ---
 slug: "/javascript-destructuring-assignment/"
 layout: post
-modified: 2022-03-14 00:09:35 +0900
-date:   2021-10-08 21:18:08 +0900
+modified: 2022-03-14 00:09:35 +0000
+date:   2021-10-08 21:18:08 +0000
 title:  "[JAVASCRIPT] 구조 분해 할당"
 author: Kimson
 categories: [ javascript ]

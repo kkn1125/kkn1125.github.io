@@ -1,8 +1,8 @@
 ---
 slug: "/spring-boot-cors01/"
 layout: post
-modified: 2022-03-14 00:09:35 +0900
-date:   2021-08-19 20:02:35 +0900
+modified: 2022-03-14 00:09:35 +0000
+date:   2021-08-19 20:02:35 +0000
 title:  "[SPRINGBOOT] Method Not Allowed 405 에러 발생과 해결"
 author: Kimson
 categories: [ spring boot ]

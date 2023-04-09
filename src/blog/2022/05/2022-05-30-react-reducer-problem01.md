@@ -1,7 +1,8 @@
 ---
 slug: "/react-reducer-problem01/"
 layout: post
-date: 2022-05-30 01:56:12 +0900
+modified: 2023-04-08 16:57:33 +0000
+date: 2022-05-30 01:56:12 +0000
 title: "[REACT] reducer 두 번 실행 문제"
 author: Kimson
 categories: [react]

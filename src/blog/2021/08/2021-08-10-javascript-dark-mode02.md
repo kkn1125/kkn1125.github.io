@@ -1,8 +1,8 @@
 ---
 slug: "/javascript-dark-mode02/"
 layout: post
-modified: 2022-03-14 00:09:35 +0900
-date:   2021-08-10 16:46:41 +0900
+modified: 2022-03-14 00:09:35 +0000
+date:   2021-08-10 16:46:41 +0000
 title:  "[JAVASCRIPT] 정적웹에 다크모드 적용하기 02"
 author: Kimson
 categories: [ javascript ]

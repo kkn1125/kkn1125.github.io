@@ -1,7 +1,8 @@
 ---
 slug: "/pm2-cluster-access01/"
 layout: post
-date: 2022-09-25 18:49:28 +0900
+modified: 2023-04-08 16:57:33 +0000
+date: 2022-09-25 18:49:28 +0000
 title: "[NODE] PM2 Cluster간 통신을 해보자 01"
 author: Kimson
 categories: [node]

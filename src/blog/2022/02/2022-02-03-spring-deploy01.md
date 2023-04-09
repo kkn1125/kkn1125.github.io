@@ -1,8 +1,8 @@
 ---
 slug: "/spring-deploy01/"
 layout: post
-modified: 2022-03-14 00:09:35 +0900
-date:   2022-02-03 13:05:22 +0900
+modified: 2022-03-14 00:09:35 +0000
+date:   2022-02-03 13:05:22 +0000
 title:  "[SPRING] Spring MVC 프로젝트 Heroku 배포 시 404 에러 기록"
 author: Kimson
 categories: [ spring ]

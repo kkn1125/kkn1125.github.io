@@ -1,7 +1,8 @@
 ---
 slug: "/express-typescript01/"
 layout: post
-date: 2022-09-04 16:50:12 +0900
+modified: 2023-04-08 16:57:33 +0000
+date: 2022-09-04 16:50:12 +0000
 title: "[EXPRESS] Express + Typescript 환경 구축 01"
 author: Kimson
 categories: [deploy]

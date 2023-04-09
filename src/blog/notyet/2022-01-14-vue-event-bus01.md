@@ -1,7 +1,7 @@
 ---
 slug: "/vue-event-bus01/"
 layout: post
-date:   2022-01-14 23:00:45 +0900
+date:   2022-01-14 23:00:45 +0000
 title:  "[VUE] Vue Event Bus"
 author: Kimson
 categories: [ VUE, TIL ]

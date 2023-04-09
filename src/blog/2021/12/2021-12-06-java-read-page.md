@@ -1,8 +1,8 @@
 ---
 slug: "/java-read-page/"
 layout: post
-modified: 2022-03-14 00:09:35 +0900
-date:   2021-12-06 21:27:46 +0900
+modified: 2022-03-14 00:09:35 +0000
+date:   2021-12-06 21:27:46 +0000
 title:  "[JAVA] URL 경로의 내용 읽어오기"
 author: Kimson
 categories: [ java ]

@@ -1,7 +1,8 @@
 ---
 slug: "/spring-boot-react01/"
 layout: post
-date: 2022-06-24 22:53:14 +0900
+modified: 2023-04-08 16:57:33 +0000
+date: 2022-06-24 22:53:14 +0000
 title: "[SPRINGBOOT] Spring boot + React 환경 구축하기 01"
 author: Kimson
 categories: [mui]

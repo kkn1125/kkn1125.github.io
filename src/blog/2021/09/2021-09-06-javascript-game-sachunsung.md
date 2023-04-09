@@ -1,8 +1,8 @@
 ---
 slug: "/javascript-game-sachunsung/"
 layout: post
-modified: 2022-03-14 00:09:35 +0900
-date:   2021-09-06 14:25:12 +0900
+modified: 2022-03-14 00:09:35 +0000
+date:   2021-09-06 14:25:12 +0000
 title:  "[JAVASCRIPT] 사천성 게임 만들기"
 author: Kimson
 categories: [ javascript ]

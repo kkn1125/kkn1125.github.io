@@ -1,8 +1,8 @@
 ---
 slug: "/spring-hierarchical-board01/"
 layout: post
-modified: 2022-03-14 00:09:35 +0900
-date:   2021-08-09 13:19:05 +0900
+modified: 2022-03-14 00:09:35 +0000
+date:   2021-08-09 13:19:05 +0000
 title:  "[SPRING] 계층형 게시판 만들기"
 author: Kimson
 categories: [ spring ]

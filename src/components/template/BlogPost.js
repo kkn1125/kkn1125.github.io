@@ -45,8 +45,26 @@ function Template({ data, pageContext }) {
       wordCount: { words },
     },
   } = data;
+  const updatedAt = new Date(frontmatter.modified?.replace("|", ""));
+  const createdAt = new Date(frontmatter.date.replace("|", ""));
+  const isSame = frontmatter.modified === frontmatter.date;
+  // const compare = updatedAt > createdAt;
+  const isUpdated =
+    !isSame &&
+    updatedAt.getTime() >
+      new Date(
+        new Date().getFullYear(),
+        new Date().getMonth(),
+        new Date().getDate() - 1
+      ).getTime();
+  const comparedTime = isUpdated ? updatedAt : createdAt;
   const isOverThreeMonth =
-    Date.now() > new Date(frontmatter.date.replace("|", "")).setMonth(3);
+    Date.now() >
+    new Date(
+      comparedTime.getFullYear(),
+      comparedTime.getMonth() + 3,
+      comparedTime.getDate()
+    ).getTime();
   const commentEl = useRef();
   const theme = useTheme();
   const [mode, setMode] = useState(false);
@@ -152,6 +170,18 @@ function Template({ data, pageContext }) {
       }
     }
   };
+
+  const UpdatedPosting = () => (
+    <Alert
+      variant='outlined'
+      severity='success'
+      sx={{
+        mt: 2,
+      }}>
+      <AlertTitle>최근 1일 내에 업데이트 된 포스팅입니다!</AlertTitle>
+      부족하지만 열심히 개선 중이니 너그럽게 봐주시기 바랍니다 😁
+    </Alert>
+  );
 
   const ThreeMonthOverPosting = () => (
     <Alert
@@ -286,6 +316,7 @@ function Template({ data, pageContext }) {
             <BlogCardInfo data={frontmatter} />
             {/* 본문 */}
             {isOverThreeMonth && <ThreeMonthOverPosting />}
+            {isUpdated && <UpdatedPosting />}
             <Box
               sx={{
                 my: 7,
@@ -315,6 +346,34 @@ function Template({ data, pageContext }) {
                     if (domNode.name === "hr") {
                       domNode.attribs["class"] = "divider";
                     }
+                    {
+                      /* if (
+                      domNode.name === "div" &&
+                      domNode.attribs["class"] === "codepen"
+                    ) {
+                      return (
+                        <iframe
+                          height={300}
+                          style={{ width: "100%" }}
+                          scrolling='no'
+                          title='javascript-filter-category-example'
+                          src='https://codepen.io/kkn1125/embed/yLVpvLK?default-tab=js%2Cresult&theme-id=dark'
+                          frameBorder={"no"}
+                          loading='lazy'
+                          allowTransparency
+                          allowFullScreen>
+                          See the Pen{" "}
+                          <a href='https://codepen.io/kkn1125/pen/yLVpvLK'>
+                            test2
+                          </a>{" "}
+                          by kkn1125 (
+                          <a href='https://codepen.io/kkn1125'>@kkn1125</a>) on{" "}
+                          <a href='https://codepen.io'>CodePen</a>.
+                        </iframe>
+                      );
+                    } */
+                    }
+
                     if (domNode.name === "pre") {
                       const children = domNode.children[0];
                       if (children.type === "tag" && children.name === "code") {
@@ -417,6 +476,8 @@ function Template({ data, pageContext }) {
               </Box>
             </Box>
             {isOverThreeMonth && <ThreeMonthOverPosting />}
+            {isUpdated && <UpdatedPosting />}
+
             <PleaseComment />
             <Divider
               sx={{
@@ -496,6 +557,7 @@ export const pageQuery = graphql`
         categories
         tags
         date(formatString: "YYYY-MM-DD | HH:mm")
+        modified(formatString: "YYYY-MM-DD | HH:mm")
       }
       html
       rawMarkdownBody

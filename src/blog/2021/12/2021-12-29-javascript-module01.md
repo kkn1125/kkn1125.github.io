@@ -1,8 +1,8 @@
 ---
 slug: "/javascript-module01/"
 layout: post
-modified: 2022-03-14 00:09:35 +0900
-date:   2021-12-29 16:17:41 +0900
+modified: 2022-03-14 00:09:35 +0000
+date:   2021-12-29 16:17:41 +0000
 title:  "[JAVASCRIPT] Vanilla JavaScript에서 Module사용하기"
 author: Kimson
 categories: [ javascript ]

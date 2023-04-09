@@ -1,8 +1,8 @@
 ---
 slug: "/javascript-resizebar01/"
 layout: post
-modified: 2022-03-14 00:09:35 +0900
-date:   2021-09-10 19:07:12 +0900
+modified: 2022-03-14 00:09:35 +0000
+date:   2021-09-10 19:07:12 +0000
 title:  "[JAVASCRIPT] 수평 사이즈 조절 바 구현하기"
 author: Kimson
 categories: [ javascript ]

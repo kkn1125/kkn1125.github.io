@@ -1,8 +1,8 @@
 ---
 slug: "/java-algorithm01/"
 layout: post
-modified: 2022-03-14 00:09:35 +0900
-date:   2021-12-15 17:44:57 +0900
+modified: 2022-03-14 00:09:35 +0000
+date:   2021-12-15 17:44:57 +0000
 title:  "[ALGORITHM] Kakao 인턴"
 author: Kimson
 categories: [ algorithm ]

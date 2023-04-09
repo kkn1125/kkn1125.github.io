@@ -1,8 +1,8 @@
 ---
 slug: "/spring-boot-file-upload/"
 layout: post
-modified: 2022-03-14 00:09:35 +0900
-date:   2021-09-24 20:15:27 +0900
+modified: 2022-03-14 00:09:35 +0000
+date:   2021-09-24 20:15:27 +0000
 title:  "[SPRING] 파일 업로드 하기"
 author: Kimson
 categories: [ spring boot ]

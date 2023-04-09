@@ -14,3 +14,4 @@ src/gatsby-types.d.ts
 \[x\]*
 
 .env*
+__tests__

@@ -1,7 +1,8 @@
 ---
 slug: "/django-model-form03/"
 layout: post
-date:   2022-04-28 15:42:45 +0900
+modified: 2023-04-08 16:57:33 +0000
+date:   2022-04-28 15:42:45 +0000
 title:  "[DJANGO] ModelForm 03. Bootstrap5 Library와 Form Error 제어"
 author: Kimson
 categories: [ django ]

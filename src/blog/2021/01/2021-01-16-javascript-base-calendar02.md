@@ -1,8 +1,8 @@
 ---
 slug: "/javascript-base-calendar02/"
 layout: post
-modified: 2022-03-23 16:02:22 +0900
-date:   2021-01-16 21:25:04 +0900
+modified: 2022-03-23 16:02:22 +0000
+date:   2021-01-16 21:25:04 +0000
 title:  "[JAVASCRIPT] 달력 만들기 (글쓰기 기능)"
 author: Kimson
 categories: [ javascript ]

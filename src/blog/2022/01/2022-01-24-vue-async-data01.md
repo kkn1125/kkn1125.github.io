@@ -1,8 +1,8 @@
 ---
 slug: "/vue-async-data01/"
 layout: post
-modified: 2022-03-14 00:09:35 +0900
-date:   2022-01-24 11:50:37 +0900
+modified: 2022-03-14 00:09:35 +0000
+date:   2022-01-24 11:50:37 +0000
 title:  "[VUE] 비동기 데이터 프로퍼티 null값 처리하기"
 author: Kimson
 categories: [ vue ]
@@ -42,7 +42,7 @@ published: true
 
 예를 들기 위해 [Sample APIs::Coffee](https://sampleapis.com/api-list/coffee){:target="blank"}의 샘플을 사용하겠습니다.
 
-{% raw %}
+
 
 ```javascript
 Vue.component('module-test', {
@@ -78,7 +78,7 @@ Vue.component('module-test', {
 });
 ```
 
-{% endraw %}
+
 
 위의 경우 `if`로 데이터 로딩 처리를 선택적으로 한 다음 `for`문으로 돌리면 값을 받아오는 시점에서 데이터가 갱신되어 배열이 쭉 프린트됩니다.
 
@@ -86,7 +86,7 @@ Vue.component('module-test', {
 
 예로 단일 데이터를 가져올 때를 보겠습니다.
 
-{% raw %}
+
 
 ```javascript
 Vue.component('module-test', {
@@ -120,7 +120,7 @@ Vue.component('module-test', {
 });
 ```
 
-{% endraw %}
+
 
 <figure class="text-center">
 <span class="w-inline-block">
@@ -135,7 +135,7 @@ Vue.component('module-test', {
 
 방법은 여러가지겠지만 `computed`로 처리하는 것이 간단하고 수정하기 쉬운 것 같아 아래와 같이 기록을 합니다.
 
-{% raw %}
+
 
 ```javascript
 Vue.component('module-test', {
@@ -174,11 +174,11 @@ Vue.component('module-test', {
 });
 ```
 
-{% endraw %}
+
 
 위의 방법 외에도 여러 방법은 있습니다만 `optional chainign`을 사용하는 것도 방법일 것 같습니다.
 
-{% raw %}
+
 
 ```javascript
 // ...
@@ -192,7 +192,7 @@ template: `
 // ...
 ```
 
-{% endraw %}
+
 
 만일 수정이 필요하다면 손이 적게가는 것은 `computed`로 넘겨받는 것이 좋을 듯 합니다.
 

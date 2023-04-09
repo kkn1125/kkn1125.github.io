@@ -1,8 +1,8 @@
 ---
 slug: "/java-web-assembly01/"
 layout: post
-modified: 2022-03-14 00:09:35 +0900
-date:   2021-10-20 11:27:25 +0900
+modified: 2022-03-14 00:09:35 +0000
+date:   2021-10-20 11:27:25 +0000
 title:  "[SPRING] JWebAssembly를 사용해보자"
 author: Kimson
 categories: [ spring ]

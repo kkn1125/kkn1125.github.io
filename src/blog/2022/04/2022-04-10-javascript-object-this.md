@@ -1,7 +1,8 @@
 ---
 slug: "/javascript-object-this/"
 layout: post
-date:   2022-04-10 17:43:00 +0900
+modified: 2023-04-08 16:57:33 +0000
+date:   2022-04-10 17:43:00 +0000
 title:  "[JAVASCRIPT] Object와 This"
 author: Kimson
 categories: [ javascript ]

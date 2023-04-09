@@ -8,7 +8,7 @@
     "gatsby"
   ],
   "scripts": {
-    "dev": "gatsby -h",
+    "dev": "gatsby develop",
     "start": "gatsby develop",
     "build": "gatsby build --prefix-paths",
     "totalbuild": "npm run clean && npm run build && cd public/ && echo google-site-verification: google050e6145d059bcf0.html > google050e6145d059bcf0.html && echo naver-site-verification: naverab361a1a39575334bea9d573640c9e21.html > naverab361a1a39575334bea9d573640c9e21.html && echo google.com, pub-7028508433313066, DIRECT, f08c47fec0942fa0 > ads.txt && git init && git add -A && git commit -m \"add post and fixbugs\"",

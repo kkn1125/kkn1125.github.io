@@ -1,8 +1,8 @@
 ---
 slug: "/javascript-solitaire03/"
 layout: post
-modified: 2022-03-14 00:09:35 +0900
-date:   2022-01-11 16:05:43 +0900
+modified: 2022-03-14 00:09:35 +0000
+date:   2022-01-11 16:05:43 +0000
 title:  "[JAVASCRIPT] Solitaire를 만들어 보자 03"
 author: Kimson
 categories: [ javascript ]

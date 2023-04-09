@@ -1,8 +1,8 @@
 ---
 slug: "/javascript-web-tutorial/"
 layout: post
-modified: 2022-03-14 00:09:35 +0900
-date:   2021-10-25 22:27:25 +0900
+modified: 2022-03-14 00:09:35 +0000
+date:   2021-10-25 22:27:25 +0000
 title:  "[JAVASCRIPT] 웹 튜토리얼 구현하기"
 author: Kimson
 categories: [ javascript ]

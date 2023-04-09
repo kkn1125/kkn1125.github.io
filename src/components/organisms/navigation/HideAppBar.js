@@ -48,7 +48,7 @@ const pages = [
     path: "/lives",
   },
   {
-    name: "tech blog",
+    name: "tech",
     path: "/blog",
   },
   {
@@ -388,13 +388,13 @@ function HideAppBar(props) {
                           textTransform: "uppercase",
                         }}>
                         {page.name}
-                        {page.name.match(/tech blog|lives/) ? (
+                        {page.name.match(/tech|lives/) ? (
                           <>
                             {" "}
                             <Chip
                               size='small'
                               label={
-                                page.name === "tech blog"
+                                page.name === "tech"
                                   ? blogCount
                                   : livesCount
                               }
@@ -492,13 +492,13 @@ function HideAppBar(props) {
                       textAlign: "center",
                     }}>
                     {page.name}
-                    {page.name.match(/tech blog|lives/) ? (
+                    {page.name.match(/tech|lives/) ? (
                       <>
                         {" "}
                         <Chip
                           size='small'
                           label={
-                            page.name === "tech blog" ? blogCount : livesCount
+                            page.name === "tech" ? blogCount : livesCount
                           }
                           color='error'
                         />

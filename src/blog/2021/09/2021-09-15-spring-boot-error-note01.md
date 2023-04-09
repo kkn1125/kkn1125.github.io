@@ -1,8 +1,8 @@
 ---
 slug: "/spring-boot-error-note01/"
 layout: post
-modified: 2022-03-14 00:09:35 +0900
-date:   2021-09-15 21:26:12 +0900
+modified: 2022-03-14 00:09:35 +0000
+date:   2021-09-15 21:26:12 +0000
 title:  "[SPRINGBOOT] 에러노트 - mybatis syntax error"
 author: Kimson
 categories: [ spring boot ]

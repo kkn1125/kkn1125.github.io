@@ -1,8 +1,8 @@
 ---
 slug: "/javascript-routing01/"
 layout: post
-modified: 2022-03-14 00:09:35 +0900
-date:   2021-12-09 17:44:58 +0900
+modified: 2022-03-14 00:09:35 +0000
+date:   2021-12-09 17:44:58 +0000
 title:  "[JAVASCRIPT] Vanilla JavaScript로 SPA를 구현해보자 01"
 author: Kimson
 categories: [ javascript ]

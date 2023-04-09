@@ -1,7 +1,8 @@
 ---
 slug: "/django-authenticate/"
 layout: post
-date:   2022-03-28 17:07:32 +0900
+modified: 2023-04-08 16:57:33 +0000
+date:   2022-03-28 17:07:32 +0000
 title:  "[DJANGO] User Authentication 사용하기 01"
 author: Kimson
 categories: [ django ]

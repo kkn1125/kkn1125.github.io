@@ -1,8 +1,8 @@
 ---
 slug: "/javascript-typerjs01/"
 layout: post
-modified: 2022-03-14 00:09:35 +0900
-date:   2021-10-27 21:39:53 +0900
+modified: 2022-03-14 00:09:35 +0000
+date:   2021-10-27 21:39:53 +0000
 title:  "[JAVASCRIPT] Typer 0.2.0 pre-release 한글 타이핑 효과"
 author: Kimson
 categories: [ javascript ]

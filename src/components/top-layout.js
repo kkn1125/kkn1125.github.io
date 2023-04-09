@@ -1,6 +1,6 @@
 import React, { createContext, useEffect, useMemo, useState } from "react";
 import CssBaseline from "@mui/material/CssBaseline";
-import { ThemeProvider, createTheme } from "@mui/material/styles";
+import { ThemeProvider, createTheme, css } from "@mui/material/styles";
 import { responsiveFontSizes } from "@mui/material/styles";
 
 import Viewport from "./viewport";
@@ -12,6 +12,8 @@ import PickProvider from "../context/PickProvider";
 import { API_BASE_PATH, API_PATH } from "../util/globals";
 import { Modal } from "./organisms/dev/Modal";
 import axios from "axios";
+import { ApiProvider } from "../hooks/apiHooks";
+import { GlobalStyles } from "@mui/material";
 
 const ColorModeContext = createContext({ toggleColorMode: () => {} });
 
@@ -66,19 +68,72 @@ export default function TopLayout({ children }) {
 
   return (
     <>
+      <GlobalStyles
+        styles={(theme) => css`
+          ::selection {
+            color: inherit;
+            background: ${theme.palette.secondary.dark}56;
+          }
+          .blog-post a[href] {
+            color: ${theme.palette.success.dark};
+            font-weight: 700;
+            text-decoration-line: underline !important;
+          }
+
+          .blog-post strong {
+            text-emphasis: filled red;
+          }
+
+          ::-webkit-scrollbar {
+            width: 8px;
+            background-color: #373C0056;
+          }
+          ::-webkit-scrollbar-thumb {
+            width: 8px;
+            ${
+              "" /* border-left: 3px solid #8a8a7e;
+            border-right: 3px solid #8a8a7e; */
+            }
+            background-color: #373C00;
+            ${"" /* border-radius: 5px; */}
+          }
+
+          ${
+            "" /* .blog-post strong::after {
+            content: "　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　";
+            overflow: hidden;
+            position: absolute;
+            top: 5px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: inline-block;
+            width: inherit;
+            text-decoration-line: underline;
+            text-decoration-style: wavy;
+            text-decoration-thickness: from-font;
+            text-decoration-color: black;
+            color: transparent;
+            font-size: 2rem;
+          } */
+          }
+        `}
+      />
       <Viewport />
-      <PickProvider>
-        <BlogProvider>
-          <ColorModeContext.Provider value={colorMode}>
-            <ThemeProvider theme={theme}>
-              {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
-              <CssBaseline />
-              <Layout>{children}</Layout>
-              <Modal />
-            </ThemeProvider>
-          </ColorModeContext.Provider>
-        </BlogProvider>
-      </PickProvider>
+      <ApiProvider>
+        <PickProvider>
+          <BlogProvider>
+            <ColorModeContext.Provider value={colorMode}>
+              <ThemeProvider theme={theme}>
+                {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
+                <CssBaseline />
+                <Layout>{children}</Layout>
+                <Modal />
+              </ThemeProvider>
+            </ColorModeContext.Provider>
+          </BlogProvider>
+        </PickProvider>
+      </ApiProvider>
     </>
   );
 }

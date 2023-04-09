@@ -1,7 +1,8 @@
 ---
 slug: "/django-model-form02/"
 layout: post
-date:   2022-03-23 13:27:18 +0900
+modified: 2023-04-08 16:57:33 +0000
+date:   2022-03-23 13:27:18 +0000
 title:  "[DJANGO] ModelForm 02. 회원 기존 정보 덮어쓰기"
 author: Kimson
 categories: [ django ]

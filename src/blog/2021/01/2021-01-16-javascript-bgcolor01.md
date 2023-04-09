@@ -1,8 +1,8 @@
 ---
 slug: "/javascript-bgcolor01/"
 layout: post
-modified: 2022-03-23 16:02:26 +0900
-date:   2021-01-16 21:25:04 +0900
+modified: 2022-03-23 16:02:26 +0000
+date:   2021-01-16 21:25:04 +0000
 title:  "[JAVASCRIPT] 배경색 무작위 변경 버튼"
 author: Kimson
 categories: [ javascript ]

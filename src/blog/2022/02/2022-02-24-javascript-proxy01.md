@@ -1,8 +1,8 @@
 ---
 slug: "/javascript-proxy01/"
 layout: post
-modified: 2022-03-14 00:09:35 +0900
-date:   2022-02-24 21:22:08 +0900
+modified: 2022-03-14 00:09:35 +0000
+date:   2022-02-24 21:22:08 +0000
 title:  "[JAVASCRIPT] Proxy와 Reflect 맛보기 02 - Todo List를 만들어보자"
 author: Kimson
 categories: [ javascript ]

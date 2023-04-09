@@ -1,7 +1,8 @@
 ---
 slug: "/shell-detection-files/"
 layout: post
-date:   2022-03-15 21:17:09 +0900
+modified: 2023-04-08 16:57:33 +0000
+date:   2022-03-15 21:17:09 +0000
 title:  "[SHELL] Shell Script로 파일 변환을 감지해보자 02"
 author: Kimson
 categories: [ shell ]

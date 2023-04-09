@@ -1,8 +1,8 @@
 ---
 slug: "/spring-tiles-error01/"
 layout: post
-modified: 2022-03-14 00:09:35 +0900
-date:   2021-12-13 17:16:37 +0900
+modified: 2022-03-14 00:09:35 +0000
+date:   2021-12-13 17:16:37 +0000
 title:  "[SPRING] Tiles 설정 시 경로에 있는 파일을 못 찾을 때"
 author: Kimson
 categories: [ spring ]

@@ -1,7 +1,8 @@
 ---
 slug: "/express-error-handling01/"
 layout: post
-date: 2022-09-14 17:51:43 +0900
+modified: 2023-04-08 16:57:33 +0000
+date: 2022-09-14 17:51:43 +0000
 title: "[EXPRESS] express axios 에러 핸들링"
 author: Kimson
 categories: [express]

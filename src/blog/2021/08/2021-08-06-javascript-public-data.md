@@ -1,8 +1,8 @@
 ---
 slug: "/javascript-public-data/"
 layout: post
-modified: 2022-03-23 20:55:04 +0900
-date:   2021-08-06 16:22:36 +0900
+modified: 2022-03-23 20:55:04 +0000
+date:   2021-08-06 16:22:36 +0000
 title:  "[JAVASCRIPT] 공공데이터로 페이징 처리하기"
 author: Kimson
 categories: [ javascript ]

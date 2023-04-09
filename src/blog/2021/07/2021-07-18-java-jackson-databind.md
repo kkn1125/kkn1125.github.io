@@ -1,8 +1,8 @@
 ---
 slug: "/java-jackson-databind/"
 layout: post
-modified: 2022-03-23 19:47:55 +0900
-date:   2021-07-18 12:21:27 +0900
+modified: 2022-03-23 19:47:55 +0000
+date:   2021-07-18 12:21:27 +0000
 title:  "[JAVA] Json 기본 익히기"
 author: Kimson
 categories: [ java ]

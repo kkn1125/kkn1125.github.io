@@ -1,8 +1,8 @@
 ---
 slug: "/javascript-ant-get-directions01/"
 layout: post
-modified: 2022-03-14 00:09:35 +0900
-date:   2021-09-02 13:35:47 +0900
+modified: 2022-03-14 00:09:35 +0000
+date:   2021-09-02 13:35:47 +0000
 title:  "[JAVASCRIPT] 개미 길 찾기 - 파이썬 문제"
 author: Kimson
 categories: [ javascript ]

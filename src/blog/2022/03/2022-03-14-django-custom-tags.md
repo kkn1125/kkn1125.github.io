@@ -1,7 +1,8 @@
 ---
 slug: "/django-custom-tags/"
 layout: post
-date:   2022-03-14 18:54:26 +0900
+modified: 2023-04-08 16:57:33 +0000
+date:   2022-03-14 18:54:26 +0000
 title:  "[DJANGO] 커스텀 템플릿 태그를 사용하려면?"
 author: Kimson
 categories: [ django ]

@@ -1,8 +1,8 @@
 ---
 slug: "/database-use-db/"
 layout: post
-modified: 2022-03-14 00:09:35 +0900
-date:   2021-09-07 15:37:12 +0900
+modified: 2022-03-14 00:09:35 +0000
+date:   2021-09-07 15:37:12 +0000
 title:  "[DATABASE] 정적 웹에서 데이터베이스 사용하기"
 author: Kimson
 categories: [ database ]

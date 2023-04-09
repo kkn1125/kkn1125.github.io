@@ -17,10 +17,11 @@ import {
 import Grid from "@mui/material/Grid";
 import axios from "axios";
 import { graphql, navigate } from "gatsby";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import Seo from "../components/modules/seo/Seo";
 import Calendar from "../components/organisms/calendar/Calendar";
+import { ApiContext, ApiDispatchContext } from "../hooks/apiHooks";
 import BlogHook from "../hooks/blogHook";
 import LivesHook from "../hooks/livesHook";
 import { API_BASE_PATH, API_PATH } from "../util/globals";
@@ -62,7 +63,12 @@ const IndexPage = (
     setLivesViewMore(livesViewMore + viewCount);
   };
 
+  const apiState = useContext(ApiContext);
+  const apiDispatch = useContext(ApiDispatchContext);
+
   useEffect(() => {
+    apiDispatch("USER/UPDATE");
+    console.log(apiState);
     // (async function () {
     //   const res = await axios.post(
     //     API_PATH + API_BASE_PATH + "/posts/bulk",

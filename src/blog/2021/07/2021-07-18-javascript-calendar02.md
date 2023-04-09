@@ -1,8 +1,8 @@
 ---
 slug: "/javascript-calendar02/"
 layout: post
-modified: 2022-03-23 20:30:47 +0900
-date:   2021-07-18 16:21:27 +0900
+modified: 2022-03-23 20:30:47 +0000
+date:   2021-07-18 16:21:27 +0000
 title:  "[JAVASCRIPT] 달력만들기 02 - TODO LIST"
 author: Kimson
 categories: [ javascript ]

@@ -1,8 +1,8 @@
 ---
 slug: "/javascript-template-literal-async01/"
 layout: post
-modified: 2022-03-14 00:09:35 +0900
-date:   2022-02-11 15:17:59 +0900
+modified: 2022-03-14 00:09:35 +0000
+date:   2022-02-11 15:17:59 +0000
 title:  "[JAVASCRIPT] 템플릿 리터럴에서 비동기로 내용을 넣어보자"
 author: Kimson
 categories: [ javascript ]

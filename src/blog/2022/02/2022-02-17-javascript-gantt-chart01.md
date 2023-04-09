@@ -1,8 +1,8 @@
 ---
 slug: "/javascript-gantt-chart01/"
 layout: post
-modified: 2022-03-14 00:09:35 +0900
-date:   2022-02-17 13:51:02 +0900
+modified: 2022-03-14 00:09:35 +0000
+date:   2022-02-17 13:51:02 +0000
 title:  "[JAVASCRIPT] 간트차트를 만들어보자"
 author: Kimson
 categories: [ javascript ]

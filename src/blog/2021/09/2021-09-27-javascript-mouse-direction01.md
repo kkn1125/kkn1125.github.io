@@ -1,8 +1,8 @@
 ---
 slug: "/javascript-mouse-direction01/"
 layout: post
-modified: 2022-03-14 00:09:35 +0900
-date:   2021-09-24 22:22:32 +0900
+modified: 2022-03-14 00:09:35 +0000
+date:   2021-09-24 22:22:32 +0000
 title:  "[JAVASCRIPT] 마우스 이동 방향 감지"
 author: Kimson
 categories: [ javascript ]

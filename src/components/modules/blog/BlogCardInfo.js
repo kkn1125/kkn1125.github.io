@@ -3,6 +3,18 @@ import { Link } from "gatsby";
 import React from "react";
 
 function BlogCardInfo({ data, noavatar }) {
+  const updatedAt = new Date(data.modified?.replace("|", ""));
+  const createdAt = new Date(data.date.replace("|", ""));
+  const compare = updatedAt > createdAt;
+  const isSame = data.modified === data.date;
+  const isUpdated =
+    !isSame &&
+    updatedAt.getTime() <
+      new Date(
+        new Date().getFullYear(),
+        new Date().getMonth(),
+        new Date().getDate() + 1
+      ).getTime();
   return (
     <Stack direction='row' alignItems='center'>
       {!noavatar && (
@@ -35,14 +47,34 @@ function BlogCardInfo({ data, noavatar }) {
           my: 0.9,
         }}
       />
-      <Typography
+      <Stack
+        direction='row'
+        gap={1}
         component='div'
         color='GrayText'
         sx={{
           fontSize: 12,
+          [`& > *`]: {
+            fontSize: "inherit !important",
+          },
         }}>
-        {data.date}
-      </Typography>
+        <Typography
+          component='span'
+          sx={{
+            ...(isUpdated && { textDecorationLine: "line-through" }),
+          }}>
+          {data.date}
+        </Typography>
+        {isUpdated && (
+          <>
+            <Typography component='span'>⇒</Typography>
+            <Typography component='span'>
+              ✏️
+              {data.modified}
+            </Typography>
+          </>
+        )}
+      </Stack>
     </Stack>
   );
 }

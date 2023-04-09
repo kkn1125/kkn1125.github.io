@@ -1,7 +1,8 @@
 ---
 slug: "/django-testcase01/"
 layout: post
-date:   2022-03-31 15:53:36 +0900
+modified: 2023-04-08 16:57:33 +0000
+date:   2022-03-31 15:53:36 +0000
 title:  "[DJANGO] 단위테스트 작성"
 author: Kimson
 categories: [ django ]
