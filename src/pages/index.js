@@ -67,8 +67,8 @@ const IndexPage = (
   const apiDispatch = useContext(ApiDispatchContext);
 
   useEffect(() => {
-    apiDispatch("USER/UPDATE");
-    console.log(apiState);
+    // apiDispatch("USER/UPDATE");
+    // console.log(apiState);
     // (async function () {
     //   const res = await axios.post(
     //     API_PATH + API_BASE_PATH + "/posts/bulk",
@@ -92,6 +92,10 @@ const IndexPage = (
         <meta property='og:title' content='devkimson blog' />
         <meta
           property='og:description'
+          content='기능 설계와 편리한 서비스에 관심이 많은 웹 개발자의 gatsby 블로그 입니다.'
+        />
+        <meta
+          property='description'
           content='기능 설계와 편리한 서비스에 관심이 많은 웹 개발자의 gatsby 블로그 입니다.'
         />
         <meta property='og:author' content='kkn1125' />
@@ -201,96 +205,99 @@ const IndexPage = (
               : "none",
           }}
         />
-        <Grid item xs={12}>
-          <Typography
-            component='div'
-            variant='h1'
-            gutterBottom
-            sx={{
-              fontSize: (theme) => theme.typography.pxToRem(32) + " !important",
-              // borderBottomColor: "#777777",
-              // borderBottomWidth: 5,
-              // borderBottomStyle: "solid",
-              fontWeight: 700,
-              // pb: 2,
-            }}>
-            Lives 👨‍💻
-          </Typography>
-          <List
-            dense={true}
-            sx={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "flex-start",
-              gap: 2,
-            }}>
-            {lives
-              .slice(0, blogViewMore)
-              .map(({ node: { frontmatter: post } }) => (
-                <ListItem
-                  key={post.layout + post.slug + post.title}
-                  onClick={(e) => navigate(post.slug)}
-                  sx={{
-                    cursor: "pointer",
-                    alignItems: "flex-start",
-                  }}>
-                  <ListItemAvatar
+        {lives.length > 0 && (
+          <Grid item xs={12}>
+            <Typography
+              component='div'
+              variant='h1'
+              gutterBottom
+              sx={{
+                fontSize: (theme) =>
+                  theme.typography.pxToRem(32) + " !important",
+                // borderBottomColor: "#777777",
+                // borderBottomWidth: 5,
+                // borderBottomStyle: "solid",
+                fontWeight: 700,
+                // pb: 2,
+              }}>
+              Lives 👨‍💻
+            </Typography>
+            <List
+              dense={true}
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "flex-start",
+                gap: 2,
+              }}>
+              {lives
+                .slice(0, blogViewMore)
+                .map(({ node: { frontmatter: post } }) => (
+                  <ListItem
+                    key={post.layout + post.slug + post.title}
+                    onClick={(e) => navigate(post.slug)}
                     sx={{
-                      pt: 1,
+                      cursor: "pointer",
+                      alignItems: "flex-start",
                     }}>
-                    <Avatar src={post.image}>{/* <FolderIcon /> */}</Avatar>
-                  </ListItemAvatar>
-                  <ListItemText
-                    primary={cutText(
-                      post.title,
-                      useMediaQuery(theme.breakpoints.up("md")) ? 50 : 15
-                    )}
-                    primaryTypographyProps={{
-                      sx: (theme) => ({
-                        fontSize: theme.typography.pxToRem(24),
-                        fontWeight: 700,
-                        ["&::after"]: {
-                          content: `"✏️ ${post.date}"`,
-                          fontSize: theme.typography.pxToRem(12),
-                          marginLeft: 3,
-                          color: "#999999",
+                    <ListItemAvatar
+                      sx={{
+                        pt: 1,
+                      }}>
+                      <Avatar src={post.image}>{/* <FolderIcon /> */}</Avatar>
+                    </ListItemAvatar>
+                    <ListItemText
+                      primary={cutText(
+                        post.title,
+                        useMediaQuery(theme.breakpoints.up("md")) ? 50 : 15
+                      )}
+                      primaryTypographyProps={{
+                        sx: (theme) => ({
+                          fontSize: theme.typography.pxToRem(24),
+                          fontWeight: 700,
+                          ["&::after"]: {
+                            content: `"✏️ ${post.date}"`,
+                            fontSize: theme.typography.pxToRem(12),
+                            marginLeft: 3,
+                            color: "#999999",
+                          },
+                        }),
+                      }}
+                      secondary={cutText(
+                        post.description,
+                        useMediaQuery(theme.breakpoints.up("md")) ? 150 : 35
+                      )}
+                      secondaryTypographyProps={{
+                        sx: {
+                          color: "#888",
                         },
-                      }),
-                    }}
-                    secondary={cutText(
-                      post.description,
-                      useMediaQuery(theme.breakpoints.up("md")) ? 150 : 35
-                    )}
-                    secondaryTypographyProps={{
-                      sx: {
-                        color: "#888",
-                      },
-                    }}
-                  />
-                  {/* <Stack direction='row'>
+                      }}
+                    />
+                    {/* <Stack direction='row'>
                   <Typography sx={{ flex: 1 }}>👓</Typography>
                   <Typography sx={{ flex: 1 }}>
                     {blogInfos.find((bi) => bi.slug === post.slug)?.likes || 0}
                   </Typography>
                 </Stack> */}
-                </ListItem>
-              ))}
-          </List>
-          <Box
-            sx={{
-              textAlign: "center",
-            }}>
-            <Button
-              color='secondary'
-              variant='contained'
-              onClick={() => {
-                navigate("/lives/");
-                // checkBlogLimit();
+                  </ListItem>
+                ))}
+            </List>
+            <Box
+              sx={{
+                textAlign: "center",
               }}>
-              더 보기 📂
-            </Button>
-          </Box>
-        </Grid>
+              <Button
+                color='secondary'
+                variant='contained'
+                onClick={() => {
+                  navigate("/lives/");
+                  // checkBlogLimit();
+                }}>
+                더 보기 📂
+              </Button>
+            </Box>
+          </Grid>
+        )}
         {/* main */}
         {/* <Grid item xs={12}>
           <BlogCard

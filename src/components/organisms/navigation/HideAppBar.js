@@ -373,40 +373,44 @@ function HideAppBar(props) {
                   sx={{
                     display: { xs: "block", md: "none" },
                   }}>
-                  {pages.map((page) => (
-                    <MenuItem key={page.name} onClick={handleCloseNavMenu}>
-                      <Typography
-                        key={page.name}
-                        onClick={handleCloseNavMenu}
-                        component={Link}
-                        to={page.path + "/"}
-                        sx={{
-                          display: "block",
-                          color: (theme) => theme.palette.text.primary,
-                          textDecoration: "none",
-                          textAlign: "center",
-                          textTransform: "uppercase",
-                        }}>
-                        {page.name}
-                        {page.name.match(/tech|lives/) ? (
-                          <>
-                            {" "}
-                            <Chip
-                              size='small'
-                              label={
-                                page.name === "tech"
-                                  ? blogCount
-                                  : livesCount
-                              }
-                              color='error'
-                            />
-                          </>
-                        ) : (
-                          ""
-                        )}
-                      </Typography>
-                    </MenuItem>
-                  ))}
+                  {pages.map(
+                    (page) =>
+                      (page.name !== "lives" ||
+                        (page === "lives" && livesCount !== 0)) && (
+                        <MenuItem key={page.name} onClick={handleCloseNavMenu}>
+                          <Typography
+                            key={page.name}
+                            onClick={handleCloseNavMenu}
+                            component={Link}
+                            to={page.path + "/"}
+                            sx={{
+                              display: "block",
+                              color: (theme) => theme.palette.text.primary,
+                              textDecoration: "none",
+                              textAlign: "center",
+                              textTransform: "uppercase",
+                            }}>
+                            {page.name}
+                            {page.name.match(/tech|lives/) ? (
+                              <>
+                                {" "}
+                                <Chip
+                                  size='small'
+                                  label={
+                                    page.name === "tech"
+                                      ? blogCount
+                                      : livesCount
+                                  }
+                                  color='error'
+                                />
+                              </>
+                            ) : (
+                              ""
+                            )}
+                          </Typography>
+                        </MenuItem>
+                      )
+                  )}
                   {pick.storage.length > 0 && (
                     <MenuItem onClick={handleCloseNavMenu}>
                       <TemporaryDrawer
@@ -478,36 +482,40 @@ function HideAppBar(props) {
                   },
                   gap: 1,
                 }}>
-                {pages.map((page) => (
-                  <Button
-                    key={page.name}
-                    onClick={handleCloseNavMenu}
-                    component={Link}
-                    to={page.path + "/"}
-                    sx={{
-                      my: 2,
-                      display: "block",
-                      color: (theme) => theme.palette.text.secondary,
-                      textDecoration: "none",
-                      textAlign: "center",
-                    }}>
-                    {page.name}
-                    {page.name.match(/tech|lives/) ? (
-                      <>
-                        {" "}
-                        <Chip
-                          size='small'
-                          label={
-                            page.name === "tech" ? blogCount : livesCount
-                          }
-                          color='error'
-                        />
-                      </>
-                    ) : (
-                      ""
-                    )}
-                  </Button>
-                ))}
+                {pages.map(
+                  (page) =>
+                    (page.name !== "lives" ||
+                      (page === "lives" && livesCount !== 0)) && (
+                      <Button
+                        key={page.name}
+                        onClick={handleCloseNavMenu}
+                        component={Link}
+                        to={page.path + "/"}
+                        sx={{
+                          my: 2,
+                          display: "block",
+                          color: (theme) => theme.palette.text.secondary,
+                          textDecoration: "none",
+                          textAlign: "center",
+                        }}>
+                        {page.name}
+                        {page.name.match(/tech|lives/) ? (
+                          <>
+                            {" "}
+                            <Chip
+                              size='small'
+                              label={
+                                page.name === "tech" ? blogCount : livesCount
+                              }
+                              color='error'
+                            />
+                          </>
+                        ) : (
+                          ""
+                        )}
+                      </Button>
+                    )
+                )}
                 {pick.storage.length > 0 && (
                   <TemporaryDrawer
                     sx={{
