@@ -339,14 +339,16 @@ function Template({ data, pageContext }) {
                   replace: (domNode) => {
                     if (domNode.name && domNode.name.match(/h[1-6]/g)) {
                       domNode.attribs["class"] = "title";
-                      const idStr = domNode.children[0].data
-                        .trim()
+                      const idStr = domNode.children[0]?.data
+                        ?.trim()
                         .replace(/[\s]+/, "_");
-                      domNode.attribs["id"] = idStr;
-                      domNode.attribs["style"] = "cursor: pointer";
-                      domNode.attribs["onClick"] = (e) => {
-                        document.body
-                      };
+                      if (idStr) {
+                        domNode.attribs["id"] = idStr;
+                        domNode.attribs["style"] = "cursor: pointer";
+                        domNode.attribs["onClick"] = (e) => {
+                          document.body;
+                        };
+                      }
                     }
                     if (domNode.name && domNode.name === "a") {
                       domNode.attribs["target"] = "_blank";
