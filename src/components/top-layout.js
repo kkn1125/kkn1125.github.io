@@ -86,7 +86,7 @@ export default function TopLayout({ children }) {
 
           ::-webkit-scrollbar {
             width: 8px;
-            background-color: #373C0056;
+            background-color: #373c0056;
           }
           ::-webkit-scrollbar-thumb {
             width: 8px;
@@ -116,6 +116,13 @@ export default function TopLayout({ children }) {
             color: transparent;
             font-size: 2rem;
           } */
+          }
+
+          ${'' /* body, */}
+          #___gatsby {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
           }
         `}
       />

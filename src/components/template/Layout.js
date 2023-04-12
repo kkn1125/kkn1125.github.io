@@ -8,10 +8,15 @@ import Footer from "../organisms/Footer";
 
 const Layout = ({ children }) => {
   const theme = useTheme();
-    return (
+  return (
     <>
       <HideAppBar />
-      <Container maxWidth='lg'>
+      <Container
+        maxWidth='lg'
+        sx={{
+          flex: 1,
+          height: "inherit",
+        }}>
         <Box component='main' my={10}>
           {children}
         </Box>
