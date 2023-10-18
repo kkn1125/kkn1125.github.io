@@ -1,3 +1,5 @@
+> 현재 main 브랜치는 과거 블로그 소스입니다. 새로운 블로그 저장소는 별도로 생성하여 운영하며, 빌드된 소스코드만 배포합니다. 😀 2023. 10. 18 작성
+
 <h1 align="center"><a href="https://kkn1125.github.io/"><strong>Devkimson Blog</strong></a></h1>
 
 <p align="center">
