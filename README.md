@@ -3,9 +3,9 @@
 <h1 align="center"><a href="https://kkn1125.github.io/"><strong>Devkimson Tech Blog</strong></a></h1>
 
 <p align="center">
-  <a href="#blog-운영의-목적-🎯" title="Blog 운영의 목적"><strong>Blog 운영의 목적</strong></a>
+  <a href="#blog-운영의-목적-" title="Blog 운영의 목적"><strong>Blog 운영의 목적</strong></a>
   |
-  <a href="#blog-주-내용-✏️" title="Blog 주 내용"><strong>Blog 주 내용</strong></a>
+  <a href="#blog-주-내용-%EF%B8%8F" title="Blog 주 내용"><strong>Blog 주 내용</strong></a>
   |
   <a href="#블로그-외-페이지" title="블로그 외 페이지"><strong>블로그 외 페이지</strong></a>
   |
@@ -74,3 +74,4 @@ Copyright 2022 kimson, <https://kkn1125.github.io/>
 <!-- <figure.+[\n\s]*<span.+[\n\s]*<img[\n\s]*src=['"](.+)['"][\n\s]*alt=['"].+['"][\s\n]*title=['"].+['"][\s\n]*\/>[\s\n]*<figcaption>([\[\]ㄱ-힣\s\-?+_:=/.0-9A-Za-z]+)<\/figcaption>[\s\n]*.+\n\s*<\/figure> -->
 
 <!-- <figure.+[\n\s]*<span.+[\n\s]*<img[\n\s]*src=['"](.+)['"][\n\s]*alt=['"].+['"][\s\n]*title=['"].+['"][\s\n]*\/>[\s\n]*<figcaption>([\[\]ㄱ-힣\s\-?,()+_:=/.0-9A-Za-z]+)<\/figcaption>[\s\n]*.+\n\s*<\/figure> -->
+
