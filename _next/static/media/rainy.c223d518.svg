@@ -1,0 +1,45 @@
+<svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="cloudGrad" x1="0" y1="0" x2="256" y2="256">
+      <stop offset="0%" stop-color="#E6E9EF"/>
+      <stop offset="100%" stop-color="#C9CED8"/>
+    </linearGradient>
+
+    <linearGradient id="rainGrad" x1="0" y1="0" x2="0" y2="20">
+      <stop offset="0%" stop-color="#A6C8FF" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#4A90E2" stop-opacity="0.9"/>
+    </linearGradient>
+
+    <filter id="softShadow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feOffset dy="3"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- cloud -->
+  <g filter="url(#softShadow)">
+    <ellipse cx="130" cy="120" rx="70" ry="35" fill="url(#cloudGrad)"/>
+    <circle cx="100" cy="110" r="28" fill="url(#cloudGrad)"/>
+    <circle cx="160" cy="105" r="32" fill="url(#cloudGrad)"/>
+  </g>
+
+  <!-- rain drops -->
+  <g>
+    <rect x="90" y="150" width="6" height="20" rx="3" fill="url(#rainGrad)">
+      <animate attributeName="y" values="150;180" dur="0.8s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;0" dur="0.8s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="120" y="155" width="6" height="20" rx="3" fill="url(#rainGrad)">
+      <animate attributeName="y" values="155;185" dur="1s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;0" dur="1s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="150" y="150" width="6" height="20" rx="3" fill="url(#rainGrad)">
+      <animate attributeName="y" values="150;180" dur="0.9s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;0" dur="0.9s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+</svg>

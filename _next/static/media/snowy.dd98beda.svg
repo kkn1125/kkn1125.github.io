@@ -1,0 +1,57 @@
+<svg width="256" height="256" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- adaptive gradient (works on light & dark bg) -->
+    <linearGradient id="cloudGrad" x1="0" y1="0" x2="256" y2="256">
+      <stop offset="0%" stop-color="#F0F3F8"/>
+      <stop offset="100%" stop-color="#C8D0DB"/>
+    </linearGradient>
+
+    <linearGradient id="snowGrad" x1="0" y1="0" x2="0" y2="20">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#BFD8FF" stop-opacity="0.9"/>
+    </linearGradient>
+
+    <filter id="softShadow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feOffset dy="2"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="snowGlow">
+      <feGaussianBlur stdDeviation="1.5"/>
+    </filter>
+  </defs>
+
+  <!-- cloud -->
+  <g filter="url(#softShadow)">
+    <ellipse cx="130" cy="115" rx="70" ry="35" fill="url(#cloudGrad)"/>
+    <circle cx="100" cy="105" r="28" fill="url(#cloudGrad)"/>
+    <circle cx="160" cy="100" r="32" fill="url(#cloudGrad)"/>
+  </g>
+
+  <!-- snow particles -->
+  <g filter="url(#snowGlow)">
+    <circle cx="95" cy="150" r="3" fill="url(#snowGrad)">
+      <animate attributeName="cy" values="150;185" dur="1.2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;0.2;1" dur="1.2s" repeatCount="indefinite"/>
+    </circle>
+
+    <circle cx="120" cy="155" r="3" fill="url(#snowGrad)">
+      <animate attributeName="cy" values="155;190" dur="1.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;0.2;1" dur="1.5s" repeatCount="indefinite"/>
+    </circle>
+
+    <circle cx="145" cy="150" r="3" fill="url(#snowGrad)">
+      <animate attributeName="cy" values="150;185" dur="1.3s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;0.2;1" dur="1.3s" repeatCount="indefinite"/>
+    </circle>
+
+    <circle cx="170" cy="155" r="3" fill="url(#snowGrad)">
+      <animate attributeName="cy" values="155;190" dur="1.6s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;0.2;1" dur="1.6s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+</svg>

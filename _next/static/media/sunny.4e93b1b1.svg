@@ -1,0 +1,63 @@
+<svg width="256" height="256" viewBox="0 0 256 256" fill="none" opacity="0.84" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="sunCore" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
+      gradientTransform="translate(128 128) rotate(90) scale(64)">
+      <stop offset="0%" stop-color="#FFF8C9"/>
+      <stop offset="55%" stop-color="#FFE27A"/>
+      <stop offset="100%" stop-color="#FFC94D"/>
+    </radialGradient>
+
+    <linearGradient id="rayGrad" x1="128" y1="34" x2="128" y2="78" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FFF0A8" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#FFCC4D" stop-opacity="0.9"/>
+    </linearGradient>
+
+    <filter id="softGlow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- soft ambient glow -->
+  <circle cx="128" cy="128" r="78" fill="#FFD75E" opacity="0.12" filter="url(#softGlow)"/>
+
+  <!-- rays -->
+  <g opacity="0.95">
+    <g transform="rotate(0 128 128)">
+      <path d="M121 38C121 34.134 124.134 31 128 31C131.866 31 135 34.134 135 38V67C135 70.866 131.866 74 128 74C124.134 74 121 70.866 121 67V38Z" fill="url(#rayGrad)"/>
+    </g>
+    <g transform="rotate(45 128 128)">
+      <path d="M121 38C121 34.134 124.134 31 128 31C131.866 31 135 34.134 135 38V67C135 70.866 131.866 74 128 74C124.134 74 121 70.866 121 67V38Z" fill="url(#rayGrad)"/>
+    </g>
+    <g transform="rotate(90 128 128)">
+      <path d="M121 38C121 34.134 124.134 31 128 31C131.866 31 135 34.134 135 38V67C135 70.866 131.866 74 128 74C124.134 74 121 70.866 121 67V38Z" fill="url(#rayGrad)"/>
+    </g>
+    <g transform="rotate(135 128 128)">
+      <path d="M121 38C121 34.134 124.134 31 128 31C131.866 31 135 34.134 135 38V67C135 70.866 131.866 74 128 74C124.134 74 121 70.866 121 67V38Z" fill="url(#rayGrad)"/>
+    </g>
+    <g transform="rotate(180 128 128)">
+      <path d="M121 38C121 34.134 124.134 31 128 31C131.866 31 135 34.134 135 38V67C135 70.866 131.866 74 128 74C124.134 74 121 70.866 121 67V38Z" fill="url(#rayGrad)"/>
+    </g>
+    <g transform="rotate(225 128 128)">
+      <path d="M121 38C121 34.134 124.134 31 128 31C131.866 31 135 34.134 135 38V67C135 70.866 131.866 74 128 74C124.134 74 121 70.866 121 67V38Z" fill="url(#rayGrad)"/>
+    </g>
+    <g transform="rotate(270 128 128)">
+      <path d="M121 38C121 34.134 124.134 31 128 31C131.866 31 135 34.134 135 38V67C135 70.866 131.866 74 128 74C124.134 74 121 70.866 121 67V38Z" fill="url(#rayGrad)"/>
+    </g>
+    <g transform="rotate(315 128 128)">
+      <path d="M121 38C121 34.134 124.134 31 128 31C131.866 31 135 34.134 135 38V67C135 70.866 131.866 74 128 74C124.134 74 121 70.866 121 67V38Z" fill="url(#rayGrad)"/>
+    </g>
+  </g>
+
+  <!-- core -->
+  <circle cx="128" cy="128" r="48" fill="url(#sunCore)"/>
+
+  <!-- subtle highlight -->
+  <ellipse cx="112" cy="110" rx="16" ry="11" fill="#FFF7DA" opacity="0.45"/>
+
+  <!-- inner ring -->
+  <circle cx="128" cy="128" r="58" stroke="#FFD15A" stroke-opacity="0.25" stroke-width="3"/>
+</svg>
